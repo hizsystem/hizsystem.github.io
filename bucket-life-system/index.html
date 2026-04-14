@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>상담일지 — 버킷라이프시스템</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Noto Sans KR', -apple-system, sans-serif; background: #f4f7f9; color: #1a1b18; line-height: 1.7; font-size: 14px; }
+
+.toolbar { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: #0D0D0D; height: 56px; display: flex; align-items: center; justify-content: space-between; padding: 0 32px; }
+.toolbar-left { display: flex; align-items: center; gap: 16px; }
+.toolbar-logo { font-size: 13px; font-weight: 700; color: #EA580C; letter-spacing: 0.05em; }
+.toolbar-sep { width: 1px; height: 20px; background: rgba(255,255,255,0.15); }
+.toolbar-title { font-size: 14px; font-weight: 500; color: #fff; }
+
+.container { max-width: 900px; margin: 0 auto; padding: 80px 24px 60px; }
+
+.report-header { background: #fff; border-radius: 12px; padding: 40px; margin-bottom: 20px; border: 1px solid #e8edf1; }
+.report-header .label { font-size: 11px; font-weight: 700; color: #EA580C; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 14px; }
+.report-header h1 { font-size: 32px; font-weight: 900; line-height: 1.35; letter-spacing: -0.02em; }
+.meta-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 28px; padding-top: 24px; border-top: 1px solid #e8edf1; }
+.meta-item .mk { font-size: 11px; color: #999; letter-spacing: 0.04em; margin-bottom: 4px; }
+.meta-item .mv { font-size: 13px; font-weight: 600; }
+
+.section { background: #fff; border-radius: 12px; padding: 32px 40px; margin-bottom: 20px; border: 1px solid #e8edf1; }
+.section h2 { font-size: 18px; font-weight: 800; margin-bottom: 6px; letter-spacing: -0.02em; }
+.section h2 em { color: #EA580C; font-style: normal; }
+.section .sec-sub { font-size: 13px; color: #999; margin-bottom: 24px; }
+
+.highlight-box { background: #0D0D0D; border-radius: 12px; padding: 28px 36px; margin-bottom: 20px; color: #fff; }
+.highlight-box .hl-label { font-size: 11px; font-weight: 700; color: #EA580C; letter-spacing: 0.08em; margin-bottom: 10px; }
+.highlight-box .hl-text { font-size: 20px; font-weight: 800; line-height: 1.45; }
+.highlight-box .hl-text em { color: #EA580C; font-style: normal; }
+
+.kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 8px; }
+.kpi-card { background: #f8fafb; border-radius: 10px; padding: 22px 18px; text-align: center; border: 1px solid #e8edf1; }
+.kpi-card .kc-label { font-size: 11px; color: #999; font-weight: 500; letter-spacing: 0.04em; margin-bottom: 8px; }
+.kpi-card .kc-value { font-size: 22px; font-weight: 900; color: #1a1b18; letter-spacing: -0.02em; }
+.kpi-card .kc-unit { font-size: 12px; font-weight: 500; color: #999; }
+.kpi-card.dark { background: #0D0D0D; border-color: #0D0D0D; }
+.kpi-card.dark .kc-label { color: #EA580C; }
+.kpi-card.dark .kc-value { color: #fff; }
+
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th { background: #f8fafb; padding: 10px 16px; font-weight: 600; border-bottom: 2px solid #e8edf1; color: #999; font-size: 11px; text-align: left; white-space: nowrap; }
+td { padding: 11px 16px; border-bottom: 1px solid #f0f2f5; vertical-align: middle; }
+td.item { font-weight: 600; color: #1a1b18; white-space: nowrap; }
+td.desc { color: #636569; font-size: 12px; }
+tr:hover td { background: #fafbfc; }
+
+.tag { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 600; }
+.tag.red { background: #FEE2E2; color: #DC2626; }
+.tag.yellow { background: #FEF3C7; color: #D97706; }
+.tag.green { background: #DCFCE7; color: #16A34A; }
+.tag.gray { background: #F3F4F6; color: #6B7280; }
+
+.obs-list { list-style: none; padding: 0; }
+.obs-list li { padding: 14px 0; border-bottom: 1px solid #f0f2f5; display: flex; gap: 12px; align-items: flex-start; }
+.obs-list li:last-child { border-bottom: none; }
+.obs-num { width: 28px; height: 28px; border-radius: 50%; background: #0D0D0D; color: #fff; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+.obs-content { flex: 1; }
+.obs-title { font-weight: 700; font-size: 14px; margin-bottom: 4px; }
+.obs-desc { font-size: 13px; color: #636569; }
+
+.score-bar { display: flex; align-items: center; gap: 12px; margin: 8px 0; }
+.score-track { flex: 1; height: 8px; background: #e8edf1; border-radius: 4px; overflow: hidden; position: relative; }
+.score-fill { height: 100%; border-radius: 4px; transition: width 0.6s ease; }
+.score-fill.high { background: #16A34A; }
+.score-fill.mid { background: #D97706; }
+.score-fill.low { background: #DC2626; }
+.score-label { font-size: 13px; font-weight: 700; min-width: 60px; text-align: right; }
+
+.scenario-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.scenario-card { border-radius: 10px; padding: 20px; text-align: center; border: 1px solid #e8edf1; }
+.scenario-card .sc-prob { font-size: 28px; font-weight: 900; margin-bottom: 4px; }
+.scenario-card .sc-name { font-size: 12px; font-weight: 600; margin-bottom: 8px; }
+.scenario-card .sc-desc { font-size: 11px; color: #636569; line-height: 1.5; }
+.scenario-card.primary { background: #FEF3C7; border-color: #FDE68A; }
+.scenario-card.primary .sc-prob { color: #D97706; }
+.scenario-card.secondary { background: #f8fafb; }
+.scenario-card.secondary .sc-prob { color: #6B7280; }
+
+.next-table td:first-child { font-weight: 600; white-space: nowrap; width: 140px; }
+
+.footer { text-align: center; padding: 40px 0 20px; font-size: 11px; color: #999; }
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="toolbar-left">
+    <div class="toolbar-logo">BRANDRISE</div>
+    <div class="toolbar-sep"></div>
+    <div class="toolbar-title">상담일지 — 버킷라이프시스템</div>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- HEADER -->
+<div class="report-header">
+  <div class="label">Consultation Log</div>
+  <h1>버킷라이프시스템 상담일지</h1>
+  <div class="meta-grid">
+    <div class="meta-item"><div class="mk">상담일</div><div class="mv">2026.04.14 (월)</div></div>
+    <div class="meta-item"><div class="mk">클라이언트</div><div class="mv">김진규 대표</div></div>
+    <div class="meta-item"><div class="mk">담당</div><div class="mv">우성민 · 이슬기</div></div>
+    <div class="meta-item"><div class="mk">신청 경로</div><div class="mv">메일/레터</div></div>
+  </div>
+</div>
+
+<!-- 한 줄 진단 -->
+<div class="highlight-box">
+  <div class="hl-label">ONE-LINE DIAGNOSIS</div>
+  <div class="hl-text">"마케팅을 의뢰하러 왔지만,<br>실제로는 <em>사업 기획이 필요한 단계</em>"</div>
+</div>
+
+<!-- 기본 정보 -->
+<div class="section">
+  <h2><em>01</em> 클라이언트 개요</h2>
+  <div class="sec-sub">4060 액티브 시니어 프리미엄 해외 체험 플랫폼</div>
+  <div class="kpi-grid">
+    <div class="kpi-card">
+      <div class="kc-label">업종</div>
+      <div class="kc-value" style="font-size:14px; line-height:1.4;">시니어 라이프<br>플랫폼</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kc-label">월 예산</div>
+      <div class="kc-value">300<span class="kc-unit">만원 이하</span></div>
+    </div>
+    <div class="kpi-card">
+      <div class="kc-label">매출 목표</div>
+      <div class="kc-value">4<span class="kc-unit">억/6개월</span></div>
+    </div>
+    <div class="kpi-card dark">
+      <div class="kc-label">수주 확률</div>
+      <div class="kc-value">0<span class="kc-unit" style="color:rgba(255,255,255,0.4);">%</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- PMF 진단 -->
+<div class="section">
+  <h2><em>02</em> PMF 진단</h2>
+  <div class="sec-sub">Product-Market Fit 관점에서 현재 위치</div>
+  <table>
+    <thead>
+      <tr><th>관점</th><th>현황</th><th>상태</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="item">Product</td>
+        <td class="desc">프로그램 구상은 있으나 구체화 전혀 안 됨. 어떤 프로그램인지 공유 불가</td>
+        <td><span class="tag red">부재</span></td>
+      </tr>
+      <tr>
+        <td class="item">Market</td>
+        <td class="desc">시장에 대한 호기심만 존재. 타겟·채널·방향 전부 미정</td>
+        <td><span class="tag yellow">호기심만</span></td>
+      </tr>
+      <tr>
+        <td class="item">디지털 채널</td>
+        <td class="desc">웹사이트·SNS·광고 전부 OFF. 디지털 프레즌스 제로</td>
+        <td><span class="tag gray">전부 OFF</span></td>
+      </tr>
+      <tr>
+        <td class="item">데이터</td>
+        <td class="desc">데이터 바우처로 중장년 데이터셋 보유, 활용 계획 불명확</td>
+        <td><span class="tag yellow">미활용</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- 상담 관찰 -->
+<div class="section">
+  <h2><em>03</em> 상담 핵심 관찰</h2>
+  <div class="sec-sub">대화 다이나믹스 — 왜 쉽지 않았나</div>
+  <ul class="obs-list">
+    <li>
+      <div class="obs-num">1</div>
+      <div class="obs-content">
+        <div class="obs-title">대표 미팅 기대 vs PM 배정</div>
+        <div class="obs-desc">대표님과 직접 만나고 싶었으나 PM급이 배정되어 살짝 실망한 눈치</div>
+      </div>
+    </li>
+    <li>
+      <div class="obs-num">2</div>
+      <div class="obs-content">
+        <div class="obs-title">"다 알고 있다, 너가 제안해봐라" 스탠스</div>
+        <div class="obs-desc">본인은 이미 파악하고 있다는 태도로 일관. 정보는 주지 않으면서 제안을 요구하는 비대칭 구조</div>
+      </div>
+    </li>
+    <li>
+      <div class="obs-num">3</div>
+      <div class="obs-content">
+        <div class="obs-title">아이디어만 있고 실행 준비 없음</div>
+        <div class="obs-desc">방향·타겟·홍보 전체를 묻고 싶어서 왔지만, 정작 어떤 프로그램인지 구체적 설명 불가</div>
+      </div>
+    </li>
+    <li>
+      <div class="obs-num">4</div>
+      <div class="obs-content">
+        <div class="obs-title">마케팅 의뢰지만 실제 니즈는 사업기획</div>
+        <div class="obs-desc">PMF에서 Product가 부재 → 마케팅 전략 수립 이전에 상품 설계가 선행되어야 하는 단계</div>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<!-- 수주 판단 -->
+<div class="section">
+  <h2><em>04</em> 수주 판단 — 사전 vs 상담 후</h2>
+  <div class="sec-sub">사전 리서치 4.50점 → 상담 후 2.75점으로 하향</div>
+
+  <div style="margin-bottom: 18px;">
+    <div style="display:flex; justify-content:space-between; font-size:12px; color:#999; margin-bottom:4px;">
+      <span>니즈-서비스 핏</span><span>5 → <b style="color:#DC2626;">2</b></span>
+    </div>
+    <div class="score-bar">
+      <div class="score-track"><div class="score-fill low" style="width:40%;"></div></div>
+    </div>
+  </div>
+  <div style="margin-bottom: 18px;">
+    <div style="display:flex; justify-content:space-between; font-size:12px; color:#999; margin-bottom:4px;">
+      <span>의사결정 구조</span><span>5 → <b style="color:#D97706;">3</b></span>
+    </div>
+    <div class="score-bar">
+      <div class="score-track"><div class="score-fill mid" style="width:60%;"></div></div>
+    </div>
+  </div>
+  <div style="margin-bottom: 18px;">
+    <div style="display:flex; justify-content:space-between; font-size:12px; color:#999; margin-bottom:4px;">
+      <span>긴급도</span><span>5 → <b style="color:#DC2626;">2</b></span>
+    </div>
+    <div class="score-bar">
+      <div class="score-track"><div class="score-fill low" style="width:40%;"></div></div>
+    </div>
+  </div>
+  <div style="margin-bottom: 18px;">
+    <div style="display:flex; justify-content:space-between; font-size:12px; color:#999; margin-bottom:4px;">
+      <span>예산 적합성</span><span>3 → <b>3</b></span>
+    </div>
+    <div class="score-bar">
+      <div class="score-track"><div class="score-fill mid" style="width:60%;"></div></div>
+    </div>
+  </div>
+
+  <div style="display:flex; align-items:center; gap:16px; margin-top:24px; padding-top:20px; border-top:1px solid #e8edf1;">
+    <div style="font-size:11px; color:#999;">종합</div>
+    <div style="font-size:32px; font-weight:900; color:#DC2626; letter-spacing:-0.02em;">2.75<span style="font-size:16px; color:#999;">/5.00</span></div>
+    <span class="tag red" style="font-size:13px; padding:5px 14px;">강력 GO → 보류</span>
+  </div>
+</div>
+
+<!-- 전망 시나리오 -->
+<div class="section">
+  <h2><em>05</em> 전망 시나리오</h2>
+  <div class="sec-sub">향후 예상되는 3가지 경로</div>
+  <div class="scenario-grid">
+    <div class="scenario-card primary">
+      <div class="sc-prob">60%</div>
+      <div class="sc-name">자연 소멸</div>
+      <div class="sc-desc">연락 없이 종료될 가능성이 가장 높음</div>
+    </div>
+    <div class="scenario-card secondary">
+      <div class="sc-prob">25%</div>
+      <div class="sc-name">소규모 재접촉</div>
+      <div class="sc-desc">대표님 미팅 성사 시 상품기획 포함 소규모 프로젝트</div>
+    </div>
+    <div class="scenario-card secondary">
+      <div class="sc-prob">15%</div>
+      <div class="sc-name">풀스콥 수주</div>
+      <div class="sc-desc">상품 정리 후 재의뢰 (가능성 낮음)</div>
+    </div>
+  </div>
+</div>
+
+<!-- Next Action -->
+<div class="section">
+  <h2><em>06</em> Next Action</h2>
+  <div class="sec-sub">후속 조치 계획</div>
+  <table class="next-table">
+    <thead><tr><th>액션</th><th>내용</th><th>기한</th></tr></thead>
+    <tbody>
+      <tr><td class="item">후속 연락 대기</td><td class="desc">1주 내 연락 없으면 가볍게 팔로업</td><td>~ 04.21</td></tr>
+      <tr><td class="item">재접촉 시</td><td class="desc">대표님 미팅 제안 + "상품 기획 포함" 스콥으로 재제안</td><td>연락 시</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- 교훈 -->
+<div class="highlight-box">
+  <div class="hl-label">LESSON LEARNED</div>
+  <div class="hl-text" style="font-size:16px;">상품이 없는 클라이언트의 마케팅 의뢰 →<br>사전 인테이크에서 <em>상품 준비도를 더 강하게 체크</em>해야 함</div>
+</div>
+
+</div>
+
+<div class="footer">BRANDRISE Consultation Log &middot; 2026.04.14 &middot; Confidential</div>
+
+</body>
+</html>
