@@ -1201,6 +1201,31 @@ description이 좋아야 네가 자동으로 호출할 수 있으니까.</div>
   </div>
 
   <div class="block">
+    <div class="block-label">+ 실제 사고 시나리오</div>
+    <h3>키가 PUBLIC GitHub 레포에 노출되면 어떻게 되나</h3>
+    <p>이 가이드 작성자가 실제로 겪은 일을 익명·일반화한 사례예요. <strong>"나한테는 안 일어나겠지"가 가장 위험</strong>합니다.</p>
+    <table>
+      <thead><tr><th>시각</th><th>일어나는 일</th></tr></thead>
+      <tbody>
+        <tr><td><strong>0분</strong></td><td>실수로 <code class="inline">.env</code> 또는 <code class="inline">settings.local.json</code>에 들어간 키가 git commit → push</td></tr>
+        <tr><td><strong>1~5분</strong></td><td>GitHub 자동 스캔 봇 (TruffleHog, GitGuardian 등)이 키 발견. 다크웹 봇도 동시 수집</td></tr>
+        <tr><td><strong>10~60분</strong></td><td>봇이 키로 Supabase 접근 시도. 성공하면 데이터 전수 다운로드</td></tr>
+        <tr><td><strong>몇 시간~며칠</strong></td><td>다크웹에 "service_role key 데이터셋" 매물로 등록</td></tr>
+        <tr><td><strong>주~월 단위</strong></td><td>데이터 삭제 후 협박, 또는 본인 인프라로 채굴/스팸 발송 (본인 청구서로)</td></tr>
+      </tbody>
+    </table>
+    <p class="soft">💡 GitHub에서 force push로 키를 지워도 봇은 이미 가져갔으니 <strong>"노출 = 영구 노출"</strong>로 가정해야 합니다. 유일한 무력화는 <strong>키 재발급</strong>.</p>
+    <div class="callout good">
+      <div class="callout-title">✅ 예방 체크리스트 (3가지)</div>
+      <ol>
+        <li><code class="inline">.gitignore</code>에 <code class="inline">.env*</code>, <code class="inline">.claude/settings.local.json</code> 반드시 포함 (Day 4.5에서 셋업한 그것)</li>
+        <li>Bash 명령에 평문 키 export 금지: <code class="inline">SUPABASE_KEY="eyJ..." node script.js</code> 같은 명령은 절대 "Always allow" X. 대신 <code class="inline">set -a && source .env && set +a</code> 패턴</li>
+        <li>1주일에 한 번 <code class="inline">/security-review</code> (부록 A의 Superpowers) 돌려서 점검</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="block">
     <div class="block-label">Try (선택)</div>
     <div class="try" data-key="bonusb-try">
       <div class="try-title">부록 B 체크리스트 (필요할 때만)</div>
