@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>인셀라(INCELLA) x 브랜드라이즈 — 론칭 마케팅 파트너십 제안 v3</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+    <style>
+        :root {
+            --primary: #1a1a1a;
+            --secondary: #444444;
+            --accent: #f07030;
+            --accent-light: #fff3ec;
+            --accent-soft: #fde8da;
+            --highlight: #f07030;
+            --bg: #fafafa;
+            --card-bg: #ffffff;
+            --muted: #f5f5f5;
+            --text: #1a1a1a;
+            --text-light: #999999;
+            --border: #eeeeee;
+            --success: #5a7a52;
+            --success-bg: #eef3ec;
+            --warning: #f07030;
+            --danger: #f07030;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+        .mono { font-family: 'Space Grotesk', monospace; }
+        .bigNum { font-family: 'Bebas Neue', 'Space Grotesk', sans-serif; letter-spacing: 0.02em; }
+
+        /* Scroll Progress Bar */
+        .progress-bar { position: fixed; top: 0; left: 0; height: 3px; background: var(--accent); width: 0%; z-index: 999; transition: width 0.1s ease-out; }
+
+        /* Header */
+        .header { background: #ffffff; color: var(--primary); padding: 56px 40px 48px; text-align: center; border-bottom: 1px solid var(--border); }
+        .brand-mark { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 3px; color: var(--accent); margin-bottom: 8px; }
+        .brand-tagline { font-size: 12px; color: var(--text-light); letter-spacing: 1px; margin-bottom: 22px; }
+        .header-badge { display: inline-block; background: var(--accent); border: 1px solid var(--accent); color: #ffffff; padding: 6px 18px; border-radius: 20px; font-size: 12px; font-weight: 700; margin-bottom: 16px; letter-spacing: 1px; }
+        .header h1 { font-size: 34px; font-weight: 800; margin-bottom: 10px; color: var(--primary); line-height: 1.3; }
+        .header .subtitle { font-size: 17px; color: var(--secondary); font-weight: 500; margin-bottom: 4px; }
+        .header .date { margin-top: 16px; font-size: 13px; color: var(--text-light); }
+
+        /* TL;DR */
+        .tldr-wrap { max-width: 1100px; margin: -24px auto 0; padding: 0 20px; position: relative; z-index: 2; }
+        .tldr { background: #ffffff; border: 1px solid var(--border); border-radius: 12px; padding: 28px 32px; }
+        .tldr-title { font-size: 12px; color: var(--accent); font-weight: 800; letter-spacing: 2px; margin-bottom: 16px; }
+        .tldr-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+        .tldr-item { padding: 14px 0; }
+        .tldr-label { font-size: 12px; color: var(--text-light); margin-bottom: 6px; letter-spacing: 0.5px; }
+        .tldr-value { font-family: 'Bebas Neue', sans-serif; font-size: 30px; color: var(--primary); line-height: 1.1; letter-spacing: 0.02em; }
+        .tldr-value .unit { font-family: 'Pretendard Variable', sans-serif; font-size: 14px; font-weight: 700; color: var(--secondary); margin-left: 4px; }
+        .tldr-sub { font-size: 12px; color: var(--text-light); margin-top: 4px; }
+        .tldr-sentence { margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 15px; line-height: 1.7; color: var(--secondary); }
+        .tldr-sentence b { color: var(--accent); }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
+
+        /* TOC */
+        .toc { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 24px 28px; margin-bottom: 32px; }
+        .toc h2 { font-size: 13px; margin-bottom: 14px; color: var(--accent); letter-spacing: 2px; font-weight: 800; }
+        .toc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 12px; }
+        .toc a { color: var(--secondary); text-decoration: none; font-size: 13px; padding: 5px 0; display: block; transition: color 0.15s; }
+        .toc a::before { content: "·"; color: var(--accent); font-weight: 700; margin-right: 8px; }
+        .toc a:hover { color: var(--accent); }
+
+        /* Sections */
+        .section { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 36px; margin-bottom: 24px; }
+        .section h2 { font-size: 22px; font-weight: 800; color: var(--primary); margin-bottom: 20px; padding-bottom: 12px; border-bottom: 2px solid var(--accent); display: flex; align-items: baseline; gap: 10px; }
+        .section h2 .sec-num { font-family: 'Bebas Neue', sans-serif; color: var(--accent); font-size: 20px; }
+        .section h3 { font-size: 16px; font-weight: 700; color: var(--primary); margin: 20px 0 12px; }
+        .section h4 { font-size: 14px; font-weight: 700; color: var(--secondary); margin: 12px 0 8px; }
+        .section p { font-size: 14px; color: var(--secondary); margin: 8px 0; }
+        .section p b { color: var(--primary); }
+        .section ul { padding-left: 20px; font-size: 14px; color: var(--secondary); }
+        .section ul li { margin: 4px 0; }
+
+        /* Tables */
+        table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 13.5px; }
+        th { background: var(--muted); color: var(--primary); padding: 11px 14px; text-align: left; font-weight: 700; font-size: 13px; border-bottom: 1px solid var(--border); }
+        td { padding: 10px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
+        tr:hover td { background: #fafafa; }
+        td b { color: var(--primary); }
+        .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+        /* Tags */
+        .tag { display: inline-block; padding: 2px 9px; border-radius: 10px; font-size: 11px; font-weight: 700; margin: 1px; }
+        .tag-accent { background: var(--accent); color: white; }
+        .tag-light { background: var(--accent-light); color: var(--accent); border: 1px solid var(--accent-soft); }
+        .tag-gray { background: var(--muted); color: var(--secondary); }
+        .tag-success { background: var(--success-bg); color: var(--success); }
+
+        /* Callouts */
+        .callout { background: var(--accent-light); border-left: 4px solid var(--accent); padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 14px 0; font-size: 13.5px; color: var(--secondary); }
+        .callout b { color: var(--primary); }
+        .callout-info { background: var(--muted); border-left-color: var(--secondary); }
+        .callout-danger { background: var(--accent-soft); border-left-color: var(--accent); }
+        .callout-success { background: var(--success-bg); border-left-color: var(--success); }
+
+        /* Verdict box */
+        .verdict { background: var(--accent); color: white; padding: 22px 30px; border-radius: 12px; text-align: center; margin: 20px 0; }
+        .verdict .label { font-size: 13px; opacity: 0.85; letter-spacing: 1px; }
+        .verdict .value { font-size: 26px; font-weight: 800; margin: 8px 0; line-height: 1.4; }
+        .verdict .desc { font-size: 13px; opacity: 0.9; }
+
+        /* Leverage / dark quote */
+        .leverage-box { background: var(--primary); color: white; padding: 28px; border-radius: 12px; margin: 22px 0; text-align: center; }
+        .leverage-box .quote { font-size: 18px; font-weight: 700; line-height: 1.55; margin: 12px 0; }
+        .leverage-box .quote .hl { color: var(--accent); }
+
+        /* Scope 3-column */
+        .scope-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin: 16px 0; }
+        .scope-col { padding: 18px 20px; border-radius: 10px; border: 1px solid var(--border); }
+        .scope-col.scope-in { background: var(--accent-light); border-color: var(--accent-soft); }
+        .scope-col.scope-out { background: var(--muted); border-color: var(--border); }
+        .scope-col.scope-opt { background: #ffffff; border-color: var(--accent-soft); }
+        .scope-head { font-size: 12px; font-weight: 800; letter-spacing: 1.5px; margin-bottom: 10px; }
+        .scope-in .scope-head { color: var(--accent); }
+        .scope-out .scope-head { color: var(--text-light); }
+        .scope-opt .scope-head { color: var(--accent); }
+        .scope-col ul { padding: 0; list-style: none; font-size: 13px; color: var(--secondary); }
+        .scope-col ul li { padding: 6px 0; border-bottom: 1px dashed var(--border); }
+        .scope-col ul li:last-child { border-bottom: none; }
+        .scope-col ul li b { color: var(--primary); display: block; font-size: 13.5px; margin-bottom: 2px; }
+
+        /* KPI grid */
+        .kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 16px 0; }
+        .kpi-card { padding: 16px; border-radius: 10px; text-align: center; }
+        .kpi-card.kpi-dark { background: var(--muted); color: var(--primary); }
+        .kpi-card.kpi-accent { background: var(--accent); color: white; }
+        .kpi-card.kpi-soft { background: var(--accent-soft); color: var(--primary); }
+        .kpi-card .kpi-label { font-size: 11px; opacity: 0.75; letter-spacing: 0.5px; margin-bottom: 4px; }
+        .kpi-card .kpi-value { font-family: 'Bebas Neue', sans-serif; font-size: 30px; line-height: 1.1; }
+        .kpi-card .kpi-sub { font-size: 11px; opacity: 0.75; margin-top: 4px; }
+
+        /* Diff / v2 vs v3 */
+        .diff-row { display: grid; grid-template-columns: 160px 1fr 1fr; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--border); font-size: 13.5px; }
+        .diff-row:last-child { border-bottom: none; }
+        .diff-topic { font-weight: 700; color: var(--primary); }
+        .diff-v2 { color: var(--text-light); text-decoration: line-through; text-decoration-color: var(--accent-soft); }
+        .diff-v3 { color: var(--primary); font-weight: 600; }
+        .diff-v3 b { color: var(--accent); }
+
+        /* Platform compare visual */
+        .platform-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 16px 0; }
+        .platform-card { border: 1px solid var(--border); border-radius: 10px; padding: 16px; background: #fff; position: relative; }
+        .platform-card.featured { border-color: var(--accent); background: var(--accent-light); }
+        .platform-card .pf-name { font-weight: 800; font-size: 15px; color: var(--primary); margin-bottom: 4px; }
+        .platform-card .pf-pct { font-family: 'Bebas Neue', sans-serif; color: var(--accent); font-size: 28px; line-height: 1; margin: 6px 0; }
+        .platform-card .pf-amt { font-size: 12px; color: var(--secondary); font-weight: 600; margin-bottom: 8px; }
+        .platform-card .pf-role { font-size: 11.5px; color: var(--text-light); line-height: 1.5; }
+        .platform-card .pf-rank { position: absolute; top: 10px; right: 12px; font-size: 10px; color: var(--text-light); }
+
+        /* Gantt */
+        .gantt-wrap { overflow-x: auto; margin: 16px 0; }
+        .gantt { min-width: 800px; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+        .gantt-row { display: grid; grid-template-columns: 100px 120px 1fr 1fr 1fr 1fr 100px; border-bottom: 1px solid var(--border); font-size: 12px; }
+        .gantt-row:last-child { border-bottom: none; }
+        .gantt-row.gantt-head { background: var(--muted); font-weight: 700; color: var(--primary); }
+        .gantt-row.gantt-dday { background: var(--accent); color: white; font-weight: 700; }
+        .gantt-row.gantt-dday .gcell { border-right-color: rgba(255,255,255,0.2); }
+        .gantt-row.gantt-dday b { color: white; }
+        .gcell { padding: 10px 12px; border-right: 1px solid var(--border); }
+        .gcell:last-child { border-right: none; }
+        .gcell.gc-week { font-weight: 800; color: var(--accent); font-family: 'Bebas Neue', sans-serif; font-size: 16px; }
+        .gantt-row.gantt-dday .gcell.gc-week { color: white; }
+        .gcell.gc-dday { text-align: center; font-weight: 700; color: var(--accent); font-family: 'Space Grotesk', monospace; }
+        .gantt-row.gantt-dday .gcell.gc-dday { color: white; font-size: 14px; }
+
+        /* Month-by-month table emphasis */
+        .month-table th, .month-table td { text-align: center; }
+        .month-table th:nth-child(1), .month-table td:nth-child(1) { text-align: left; font-weight: 700; color: var(--accent); font-family: 'Space Grotesk', monospace; }
+        .month-table tr.month-total td { background: var(--accent-light); font-weight: 800; color: var(--primary); }
+        .month-table tr.month-total td:nth-child(1) { color: var(--accent); }
+
+        /* Script block (Quick Win) */
+        .script-block { background: #0D0D0D; color: #fff; padding: 22px 28px; border-radius: 12px; font-family: 'Space Grotesk', monospace; font-size: 14px; line-height: 2; margin: 16px 0; }
+        .script-block .tag-line { color: var(--accent); font-weight: 700; display: inline-block; min-width: 90px; }
+        .script-block .concept { color: var(--accent); font-size: 13px; font-weight: 700; letter-spacing: 1px; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,0.15); }
+
+        /* FAQ */
+        .faq-item { border: 1px solid var(--border); border-radius: 10px; padding: 18px 22px; margin: 10px 0; background: #fff; }
+        .faq-item.faq-new { border-color: var(--accent); background: var(--accent-light); position: relative; }
+        .faq-item.faq-new::before { content: "v3 NEW"; position: absolute; top: -10px; right: 14px; background: var(--accent); color: white; font-size: 10px; font-weight: 800; padding: 2px 10px; border-radius: 10px; letter-spacing: 1px; }
+        .faq-q { font-weight: 700; color: var(--primary); font-size: 14.5px; margin-bottom: 8px; }
+        .faq-q::before { content: "Q. "; color: var(--accent); font-weight: 800; }
+        .faq-a { font-size: 13.5px; color: var(--secondary); line-height: 1.75; }
+        .faq-a b { color: var(--primary); }
+
+        /* Appendix (번외) */
+        .appendix { background: #f5f5f5; border: 2px dashed var(--accent); border-radius: 12px; padding: 32px; margin-top: 40px; }
+        .appendix-badge { display: inline-block; background: #ffffff; border: 1px solid var(--accent); color: var(--accent); padding: 4px 14px; border-radius: 20px; font-size: 11px; font-weight: 800; letter-spacing: 1.5px; margin-bottom: 12px; }
+        .appendix h2 { color: var(--accent); border-bottom-color: var(--accent); }
+
+        /* Footer */
+        .footer { text-align: center; padding: 40px 20px; color: var(--text-light); font-size: 12.5px; line-height: 1.8; }
+        .footer b { color: var(--accent); }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .header { padding: 40px 20px 36px; }
+            .header h1 { font-size: 22px; }
+            .header .subtitle { font-size: 14px; }
+            .tldr-wrap { padding: 0 14px; }
+            .tldr { padding: 20px; }
+            .tldr-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+            .tldr-value { font-size: 24px; }
+            .container { padding: 24px 14px; }
+            .section { padding: 24px 18px; }
+            .section h2 { font-size: 18px; }
+            .toc-grid { grid-template-columns: 1fr; }
+            .scope-grid { grid-template-columns: 1fr; }
+            .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+            .platform-grid { grid-template-columns: repeat(2, 1fr); }
+            .diff-row { grid-template-columns: 1fr; gap: 4px; padding: 14px 0; }
+            .diff-v2 { font-size: 12px; }
+            table { font-size: 12.5px; }
+            th, td { padding: 8px 10px; }
+            .gantt { min-width: 720px; }
+            .script-block { padding: 18px; font-size: 12.5px; }
+            .verdict .value { font-size: 20px; }
+            .leverage-box { padding: 22px 18px; }
+            .leverage-box .quote { font-size: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<div class="header">
+    <div class="brand-mark">BRANDRISE × INCELLA</div>
+    <div class="brand-tagline">스타트업을 위한 마케팅 코칭 파트너</div>
+    <div class="header-badge">v3 · 4/22 견적콜 합의 반영판</div>
+    <h1>인셀라(INCELLA) × 브랜드라이즈<br>론칭 마케팅 파트너십</h1>
+    <div class="subtitle">D-day를 잡고, 사전작업을 깔고, 한 번에 터뜨린다</div>
+    <div class="date">작성일: 2026-04-22 · 대상: 권윤정 이사님 (청우메디칼) · 발송: 브랜드라이즈 우성민</div>
+</div>
+
+<div class="tldr-wrap">
+    <div class="tldr">
+        <div class="tldr-title">TL;DR · 3분 요약</div>
+        <div class="tldr-grid">
+            <div class="tldr-item">
+                <div class="tldr-label">브랜드라이즈 본 견적</div>
+                <div class="tldr-value">1.55<span class="unit">억</span></div>
+                <div class="tldr-sub">VAT 별도 · 이사 배분안 2억 내</div>
+            </div>
+            <div class="tldr-item">
+                <div class="tldr-label">계약 기간</div>
+                <div class="tldr-value">6<span class="unit">개월</span></div>
+                <div class="tldr-sub">5월~10월 · 3 Phase 분할</div>
+            </div>
+            <div class="tldr-item">
+                <div class="tldr-label">D-day 네이버 라이브</div>
+                <div class="tldr-value">5/29</div>
+                <div class="tldr-sub">계약 후 37일 전력 집중</div>
+            </div>
+            <div class="tldr-item">
+                <div class="tldr-label">6개월 리뷰 목표</div>
+                <div class="tldr-value">300~500<span class="unit">건</span></div>
+                <div class="tldr-sub">네이버·쿠팡 상세페이지 누적</div>
+            </div>
+        </div>
+        <div class="tldr-sentence">
+            "4/20 홈페이지 오픈 → 5/29 네이버 라이브, 그 <b>37일 안에 인스타 톤 세팅·리뷰 수 확보·광고 최적화</b>를 끝내고 한 번에 터뜨립니다."
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+    <!-- TOC -->
+    <div class="toc" id="toc">
+        <h2>목차</h2>
+        <div class="toc-grid">
+            <a href="#sec-diff">v2 → v3 변경 요약</a>
+            <a href="#sec-now">1. 지금 상황</a>
+            <a href="#sec-future">2. 6개월 후 모습</a>
+            <a href="#sec-scope">3. 스코프 정의</a>
+            <a href="#sec-budget">4. 본 견적 배분</a>
+            <a href="#sec-detail">5. 세부 항목</a>
+            <a href="#sec-monthly">6. 월별 산출물</a>
+            <a href="#sec-gantt">7. 주차별 간트</a>
+            <a href="#sec-payment">8. 결제 구조</a>
+            <a href="#sec-rhythm">9. 일하는 방식</a>
+            <a href="#sec-compete">10. 경쟁사 포지셔닝</a>
+            <a href="#sec-quickwin">11. Quick Win 릴스</a>
+            <a href="#sec-assets">12. 6개월 자산 누적</a>
+            <a href="#sec-faq">13. FAQ</a>
+            <a href="#sec-next">14. 다음 스텝</a>
+            <a href="#sec-appendix">부록 A. 공동구매 번외</a>
+        </div>
+    </div>
+
+    <!-- v2 vs v3 -->
+    <div class="section" id="sec-diff">
+        <h2><span class="sec-num">v3</span>v2 → v3 무엇이 달라졌나 (1분 요약)</h2>
+        <p>4/22 견적콜에서 합의된 포인트를 전부 반영했습니다. <b>표시 내용이 v2와 달라진 항목</b>을 먼저 명시합니다.</p>
+        <div class="diff-row" style="border-bottom: 2px solid var(--border); font-weight: 800; font-size: 12px; color: var(--text-light); letter-spacing: 1px;">
+            <div>변경점</div><div>v2</div><div>v3 (오늘 합의)</div>
+        </div>
+        <div class="diff-row">
+            <div class="diff-topic">공동구매</div>
+            <div class="diff-v2">본 견적 2,500만원 포함</div>
+            <div class="diff-v3"><b>본 견적 제외</b> · 부록 번외(성과 쉐어 별도계약)</div>
+        </div>
+        <div class="diff-row">
+            <div class="diff-topic">인플루언서+씨딩 9,000만</div>
+            <div class="diff-v2">"100명 대규모" 1블록</div>
+            <div class="diff-v3">(A) <b>리뷰 마케팅 2,500만</b> + (B) 소규모 인플 협업(축소) 2개로 분리</div>
+        </div>
+        <div class="diff-row">
+            <div class="diff-topic">체험단 플랫폼</div>
+            <div class="diff-v2">언급 없음</div>
+            <div class="diff-v3"><b>셀피패스·레뷰·디너의여왕·놀러와 비교표</b> + 믹스 운용</div>
+        </div>
+        <div class="diff-row">
+            <div class="diff-topic">스코프 정의</div>
+            <div class="diff-v2">모호</div>
+            <div class="diff-v3"><b>포함 / 제외 / 옵션 3단 명시</b> · 브랜딩·BI·화보는 옵션</div>
+        </div>
+        <div class="diff-row">
+            <div class="diff-topic">산출물</div>
+            <div class="diff-v2">"월 12~15개" 같은 범위</div>
+            <div class="diff-v3"><b>M1~M6 월별 숫자 테이블 고정</b></div>
+        </div>
+        <div class="diff-row">
+            <div class="diff-topic">로드맵</div>
+            <div class="diff-v2">Phase 단위</div>
+            <div class="diff-v3"><b>주차별 간트(5/29 라이브 역산)</b></div>
+        </div>
+        <div class="diff-row">
+            <div class="diff-topic">총액</div>
+            <div class="diff-v2">2억 고정</div>
+            <div class="diff-v3"><b>본 견적 1.55억 + 고객 직접 집행 4,500만 분리</b> (이사 배분안 2억 내)</div>
+        </div>
+    </div>
+
+    <!-- 1. 지금 상황 -->
+    <div class="section" id="sec-now">
+        <h2><span class="sec-num">01</span>지금 상황</h2>
+        <p>청우메디칼은 25년간 의료장비를 만들어온 기술력이 있고, 홈뷰티 디바이스 브랜드 <b>인셀라(INCELLA)</b>를 론칭합니다.</p>
+        <h3>이미 준비된 것들</h3>
+        <ul>
+            <li>큐티프로 EMS 패치 + 리프팅밴드 — "캡슐 구조"로 반복 구매 모델 확보</li>
+            <li>콘텐츠 80개 촬영 진행 중</li>
+            <li><b>4/20 홈페이지 오픈 완료</b></li>
+            <li>5/29 네이버 라이브 확정</li>
+            <li>권윤정 이사(뷰티 30년차)의 업계 네트워크</li>
+        </ul>
+        <h3>아직 비어 있는 것들</h3>
+        <ul>
+            <li>인스타그램이 "바이어/MD가 봤을 때 세련된" 수준까지 정돈 안 됨</li>
+            <li><b>네이버·쿠팡 상세페이지 리뷰 수 = 0</b> → 론칭 초반 전환율 발목</li>
+            <li>메타 광고 집행 체계(픽셀·이벤트·소재 운용) 미구축</li>
+        </ul>
+        <div class="callout"><b>기술은 있습니다.</b> 지금 필요한 건 "보여줄 무대 + 살 이유(리뷰 소셜프루프) + 광고 엔진" 이 세 가지입니다.</div>
+    </div>
+
+    <!-- 2. 6개월 후 -->
+    <div class="section" id="sec-future">
+        <h2><span class="sec-num">02</span>6개월 후 모습</h2>
+        <div class="table-scroll"><table>
+            <thead><tr><th style="width: 28%">지표</th><th>지금</th><th>6개월 후</th></tr></thead>
+            <tbody>
+                <tr><td>인스타그램</td><td>미세팅</td><td>톤앤매너 완성, 피드 70+ / 릴스 30+, 팔로워 1만+</td></tr>
+                <tr><td><b>리뷰(네이버/쿠팡)</b></td><td>0건</td><td><b>300~500건 확보</b> (체험단 플랫폼 믹스 운용)</td></tr>
+                <tr><td>소규모 인플루언서</td><td>0명</td><td>20~30명 협업, 재활용 가능한 UGC 자산</td></tr>
+                <tr><td>메타 광고</td><td>미집행</td><td>픽셀/이벤트 안정화, ROAS 기준 라인 확보</td></tr>
+                <tr><td>5/29 네이버 라이브</td><td>예정</td><td>사전 리뷰·버즈 깔린 상태에서 첫 라이브 → 전환율 극대화</td></tr>
+                <tr><td>브랜드 포지션</td><td>0</td><td>"기술력 있는 홈뷰티 신흥 브랜드" 인지 형성</td></tr>
+            </tbody>
+        </table></div>
+    </div>
+
+    <!-- 3. 스코프 -->
+    <div class="section" id="sec-scope">
+        <h2><span class="sec-num">03</span>스코프 정의 — 무엇을 하고, 무엇을 안 하는가</h2>
+        <p><b>본 견적의 정확한 경계</b>입니다. 이 테이블 기준으로 청구 / 미청구를 구분합니다.</p>
+        <div class="scope-grid">
+            <div class="scope-col scope-in">
+                <div class="scope-head">포함 · 본 견적</div>
+                <ul>
+                    <li><b>인스타그램 운영</b>톤앤매너 세팅 + 월간 피드·릴스·스토리 기획/제작/운영 + 주간 리포트</li>
+                    <li><b>리뷰 마케팅 패키지</b>체험단 플랫폼 믹스로 네이버/쿠팡 상세페이지 리뷰 확보</li>
+                    <li><b>소규모 인플루언서 협업</b>나노·마이크로 중심 20~30명 섭외·가이드·QC</li>
+                    <li><b>메타 광고 운영</b>계정 세팅·픽셀·소재·A/B·최적화·리포팅</li>
+                </ul>
+            </div>
+            <div class="scope-col scope-out">
+                <div class="scope-head">제외 · 별도 프로젝트</div>
+                <ul>
+                    <li><b>브랜드 리빌딩 / BI 재개발</b>현 인셀라 BI는 사용 가능 상태. 재개발은 별도</li>
+                    <li><b>대형 광고·화보 촬영</b>스튜디오/모델/헤메 동원 촬영은 별도 프로젝트</li>
+                    <li><b>메타 외 유료 매체</b>네이버GFA·구글·틱톡Ads — 현 단계 메타 집중이 효율적</li>
+                </ul>
+            </div>
+            <div class="scope-col scope-opt">
+                <div class="scope-head">옵션 · 필요 시 부가</div>
+                <ul>
+                    <li><b>공동구매 채널 연계 (번외)</b>착수금 0원 · 성과 기반 수익 쉐어 (부록 A)</li>
+                    <li><b>오프라인 체험 / 팝업</b>규모별 1,500~5,000만</li>
+                    <li><b>해외 Heyday 미국 시딩</b>파일럿 800~1,500만</li>
+                    <li><b>상세페이지 전문 화보</b>1Day 기준 1,200~2,500만</li>
+                    <li><b>올영 체험단 별도 트랙</b>회차당 500~800만</li>
+                    <li><b>브랜딩·BI 리빌딩</b>3,000~8,000만</li>
+                </ul>
+            </div>
+        </div>
+        <div class="callout callout-info">라라 내부 리뷰 반영: "브랜딩/촬영/BI개발 관련 안 원했는지 애매하다"는 피드백에 대한 명확한 답 — <b>"기본은 안 들어갑니다. 필요하실 때만 옵션으로 붙입니다."</b></div>
+    </div>
+
+    <!-- 4. 예산 배분 -->
+    <div class="section" id="sec-budget">
+        <h2><span class="sec-num">04</span>본 견적 배분 (이사 배분안 2억 내)</h2>
+
+        <h3>4-1. 브랜드라이즈 본 견적 합계</h3>
+        <div class="table-scroll"><table>
+            <thead><tr><th>영역</th><th style="width: 16%">6개월 합계</th><th style="width: 14%">월 환산</th><th>해드리는 것</th></tr></thead>
+            <tbody>
+                <tr><td><b>인스타그램 운영</b></td><td>5,500만</td><td>약 917만</td><td>톤앤매너 세팅 + 월간 콘텐츠 풀사이클 + 리포팅</td></tr>
+                <tr><td><b>리뷰 마케팅 패키지</b></td><td>2,500만</td><td>일시성(2회 분할)</td><td>체험단 플랫폼 믹스로 리뷰 300~500건 확보</td></tr>
+                <tr><td><b>소규모 인플루언서 협업</b></td><td>4,500만</td><td>약 750만</td><td>나노·마이크로 20~30명 섭외·가이드·QC + 콘텐츠 비용</td></tr>
+                <tr><td><b>메타 광고 운영 Fee</b></td><td>3,000만</td><td>500만</td><td>계정·픽셀·소재·운영·리포팅 (광고비 별도)</td></tr>
+                <tr style="background: var(--accent-light); font-weight: 800;"><td><b style="color: var(--accent);">본 견적 합계</b></td><td><b style="color: var(--accent); font-size: 16px;">1.55억</b></td><td>—</td><td>VAT 별도</td></tr>
+            </tbody>
+        </table></div>
+
+        <h3>4-2. 고객 직접 집행 권장 예산 (2억 - 1.55억 = 4,500만)</h3>
+        <p>이사 배분안 2억 중 <b>브랜드라이즈 청구 1.55억</b> 외 <b>4,500만원</b>은 이사님 직접 집행을 권장드립니다. 사유는 "이 항목들은 저희 대행비가 붙는 게 비효율"이기 때문입니다.</p>
+        <div class="table-scroll"><table>
+            <thead><tr><th>항목</th><th style="width: 16%">권장 금액</th><th>사유</th></tr></thead>
+            <tbody>
+                <tr><td><b>메타 광고 실집행 광고비</b></td><td>3,000만</td><td>대행비는 운영 Fee로 분리. 실광고비는 이사님 명의 직결제가 세금계산서·ROAS 투명성 면에서 유리</td></tr>
+                <tr><td><b>체험단 플랫폼 직접 결제</b></td><td>1,000만</td><td>체험단 플랫폼들은 기업고객 직계약이 단가 더 좋음. 저희가 기획·운영하되 결제는 직</td></tr>
+                <tr><td><b>샘플·시딩 제품 원가</b></td><td>500만</td><td>원가 집행은 저희가 중간에 마진 붙이지 않음</td></tr>
+            </tbody>
+        </table></div>
+
+        <div class="kpi-grid" style="margin-top: 20px;">
+            <div class="kpi-card kpi-dark">
+                <div class="kpi-label">이사 배분안 총액</div>
+                <div class="kpi-value">2<span style="font-family: 'Pretendard Variable'; font-size: 14px; font-weight: 700;">억</span></div>
+                <div class="kpi-sub">VAT 별도 기준</div>
+            </div>
+            <div class="kpi-card kpi-accent">
+                <div class="kpi-label">브랜드라이즈 청구</div>
+                <div class="kpi-value">1.55<span style="font-family: 'Pretendard Variable'; font-size: 14px; font-weight: 700;">억</span></div>
+                <div class="kpi-sub">인스타·리뷰·인플·광고운영</div>
+            </div>
+            <div class="kpi-card kpi-soft">
+                <div class="kpi-label">고객 직접 집행</div>
+                <div class="kpi-value">4,500<span style="font-family: 'Pretendard Variable'; font-size: 14px; font-weight: 700;">만</span></div>
+                <div class="kpi-sub">광고비·체험단·샘플원가</div>
+            </div>
+            <div class="kpi-card kpi-dark">
+                <div class="kpi-label">기간</div>
+                <div class="kpi-value">6<span style="font-family: 'Pretendard Variable'; font-size: 14px; font-weight: 700;">개월</span></div>
+                <div class="kpi-sub">M1~M6 (5월~10월)</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. 세부 항목 -->
+    <div class="section" id="sec-detail">
+        <h2><span class="sec-num">05</span>세부 항목</h2>
+
+        <h3>5-1. 인스타그램 운영 — 5,500만원 (6개월)</h3>
+        <div class="callout">"바이어/MD가 봤을 때 세련된 브랜드"를 만드는 것</div>
+        <div class="table-scroll"><table>
+            <thead><tr><th style="width: 28%">하는 일</th><th>구체적 내용</th></tr></thead>
+            <tbody>
+                <tr><td>톤앤매너 세팅 (M1)</td><td>피드 그리드 설계, 컬러 팔레트, 타이포 가이드, 무드보드</td></tr>
+                <tr><td>콘텐츠 기획</td><td>월간 콘텐츠 캘린더, 릴스/세로형 중심 기획</td></tr>
+                <tr><td>콘텐츠 제작</td><td>피드 디자인, 릴스 편집, 카피라이팅, 스토리 템플릿</td></tr>
+                <tr><td>채널 운영</td><td>게시, 해시태그, 댓글 관리, DM 응대 가이드</td></tr>
+                <tr><td>성과 리포팅</td><td>주간 인사이트 + 월간 성과 리포트</td></tr>
+            </tbody>
+        </table></div>
+
+        <h3>5-2. 리뷰 마케팅 패키지 — 2,500만원 <span class="tag tag-accent">v3 신설</span></h3>
+        <div class="callout callout-danger"><b>왜 신설했나</b> — 홈뷰티 디바이스는 네이버·쿠팡 상세페이지 <b>리뷰 수가 매출 전환의 핵심 소셜프루프</b>입니다. 리뷰 0건 상태로 5/29 네이버 라이브에 들어가면 유입이 와도 전환이 안 빠집니다.<br><b>KPI</b>: 6개월 누적 <b>네이버·쿠팡 리뷰 300~500건</b> (플랫폼 믹스·단가 협상 결과에 따라 조정)</div>
+
+        <h4>체험단 플랫폼 비교 (2026-04 기준 추정)</h4>
+        <div class="table-scroll"><table>
+            <thead><tr><th>플랫폼</th><th>주 이용층</th><th>회차당 예상 단가</th><th>리뷰당 단가(추정)</th><th>심사기간</th><th>카테고리 적합성</th><th>특징</th></tr></thead>
+            <tbody>
+                <tr><td><b>셀피패스</b></td><td>일반 체험단 대량</td><td>150~250만</td><td>약 1~2만원</td><td>3~5일</td><td><span class="tag tag-accent">★★★★</span> 뷰티 디바이스 활발</td><td><b>저단가 대량 리뷰 확보</b>. 위타민 대표님도 활용. 네이버 리뷰 빠르게 수량 채우기 유리</td></tr>
+                <tr><td><b>레뷰(Revu)</b></td><td>프리미엄 체험단</td><td>300~500만</td><td>약 3~5만원</td><td>5~7일</td><td><span class="tag tag-accent">★★★★☆</span> 가전·뷰티 밸런스</td><td>체험단 수준 높고 리뷰 품질 안정. 디바이스 후기 신뢰도 높음</td></tr>
+                <tr><td><b>디너의여왕</b></td><td>뷰티·라이프스타일</td><td>250~400만</td><td>약 2~4만원</td><td>5~7일</td><td><span class="tag tag-accent">★★★★</span> 뷰티 전문</td><td>뷰티 카테고리 최적화. 블로그·인스타 후기 동시 확보</td></tr>
+                <tr><td><b>놀러와</b></td><td>체험단·콘텐츠 혼합</td><td>200~350만</td><td>약 2~3만원</td><td>4~6일</td><td><span class="tag tag-light">★★★</span> 생활가전 위주</td><td>중단가·중품질. 리뷰 수량 보조용</td></tr>
+            </tbody>
+        </table></div>
+        <p style="font-size: 12px; color: var(--text-light); margin-top: 4px;"><i>2026년 4월 기준 공개 정보·업계 통용 수치 기반 추정치. 최종 단가는 플랫폼 협상 후 확정됩니다.</i></p>
+
+        <h4>우리 제안: 플랫폼 믹스 운용 (단일 플랫폼 올인은 리스크)</h4>
+        <div class="platform-grid">
+            <div class="platform-card featured">
+                <div class="pf-rank">#1 베이스</div>
+                <div class="pf-name">셀피패스</div>
+                <div class="pf-pct">40<span style="font-size: 16px;">%</span></div>
+                <div class="pf-amt">1,000만원</div>
+                <div class="pf-role">리뷰 수량 확보 베이스<br>네이버 리뷰 100~150건</div>
+            </div>
+            <div class="platform-card">
+                <div class="pf-rank">#2 품질</div>
+                <div class="pf-name">레뷰</div>
+                <div class="pf-pct">30<span style="font-size: 16px;">%</span></div>
+                <div class="pf-amt">750만원</div>
+                <div class="pf-role">품질 리뷰 확보<br>고관여·상세후기 80~120건</div>
+            </div>
+            <div class="platform-card">
+                <div class="pf-rank">#3 타깃</div>
+                <div class="pf-name">디너의여왕</div>
+                <div class="pf-pct">20<span style="font-size: 16px;">%</span></div>
+                <div class="pf-amt">500만원</div>
+                <div class="pf-role">뷰티 타깃 정합성<br>블로그+인스타 50~80건</div>
+            </div>
+            <div class="platform-card">
+                <div class="pf-rank">#4 보조</div>
+                <div class="pf-name">놀러와</div>
+                <div class="pf-pct">10<span style="font-size: 16px;">%</span></div>
+                <div class="pf-amt">250만원</div>
+                <div class="pf-role">회차별 물량 밀어내기<br>보조</div>
+            </div>
+        </div>
+        <div class="callout callout-danger"><b>법적 요건</b>: 모든 리뷰·체험단 콘텐츠에 "유료 광고 포함" / "체험단 제공받아 작성" 표기 필수. 리뷰 가이드에 <b>의료기기 오인 표현·질병 치료 표현 금지 문구</b>를 사전 배포합니다. (체크리스트는 계약 후 킥오프 자료로 제공)</div>
+
+        <h3>5-3. 소규모 인플루언서 협업 — 4,500만원 <span class="tag tag-light">v2 9,000만 → 축소</span></h3>
+        <p>v2의 "100명 대규모"는 본 견적에서 축소. 남은 예산은 리뷰 마케팅·직접 집행으로 재배치했습니다.</p>
+        <div class="table-scroll"><table>
+            <thead><tr><th>티어</th><th>팔로워</th><th>단가 범위</th><th>인원</th><th>소계</th></tr></thead>
+            <tbody>
+                <tr><td>미드</td><td>3~10만</td><td>100~200만</td><td>3명</td><td>450만</td></tr>
+                <tr><td>마이크로</td><td>1~3만</td><td>30~80만</td><td>15명</td><td>900만</td></tr>
+                <tr><td>나노</td><td>1만 이하</td><td>10~30만</td><td>15명</td><td>300만</td></tr>
+                <tr><td colspan="4">기획·섭외·가이드·QC·재활용 편집</td><td>2,850만</td></tr>
+                <tr style="background: var(--accent-light); font-weight: 800;"><td colspan="3"><b>합계</b></td><td><b>33명</b></td><td><b>4,500만</b></td></tr>
+            </tbody>
+        </table></div>
+        <div class="callout"><b>포인트</b>: 원본 UGC를 받아서 <b>메타 광고 소재로 재활용</b>하는 구조를 기본값으로 설계합니다. (별도 저작권 계약서 포함)</div>
+
+        <h3>5-4. 메타 광고 운영 Fee — 3,000만원 (6개월 Fee)</h3>
+        <div class="callout callout-info">광고비 3,000만(별도 집행) + Fee 3,000만(저희 청구). <b>Fee 비율 = 광고비의 100%</b>가 아니라, 6개월 운영 총 Fee 3,000만으로 <b>월 500만 고정 Fee</b> 구조입니다.</div>
+        <div class="table-scroll"><table>
+            <thead><tr><th style="width: 28%">하는 일</th><th>구체적 내용</th></tr></thead>
+            <tbody>
+                <tr><td>계정 세팅</td><td>광고 계정, 픽셀 설치, 전환 이벤트 세팅</td></tr>
+                <tr><td>캠페인 설계</td><td>타겟 오디언스, 미디어 믹스, 예산 배분</td></tr>
+                <tr><td>소재 제작</td><td>인스타 콘텐츠·인플루언서 UGC → 광고용 편집, A/B 테스트</td></tr>
+                <tr><td>최적화</td><td>타겟·소재·배치 최적화, 리타겟팅 세팅</td></tr>
+                <tr><td>리포팅</td><td>주간 광고 리포트 + 월간 ROAS 리뷰</td></tr>
+            </tbody>
+        </table></div>
+    </div>
+
+    <!-- 6. 월별 산출물 -->
+    <div class="section" id="sec-monthly">
+        <h2><span class="sec-num">06</span>월별 산출물 테이블 (M1~M6)</h2>
+        <div class="callout callout-danger"><b>라라 피드백 "작업기간/산출물 모호" 직접 대응</b>. 아래 숫자가 <b>계약서 부속 KPI</b>로 들어갑니다.</div>
+        <div class="table-scroll"><table class="month-table">
+            <thead><tr><th>월</th><th>인스타 피드</th><th>인스타 릴스</th><th>스토리</th><th>광고 운영</th><th>인플 컨택/집행</th><th>리뷰 확보(누적)</th></tr></thead>
+            <tbody>
+                <tr><td>M1 (5월)</td><td>10개</td><td>4개</td><td>20개</td><td>픽셀·이벤트 세팅 + 소재 3안 테스트</td><td>10명 / 5명</td><td>30~50건</td></tr>
+                <tr><td>M2 (6월)</td><td>12개</td><td>5개</td><td>25개</td><td>소재 A/B 5안 / 예산 운용</td><td>8명 추가 집행</td><td>80~130건</td></tr>
+                <tr><td>M3 (7월)</td><td>12개</td><td>6개</td><td>25개</td><td>ROAS 기준선 확보, 타겟 최적화</td><td>5명 + UGC 재활용</td><td>150~230건</td></tr>
+                <tr><td>M4 (8월)</td><td>12개</td><td>5개</td><td>25개</td><td>성과소재 스케일업</td><td>5명 집행</td><td>220~320건</td></tr>
+                <tr><td>M5 (9월)</td><td>12개</td><td>5개</td><td>25개</td><td>리타겟팅 본격화</td><td>5명 집행</td><td>280~420건</td></tr>
+                <tr><td>M6 (10월)</td><td>12개</td><td>5개</td><td>25개</td><td>풀 리포트 + 스케일업 제안</td><td>5명 (앵커급 1)</td><td><b>300~500건</b></td></tr>
+                <tr class="month-total"><td>합계</td><td>70개</td><td>30개</td><td>145개</td><td>—</td><td>33명 집행</td><td>300~500건</td></tr>
+            </tbody>
+        </table></div>
+    </div>
+
+    <!-- 7. 간트 -->
+    <div class="section" id="sec-gantt">
+        <h2><span class="sec-num">07</span>주차별 마일스톤 간트 (계약 ~ 5/29 라이브 D-day 역산)</h2>
+        <p><b>37일 안에 무엇을 끝내야 하는가</b>. 주차별 W1~W6.</p>
+        <div class="gantt-wrap">
+            <div class="gantt">
+                <div class="gantt-row gantt-head">
+                    <div class="gcell">주차</div>
+                    <div class="gcell">기간</div>
+                    <div class="gcell">인스타 / 리뷰</div>
+                    <div class="gcell">인플루언서</div>
+                    <div class="gcell">메타 광고</div>
+                    <div class="gcell">D-day</div>
+                    <div class="gcell gc-dday">카운트</div>
+                </div>
+                <div class="gantt-row">
+                    <div class="gcell gc-week">W1</div>
+                    <div class="gcell">4/23~4/29</div>
+                    <div class="gcell">계약·킥오프 / 톤앤매너 드래프트 / 플랫폼 3곳 견적 확정</div>
+                    <div class="gcell">1차 리스트업 30명</div>
+                    <div class="gcell">광고계정·픽셀 세팅</div>
+                    <div class="gcell">사전작업</div>
+                    <div class="gcell gc-dday">D-30</div>
+                </div>
+                <div class="gantt-row">
+                    <div class="gcell gc-week">W2</div>
+                    <div class="gcell">4/30~5/6</div>
+                    <div class="gcell">톤앤매너 확정 / 첫 피드 4개 라이브 / 셀피패스·레뷰 런칭</div>
+                    <div class="gcell">미드 1명·마이크로 5명 섭외</div>
+                    <div class="gcell">첫 소재 3안 준비</div>
+                    <div class="gcell">소재 준비</div>
+                    <div class="gcell gc-dday">D-23</div>
+                </div>
+                <div class="gantt-row">
+                    <div class="gcell gc-week">W3</div>
+                    <div class="gcell">5/7~5/13</div>
+                    <div class="gcell">피드 누적 8개 / 릴스 1~2개 / 체험단 제품 발송·후기 수거 시작</div>
+                    <div class="gcell">제품 발송·가이드 전달</div>
+                    <div class="gcell">테스트 캠페인 ON</div>
+                    <div class="gcell">리뷰 수거 시작</div>
+                    <div class="gcell gc-dday">D-16</div>
+                </div>
+                <div class="gantt-row">
+                    <div class="gcell gc-week">W4</div>
+                    <div class="gcell">5/14~5/20</div>
+                    <div class="gcell">피드 누적 12개 / 릴스 3개 / <b>네이버 리뷰 30건 돌파</b></div>
+                    <div class="gcell">첫 콘텐츠 수령·QC</div>
+                    <div class="gcell">A/B 1차 학습</div>
+                    <div class="gcell">리뷰 30건</div>
+                    <div class="gcell gc-dday">D-9</div>
+                </div>
+                <div class="gantt-row">
+                    <div class="gcell gc-week">W5</div>
+                    <div class="gcell">5/21~5/27</div>
+                    <div class="gcell">라이브 예고 콘텐츠 집중 / <b>리뷰 50건 목표</b></div>
+                    <div class="gcell">UGC 광고 소재 재가공</div>
+                    <div class="gcell">라이브 전용 리타겟팅 ON</div>
+                    <div class="gcell">리뷰 50건</div>
+                    <div class="gcell gc-dday">D-2</div>
+                </div>
+                <div class="gantt-row gantt-dday">
+                    <div class="gcell gc-week">W6</div>
+                    <div class="gcell">5/28~5/29</div>
+                    <div class="gcell"><b>라이브 당일 실시간 대응</b> / 리뷰 소셜프루프 상세페이지 반영</div>
+                    <div class="gcell">라이브 전/중/후 후기</div>
+                    <div class="gcell">라이브 시점 예산 집중</div>
+                    <div class="gcell"><b>D-DAY</b></div>
+                    <div class="gcell gc-dday">5/29</div>
+                </div>
+            </div>
+        </div>
+        <div class="callout callout-info">간트는 계약 후 Notion·Google Sheet에 실물 파일로 옮기고, 매주 금요일 주간 리포트로 업데이트합니다.</div>
+    </div>
+
+    <!-- 8. 결제 구조 -->
+    <div class="section" id="sec-payment">
+        <h2><span class="sec-num">08</span>결제 구조 재계산</h2>
+        <div class="table-scroll"><table>
+            <thead><tr><th style="width: 22%">시점</th><th style="width: 18%">금액</th><th>해당 범위</th></tr></thead>
+            <tbody>
+                <tr><td>계약 시 (W1)</td><td>5,500만</td><td>Phase 1 (M1~M2): 인스타 세팅 초기 + 리뷰 마케팅 1차 집행 + 광고 세팅 + 인플 1차</td></tr>
+                <tr><td>M3 시작 시 (7월)</td><td>5,000만</td><td>Phase 2 (M3~M4): 인스타 운영 + 리뷰 2차 + 인플 2차 + 광고 최적화</td></tr>
+                <tr><td>M5 시작 시 (9월)</td><td>5,000만</td><td>Phase 3 (M5~M6): 운영 + 스케일 + 최종 리포트</td></tr>
+                <tr style="background: var(--accent-light); font-weight: 800;"><td><b style="color: var(--accent);">브랜드라이즈 합계</b></td><td><b style="color: var(--accent);">1.55억</b></td><td>VAT 별도</td></tr>
+                <tr><td>(참고) 고객 직접 집행</td><td>4,500만</td><td>메타 광고비 + 체험단 직결제 + 샘플 원가</td></tr>
+                <tr style="background: var(--muted); font-weight: 700;"><td>(참고) 이사 배분안 총액</td><td><b>2억</b></td><td>—</td></tr>
+            </tbody>
+        </table></div>
+    </div>
+
+    <!-- 9. 일하는 방식 -->
+    <div class="section" id="sec-rhythm">
+        <h2><span class="sec-num">09</span>일하는 방식</h2>
+        <h3>주간 리듬</h3>
+        <div class="table-scroll"><table>
+            <thead><tr><th style="width: 12%">요일</th><th>내용</th></tr></thead>
+            <tbody>
+                <tr><td><b>월</b></td><td>주간 미팅 30분 — 이번 주 할 일·지난 주 성과</td></tr>
+                <tr><td><b>수</b></td><td>중간 체크 — 콘텐츠 시안·진행 상황</td></tr>
+                <tr><td><b>금</b></td><td>주간 리포트 — 숫자 + 인사이트 + 다음 주 계획</td></tr>
+            </tbody>
+        </table></div>
+        <h3>월간 산출물</h3>
+        <ul>
+            <li>월간 성과 리포트(인스타 + 리뷰 + 인플루언서 + 광고 통합)</li>
+            <li>다음 달 콘텐츠 캘린더</li>
+            <li>인플루언서·리뷰 효율 분석</li>
+            <li>비용 집행 내역(직접 집행분 포함 투명 공유)</li>
+        </ul>
+    </div>
+
+    <!-- 10. 경쟁사 -->
+    <div class="section" id="sec-compete">
+        <h2><span class="sec-num">10</span>경쟁사 포지셔닝</h2>
+        <div class="table-scroll"><table>
+            <thead><tr><th style="width: 16%">브랜드</th><th style="width: 34%">전략</th><th>우리 시사점</th></tr></thead>
+            <tbody>
+                <tr><td><b>메디큐브(APR)</b></td><td>자체 콘텐츠 + 대규모 광고비</td><td>같은 판 정면승부 금지 → 콘텐츠 퀄리티·UGC 재활용</td></tr>
+                <tr><td><b>톰뷰티</b></td><td>시딩→공구→입소문</td><td>인셀라 롤모델. 단 공구는 번외로 분리 집행</td></tr>
+                <tr><td><b>듀얼소닉</b></td><td>의료기기 기술 마케팅</td><td>기술 스토리 유사. "세련된 브랜딩"에서 차별화</td></tr>
+            </tbody>
+        </table></div>
+        <div class="verdict">
+            <div class="label">인셀라 포지션</div>
+            <div class="value">"25년 의료기기 기술 + 세련된 뷰티 브랜딩 + 리뷰 소셜프루프"</div>
+        </div>
+    </div>
+
+    <!-- 11. Quick Win -->
+    <div class="section" id="sec-quickwin">
+        <h2><span class="sec-num">11</span>Quick Win — 계약 전 먼저 드리는 것</h2>
+        <p>큐티프로 EMS 패치+리프팅밴드 "캡슐 구조"를 릴스 한 편으로 보여주는 스크립트:</p>
+        <div class="script-block">
+            <div class="concept">컨셉 · 뷰티 디바이스계의 프린터 잉크 모델</div>
+            <div><span class="tag-line">[Hook]</span>"이 디바이스, 한 번 사면 계속 돈 쓰게 됩니다"</div>
+            <div><span class="tag-line">[반전]</span>"근데 이게 칭찬입니다"</div>
+            <div><span class="tag-line">[설명]</span>큐티프로 본체 → 캡슐 교체 장면 (ASMR 클로즈업)</div>
+            <div><span class="tag-line">[포인트]</span>"프린터는 잉크로 돈 벌고, 큐티프로는 캡슐로 피부 관리"</div>
+            <div><span class="tag-line">[CTA]</span>"캡슐 하나로 전문 에스테틱 한 번"</div>
+        </div>
+    </div>
+
+    <!-- 12. 자산 누적 -->
+    <div class="section" id="sec-assets">
+        <h2><span class="sec-num">12</span>6개월 뒤 쌓이는 자산</h2>
+        <div class="table-scroll"><table>
+            <thead><tr><th>자산</th><th style="width: 22%">수량</th><th>활용처</th></tr></thead>
+            <tbody>
+                <tr><td>인스타 피드/릴스</td><td><b>100개+</b></td><td>브랜드 채널, 광고 소재, 바이어 미팅</td></tr>
+                <tr><td>인플루언서 원본 UGC</td><td><b>33명분</b></td><td>2차 활용(광고·상세페이지·PR)</td></tr>
+                <tr style="background: var(--accent-light);"><td><b style="color: var(--accent);">네이버/쿠팡 리뷰</b></td><td><b style="color: var(--accent);">300~500건</b></td><td>상세페이지 소셜프루프, 전환율 상승</td></tr>
+                <tr><td>브랜드 가이드</td><td>1식</td><td>인하우스 운영·외부 협업 기준</td></tr>
+                <tr><td>광고 소재·타겟 학습 데이터</td><td>1식</td><td>픽셀 숙성·ROAS 기준선</td></tr>
+                <tr><td>6개월 풀 리포트</td><td>1식</td><td>ROI 증명, 투자자 보고, 스케일업 판단</td></tr>
+            </tbody>
+        </table></div>
+    </div>
+
+    <!-- 13. FAQ -->
+    <div class="section" id="sec-faq">
+        <h2><span class="sec-num">13</span>자주 묻는 질문</h2>
+
+        <div class="faq-item faq-new">
+            <div class="faq-q">공동구매는 왜 본 견적에서 빠졌나요?</div>
+            <div class="faq-a">공동구매는 <b>착수금+고정Fee 구조보다 성과 기반 수익 쉐어 구조가 이사님과 저희 양쪽에 유리</b>하다는 판단입니다. 셀러가 "된다"고 봤을 때만 매칭이 성사되는 구조라, 고정비로 받으면 성사 불확실한 금액을 미리 드리는 셈이 됩니다. 부록 A의 번외 협업안으로 성과 쉐어 0원 선진입 구조를 제시드립니다.</div>
+        </div>
+
+        <div class="faq-item faq-new">
+            <div class="faq-q">체험단(리뷰 마케팅)과 인플루언서 협업은 어떻게 다른가요?</div>
+            <div class="faq-a">용도가 다릅니다.<br>· <b>체험단(리뷰 마케팅) = 리뷰 확보</b>: 네이버·쿠팡 상세페이지 리뷰 수를 채워서 <b>전환율</b>을 올리는 목적. 대량·저단가·템플릿형.<br>· <b>인플루언서 협업 = 콘텐츠 확산</b>: 타깃 팔로워에게 <b>브랜드 인지·신뢰</b>를 심는 목적. 소수·고단가·맞춤형.<br>둘 다 필요하지만, 지금 인셀라는 리뷰 0건이라 <b>체험단 비중이 먼저</b>입니다.</div>
+        </div>
+
+        <div class="faq-item faq-new">
+            <div class="faq-q">브랜딩 / BI 개발도 할 수 있나요?</div>
+            <div class="faq-a">네, 가능합니다. 다만 본 견적에는 포함하지 않았습니다. 현재 인셀라 BI는 사용 가능한 상태라 판단해서 <b>"옵션으로 별도 견적"</b> 구조로 뺐습니다. 필요하신 시점에 3,000~8,000만 범위로 별도 제안드리겠습니다. (3-3 옵션 테이블 참조)</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">공구 매출이 안 나오면요?</div>
+            <div class="faq-a">부록 A 번외 협업안 기준 답변: 공구 셀러 매칭은 실적 기반입니다. 셀러가 "이 제품은 안 된다"고 판단하면 매칭이 안 되고, 매칭이 됐다는 건 셀러도 "되겠다"고 본 겁니다. <b>성과 쉐어 구조라 고정비 리스크 0</b>입니다.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">인스타 운영을 나중에 인하우스로 가져갈 수 있나요?</div>
+            <div class="faq-a">네. 6개월간 브랜드 가이드·콘텐츠 캘린더 템플릿·해시태그 전략서를 드리므로, 인하우스 마케터 채용 시 바로 인수인계 가능합니다.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">Phase 단위로 끊을 수 있나요?</div>
+            <div class="faq-a">Phase 1(2개월) 완료 후 성과 보고 Phase 2 진행 여부를 결정하실 수 있습니다. 다만 6개월 풀 계약 시 전략 연속성·가격 효율이 훨씬 좋습니다.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">의료기기·화장품 광고 표시법 리스크는요?</div>
+            <div class="faq-a">체험단 리뷰·인플루언서 콘텐츠·광고 소재 전부 <b>게재 전 사전 검수 체크리스트</b>를 운영합니다. "주름 개선·질병 치료" 같은 금지 표현은 가이드 단계에서 사전 차단합니다. (식약처 표시광고 기준 기반)</div>
+        </div>
+    </div>
+
+    <!-- 14. 다음 스텝 -->
+    <div class="section" id="sec-next">
+        <h2><span class="sec-num">14</span>다음 스텝</h2>
+        <div class="table-scroll"><table>
+            <thead><tr><th style="width: 22%">일정</th><th>내용</th></tr></thead>
+            <tbody>
+                <tr><td><b style="color: var(--accent);">오늘(4/22)</b></td><td>v3 제안서·견적서 송부 — 이사님 당일 검토</td></tr>
+                <tr><td>4/23~24</td><td>계약서 초안 송부·검토</td></tr>
+                <tr><td><b>4/28(월)</b></td><td>계약 서명 목표</td></tr>
+                <tr><td>4/29~30</td><td>킥오프 (Zoom 또는 대면) — 톤앤매너 착수, 플랫폼 3곳 견적 확정</td></tr>
+                <tr style="background: var(--accent-light);"><td><b style="color: var(--accent);">5/29(목)</b></td><td><b>네이버 라이브 — 사전 버즈·리뷰 소셜프루프 완료 상태로 진입</b></td></tr>
+            </tbody>
+        </table></div>
+        <div class="callout">궁금하신 점이나 조율할 부분 있으시면 편하게 말씀 주세요.<br>오늘 합의 기반으로 이 문서가 <b>계약서 부속 문서</b>가 됩니다.</div>
+    </div>
+
+    <!-- 부록 A -->
+    <div class="appendix" id="sec-appendix">
+        <div class="appendix-badge">부록 A · OPTIONAL · 번외</div>
+        <h2 style="font-size: 22px; font-weight: 800; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 2px solid var(--accent);">공동구매 성과 쉐어 협업안 (번외)</h2>
+        <div class="callout callout-danger"><b>본 견적과 별개</b>입니다. 본 계약과 독립된 별도 MOU 형태로 진행합니다.<br>이사님 부담 <b>착수금 0원</b>, 성과 발생 시에만 수익 쉐어가 발생하는 구조입니다.</div>
+
+        <h3>A-1. 구조</h3>
+        <div class="table-scroll"><table>
+            <thead><tr><th style="width: 22%">항목</th><th>내용</th></tr></thead>
+            <tbody>
+                <tr><td>대상</td><td>뷰티 디바이스 카테고리 공동구매 채널 3~5곳 (홈쇼핑·SNS 셀러 포함)</td></tr>
+                <tr><td>착수금</td><td><b>0원</b> (본 견적과 분리)</td></tr>
+                <tr><td>정산 방식</td><td>실제 공구 순매출 기준 <b>수익 쉐어 X%</b> (업계 관행 3~7% 범위, 계약 시 확정)</td></tr>
+                <tr><td>계약 기간</td><td>본 견적 계약 기간 내 동시 운영 (6개월)</td></tr>
+            </tbody>
+        </table></div>
+
+        <h3>A-2. 브랜드라이즈가 하는 일 (번외 스콥)</h3>
+        <ul>
+            <li>공동구매 채널 후보 리스트업 + 실적·카테고리 적합도 검증</li>
+            <li>채널과의 매칭·협상·조건 조율</li>
+            <li>공구 전용 콘텐츠 기획 지원 (본 견적 콘텐츠와 별개로 채널별 맞춤)</li>
+            <li>공구 진행 중 상세페이지 감수</li>
+            <li>공구 종료 후 성과 리포트 + 재진행 판단 자료</li>
+        </ul>
+
+        <h3>A-3. 왜 번외로 뺐는가</h3>
+        <ul>
+            <li><b>고정비 부담 없음</b>: 성과 불확실한 금액을 선지급할 필요 없음</li>
+            <li><b>이해관계 일치</b>: 저희는 매출이 나야 수익이 나므로, 매출에 가장 유리한 채널만 제안</li>
+            <li><b>본 견적 KPI 오염 방지</b>: 공구는 매출 변동성이 커서 본 견적 KPI(인스타·리뷰·광고)와 섞이면 해석이 어려움</li>
+        </ul>
+
+        <h3>A-4. 이 번외안을 진행하려면</h3>
+        <ul>
+            <li>별도 MOU 1페이지 서명 (쉐어율 X%, 정산주기, 감사권 포함)</li>
+            <li>본 견적 계약서와 같은 날 체결 또는 이후 추가 체결 모두 가능</li>
+        </ul>
+    </div>
+
+</div>
+
+<div class="footer">
+    <b>BRANDRISE</b> × INCELLA | 스타트업을 위한 마케팅 코칭 파트너<br>
+    문의: 우성민 / 이 문서는 2026-04-22 견적콜 합의 기반 <b>v3 최종안</b>입니다.
+</div>
+
+<script>
+// Scroll progress bar
+(function(){
+    var bar = document.getElementById('progressBar');
+    function onScroll(){
+        var h = document.documentElement;
+        var b = document.body;
+        var st = 'scrollTop';
+        var sh = 'scrollHeight';
+        var pct = (h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight) * 100;
+        bar.style.width = Math.min(pct, 100) + '%';
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+})();
+</script>
+
+</body>
+</html>
