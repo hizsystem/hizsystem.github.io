@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>댄싱컵 2026 마케팅 리테이너 + 여름 캠페인 견적서 — 브랜드라이즈</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Noto Sans KR', -apple-system, sans-serif; background: #f4f7f9; color: #1a1b18; line-height: 1.7; font-size: 14px; }
+
+.toolbar { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: #0D0D0D; height: 56px; display: flex; align-items: center; justify-content: space-between; padding: 0 32px; }
+.toolbar-left { display: flex; align-items: center; gap: 16px; }
+.toolbar-logo { font-size: 13px; font-weight: 700; color: #EA580C; letter-spacing: 0.05em; }
+.toolbar-sep { width: 1px; height: 20px; background: rgba(255,255,255,0.15); }
+.toolbar-title { font-size: 14px; font-weight: 500; color: #fff; }
+.toolbar-actions { display: flex; gap: 10px; }
+.btn-toolbar { padding: 7px 18px; border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; background: transparent; color: #fff; font-size: 12px; font-weight: 500; cursor: pointer; transition: all 0.2s; }
+.btn-toolbar:hover { background: rgba(255,255,255,0.1); }
+
+.container { max-width: 900px; margin: 0 auto; padding: 80px 24px 60px; }
+
+/* HEADER */
+.report-header { background: #fff; border-radius: 12px; padding: 40px; margin-bottom: 20px; border: 1px solid #e8edf1; }
+.report-header .label { font-size: 11px; font-weight: 700; color: #EA580C; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 14px; }
+.report-header h1 { font-size: 36px; font-weight: 900; line-height: 1.35; letter-spacing: -0.02em; margin-bottom: 0; }
+.report-header h1 em { color: #EA580C; font-style: normal; }
+.meta-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 28px; padding-top: 24px; border-top: 1px solid #e8edf1; }
+.meta-item .mk { font-size: 11px; color: #999; letter-spacing: 0.04em; margin-bottom: 4px; }
+.meta-item .mv { font-size: 13px; font-weight: 600; }
+
+/* MISSION */
+.mission-box { background: #0D0D0D; color: #fff; border-radius: 12px; padding: 36px 40px; margin-bottom: 20px; }
+.mission-box .ml { font-size: 11px; font-weight: 700; color: #EA580C; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 14px; }
+.mission-box h2 { font-size: 22px; font-weight: 800; line-height: 1.4; margin-bottom: 18px; color: #fff; }
+.mission-box h2 em { color: #EA580C; font-style: normal; }
+.mission-box p { font-size: 13px; color: rgba(255,255,255,0.65); line-height: 1.9; }
+.mission-box p + p { margin-top: 10px; }
+
+/* SECTION */
+.section { background: #fff; border-radius: 12px; padding: 32px 40px; margin-bottom: 20px; border: 1px solid #e8edf1; }
+.section h2 { font-size: 18px; font-weight: 800; margin-bottom: 16px; }
+
+/* PART (MONTH) HEADER */
+.part-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 20px; gap: 20px; }
+.part-header-l { flex: 1; }
+.part-header h3 { font-size: 18px; font-weight: 800; margin-bottom: 6px; }
+.part-header h3 em { color: #EA580C; font-style: normal; }
+.part-mission { font-size: 13px; color: #636569; line-height: 1.75; }
+.part-price { font-size: 22px; font-weight: 900; color: #EA580C; white-space: nowrap; }
+
+/* TABLE */
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th { background: #f8fafb; padding: 10px 16px; font-weight: 600; border-bottom: 2px solid #e8edf1; color: #999; font-size: 11px; text-align: left; white-space: nowrap; }
+th:last-child { text-align: right; }
+td { padding: 14px 16px; border-bottom: 1px solid #f0f2f5; vertical-align: middle; }
+td.item { font-weight: 600; color: #1a1b18; width: 190px; }
+td.desc { color: #636569; font-size: 12px; line-height: 1.65; }
+td.amount { text-align: right; font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; width: 110px; }
+tr:hover td { background: #fafbfc; }
+tr.block-row td { background: #fbf8f3; color: #EA580C; font-size: 11px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; padding: 8px 16px; }
+tr.subtotal-row td { background: #f8fafb; font-weight: 700; border-top: 1px solid #e8edf1; }
+
+/* KPI GRID */
+.kpi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.kpi-card { background: #f8fafb; border-radius: 10px; padding: 24px 20px; text-align: center; border: 1px solid #e8edf1; }
+.kpi-card .kc-label { font-size: 11px; color: #999; font-weight: 500; letter-spacing: 0.05em; margin-bottom: 8px; }
+.kpi-card .kc-value { font-size: 26px; font-weight: 900; color: #1a1b18; letter-spacing: -0.02em; }
+.kpi-card .kc-unit { font-size: 14px; font-weight: 500; color: #999; }
+.kpi-card .kc-desc { font-size: 11px; color: #999; margin-top: 6px; }
+.kpi-card.dark { background: #0D0D0D; border-color: #0D0D0D; }
+.kpi-card.dark .kc-label { color: #EA580C; }
+.kpi-card.dark .kc-value { color: #fff; }
+.kpi-card.dark .kc-value em { color: #EA580C; font-style: normal; }
+.kpi-card.dark .kc-desc { color: rgba(255,255,255,0.4); }
+
+/* GOAL GRID */
+.goal-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 18px; }
+.goal-card { background: #f8fafb; border-radius: 8px; padding: 14px 16px; border: 1px solid #e8edf1; }
+.goal-card .gl { font-size: 10px; color: #EA580C; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 4px; }
+.goal-card .gv { font-size: 12px; font-weight: 600; color: #1a1b18; line-height: 1.55; }
+
+/* TOTAL BOX */
+.total-box { background: #0D0D0D; border-radius: 12px; padding: 32px 40px; margin-bottom: 20px; display: flex; align-items: center; justify-content: space-between; }
+.total-box .tl { font-size: 15px; font-weight: 600; color: #fff; }
+.total-box .ts { font-size: 12px; color: rgba(255,255,255,0.3); margin-top: 4px; }
+.total-box .ta { font-size: 40px; font-weight: 900; color: #fff; letter-spacing: -0.03em; }
+.total-box .ta span { font-size: 16px; font-weight: 600; }
+
+/* INFO BOX (납품물) */
+.info-box { background: #FFF7ED; border-left: 4px solid #EA580C; border-radius: 0 8px 8px 0; padding: 18px 22px; margin-top: 18px; font-size: 12.5px; color: #636569; line-height: 1.85; }
+.info-box strong { color: #1a1b18; display: block; margin-bottom: 6px; font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; color: #EA580C; }
+.info-box ul { margin: 0; padding-left: 16px; }
+.info-box li { margin: 2px 0; }
+
+/* NOTE GRID */
+.note-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+.note-item { font-size: 12px; color: #636569; line-height: 1.85; padding: 18px 22px; background: #f8fafb; border-radius: 10px; border: 1px solid #e8edf1; }
+.note-item strong { color: #1a1b18; display: block; margin-bottom: 4px; font-size: 13px; }
+
+/* LEAD TIME TABLE */
+.lead-table td.item { width: 200px; white-space: nowrap; }
+.lead-table td.lead-value { font-weight: 700; color: #EA580C; font-variant-numeric: tabular-nums; width: 130px; white-space: nowrap; }
+
+/* BADGE */
+.badge { display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 20px; background: #FFF7ED; color: #EA580C; margin-left: 8px; vertical-align: middle; }
+.badge-dark { background: #0D0D0D; color: #fff; }
+
+/* FOOTER */
+.footer { text-align: center; padding: 40px 0; color: #999; font-size: 12px; line-height: 2; }
+.footer .brand { font-size: 15px; font-weight: 800; color: #1a1b18; margin-bottom: 4px; }
+
+@media (max-width: 768px) {
+  .container { padding: 70px 16px 40px; }
+  .report-header { padding: 28px 24px; }
+  .report-header h1 { font-size: 26px; }
+  .meta-grid { grid-template-columns: repeat(2, 1fr); }
+  .kpi-grid { grid-template-columns: 1fr; }
+  .goal-grid { grid-template-columns: repeat(2, 1fr); }
+  .note-grid { grid-template-columns: 1fr; }
+  .section { padding: 24px 20px; }
+  .part-header { flex-direction: column; gap: 12px; }
+  .total-box { flex-direction: column; text-align: center; gap: 16px; }
+  .mission-box { padding: 26px 24px; }
+  td.item { width: auto; white-space: normal; }
+  td.amount { width: auto; }
+}
+@media print {
+  .toolbar { display: none; }
+  .container { padding: 20px; }
+  body { background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .section { break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="toolbar-left">
+    <div class="toolbar-logo">BRANDRISE</div>
+    <div class="toolbar-sep"></div>
+    <div class="toolbar-title">댄싱컵 2026 마케팅 리테이너 + 여름 캠페인 견적서</div>
+  </div>
+  <div class="toolbar-actions">
+    <button class="btn-toolbar" onclick="window.print()">PDF 저장</button>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <div class="report-header">
+    <div class="label">댄싱컵 × 브랜드라이즈</div>
+    <h1>2026 <em>마케팅 리테이너</em><br>+ 여름 신메뉴 캠페인 견적서</h1>
+    <div class="meta-grid">
+      <div class="meta-item">
+        <div class="mk">공급자</div>
+        <div class="mv">브랜드라이즈 by HIZ</div>
+      </div>
+      <div class="meta-item">
+        <div class="mk">수신</div>
+        <div class="mv">(주)위드런 · 댄싱컵</div>
+      </div>
+      <div class="meta-item">
+        <div class="mk">기준일</div>
+        <div class="mv">2026. 04. 22</div>
+      </div>
+      <div class="meta-item">
+        <div class="mk">유효기간</div>
+        <div class="mv">발행일로부터 30일</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MISSION -->
+  <div class="mission-box">
+    <div class="ml">Mission</div>
+    <h2>“<em>딥라떼</em>(정체성) + <em>트렌드 캐치</em>(화제성)” 투트랙 가동</h2>
+    <p>딥라떼가 돌면 댄싱컵은 “라떼가 맛있는 집”으로 기억되고, 트렌드 캐치가 돌면 “여기 또 뭐 나왔대”로 재방문이 붙습니다. 이 두 바퀴가 동시에 굴러가는 구조를 3개월 안에 완성합니다.</p>
+    <p>인스타·틱톡·X 3채널 동시 가동, 경상권(부산·경남) 메타 광고 테스트로 지역 반응 패턴 확보, 적극 매장 선별 기반 콘텐츠 협업 — 이 세 가지가 본 리테이너의 실행 근간입니다.</p>
+    <p>본 견적은 <em style="color:#EA580C; font-style:normal;">3개월 리테이너(월 500만 × 3)</em>와 <em style="color:#EA580C; font-style:normal;">여름 신메뉴 집중 캠페인(200만)</em>을 통합한 구조입니다. 5/12 신메뉴 런치에 맞춘 캠페인 실집행 예산은 Month 1 리테이너와 동시 가동되며 집행 내역은 분리 리포팅합니다.</p>
+  </div>
+
+  <!-- TOTAL -->
+  <div class="total-box">
+    <div>
+      <div class="tl">2026 5~7월 총 집행 합계</div>
+      <div class="ts">리테이너 월 500만 × 3 + 여름 캠페인 200만 · VAT 별도</div>
+    </div>
+    <div class="ta">17,000,000<span>원</span></div>
+  </div>
+
+  <!-- OVERVIEW -->
+  <div class="section">
+    <h2>예산 구조</h2>
+    <p style="font-size:13px; color:#636569; margin-bottom:18px;">3개월 리테이너(상시 운영·전략 디렉팅)와 여름 신메뉴 캠페인(5/12 런치 집중 실집행)은 성격이 다른 예산입니다. 둘 다 Month 1 기간에 동시 가동되며, 집행 내역은 분리 리포팅됩니다.</p>
+
+    <h3 style="font-size:13px; font-weight:700; color:#EA580C; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:12px;">3개월 리테이너 · 1,500만원</h3>
+    <div class="kpi-grid" style="margin-bottom:20px;">
+      <div class="kpi-card">
+        <div class="kc-label">Month 1 · 5월</div>
+        <div class="kc-value">500<span class="kc-unit">만원</span></div>
+        <div class="kc-desc">Launch — 여름 신메뉴 바이럴 + 3채널 셋업</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kc-label">Month 2 · 6월</div>
+        <div class="kc-value">500<span class="kc-unit">만원</span></div>
+        <div class="kc-desc">Ignite — 딥라떼 카테고리 확립 + 트렌드 사이클</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kc-label">Month 3 · 7월</div>
+        <div class="kc-value">500<span class="kc-unit">만원</span></div>
+        <div class="kc-desc">Compound — 성과 구조 완성 + 확장 프레임</div>
+      </div>
+    </div>
+
+    <h3 style="font-size:13px; font-weight:700; color:#EA580C; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:12px;">여름 신메뉴 집중 캠페인 · 200만원</h3>
+    <div class="kpi-grid" style="grid-template-columns: 1fr;">
+      <div class="kpi-card dark" style="text-align:left; padding:24px 32px;">
+        <div class="kc-label">Summer Campaign · 5/12 런치</div>
+        <div style="display:flex; align-items:baseline; gap:16px; margin-top:6px;">
+          <div class="kc-value"><em>200</em><span class="kc-unit" style="color:rgba(255,255,255,0.4);">만원</span></div>
+          <div class="kc-desc" style="margin:0;">문경 오미자 에이드·스무디, 컵빙수 3종, 베이커리 3종 런치 집중 실집행 (BR 수수료 + 릴스 3건 + 로컬 시딩 4명 + 가맹점 키트 + NP 직영점 1개 최적화)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUMMER CAMPAIGN -->
+  <div class="section">
+    <div class="part-header">
+      <div class="part-header-l">
+        <h3>Summer Campaign <em>5/12 런치 집중</em><span class="badge badge-dark">리테이너 동시 가동</span></h3>
+        <div class="part-mission">여름 신메뉴 8종(문경 오미자 에이드·스무디 / 컵빙수 3종 / 베이커리 3종)을 5/12 출시일 기준 단일 이벤트로 집중 실집행. 3개 후킹 포인트 — “문경 오미자 산지 스토리” · “컵빙수 4,500원 가성비 쇼크” · “130개 매장 동시 런칭”</div>
+      </div>
+      <div class="part-price">2,000,000원</div>
+    </div>
+    <table>
+      <thead><tr><th>항목</th><th>내용</th><th>금액</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="item">BR 수수료 (기획·디렉팅·리포팅)</td>
+          <td class="desc">5/12 런치 캠페인 전담 수수료. 6주 타임라인(W1 섭외 → W6 출시 라이브) 관리, 후킹 포인트 3종 콘텐츠 설계, 인플루언서 방문 코디, 1차 성과 리포트(가맹점 공유용 PDF)</td>
+          <td class="amount">800,000</td>
+        </tr>
+        <tr>
+          <td class="item">릴스 3건 제작</td>
+          <td class="desc">신메뉴 비주얼 릴스 3건 (오미자 에이드 1 + 컵빙수 1 + 베이커리 1). 촬영은 매장 스마트폰, 편집만 외주</td>
+          <td class="amount">300,000</td>
+        </tr>
+        <tr>
+          <td class="item">로컬 인플루언서 시딩 4명</td>
+          <td class="desc">팔로워 5천~2만 로컬 푸드·카페 계정, 매장 방문 → 릴스/피드 1건씩. 15만/건 × 4명</td>
+          <td class="amount">600,000</td>
+        </tr>
+        <tr>
+          <td class="item">가맹점 마케팅 키트</td>
+          <td class="desc">매장용 POP 템플릿 + 인스타 스토리 템플릿 + 점장용 촬영 가이드 1장 → 130개 매장 동시 노출(무료 채널)</td>
+          <td class="amount">150,000</td>
+        </tr>
+        <tr>
+          <td class="item">NP 직영점 1개 최적화</td>
+          <td class="desc">소개문 재작성(신메뉴 반영) + 메뉴 사진 교체 + 소식 발행 2건 → 검색 유입 기준선 확보</td>
+          <td class="amount">150,000</td>
+        </tr>
+        <tr class="subtotal-row">
+          <td class="item" colspan="2">Summer Campaign 소계</td>
+          <td class="amount">2,000,000</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="info-box">
+      <strong>최종 납품물</strong>
+      <ul>
+        <li>여름 신메뉴 바이럴 릴스 3건 (도달 3~5만·저장 300+ 타겟)</li>
+        <li>로컬 인플루언서 UGC 4건 (릴스/피드 1건씩)</li>
+        <li>가맹점 마케팅 키트 세트 (POP + 스토리 템플릿 + 촬영 가이드)</li>
+        <li>NP 직영점 1개 여름 신메뉴 반영 최적화 완료</li>
+        <li>출시 주 가맹점 공유용 1차 성과 리포트 PDF</li>
+      </ul>
+    </div>
+
+    <div class="info-box" style="background:#fbf8f3; border-left-color:#0D0D0D;">
+      <strong style="color:#0D0D0D;">리테이너와의 관계</strong>
+      Month 1 리테이너(500만)는 <strong style="display:inline; color:#1a1b18; text-transform:none; letter-spacing:normal;">3채널 상시 운영 · 전략 디렉팅 · 현장 촬영 리스트 · 경상권 메타 광고 테스트</strong>를 담당하고, 본 캠페인(200만)은 <strong style="display:inline; color:#1a1b18; text-transform:none; letter-spacing:normal;">5/12 런치 단일 이벤트 집중 실집행</strong>을 담당합니다. 두 예산은 목적·집행 경로·리포팅 라인이 분리됩니다.
+    </div>
+
+    <div class="goal-grid">
+      <div class="goal-card">
+        <div class="gl">캠페인 목표 01</div>
+        <div class="gv">릴스 3건 도달 합계 10만+</div>
+      </div>
+      <div class="goal-card">
+        <div class="gl">캠페인 목표 02</div>
+        <div class="gv">인플루언서 UGC 4건 확보</div>
+      </div>
+      <div class="goal-card">
+        <div class="gl">캠페인 목표 03</div>
+        <div class="gv">출시 주 가맹점 스토리 30개+</div>
+      </div>
+      <div class="goal-card">
+        <div class="gl">캠페인 목표 04</div>
+        <div class="gv">본사 마케팅 성과 점주 공유 완료</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MONTH 1 -->
+  <div class="section">
+    <div class="part-header">
+      <div class="part-header-l">
+        <h3>Month 1 <em>Launch</em> · 5월</h3>
+        <div class="part-mission">5/12 여름 신메뉴(오미자 에이드·스무디, 컵빙수 3종, 베이커리 3종) 바이럴 + 인스타·틱톡·X 3채널 바이럴 기반 셋업. <strong style="color:#EA580C;">여름 캠페인(별도 200만)과 동시 가동</strong></div>
+      </div>
+      <div class="part-price">5,000,000원</div>
+    </div>
+    <table>
+      <thead><tr><th>항목</th><th>내용</th><th>금액</th></tr></thead>
+      <tbody>
+        <tr class="block-row"><td colspan="3">Block A · 전략 디렉팅 & 3채널 바이럴 런치 — 3,200,000원</td></tr>
+        <tr>
+          <td class="item">여름 신메뉴 바이럴 전략 & 월간 디렉팅</td>
+          <td class="desc">5/12 런치 플랜, 투트랙 전략 정립, 후킹 포인트 3종(문경 오미자 산지·컵빙수 가성비·130개 매장 동시 런칭), 전용 우유 “라떼마스터” USP 스토리 개발, 콘텐츠 캘린더, KPI 설계, 주간 싱크·월간 리포트</td>
+          <td class="amount">1,500,000</td>
+        </tr>
+        <tr>
+          <td class="item">3채널 콘텐츠 운영 (인스타·틱톡·X)</td>
+          <td class="desc">공식 틱톡·X 계정 개설 & 페르소나 확정, 3채널 콘텐츠 10~12건 기획·제작·발행, AI 영상화 파이프라인 가동(감도 높은 이미지 → 릴스 변환), X는 실시간 라이브 포맷</td>
+          <td class="amount">1,200,000</td>
+        </tr>
+        <tr>
+          <td class="item">적극 매장 콘텐츠 지원 1차</td>
+          <td class="desc">현장 촬영 10종 리스트 작성 & 전달, 선별 매장 3~5개점 촬영 가이드·콘텐츠 키트, 알바생 UGC 큐레이션 개시</td>
+          <td class="amount">500,000</td>
+        </tr>
+        <tr class="block-row"><td colspan="3">Block B · 인플루언서 시딩 & 경상권 퍼포먼스 — 1,800,000원</td></tr>
+        <tr>
+          <td class="item">무가 시딩 1차 (3~5명)</td>
+          <td class="desc">로컬 푸드·카페 5천~2만 팔로워 인플루언서, “문경 오미자”·“컵빙수 가성비” 앵글 방문 기획·코디네이트·릴스 QC</td>
+          <td class="amount">1,000,000</td>
+        </tr>
+        <tr>
+          <td class="item">메타 광고 경상권 테스트 + 키워드 A/B</td>
+          <td class="desc">광고비 50만 포함 + 초기 세팅 30만 (픽셀·계정·오디언스 구축), 4종 키워드군 A/B 테스트(진짜 맛·고퀄리티·스타벅스 대체·포모) → 유입당·전환율로 워킹 키워드 발굴</td>
+          <td class="amount">800,000</td>
+        </tr>
+        <tr class="subtotal-row">
+          <td class="item" colspan="2">Month 1 소계</td>
+          <td class="amount">5,000,000</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="info-box">
+      <strong>최종 납품물</strong>
+      <ul>
+        <li>여름 신메뉴 바이럴 전략서 + 3채널 콘텐츠 포맷 가이드</li>
+        <li>틱톡·X 공식 계정 오픈 & 초기 2주 콘텐츠</li>
+        <li>인스타 리셋 가이드 (피드 톤·해시태그·바이오 재정비)</li>
+        <li>현장 촬영 10종 리스트 & 촬영 가이드 (변팀장님 전달용)</li>
+        <li>3채널 콘텐츠 10~12건, 인플루언서 릴스/피드 3~5건</li>
+        <li>경상권 메타 광고 1차 리포트 (워킹 패턴 분석)</li>
+        <li>가맹점 공유용 1차 성과 요약 (점주 설득용 1페이지)</li>
+      </ul>
+    </div>
+
+    <div class="goal-grid">
+      <div class="goal-card">
+        <div class="gl">이달의 목표 01</div>
+        <div class="gv">5/12 신메뉴 런치 콘텐츠 10편 이상</div>
+      </div>
+      <div class="goal-card">
+        <div class="gl">이달의 목표 02</div>
+        <div class="gv">틱톡·X 오픈 + 첫 2주 발행 리듬</div>
+      </div>
+      <div class="goal-card">
+        <div class="gl">이달의 목표 03</div>
+        <div class="gv">경상권 메타 워킹 포맷 1~2개 확인</div>
+      </div>
+      <div class="goal-card">
+        <div class="gl">이달의 목표 04</div>
+        <div class="gv">적극 매장 3~5개점 식별 & 첫 협업</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MONTH 2 -->
+  <div class="section">
+    <div class="part-header">
+      <div class="part-header-l">
+        <h3>Month 2 <em>Ignite</em> · 6월</h3>
+        <div class="part-mission">딥라떼 3종 시리즈(커피 베이스) 런칭 + “Deep Latte = DANCING CUP” 등식 각인, 트렌드 캐치 사이클 가동</div>
+      </div>
+      <div class="part-price">5,000,000원</div>
+    </div>
+    <table>
+      <thead><tr><th>항목</th><th>내용</th><th>금액</th></tr></thead>
+      <tbody>
+        <tr class="block-row"><td colspan="3">Block A · 딥라떼 카테고리 빌드 & 트렌드 루프 — 3,200,000원</td></tr>
+        <tr>
+          <td class="item">딥라떼 카테고리 런칭 디렉팅 & 전략 진화</td>
+          <td class="desc">6월 초 커피 베이스 3종 시리즈 런칭 바이럴 설계(“라떼 맛집” 포지셔닝 강도 보전), 시각적 후킹 포인트 3종 개발, 전용 우유 “라떼마스터” 본격 플레이(바리스타 콜라보 콘텐츠), Month 1 워킹 키워드로 소비자 언어 별명 선점, 트렌드 캐치 주간 1회 집행, 1차 성과 분석</td>
+          <td class="amount">1,500,000</td>
+        </tr>
+        <tr>
+          <td class="item">3채널 콘텐츠 운영 — 딥라떼 + 트렌드 캐치</td>
+          <td class="desc">딥라떼 상시 콘텐츠 10~12건 + 트렌드 캐치 1건/주. 인스타 = 딥라떼 비주얼 아카이브, 틱톡 = 알바·손님 리액션 영상, X = 출시 당일 현장 중계</td>
+          <td class="amount">1,200,000</td>
+        </tr>
+        <tr>
+          <td class="item">적극 매장 콘텐츠 지원 2차</td>
+          <td class="desc">협력 매장 5 → 10개점 확대, 알바생 UGC 큐레이션 → 공식 채널 재가공, 매장별 성과 피드백 리포트</td>
+          <td class="amount">500,000</td>
+        </tr>
+        <tr class="block-row"><td colspan="3">Block B · 인플루언서 시딩 & 퍼포먼스 확대 — 1,800,000원</td></tr>
+        <tr>
+          <td class="item">무가 시딩 2차 (4~6명)</td>
+          <td class="desc">“저가 커피에서 이런 묵직함?”·“라떼 유목민의 종착지” 앵글, 1차 검증 인플루언서 재협업 + 신규. 커피 전문 유튜버 1명 탐색 개시</td>
+          <td class="amount">1,000,000</td>
+        </tr>
+        <tr>
+          <td class="item">메타 광고 경상권 최적화 + 광역 테스트</td>
+          <td class="desc">경상권 패턴 고착 + 수도권·대구·광주 광역 테스트, 릴스별 ROI 비교</td>
+          <td class="amount">800,000</td>
+        </tr>
+        <tr class="subtotal-row">
+          <td class="item" colspan="2">Month 2 소계</td>
+          <td class="amount">5,000,000</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="info-box">
+      <strong>최종 납품물</strong>
+      <ul>
+        <li>딥라떼 카테고리 런칭 콘텐츠 패키지 15편 이상</li>
+        <li>전용 우유 “라떼마스터” 스토리 콘텐츠 세트 (인플루언서 소구 포인트 + 매장 POP 워딩)</li>
+        <li>“딥라떼” 블로그 체험단 1차 리뷰 15~20편 (연관검색어 볼륨 확보)</li>
+        <li>소비자 언어 별명 선점 결과 리포트 (A/B 테스트 → 워킹 키워드 확정)</li>
+        <li>트렌드 캐치 1건 실행 리포트 (기획 → 출시 → 콘텐츠 → 성과)</li>
+        <li>1차 성과 분석 리포트 (채널별 핏 분석)</li>
+        <li>인플루언서 UGC 4~6건, 메타 광고 광역 확장 리포트</li>
+      </ul>
+    </div>
+
+    <div class="goal-grid">
+      <div class="goal-card">
+        <div class="gl">이달의 목표 01</div>
+        <div class="gv">딥라떼 3종 런칭 콘텐츠 15편 이상</div>
+      </div>
+      <div class="goal-card">
+        <div class="gl">이달의 목표 02</div>
+        <div class="gv">“딥라떼” 블로그 리뷰 15~20편</div>
+      </div>
+      <div class="goal-card">
+        <div class="gl">이달의 목표 03</div>
+        <div class="gv">트렌드 캐치 1건 실제 집행</div>
+      </div>
+      <div class="goal-card">
+        <div class="gl">이달의 목표 04</div>
+        <div class="gv">경상권 ROI 최적화 + 광역 1회</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MONTH 3 -->
+  <div class="section">
+    <div class="part-header">
+      <div class="part-header-l">
+        <h3>Month 3 <em>Compound</em> · 7월</h3>
+        <div class="part-mission">성과 구조 완성, 가맹 마케팅 브릿지 & 8~10월 파워 콘텐츠 프레임 확정</div>
+      </div>
+      <div class="part-price">5,000,000원</div>
+    </div>
+    <table>
+      <thead><tr><th>항목</th><th>내용</th><th>금액</th></tr></thead>
+      <tbody>
+        <tr class="block-row"><td colspan="3">Block A · 자산화 & 성과 구조 — 3,200,000원</td></tr>
+        <tr>
+          <td class="item">3개월 성과 분석 & 확장 전략 수립</td>
+          <td class="desc">채널별 ROI 확정, 성과 검증 포맷 루틴화 가이드, 가맹 마케팅 브릿지 제안서(콘텐츠 자산 → 가맹 상담 활용), 8~10월 파워 콘텐츠 프레임 제안서(PPL·대형 인플루언서·블라인드 테스트 예산 설계)</td>
+          <td class="amount">1,500,000</td>
+        </tr>
+        <tr>
+          <td class="item">3채널 콘텐츠 운영 — 루틴 고도화</td>
+          <td class="desc">트렌드 캐치 주 1~2회 + 딥라떼 상시 + 가을 시즈널 러닝업 티저. 6월 성과 포맷 중심으로 제작 효율 1.5배</td>
+          <td class="amount">1,200,000</td>
+        </tr>
+        <tr>
+          <td class="item">적극 매장 확대 & 운영 가이드</td>
+          <td class="desc">10 → 15개점 확대, 매장 인센티브 구조 제안(성과 우수 매장 보상), 점장용 SNS 운영 가이드 1장(가맹 교육 활용)</td>
+          <td class="amount">500,000</td>
+        </tr>
+        <tr class="block-row"><td colspan="3">Block B · 인플루언서 시딩 & 퍼포먼스 자산화 — 1,800,000원</td></tr>
+        <tr>
+          <td class="item">무가 시딩 3차 (4~6명)</td>
+          <td class="desc">성과 검증 인플루언서 재협업 비중 확대(2차 재협업률 50%↑ 목표), 8~10월 대형 인플루언서 후보 리스트업</td>
+          <td class="amount">1,000,000</td>
+        </tr>
+        <tr>
+          <td class="item">메타 광고 확장 & ROI 고정</td>
+          <td class="desc">경상권 고정 + 광역 확장 성과 검증, 월간 최적화된 오디언스·크리에이티브 풀 패키지</td>
+          <td class="amount">800,000</td>
+        </tr>
+        <tr class="subtotal-row">
+          <td class="item" colspan="2">Month 3 소계</td>
+          <td class="amount">5,000,000</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="info-box">
+      <strong>최종 납품물</strong>
+      <ul>
+        <li>3개월 풀 성과 리포트 (채널별 핏, ROI, 트렌드 캐치 이력, 콘텐츠 자산 인벤토리)</li>
+        <li>자체 운영 가이드 (3채널 운영·적극 매장 협업·콘텐츠 제작 프로세스)</li>
+        <li>가맹 마케팅 브릿지 제안서 1페이지 — 콘텐츠 자산을 가맹 상담·창업설명회에 활용</li>
+        <li>8~10월 파워 콘텐츠 프레임 제안서 1페이지 — PPL·대형 인플루언서·블라인드 테스트 예산 배분</li>
+        <li>딥라떼 블로그 리뷰 누적 35~40편, 시딩 UGC 누적 12~15건</li>
+        <li>트렌드 캐치 실행 이력 3건 이상, 가을 시즈널 러닝업 티저 5편 이상</li>
+      </ul>
+    </div>
+
+    <div class="goal-grid">
+      <div class="goal-card">
+        <div class="gl">이달의 목표 01</div>
+        <div class="gv">3개월 성과 지표 확정 + 다음 분기 로드맵</div>
+      </div>
+      <div class="goal-card">
+        <div class="gl">이달의 목표 02</div>
+        <div class="gv">“딥라떼” 리뷰 누적 35~40편</div>
+      </div>
+      <div class="goal-card">
+        <div class="gl">이달의 목표 03</div>
+        <div class="gv">트렌드 캐치 월 2~4건 리듬</div>
+      </div>
+      <div class="goal-card">
+        <div class="gl">이달의 목표 04</div>
+        <div class="gv">가맹 브릿지 + 파워 프레임 확정</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FINAL TOTAL -->
+  <div class="total-box">
+    <div>
+      <div class="tl">2026 5~7월 최종 합계</div>
+      <div class="ts">리테이너 1,500만 + 여름 캠페인 200만 · VAT 별도</div>
+    </div>
+    <div class="ta">17,000,000<span>원</span></div>
+  </div>
+
+  <!-- 500만원 CATEGORY STRUCTURE -->
+  <div class="section">
+    <h2>월 500만원 항목 구조<span class="badge">참고</span></h2>
+    <table>
+      <thead><tr><th>영역</th><th>성격</th><th>월 비용</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="item">전략 디렉팅 & 월간 리포팅</td>
+          <td class="desc">월간 전략 회의, 트렌드 모니터링, KPI 관리, 성과 분석</td>
+          <td class="amount">1,500,000</td>
+        </tr>
+        <tr>
+          <td class="item">3채널 콘텐츠 운영</td>
+          <td class="desc">월 10~12건 기획·제작·발행 (딥라떼 + 트렌드 + 현장)</td>
+          <td class="amount">1,200,000</td>
+        </tr>
+        <tr>
+          <td class="item">적극 매장 콘텐츠 지원</td>
+          <td class="desc">선별 매장 콘텐츠 키트, 촬영 가이드, UGC 큐레이션</td>
+          <td class="amount">500,000</td>
+        </tr>
+        <tr>
+          <td class="item">인플루언서 시딩</td>
+          <td class="desc">월 3~6명 로컬·푸드 인플루언서 (무가~소액)</td>
+          <td class="amount">1,000,000</td>
+        </tr>
+        <tr>
+          <td class="item">메타 광고 (경상권)</td>
+          <td class="desc">광고비 포함, 릴스 부스트 + 지역 타겟팅</td>
+          <td class="amount">800,000</td>
+        </tr>
+        <tr class="subtotal-row">
+          <td class="item" colspan="2">월 합계</td>
+          <td class="amount">5,000,000</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- LEAD TIME -->
+  <div class="section">
+    <h2>협업 리드타임<span class="badge badge-dark">2026-04-21 합의</span></h2>
+    <p style="font-size:13px; color:#636569; margin-bottom:16px;">가맹점 협조·SV 출장 조율이 들어가는 구조이므로 아래 리드타임을 기본 전제로 합니다. 미례국밥·댄싱컵 공통 적용.</p>
+    <table class="lead-table">
+      <thead><tr><th>항목</th><th>근거</th><th>리드타임</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="item">현장 촬영 스케줄 통보</td>
+          <td class="desc">SV 일정, 매장 점주 허락, 제조 준비 필요</td>
+          <td class="lead-value">D-7 (일주일 전)</td>
+        </tr>
+        <tr>
+          <td class="item">레퍼런스 전달</td>
+          <td class="desc">매장 구비품(사이드 테이블 등) 구매, 청소·유니폼·제조 시연 준비</td>
+          <td class="lead-value">D-4 (4일 전)</td>
+        </tr>
+        <tr>
+          <td class="item">콘텐츠 검수</td>
+          <td class="desc">변팀장님 집중 검토 시간 확보</td>
+          <td class="lead-value">영업일 기준 3일</td>
+        </tr>
+        <tr>
+          <td class="item">수정 피드백</td>
+          <td class="desc">여러 차례 분할 지양 — 상호 작업 효율 확보</td>
+          <td class="lead-value">한 번에 일괄</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="info-box">
+      <strong>촬영 거점 매장</strong>
+      <ul>
+        <li><strong style="display:inline; color:#1a1b18; text-transform:none; letter-spacing:normal;">부산 센텀점</strong> — 본사 사무실 인접, SV 직접 제조 가능 · 부산 촬영 기본 거점</li>
+        <li><strong style="display:inline; color:#1a1b18; text-transform:none; letter-spacing:normal;">서울 바대홀(신촌)</strong> — 기존 바이럴 촬영 이력 · 서울 촬영 기본 거점</li>
+        <li><strong style="display:inline; color:#1a1b18; text-transform:none; letter-spacing:normal;">그 외 매장</strong> — SV 출장·점주 조율 필요로 별도 협의 (포항 양덕점 등 특수 케이스)</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- EXTRA BUDGET POOL -->
+  <div class="section">
+    <h2>별도 마케팅 예산 풀<span class="badge">본 견적 미포함</span></h2>
+    <p style="font-size:13px; color:#636569; margin-bottom:16px;">조 대표님께서 언급하신 3,000~5,000만원 파워 콘텐츠 예산 구조. 8~10월 투입을 목표로 Month 3 파워 콘텐츠 프레임 제안서에서 구체화됩니다.</p>
+    <table>
+      <thead><tr><th>항목</th><th>시기</th><th>예상 비용</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="item">딥라떼 브랜딩 패키지</td>
+          <td class="desc">포스터·배너·메뉴판·키오스크 (Phase 1)</td>
+          <td class="amount">300~500만</td>
+        </tr>
+        <tr>
+          <td class="item">매장 DID 영상 세트</td>
+          <td class="desc">딥라떼 3종 + 트렌드 캐치. 메타 광고 영상 얼라인 구조</td>
+          <td class="amount">300~500만</td>
+        </tr>
+        <tr>
+          <td class="item">블라인드 테스트 콘텐츠</td>
+          <td class="desc">커피 유튜버 협업 (7~8월)</td>
+          <td class="amount">300~500만</td>
+        </tr>
+        <tr>
+          <td class="item">대형 인플루언서 1~2명</td>
+          <td class="desc">8~9월 투입</td>
+          <td class="amount">500~1,000만</td>
+        </tr>
+        <tr>
+          <td class="item">시즈널 신메뉴 런칭 캠페인</td>
+          <td class="desc">분기별</td>
+          <td class="amount">각 200~300만</td>
+        </tr>
+        <tr>
+          <td class="item">체험단 확대</td>
+          <td class="desc">분기별</td>
+          <td class="amount">각 150~200만</td>
+        </tr>
+        <tr>
+          <td class="item">NP 거점 매장 최적화</td>
+          <td class="desc">5~10개점 (6~8월)</td>
+          <td class="amount">200~300만</td>
+        </tr>
+        <tr>
+          <td class="item">트렌드 캐치 긴급 대응 예비비</td>
+          <td class="desc">상시</td>
+          <td class="amount">500만</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="info-box">
+      <strong>운영 원칙</strong>
+      실 집행 시 우선순위에 따라 조정 · 매월 사용 내역 + 성과 리포트 포함 · 여름 신메뉴 캠페인(별도 200만) 완료 후 Phase 1 딥라떼 브랜딩 패키지로 자연 연결
+    </div>
+  </div>
+
+  <!-- SCOPE -->
+  <div class="section">
+    <h2>계약 범위 정리</h2>
+    <div class="note-grid">
+      <div class="note-item">
+        <strong>본 견적에 포함된 것</strong>
+        · 3개월 리테이너 (월 500만 × 3 = 1,500만)<br>
+        · 여름 신메뉴 집중 캠페인 (200만, 5/12 런치)<br>
+        · 3채널(인스타·틱톡·X) 콘텐츠 기획·제작·운영<br>
+        · 딥라떼 카테고리 런칭(6월 초) 디렉팅 + 전용 우유 “라떼마스터” USP 플레이<br>
+        · 무가 인플루언서 시딩 (월 3~6명 + 캠페인 4명)<br>
+        · 경상권 중심 메타 광고 (광고비 80만/월 포함)<br>
+        · 적극 매장 선별·촬영 가이드·UGC 큐레이션<br>
+        · 월간 전략 회의, 성과 리포트, 가맹점 공유용 요약<br>
+        · 3개월 종료 시 가맹 마케팅 브릿지 + 8~10월 파워 콘텐츠 프레임
+      </div>
+      <div class="note-item">
+        <strong>본 견적에서 별도 협의되는 것</strong>
+        · 블라인드 테스트·대형 인플루언서·PPL (별도 마케팅 풀)<br>
+        · 딥라떼 오프라인 브랜딩 패키지 (별도 마케팅 풀)<br>
+        · 매장 DID 영상 세트 (별도 마케팅 풀)<br>
+        · NP 거점 매장 추가 최적화 (별도 마케팅 풀)<br>
+        · 가을·겨울 시즈널 신메뉴 집중 캠페인 (각 분기 별도 견적)<br>
+        · 가맹점 개별 매장 전담 운영 (스코프 외)
+      </div>
+    </div>
+  </div>
+
+  <!-- WAY OF WORKING -->
+  <div class="section">
+    <h2>일하는 방식</h2>
+    <div class="note-grid">
+      <div class="note-item">
+        <strong>주간 리듬</strong>
+        · 월요일 — 주간 싱크 30분 (카톡 + 필요 시 줌)<br>
+        · 수요일 — 콘텐츠 공유 + 피드백 (비동기)<br>
+        · 금요일 — 주간 리포트 (숫자 + 인사이트 + 다음 주 계획)
+      </div>
+      <div class="note-item">
+        <strong>월간 산출물</strong>
+        · 월간 성과 리포트 (콘텐츠·팔로워·광고 ROI)<br>
+        · 다음 달 콘텐츠 캘린더<br>
+        · 트렌드 캐치 후보 리스트<br>
+        · 비용 집행 내역<br>
+        · 가맹점 공유용 월간 요약
+      </div>
+      <div class="note-item">
+        <strong>소통 채널</strong>
+        · 카카오톡 단체방 — 실무 기본<br>
+        · 줌 — 월간 전략 회의, 필요시 주간 싱크<br>
+        · 전화 — 긴급 이슈
+      </div>
+      <div class="note-item">
+        <strong>다음 단계</strong>
+        · 본 견적 검토 및 피드백<br>
+        · 계약서 최종안 확정<br>
+        · Month 1 착수 — 5/12 신메뉴 런치 역산<br>
+        · 격월 단위 확장 여부 재논의 (단가 변경 없이 3개월 리듬 지속 권장)
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="brand">BRANDRISE</div>
+    본 견적서는 발행일로부터 30일간 유효합니다.<br>
+    금액은 VAT 별도이며, 실 집행 시 조정될 수 있습니다.<br>
+    스타트업·프랜차이즈를 위한 마케팅 코칭 파트너
+  </div>
+
+</div>
+</body>
+</html>
