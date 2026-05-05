@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>미례국밥 4월 운영 보고서 — 브랜드라이즈</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Noto Sans KR', -apple-system, sans-serif; background: #f4f7f9; color: #1a1b18; line-height: 1.7; font-size: 14px; }
+
+.toolbar { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: #0D0D0D; height: 56px; display: flex; align-items: center; justify-content: space-between; padding: 0 32px; }
+.toolbar-left { display: flex; align-items: center; gap: 16px; }
+.toolbar-logo { font-size: 13px; font-weight: 700; color: #EA580C; letter-spacing: 0.05em; }
+.toolbar-sep { width: 1px; height: 20px; background: rgba(255,255,255,0.15); }
+.toolbar-title { font-size: 14px; font-weight: 500; color: #fff; }
+.toolbar-actions { display: flex; gap: 8px; }
+.btn-toolbar { padding: 7px 16px; border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; background: transparent; color: #fff; font-size: 12px; font-weight: 500; cursor: pointer; transition: all 0.2s; }
+.btn-toolbar:hover { background: rgba(255,255,255,0.1); }
+.btn-toolbar.active { background: #EA580C; color: #fff; border-color: #EA580C; }
+
+.edit-banner { display: none; position: fixed; top: 56px; left: 0; right: 0; z-index: 99; background: #FFF7ED; border-bottom: 2px solid #EA580C; padding: 8px 32px; font-size: 12px; color: #EA580C; font-weight: 600; text-align: center; }
+body.editing .edit-banner { display: block; }
+body.editing .container { padding-top: 110px; }
+body.editing [contenteditable="true"] { outline: 2px dashed rgba(234,88,12,0.3); outline-offset: 2px; border-radius: 4px; }
+body.editing [contenteditable="true"]:focus { outline-color: #EA580C; background: #FFF7ED; }
+
+.container { max-width: 940px; margin: 0 auto; padding: 80px 24px 60px; transition: padding-top 0.2s; }
+
+/* HEADER */
+.report-header { background: #fff; border-radius: 12px; padding: 40px; margin-bottom: 20px; border: 1px solid #e8edf1; }
+.report-header .label { font-size: 11px; font-weight: 700; color: #EA580C; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 14px; }
+.report-header h1 { font-size: 26px; font-weight: 900; line-height: 1.35; letter-spacing: -0.02em; margin-bottom: 0; }
+.report-header h1 em { color: #EA580C; font-style: normal; }
+.meta-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 28px; padding-top: 24px; border-top: 1px solid #e8edf1; }
+.meta-item .mk { font-size: 11px; color: #999; letter-spacing: 0.04em; margin-bottom: 4px; }
+.meta-item .mv { font-size: 13px; font-weight: 600; }
+
+/* SECTION */
+.section { background: #fff; border-radius: 12px; padding: 32px 40px; margin-bottom: 20px; border: 1px solid #e8edf1; }
+.section h2 { font-size: 18px; font-weight: 800; margin-bottom: 6px; letter-spacing: -0.02em; }
+.section h2 em { color: #EA580C; font-style: normal; }
+.section .sec-sub { font-size: 13px; color: #999; margin-bottom: 24px; }
+
+/* OVERVIEW (한눈에 보기) */
+.overview-grid { display: grid; grid-template-columns: 2fr 3fr; gap: 16px; }
+.ov-mission { background: #0D0D0D; border-radius: 10px; padding: 24px; color: #fff; display: flex; flex-direction: column; justify-content: center; }
+.ov-mission .ov-label { font-size: 10px; font-weight: 700; color: #EA580C; letter-spacing: 0.12em; margin-bottom: 10px; }
+.ov-mission .ov-text { font-size: 18px; font-weight: 800; line-height: 1.5; }
+.ov-mission .ov-text em { color: #EA580C; font-style: normal; }
+.ov-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.ov-stat { background: #f8fafb; border: 1px solid #e8edf1; border-radius: 10px; padding: 18px; text-align: center; }
+.ov-stat .os-label { font-size: 11px; color: #999; margin-bottom: 6px; }
+.ov-stat .os-value { font-size: 24px; font-weight: 900; color: #1a1b18; letter-spacing: -0.02em; }
+.ov-stat .os-value em { color: #EA580C; font-style: normal; }
+.ov-stat .os-unit { font-size: 12px; color: #999; }
+.ov-stat .os-sub { font-size: 11px; color: #636569; margin-top: 4px; }
+
+/* KPI GRID */
+.kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 8px; }
+.kpi-grid.g3 { grid-template-columns: repeat(3, 1fr); }
+.kpi-grid.g2 { grid-template-columns: repeat(2, 1fr); }
+.kpi-card { background: #f8fafb; border-radius: 10px; padding: 22px 18px; text-align: center; border: 1px solid #e8edf1; }
+.kpi-card .kc-label { font-size: 11px; color: #999; font-weight: 500; letter-spacing: 0.04em; margin-bottom: 8px; }
+.kpi-card .kc-value { font-size: 26px; font-weight: 900; color: #1a1b18; letter-spacing: -0.02em; }
+.kpi-card .kc-unit { font-size: 13px; font-weight: 500; color: #999; }
+.kpi-card .kc-change { font-size: 11px; margin-top: 4px; font-weight: 600; }
+.kpi-card .kc-change.up { color: #16a34a; }
+.kpi-card .kc-change.down { color: #dc2626; }
+.kpi-card .kc-change.neutral { color: #999; }
+.kpi-card.dark { background: #0D0D0D; border-color: #0D0D0D; }
+.kpi-card.dark .kc-label { color: #EA580C; }
+.kpi-card.dark .kc-value { color: #fff; }
+.kpi-card.dark .kc-change { color: rgba(255,255,255,0.4); }
+
+/* HIGHLIGHT BOX */
+.highlight-box { background: #0D0D0D; border-radius: 12px; padding: 28px 36px; margin-bottom: 20px; color: #fff; }
+.highlight-box .hl-label { font-size: 11px; font-weight: 700; color: #EA580C; letter-spacing: 0.08em; margin-bottom: 10px; }
+.highlight-box .hl-text { font-size: 16px; font-weight: 600; line-height: 1.75; }
+.highlight-box .hl-text em { color: #EA580C; font-style: normal; }
+
+/* TABLE */
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th { background: #f8fafb; padding: 10px 16px; font-weight: 600; border-bottom: 2px solid #e8edf1; color: #999; font-size: 11px; text-align: left; white-space: nowrap; }
+td { padding: 11px 16px; border-bottom: 1px solid #f0f2f5; vertical-align: middle; }
+td.item { font-weight: 600; color: #1a1b18; white-space: nowrap; }
+td.desc { color: #636569; font-size: 12px; }
+td.num { text-align: right; font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
+td.up { color: #16a34a; }
+td.down { color: #dc2626; }
+td.accent { color: #EA580C; }
+tr:hover td { background: #fafbfc; }
+tr.total-row td { background: #f8fafb; font-weight: 700; border-top: 1px solid #e8edf1; }
+
+/* STATUS BADGE */
+.status { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 10px; font-weight: 800; letter-spacing: 0.04em; }
+.status.done { background: #dcfce7; color: #16a34a; }
+.status.partial { background: #fef3c7; color: #b45309; }
+.status.miss { background: #fee2e2; color: #dc2626; }
+
+/* CHANNEL HEADER */
+.ch-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; padding-bottom: 14px; border-bottom: 1px solid #e8edf1; }
+.ch-icon { width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 800; color: #fff; flex-shrink: 0; }
+.ch-icon.np { background: #16a34a; }
+.ch-icon.ig { background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+.ch-icon.budget { background: #EA580C; }
+.ch-icon.next { background: #0D0D0D; }
+.ch-icon.promise { background: #EA580C; }
+.ch-icon.overview { background: #0D0D0D; }
+.ch-header h3 { font-size: 15px; font-weight: 700; }
+.ch-header .ch-badge { font-size: 11px; color: #999; font-weight: 500; }
+
+/* INFO BOX */
+.info-box { background: #FFF7ED; border-left: 4px solid #EA580C; border-radius: 0 8px 8px 0; padding: 14px 20px; margin-top: 16px; font-size: 12px; color: #636569; line-height: 1.8; }
+.info-box strong { color: #1a1b18; }
+.info-box.dark { background: #0D0D0D; border-left-color: #EA580C; color: rgba(255,255,255,0.75); }
+.info-box.dark strong { color: #fff; }
+
+/* INSTA ROADMAP */
+.roadmap { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-top: 16px; }
+.rm-card { padding: 18px 16px; border-radius: 10px; border: 1px solid #e8edf1; background: #f8fafb; }
+.rm-card.now { background: #FFF7ED; border-color: #EA580C; }
+.rm-card .rm-period { font-size: 10px; font-weight: 800; letter-spacing: 0.08em; color: #999; margin-bottom: 6px; text-transform: uppercase; }
+.rm-card.now .rm-period { color: #EA580C; }
+.rm-card .rm-title { font-size: 14px; font-weight: 800; margin-bottom: 8px; }
+.rm-card .rm-desc { font-size: 12px; color: #636569; line-height: 1.6; }
+
+/* ACTION GRID */
+.action-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-top: 16px; }
+.action-card { padding: 18px 16px; border-radius: 10px; border: 1px solid #e8edf1; }
+.action-card .ac-label { font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 8px; }
+.action-card .ac-label.keep { color: #16a34a; }
+.action-card .ac-label.boost { color: #EA580C; }
+.action-card .ac-label.cut { color: #dc2626; }
+.action-card .ac-text { font-size: 12px; color: #636569; line-height: 1.7; }
+.action-card .ac-text strong { color: #1a1b18; }
+
+/* BUDGET TABLE */
+.budget-bar { display: flex; height: 32px; border-radius: 8px; overflow: hidden; margin: 16px 0 12px; }
+.budget-bar .bb { display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; color: #fff; }
+
+/* FOOTER */
+.footer { text-align: center; padding: 40px 0; color: #999; font-size: 12px; line-height: 2; }
+.footer .brand { font-size: 15px; font-weight: 800; color: #1a1b18; margin-bottom: 4px; }
+
+@media (max-width: 768px) {
+  .container { padding: 70px 16px 40px; }
+  .meta-grid { grid-template-columns: repeat(2, 1fr); }
+  .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+  .action-grid { grid-template-columns: 1fr; }
+  .roadmap { grid-template-columns: 1fr; }
+  .overview-grid { grid-template-columns: 1fr; }
+  .section { padding: 24px 20px; }
+}
+@media print {
+  .toolbar, .edit-banner { display: none !important; }
+  .container { padding: 20px; }
+  body { background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="toolbar-left">
+    <div class="toolbar-logo">BRANDRISE</div>
+    <div class="toolbar-sep"></div>
+    <div class="toolbar-title">미례국밥 4월 운영 보고서</div>
+  </div>
+  <div class="toolbar-actions">
+    <button class="btn-toolbar" id="editToggle" onclick="toggleEdit()">편집</button>
+    <button class="btn-toolbar" onclick="window.print()">PDF 저장</button>
+  </div>
+</div>
+
+<div class="edit-banner">편집 모드 — 텍스트와 숫자를 클릭해서 수정하세요.</div>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <div class="report-header">
+    <div class="label" contenteditable="false">미례국밥 X 브랜드라이즈</div>
+    <h1 contenteditable="false">미례국밥 4월 <em>운영 보고서</em></h1>
+    <div class="meta-grid">
+      <div class="meta-item">
+        <div class="mk">기간</div>
+        <div class="mv" contenteditable="false">2026. 04. 01 — 04. 30</div>
+      </div>
+      <div class="meta-item">
+        <div class="mk">단계</div>
+        <div class="mv" contenteditable="false">4월 — 기반 세팅</div>
+      </div>
+      <div class="meta-item">
+        <div class="mk">작성</div>
+        <div class="mv" contenteditable="false">우성민 LEAD PM</div>
+      </div>
+      <div class="meta-item">
+        <div class="mk">작성일</div>
+        <div class="mv" contenteditable="false">2026. 05. 04</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUMMARY -->
+  <div class="highlight-box">
+    <div class="hl-label">SUMMARY</div>
+    <div class="hl-text" contenteditable="false">
+      4월은 <em>"미례국밥을 검색하면 볼 게 있는 상태"</em>를 만들기 위해 NP·인스타·체험단 기반을 깔았습니다.<br>
+      검색량은 우상향했고, <em>콘텐츠 포화도</em>는 5월에 본격적으로 채웁니다.<br>
+      메타 광고 본격 집행과 6월 강남점 오픈 사전 작업이 다음 달의 주력입니다.
+    </div>
+  </div>
+
+  <!-- 4월 한눈에 보기 (NEW) -->
+  <div class="section">
+    <div class="ch-header">
+      <div class="ch-icon overview">1</div>
+      <div>
+        <h3>4월 한눈에 보기</h3>
+        <div class="ch-badge">검색량 ↗ + 콘텐츠 포화도 ↗ — 킥오프에서 약속한 두 축</div>
+      </div>
+    </div>
+
+    <div class="overview-grid">
+      <div class="ov-mission">
+        <div class="ov-label">MISSION</div>
+        <div class="ov-text" contenteditable="false">"미례국밥"을 검색하면<br><em>볼 게 있는 상태</em>를 만든다.</div>
+      </div>
+      <div class="ov-stats">
+        <div class="ov-stat">
+          <div class="os-label">월 검색량</div>
+          <div class="os-value" contenteditable="false">3,090<span class="os-unit"></span></div>
+          <div class="os-sub" contenteditable="false">W1 2,690 → W5 3,090 (+14.9%)</div>
+        </div>
+        <div class="ov-stat">
+          <div class="os-label">콘텐츠 포화도</div>
+          <div class="os-value" contenteditable="false"><em>1.99</em><span class="os-unit">%</span></div>
+          <div class="os-sub" contenteditable="false">매우 낮음 — 5월 본격 충원</div>
+        </div>
+        <div class="ov-stat">
+          <div class="os-label">월 콘텐츠 발행</div>
+          <div class="os-value" contenteditable="false">71<span class="os-unit">건</span></div>
+          <div class="os-sub" contenteditable="false">기존 블로그·카페 65 + 체험단 2 + 인플루언서 4</div>
+        </div>
+        <div class="ov-stat">
+          <div class="os-label">인스타 도달</div>
+          <div class="os-value" contenteditable="false">35,044<span class="os-unit"></span></div>
+          <div class="os-sub" contenteditable="false">4월 인플루언서 릴스 4편 합계</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <strong>한 줄로 정리하면</strong> — 검색량은 계속 올렸는데, <strong>콘텐츠 수급 속도가 못 따라간 것</strong>이 4월의 한계입니다. 콘텐츠 포화도(1.99%, 매우 낮음)가 5월의 핵심 액션 포인트입니다.
+    </div>
+  </div>
+
+  <!-- 4월 핵심 KPI 결과 -->
+  <div class="section">
+    <h2>4월 <em>KPI 결과</em></h2>
+    <div class="sec-sub">킥오프 기준선 vs 4월 말 실측치 (W1 → W5)</div>
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kc-label">"미례국밥" 검색량</div>
+        <div class="kc-value" contenteditable="false">3,090<span class="kc-unit"></span></div>
+        <div class="kc-change up" contenteditable="false">+14.9% (W1 대비)</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kc-label">"돼지우동" 검색량</div>
+        <div class="kc-value" contenteditable="false">280<span class="kc-unit"></span></div>
+        <div class="kc-change down" contenteditable="false">-9.7% (하절기 비수기)</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kc-label">월 콘텐츠 발행</div>
+        <div class="kc-value" contenteditable="false">71<span class="kc-unit">건</span></div>
+        <div class="kc-change neutral" contenteditable="false">목표 80 · 89% 달성</div>
+      </div>
+      <div class="kpi-card dark">
+        <div class="kc-label">콘텐츠 포화도</div>
+        <div class="kc-value" contenteditable="false">1.99%</div>
+        <div class="kc-change" contenteditable="false">매우 낮음 — 5월 충원</div>
+      </div>
+    </div>
+
+    <div class="kpi-grid g3" style="margin-top:14px;">
+      <div class="kpi-card">
+        <div class="kc-label">NP 센텀 유입</div>
+        <div class="kc-value" contenteditable="false">1,516</div>
+        <div class="kc-change down" contenteditable="false">W1 대비 -25.3%</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kc-label">NP 전포 유입</div>
+        <div class="kc-value" contenteditable="false">4,410</div>
+        <div class="kc-change up" contenteditable="false">W1 대비 +34.9%</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kc-label">키워드 1위 사수</div>
+        <div class="kc-value" contenteditable="false">6<span class="kc-unit">개</span></div>
+        <div class="kc-change up" contenteditable="false">Top 5 진입 13개<br>+ 메인 키워드 원복으로 전포동 국밥 1위 등극</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4월 약속 vs 결과 (압축) -->
+  <div class="section">
+    <div class="ch-header">
+      <div class="ch-icon promise">2</div>
+      <div>
+        <h3>4월 킥오프 약속 × 결과</h3>
+        <div class="ch-badge">4/7 킥오프 기준 — 영역별 달성도</div>
+      </div>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th style="width:18%;">영역</th>
+          <th style="width:16%;">상태</th>
+          <th>4월 결과</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="item" contenteditable="false">월 콘텐츠 발행 65→80+</td>
+          <td><span class="status partial">76%</span></td>
+          <td class="desc" contenteditable="false">71건 (기존 블로그·카페 65 + 체험단 2 + 인플루언서 4). 인플루언서 4명 섭외·3명 업로드, 블로그 체험단 10명 섭외·2명 업로드</td>
+        </tr>
+        <tr>
+          <td class="item" contenteditable="false">NP — 센텀</td>
+          <td><span class="status done">달성</span></td>
+          <td class="desc" contenteditable="false">메인 키워드 5개 교체 ✓ / 소개문 4/14 업데이트 ✓ / 리뷰 답변 템플릿 ✓ / 체험단 4명 방문</td>
+        </tr>
+        <tr>
+          <td class="item" contenteditable="false">NP — 전포</td>
+          <td><span class="status done">달성</span></td>
+          <td class="desc" contenteditable="false">메인 키워드 5개 교체 ✓ / 소개문 ✓ / 예약·쿠폰·톡톡 ✓ / NP 유입 +34.9% / 전포동 국밥 1위 등극</td>
+        </tr>
+        <tr>
+          <td class="item" contenteditable="false">인스타그램 톤·가이드</td>
+          <td><span class="status done">달성</span></td>
+          <td class="desc" contenteditable="false">무드보드 & 콘텐츠 기획 ✓ / 프로필 허브 링크 ✓ / 톤·가이드라인 ✓</td>
+        </tr>
+        <tr>
+          <td class="item" contenteditable="false">체험단 / 인플루언서</td>
+          <td><span class="status partial">진행중</span></td>
+          <td class="desc" contenteditable="false">인플루언서 4명 섭외 / 3명 업로드 — 블로그 체험단 10명 섭외 / 2명 업로드 — 5월 업로드 가속</td>
+        </tr>
+        <tr>
+          <td class="item" contenteditable="false">메타 광고</td>
+          <td><span class="status partial">진행 예정</span></td>
+          <td class="desc" contenteditable="false"><strong>5월 본격 집행 (4월 광고비 50만 이월 + 5월 합산 부스팅)</strong></td>
+        </tr>
+        <tr>
+          <td class="item" contenteditable="false">전략 산출물</td>
+          <td><span class="status done">달성</span></td>
+          <td class="desc" contenteditable="false">키워드 전략 / 리뷰 답변 템플릿 / 바이럴 가이드 / 콘텐츠 가이드라인 전달</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 네이버플레이스 (4지표 통일) -->
+  <div class="section">
+    <div class="ch-header">
+      <div class="ch-icon np">NP</div>
+      <div>
+        <h3>네이버플레이스 — 두 매장 결과</h3>
+        <div class="ch-badge">동일 4지표로 비교 (W1 → W5)</div>
+      </div>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>매장 / 지표</th>
+          <th class="num">W1</th>
+          <th class="num">W2</th>
+          <th class="num">W3</th>
+          <th class="num">W4</th>
+          <th class="num">W5</th>
+          <th class="num">변화</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="item">[센텀] 플레이스 유입</td><td class="num">2,029</td><td class="num">2,160</td><td class="num">1,672</td><td class="num">1,644</td><td class="num">1,516</td><td class="num down">-25.3%</td></tr>
+        <tr><td class="item">[센텀] 네이버지도</td><td class="num">1,302</td><td class="num">1,421</td><td class="num">1,125</td><td class="num">1,124</td><td class="num">1,031</td><td class="num down">-20.8%</td></tr>
+        <tr><td class="item">[센텀] 네이버검색</td><td class="num">684</td><td class="num">715</td><td class="num">539</td><td class="num">498</td><td class="num">460</td><td class="num down">-32.7%</td></tr>
+        <tr><td class="item">[센텀] 리뷰 등록</td><td class="num">81</td><td class="num">61</td><td class="num">65</td><td class="num">73</td><td class="num">79</td><td class="num up">3주 연속 회복</td></tr>
+        <tr><td colspan="7" style="background:#f8fafb; padding:6px 16px;"></td></tr>
+        <tr><td class="item">[전포] 플레이스 유입</td><td class="num">3,270</td><td class="num">4,455</td><td class="num">4,782</td><td class="num">4,367</td><td class="num">4,410</td><td class="num up">+34.9%</td></tr>
+        <tr><td class="item">[전포] 네이버지도</td><td class="num">2,097</td><td class="num">2,987</td><td class="num">3,229</td><td class="num">3,287</td><td class="num">3,470</td><td class="num up">+65.5%</td></tr>
+        <tr><td class="item">[전포] 네이버검색</td><td class="num">1,121</td><td class="num">1,419</td><td class="num">1,500</td><td class="num">1,032</td><td class="num">912</td><td class="num down">-18.6%</td></tr>
+        <tr><td class="item">[전포] 리뷰 등록</td><td class="num">72</td><td class="num">83</td><td class="num">81</td><td class="num">58</td><td class="num">54</td><td class="num down">-25.0%</td></tr>
+      </tbody>
+    </table>
+
+    <div class="info-box">
+      <strong>시즌 + 부스팅 종료의 자연스러운 흐름</strong> — 작년 검색 데이터 기준, <strong>4~8월은 더운 날씨와 맞물리며 국밥 카테고리 검색량이 줄어드는 비수기</strong>(8~10월 피크 대비 약 14% 낮음). 여기에 센텀점은 1/12 오픈 후 <strong>100일 신규 오픈 부스팅이 4월에 종료</strong>되면서 맛집 빅키워드 순위가 자연스럽게 점차 떨어지는 흐름이 겹쳤습니다. 카테고리 시즌 영향은 월 예산으로 움직이기 어려운 영역인 만큼, 5월에는 <strong>위클리 추적관찰 + 맛집 키워드 선점 블로그 작업</strong>으로 자연 흐름 위에서 회복을 만들어갑니다.<br><br>
+      반면 전포점은 메인 키워드 운영 효과로 <strong>NP 유입 +34.9% 성장</strong>, "전포동 국밥" 1위 등극까지 만들었습니다. 두 매장의 다른 흐름이 보여주는 만큼 5월 액션도 매장별로 분리해서 가져갑니다.
+    </div>
+  </div>
+
+  <!-- 인스타그램 (섭외/업로드 분리 + 로드맵) -->
+  <div class="section">
+    <div class="ch-header">
+      <div class="ch-icon ig">IG</div>
+      <div>
+        <h3>인스타그램 — 섭외 vs 업로드 분리</h3>
+        <div class="ch-badge">바이럴 콘텐츠 도달 확대 확인</div>
+      </div>
+    </div>
+
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kc-label">인플루언서 (릴스)</div>
+        <div class="kc-value" contenteditable="false">3<span class="kc-unit">/4</span></div>
+        <div class="kc-change neutral" contenteditable="false">4명 섭외 · 3명 업로드</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kc-label">블로그 체험단</div>
+        <div class="kc-value" contenteditable="false">2<span class="kc-unit">/10</span></div>
+        <div class="kc-change neutral" contenteditable="false">10명 섭외 · 2명 업로드</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kc-label">팔로워</div>
+        <div class="kc-value" contenteditable="false">32<span class="kc-unit"></span></div>
+        <div class="kc-change up" contenteditable="false">+10 (W1 대비)</div>
+      </div>
+      <div class="kpi-card dark">
+        <div class="kc-label">인플루언서 릴스 도달</div>
+        <div class="kc-value" contenteditable="false">35,044</div>
+        <div class="kc-change" contenteditable="false">3편 합계 (4/17 단일 22,287)</div>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <strong>섭외 ≠ 업로드</strong> — 4월에 인플루언서 4명·블로그 10명을 섭외했지만 실제 업로드는 인플루언서 3명·블로그 2명. <strong>5월에 콘텐츠 포화도 박차</strong>의 핵심이 이 업로드 가속입니다. 메타 광고는 4월에 세팅만 완료, 인플루언서 바이럴 콘텐츠를 통한 도달 확대를 확인했고 <strong>5월에 4월 광고비 50만 이월 + 5월 합산해서 부스팅</strong> 시작합니다.
+    </div>
+
+    <h2 style="margin-top:32px; font-size:15px;">인스타그램 콘텐츠 로드맵 — A 100% → A 80 + B 20</h2>
+    <div class="roadmap">
+      <div class="rm-card now">
+        <div class="rm-period">4월</div>
+        <div class="rm-title">A 100%</div>
+        <div class="rm-desc" contenteditable="false">음식 50 + 사람 25 + 매장 15 + 브랜드 10. 브랜드 기반 구축.</div>
+      </div>
+      <div class="rm-card">
+        <div class="rm-period">5~6월</div>
+        <div class="rm-title">A 80 + B 20</div>
+        <div class="rm-desc" contenteditable="false">브랜드 콘텐츠 유지 + <strong>성장 스토리 추가(가맹점주 자극)</strong> + 프로필 가맹 링크.</div>
+      </div>
+      <div class="rm-card">
+        <div class="rm-period">매장 5개+</div>
+        <div class="rm-title">채널 분리 검토</div>
+        <div class="rm-desc" contenteditable="false">브랜드 (B2C) + 가맹 (B2B) 분리 운영.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 예산 집행 -->
+  <div class="section">
+    <div class="ch-header">
+      <div class="ch-icon budget">₩</div>
+      <div>
+        <h3>예산 집행 현황</h3>
+        <div class="ch-badge">4월 견적 600만원 (VAT 별도)</div>
+      </div>
+    </div>
+
+    <div class="budget-bar">
+      <div class="bb" style="width:50%; background:#0D0D0D;">Part 1 채널 전략·운영 300만</div>
+      <div class="bb" style="width:33%; background:#EA580C;">Part 2 체험단·씨딩·광고 200만</div>
+      <div class="bb" style="width:17%; background:#16a34a;">Part 3 부산 출장·촬영 100만</div>
+    </div>
+
+    <table>
+      <thead><tr><th>Part</th><th>내용</th><th class="num">견적</th><th class="num">실집행</th></tr></thead>
+      <tbody>
+        <tr><td class="item">Part 1 채널 전략·운영</td><td class="desc">인스타 채널 전략·운영, NP 최적화, 키워드 전략·모니터링, 얼큰돼지우동 바이럴 전략</td><td class="num">3,000,000</td><td class="num up">3,000,000 ✓</td></tr>
+        <tr><td class="item">Part 2 체험단·씨딩·광고</td><td class="desc">블로그 체험단(10섭외/2업로드), 인플루언서 씨딩(4명), 메타 광고 세팅, 리뷰 시스템</td><td class="num">2,000,000</td><td class="num accent">1,500,000 (광고비 50만 5월 이월)</td></tr>
+        <tr><td class="item">Part 3 부산 출장·촬영</td><td class="desc">KTX 왕복(4명), 부산 내 이동, 촬영 디렉팅(반일)</td><td class="num">1,000,000</td><td class="num up">1,000,000 ✓</td></tr>
+        <tr class="total-row"><td class="item">합계</td><td class="desc">4월 정산 기준</td><td class="num">6,000,000</td><td class="num accent">5,500,000 + 5월 이월 50만</td></tr>
+      </tbody>
+    </table>
+
+    <div class="info-box">
+      <strong>입금 정산 (시트 입금 탭 기준)</strong><br>
+      • 3/31 250만원 입금 + 세금계산서 발행 ✓<br>
+      • 4/29 350만원 입금 + 세금계산서 발행 ✓<br>
+      • <strong>메타 광고비 50만원 → 5월로 이월</strong> (5월 메타 광고 본격 부스팅 비용에 합산)<br>
+      • 5월 비용 → 5/29 입금 예정
+    </div>
+  </div>
+
+  <!-- 5월로 이어가는 것 -->
+  <div class="section">
+    <div class="ch-header">
+      <div class="ch-icon next">5</div>
+      <div>
+        <h3>5월로 이어가는 것</h3>
+        <div class="ch-badge">상세는 별도 5월 운영 플랜 참조</div>
+      </div>
+    </div>
+
+    <div class="info-box dark">
+      <strong>5월 한 줄</strong> — 검색량이 우상향한 흐름 위에서 콘텐츠 포화도를 끌어올리고, 메타 광고를 본격 집행합니다. 6월 강남점 오픈 사전 작업을 같이 시작합니다.
+    </div>
+
+    <div class="action-grid">
+      <div class="action-card">
+        <div class="ac-label boost">Main 1</div>
+        <div class="ac-text" contenteditable="false">
+          <strong>콘텐츠 포화도 충원</strong><br>
+          블로그 체험단 업로드 가속<br>
+          인플루언서 5~7명 섭외/업로드<br>
+          돼지우동 키워드 매핑 SEO 블로그
+        </div>
+      </div>
+      <div class="action-card">
+        <div class="ac-label boost">Main 2</div>
+        <div class="ac-text" contenteditable="false">
+          <strong>메타 광고 본격 집행</strong><br>
+          4월 광고비 50만 이월<br>
+          + 5월 합산 부스팅<br>
+          6월 강남점 오픈 전 부스팅 예정
+        </div>
+      </div>
+      <div class="action-card">
+        <div class="ac-label boost">Main 3</div>
+        <div class="ac-text" contenteditable="false">
+          <strong>강남점 오픈 사전 작업</strong><br>
+          입지·키워드 분석<br>
+          인플루언서 후보 컨택<br>
+          돼지우동 바이럴 지속<br>
+          런칭일 맞춰 사전 콘텐츠
+        </div>
+      </div>
+      <div class="action-card">
+        <div class="ac-label boost">Main 4</div>
+        <div class="ac-text" contenteditable="false">
+          <strong>검색 콘텐츠 확보</strong><br>
+          블로그 체험단 40건<br>
+          섭외 및 업로드 예정<br>
+          (5월 콘텐츠 부스팅)
+        </div>
+      </div>
+      <div class="action-card">
+        <div class="ac-label keep">Base</div>
+        <div class="ac-text" contenteditable="false">
+          <strong>NP 위클리 추적관찰</strong><br>
+          키워드 순위 트래킹<br>
+          맛집 키워드 선점 블로그 작업<br>
+          전포 메인 키워드 14일 효과 측정
+        </div>
+      </div>
+      <div class="action-card">
+        <div class="ac-label keep">Base</div>
+        <div class="ac-text" contenteditable="false">
+          <strong>인스타 로드맵 진입</strong><br>
+          A 80 + B 20 (성장 스토리)<br>
+          가맹점주 자극 콘텐츠 시작<br>
+          프로필 가맹 링크 추가 검토
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="brand">BRANDRISE</div>
+    본 리포트는 위드런 측 전달 목적으로 작성되었습니다.<br>
+    데이터 기준일: 2026. 05. 04 · 작성: 우성민 LEAD PM
+  </div>
+
+</div>
+
+<script>
+function toggleEdit() {
+  const body = document.body;
+  const btn = document.getElementById('editToggle');
+  body.classList.toggle('editing');
+  const isEditing = body.classList.contains('editing');
+  btn.textContent = isEditing ? '편집 완료' : '편집';
+  btn.classList.toggle('active', isEditing);
+  document.querySelectorAll('[contenteditable]').forEach(el => {
+    el.contentEditable = isEditing ? 'true' : 'false';
+  });
+}
+</script>
+</body>
+</html>

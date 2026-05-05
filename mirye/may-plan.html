@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>미례국밥 5월 운영 플랜 — 브랜드라이즈</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black: #0D0D0D;
+  --white: #FFFFFF;
+  --bg: #F7F6F2;
+  --accent: #EA580C;
+  --accent-light: #FFF7ED;
+  --gray-100: #F3F4F6;
+  --gray-200: #E5E7EB;
+  --gray-300: #D1D5DB;
+  --gray-400: #9CA3AF;
+  --gray-500: #6B7280;
+  --gray-700: #374151;
+  --text: #111827;
+  --green: #16a34a;
+  --red: #dc2626;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Noto Sans KR', -apple-system, sans-serif; background: var(--white); color: var(--text); line-height: 1.7; }
+
+/* SLIDE */
+.slide {
+  width: 100%; min-height: 100vh;
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 80px 120px; position: relative;
+  page-break-after: always; overflow: hidden;
+}
+.slide:last-child { page-break-after: auto; }
+.slide::after {
+  content: attr(data-page); position: absolute; bottom: 40px; right: 60px;
+  font-size: 11px; font-weight: 600; color: var(--gray-300); letter-spacing: 0.05em;
+}
+
+/* COMMON */
+.label { font-size: 11px; font-weight: 700; letter-spacing: 0.18em; color: var(--accent); text-transform: uppercase; margin-bottom: 20px; }
+.slide-title { font-size: 42px; font-weight: 900; line-height: 1.25; letter-spacing: -0.03em; color: var(--black); margin-bottom: 16px; }
+.slide-title em { color: var(--accent); font-style: normal; }
+.slide-sub { font-size: 17px; color: var(--gray-500); max-width: 760px; line-height: 1.85; font-weight: 300; }
+
+/* COVER */
+.cover { background: var(--black); color: var(--white); }
+.cover .label { color: var(--accent); }
+.cover .slide-title { color: var(--white); font-size: 56px; }
+.cover .slide-sub { color: rgba(255,255,255,0.5); }
+.cover::after { color: rgba(255,255,255,0.2); }
+.cover-meta { display: flex; gap: 56px; margin-top: 64px; padding-top: 36px; border-top: 1px solid rgba(255,255,255,0.1); }
+.cover-meta dt { font-size: 10px; letter-spacing: 0.12em; color: rgba(255,255,255,0.35); text-transform: uppercase; margin-bottom: 6px; }
+.cover-meta dd { font-size: 14px; font-weight: 600; color: var(--white); }
+.cover-badge { display: inline-block; background: var(--accent); color: var(--white); font-size: 11px; font-weight: 700; padding: 6px 16px; border-radius: 20px; letter-spacing: 0.05em; margin-bottom: 16px; }
+
+/* GRID HELPERS */
+.g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 44px; }
+.g3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-top: 44px; }
+.g4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 14px; margin-top: 44px; }
+.g5 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr 1fr; gap: 12px; margin-top: 36px; }
+
+/* CARDS */
+.card { padding: 28px 24px; border-radius: 14px; border: 1px solid var(--gray-200); background: var(--white); }
+.card.dark { background: var(--black); border-color: var(--black); color: var(--white); }
+.card.accent { background: var(--accent-light); border-color: var(--accent); }
+.card.bg { background: var(--bg); }
+.card .c-label { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 8px; color: var(--gray-500); }
+.card.dark .c-label { color: var(--accent); }
+.card.accent .c-label { color: var(--accent); }
+.card .c-value { font-size: 36px; font-weight: 900; letter-spacing: -0.02em; line-height: 1.1; }
+.card.dark .c-value { color: var(--white); }
+.card .c-value em { color: var(--accent); font-style: normal; }
+.card .c-unit { font-size: 16px; font-weight: 500; color: var(--gray-500); }
+.card.dark .c-unit { color: rgba(255,255,255,0.4); }
+.card .c-desc { font-size: 12px; color: var(--gray-500); margin-top: 8px; line-height: 1.55; }
+.card.dark .c-desc { color: rgba(255,255,255,0.45); }
+.card .c-title { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+.card .c-text { font-size: 13px; color: var(--gray-500); line-height: 1.65; }
+.card.dark .c-text { color: rgba(255,255,255,0.7); }
+
+/* TABLE */
+.t-wrap { margin-top: 36px; border-radius: 14px; overflow: hidden; border: 1px solid var(--gray-200); }
+table { width: 100%; border-collapse: collapse; }
+table thead tr { background: var(--black); }
+table th { padding: 14px 20px; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; color: rgba(255,255,255,0.6); text-align: left; text-transform: uppercase; }
+table td { padding: 14px 20px; font-size: 13px; border-bottom: 1px solid var(--gray-200); vertical-align: top; }
+table tr:last-child td { border-bottom: none; }
+table tr:nth-child(even) td { background: var(--gray-100); }
+table .metric { font-weight: 700; color: var(--black); }
+table .highlight { font-weight: 800; color: var(--accent); }
+table .muted { color: var(--gray-500); font-size: 12px; }
+table .ok { color: var(--green); font-weight: 700; }
+table .bad { color: var(--red); font-weight: 700; }
+
+/* PRIORITY MIX BAR */
+.mix-bar { display: flex; height: 56px; border-radius: 12px; overflow: hidden; margin-top: 36px; }
+.mix-bar .mb { display: flex; flex-direction: column; align-items: center; justify-content: center; font-weight: 700; color: var(--white); }
+.mix-bar .mb-pct { font-size: 18px; font-weight: 900; }
+.mix-bar .mb-name { font-size: 11px; opacity: 0.85; margin-top: 2px; }
+
+/* TIMELINE */
+.tl-card { padding: 22px 18px; border-radius: 12px; border: 1px solid var(--gray-200); background: var(--bg); }
+.tl-card.now { background: var(--accent-light); border-color: var(--accent); }
+.tl-card.kickoff { background: var(--black); border-color: var(--black); color: var(--white); }
+.tl-card .tc-week { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 3px; }
+.tl-card.now .tc-week { color: var(--accent); }
+.tl-card.kickoff .tc-week { color: var(--accent); }
+.tl-card:not(.now):not(.kickoff) .tc-week { color: var(--gray-500); }
+.tl-card .tc-date { font-size: 11px; color: var(--gray-500); margin-bottom: 14px; }
+.tl-card.kickoff .tc-date { color: rgba(255,255,255,0.35); }
+.tl-card .tc-title { font-size: 14px; font-weight: 800; margin-bottom: 10px; line-height: 1.35; }
+.tl-card .tc-items { list-style: none; }
+.tl-card .tc-items li { font-size: 11px; padding: 3px 0; display: flex; align-items: flex-start; gap: 6px; line-height: 1.5; }
+.tl-card:not(.kickoff) .tc-items li { color: var(--gray-700); }
+.tl-card.kickoff .tc-items li { color: rgba(255,255,255,0.6); }
+.tl-card .tc-items li::before { content: ""; width: 4px; height: 4px; border-radius: 50%; flex-shrink: 0; margin-top: 5px; }
+.tl-card.now .tc-items li::before { background: var(--accent); }
+.tl-card.kickoff .tc-items li::before { background: var(--accent); }
+.tl-card:not(.now):not(.kickoff) .tc-items li::before { background: var(--gray-300); }
+
+/* CHECKLIST */
+.checklist { list-style: none; margin-top: 24px; }
+.checklist li { display: flex; align-items: flex-start; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--gray-200); font-size: 13px; line-height: 1.6; }
+.checklist li:last-child { border-bottom: none; }
+.checklist li .ck-st { font-size: 14px; flex-shrink: 0; margin-top: 2px; }
+.checklist li.done .ck-st { color: var(--green); }
+.checklist li.todo .ck-st { color: var(--accent); }
+.checklist li .ck-body strong { font-weight: 700; }
+.checklist li .ck-body .ck-meta { font-size: 11px; color: var(--gray-500); margin-top: 3px; }
+
+/* QUOTE */
+.quote-box { margin-top: 28px; padding: 24px 28px; background: var(--bg); border-radius: 14px; border-left: 4px solid var(--accent); }
+.quote-box p { font-size: 14px; font-weight: 500; color: var(--gray-700); line-height: 1.85; white-space: pre-line; }
+
+/* CLOSE */
+.close-slide { background: var(--black); color: var(--white); }
+.close-slide::after { color: rgba(255,255,255,0.2); }
+.close-slide .slide-title { color: var(--white); }
+.close-slide .slide-sub { color: rgba(255,255,255,0.45); }
+
+/* TOOLBAR */
+.toolbar { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: #0D0D0D; height: 52px; display: flex; align-items: center; justify-content: space-between; padding: 0 28px; }
+.toolbar-logo { font-size: 13px; font-weight: 700; color: var(--accent); letter-spacing: 0.05em; }
+.toolbar-title { font-size: 13px; font-weight: 500; color: #fff; opacity: 0.7; margin-left: 14px; }
+.btn-toolbar { padding: 6px 14px; border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; background: transparent; color: #fff; font-size: 12px; font-weight: 500; cursor: pointer; }
+.btn-toolbar:hover { background: rgba(255,255,255,0.1); }
+body { padding-top: 52px; }
+
+@media print {
+  .toolbar { display: none; }
+  body { padding-top: 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .slide { min-height: 100vh; padding: 60px 80px; }
+}
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <div style="display:flex; align-items:center;">
+    <div class="toolbar-logo">BRANDRISE</div>
+    <div class="toolbar-title">미례국밥 5월 운영 플랜</div>
+  </div>
+  <button class="btn-toolbar" onclick="window.print()">PDF 저장</button>
+</div>
+
+<!-- ========== 01. COVER ========== -->
+<div class="slide cover" data-page="01">
+  <div class="cover-badge">MAY · OPERATION PLAN</div>
+  <div class="label">미례국밥 x 브랜드라이즈</div>
+  <h1 class="slide-title"><em>돼지우동 = 미례국밥.</em><br>5월에 등식을 만듭니다.</h1>
+  <p class="slide-sub">킥오프에서 정한 전략 그대로 — "돼지우동은 키워드가 아니라 바이럴".<br>4월에 깔린 기반 위에서 5월에 본격 가속합니다. 6월 강남점 오픈 직전이 그 타이밍입니다.</p>
+  <dl class="cover-meta">
+    <div><dt>기간</dt><dd>2026. 05. 01 — 05. 31</dd></div>
+    <div><dt>단계</dt><dd>Month 2 — Scale-up</dd></div>
+    <div><dt>대상</dt><dd>위드런 / 변미혜 팀장님</dd></div>
+    <div><dt>작성</dt><dd>브랜드라이즈 (Green)</dd></div>
+  </dl>
+</div>
+
+<!-- ========== 02. Why May — Bridge to June ========== -->
+<div class="slide" data-page="02">
+  <div class="label">Why May — Bridge to June</div>
+  <h2 class="slide-title">5월의 모든 액션은 <em>6월 강남점</em>으로 수렴합니다.</h2>
+  <p class="slide-sub">강남점은 미례국밥의 첫 서울 진출. 그 도시에서 "돼지우동"을 검색하면 미례국밥이 나오게 만드는 것 — 이 작업의 6주 전이 5월입니다.</p>
+  <div class="g3">
+    <div class="card accent">
+      <div class="c-label">킥오프 전략 (4/7) — 그대로 계승</div>
+      <div class="c-text" style="line-height:1.95; color:var(--gray-700);">
+        검색량을 먼저 만들고,<br>
+        그다음에 키워드로 <strong>선점</strong>한다.<br><br>
+        4월: 키워드 진입 시기 아님 (310건)<br>
+        5월: <strong>500 만든다</strong><br>
+        6월: 강남점 오픈에 맞춰 키워드 선점
+      </div>
+    </div>
+    <div class="card">
+      <div class="c-label">4월 학습 — 5월에 직접 작용</div>
+      <div class="c-text" style="line-height:1.95;">
+        ① 도달이 ROI가 되려면 <strong>5종 장치 필수</strong> (4/17 사례)<br>
+        ② 신규 매장 부스팅은 <strong>100일에 종료</strong> (강남점도 동일)<br>
+        ③ 4~7월은 카테고리 시즌 저점 — <strong>자산 누적의 달</strong><br>
+        ④ NP 메인 키워드 변경 시 <strong>14일 추적</strong>
+      </div>
+    </div>
+    <div class="card dark">
+      <div class="c-label">5월의 Why</div>
+      <div class="c-text" style="line-height:1.95;">
+        <strong style="color:var(--white);">강남점 D-30부터 자산 누적 시작</strong><br>
+        센텀점에서 학습한 100일 부스팅 종료를 강남점에서 반복하지 않으려면, 오픈 30일 전부터 콘텐츠가 깔려 있어야 부스팅 종료 후 재평가에서 자연 통과합니다.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 03. Mission ========== -->
+<div class="slide" data-page="03">
+  <div class="label">May Mission</div>
+  <h2 class="slide-title">5월 <em>미션</em>은 한 줄입니다.</h2>
+  <div class="card dark" style="margin-top: 36px; padding: 48px 40px; text-align: center;">
+    <div class="c-label" style="color:var(--accent);">Mission</div>
+    <div style="font-size: 32px; font-weight: 900; color:var(--white); line-height: 1.4; margin-top: 12px;">
+      "<em style="color:var(--accent);">돼지우동</em>"을 검색하면<br>
+      미례국밥이 나오게 만든다.
+    </div>
+    <div style="font-size: 14px; color: rgba(255,255,255,0.5); margin-top: 18px; line-height: 1.7;">
+      검색량 280 → <strong style="color:var(--accent);">500</strong> · 인스타 릴스 누적 2 → <strong style="color:var(--accent);">7건+</strong> · 블로그 돼지우동 키워드 선점
+    </div>
+  </div>
+  <div class="g3" style="margin-top: 24px;">
+    <div class="card accent" style="text-align:center;">
+      <div class="c-label">미션 1 — 메인</div>
+      <div class="c-value" style="font-size:28px;"><em>돼지우동 바이럴</em></div>
+      <div class="c-desc" style="margin-top:8px;">블로그 + 인스타 릴스 동시 진행</div>
+    </div>
+    <div class="card" style="text-align:center;">
+      <div class="c-label">미션 2 — 메인</div>
+      <div class="c-value" style="font-size:28px;"><em>인스타→네이버 연결</em></div>
+      <div class="c-desc" style="margin-top:8px;">5종 전환 장치 5월 적용, 도달→유입 만들기</div>
+    </div>
+    <div class="card bg" style="text-align:center;">
+      <div class="c-label">미션 3 — 베이스</div>
+      <div class="c-value" style="font-size:28px;"><em>NP 위클리 추적</em></div>
+      <div class="c-desc" style="margin-top:8px;">전포 메인 키워드 14일 후 측정</div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 04. 4월에서 가져오는 것 ========== -->
+<div class="slide" data-page="04">
+  <div class="label">From April</div>
+  <h2 class="slide-title">4월에서 5월로 <em>그대로 이어받는 것</em>.</h2>
+  <p class="slide-sub">4월에 약속한 9개 영역 중 미달 2건 + 부분 진행 5건. 5월은 새로 만드는 게 아니라, 4월의 약속을 본격 실행하는 달입니다.</p>
+  <div class="g2">
+    <div class="card accent">
+      <div class="c-label">메인 미션 — 4월 미달, 5월 본격</div>
+      <div class="c-text" style="line-height:1.95; color:var(--gray-700);">
+        <strong style="color:var(--accent);">콘텐츠 발행 65→80+</strong> — 4월 71건(89%), 5월 가속<br>
+        <strong style="color:var(--accent);">돼지우동 검색량 280→500</strong> — 4월 결과 위에서 5월 본격 진행<br>
+        <strong style="color:var(--accent);">인플루언서 5~7명</strong> — 4월 4명 섭외/3명 업로드, 5월 업로드 가속 + 강남 사전 노출<br>
+        <strong style="color:var(--accent);">메타 광고 본격 집행</strong> — 4월 광고비 50만 이월 + 5월 합산 부스팅
+      </div>
+    </div>
+    <div class="card">
+      <div class="c-label">인스타→네이버 연결 5단계 — 5월 첫 릴스부터 적용</div>
+      <div class="c-text" style="line-height:1.95;">
+        ① 프로필 허브 링크 — <strong>완료</strong><br>
+        ② 캡션 CTA — 첫 릴스 직전 점검<br>
+        ③ 영상 마지막 매장 안내 (2~3초) — 첫 릴스부터<br>
+        ④ 스토리 하이라이트 매장 안내 — 5월 적용<br>
+        ⑤ 위치 태그 정확화 — 첫 릴스부터
+      </div>
+    </div>
+  </div>
+  <div class="card dark" style="margin-top: 16px;">
+    <div class="c-label" style="color:var(--accent);">4월 달성 항목 (베이스라인 유지)</div>
+    <div class="c-text" style="line-height:1.85;">
+      <strong style="color:var(--white);">NP 전포 셋업 완료</strong> (39점 → 70점+, 메인 키워드·소개문·예약·쿠폰·톡톡 ✓) → 5월은 메인 키워드 14일 후 효과 측정.<br>
+      <strong style="color:var(--white);">전략 산출물 4종 전달 완료</strong> (키워드 전략 / 리뷰 답변 템플릿 / 바이럴 가이드 / 콘텐츠 가이드라인) → 5월은 인스타→네이버 연결 가이드 추가 정교화.
+    </div>
+  </div>
+</div>
+
+<!-- ========== 05. 채널 우선순위 ========== -->
+<div class="slide" data-page="05">
+  <div class="label">Channel Priority</div>
+  <h2 class="slide-title">5월 <em>리소스 배분</em>.</h2>
+  <p class="slide-sub">킥오프에서 정의한 4채널 그대로. 다만 <strong>비중을 돼지우동 바이럴에 집중</strong>합니다 — 블로그·릴스가 5월의 메인 채널.</p>
+  <div class="mix-bar">
+    <div class="mb" style="width:35%; background:var(--accent);">
+      <div class="mb-pct">35%</div>
+      <div class="mb-name">인스타 릴스</div>
+    </div>
+    <div class="mb" style="width:30%; background:var(--black);">
+      <div class="mb-pct">30%</div>
+      <div class="mb-name">블로그·체험단</div>
+    </div>
+    <div class="mb" style="width:20%; background:var(--gray-700);">
+      <div class="mb-pct">20%</div>
+      <div class="mb-name">메타 광고</div>
+    </div>
+    <div class="mb" style="width:15%; background:var(--gray-400);">
+      <div class="mb-pct">15%</div>
+      <div class="mb-name">NP (베이스)</div>
+    </div>
+  </div>
+  <div class="g4" style="margin-top: 28px;">
+    <div class="card accent">
+      <div class="c-label">메인 — 인스타 릴스</div>
+      <div class="c-text" style="line-height:1.85; color:var(--gray-700);">
+        <strong>씨즐 릴스 5건+</strong><br>
+        면 뽑기·김 올라오는 순간<br>
+        5종 장치 풀 적용<br>
+        5월 2주차부터 매주 1건<br>
+        스트리트 푸드 파이터 무드
+      </div>
+    </div>
+    <div class="card dark">
+      <div class="c-label">메인 — 블로그·체험단</div>
+      <div class="c-text" style="line-height:1.85;">
+        <strong style="color:var(--accent);">"돼지우동" 키워드 선점</strong><br>
+        브랜드 결합 SEO 콘텐츠<br>
+        체험단 7~10명 (부산+서울)<br>
+        주 4건 발행, 누적 50건+
+      </div>
+    </div>
+    <div class="card">
+      <div class="c-label">서브 — 메타 광고</div>
+      <div class="c-text" style="line-height:1.85;">
+        <strong>인플루언서 릴스 소재 부스팅</strong><br>
+        부산 → 서울(강남) 권역 전환<br>
+        도달·조회 KPI<br>
+        권한 인계 완료 후 5월 1주차 시작
+      </div>
+    </div>
+    <div class="card bg">
+      <div class="c-label">베이스 — NP</div>
+      <div class="c-text" style="line-height:1.85;">
+        <strong>전포 메인 키워드 14일 후 측정</strong> (5/13)<br>
+        센텀 빅키워드 자연 흐름<br>
+        리뷰 답변·소식 사이클 유지<br>
+        강남점 NP 사전 등록
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 06. Track 1 — 인스타 릴스 (씨즐) ========== -->
+<div class="slide" data-page="06">
+  <div class="label">Track 1 — Instagram Reels</div>
+  <h2 class="slide-title">씨즐 릴스가 <em>5월의 주력</em>입니다.</h2>
+  <p class="slide-sub">킥오프에서 잡은 톤 그대로 — "정성이 보이는데 격식은 차리지 않는". 핸드폰·자연광·면 뽑기·김 올라오는 순간.</p>
+  <div class="t-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th style="width:14%;">주차</th>
+          <th>릴스 컨셉</th>
+          <th style="width:24%;">5종 장치 적용</th>
+          <th style="width:20%;">측정 지표</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="metric">5월 2주차</td>
+          <td>면 뽑기 + 김 올라오는 순간 (씨즐 3~5초)</td>
+          <td class="muted">캡션 CTA / 엔드카드 / 위치 태그</td>
+          <td class="highlight">"미례국밥 OO점" 검색량</td>
+        </tr>
+        <tr>
+          <td class="metric">5월 3주차</td>
+          <td>새벽 5시 가마솥 — "오늘도 정성 한 그릇" (사람 25%)</td>
+          <td class="muted">5종 전환 장치 적용 (1차 학습 반영)</td>
+          <td class="highlight">프로필 방문 → NP 클릭</td>
+        </tr>
+        <tr>
+          <td class="metric">5월 3주차</td>
+          <td>돼지우동 비주얼 — "이게 뭐야?" 호기심 후킹</td>
+          <td class="muted">5종 전환 장치 + UTM 추적</td>
+          <td class="highlight">돼지우동 검색량 변화</td>
+        </tr>
+        <tr>
+          <td class="metric">5월 4주차</td>
+          <td>점주·줄 서는 손님·매장 외관 (사람·매장 35%)</td>
+          <td class="muted">5종 전환 장치</td>
+          <td class="highlight">팔로워 전환율</td>
+        </tr>
+        <tr>
+          <td class="metric">5월 4주차</td>
+          <td>강남점 D-30 티저 ("곧 강남에서 만나요")</td>
+          <td class="muted">5종 전환 장치 + 강남 위치 태그 사전</td>
+          <td class="highlight">강남 권역 도달</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="card dark" style="margin-top: 20px;">
+    <div class="c-label" style="color:var(--accent);">5월 측정 핵심 질문</div>
+    <div class="c-text" style="line-height:1.8;">
+      "<strong style="color:var(--white);">미례국밥 센텀점</strong>" / "<strong style="color:var(--white);">미례국밥 전포점</strong>" 단독 검색량이 W4 대비 의미있게 증가하는가?<br>
+      <strong style="color:var(--accent);">증가</strong> → 5종 장치 효과 확정 → 강남점 오픈 마케팅에 그대로 적용<br>
+      <strong style="color:var(--accent);">변화 없음</strong> → DM 봇·UTM 등 다른 전략 추가 검토
+    </div>
+  </div>
+</div>
+
+<!-- ========== 07. Track 2 — 블로그·체험단 (돼지우동 SEO) ========== -->
+<div class="slide" data-page="07">
+  <div class="label">Track 2 — Blog · 체험단</div>
+  <h2 class="slide-title">"돼지우동"을 <em>검색하면</em><br>미례국밥이 보이게.</h2>
+  <p class="slide-sub">바이럴이 검색량을 만들면, SEO가 그 검색을 받아냅니다. 5월은 두 트랙을 동시에 돌립니다.</p>
+  <div class="g2">
+    <div class="card accent">
+      <div class="c-label">돼지우동 SEO 콘텐츠 (5월 신규)</div>
+      <div class="c-text" style="line-height:1.95; color:var(--gray-700);">
+        <strong>① "돼지우동이 뭐야?" 정보형</strong><br>
+        부산 국밥집의 시그니처 메뉴 / 미례국밥 발상 스토리<br><br>
+        <strong>② "부산 돼지국밥 맛집" 리스트형</strong><br>
+        미례국밥 포함 5곳 비교 / 돼지우동 차별화 포인트<br><br>
+        <strong>③ "돼지우동 vs 우동국밥"</strong><br>
+        동동국밥과의 차이 / 미례국밥만의 면발·육수<br><br>
+        <strong>④ "강남에서 부산 돼지우동" (5월 4주차~)</strong><br>
+        강남점 오픈 사전 노출
+      </div>
+    </div>
+    <div class="card">
+      <div class="c-label">체험단 7~10명 (부산 + 서울)</div>
+      <div class="c-text" style="line-height:1.95;">
+        <strong>부산 마이크로 4~5명</strong><br>
+        "현지인이 인정한 돼지우동" 정통성<br>
+        브랜드 키워드 "미례국밥 돼지우동" 지정<br><br>
+        <strong>서울 나노 3~5명</strong><br>
+        강남점 오픈 D-30 사전 노출<br>
+        "부산 가면 꼭" → "강남에서 만나요" 전환<br><br>
+        <strong>발주 룰</strong><br>
+        5종 장치 가이드 사전 송부 → 미충족 시 발주 보류
+      </div>
+    </div>
+  </div>
+  <div class="card dark" style="margin-top: 16px;">
+    <div class="c-label" style="color:var(--accent);">5월 누적 목표</div>
+    <div class="c-text" style="line-height:1.8;">
+      블로그 4월 누적 34건 → <strong style="color:var(--white);">5월 50건+ (주 4건 페이스)</strong><br>
+      "돼지우동" 키워드 매핑 블로그 4월 0건 → <strong style="color:var(--white);">5월 8건+</strong> (선점 시작)
+    </div>
+  </div>
+</div>
+
+<!-- ========== 08. Track 3 — 메타 광고 (인플루언서 부스팅) ========== -->
+<div class="slide" data-page="08">
+  <div class="label">Track 3 — Meta Ads</div>
+  <h2 class="slide-title">메타 광고는 <em>바이럴 부스팅용</em>입니다.</h2>
+  <p class="slide-sub">킥오프에서 정한 그대로 — 인플루언서 릴스 소재를 광고로 부스팅. 5월은 위드런→HIZ 권한 인계 완료 후 본격 집행.</p>
+  <div class="g3">
+    <div class="card">
+      <div class="c-label">5월 광고 구조</div>
+      <div class="c-text" style="line-height:1.95;">
+        <strong>1차 (5월 1주차~5월 2주차)</strong><br>
+        부산 권역 / 인플루언서 릴스 소재<br>
+        도달·영상 조회 KPI<br><br>
+        <strong>2차 (5월 3주차~5월 4주차)</strong><br>
+        서울·강남 권역 사전 진입<br>
+        강남점 오픈 D-30 인지도 빌드업
+      </div>
+    </div>
+    <div class="card accent">
+      <div class="c-label">소재 우선순위</div>
+      <div class="c-text" style="line-height:1.95; color:var(--gray-700);">
+        ① 4/17 인플루언서 릴스 (22,287뷰 검증)<br>
+        ② 5월 2주차 5종 장치 적용 첫 자체 릴스<br>
+        ③ 5월 3주차 돼지우동 비주얼 후킹 릴스<br>
+        ④ 5월 4주차 강남 D-30 티저
+      </div>
+    </div>
+    <div class="card dark">
+      <div class="c-label">5월 광고 KPI</div>
+      <div class="c-text" style="line-height:1.95;">
+        <strong style="color:var(--white);">도달</strong> 부산 50K + 서울 30K<br>
+        <strong style="color:var(--white);">CPM</strong> 12,000원 이내<br>
+        <strong style="color:var(--white);">프로필 방문</strong> +1,500<br>
+        <strong style="color:var(--white);">NP 클릭</strong> 베이스라인 측정 시작
+      </div>
+    </div>
+  </div>
+  <div class="card bg" style="margin-top: 20px;">
+    <div class="c-label">권한 인계 — 4/30 완료</div>
+    <div class="c-text" style="line-height:1.85;">
+      위드런 운영 계정(Employee급 추정) 수령 완료. 5월 1주차에 13항목 정찰 → 광고 관리자 / 픽셀 / 비즈니스 자산 점검 후 본격 집행 시작.
+    </div>
+  </div>
+</div>
+
+<!-- ========== 09. Track 4 — NP (베이스라인) ========== -->
+<div class="slide" data-page="09">
+  <div class="label">Track 4 — Naver Place</div>
+  <h2 class="slide-title">NP는 <em>베이스라인 유지</em>만.</h2>
+  <p class="slide-sub">5월에는 NP에 큰 변경을 두지 않습니다. 4월에 만든 셋업이 작동하는지 14일 측정만, 자원은 돼지우동 바이럴에 집중.</p>
+  <div class="g3">
+    <div class="card bg">
+      <div class="c-label">전포점 — 메인 키워드 14일 후 효과 측정</div>
+      <div class="c-text" style="line-height:1.95;">
+        4/29 '전포동 국밥' 메인 키워드 변경 완료<br>
+        <strong style="color:var(--accent);">1주 후 결과: 해당 키워드 1위 등극 ✓ (2→1)</strong><br>
+        <strong>5/13(수) 위클리 — 메인 키워드 변경 14일 후 풀 측정</strong><br>
+        5월 셋째주에 "서면돼지국밥"(37위) 메인 키워드 효율 검증
+      </div>
+    </div>
+    <div class="card">
+      <div class="c-label">센텀점 — 회복 공략 + 리뷰 능동 사이클</div>
+      <div class="c-text" style="line-height:1.95;">
+        4월 비수기 + 100일 부스팅 종료로 NP 유입 -25.3%<br>
+        <strong style="color:var(--accent);">리뷰 능동 회복 3주 연속 (65→73→79, +21.5%)</strong><br>
+        맛집 키워드 회복 1차 사이클 — 리뷰·사진·소식 동시 공급
+      </div>
+    </div>
+    <div class="card accent">
+      <div class="c-label">강남점 — 5월 사전 작업</div>
+      <div class="c-text" style="line-height:1.95; color:var(--gray-700);">
+        5월 2주차 NP 사전 등록 / 인증 절차<br>
+        5월 3주차 키워드 전략서 초안 ("강남 돼지국밥" 등)<br>
+        5월 4주차 강남점 오픈 30일 전 ~ 오픈 후 7일 단계별 액션 플랜<br><br>
+        센텀에서 학습한 100일 부스팅 종료를 강남에서 반복하지 않기 위한 사전 자산 누적
+      </div>
+    </div>
+  </div>
+  <div class="card dark" style="margin-top: 20px;">
+    <div class="c-label" style="color:var(--accent);">메인 키워드 운영 룰 (4월 학습 정리)</div>
+    <div class="c-text" style="line-height:1.8;">
+      ① 메인 키워드 변경은 위드런 / 브랜드라이즈 양쪽 공유 후 실행<br>
+      ② 변경 직후 14일 추적 데이터 누적<br>
+      ③ 효과 미미 시 다음 사이클에 교체 검토<br>
+      ④ 검색량 거의 없는 키워드는 메인 키워드로 사용하지 않음
+    </div>
+  </div>
+</div>
+
+<!-- ========== 10. 5월 주간 캘린더 ========== -->
+<div class="slide" data-page="10">
+  <div class="label">Weekly Schedule</div>
+  <h2 class="slide-title">5월 <em>주간 캘린더</em>.</h2>
+  <p class="slide-sub">5/1 근로자의 날·5/5 어린이날 감안, <strong>첫 영업일 5/4(월)부터 풀가동</strong>.</p>
+  <div class="g5">
+    <div class="tl-card">
+      <div class="tc-week">5월 1주차 — 마감</div>
+      <div class="tc-date">4/29 — 5/5</div>
+      <div class="tc-title">권한 인계 + 메인 키워드 변경</div>
+      <ul class="tc-items">
+        <li>4/29 350만원 입금 + 계산서 발행 ✓</li>
+        <li>메인 키워드 변경 1주 후 → 전포동 국밥 1위 등극 ✓</li>
+        <li>4월 보고서·5월 플랜 발송 ✓</li>
+        <li>인스타 캡션 CTA / 스토리 점검 (다음주)</li>
+        <li>부산한입 콘텐츠 수거 다음주 인계</li>
+      </ul>
+    </div>
+    <div class="tl-card now">
+      <div class="tc-week">5월 2주차 — 핵심</div>
+      <div class="tc-date">5/6 — 5/12</div>
+      <div class="tc-title">메인 키워드 14일 후 측정 + 첫 릴스</div>
+      <ul class="tc-items">
+        <li>인스타 5종 전환 장치 적용 첫 릴스 (5/8)</li>
+        <li>5/13 위클리 — 메인 키워드 14일 후 풀 측정</li>
+        <li>"미례국밥 OO점" 단독 검색량 4월 결과 대비 추이</li>
+        <li>메타 광고 1차 캠페인 런칭</li>
+        <li>강남점 NP 사전 등록 시작</li>
+      </ul>
+    </div>
+    <div class="tl-card">
+      <div class="tc-week">5월 3주차</div>
+      <div class="tc-date">5/13 — 5/19</div>
+      <div class="tc-title">돼지우동 본격 진행</div>
+      <ul class="tc-items">
+        <li>씨즐 릴스 2건 발행 (가마솥 + 돼지우동)</li>
+        <li>서면돼지국밥 메인 키워드 효율 검증</li>
+        <li>강남점 키워드 전략 초안</li>
+        <li>서울 인플루언서 후보 컨택</li>
+        <li>돼지우동 SEO 블로그 2편 추가</li>
+      </ul>
+    </div>
+    <div class="tl-card">
+      <div class="tc-week">5월 4주차</div>
+      <div class="tc-date">5/20 — 5/26</div>
+      <div class="tc-title">강남 오픈 30일 전 티저</div>
+      <ul class="tc-items">
+        <li>강남 오픈 30일 전 티저 릴스 1건</li>
+        <li>메타 광고 서울·강남 권역 진입</li>
+        <li>강남점 오픈 단계별 액션 플랜 확정</li>
+        <li>5월 미션 진척 자체 점검</li>
+        <li>6월 인스타 캘린더 초안</li>
+      </ul>
+    </div>
+    <div class="tl-card kickoff">
+      <div class="tc-week">5월 5주차</div>
+      <div class="tc-date">5/27 — 6/2</div>
+      <div class="tc-title">6월 인계</div>
+      <ul class="tc-items">
+        <li>5월 종합 보고서 (6/4)</li>
+        <li>6월 계획서 발송 (5/29)</li>
+        <li>강남점 오픈 30일 전 본격 시작</li>
+        <li>5월 결과 → 6월 적용 매핑</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 11. 6월 강남점 D-30 ========== -->
+<div class="slide" data-page="11">
+  <div class="label">June Bridge — 강남점 D-30</div>
+  <h2 class="slide-title">강남점은 <em>5월부터 깔아둡니다</em>.</h2>
+  <p class="slide-sub">센텀점 학습 — "신규 매장 부스팅은 100일에 종료". 강남점에서 같은 패턴을 반복하지 않으려면 오픈 30일 전부터 자산이 깔려 있어야 합니다.</p>
+  <div class="t-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th style="width:14%;">시점</th>
+          <th>액션</th>
+          <th style="width:18%;">담당</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="highlight">5월 1주차~5월 2주차</td>
+          <td>강남점 입지·반경 분석, 인근 경쟁 매장 조사</td>
+          <td class="muted">Green</td>
+        </tr>
+        <tr>
+          <td class="highlight">5월 2주차</td>
+          <td>강남점 NP 사전 등록 / 인증 절차 시작</td>
+          <td class="muted">Green / 변팀장</td>
+        </tr>
+        <tr>
+          <td class="highlight">5월 2주차~5월 3주차</td>
+          <td>강남점 키워드 전략서 초안 ("강남 돼지국밥" / "강남 미례국밥" / "테헤란로 점심" 등)</td>
+          <td class="muted">Green</td>
+        </tr>
+        <tr>
+          <td class="highlight">5월 3주차</td>
+          <td>서울 인플루언서 후보 리스트 20명 1차 컨택</td>
+          <td class="muted">지은</td>
+        </tr>
+        <tr>
+          <td class="highlight">5월 4주차</td>
+          <td>강남 D-30 티저 릴스 1건 / 메타 광고 서울·강남 권역 진입</td>
+          <td class="muted">지은 / Green</td>
+        </tr>
+        <tr>
+          <td class="highlight">5월 4주차</td>
+          <td>강남점 오픈 30일 전 / 7일 전 / 오픈일 / 오픈 후 7일 단계별 액션 플랜 확정</td>
+          <td class="muted">Green</td>
+        </tr>
+        <tr>
+          <td class="highlight">5월 5주차</td>
+          <td>6월 계획서 (강남점 포함) 발송</td>
+          <td class="muted">Green → 변팀장</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="quote-box">
+    <p>"브랜드가 좋으면 가만히 있어도 창업 문의가 들어온다."
+
+— 변미혜 팀장님, 2차 미팅 (킥오프 슬라이드 09 인용)
+같은 원리로, 자산이 깔려 있으면 가만히 있어도 강남점 오픈이 잘 작동합니다.</p>
+  </div>
+</div>
+
+<!-- ========== 12. 5월 KPI ========== -->
+<div class="slide" data-page="12">
+  <div class="label">May KPI</div>
+  <h2 class="slide-title">5월 <em>KPI 목표</em>.</h2>
+  <p class="slide-sub">절대 검색량은 시즌 보정(-10% 이내 정상) 후 평가, 핵심은 <strong>돼지우동 검색량 + 자산 누적 + 5종 장치 효과</strong>.</p>
+  <div class="t-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>지표</th>
+          <th style="width:18%;">4월 말</th>
+          <th style="width:24%;">5월 말 목표</th>
+          <th style="width:20%;">평가 기준</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="metric">"돼지우동" 검색량</td>
+          <td class="num">280</td>
+          <td class="num highlight">500</td>
+          <td class="muted">메인 미션 1</td>
+        </tr>
+        <tr>
+          <td class="metric">"미례국밥 OO점" 단독 검색량</td>
+          <td class="muted">4월 결과 기준</td>
+          <td class="highlight">+20% 이상</td>
+          <td class="muted">인스타→네이버 연결 효과</td>
+        </tr>
+        <tr>
+          <td class="metric">인스타 릴스 누적</td>
+          <td class="num">2건</td>
+          <td class="num highlight">7건+</td>
+          <td class="muted">5월 2주차부터 매주 1건</td>
+        </tr>
+        <tr>
+          <td class="metric">블로그 노출</td>
+          <td class="num">30건</td>
+          <td class="num highlight">45건+</td>
+          <td class="muted">주 4건 페이스</td>
+        </tr>
+        <tr>
+          <td class="metric">"돼지우동" 매핑 블로그</td>
+          <td class="num">0건</td>
+          <td class="num highlight">8건+</td>
+          <td class="muted">키워드 선점 시작</td>
+        </tr>
+        <tr>
+          <td class="metric">체험단 / 인플루언서</td>
+          <td class="num">4명</td>
+          <td class="num highlight">7~10명</td>
+          <td class="muted">부산 + 서울 사전</td>
+        </tr>
+        <tr>
+          <td class="metric">메타 광고 도달</td>
+          <td class="num">—</td>
+          <td class="num highlight">80K (부산 50 + 서울 30)</td>
+          <td class="muted">CPM 12,000원 이내</td>
+        </tr>
+        <tr>
+          <td class="metric">전포점 NP 유입</td>
+          <td class="num">4,410</td>
+          <td class="num highlight">4,600 이상</td>
+          <td class="muted">메인 키워드 14일 후 효과</td>
+        </tr>
+        <tr>
+          <td class="metric">센텀점 NP 유입</td>
+          <td class="num">1,516</td>
+          <td class="num highlight">1,700 이상</td>
+          <td class="muted">맛집 키워드 회복 1차 사이클</td>
+        </tr>
+        <tr>
+          <td class="metric">센텀 맛집 키워드 4종 평균</td>
+          <td class="num">4월 말 30위대</td>
+          <td class="num highlight">2개 이상 10위 이내</td>
+          <td class="muted">맛집 키워드 회복 트랙</td>
+        </tr>
+        <tr>
+          <td class="metric">미례국밥 검색량 (참고)</td>
+          <td class="num">3,090</td>
+          <td class="num">2,800~3,300</td>
+          <td class="muted">4~8월 시즌 -10% 이내 정상</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ========== 13. 변팀장 협조 요청 ========== -->
+<div class="slide" data-page="13">
+  <div class="label">Cooperation</div>
+  <h2 class="slide-title">변팀장님 <em>협조 요청</em> 5건.</h2>
+  <p class="slide-sub">5월 첫 영업일(5/4) 직후부터 풀가동하기 위해, 5월 1주차 안에 5건이 채워지면 베스트입니다.</p>
+  <ul class="checklist">
+    <li class="todo">
+      <span class="ck-st">●</span>
+      <div class="ck-body">
+        <strong>1. 강남점 입지·메뉴 구성·오픈 일정 디테일 공유</strong>
+        <div class="ck-meta">마감 5월 1주차 / 키워드 전략서 + 인플루언서 후보 작성 위해 — 5월의 모든 액션이 강남점에 수렴</div>
+      </div>
+    </li>
+    <li class="todo">
+      <span class="ck-st">●</span>
+      <div class="ck-body">
+        <strong>2. 강남점 NP 등록·인증 절차 협조</strong>
+        <div class="ck-meta">마감 5월 2주차 / 6월 오픈 사전 작업, 센텀점 100일 부스팅 종료 패턴 반복 방지</div>
+      </div>
+    </li>
+    <li class="todo">
+      <span class="ck-st">●</span>
+      <div class="ck-body">
+        <strong>3. 인플루언서·체험단 비용 / 업체 디테일</strong>
+        <div class="ck-meta">마감 5월 1주차 / 5월 7~10명 발주 사이클 시작 (부산 4~5 + 서울 3~5)</div>
+      </div>
+    </li>
+    <li class="todo">
+      <span class="ck-st">●</span>
+      <div class="ck-body">
+        <strong>4. 5월 인스타 콘텐츠 보정 시안 도착</strong>
+        <div class="ck-meta">마감 4/29~5/2 / 5월 인스타 캘린더 확정 위해</div>
+      </div>
+    </li>
+    <li class="todo">
+      <span class="ck-st">●</span>
+      <div class="ck-body">
+        <strong>5. 4월 잔금 결제 일정 안내</strong>
+        <div class="ck-meta">견적·세금계산서는 5/2까지 발행</div>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<!-- ========== 14. 메일 본문 ========== -->
+<div class="slide" data-page="14">
+  <div class="label">Email Draft</div>
+  <h2 class="slide-title">변팀장님 <em>발송 메일</em> 본문.</h2>
+  <p class="slide-sub">4/30(수) 발송 — 4월 4주차 위클리 알림과 함께 묶어 전달합니다.</p>
+  <div class="quote-box">
+    <p>팀장님 안녕하세요 :)
+
+5월 계획서 전달드립니다 (4월 4주차 위클리 알림과 함께).
+
+핵심은 한 줄로 — 5월은 "돼지우동 = 미례국밥" 등식을 만드는 달입니다.
+6월 강남점 오픈 시점에 이 등식이 검색·바이럴 양쪽에서 작동하도록,
+5월부터 자산을 깔아둡니다.
+
+채널 우선순위는 인스타 릴스 + 블로그·체험단을 메인으로,
+NP는 4월에 만든 셋업이 작동하는지 14일 측정만 하고
+큰 변경은 두지 않습니다 (자원을 돼지우동 바이럴에 집중).
+
+상세는 첨부 계획서로 봐주시고, 협조 부탁드릴 5가지(강남점 디테일 / 강남 NP /
+인플루언서 비용 / 인스타 시안 / 4월 잔금)는 계획서 마지막 항목에 정리했습니다.
+
+5월 첫 영업일이 5/4(월)이라 미리 드리는 이유이고요,
+5월 첫 위클리는 5/13(수)에 메인 키워드 변경 효과 + 인스타→네이버 연결 첫 릴스 효과 측정과 함께 드립니다.
+
+4월 잔금 견적·세금계산서는 금주(~5/2) 내 발행해서 보내드릴게요.
+4월 보고서는 데이터 마감 후 5/7(목)에 별도 정리해 드립니다.
+
+감사합니다.
+우성민 드림</p>
+  </div>
+</div>
+
+<!-- ========== 15. CLOSE ========== -->
+<div class="slide close-slide" data-page="15">
+  <div class="label">May 2026 → June</div>
+  <h2 class="slide-title">검색량을 만들고,<br><em>키워드로 선점한다.</em></h2>
+  <p class="slide-sub">킥오프에서 잡은 그 전략, 5월에 본격 실행합니다.<br>5/4(월) 첫 영업일부터 본격 가동, 5/13(수) 첫 위클리에서 메인 키워드 + 인스타→네이버 연결 효과 1차 측정.</p>
+  <dl class="cover-meta">
+    <div><dt>다음 위클리</dt><dd>2026. 05. 13 (수)</dd></div>
+    <div><dt>4월 보고서</dt><dd>2026. 05. 07 (목)</dd></div>
+    <div><dt>6월 계획서</dt><dd>2026. 05. 29 (수)</dd></div>
+    <div><dt>강남점 오픈</dt><dd>2026. 06 (예정)</dd></div>
+  </dl>
+</div>
+
+</body>
+</html>
