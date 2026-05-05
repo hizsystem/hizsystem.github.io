@@ -125,9 +125,18 @@ table .muted { color: var(--gray-500); font-size: 12px; }
 .toolbar { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: #0D0D0D; height: 52px; display: flex; align-items: center; justify-content: space-between; padding: 0 28px; }
 .toolbar-logo { font-size: 13px; font-weight: 700; color: var(--accent); letter-spacing: 0.05em; }
 .toolbar-title { font-size: 13px; font-weight: 500; color: #fff; opacity: 0.7; margin-left: 14px; }
+.toolbar-actions { display: flex; gap: 8px; }
 .btn-toolbar { padding: 6px 14px; border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; background: transparent; color: #fff; font-size: 12px; font-weight: 500; cursor: pointer; }
 .btn-toolbar:hover { background: rgba(255,255,255,0.1); }
+.btn-toolbar.active { background: var(--accent); color: #fff; border-color: var(--accent); }
 body { padding-top: 52px; }
+
+/* EDIT MODE */
+.edit-banner { display: none; position: fixed; top: 52px; left: 0; right: 0; z-index: 99; background: var(--accent-light); border-bottom: 2px solid var(--accent); padding: 8px 28px; font-size: 12px; color: var(--accent); font-weight: 600; text-align: center; }
+body.editing .edit-banner { display: block; }
+body.editing { padding-top: 88px; }
+body.editing [contenteditable="true"] { outline: 2px dashed rgba(234,88,12,0.3); outline-offset: 2px; border-radius: 4px; }
+body.editing [contenteditable="true"]:focus { outline-color: var(--accent); background: var(--accent-light); }
 
 @media print {
   .toolbar { display: none; }
@@ -143,8 +152,13 @@ body { padding-top: 52px; }
     <div class="toolbar-logo">BRANDRISE</div>
     <div class="toolbar-title">미례국밥 5월 운영 플랜</div>
   </div>
-  <button class="btn-toolbar" onclick="window.print()">PDF 저장</button>
+  <div class="toolbar-actions">
+    <button class="btn-toolbar" id="editToggle" onclick="toggleEdit()">편집</button>
+    <button class="btn-toolbar" onclick="window.print()">PDF 저장</button>
+  </div>
 </div>
+
+<div class="edit-banner">편집 모드 — 텍스트와 숫자를 클릭해서 수정하세요. 새로고침하면 원상복구됩니다.</div>
 
 <!-- ========== 01. 커버 ========== -->
 <div class="slide cover" data-page="01">
@@ -244,6 +258,8 @@ body { padding-top: 52px; }
   <h2 class="slide-title">검색 <em>콘텐츠 누적</em>.</h2>
   <p class="slide-sub">블로그 체험단 40인 이상 업로드 부스팅 + 맛집 키워드 선점 SEO 블로그로 4월에 측정한 콘텐츠 포화도(1.99%, 매우 낮음)를 5월에 본격 끌어올립니다.</p>
 
+  <p style="font-size:13px;color:var(--gray-500);margin-top:6px;display:none;"></p>
+
   <div class="action-detail">
     <div class="ad-row">
       <div class="ad-key">블로그 체험단</div>
@@ -251,7 +267,7 @@ body { padding-top: 52px; }
     </div>
     <div class="ad-row">
       <div class="ad-key">맛집 키워드 선점 SEO 블로그</div>
-      <div class="ad-val">4월 W5에 대폭락한 광역 맛집 키워드(센텀 맛집·전포 맛집 등)는 <strong>NP 메인 키워드로 등록 불가</strong>. 블로그 콘텐츠에 녹여 검색 결과 페이지에 미례국밥이 직접 노출되도록 <strong>8건 이상</strong> 발행.</div>
+      <div class="ad-val">4월 W5에 하락한 광역 맛집 키워드(센텀 맛집·전포 맛집 등)는 <strong>NP 메인 키워드로 등록 불가</strong>. 블로그 콘텐츠에 녹여 검색 결과 페이지에 미례국밥이 직접 노출되도록 <strong>8건 이상</strong> 발행.</div>
     </div>
     <div class="ad-row">
       <div class="ad-key">우선 맛집 키워드</div>
@@ -375,8 +391,8 @@ body { padding-top: 52px; }
       <div class="tc-date">5/4 — 5/10</div>
       <div class="tc-title">셋업 + 첫 릴스</div>
       <ul class="tc-items">
-        <li>인플루언서 1차 섭외·발주</li>
-        <li>블로그 체험단 1차 발주</li>
+        <li>인플루언서 1차 섭외 진행</li>
+        <li>블로그 체험단 1차 섭외 진행</li>
         <li>메타 광고 캠페인 셋업</li>
         <li>5월 첫 릴스 발행</li>
       </ul>
@@ -389,7 +405,7 @@ body { padding-top: 52px; }
         <li>맛집 키워드 SEO 블로그 발행</li>
         <li>메타 광고 1차 캠페인 런칭</li>
         <li>블로그 체험단 업로드 가속</li>
-        <li>인플루언서 2차 발주</li>
+        <li>인플루언서 2차 섭외 진행</li>
       </ul>
     </div>
     <div class="tl-card">
@@ -416,6 +432,21 @@ body { padding-top: 52px; }
     </div>
   </div>
 </div>
+
+<script>
+function toggleEdit() {
+  const body = document.body;
+  const btn = document.getElementById('editToggle');
+  body.classList.toggle('editing');
+  const isEditing = body.classList.contains('editing');
+  btn.textContent = isEditing ? '편집 완료' : '편집';
+  btn.classList.toggle('active', isEditing);
+  const selectors = '.slide-title, .slide-sub, .ad-val, .ad-key, .c-text, .c-title, .c-desc, .c-label, .tc-title, .tc-date, .tc-week, .tc-items li, td, th, .ck-body strong, .ck-body .ck-meta, dd, .label';
+  document.querySelectorAll(selectors).forEach(el => {
+    el.contentEditable = isEditing ? 'true' : 'false';
+  });
+}
+</script>
 
 <!-- ========== 08. Close ========== -->
 <div class="slide close-slide" data-page="08">
