@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>댄싱컵 딥라떼 — 5/8 내부 회의 prep | HIZ</title>
+    <style>
+        :root {
+            --primary: #1a1a1a;
+            --secondary: #444444;
+            --accent: #1A2C5C;        /* 솔티드 딥 인디고 */
+            --accent-light: #eef0f6;
+            --accent-soft: #d8dde9;
+            --highlight: #C8995A;     /* 캐러멜 골드 */
+            --highlight-soft: #f5ecdc;
+            --bg: #fafafa;
+            --card-bg: #ffffff;
+            --muted: #f5f5f5;
+            --text: #1a1a1a;
+            --text-light: #999999;
+            --border: #eeeeee;
+            --success: #5a7a52;
+            --warning: #C8995A;
+            --danger: #b34c3a;
+            --salt-gray: #C9CCD1;
+            --caramel-brown: #8a5a2b;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; word-break: keep-all; overflow-wrap: break-word; }
+        .header { background: #ffffff; color: var(--primary); padding: 60px 40px; text-align: center; border-bottom: 1px solid var(--border); position: relative; overflow: hidden; }
+        .header::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 6px; background: linear-gradient(90deg, var(--accent) 0%, var(--highlight) 50%, var(--accent) 100%); }
+        .header-badge { display: inline-block; background: var(--accent-light); border: 1px solid var(--accent); color: var(--accent); padding: 4px 16px; border-radius: 20px; font-size: 13px; font-weight: 600; margin-bottom: 16px; letter-spacing: 1px; }
+        .header h1 { font-size: 36px; font-weight: 800; margin-bottom: 8px; color: var(--primary); }
+        .header .subtitle { font-size: 16px; color: var(--secondary); font-weight: 300; }
+        .header .date { margin-top: 16px; font-size: 13px; color: var(--text-light); }
+        .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
+        .toc { background: var(--card-bg); border-radius: 12px; padding: 32px; margin-bottom: 40px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+        .toc h2 { font-size: 18px; margin-bottom: 16px; color: var(--primary); }
+        .toc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 8px; }
+        .toc a { color: var(--accent); text-decoration: none; font-size: 14px; padding: 6px 0; display: block; transition: color 0.2s; }
+        .toc a:hover { color: var(--highlight); }
+        .section { background: var(--card-bg); border-radius: 12px; padding: 36px; margin-bottom: 28px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+        .section h2 { font-size: 22px; font-weight: 700; color: var(--primary); margin-bottom: 24px; padding-bottom: 12px; border-bottom: 2px solid var(--highlight); }
+        .section h3 { font-size: 17px; font-weight: 600; color: var(--secondary); margin: 20px 0 12px; }
+        .section h4 { font-size: 15px; font-weight: 700; color: var(--primary); margin: 16px 0 8px; }
+        .info-grid { display: grid; grid-template-columns: 160px 1fr; gap: 8px 16px; font-size: 14px; }
+        .info-label { font-weight: 600; color: var(--text-light); }
+        .info-value { color: var(--text); }
+        table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+        th { background: var(--muted); color: var(--primary); padding: 12px 16px; text-align: left; font-weight: 700; font-size: 13px; }
+        td { padding: 10px 16px; border-bottom: 1px solid var(--border); vertical-align: top; }
+        tr:hover td { background: #f1f3f5; }
+        .tag { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 12px; font-weight: 600; margin: 2px; }
+        .tag-go { background: #eef3ec; color: #5a7a52; }
+        .tag-cond { background: #fff8d4; color: #8a6d00; }
+        .tag-no { background: #fbe9e6; color: #b34c3a; }
+        .tag-blue { background: var(--accent-light); color: var(--accent); }
+        .tag-gold { background: var(--highlight-soft); color: var(--caramel-brown); }
+        .tag-gray { background: var(--muted); color: var(--secondary); }
+        .verdict { background: var(--accent); color: white; padding: 24px 32px; border-radius: 12px; text-align: center; margin: 24px 0; }
+        .verdict .label { font-size: 14px; opacity: 0.8; }
+        .verdict .value { font-size: 28px; font-weight: 800; margin: 8px 0; line-height: 1.4; }
+        .verdict .desc { font-size: 14px; opacity: 0.9; margin-top: 12px; }
+        .callout { background: var(--accent-light); border-left: 4px solid var(--accent); padding: 16px 20px; border-radius: 0 8px 8px 0; margin: 16px 0; font-size: 14px; }
+        .callout-info { background: var(--muted); border-left-color: var(--secondary); }
+        .callout-danger { background: #fbe9e6; border-left-color: var(--danger); }
+        .callout-success { background: #eef3ec; border-left-color: #5a7a52; }
+        .callout-warn { background: #fff8d4; border-left-color: #b8860b; }
+        .callout-gold { background: var(--highlight-soft); border-left-color: var(--highlight); }
+        .leverage-box { background: var(--accent); color: white; padding: 32px; border-radius: 12px; margin: 24px 0; text-align: center; background: linear-gradient(135deg, var(--accent) 0%, #2a3f7a 100%); }
+        .leverage-box .quote { font-size: 19px; font-weight: 700; line-height: 1.6; margin: 8px 0; }
+        .leverage-box .quote .hl { color: var(--highlight); }
+        .summary-section { border-left: 4px solid var(--accent); background: linear-gradient(135deg, #fff 0%, var(--accent-light) 100%); }
+        .summary-section h2 { border-bottom-color: var(--highlight); }
+        .summary-header { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 20px; }
+        .summary-header .sh-label { font-size: 13px; color: var(--text-light); margin-bottom: 4px; }
+        .summary-header .sh-title { font-size: 16px; font-weight: 700; }
+        .summary-header .sh-sub { font-size: 13px; color: var(--text-light); }
+        .kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px; }
+        .kpi-card { padding: 16px; border-radius: 8px; text-align: center; }
+        .kpi-card.kpi-dark { background: var(--muted); color: var(--primary); }
+        .kpi-card.kpi-accent { background: var(--accent); color: white; }
+        .kpi-card.kpi-gold { background: var(--highlight); color: white; }
+        .kpi-card.kpi-success { background: #eef3ec; color: var(--success); }
+        .kpi-card .kpi-label { font-size: 12px; opacity: 0.7; }
+        .kpi-card .kpi-value { font-size: 22px; font-weight: 800; }
+        .kpi-card .kpi-sub { font-size: 11px; opacity: 0.7; margin-top: 4px; }
+        .summary-oneliner { background: #0D0D0D; color: white; padding: 20px 24px; border-radius: 8px; margin-bottom: 16px; }
+        .summary-oneliner .sol-label { font-size: 13px; opacity: 0.7; margin-bottom: 8px; }
+        .summary-oneliner .sol-text { font-size: 17px; font-weight: 700; line-height: 1.6; }
+        .summary-oneliner .sol-text .hl { color: var(--highlight); }
+        .decision-grid { display: grid; grid-template-columns: 1fr; gap: 12px; margin: 16px 0; }
+        .decision-row { display: grid; grid-template-columns: 40px 1fr 130px; gap: 16px; padding: 14px 16px; border: 1px solid var(--border); border-radius: 8px; align-items: center; background: #fff; }
+        .decision-row .dn { font-size: 18px; font-weight: 800; color: var(--accent); text-align: center; }
+        .decision-row .dq { font-size: 14px; line-height: 1.5; }
+        .decision-row .dq strong { color: var(--accent); }
+        .decision-row .dt { text-align: right; }
+        .decision-row.row-recheck { background: #fbe9e6; border-color: var(--danger); }
+        .decision-row.row-persona { background: var(--highlight-soft); border-color: var(--highlight); }
+        .agenda-row { display: grid; grid-template-columns: 130px 1fr 200px; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--border); align-items: start; font-size: 13.5px; }
+        .agenda-row .at { color: var(--accent); font-weight: 700; }
+        .agenda-row .ad { line-height: 1.55; }
+        .agenda-row .ao { color: var(--text-light); font-size: 12.5px; }
+        .quote-box { background: #f8f9fa; border-left: 3px solid var(--accent); padding: 16px 20px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 14.5px; line-height: 1.7; color: var(--secondary); }
+        .quote-box.gold { border-left-color: var(--highlight); background: var(--highlight-soft); color: var(--caramel-brown); }
+        .quote-box .qm { color: var(--accent); font-weight: 800; margin-right: 6px; }
+        .lineup-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 20px 0; }
+        .lineup-card { border: 2px solid var(--border); border-radius: 12px; padding: 20px; position: relative; }
+        .lineup-card.main { border-color: var(--accent); box-shadow: 0 4px 20px rgba(26, 44, 92, 0.12); background: linear-gradient(180deg, #fff 0%, var(--accent-light) 100%); }
+        .lineup-card .name-ko { font-size: 17px; font-weight: 800; color: var(--primary); }
+        .lineup-card .name-en { font-size: 12px; color: var(--text-light); margin-top: 2px; }
+        .lineup-card .role { display: inline-block; margin-top: 8px; padding: 2px 10px; font-size: 11px; font-weight: 700; border-radius: 10px; }
+        .lineup-card .role.r-base { background: var(--muted); color: var(--secondary); }
+        .lineup-card .role.r-entry { background: var(--highlight-soft); color: var(--caramel-brown); }
+        .lineup-card .role.r-main { background: var(--accent); color: white; }
+        .lineup-card .palette { margin-top: 12px; display: flex; gap: 6px; }
+        .lineup-card .swatch { width: 24px; height: 24px; border-radius: 50%; border: 1px solid #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.15); }
+        .lineup-card .desc { font-size: 13px; color: var(--secondary); margin-top: 12px; line-height: 1.55; }
+        .timeline-row { display: grid; grid-template-columns: 110px 110px 1fr; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--border); font-size: 13.5px; }
+        .timeline-row .ts { color: var(--accent); font-weight: 700; }
+        .timeline-row .tp { color: var(--highlight); font-weight: 600; font-size: 12px; }
+        .timeline-row.dday { background: var(--accent); color: white; padding: 14px 16px; border-radius: 8px; border-bottom: none; }
+        .timeline-row.dday .ts, .timeline-row.dday .tp { color: var(--highlight); }
+        .conflict-row { display: grid; grid-template-columns: 130px 1fr 1fr 1fr; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--border); font-size: 13px; line-height: 1.55; }
+        .conflict-row .ch { font-weight: 700; color: var(--danger); }
+        .conflict-row .cf { color: var(--success); font-weight: 600; }
+        .checklist { padding-left: 0; list-style: none; }
+        .checklist li { padding: 6px 0 6px 24px; position: relative; font-size: 14px; line-height: 1.55; }
+        .checklist li::before { content: "›"; position: absolute; left: 4px; color: var(--highlight); font-weight: 800; }
+        .check-go::before { content: "✓" !important; color: var(--success) !important; }
+        .check-warn::before { content: "⚠" !important; color: var(--danger) !important; }
+        .price-row { display: flex; justify-content: space-between; padding: 8px 12px; background: var(--muted); border-radius: 6px; margin: 6px 0; font-size: 13px; }
+        .price-row .pl { color: var(--secondary); }
+        .price-row .pv { font-weight: 700; color: var(--accent); }
+        .footer { text-align: center; padding: 40px; color: var(--text-light); font-size: 13px; }
+        .footer .footer-link { color: var(--accent); text-decoration: none; margin: 0 8px; }
+        .footer .footer-link:hover { text-decoration: underline; }
+        .source-cite { font-size: 11px; color: var(--text-light); font-weight: 400; margin-left: 4px; }
+        .small-note { font-size: 12px; color: var(--text-light); font-style: italic; margin-top: 6px; }
+        @media (max-width: 768px) {
+            .header { padding: 40px 20px; }
+            .header h1 { font-size: 24px; }
+            .section { padding: 24px 16px; }
+            .info-grid { grid-template-columns: 1fr; }
+            .summary-header { grid-template-columns: 1fr; }
+            .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+            .lineup-grid { grid-template-columns: 1fr; }
+            .decision-row { grid-template-columns: 1fr; gap: 6px; }
+            .decision-row .dt { text-align: left; }
+            .agenda-row { grid-template-columns: 1fr; gap: 4px; }
+            .timeline-row { grid-template-columns: 1fr; gap: 4px; }
+            .conflict-row { grid-template-columns: 1fr; gap: 4px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <div class="header-badge">INTERNAL PREP · 5/8 11:00 회의</div>
+    <h1>댄싱컵 딥라떼 — 5/8 내부 회의 prep</h1>
+    <div class="subtitle">4/29 결정 SSOT 위에 5/11(월) 14:00 외부 미팅 산출물 7개를 정합 / 알바 5집 + 부산 딥라떼 + 7월 중순 D-Day</div>
+    <div class="date">작성일: 2026-05-08 · 회의: 11:00~12:30 · Prepared by HIZ BC3 (Green / 김남중 / 안지은 / 나석환 / 이수민)</div>
+</div>
+
+<div class="container">
+
+    <div class="toc">
+        <h2>목차</h2>
+        <div class="toc-grid">
+            <a href="#executive-summary">Executive Summary — 1-page 요약</a>
+            <a href="#ssot">4/29 외부 미팅 결정 SSOT</a>
+            <a href="#conflict">4개 리서치 정합 정리</a>
+            <a href="#agenda">5/8 회의 안건 90분 타임라인</a>
+            <a href="#a1">안건 1 · 딥라떼 정의 + 영업 스크립트</a>
+            <a href="#a2">안건 2 · 메뉴 라인업 (피스타치오 변경)</a>
+            <a href="#a3">안건 3 · 부산 4단 전략 + 부산시 협업</a>
+            <a href="#a4">안건 4 · 마블링 시각 코드 + 페어링 + POP</a>
+            <a href="#a5">안건 5 · 댄싱컵 5집 1기 (앰버서더)</a>
+            <a href="#a6">안건 6 · 부산토박이 마케터 "달봉이"</a>
+            <a href="#regulation">⚖️ 식품 규제 검수 누적 6건</a>
+            <a href="#actions">회의 직후 → 5/11 액션 분배</a>
+            <a href="#deliverables">산출물 7개 + 리서치 6종</a>
+        </div>
+    </div>
+
+    <!-- Executive Summary -->
+    <div class="section summary-section" id="executive-summary">
+        <h2>Executive Summary — 회의 5분 전 읽기</h2>
+
+        <div class="summary-oneliner">
+            <div class="sol-label">회의 목적 1줄</div>
+            <div class="sol-text">4/29 결정(<span class="hl">부산 + 솔티드 + 7월 빅뱅 + 3종</span>) 위에 5/11 외부 미팅에 들고 갈 <span class="hl">산출물 7개의 뾰족한 방향</span>을 합의한다.</div>
+        </div>
+
+        <div class="kpi-grid">
+            <div class="kpi-card kpi-accent">
+                <div class="kpi-label">D-Day</div>
+                <div class="kpi-value">7/15</div>
+                <div class="kpi-sub">화요일 · 솔티드 빅뱅</div>
+            </div>
+            <div class="kpi-card kpi-dark">
+                <div class="kpi-label">5월 견적</div>
+                <div class="kpi-value">₩500만</div>
+                <div class="kpi-sub">기획 + 깔아놓기</div>
+            </div>
+            <div class="kpi-card kpi-gold">
+                <div class="kpi-label">5집 운영</div>
+                <div class="kpi-value">30명</div>
+                <div class="kpi-sub">5명 × 6집 / 월 ₩1,200만</div>
+            </div>
+            <div class="kpi-card kpi-dark">
+                <div class="kpi-label">매장</div>
+                <div class="kpi-value">130개</div>
+                <div class="kpi-sub">부산권 53%</div>
+            </div>
+        </div>
+
+        <h3>5/8 회의에서 결정해야 하는 것 5개</h3>
+        <div class="decision-grid">
+            <div class="decision-row">
+                <div class="dn">1</div>
+                <div class="dq"><strong>딥라떼 30초 영업 스크립트 final</strong> — "댄싱컵에서 직접 만든 댄싱우유로 뽑은 라떼예요. 보통 라떼보다 우유 비율이 진해서 묵직하고, 부산에서만 만들어요. — 부산 딥라떼" 채택 + "Deep" 시각 자산 = 댄싱우유 + 마블링 박기</div>
+                <div class="dt"><span class="tag tag-go">GO 추천</span></div>
+            </div>
+            <div class="decision-row">
+                <div class="dn">2</div>
+                <div class="dq"><strong>너티 = 아몬드 → 피스타치오 변경 GO/NO-GO</strong> — 24~25 글로벌 1군 + 가격 정당화 + 그린 마블링 비주얼 시너지. 절충안: "피스타치오+아몬드 블렌드"</div>
+                <div class="dt"><span class="tag tag-go">GO 추천</span></div>
+            </div>
+            <div class="decision-row">
+                <div class="dn">3</div>
+                <div class="dq"><strong>부산 4단 전략 + 동네 시리즈 콘텐츠化 + 부산시 협업·미식 인증 추진</strong> + 솔티드 3중 차별화(에스프레소 베이스·댄싱우유 PB·저가) 카피 박기</div>
+                <div class="dt"><span class="tag tag-go">GO 추천</span></div>
+            </div>
+            <div class="decision-row">
+                <div class="dn">4</div>
+                <div class="dq"><strong>마블링 시각 코드 + 시안1+시안3 하이브리드 GO/NO-GO</strong> + 페어링 솔티드 한정 단일 + 인쇄 예산 7,200~8,200만(하이브리드) vs 2,200~3,200만(시안1만) 결정</div>
+                <div class="dt"><span class="tag tag-go">GO 추천</span></div>
+            </div>
+            <div class="decision-row">
+                <div class="dn">5</div>
+                <div class="dq"><strong>"댄싱컵 5집 1기" 명명 변경 + 30명 6집 스탠다드안 ₩1,200만 GO/NO-GO</strong> — "앰버서더" 단어 폐기, 기수 정체성으로 차별화</div>
+                <div class="dt"><span class="tag tag-go">GO 추천</span></div>
+            </div>
+        </div>
+
+        <h3 style="margin-top:24px;">🔴 4/29 결정 재논의 의제 2건 (메뉴 리서치로 발견됨)</h3>
+        <div class="decision-grid">
+            <div class="decision-row row-recheck">
+                <div class="dn">A</div>
+                <div class="dq"><strong>메이플 = 가을 보류 → 겨울(11~1월) 재배치</strong> — 가을은 시나몬이 직관적, 메이플은 차가운 계절에 어울림</div>
+                <div class="dt"><span class="tag tag-cond">재논의</span></div>
+            </div>
+            <div class="decision-row row-recheck">
+                <div class="dn">B</div>
+                <div class="dq"><strong>"커피 only" → 봄 시즈널 별도 라인 "Matcha Deep Latte" 재고</strong> — Cha Cha Matcha / Blank Street / 슈퍼마차 24~25 글로벌 1군</div>
+                <div class="dt"><span class="tag tag-cond">재논의</span></div>
+            </div>
+        </div>
+
+        <h3 style="margin-top:24px;">⭐ Green 발의 별도 의제</h3>
+        <div class="decision-grid">
+            <div class="decision-row row-persona">
+                <div class="dn">6</div>
+                <div class="dq"><strong>"부산토박이 MZ 마케터 = 달봉이(DALBONG)" 채택 GO/NO-GO</strong> — 4/29 X 운영자 캐릭터(공식어투 0%·30분룰·셀프디스)와 동일 페르소나로 통합. 6/15 데뷔 → 7/15 D-Day 30일 시리즈로 단일 IP 자산화</div>
+                <div class="dt"><span class="tag tag-go">GO 추천</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4/29 SSOT -->
+    <div class="section" id="ssot">
+        <h2>4/29 외부 미팅 결정 SSOT — 변경 안 한다</h2>
+
+        <div class="leverage-box">
+            <div class="quote">딥라떼는 댄싱컵의 시그니처 라떼 라인이고, <span class="hl">부산 정체성을 솔티드로 압축</span>해 <span class="hl">7월 중순에 빅뱅 런칭</span>한다.</div>
+        </div>
+
+        <table>
+            <thead>
+                <tr><th>항목</th><th>결정</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>라인업</td><td>3종 (오리지널 / 너티 / 솔티드) — 커피 only</td></tr>
+                <tr><td>메인 푸쉬</td><td><strong>솔티드</strong> (부산 + 바다 + 짠풍미 자연 결합)</td></tr>
+                <tr><td>D-Day</td><td><strong>7월 중순</strong> (휴가철 부산 검색 호조)</td></tr>
+                <tr><td>가격</td><td>+200~300원 (시그니처 ~3,700~3,800원)</td></tr>
+                <tr><td>5월 견적</td><td>500만 (기획 + 깔아놓기)</td></tr>
+                <tr><td>운영</td><td>알바 5집 + 매장 자유도 + HIZ 미러링</td></tr>
+                <tr><td>채널</td><td>인스타 감도 / 릴스 바이럴 / 메타 광고 / X 운영자 캐릭터</td></tr>
+                <tr><td>시각 키워드</td><td><strong>마블링</strong> (컵 · 컵홀더 · POP 일관)</td></tr>
+                <tr><td>페어링 디저트</td><td>시즈널 메뉴와 동반 출시</td></tr>
+                <tr><td>메이플</td><td>가을 시즈널 보류 (→ 5/8 재논의 의제 A)</td></tr>
+            </tbody>
+        </table>
+
+        <h3>시간 분기</h3>
+        <div class="timeline-row"><div class="ts">2026-05</div><div class="tp">기획·깔기</div><div>정의 · 스토리 · 플랜. 댄싱컵 5월 견적 ₩500만</div></div>
+        <div class="timeline-row"><div class="ts">2026-06</div><div class="tp">빌드업</div><div>오리지널 깔기 + 컵 디자인 + 5집 모집 + 사전 콘텐츠 + 페르소나 데뷔(6/15)</div></div>
+        <div class="timeline-row dday"><div class="ts">2026-07-15</div><div class="tp">★ D-Day</div><div>3종 동시 빅뱅 + 솔티드 메인 푸쉬 + 해염 휘낭시에 페어링 동반 출시</div></div>
+        <div class="timeline-row"><div class="ts">2026-08</div><div class="tp">모멘텀</div><div>솔티드 정점 (휴가의 맛 · 부산의 맛)</div></div>
+        <div class="timeline-row"><div class="ts">2026-09~10</div><div class="tp">가을 시즈널</div><div>3종 + <strong>시나몬 딥라떼</strong> 신메뉴</div></div>
+        <div class="timeline-row"><div class="ts">2026-11~01</div><div class="tp">겨울 시즈널</div><div>3종 + <strong>메이플 딥라떼</strong> (재배치 결정 시)</div></div>
+        <div class="timeline-row"><div class="ts">2027-04~05</div><div class="tp">봄 시즈널</div><div>3종 + <strong>Matcha Deep Latte</strong> (재고 결정 시 별도 라인)</div></div>
+    </div>
+
+    <!-- 정합 정리 -->
+    <div class="section" id="conflict">
+        <h2>4개 리서치 간 정합 정리 (회의 시작 직후 5분)</h2>
+        <p style="font-size:14px; color:var(--secondary); margin-bottom:16px;">리서치 4개를 합쳐 보면 두 군데 표기 불일치. 먼저 정합 박고 안건 진행.</p>
+
+        <div class="conflict-row" style="font-weight:700; background:var(--muted); padding:12px; border-radius:6px;">
+            <div>충돌 지점</div>
+            <div>앰버서더 리서치</div>
+            <div>페르소나 리서치</div>
+            <div>정합안</div>
+        </div>
+        <div class="conflict-row">
+            <div class="ch">모집 시기</div>
+            <div>6/1주 매장 QR 모집 시작 → 6/4주 30명 확정</div>
+            <div>E4(7/6) 알바 앰버서더 모집 push</div>
+            <div class="cf">6/1주 1차 모집(메인) + 7/6 페르소나 E4 = D-Day 직전 추가 push (별개 시점, 충돌 X)</div>
+        </div>
+        <div class="conflict-row">
+            <div class="ch">모집 인원</div>
+            <div>30명 6집 (5명/집 × 6집)</div>
+            <div>E4 카피 "50명"</div>
+            <div class="cf">페르소나 E4 카피를 "30명 한정"으로 수정 (회의 후 5/9 카피 final)</div>
+        </div>
+    </div>
+
+    <!-- 회의 안건 -->
+    <div class="section" id="agenda">
+        <h2>5/8 회의 안건 (90분 / 11:00~12:30)</h2>
+        <p style="font-size:14px; color:var(--secondary); margin-bottom:16px;">리서치 자료 5종 + 본 prep은 회의 30분 전(10:30) 슬랙 #댄싱컵 채널에 일괄 공유.</p>
+
+        <div class="agenda-row" style="font-weight:700; background:var(--muted); padding:12px; border-radius:6px;">
+            <div>시간</div>
+            <div>안건</div>
+            <div>진행 / 산출</div>
+        </div>
+        <div class="agenda-row">
+            <div class="at">11:00~11:05 (5')</div>
+            <div>4/29 결정 SSOT 합치 + 정합 정리 2건</div>
+            <div class="ao">Green / 변경 없음 확인</div>
+        </div>
+        <div class="agenda-row">
+            <div class="at">11:05~11:20 (15')</div>
+            <div>[안건1] 딥라떼 정의 1문장 + 30·60초 스크립트 확정</div>
+            <div class="ao">남중 + 리서치 / 영업 스크립트 1개 final</div>
+        </div>
+        <div class="agenda-row">
+            <div class="at">11:20~11:35 (15')</div>
+            <div>[안건2] 너티 = 피스타치오 변경 + 메이플 겨울 재배치 + 말차 봄 라인 재고</div>
+            <div class="ao">안지은 + 리서치 / 1년 캘린더 final + 4/29 재논의 2건 결정</div>
+        </div>
+        <div class="agenda-row">
+            <div class="at">11:35~11:50 (15')</div>
+            <div>[안건3] 부산 4단 전략 + 동네 시리즈 콘텐츠化 + <strong>부산시 협업 의제 신설</strong> + 솔티드 3중 차별화</div>
+            <div class="ao">나석환 + 리서치 / 4단 전략 적용 + 부산시 협업 추진 GO/NO-GO</div>
+        </div>
+        <div class="agenda-row">
+            <div class="at">11:50~12:05 (15')</div>
+            <div>[안건4] 마블링 단일 시각 코드 + 시안1+시안3 하이브리드 + 페어링 솔티드 한정 + POP "섞이는 순간이 가장 진하다"</div>
+            <div class="ao">이수민 / 시안 방향 final + 인쇄 RFP 발주 결정</div>
+        </div>
+        <div class="agenda-row">
+            <div class="at">12:05~12:20 (15')</div>
+            <div>[안건5] "댄싱컵 5집 1기" 명명 변경 + 6집 구성 + 스탠다드안 ₩1,200만 + 6/1주 모집 오픈 컨펌</div>
+            <div class="ao">남중 / 모집 채널 3개 오픈 D-Day 확정</div>
+        </div>
+        <div class="agenda-row">
+            <div class="at">12:20~12:30 (10')</div>
+            <div>[안건6] "달봉이" 채택 GO/NO-GO + 4/29 X운영자 통합 + 6/15 데뷔 시리즈 승인</div>
+            <div class="ao">Green / 인스타 핸들 W1 선점 + 일러스트레이터·보이스오버 RFP 시작</div>
+        </div>
+
+        <h3 style="margin-top:28px;">진행 룰</h3>
+        <ul class="checklist">
+            <li>각 안건 15분 = 리서치 요지 5분 발표 + HIZ 추천 1안 + 토론 → 결정</li>
+            <li>결정 사항은 슬랙 #댄싱컵 채널에 회의 끝나는 즉시 1줄씩 박아두기</li>
+            <li>회의록은 회의 끝나고 1시간 내 <code>meetings/260508-internal-prep-notes.md</code>에 정리</li>
+        </ul>
+
+        <h3>위험 시나리오 사전 대응</h3>
+        <table>
+            <thead><tr><th>위험</th><th>1줄 컷 카피</th></tr></thead>
+            <tbody>
+                <tr><td>"메이플 빼는 거 진짜 맞아?" 재논의 → 시간 손실</td><td>메이플은 가을 시즈널 자리 확정 = 빼는 게 아님 (재배치 1줄로 컷)</td></tr>
+                <tr><td>부산 동네 시리즈 메뉴화 욕심</td><td>"메뉴 4종 늘리면 운영 부담 ↑ · 메시지 흐려짐" 1줄로 컷, 콘텐츠로만</td></tr>
+                <tr><td>페르소나 채택에 시간 빠짐</td><td>안건 1~5 다 끝낸 후에만 페르소나 논의. 안 끝나면 다음 회의로</td></tr>
+                <tr><td>인센티브 풀 시뮬에 욕심</td><td>5월 견적 500만 안에서 라이트/스탠다드만. 풀은 7월 D-Day 후 검토</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- 안건 1 -->
+    <div class="section" id="a1">
+        <h2>안건 1 · 딥라떼 정의 + 영업 스크립트</h2>
+        <p style="font-size:13px; color:var(--text-light); margin-bottom:16px;">리서치 산출: <code>research/deep-latte-definition-references.md</code> ✅ 완료</p>
+
+        <div class="callout callout-info">
+            <strong>핵심 발견 1.</strong> 정의 잘 푸는 브랜드는 모두 "재료 출처 + 가공법 + 사용 시나리오" 3개를 한 문장에 묶는다 (Blue Bottle NOLA / 우지 송파라떼 / Graza 공통).<br>
+            <strong>핵심 발견 2.</strong> "Deep" 추상어 안착 메커니즘 — Pizza · Cake · Cookie · Dirty Latte · 우지 딥카페라떼 5개 사례 모두 <strong>"공정의 결과로 시각화된 깊이"</strong>로 환원. 댄싱컵 = "댄싱우유 + 에스프레소 마블링"이 "Deep"의 공식 시각 자산.
+        </div>
+
+        <h3>HIZ 추천 — 30초 스크립트 (Blue Bottle NOLA 4단 공식)</h3>
+        <div class="quote-box gold">
+            <span class="qm">"</span>댄싱컵에서 직접 만든 댄싱우유로 뽑은 라떼예요. 보통 라떼보다 우유 비율이 진해서 묵직하고, 부산에서만 만들어요. — 부산 딥라떼.<span class="qm">"</span>
+        </div>
+        <p style="font-size:13px; color:var(--text-light);">구성: ① 재료(주역) ② 차별점 ③ 출처 ④ 메뉴명 회수. 매장 직원 · POP · 인스타 프로필 · 모든 카피의 동일 어구로 박힘.</p>
+
+        <h3>HIZ 추천 — 60초 스크립트 (Pizzeria Uno + 우지 송파라떼 결합)</h3>
+        <div class="quote-box">
+            "라떼는 우유가 절반인데, 대부분 카페는 일반 우유를 써요.<br>
+            댄싱컵은 부산에서 라떼만 보고 만든 PB 우유 — 댄싱우유를 직접 만들어요. 일반 우유보다 농도가 진하고, 에스프레소와 마블링이 또렷하게 보이는 게 특징이에요.<br>
+            이 댄싱우유로 뽑은 라떼가 댄싱컵의 시그니처 — 부산 딥라떼.<br>
+            오리지널은 깊고 묵직한 기본형, 너티는 아몬드향이 더해진 고소한 라인, 솔티드는 부산 바다에서 영감받은 짭짤한 라인.<br>
+            부산에서만 만들어, 부산에서만 마실 수 있어요."
+        </div>
+
+        <h3>정의 콘텐츠 3종 시나리오 (즉시 작성 가능)</h3>
+        <table>
+            <thead><tr><th>형식</th><th>구성</th><th>용도</th></tr></thead>
+            <tbody>
+                <tr><td>FAQ 캐러셀</td><td>7장 (정의 · 차별점 · 왜 부산 · 라인업 · 매장)</td><td>인스타 · 매장 QR</td></tr>
+                <tr><td>비교 그래픽</td><td>1장 — 대부분 카페 일반 우유 vs 댄싱우유 PB</td><td>피드 · 광고 소재</td></tr>
+                <tr><td>1분 릴스</td><td>재료 → 추출 → 마블링 0.5배속 → 한 모금 → 매장 위치</td><td>릴스 · 메타 광고</td></tr>
+            </tbody>
+        </table>
+
+        <h3 style="color:var(--danger);">🔴 검증 필요 데이터 3개 (5/11 미팅 전 확보)</h3>
+        <ul class="checklist">
+            <li class="check-warn"><strong>댄싱우유 농도 객관 데이터</strong> — "농도가 진하다" 표현은 비교 객관 데이터 필요. 없으면 "우유 함량을 높였습니다" 같은 사실 표현으로 대체</li>
+            <li class="check-warn"><strong>댄싱우유 개발 일화</strong> — Levain "happy accident" / Dirty Latte "미용실 사장 일화" 같은 내러티브 (조기원 대표 · 변팀장 인터뷰)</li>
+            <li class="check-warn"><strong>부산 한정 → 전국 확장 타임라인</strong> — "부산에서만"의 유효 기간 (희소성 자산 vs 매출 확장의 균형)</li>
+        </ul>
+    </div>
+
+    <!-- 안건 2 -->
+    <div class="section" id="a2">
+        <h2>안건 2 · 메뉴 라인업 — 너티 = 피스타치오 변경 권장</h2>
+        <p style="font-size:13px; color:var(--text-light); margin-bottom:16px;">리서치 산출: <code>research/menu-lineup-expansion.md</code> ✅ 완료</p>
+
+        <div class="verdict">
+            <div class="label">HIZ 추천</div>
+            <div class="value">3종 라인업 유지 + 너티 = 피스타치오 베이스로 변경 + 솔티드 메인 푸쉬 그대로</div>
+            <div class="desc">절충안: "피스타치오 + 아몬드 블렌드 페이스트" → 변팀장 "아몬드 수요" 우려 수용 / 메뉴 표기 `Nutty Deep Latte` 단일 + 해시태그 `#피스타치오라떼` 부착</div>
+        </div>
+
+        <div class="lineup-grid">
+            <div class="lineup-card">
+                <div class="name-ko">오리지널 딥라떼</div>
+                <div class="name-en">Original Deep Latte</div>
+                <span class="role r-base">기준점</span>
+                <div class="palette"><span class="swatch" style="background:#8a5a2b"></span><span class="swatch" style="background:#fff5e1"></span></div>
+                <div class="desc">데일리 · 범용 포지션. 페어링 없이 단독 운영. 카라멜 브라운 + 크림 화이트 마블링.</div>
+            </div>
+            <div class="lineup-card">
+                <div class="name-ko">너티 딥라떼 <span style="font-size:12px;color:var(--highlight);">(피스타치오 변경 권장)</span></div>
+                <div class="name-en">Nutty Deep Latte</div>
+                <span class="role r-entry">진입로</span>
+                <div class="palette"><span class="swatch" style="background:#c2a878"></span><span class="swatch" style="background:#3d2817"></span></div>
+                <div class="desc">24~25 글로벌 1군 트렌드. 그린 마블링 비주얼 시너지. 가격 정당화 자연. 캐슈 베이지 + 다크 코코아.</div>
+            </div>
+            <div class="lineup-card main">
+                <div class="name-ko">솔티드 딥라떼</div>
+                <div class="name-en">Salted Deep Latte</div>
+                <span class="role r-main">메인 푸쉬 ★</span>
+                <div class="palette"><span class="swatch" style="background:#1A2C5C"></span><span class="swatch" style="background:#C9CCD1"></span><span class="swatch" style="background:#C8995A"></span></div>
+                <div class="desc">부산 + 바다 + 짠풍미 자연 결합. 한국 4사례 + 베트남 cà phê muối 글로벌 이중 검증. 7/15 D-Day 빅뱅. 딥 인디고 + 솔트 그레이 + 캐러멜 골드.</div>
+            </div>
+        </div>
+
+        <h3>6종 후보 GO/NO-GO 평가표</h3>
+        <table>
+            <thead><tr><th>후보</th><th>판단</th><th>비고</th></tr></thead>
+            <tbody>
+                <tr><td><strong>피스타치오</strong></td><td><span class="tag tag-go">GO</span></td><td>너티 베이스 추천 1순위 — 글로벌 트렌드 + 비주얼 + 가격 정당화 자연</td></tr>
+                <tr><td>헤이즐넛</td><td><span class="tag tag-no">NO-GO</span></td><td>시럽 라떼 연상으로 차별성 ↓</td></tr>
+                <tr><td><strong>말차</strong></td><td><span class="tag tag-cond">GO 조건부</span></td><td>4/29 "커피 only" 재논의 필요. 봄 시즈널 별도 라인 (Cha Cha Matcha · Blank Street)</td></tr>
+                <tr><td>우베(Ube)</td><td><span class="tag tag-cond">시즈널 GO</span></td><td>7월 D-Day 무리. 2027 봄 또는 1주 한정판 (보라 마블링 비주얼)</td></tr>
+                <tr><td>미소</td><td><span class="tag tag-no">NO-GO</span></td><td>솔티드와 짠맛 카니발리즘</td></tr>
+                <tr><td>흑임자</td><td><span class="tag tag-no">NO-GO</span></td><td>우지 K-식문화 라인 점유 중</td></tr>
+            </tbody>
+        </table>
+
+        <h3>가격 정당화 카피 어휘 3개 (식품 규제 검수 후 사용)</h3>
+        <ul class="checklist">
+            <li><strong>"라떼 한 잔만 보고 만든 우유"</strong> — 댄싱우유 PB 자산 활용</li>
+            <li><strong>"바리스타가 설계한 한 잔"</strong> — 전문성 (최상급 회피)</li>
+            <li><strong>"부산이 만든 딥라떼"</strong> — 도시 자산 후광</li>
+        </ul>
+
+        <div class="callout callout-warn">
+            <strong>가격 슬롯 안전성:</strong> 댄싱컵 딥라떼 3,800원 = 시그니처 3,500원 +8.5% (정당화 자연) / 메가 3,000원 +27% (위험 신호) / 우지 4,500원 -15% (무기 활용 가능). 단 "우지 vs 댄싱컵 700원 차이" 직접 비교 광고는 ⚖️ 식품 규제 검수 필수.
+        </div>
+    </div>
+
+    <!-- 안건 3 -->
+    <div class="section" id="a3">
+        <h2>안건 3 · 부산 4단 전략 + 동네 시리즈 콘텐츠化 + 부산시 협업</h2>
+        <p style="font-size:13px; color:var(--text-light); margin-bottom:16px;">리서치 산출: <code>research/busan-city-keyword-asset.md</code> ✅ 완료</p>
+
+        <div class="callout callout-info">
+            <strong>핵심 발견 4가지</strong><br>
+            ① 매거진B "BUSAN" 단행본 No.96 발행 완료 — 어휘 팔레트 입수 가치 큼<br>
+            ② 부산 공식 슬로건 "부산이라 좋다(Busan is good)" 2023~ → 일상어 "좋다"를 댄싱컵 카피 톤으로 차용 (우지 "감칠맛·세련된 밸런스" 차별)<br>
+            ③ 부산 카페 씬은 양극화 — 스페셜티(모모스/블랙업) + 오션뷰(웨이브온/델픽). <strong>세 번째 축 "저가×라떼 전문×매장 130개" 빈 공간</strong> = 댄싱컵 점령 슬롯<br>
+            ④ 도시명+메뉴 성공 공식 = 출처 일화 + 골목 인프라 + 공식 인증. <strong>댄싱컵은 공식 인증만 빠짐</strong>
+        </div>
+
+        <h3>🟢 동네 시리즈는 메뉴 X, 콘텐츠 O</h3>
+        <p style="font-size:14px; line-height:1.7;">7월 D-Day까지 D-2개월 → 새 메뉴 추가는 운영·물류 리스크 큼. 콘텐츠 시리즈 3종으로 운영:</p>
+        <ul class="checklist">
+            <li><strong>해운대 편</strong> — 외국인 타겟 영문 릴스 ("The first deep latte you'll have in Busan")</li>
+            <li><strong>광안리 편</strong> — MZ 핫플 카드뉴스 (광안대교 야경 + 매장 + 사장님 코멘트)</li>
+            <li><strong>영도 편</strong> — 솔티드 라인 영감 회수 ("영도의 짠바람이 만든 솔티드 딥라떼")</li>
+        </ul>
+
+        <h3>키워드 점유 4단 전략 (월 200건 앵커 콘텐츠)</h3>
+        <table>
+            <thead><tr><th>Step</th><th>액션</th><th>목표</th></tr></thead>
+            <tbody>
+                <tr><td>1. 표기 고정</td><td><code>부산딥라떼</code> 붙여쓰기 + <code>Busan Deep Latte</code> 영문 병기 (블로그·인스타·POP·URL)</td><td>검색 키워드 단일화</td></tr>
+                <tr><td>2. 앵커 콘텐츠</td><td>네이버 블로그 100건(체험단) + 인스타 본 30건 + 매장 70개 1건씩 + 네이버 카페 50건 = <strong>월 200건</strong></td><td>D-Day 전 6주 살포</td></tr>
+                <tr><td>3. 정의 콘텐츠</td><td>안건 1의 FAQ · 비교 그래픽 · 1분 릴스 3종</td><td>백과사전화</td></tr>
+                <tr><td>4. 매체 레버리지</td><td>부산일보 / 국제신문 PR + 부산관광공사 콜라보 + 매거진 B / F 기고 + 마이크로 인플루언서</td><td>7~9월 휴가철 호조</td></tr>
+            </tbody>
+        </table>
+
+        <h3>부산 어휘 팔레트 10개 (즉시 카피·POP 적용)</h3>
+        <table>
+            <thead><tr><th>#</th><th>어휘</th><th>용도</th><th>강도</th></tr></thead>
+            <tbody>
+                <tr><td>1</td><td>항구도시</td><td>광고 첫 줄</td><td>◎</td></tr>
+                <tr><td>2</td><td>거친 바다</td><td>솔티드 라인 카피</td><td>◎</td></tr>
+                <tr><td>3</td><td>묵직한 부산</td><td>30초 광고 카피</td><td>◎</td></tr>
+                <tr><td>4</td><td>영도의 짠바람</td><td>솔티드 릴스</td><td>◎</td></tr>
+                <tr><td>5</td><td>광안대교 너머</td><td>광안리 매장 카피</td><td>◎</td></tr>
+                <tr><td>6</td><td>항구의 새벽</td><td>영상 첫 3초</td><td>◎</td></tr>
+                <tr><td>7</td><td>갈매기</td><td>외국인 타겟 어휘</td><td>◎</td></tr>
+                <tr><td>8</td><td>부산스럽다</td><td>친근 톤 카피</td><td>○</td></tr>
+                <tr><td>9</td><td>부산이라 좋다</td><td>클로징 카피 (★ IP 침해 가능성 검증)</td><td>○</td></tr>
+                <tr><td>10</td><td>마! 좋다</td><td>부산 한정 광고 (★ 현지 검수 필수)</td><td>△</td></tr>
+            </tbody>
+        </table>
+
+        <div class="callout callout-danger">
+            <strong>🔴 신설 의제: 부산시 협업·미식 인증 (광주 5미 모델)</strong><br>
+            광주 송정역떡갈비 = 1950년대 출처 일화 + 200m 떡갈비 거리 + <strong>2003년 광주 5미 공식 선정</strong>으로 성공.<br>
+            댄싱컵은 1·2번 자산은 만들 수 있으나 3번 공식 인증이 빠짐.<br>
+            추진안: 부산관광공사 "부산 미식 라떼" 인증 / 부산시 콜라보 / BIFF · 해수욕장 개장 시즌 협업.
+        </div>
+
+        <div class="callout callout-warn">
+            <strong>솔티드 라인 3중 차별화 필수:</strong> 블랙업 해수염 + 하이오 바다소금이 이미 부산 발 "소금 커피" 시장 점유 중. 카피캣 안 보이려면 <strong>① 에스프레소 베이스 (블랙업 · 하이오는 콜드브루) ② 댄싱우유 PB ③ 저가(3,800원 vs 5,000~6,000원)</strong> 3중 차별화 카피에 박기.
+        </div>
+    </div>
+
+    <!-- 안건 4 -->
+    <div class="section" id="a4">
+        <h2>안건 4 · 마블링 시각 코드 + 페어링 + POP</h2>
+        <p style="font-size:13px; color:var(--text-light); margin-bottom:16px;">리서치 산출: <code>research/visual-pool-cup-pairing-pop.md</code> ✅ 완료</p>
+
+        <div class="quote-box gold">
+            <span class="qm">"</span>섞이는 순간이 가장 진하다 / The moment it swirls.<span class="qm">"</span>
+        </div>
+        <p style="font-size:13px; color:var(--text-light);">POP 슬로건 메인 — 마블링 = 섞임 = "딥라떼 = 진함" 자연 호환 + 푸어링 영상으로 즉시 시각화.</p>
+
+        <h3>시각 코드 — 마블링 단일 + 메뉴별 컬러 변주</h3>
+        <p style="font-size:14px; line-height:1.7;">솔티드만 한색(인디고) → 3종 라떼 진열 시 자동 시각 위계 발생.</p>
+
+        <h3>컵 폼팩터 + 시안 결정</h3>
+        <ul class="checklist">
+            <li><strong>투명 PET + 컵홀더 마블링 인쇄</strong> — 음료 + 인쇄 합쳐져서 마블링 완성, 푸어링 쇼트 자동 인스타그래머블</li>
+            <li><strong>시안1(메인 운영)</strong> — 컵 인쇄 0, 컵홀더만 메뉴별 마블링. 130매장 일괄 운영 효율</li>
+            <li><strong>시안3(부산 한정 7월 굿즈)</strong> — 부산 매장 한정 머그 1만개 (광안대교 · 갈매기 모티프, 굿즈성 확보)</li>
+            <li class="check-go"><strong>시안1 + 시안3 하이브리드</strong> 권장 (운영 효율 + 부산 자산화 동시)</li>
+        </ul>
+
+        <h3>페어링 = 솔티드 한정 단일</h3>
+        <div class="callout callout-success">
+            솔티드 ↔ <strong>해염 휘낭시에</strong> 단일 매칭. 오리지널 · 너티는 페어링 없음 (집중 분산 방지). 7월 빅뱅을 솔티드+휘낭시에 1+1 단일 메시지로 박는다.
+        </div>
+        <div class="price-row"><span class="pl">솔티드 라떼 단품</span><span class="pv">3,800원</span></div>
+        <div class="price-row"><span class="pl">해염 휘낭시에 단품</span><span class="pv">2,500원</span></div>
+        <div class="price-row"><span class="pl">단품 합</span><span class="pv">6,300원</span></div>
+        <div class="price-row" style="background:var(--highlight-soft);"><span class="pl"><strong>세트가 (-13%)</strong></span><span class="pv" style="color:var(--highlight)">5,500원</span></div>
+
+        <h3>매장 5포인트 일관 적용</h3>
+        <ol style="padding-left:20px; font-size:14px; line-height:1.8;">
+            <li>입구 입간판 (A형) — 마블링 + "섞이는 순간이 가장 진하다" + 솔티드 비주얼 + D-Day 카운트</li>
+            <li>카운터 메뉴판 — 솔티드 = 라인업 최상단 + 골드 별 라벨</li>
+            <li>계산대 미니 POP — 세트 할인 안내</li>
+            <li>컵홀더 — 마블링 인쇄 (3종 메뉴별)</li>
+            <li>진열 트레이 — 해염 휘낭시에 비주얼 진열</li>
+        </ol>
+
+        <h3>130매장 인쇄·배포 단가 (45일 운영분)</h3>
+        <table>
+            <thead><tr><th>안</th><th>구성</th><th>예산</th></tr></thead>
+            <tbody>
+                <tr><td>최소(시안1만)</td><td>입간판 + 메뉴판 + 컵홀더 + POP 5포인트</td><td><strong>2,200~3,200만원</strong></td></tr>
+                <tr style="background:var(--accent-light);"><td><strong>하이브리드 (권장)</strong></td><td>시안1 + 부산 한정 머그 1만개 + 부산 매장 한정 컵홀더</td><td><strong>7,200~8,200만원</strong></td></tr>
+            </tbody>
+        </table>
+        <p class="small-note">5/11 미팅 ROI 검토 의제: 부산 한정 머그 4,000만원 = 1만개 × 인스타 인증 60% × 평균 도달 1,500 = 900만 도달치 환산.</p>
+    </div>
+
+    <!-- 안건 5 -->
+    <div class="section" id="a5">
+        <h2>안건 5 · 알바 5집 → "댄싱컵 5집 1기" 명명 변경</h2>
+        <p style="font-size:13px; color:var(--text-light); margin-bottom:16px;">리서치 산출: <code>research/ambassador-program-korea-cases.md</code> ✅ 완료</p>
+
+        <div class="leverage-box">
+            <div class="quote">"<span class="hl">5집</span>"은 인원 단위가 아닌 <span class="hl">5명 한 그룹</span>이다.<br>5명 한 단톡방 → 상호 모니터링 + 콘텐츠 레퍼런싱 + 운영자 1:30 → 1:6 부담 감소 + 5집 vs 5집 게이미피케이션.</div>
+        </div>
+
+        <div class="callout callout-warn">
+            <strong>"앰버서더" 프레임 폐기:</strong> 메가 / 컴포즈 / 빽다방 모두 공식 매장 알바 앰버서더 프로그램 없음 → 댄싱컵이 <strong>시장 만드는 영역</strong>. "댄싱컵 5집 1기" 기수 정체성으로 차별화 = 카테고리 점유.
+        </div>
+
+        <h3>6집 구성안 (부산 매장 53% 편중 자산 반영)</h3>
+        <table>
+            <thead><tr><th>집</th><th>위치</th><th>5명 구성</th></tr></thead>
+            <tbody>
+                <tr><td>부산집 1</td><td>해운대 · 광안리</td><td>5명</td></tr>
+                <tr><td>부산집 2</td><td>서면 · 전포</td><td>5명</td></tr>
+                <tr><td>부산집 3</td><td>사상 · 사하 · 강서</td><td>5명</td></tr>
+                <tr><td>수도권집</td><td>서울 · 경기</td><td>5명</td></tr>
+                <tr><td>신메뉴집</td><td>시그니처 매장 (24회 런칭 사이클 활용)</td><td>5명</td></tr>
+                <tr><td>자유집</td><td>점주 추천형 (점주 동맹 형성 채널)</td><td>5명</td></tr>
+            </tbody>
+        </table>
+
+        <h3>인센티브 시뮬 3안</h3>
+        <table>
+            <thead><tr><th>안</th><th>인원</th><th>월 비용</th><th>6개월 총</th><th>연 콘텐츠</th><th>CPM</th></tr></thead>
+            <tbody>
+                <tr><td>라이트</td><td>30명</td><td>₩600만</td><td>₩3,600만</td><td>200편</td><td>₩36만</td></tr>
+                <tr style="background:var(--accent-light);"><td><strong>🟢 스탠다드 (권장)</strong></td><td><strong>30명 → 50명 확장</strong></td><td><strong>₩1,200~1,300만</strong></td><td><strong>₩7,800만</strong></td><td><strong>500편+</strong></td><td><strong>₩31만</strong></td></tr>
+                <tr><td>풀</td><td>100명</td><td>₩2,880만</td><td>₩1.7억</td><td>1,000편+</td><td>₩28만</td></tr>
+            </tbody>
+        </table>
+
+        <h3>모집 카피 C안 (소속감 톤) 디폴트 권장</h3>
+        <div class="quote-box">
+            "우지커피보다 진한 부산 딥라떼"를 같이 알리는 사람들.<br>
+            월 활동비 + 신메뉴 우선 시식 + 임명장 + 본사 행사.<br>
+            <strong>[댄싱컵 5집] 1기 — 너의 매장이 시작점이다.</strong>
+        </div>
+        <div class="callout callout-danger">
+            ⚠ "우지커피보다 진한" 비교 표현은 <strong>⚖️ 식품 규제 어드바이저 검수 필수</strong> (식품법 비교 광고 리스크 — 사실 입증 의무).
+        </div>
+
+        <h3>6월 1주 출범 타임라인</h3>
+        <div class="timeline-row"><div class="ts">6/1주</div><div class="tp">모집</div><div>매장 QR + 구글폼 + 인스타 DM 3채널 동시 오픈</div></div>
+        <div class="timeline-row"><div class="ts">6/2주</div><div class="tp">서류심사</div><div>~50명 신청 예상 → 1차 서류 심사</div></div>
+        <div class="timeline-row"><div class="ts">6/4주</div><div class="tp">최종 선발</div><div>30명 확정 + 점주 동의서 회수</div></div>
+        <div class="timeline-row"><div class="ts">7/1주</div><div class="tp">임명식</div><div>위드런 본사 초청 + 조기원 대표 인사</div></div>
+        <div class="timeline-row"><div class="ts">7/2주</div><div class="tp">온보딩</div><div>톤 가이드 · 미러링 템플릿 · 위촉계약 · 동의서 5종</div></div>
+        <div class="timeline-row dday"><div class="ts">7/15</div><div class="tp">D-Day</div><div>3종 동시 빅뱅 + 솔티드 메인 푸쉬 + 페어링 동반 출시</div></div>
+
+        <p style="font-size:13px; color:var(--text-light); margin-top:12px;">법적 체크: 위촉계약(사업소득 3.3%) + 3-Way 동의(알바생 · 점주 · 본사) + 뒷광고 표시 의무 <code>#댄싱컵5집 #광고</code></p>
+    </div>
+
+    <!-- 안건 6 -->
+    <div class="section" id="a6">
+        <h2>안건 6 · ⭐ 부산토박이 마케터 "달봉이" (Green 발의)</h2>
+        <p style="font-size:13px; color:var(--text-light); margin-bottom:16px;">리서치 산출: <code>research/busan-marketer-persona.md</code> ✅ 완료</p>
+
+        <div class="verdict">
+            <div class="label">HIZ 추천</div>
+            <div class="value">달봉이(DALBONG) 채택 + 4/29 X 운영자와 동일 페르소나 통합</div>
+            <div class="desc">부산 사투리 "달다(재밌다)" + "봉이(애칭)" + 댄싱<strong>컵</strong>-달봉<strong>이</strong> 운율</div>
+        </div>
+
+        <h3>핵심 결정사항</h3>
+        <table>
+            <tbody>
+                <tr><th style="width:160px;">이름</th><td><strong>달봉이 (DALBONG)</strong> — 카카오 IP 1차 검색 음성 (정식 상표 검색 필요). 인스타 핸들 후보: <code>@dalbong_busan</code> · <code>@dancing_dalbong</code> · <code>@dalbong.coffee</code></td></tr>
+                <tr><th>시각</th><td><strong>E + B 하이브리드</strong> — 보이스오버 + 손샷·뒷통수샷 (실명 X) + 달봉이 일러스트 IP. 인물 리스크 0 + 화자 교체 가능 + 굿즈화 가능</td></tr>
+                <tr><th>4D 톤</th><td>사투리 <strong>6</strong> · 셀프디스 <strong>5</strong> · 부산자랑 <strong>7</strong> · 본사권위 <strong>3</strong> (공식어투 0% · 30분 룰)</td></tr>
+                <tr><th>포맷 비중</th><td>릴스 토킹헤드 <strong>60%</strong> / 자막+B-roll <strong>25%</strong> / 텍스트 슬라이드 <strong>15%</strong></td></tr>
+                <tr><th>X 통합</th><td>4/29 합의된 X 운영자 캐릭터(공식어투 0% · 30분룰 · 셀프디스)는 달봉이 4D와 충돌 없음. <strong>달봉이 = X 운영자의 확장판</strong>. 채널별 톤 변주만 차등</td></tr>
+            </tbody>
+        </table>
+
+        <h3>데뷔 30일 시리즈 (6/15 D-30 → 7/15 D-Day)</h3>
+        <table>
+            <thead><tr><th>#</th><th>D+</th><th>컨셉</th><th>포맷</th></tr></thead>
+            <tbody>
+                <tr><td>E1</td><td>6/15</td><td>페르소나 데뷔 (자기소개)</td><td>릴스 + 캐러셀</td></tr>
+                <tr><td>E2</td><td>6/22</td><td>솔티드 티저 (재료 3가지 · 메뉴 X)</td><td>자막 + B-roll</td></tr>
+                <tr><td>E3</td><td>6/29</td><td>부산 동네 라떼맛집 비교 (달봉이 추천)</td><td>릴스 vlog</td></tr>
+                <tr><td>E4</td><td>7/6</td><td>알바 5집 D-Day 직전 추가 push (30명 한정 카피)</td><td>캐러셀 + 릴스</td></tr>
+                <tr><td>E5</td><td>7/8~15</td><td>D-7 카운트다운 매일 1편</td><td>3포맷 일주일</td></tr>
+            </tbody>
+        </table>
+
+        <h3>위험 회피 룰</h3>
+        <ul class="checklist">
+            <li>사투리 강도 6점 고정 ("입니더 / 아입니까 / 진짜배기"까지만, "카더라 / 안카나" 금지) + 비부산 매장은 5점 차등</li>
+            <li>"미친" 표현 식품법 검수 필수 (대체어: "진짜배기 / 끝내준다 / 이거 진심")</li>
+            <li>분기별 1회 어휘 가이드 업데이트</li>
+            <li>페르소나 가이드 문서 1종 + 승인자 1명 고정</li>
+        </ul>
+    </div>
+
+    <!-- 식품 규제 -->
+    <div class="section" id="regulation">
+        <h2>⚖️ 식품 규제 어드바이저 호출 누적 의제 6건</h2>
+        <p style="font-size:14px; color:var(--secondary); margin-bottom:16px;">5/11 외부 미팅 전 한 번에 검수받아야 할 카피·표기 의제. <strong>5/9 오전 일괄 호출</strong>.</p>
+
+        <table>
+            <thead><tr><th>#</th><th>의제</th><th>출처</th><th>리스크</th></tr></thead>
+            <tbody>
+                <tr><td>1</td><td>가격 정당화 카피 — "라떼 한 잔만 보고 만든 우유" / "바리스타가 설계한 한 잔" / "부산이 만든 딥라떼"</td><td>안건 2</td><td>"최적 / 최고" 최상급 회피</td></tr>
+                <tr><td>2</td><td>솔티드 "부산 바다 소금" 표기</td><td>안건 2</td><td>원산지 허위 표시 위험 — "남해 천일염" 권장</td></tr>
+                <tr><td>3</td><td>모집 카피 C안 비교 표현 — "우지커피보다 진한 부산 딥라떼"</td><td>안건 5</td><td>비교 광고 사실 입증 의무 (블라인드 테스트 등)</td></tr>
+                <tr><td>4</td><td>페르소나 "미친" 표현</td><td>안건 6</td><td>식품 카테고리 과장 표현 — 대체어 "진짜배기 / 끝내준다 / 이거 진심"</td></tr>
+                <tr><td>5</td><td>"댄싱우유 농도가 진하다" / "직접 만든 · 천연 · 8시간" 같은 신뢰 단어</td><td>안건 1</td><td>객관 데이터 · 사실 검증 필수. 없으면 "함량을 높였다" 같은 사실 표현으로 대체</td></tr>
+                <tr><td>6</td><td>"부산이라 좋다" 슬로건 미러링 카피</td><td>안건 3</td><td>부산시 도시 슬로건 IP 침해 가능성 검증</td></tr>
+            </tbody>
+        </table>
+
+        <p style="font-size:14px; margin-top:16px;"><strong>5/8 회의 결정 후 5/9 오전에 ⚖️ 식품 규제 어드바이저 1회 호출로 6건 일괄 검수.</strong> 결과 받아서 5/10 카피 final.</p>
+    </div>
+
+    <!-- 액션 분배 -->
+    <div class="section" id="actions">
+        <h2>회의 직후 → 5/11 외부 미팅 액션 분배 (5/8 12:30 ~ 5/10 23:59)</h2>
+
+        <table>
+            <thead><tr><th>시점</th><th>담당</th><th>액션</th></tr></thead>
+            <tbody>
+                <tr><td>5/8 12:30~13:00</td><td>Green</td><td>회의 결정 사항 슬랙 #댄싱컵에 1줄씩 기록 + <code>meetings/260508-internal-prep-notes.md</code> 회의록 정리</td></tr>
+                <tr><td>5/8 13:00~14:00</td><td>Green</td><td>⚖️ 식품 규제 어드바이저 6건 의제 슬랙 호출</td></tr>
+                <tr><td>5/8 14:00~18:00</td><td>남중 · 이수민</td><td>모집 카피 3안 → 변팀장 컨펌 / 컵 · POP 시안 1차 RFP 발주 / 외부 인쇄소 견적 의뢰</td></tr>
+                <tr><td>5/9 오전</td><td>Green</td><td>식품 규제 검수 결과 수령 + 카피 final</td></tr>
+                <tr><td>5/9 오후</td><td>Green</td><td>인스타 핸들 점유 확인 (@dalbong_busan 외 2개) + W1 선점 / 카카오 "달봉이" 정식 상표 검색</td></tr>
+                <tr><td>5/9 종일</td><td>안지은</td><td>1년 시즌 캘린더 final + 메뉴 리서치북 (피스타치오 베이스 가정) 정리</td></tr>
+                <tr><td>5/10 오전</td><td>남중</td><td>위촉계약서 · 동의서 5종 1차 초안 / 매장 QR 디자인 시안</td></tr>
+                <tr><td>5/10 오후</td><td>이수민</td><td>컵 시안 1·3 디자인 1차안 + POP 5포인트 시안 / Midjourney 6안 수동 실행</td></tr>
+                <tr><td>5/10 종일</td><td>나석환</td><td>부산앵글 의견서 final + 부산시 협업 RFP 1차 (부산관광공사 미식 인증 후보)</td></tr>
+                <tr><td>5/10 23:59</td><td>전원</td><td>5/11 외부 미팅 1-Pager 또는 HTML 덱 final</td></tr>
+                <tr><td>5/11 11:00</td><td>전원</td><td>30분 리허설</td></tr>
+                <tr style="background:var(--accent); color:white;"><td><strong>5/11 14:00</strong></td><td><strong>변팀장 + HIZ</strong></td><td><strong>외부 미팅 (5/11 산출물 7개 발표)</strong></td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- 산출물 -->
+    <div class="section" id="deliverables">
+        <h2>5/11 외부 미팅 산출물 7개 + 리서치 6종</h2>
+
+        <h3>5/11 외부 미팅에 들고 갈 산출물 7개 — 진행 상태</h3>
+        <table>
+            <thead><tr><th>#</th><th>산출물</th><th>담당</th><th>마감</th></tr></thead>
+            <tbody>
+                <tr><td>1</td><td>딥라떼 정의 · 스토리 (30 · 60초 스크립트)</td><td>남중</td><td>5/9 final</td></tr>
+                <tr><td>2</td><td>1년 마케팅 플랜 + 메뉴×계절 매칭</td><td>안지은</td><td>5/10 final</td></tr>
+                <tr><td>3</td><td>메뉴 리서치북 (너티 · 솔티드 + 후보)</td><td>안지은</td><td>5/9</td></tr>
+                <tr><td>4</td><td>"부산 딥라떼" 부산앵글 의견서</td><td>나석환</td><td>5/10 final</td></tr>
+                <tr><td>5</td><td>페어링 디저트 후보 (해염 휘낭시에)</td><td>이수민</td><td>5/10</td></tr>
+                <tr><td>6</td><td>컵 마블링 시안 (시안1 + 시안3 하이브리드)</td><td>이수민</td><td>5/10 1차안</td></tr>
+                <tr><td>7</td><td>앰버서더 모집안 ("댄싱컵 5집 1기")</td><td>남중</td><td>5/10 final</td></tr>
+            </tbody>
+        </table>
+
+        <h3>리서치 6종 (5/8 본 prep의 근거)</h3>
+        <ul class="checklist">
+            <li><strong>4/29 정식 미팅록</strong> — <code>meetings/260429-deep-latte-strategy-notes.md</code></li>
+            <li><strong>[1] 딥라떼 정의 · 스토리 레퍼런스</strong> — <code>research/deep-latte-definition-references.md</code> (12개 사례)</li>
+            <li><strong>[3] 부산 도시 자산 키워드</strong> — <code>research/busan-city-keyword-asset.md</code> (어휘 팔레트 10개 + 4단 전략)</li>
+            <li><strong>[2] 메뉴 라인업 보강</strong> — <code>research/menu-lineup-expansion.md</code> (피스타치오 + 6종 GO/NO-GO + 1년 캘린더)</li>
+            <li><strong>[5] 앰버서더 한국 케이스</strong> — <code>research/ambassador-program-korea-cases.md</code> ("댄싱컵 5집 1기" + 스탠다드 ₩1,200만)</li>
+            <li><strong>[4] 시각화 풀</strong> — <code>research/visual-pool-cup-pairing-pop.md</code> (마블링 단일 코드 + 솔티드 한정 페어링)</li>
+            <li><strong>페르소나</strong> — <code>research/busan-marketer-persona.md</code> (달봉이 + X 통합)</li>
+        </ul>
+
+        <h3>5/11(월) 14:00 외부 미팅 1-Pager (선행 작업)</h3>
+        <div class="callout callout-info">
+            5/8 회의 결정 후 즉시 작성. 본 prep과 별도 산출물.<br>
+            구성: ① 4/29 결정 재확인 ② 5/8 정의 · 라인업 · 부산 · 시각 · 5집 5축 ③ 페르소나 별도 슬라이드 ④ 5/11~7/15 D-Day 캘린더 ⑤ 5월 ₩500만 · 6월 견적 · 7월 D-Day 캠페인 견적 분리.<br>
+            톤: 변팀장이 위드런 내부에 보고 가능한 수준 — 내부 코드(A-1 · B-2 등) 노출 금지, 사람 친화 라벨만.
+        </div>
+    </div>
+
+</div>
+
+<div class="footer">
+    Prepared by HIZ BC3 · 2026-05-08<br>
+    <a href="https://hizsystem.github.io/dancingcup/" class="footer-link">댄싱컵 홈</a> ·
+    <a href="#executive-summary" class="footer-link">맨 위로</a>
+</div>
+
+</body>
+</html>
