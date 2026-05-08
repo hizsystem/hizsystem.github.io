@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>잼플(JAMFUL) x 브랜드라이즈 — 6개월 출시 마케팅 파트너십 제안 | BRANDRISE</title>
+    <style>
+        :root {
+            --accent: #EA580C;
+            --text: #1a1b18;
+            --text-light: #999;
+            --border: #e8edf1;
+            --warm: #FFF7ED;
+            --bg: #f4f7f9;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; font-size: 14px; word-break: keep-all; overflow-wrap: break-word; }
+
+        .header { background: #fff; padding: 48px 40px 28px; text-align: center; border-bottom: 3px solid var(--accent); }
+        .header-badge { display: inline-block; background: var(--warm); color: var(--accent); padding: 4px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; margin-bottom: 10px; }
+        .header h1 { font-size: 26px; font-weight: 800; margin-bottom: 6px; letter-spacing: -0.02em; }
+        .header .subtitle { font-size: 13px; color: var(--text-light); }
+
+        .container { max-width: 880px; margin: 0 auto; padding: 28px 20px; }
+
+        .toc { background: #fff; border-radius: 10px; padding: 20px 24px; margin-bottom: 16px; box-shadow: 0 1px 4px rgba(0,0,0,0.04); }
+        .toc-title { font-size: 12px; font-weight: 600; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px; }
+        .toc-list { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 16px; list-style: none; }
+        .toc-list a { color: var(--text); text-decoration: none; font-size: 13px; padding: 3px 0; display: flex; align-items: center; gap: 8px; }
+        .toc-list a::before { content: attr(data-num); color: var(--accent); font-weight: 700; font-size: 11px; min-width: 18px; }
+        .toc-list a:hover { color: var(--accent); }
+
+        .section { background: #fff; border-radius: 10px; padding: 28px; margin-bottom: 16px; box-shadow: 0 1px 4px rgba(0,0,0,0.04); scroll-margin-top: 20px; }
+        .section h2 { font-size: 17px; font-weight: 700; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--accent); letter-spacing: -0.01em; }
+        .section h3 { font-size: 14px; font-weight: 600; margin: 20px 0 10px; color: var(--accent); }
+        .section p { margin-bottom: 10px; }
+        .section p:last-child { margin-bottom: 0; }
+
+        table { width: 100%; border-collapse: collapse; margin: 8px 0; }
+        th { background: #f8fafb; padding: 9px 14px; text-align: left; font-weight: 600; font-size: 13px; border-bottom: 2px solid var(--border); }
+        td { padding: 9px 14px; border-bottom: 1px solid var(--border); font-size: 13px; vertical-align: top; }
+        tr:hover td { background: #fafbfc; }
+
+        .highlight { color: var(--accent); font-weight: 700; }
+        .tag { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 600; background: var(--warm); color: var(--accent); }
+
+        .quote-total { background: var(--warm); padding: 22px 26px; border-radius: 8px; margin: 16px 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+        .qt-label { font-size: 13px; color: var(--text-light); }
+        .qt-value { font-size: 30px; font-weight: 800; color: var(--accent); letter-spacing: -0.02em; }
+        .qt-sub { font-size: 12px; color: var(--text-light); }
+
+        .callout { background: var(--warm); border-left: 3px solid var(--accent); padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 12px 0; font-size: 13px; line-height: 1.7; }
+        .callout strong { color: var(--accent); }
+
+        .hero-quote { background: linear-gradient(135deg, var(--warm), #fff); border: 1px solid rgba(234,88,12,0.15); border-radius: 10px; padding: 28px 32px; margin-bottom: 16px; text-align: center; }
+        .hero-quote p { font-size: 19px; font-weight: 700; color: var(--accent); letter-spacing: -0.01em; line-height: 1.55; }
+        .hero-quote .sub { font-size: 13px; color: var(--text-light); margin-top: 6px; }
+
+        .status-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 12px 0; }
+        .status-item { padding: 10px 14px; border-radius: 6px; font-size: 12px; line-height: 1.55; }
+        .status-ready { background: #f0fdf4; border: 1px solid #bbf7d0; }
+        .status-ready::before { content: "✓ "; color: #16a34a; font-weight: 700; }
+        .status-gap { background: #fef2f2; border: 1px solid #fecaca; }
+        .status-gap::before { content: "△ "; color: #dc2626; font-weight: 700; }
+
+        .area-card { border: 1px solid var(--border); border-radius: 8px; padding: 22px; margin: 14px 0; background: #fff; }
+        .area-card .area-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; gap: 12px; flex-wrap: wrap; }
+        .area-card .area-title { font-size: 15px; font-weight: 700; }
+        .area-card .area-budget { font-size: 16px; font-weight: 800; color: var(--accent); }
+        .area-card .area-tagline { font-size: 12px; color: var(--text-light); font-style: italic; margin-bottom: 12px; }
+        .area-card .area-why { background: var(--warm); border-left: 3px solid var(--accent); padding: 10px 14px; border-radius: 0 6px 6px 0; font-size: 12.5px; margin: 10px 0 14px; }
+        .area-card .area-why strong { color: var(--accent); }
+
+        .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin: 12px 0; }
+        .col-card { border: 1px solid var(--border); border-radius: 8px; padding: 16px; background: #fff; }
+        .col-card .col-label { font-size: 11px; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: 0.06em; }
+        .col-card .col-title { font-size: 14px; font-weight: 700; margin: 4px 0 8px; }
+        .col-card .col-desc { font-size: 12px; color: var(--text); line-height: 1.65; }
+
+        .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 12px 0; }
+
+        .pill-row { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 4px; }
+        .pill { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 11px; font-weight: 600; background: var(--warm); color: var(--accent); border: 1px solid rgba(234,88,12,0.18); }
+
+        .kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 12px 0; }
+        .kpi-card { border: 1px solid var(--border); border-radius: 8px; padding: 14px; text-align: center; background: #fff; }
+        .kpi-card .kpi-num { font-size: 22px; font-weight: 800; color: var(--accent); letter-spacing: -0.02em; }
+        .kpi-card .kpi-label { font-size: 11px; color: var(--text-light); margin-top: 2px; }
+
+        .gantt-table th:first-child, .gantt-table td:first-child { white-space: nowrap; width: 84px; }
+        .gantt-table .d-mark { display: inline-block; background: var(--accent); color: #fff; padding: 1px 7px; border-radius: 8px; font-size: 10px; font-weight: 700; letter-spacing: 0.04em; }
+
+        .faq-q { font-size: 14px; font-weight: 700; margin: 18px 0 6px; color: var(--text); }
+        .faq-q::before { content: "Q. "; color: var(--accent); }
+        .faq-a { font-size: 13px; color: var(--text); line-height: 1.75; }
+
+        .next-step-card { background: linear-gradient(135deg, var(--warm), #fff); border: 1px solid rgba(234,88,12,0.2); border-radius: 10px; padding: 22px 26px; margin: 10px 0; }
+        .next-step-card .nsc-title { font-size: 15px; font-weight: 700; margin-bottom: 10px; }
+
+        .footer { text-align: center; padding: 28px; color: var(--text-light); font-size: 12px; }
+
+        @media (max-width: 768px) {
+            .header { padding: 32px 20px 20px; }
+            .header h1 { font-size: 22px; }
+            .section { padding: 20px 16px; }
+            .toc-list { grid-template-columns: 1fr; }
+            .status-grid { grid-template-columns: 1fr; }
+            .three-col { grid-template-columns: 1fr; }
+            .two-col { grid-template-columns: 1fr; }
+            .kpi-grid { grid-template-columns: 1fr 1fr; }
+            .quote-total { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <div class="header-badge">6개월 출시 마케팅 파트너십 제안</div>
+    <h1>검증된 B2B 매출 라인 위에, 5/15 출시를 한 번에 터뜨립니다</h1>
+    <div class="subtitle">잼플(JAMFUL) × 브랜드라이즈 | (주)크램 김수민 대표님께 | 2026.05</div>
+</div>
+
+<div class="container">
+
+    <div class="hero-quote">
+        <p>"출시 D-day를 잡고, 사전 모멘텀을 깔고, 한 번에 터뜨립니다."</p>
+        <div class="sub">5/12 계약·킥오프 → 5/15 신요금제 출시 → 11월 결산. 그 6개월을 어떻게 쓰느냐가 잼플 1년의 방향을 결정합니다.</div>
+    </div>
+
+    <div class="toc">
+        <div class="toc-title">이 제안서에 담긴 것</div>
+        <ul class="toc-list">
+            <li><a href="#why-now" data-num="01">Why Now — 지금, 이 방향인가</a></li>
+            <li><a href="#landscape" data-num="02">경쟁 지형과 잼플의 길</a></li>
+            <li><a href="#five-axis" data-num="03">제안 구성 — 5개 축</a></li>
+            <li><a href="#sprint" data-num="04">출시 게릴라 스프린트 — 첫 7일이 첫 30일을 만든다</a></li>
+            <li><a href="#defer" data-num="05">지금은 미뤄도 되는 것</a></li>
+            <li><a href="#roadmap" data-num="06">6개월 로드맵 (5/15 D-day 역산)</a></li>
+            <li><a href="#invest" data-num="07">투자 구성 — 6,750만 어떻게 쓰는가</a></li>
+            <li><a href="#options" data-num="08">차기 옵션 — 6개월 후의 다음 길</a></li>
+            <li><a href="#quickwin" data-num="09">Quick Win — 계약 전에 먼저 드립니다</a></li>
+            <li><a href="#rhythm" data-num="10">함께 만들어갈 리듬</a></li>
+            <li><a href="#faq" data-num="11">자주 묻는 질문</a></li>
+            <li><a href="#next" data-num="12">다음 한 걸음</a></li>
+        </ul>
+    </div>
+
+    <div class="section" id="why-now">
+        <h2>01. Why Now — 지금, 이 방향인가</h2>
+
+        <p>잼플은 시드 단계에서 보기 드물게 <strong>시점 한정 모멘텀 4개를 동시에 가진 브랜드</strong>입니다. 검증된 B2B 매출 라인이 이미 돌아가고 있고, 5/15 신요금제 출시로 B2C가 처음 시장에 진입합니다. 청년창업사관학교 사업화자금이 마케팅비 인정 비목으로 열려 있고, 통상임금 대법 판결(2024.12)이라는 KSP 윈도우가 1년 안쪽으로 닫혀 있습니다. 이 4개가 같은 6개월 안에 겹쳐 있는 시점은 다시 오지 않습니다.</p>
+
+        <h3>이미 준비된 것</h3>
+        <div class="status-grid">
+            <div class="status-item status-ready">5/15 신요금제 출시 확정 — B2C 본격 진입 D-day</div>
+            <div class="status-item status-ready">B2B 도입 100사 / 제휴 센터 900+ — 매출 라인 검증 완료</div>
+            <div class="status-item status-ready">청년창업사관학교 입주 — 사업화자금 마케팅비 인정 비목</div>
+            <div class="status-item status-ready">통상임금 대법 판결 KSP — 1년 윈도우 안쪽</div>
+            <div class="status-item status-ready">Move Together 임직원 데이터 — 콘텐츠 자동화 레일</div>
+            <div class="status-item status-ready">B2B 블로그 → 인사팀 검색 → 매출 직결 구조</div>
+        </div>
+
+        <h3>지금 비어 있는 것</h3>
+        <div class="status-grid">
+            <div class="status-item status-gap">인스타그램 본질 메시지 미정렬 — 피드 166 / 팔로워 452 / 운영 의지 0</div>
+            <div class="status-item status-gap">메타 광고 미가동 — B2C 모수 첫 측정 윈도우 미열림</div>
+            <div class="status-item status-gap">외부 PR 자산이 자사 채널로 환류되지 않음</div>
+            <div class="status-item status-gap">마케팅 운영 인력 0명 — 1인 양 트랙 풀가동 불가</div>
+        </div>
+
+        <div class="callout">
+            <strong>매출 라인은 검증되어 있습니다.</strong> 지금 필요한 건 "출시 모멘텀을 광고비 효율의 변곡점으로 잡는 것 + 본질 메시지를 인스타그램에 옮기는 것 + B2B 검증 자산을 모수에 노출하는 것" 이 세 가지입니다. 김 대표님이 이미 만들어 놓으신 라인이 <strong>매출과 브랜드 자산</strong>으로 본격 전환되는 시점을 이번 6개월 안에 만듭니다.
+        </div>
+
+        <h3>6개월 후 잼플이 서 있을 자리</h3>
+        <div class="kpi-grid">
+            <div class="kpi-card"><div class="kpi-num">200사</div><div class="kpi-label">B2B 도입사 (현재 100)</div></div>
+            <div class="kpi-card"><div class="kpi-num">1,000명</div><div class="kpi-label">B2C 멤버십 첫 회원</div></div>
+            <div class="kpi-card"><div class="kpi-num">3,000</div><div class="kpi-label">인스타 팔로워 (현재 452)</div></div>
+            <div class="kpi-card"><div class="kpi-num">8명</div><div class="kpi-label">인플루언서 UGC 자산</div></div>
+        </div>
+        <p style="font-size: 12px; color: var(--text-light); margin-top: 8px;">
+            이 숫자들은 단순 KPI가 아니라 <strong>김 대표님의 다음 시리즈A 자료</strong>입니다. IR 미팅, B2B 영업 덱, 글로벌 진출 사전 검증 — 어느 자리에서든 "이미 시장 반응이 검증된 브랜드"라는 객관적 근거가 됩니다.
+        </p>
+    </div>
+
+    <div class="section" id="landscape">
+        <h2>02. 경쟁 지형과 잼플의 길</h2>
+
+        <p>잼플이 들어가는 시장은 세 갈래로 나뉘어 있습니다. 어느 판에서 싸울지 먼저 정하고 들어가야 합니다.</p>
+
+        <table>
+            <tr><th>카테고리</th><th>대표 브랜드</th><th>전략</th><th>잼플 관점</th></tr>
+            <tr>
+                <td>클래스 통합 예약</td>
+                <td>클래스101 · 솜씨당 · 프립</td>
+                <td>일회성 콘텐츠·체험 중심</td>
+                <td>정면승부 X. 잼플은 <strong>정기 멤버십 인프라</strong>로 차별.</td>
+            </tr>
+            <tr>
+                <td>B2B 기업복지 SaaS</td>
+                <td>베네피아 · 플렉스 · 크리비아</td>
+                <td>HR SaaS 통합 제품군 (운동은 부가 메뉴)</td>
+                <td>잼플은 <strong>운동 카테고리 단일 깊이 + 통상임금 KSP</strong>로 좁고 깊게.</td>
+            </tr>
+            <tr>
+                <td>운동 멤버십 (해외 레퍼런스)</td>
+                <td>ClassPass(미국) · Move(글로벌)</td>
+                <td>도시 기반 멀티 센터 멤버십</td>
+                <td>한국 시장 <strong>900+ 센터 인프라가 잼플 진입장벽</strong>.</td>
+            </tr>
+        </table>
+
+        <div class="callout">
+            <strong>잼플이 가야 할 포지션:</strong> "운동 카테고리 단일 멤버십 인프라 + 통상임금 시점 한정 KSP를 가진 <strong>B2B/B2C 양면 플레이어</strong>"입니다. 이 자리는 지금 한국 시장에 비어 있습니다. 베네피아처럼 HR SaaS 풀패키지로 가지 않고, 클래스101처럼 일회성 콘텐츠로 가지 않습니다. 잼플은 <strong>운동 단일 카테고리에서 가장 깊게 들어간 브랜드</strong>가 됩니다.
+        </div>
+    </div>
+
+    <div class="section" id="five-axis">
+        <h2>03. 제안 구성 — 5개 축</h2>
+
+        <p>6개월 동안 잼플 브랜드에 동시에 작동해야 하는 엔진은 다섯 가지입니다. 각 축은 독립적으로 작동하지 않고, <strong>서로의 결과물을 재료로 쓰는 순환 구조</strong>로 설계했습니다.</p>
+
+        <div class="area-card">
+            <div class="area-header">
+                <div class="area-title">1. 5/15 출시 게릴라 스프린트 + 진단 파일럿</div>
+                <div class="area-budget">350만원</div>
+            </div>
+            <div class="area-tagline">"7일을 깔지 못한 채 출시에 들어가는 것과, 4명이 게릴라로 깔아둔 상태로 들어가는 것은 첫 30일 CAC가 다릅니다."</div>
+            <div class="area-why">
+                <strong>김 대표님의 어떤 고민을 해결하는가.</strong> 5/15 출시 시점에 마케팅 인프라 0인 채로 진입하는 것이 가장 큰 모멘텀 손실입니다. 5/12 계약 기준 <strong>3일 안에 가동</strong>해 7일 안에 인스타·광고·B2B PR·KPI 측정까지 깔아두고, 이어서 M1 진단 파일럿으로 첫 30일 데이터를 산출합니다.
+            </div>
+            <table>
+                <tr><th>시기</th><th>산출물</th></tr>
+                <tr><td>5/12~5/18 게릴라 7일</td><td>인스타 바이오·하이라이트 정렬 / 5/15 D-day 카드 3장 / 메타 광고 시동 일 5만×7일 / B2B 블로그용 출시 보도자료 / 첫 7일 KPI 측정 시트</td></tr>
+                <tr><td>5/19~6/14 M1 진단</td><td>가설 시트 4종 / GA4·픽셀·UTM 표준·주간 대시보드 / 인스타 콘텐츠 시리즈 정의서 / B2B 검색 광고 1차 셋업 / 첫 30일 운영·리뷰 4회 / 6/14 종료 리뷰</td></tr>
+            </table>
+        </div>
+
+        <div class="area-card">
+            <div class="area-header">
+                <div class="area-title">2. B2C 인스타그램 정체성 재구축 + 운영</div>
+                <div class="area-budget">1,750만원</div>
+            </div>
+            <div class="area-tagline">"원하는 시간, 원하는 장소, 하나의 운동 멤버십 / 전국 900+ 센터를 잼플 하나로" — 이 카피를 인스타그램에 옮기는 작업입니다.</div>
+            <div class="area-why">
+                <strong>김 대표님의 어떤 고민을 해결하는가.</strong> 잼플 본질 카피는 이미 김 대표님이 만들어 놓으신 자산입니다. 새로 만드는 게 아니라 <strong>그 카피를 본질대로 인스타그램에 옮기는 것</strong>이 6개월의 핵심입니다. 광고로 메시지를 만드는 게 아니라, 본질 메시지를 광고비로 더 멀리 보냅니다.
+            </div>
+            <table>
+                <tr><th>하는 일</th><th>구체적 내용</th></tr>
+                <tr><td>톤앤매너 정렬 (M2)</td><td>피드 그리드 설계, 컬러·타이포 가이드, 무드보드, 캡션 톤</td></tr>
+                <tr><td>콘텐츠 기획</td><td>월간 콘텐츠 캘린더, 릴스·세로형 중심 기획, Move Together 데이터 자산화</td></tr>
+                <tr><td>콘텐츠 제작</td><td>피드 6편/월 + 릴스 4편/월 + 스토리 20편/월 + 카피 + 해시태그</td></tr>
+                <tr><td>채널 운영</td><td>게시·해시태그·댓글·DM 응대 가이드</td></tr>
+                <tr><td>성과 리포팅</td><td>주간 인사이트 + 월간 성과 리포트</td></tr>
+            </table>
+            <p style="font-size: 12px; color: var(--text-light); margin-top: 10px;">
+                <strong>쌓이는 자산:</strong> 피드 34+ / 릴스 23+ / 스토리 112+. 이 자산은 광고 소재·B2B 영업 덱·시리즈A IR에 그대로 재활용됩니다.
+            </p>
+        </div>
+
+        <div class="area-card">
+            <div class="area-header">
+                <div class="area-title">3. B2B 콘텐츠 + 검색·LinkedIn 광고</div>
+                <div class="area-budget">1,250만원</div>
+            </div>
+            <div class="area-tagline">"잼플의 B2B는 이미 검증된 라인입니다. 모수만 늘리면 전환 곡선이 보장됩니다."</div>
+            <div class="area-why">
+                <strong>김 대표님의 어떤 고민을 해결하는가.</strong> B2B는 이미 매출 라인이 돌아가고 있습니다. 블로그 → 인사팀 검색 유입이 매출로 직결되는 구조이고, 통상임금 대법 판결(2024.12)이라는 시점 한정 KSP가 6개월 안에 닫힙니다. 이 윈도우 안에 <strong>"기업복지·통상임금·직원만족도" 검색 노출</strong>을 점유합니다.
+            </div>
+            <table>
+                <tr><th>하는 일</th><th>구체적 내용</th></tr>
+                <tr><td>블로그 콘텐츠</td><td>월 4편 — 통상임금 KSP 척추, 기업복지·직원만족도 키워드 점유</td></tr>
+                <tr><td>네이버·구글 검색 광고</td><td>키워드 50개 운영, 랜딩 점검, CPC·전환율 주간 추적</td></tr>
+                <tr><td>LinkedIn HR 타겟팅</td><td>M3부터 추가 — 인사·총무·노무 직책 타겟, 통상임금 KSP 콘텐츠 노출</td></tr>
+                <tr><td>IR/세일즈덱 업데이트</td><td>M4 IR덱 v2 / M5 세일즈덱 v2 / M6 케이스 스터디 1편</td></tr>
+                <tr><td>주간 리포트</td><td>검색 유입·블로그 트래픽·LinkedIn 클릭·B2B 도입 문의 통합</td></tr>
+            </table>
+            <p style="font-size: 12px; color: var(--text-light); margin-top: 10px;">
+                <strong>쌓이는 자산:</strong> 블로그 22편 + IR덱 v2 + 세일즈덱 v2 + 케이스 스터디 1편 + 통상임금 KSP 콘텐츠 라이브러리. 1년 윈도우 동안 B2B 영업 척추로 작동.
+            </p>
+        </div>
+
+        <div class="area-card">
+            <div class="area-header">
+                <div class="area-title">4. B2C 메타 광고 운영</div>
+                <div class="area-budget">1,000만원 <span style="font-size: 12px; color: var(--text-light); font-weight: 500;">(운영 Fee)</span></div>
+            </div>
+            <div class="area-tagline">"6개월을 쓴 계정과 첫 달 계정의 효율은 3배 차이." 첫 30일이 잼플의 모수 첫 측정 윈도우입니다.</div>
+            <div class="area-why">
+                <strong>김 대표님의 어떤 고민을 해결하는가.</strong> "단순 인스타 광고로 진짜 전환?"이라는 회의가 정당한 이유는, 검증되지 않은 메시지에 광고비를 태우면 데이터 노이즈만 쌓이기 때문입니다. 그래서 <strong>잼플 자체 카피를 그대로 광고 소재로 쓰고</strong>, 출시 첫 30일에 CPI/CAC 기준선만 잡습니다. 그 다음부터는 숫자가 광고를 결정합니다.
+            </div>
+            <table>
+                <tr><th>하는 일</th><th>구체적 내용</th></tr>
+                <tr><td>계정 세팅</td><td>광고 계정·픽셀·전환 이벤트(가입·결제) 세팅</td></tr>
+                <tr><td>캠페인 설계</td><td>운동·라이프스타일 관심사 + 900+ 센터 지역 거주자 타겟</td></tr>
+                <tr><td>소재 제작</td><td>인스타 콘텐츠 + 인플루언서 UGC → 광고용 편집, A/B 테스트</td></tr>
+                <tr><td>최적화</td><td>타겟·소재·배치 최적화, M5부터 리타겟팅 본격</td></tr>
+                <tr><td>리포팅</td><td>주간 광고 리포트 + 월간 ROAS 리뷰</td></tr>
+            </table>
+            <p style="font-size: 12px; color: var(--text-light); margin-top: 10px;">
+                <strong>쌓이는 자산:</strong> 숙성된 픽셀 데이터 + ROAS 기준선 + A/B 학습된 소재 라이브러리. 인하우스 마케터가 인수해도 바로 돌릴 수 있는 엔진.
+            </p>
+        </div>
+
+        <div class="area-card">
+            <div class="area-header">
+                <div class="area-title">5. 인플루언서 시딩 — UGC 광고 재활용 엔진</div>
+                <div class="area-budget">1,200만원 / 8명</div>
+            </div>
+            <div class="area-tagline">라이프스타일·운동 카테고리 마이크로·나노 8명. 받은 UGC를 메타 광고 소재로 재활용.</div>
+            <div class="area-why">
+                <strong>김 대표님의 어떤 고민을 해결하는가.</strong> 잼플 단계에서는 인플루언서 수보다 <strong>UGC 재활용 효율</strong>이 핵심입니다. 8명에게서 받은 원본 영상을 메타 광고 소재 풀로 자연스럽게 확장하고, M3·M5에 분산 집행해 광고 학습 사이클과 맞물립니다.
+            </div>
+            <table>
+                <tr><th>티어</th><th>팔로워</th><th>단가 범위</th><th>인원</th><th>역할</th></tr>
+                <tr><td>마이크로</td><td>1~3만</td><td>60~100만</td><td>5명</td><td>정합 타깃·콘텐츠 다양성</td></tr>
+                <tr><td>나노</td><td>1만 이하</td><td>20~50만</td><td>3명</td><td>UGC 원본 확보·광고 소재화</td></tr>
+            </table>
+            <p style="font-size: 12px; color: var(--text-light); margin-top: 10px;">
+                <strong>쌓이는 자산:</strong> 원본 UGC 8명분. 별도 저작권 계약으로 <strong>광고·상세페이지·B2B 영업 덱에 6개월 이후 영구 재활용</strong> 가능.
+            </p>
+        </div>
+
+        <div class="callout">
+            <strong>다섯 축이 서로를 먹입니다.</strong> 인스타 콘텐츠 → 메타 광고 소재. 인플루언서 UGC → 광고 소재. B2B 블로그 → 검색·LinkedIn 광고 자산. 첫 30일 측정 → 다음 5개월 광고 결정. 각 축은 독립 청구되지만, <strong>한 브랜드 안에서 하나의 엔진</strong>으로 돌아갑니다.
+        </div>
+    </div>
+
+    <div class="section" id="sprint">
+        <h2>04. 출시 게릴라 스프린트 — 첫 7일이 첫 30일을 만든다</h2>
+
+        <p>5/15 신요금제 출시는 광고로 만드는 모멘텀이 아니라, <strong>잼플이 이미 가진 본질 메시지가 처음 시장에 노출되는 D-day</strong>입니다. 그 D-day까지의 7일과 직후 30일을 어떻게 깔아두느냐가 잼플 1년의 모멘텀을 결정합니다.</p>
+
+        <div class="three-col">
+            <div class="col-card">
+                <div class="col-label">Why 1</div>
+                <div class="col-title">픽셀 학습 누적 효과</div>
+                <div class="col-desc">메타 광고 픽셀은 <strong>가동 첫 30일이 학습 데이터의 골든타임</strong>입니다. 5/15에 시동 0인 채 들어가면 첫 30일 학습 윈도우를 통째로 잃습니다.</div>
+            </div>
+            <div class="col-card">
+                <div class="col-label">Why 2</div>
+                <div class="col-title">출시 자연 모멘텀</div>
+                <div class="col-desc">신요금제 출시는 그 자체로 <strong>유기적 검색·SNS 언급 피크</strong>가 만들어지는 시점입니다. 인스타·블로그·광고가 모두 정렬된 상태에서 받아내야 모멘텀이 매출로 변환됩니다.</div>
+            </div>
+            <div class="col-card">
+                <div class="col-label">Why 3</div>
+                <div class="col-title">측정 베이스라인 확보</div>
+                <div class="col-desc">첫 30일 CPI/CAC 기준선이 잡혀야 <strong>다음 5개월 광고 결정이 숫자 기반</strong>으로 갑니다. 베이스라인 없이 가는 광고는 데이터 노이즈만 쌓입니다.</div>
+            </div>
+        </div>
+
+        <h3>게릴라 7일 산출물 (5/12~5/18)</h3>
+        <table>
+            <tr><th>일</th><th>산출물</th></tr>
+            <tr><td><strong>5/12 (월)</strong></td><td>킥오프 미팅 + 인스타 바이오·하이라이트·프로필 정렬 (Quick Win 즉시 실행)</td></tr>
+            <tr><td><strong>5/13 (화)</strong></td><td>5/15 D-day 카드 3장 디자인 (전날·당일·다음 날) / 메타 광고 계정·픽셀 셋업</td></tr>
+            <tr><td><strong>5/14 (수)</strong></td><td>광고 소재 2종 제작 (잼플 자체 카피 차용) / B2B 블로그 출시 보도자료 1편 작성</td></tr>
+            <tr><td><strong>5/15 (목)</strong></td><td><span class="d-mark" style="background:var(--accent);color:#fff;padding:1px 7px;border-radius:8px;font-size:10px;font-weight:700;">D-DAY</span> 출시 당일 — 인스타 D-day 카드 라이브 / 메타 광고 일 5만 시동 / B2B 보도자료 검색 인덱스</td></tr>
+            <tr><td><strong>5/16~5/18</strong></td><td>광고 첫 3일 운영 + 데일리 측정 / 첫 7일 KPI 시트 셋업 (가입자·CAC·CTR·CPI 베이스라인)</td></tr>
+        </table>
+
+        <div class="callout">
+            <strong>이 7일은 별도 청구하지 않습니다.</strong> M1 진단 파일럿(350만) 비용에 포함되어 있습니다. 광고 미디어비만 잼플 측 직접 집행입니다. 5/12 이전 계약 미완 시 게릴라 7일은 자동 취소되며, 출시 모멘텀 손실은 6개월 광고 효율로 누적됩니다.
+        </div>
+    </div>
+
+    <div class="section" id="defer">
+        <h2>05. 지금은 미뤄도 되는 것 — 솔직하게 말씀드립니다</h2>
+
+        <p>이번 6개월 안에 <strong>하지 않는 것</strong>도 똑같이 중요합니다. 지금 잼플에게 가장 큰 레버리지를 만드는 순서로 우선순위를 정리했고, 아래 항목들은 <strong>지금 비용을 쓰면 오히려 비효율</strong>이라 남겨둡니다. 필요해지는 시점이 오면 그때 추가로 붙이면 됩니다.</p>
+
+        <div class="two-col">
+            <div class="col-card">
+                <div class="col-label">지금 미루는 것</div>
+                <div class="col-title">브랜드 리빌딩 · BI 재개발</div>
+                <div class="col-desc">현재 잼플 BI는 사용 가능한 상태입니다. 지금 중복 투자하면 3,000~8,000만이 그냥 들어갑니다. 인스타·광고·B2B 콘텐츠 쪽에 먼저 쓰고, 1년 뒤 시리즈A 시점에 리브랜딩이 필요해지면 그때 다시 의논드립니다.</div>
+            </div>
+            <div class="col-card">
+                <div class="col-label">지금 미루는 것</div>
+                <div class="col-title">대형 광고·상세페이지용 화보 촬영</div>
+                <div class="col-desc">잼플 자체 콘텐츠 + 인플루언서 UGC + Move Together 데이터로 6개월 충분히 운영 가능합니다. 한계가 명확해지는 시점에 대형 촬영을 붙이는 게 ROI가 훨씬 좋습니다.</div>
+            </div>
+            <div class="col-card">
+                <div class="col-label">지금 미루는 것</div>
+                <div class="col-title">메타·검색·LinkedIn 외 매체 (틱톡 · 카카오모먼트 · GFA)</div>
+                <div class="col-desc">현 단계에서는 핵심 3매체에 집중해서 픽셀·소재·타겟을 숙성시키는 게 효율적입니다. 메타 ROAS 기준선이 잡힌 뒤 채널 확장을 검토합니다.</div>
+            </div>
+            <div class="col-card">
+                <div class="col-label">지금 미루는 것</div>
+                <div class="col-title">풀스택 B2B 영업 대행 (콜드콜·리드 자체 확보)</div>
+                <div class="col-desc">B2B 인바운드 모수 확장에 집중합니다. 검색·LinkedIn 광고로 들어오는 인바운드를 키우는 게 우선이고, 콜드 아웃바운드는 시리즈A 후 영업팀 채용으로 가는 게 자연스럽습니다.</div>
+            </div>
+        </div>
+
+        <div class="callout">
+            <strong>"받을 수 있는 돈을 먼저 남겨둔다"</strong>는 원칙을 지킵니다. 6개월 안에 가장 큰 변화를 만드는 영역에 집중하고, 나머지는 김 대표님이 필요해지셨을 때 그때 판단하실 수 있도록 열어두겠습니다.
+        </div>
+    </div>
+
+    <div class="section" id="roadmap">
+        <h2>06. 6개월 로드맵 — 5/15 D-day 역산</h2>
+
+        <p><strong>출시 모멘텀은 사전 준비량에 비례합니다.</strong> 5/12 계약 가정 시 W0 게릴라 7일부터 W22 6개월 결산까지 주차별 간트입니다.</p>
+
+        <table class="gantt-table">
+            <tr>
+                <th>주차</th>
+                <th>기간</th>
+                <th>핵심 산출</th>
+                <th>D-day</th>
+            </tr>
+            <tr>
+                <td><strong>W0</strong></td>
+                <td>5/12~5/18</td>
+                <td>킥오프 / 인스타 정렬 / D-day 카드 3장 / 메타 광고 시동 / B2B 보도자료 / KPI 시트</td>
+                <td><span class="d-mark">5/15 출시</span></td>
+            </tr>
+            <tr>
+                <td><strong>W1~W2</strong></td>
+                <td>5/19~5/31</td>
+                <td>가설 시트 4종 / 픽셀·이벤트·UTM / 인스타 톤앤매너 드래프트 / 첫 광고 소재 학습</td>
+                <td><span class="d-mark">M1 시작</span></td>
+            </tr>
+            <tr>
+                <td><strong>W3~W4</strong></td>
+                <td>6/1~6/14</td>
+                <td>인스타 첫 4피드 라이브 / B2B 검색 광고 본격 / 첫 30일 측정 결과 도출 / M1 종료 리뷰</td>
+                <td><span class="d-mark">M1 종료</span></td>
+            </tr>
+            <tr>
+                <td><strong>W5~W8</strong></td>
+                <td>6/15~7/12</td>
+                <td>M2 — 톤앤매너 확정 / 월간 운영 본격 / 메타 A/B 5안 / B2B 블로그 4편</td>
+                <td>—</td>
+            </tr>
+            <tr>
+                <td><strong>W9~W12</strong></td>
+                <td>7/13~8/9</td>
+                <td>M3 — LinkedIn HR 신규 / <span class="highlight">광고 ROAS 기준선 확보</span> / 인플루언서 1차 4명 집행</td>
+                <td>—</td>
+            </tr>
+            <tr>
+                <td><strong>W13~W16</strong></td>
+                <td>8/10~9/6</td>
+                <td>M4 — IR덱 v2 / 성과소재 스케일업 / 통상임금 KSP 콘텐츠 점유 본격</td>
+                <td>—</td>
+            </tr>
+            <tr>
+                <td><strong>W17~W20</strong></td>
+                <td>9/7~10/4</td>
+                <td>M5 — 세일즈덱 v2 / 리타겟팅 본격 / 인플루언서 2차 4명 집행</td>
+                <td>—</td>
+            </tr>
+            <tr>
+                <td><strong>W21~W22</strong></td>
+                <td>10/5~10/14</td>
+                <td>M6 — 케이스 스터디 / 6개월 ROAS 산출 / <span class="highlight">6개월 결산 + 차기 6개월 옵션</span></td>
+                <td><span class="d-mark">결산</span></td>
+            </tr>
+        </table>
+
+        <h3>월별 산출물 (M1~M6)</h3>
+        <table>
+            <tr><th>월</th><th>피드</th><th>릴스</th><th>스토리</th><th>B2B 블로그</th><th>광고 운영</th><th>인플루언서</th></tr>
+            <tr><td><strong>M1 (5월 후반)</strong></td><td>4</td><td>2</td><td>12</td><td>2 + 출시 보도자료</td><td>픽셀·이벤트 + 소재 2안</td><td>—</td></tr>
+            <tr><td><strong>M2 (6월)</strong></td><td>6</td><td>4</td><td>20</td><td>4</td><td>소재 A/B 5안 / 일 5~10만</td><td>—</td></tr>
+            <tr><td><strong>M3 (7월)</strong></td><td>6</td><td>4</td><td>20</td><td>4</td><td>ROAS 기준선 / LinkedIn 신규</td><td>마이크로 3 + 나노 1</td></tr>
+            <tr><td><strong>M4 (8월)</strong></td><td>6</td><td>4</td><td>20</td><td>4 + IR덱 v2</td><td>성과소재 스케일업</td><td>—</td></tr>
+            <tr><td><strong>M5 (9월)</strong></td><td>6</td><td>4</td><td>20</td><td>4 + 세일즈덱 v2</td><td>리타겟팅 본격</td><td>마이크로 2 + 나노 2</td></tr>
+            <tr><td><strong>M6 (10월)</strong></td><td>6</td><td>5</td><td>20</td><td>4 + 케이스 1</td><td>6개월 ROAS 산출</td><td>—</td></tr>
+            <tr><td><strong>합계</strong></td><td class="highlight">34</td><td class="highlight">23</td><td class="highlight">112</td><td class="highlight">22 + α</td><td>—</td><td class="highlight">8명</td></tr>
+        </table>
+
+        <p style="font-size: 12px; color: var(--text-light); margin-top: 8px;">
+            이 표의 숫자는 <strong>계약서 부속 KPI</strong>로 들어갑니다. 주간 리포트로 실시간 추적하며, 차이가 나면 매월 리밸런싱합니다.
+        </p>
+    </div>
+
+    <div class="section" id="invest">
+        <h2>07. 투자 구성 — 6,750만 어떻게 쓰는가</h2>
+
+        <p>본 견적 <strong>5,550만은 저희가 책임지고 집행하고, 1,200만은 김 대표님께서 직접 운용하실 수 있도록 남겨뒀습니다.</strong> 저희가 전액을 쥐고 있기보다 김 대표님이 통제하시는 편이 ROAS 투명성·세금계산서 처리·실시간 재투자 면에서 효율이 좋다고 봤습니다.</p>
+
+        <h3>파트너 집행 — 5,550만</h3>
+        <table>
+            <tr><th>영역</th><th>6개월 합계</th><th>월 환산</th><th>해드리는 것</th></tr>
+            <tr>
+                <td><strong>출시 게릴라 + M1 진단</strong></td>
+                <td class="highlight">350만</td>
+                <td>일시성</td>
+                <td>인스타 정렬·D-day 카드·광고 시동·B2B 보도자료·KPI 측정 인프라·M1 종료 리뷰</td>
+            </tr>
+            <tr>
+                <td><strong>B2C 인스타그램 운영 (M2~M6)</strong></td>
+                <td class="highlight">1,750만</td>
+                <td>350만</td>
+                <td>톤앤매너 + 월간 콘텐츠 풀사이클 + 리포팅</td>
+            </tr>
+            <tr>
+                <td><strong>B2B 콘텐츠 + 검색·LinkedIn (M2~M6)</strong></td>
+                <td class="highlight">1,250만</td>
+                <td>250만</td>
+                <td>블로그 월 4편 + 검색 운영 + LinkedIn HR + IR/세일즈덱 업데이트</td>
+            </tr>
+            <tr>
+                <td><strong>B2C 메타 광고 운영 Fee (M2~M6)</strong></td>
+                <td class="highlight">1,000만</td>
+                <td>200만</td>
+                <td>계정·픽셀·소재·운영·리포팅 (광고비 별도)</td>
+            </tr>
+            <tr>
+                <td><strong>인플루언서 시딩 (M3·M5 분산)</strong></td>
+                <td class="highlight">1,200만</td>
+                <td>—</td>
+                <td>마이크로·나노 8명 섭외·가이드·QC + UGC 재활용 편집</td>
+            </tr>
+            <tr>
+                <td><strong>파트너 집행 합계</strong></td>
+                <td class="highlight">5,550만</td>
+                <td>—</td>
+                <td>VAT 별도</td>
+            </tr>
+        </table>
+
+        <h3>김 대표님 직접 집행 — 1,200만</h3>
+        <p>아래 항목들은 <strong>저희가 기획·운영은 하되 결제는 잼플 명의로 직결</strong>하는 구조입니다. 사유는 세 가지입니다.</p>
+
+        <table>
+            <tr><th>항목</th><th>권장 금액</th><th>왜 직접 집행이 유리한가</th></tr>
+            <tr>
+                <td><strong>메타 광고 실집행 광고비</strong></td>
+                <td class="highlight">600만</td>
+                <td>대행비와 광고비를 따로 두셔야 <strong>ROAS가 투명하게 보이고</strong> 세금계산서 처리가 깔끔합니다. 출시 첫 달 200만 → 안정기 70만/월 권장.</td>
+            </tr>
+            <tr>
+                <td><strong>네이버·구글·LinkedIn 광고비</strong></td>
+                <td class="highlight">400만</td>
+                <td>B2B 검색·LinkedIn 광고비도 <strong>잼플 명의 직결제</strong>가 ROAS·세금처리 면에서 유리합니다.</td>
+            </tr>
+            <tr>
+                <td><strong>인플루언서 제품 시딩 원가</strong></td>
+                <td class="highlight">200만</td>
+                <td>원가 집행에 저희가 중간 마진 붙이지 않는 구조. 투명하게 잼플 명의로 지출됩니다.</td>
+            </tr>
+        </table>
+
+        <div class="quote-total">
+            <div>
+                <div class="qt-label">6개월 총 사업비</div>
+                <div class="qt-value">6,750만원</div>
+                <div class="qt-sub">VAT 별도</div>
+            </div>
+            <div style="text-align:right;">
+                <div class="qt-label">파트너 집행 + 직접 집행</div>
+                <div style="font-size: 16px; font-weight: 700; color: var(--accent);">5,550만 + 1,200만</div>
+                <div class="qt-sub">김 대표님이 통제하시는 만큼 효율이 올라갑니다</div>
+            </div>
+        </div>
+
+        <h3>결제 구조</h3>
+        <table>
+            <tr><th>시점</th><th>금액</th><th>해당 범위</th></tr>
+            <tr><td>계약 시 (5/12 전후)</td><td class="highlight">1,750만</td><td>Phase 1 — M0 게릴라 + M1 진단 + M2 인스타·B2B·메타 광고 1개월분</td></tr>
+            <tr><td>M3 시작 시 (7/15)</td><td class="highlight">1,900만</td><td>Phase 2 — M3~M4 인스타·B2B·메타 광고 + 인플루언서 1차</td></tr>
+            <tr><td>M5 시작 시 (9/15)</td><td class="highlight">1,900만</td><td>Phase 3 — M5~M6 인스타·B2B·메타 광고 + 인플루언서 2차 + 6개월 결산</td></tr>
+            <tr><td><strong>파트너 집행 합계</strong></td><td class="highlight"><strong>5,550만</strong></td><td>VAT 별도</td></tr>
+        </table>
+
+        <div class="callout">
+            <strong>청년창업사관학교 사업화자금 활용.</strong> 사업화자금은 최대 1억·총사업비 70% 이내·마케팅비 인정 비목입니다(중소벤처기업진흥공단 공식 기준). 잼플 입주 차수의 잔여 한도와 마케팅비 인정 비율이 확정되면 결제 분할·선납 조건을 잼플 자금 집행 일정에 맞춰 재설계해 드립니다. 본 견적은 청창사 자금 적용 여부와 무관하게 단일 안으로 단정되어 있습니다.
+        </div>
+
+        <p style="font-size: 12px; color: var(--text-light); margin-top: 8px;">
+            Phase 1 완료 후 M1 종료 리뷰(6/14)에서 Phase 2 진행 여부를 결정하실 수 있습니다. 다만 메타 광고 픽셀 숙성, 인플루언서 UGC 재활용 사이클, 통상임금 KSP 콘텐츠 누적 효과는 6개월 연속 운영 시 효율이 훨씬 큽니다.
+        </p>
+    </div>
+
+    <div class="section" id="options">
+        <h2>08. 차기 옵션 — 6개월 후의 다음 길</h2>
+
+        <p>본 6개월 풀 가동 후 잼플의 다음 6개월에 어떤 옵션이 먼저 작동할지는 <strong>본 6개월 데이터가 결정</strong>합니다. 지금 약속하지 않고, 본 견적과 독립된 별도 견적으로 시점이 오면 붙입니다.</p>
+
+        <div class="two-col">
+            <div class="col-card">
+                <div class="col-label">옵션 1</div>
+                <div class="col-title">B2B 영상 — 통상임금 KSP 케이스 스터디</div>
+                <div class="col-desc">M3~M5 사이 LinkedIn HR 광고 효율이 검증되면, 케이스 스터디 영상 1편(회당 600~1,000만)으로 인사팀 의사결정 자료 제공. 통상임금 1년 윈도우 안 가장 강한 셀링 도구.</div>
+            </div>
+            <div class="col-card">
+                <div class="col-label">옵션 2</div>
+                <div class="col-title">오프라인 임직원 운동 체험 이벤트</div>
+                <div class="col-desc">B2B 도입사 200사 돌파 시점에 임직원 대상 오프라인 체험(1,500~3,500만). Move Together 데이터 자산화와 결합되어 콘텐츠 + 도입사 확보 동시 산출.</div>
+            </div>
+            <div class="col-card">
+                <div class="col-label">옵션 3</div>
+                <div class="col-title">글로벌 진출 사전 셋업</div>
+                <div class="col-desc">잼플 모델은 ClassPass·Move(글로벌)와 같은 카테고리. 한국 시장 검증 후 영어 채널·해외 시딩 파일럿(1,200~2,500만)으로 사전 검증. 시리즈A IR에 강한 자료.</div>
+            </div>
+            <div class="col-card">
+                <div class="col-label">옵션 4</div>
+                <div class="col-title">브랜딩·BI 리빌딩</div>
+                <div class="col-desc">시리즈A 라운드 직전 브랜드 자산 정비가 필요해지면 3,000~8,000만 범위로 별도 제안. 본 6개월에서 만든 브랜드 가이드가 리빌딩의 출발점이 됩니다.</div>
+            </div>
+        </div>
+
+        <div class="callout">
+            <strong>각 옵션은 본 6개월의 데이터가 트리거합니다.</strong> "B2B 도입사 200사 돌파 → 옵션 2 가동", "메타 ROAS 기준선 확보 → 옵션 1 가동" 식으로 <strong>숫자가 다음 투자를 결정</strong>합니다. 6개월 결산 미팅(10/15)에서 차기 6개월 옵션을 정식 제안드립니다.
+        </div>
+    </div>
+
+    <div class="section" id="quickwin">
+        <h2>09. Quick Win — 계약 전에 먼저 드립니다</h2>
+
+        <p>오늘 30초 안에 적용 가능한 한 가지 — 잼플 인스타그램 바이오 1줄 변경입니다. 김 대표님께서 검토하시고, <strong>계약 여부와 무관하게 사내에서 바로 쓰실 수 있도록</strong> 무료로 드립니다.</p>
+
+        <div class="area-card" style="background: linear-gradient(135deg, var(--warm), #fff);">
+            <div class="area-header">
+                <div class="area-title">인스타그램 바이오 1줄 변경</div>
+                <div class="area-budget" style="font-size: 13px;">30초 적용</div>
+            </div>
+            <table>
+                <tr><th style="width: 80px;">구분</th><th>카피</th></tr>
+                <tr><td><strong>현재</strong></td><td>JAMFUL | Flexible Lifestyle Platform / 800+ 센터, 클래스 조회와 예약을 한번에!</td></tr>
+                <tr><td><strong>변경</strong></td><td><strong style="color:var(--accent);">원하는 시간, 원하는 장소, 하나의 운동 멤버십 / 전국 900+ 센터를 잼플 하나로</strong></td></tr>
+            </table>
+            <p style="font-size: 12px; color: var(--text-light); margin-top: 10px;">
+                잼플 소개서 첫 페이지 카피를 그대로 옮긴 것이라 <strong>메시지 일관성이 즉시 회복</strong>되고, "900+"라는 최신 숫자가 반영되어 신뢰 신호가 강해집니다. 30일 후 프로필 방문 → 팔로우 전환율을 자체적으로 측정하실 수 있습니다.
+            </p>
+        </div>
+    </div>
+
+    <div class="section" id="rhythm">
+        <h2>10. 함께 만들어갈 리듬</h2>
+
+        <h3>주간 리듬 — 월·수·금 3박자</h3>
+        <table>
+            <tr><th>요일</th><th>내용</th></tr>
+            <tr><td>월요일</td><td>주간 미팅 30분 — 이번 주 할 일 · 지난 주 성과</td></tr>
+            <tr><td>수요일</td><td>중간 체크 — 콘텐츠 시안 · 진행 상황</td></tr>
+            <tr><td>금요일</td><td>주간 리포트 — 숫자 + 인사이트 + 다음 주 계획</td></tr>
+        </table>
+
+        <h3>월간 산출물</h3>
+        <div class="pill-row">
+            <span class="pill">월간 성과 리포트 (인스타·B2B·메타·인플루언서 통합)</span>
+            <span class="pill">다음 달 콘텐츠 캘린더</span>
+            <span class="pill">B2B 도입 전환 분석 + B2C CAC·LTV 추정</span>
+            <span class="pill">비용 집행 내역 투명 공유 (직접 집행분 포함)</span>
+        </div>
+
+        <h3>팀 구성</h3>
+        <table>
+            <tr><th>역할</th><th>담당</th><th>시간 배분</th></tr>
+            <tr><td>Lead PM (커뮤니케이션·전략·월간 미팅)</td><td>우성민</td><td>주 8시간</td></tr>
+            <tr><td>콘텐츠 PM (B2C 인스타·B2B 블로그)</td><td>BC3 PM</td><td>주 12시간</td></tr>
+            <tr><td>퍼포먼스 (메타·검색·LinkedIn)</td><td>BC3 퍼포먼스</td><td>주 8시간</td></tr>
+            <tr><td>디자인 (콘텐츠·광고 소재)</td><td>BC3 디자이너</td><td>주 6시간</td></tr>
+            <tr><td><strong>합계 4명</strong></td><td>—</td><td><strong>주 34시간</strong></td></tr>
+        </table>
+
+        <h3>6개월 뒤 김 대표님께 남는 자산</h3>
+        <table>
+            <tr><th>자산</th><th>수량</th><th>활용처</th></tr>
+            <tr><td>인스타 피드·릴스·스토리</td><td>169개</td><td>브랜드 채널, 광고 소재, B2B 영업 자료</td></tr>
+            <tr><td>B2B 블로그 + IR덱 v2 + 세일즈덱 v2 + 케이스 스터디</td><td>22편 + α</td><td>검색 인덱스 자산, 영업·IR 도구</td></tr>
+            <tr><td>인플루언서 UGC 원본</td><td>8명분</td><td>광고·상세페이지·B2B 덱 영구 라이선스</td></tr>
+            <tr><td>광고 소재·타겟 학습 데이터</td><td>1식</td><td>숙성된 픽셀 + ROAS 기준선 + CAC 측정 인프라</td></tr>
+            <tr><td>통상임금 KSP 콘텐츠 라이브러리</td><td>1식</td><td>1년 윈도우 동안 B2B 영업 척추</td></tr>
+            <tr><td>6개월 풀 리포트</td><td>1식</td><td>ROI 증명, 시리즈A IR, 스케일업 판단</td></tr>
+        </table>
+
+        <div class="callout">
+            <strong>이 자산들은 6개월 뒤 김 대표님의 다음 시리즈A 자료가 됩니다.</strong> IR 미팅, B2B 영업 덱, 글로벌 진출 사전 검증 — 어느 자리에서든 "이미 시장 반응이 검증된 브랜드"라는 객관적 근거로 그대로 활용됩니다.
+        </div>
+    </div>
+
+    <div class="section" id="faq">
+        <h2>11. 자주 묻는 질문</h2>
+
+        <div class="faq-q">풀타임 마케터를 채용하는 것과 비교하면 어느 쪽이 유리한가요?</div>
+        <div class="faq-a">
+            풀타임 마케터 1명 연봉이 5,000~6,000만 수준입니다. 6개월 환산 시 약 2,500~3,000만. 본 견적 5,550만(6개월)은 그보다 큽니다. 다만 ① 풀타임 1명이 B2B/B2C 양 트랙을 동시 풀가동하는 것은 시드 단계에서 현실적으로 어렵습니다. 본 견적은 4명(PM·콘텐츠·퍼포먼스·디자인)이 주 34시간 가동합니다. ② 시드 단계 마케팅 인력 채용 리드타임은 2~3개월입니다. 5/15 출시 모멘텀에 풀타임 채용으로 대응하는 것은 시점상 불가능합니다. 본 견적은 5/12 즉시 가동입니다. ③ 청창사 자금은 외부 마케팅 외주비를 인정 비목으로 잡지만, 인건비는 다른 운영 비목과 경합합니다.
+        </div>
+
+        <div class="faq-q">콘텐츠 vs 퍼포먼스, 어디에 먼저 집중해야 하나요?</div>
+        <div class="faq-a">
+            콘텐츠는 퍼포먼스 광고의 자산입니다. 트랙별로 단계가 다릅니다. <strong>B2B 트랙</strong>은 이미 콘텐츠(블로그) 자산이 검증되어 있어 곧장 검색·LinkedIn 광고로 갑니다. <strong>B2C 트랙</strong>은 인스타그램 콘텐츠 시리즈 정의를 먼저 합니다(M1 2~3주). 광고는 그 위에서 집행합니다. 전환 가설이 검증되지 않은 상태로 미디어비를 태우면 데이터 노이즈만 쌓입니다.
+        </div>
+
+        <div class="faq-q">멤버십 전환은 어느 채널이 가장 효과적인가요?</div>
+        <div class="faq-a">
+            <strong>B2C는 메타 광고 + 인스타그램 정체성 재정의, B2B는 LinkedIn HR + 네이버 검색광고</strong>입니다. B2C 멤버십 전환의 핵심은 5/15 출시 직후 <strong>첫 30일</strong>입니다. 이 30일이 잼플의 모수 첫 측정 윈도우입니다. 메타 광고 일 5~10만 수준에서 CPI/CAC 기준선을 잡습니다. 광고 카피는 잼플 자체 카피("원하는 시간, 원하는 장소")를 그대로 차용합니다.
+        </div>
+
+        <div class="faq-q">인플루언서 시딩이 8명만 있는데 충분한가요?</div>
+        <div class="faq-a">
+            잼플 단계에서는 <strong>수보다 UGC 재활용 효율</strong>이 핵심입니다. 8명에게서 받은 원본 콘텐츠를 메타 광고 소재로 재활용하는 구조라, 광고 소재 풀이 자연스럽게 확장됩니다. 또한 M3·M5에 분산 집행해 광고 학습 사이클과 맞물립니다. 더 큰 규모의 시딩이 필요해지는 시점은 ROAS 기준선이 확보된 M6 이후이고, 그때는 차기 6개월 옵션으로 별도 제안드립니다.
+        </div>
+
+        <div class="faq-q">5/15 출시 시점에 우리가 만들 수 있는 기여가 얼마나 되나요?</div>
+        <div class="faq-a">
+            5/12 계약·킥오프 기준 <strong>3일</strong> 안에 가동합니다. 첫 7일 안에 ① 인스타 정렬 ② D-day 카드 3장 ③ 메타 광고 시동 ④ 출시 보도자료 ⑤ KPI 측정 시트가 모두 완성됩니다. 출시 시점 마케팅 인프라 0인 상태로 들어가는 것과, 4명이 7일간 게릴라로 깔아둔 상태로 들어가는 것의 차이가 첫 30일 CAC를 결정합니다.
+        </div>
+
+        <div class="faq-q">Phase 단위로 끊을 수 있나요?</div>
+        <div class="faq-a">
+            M1 진단 파일럿(1개월) 종료 후 6/14 리뷰 미팅에서 M2~M6 자동 전환 여부를 결정하실 수 있습니다. 다만 6개월 풀 계약 시 메타 광고 픽셀 숙성, 인플루언서 UGC 재활용 사이클, 통상임금 KSP 콘텐츠 누적 효과 등이 훨씬 큽니다.
+        </div>
+
+        <div class="faq-q">인스타 운영을 나중에 인하우스로 가져갈 수 있나요?</div>
+        <div class="faq-a">
+            네. 6개월간 브랜드 가이드·콘텐츠 캘린더 템플릿·해시태그 전략서·광고 운영 매뉴얼·픽셀 데이터를 전부 잼플 자산으로 축적합니다. 인하우스 마케터 채용 시 바로 인수인계 가능합니다. 저희가 인하우스 전환의 발판을 만드는 파트너입니다.
+        </div>
+
+        <div class="faq-q">청창사 자금 한도가 확정되지 않은 상태에서 계약 가능한가요?</div>
+        <div class="faq-a">
+            가능합니다. 본 견적은 청창사 자금 적용 여부와 무관하게 단일 안으로 단정되어 있습니다. 청창사 잔여 한도와 마케팅비 인정 비율이 확정되면 결제 분할·선납 조건만 잼플 자금 집행 일정에 맞춰 조정합니다.
+        </div>
+    </div>
+
+    <div class="section" id="next">
+        <h2>12. 다음 한 걸음</h2>
+
+        <div class="next-step-card">
+            <div class="nsc-title">김 대표님 결정 흐름</div>
+            <table>
+                <tr><th>일정</th><th>내용</th></tr>
+                <tr><td><strong>5/14 (목)</strong></td><td>본 제안서 검토 · 궁금한 점 정리</td></tr>
+                <tr><td><strong>5/16 (금)</strong></td><td>30분 팔로업 콜 — Q&A · 청창사 자금 한도 확인</td></tr>
+                <tr><td><strong>5/19 (월)</strong></td><td>계약 의향 회신 · 결제 조건 동시 협의</td></tr>
+                <tr><td><strong>5/20~5/22</strong></td><td>계약서 교환</td></tr>
+                <tr><td class="highlight"><strong>5/12 (월)</strong></td><td class="highlight"><strong>킥오프 미팅 + 5/15 출시 게릴라 스프린트 가동</strong></td></tr>
+            </table>
+        </div>
+
+        <p style="margin-top: 16px;">
+            이 제안서에 궁금하신 점이나 조율하고 싶은 부분이 있으시면 편하게 말씀 주세요.<br>
+            <strong>30분 팔로업 콜</strong>만으로도 이 문서의 모든 항목을 김 대표님 관점에서 다시 정리해드릴 수 있습니다.
+        </p>
+
+        <div class="callout" style="margin-top: 16px;">
+            <strong>5/15 출시 D-day까지 7일.</strong> 오늘 결정이 첫 30일 CAC를 만들고, 첫 30일이 잼플 1년의 방향을 결정합니다. 김 대표님이 이미 만들어 놓으신 검증된 매출 라인 위에, 5/15 출시를 한 번에 터뜨리는 6개월. 저희가 만들겠습니다.
+        </div>
+    </div>
+
+</div>
+
+<div class="footer">
+    BRANDRISE | 잼플(JAMFUL) × 브랜드라이즈 6개월 출시 마케팅 파트너십 제안<br>
+    2026.05 | (주)크램 김수민 대표님께 | Confidential
+</div>
+
+</body>
+</html>
