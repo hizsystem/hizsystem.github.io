@@ -1,824 +1,1001 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex">
-    <title>미례국밥 강남점 오픈 부스팅 — 90일 플랜 & OOS 투자안 | HIZ × 위드런</title>
-    <style>
-        :root {
-            --accent: #C8102E;
-            --text: #1a1b18;
-            --text-light: #999;
-            --border: #e8edf1;
-            --warm: #FEF2F2;
-            --bg: #f4f7f9;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; font-size: 14px; word-break: keep-all; overflow-wrap: break-word; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>미례국밥의 첫 서울 매장 · 6~8월 마케팅 액션 14개 v7</title>
+<style>
+  :root {
+    --bg: #0f0f0f;
+    --fg: #f5f5f5;
+    --muted: #9ca3af;
+    --line: #2a2a2a;
+    --card: #161616;
+    --accent: #ff5a36;
+    --accent-soft: #ffd5cc;
+    --accent-dim: rgba(255,90,54,0.12);
+    --warm: #ffb547;
+    --ok: #34d399;
+    --info: #60a5fa;
+    --pink: #f472b6;
+    --violet: #a78bfa;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--fg);
+    font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', system-ui, -apple-system, sans-serif;
+    line-height: 1.7; font-size: 16px; -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 56px 32px 120px; }
 
-        .header { background: #fff; padding: 48px 40px 28px; text-align: center; border-bottom: 3px solid var(--accent); }
-        .header-badge { display: inline-block; background: var(--warm); color: var(--accent); padding: 4px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; margin-bottom: 10px; }
-        .header h1 { font-size: 26px; font-weight: 800; margin-bottom: 6px; letter-spacing: -0.02em; }
-        .header .subtitle { font-size: 13px; color: var(--text-light); }
+  .brand-bar { display: flex; justify-content: space-between; align-items: center;
+    padding: 16px 0 24px; border-bottom: 1px solid var(--line); margin-bottom: 56px; }
+  .brand-bar .logo { font-weight: 700; letter-spacing: 0.16em; font-size: 14px; }
+  .brand-bar .doc { font-size: 13px; color: var(--muted); }
+  .brand-bar .print-btn { background: transparent; color: var(--fg); border: 1px solid var(--line);
+    padding: 6px 14px; border-radius: 999px; cursor: pointer; font-size: 12px; }
+  .brand-bar .print-btn:hover { border-color: var(--accent); color: var(--accent); }
 
-        .container { max-width: 880px; margin: 0 auto; padding: 28px 20px; }
+  .cover { padding: 24px 0 60px; border-bottom: 1px solid var(--line); margin-bottom: 60px; }
+  .cover .kicker { color: var(--accent); font-size: 13px; letter-spacing: 0.18em;
+    text-transform: uppercase; margin-bottom: 28px; }
+  .cover h1 { font-size: 62px; line-height: 1.1; font-weight: 800; margin: 0 0 28px;
+    letter-spacing: -0.025em; }
+  .cover h1 em { font-style: normal; color: var(--accent); }
+  .cover .lead { font-size: 19px; color: var(--muted); max-width: 760px; margin: 0 0 48px; line-height: 1.6; }
+  .cover .meta { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+  .cover .meta .box { padding: 18px 20px; background: var(--card); border-radius: 12px;
+    border: 1px solid var(--line); }
+  .cover .meta .box .label { font-size: 11px; color: var(--muted); letter-spacing: 0.14em;
+    text-transform: uppercase; margin-bottom: 6px; }
+  .cover .meta .box .value { font-size: 15px; font-weight: 600; }
+  .cover .note { font-size: 12px; color: var(--muted); margin-top: 28px;
+    padding: 10px 14px; background: rgba(96,165,250,0.06); border-left: 2px solid var(--info);
+    border-radius: 0 6px 6px 0; }
 
-        .toc { background: #fff; border-radius: 10px; padding: 20px 24px; margin-bottom: 16px; box-shadow: 0 1px 4px rgba(0,0,0,0.04); }
-        .toc-title { font-size: 12px; font-weight: 600; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px; }
-        .toc-list { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 16px; list-style: none; }
-        .toc-list a { color: var(--text); text-decoration: none; font-size: 13px; padding: 3px 0; display: flex; align-items: center; gap: 8px; }
-        .toc-list a::before { content: attr(data-num); color: var(--accent); font-weight: 700; font-size: 11px; min-width: 18px; }
-        .toc-list a:hover { color: var(--accent); }
+  section { padding: 80px 0; border-bottom: 1px solid var(--line); }
+  section:last-of-type { border-bottom: none; }
+  section h2 { font-size: 40px; line-height: 1.2; font-weight: 800; margin: 0 0 24px;
+    letter-spacing: -0.02em; max-width: 900px; }
+  section h2 em { font-style: normal; color: var(--accent); }
+  section h3 { font-size: 22px; font-weight: 700; margin: 40px 0 14px; letter-spacing: -0.01em; }
+  section p { color: #d4d4d4; max-width: 900px; margin: 0 0 18px; }
+  section ul { padding-left: 22px; color: #d4d4d4; }
+  section li { margin-bottom: 8px; }
 
-        .section { background: #fff; border-radius: 10px; padding: 28px; margin-bottom: 16px; box-shadow: 0 1px 4px rgba(0,0,0,0.04); scroll-margin-top: 20px; }
-        .section h2 { font-size: 17px; font-weight: 700; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--accent); letter-spacing: -0.01em; }
-        .section h3 { font-size: 14px; font-weight: 600; margin: 20px 0 10px; color: var(--accent); }
-        .section p { margin-bottom: 10px; }
-        .section p:last-child { margin-bottom: 0; }
+  /* Blueprint */
+  .blueprint { background: var(--card); border: 1px solid var(--line); border-radius: 16px;
+    padding: 36px; margin: 32px 0; }
+  .blueprint .ttl { color: var(--accent); font-size: 12px; letter-spacing: 0.18em;
+    text-transform: uppercase; font-weight: 700; margin-bottom: 14px; }
+  .blueprint .top-line { font-size: 22px; font-weight: 700; margin: 0 0 28px;
+    color: var(--fg); letter-spacing: -0.01em; line-height: 1.4; max-width: none; }
+  .blueprint .top-line em { color: var(--accent); font-style: normal; }
+  .blueprint .stage { padding: 18px 0; border-top: 1px solid var(--line); }
+  .blueprint .stage:first-of-type { border-top: 2px solid var(--line); }
+  .blueprint .stage-head { display: flex; gap: 14px; align-items: baseline; margin-bottom: 10px; }
+  .blueprint .stage-head .when { color: var(--accent); font-size: 12px; letter-spacing: 0.14em;
+    text-transform: uppercase; font-weight: 700; min-width: 130px; }
+  .blueprint .stage-head .ttl-text { color: var(--fg); font-size: 17px; font-weight: 700; }
+  .blueprint .stage-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px 24px;
+    margin-left: 144px; }
+  .blueprint .stage-list .line { font-size: 13.5px; color: #c9c9c9; display: flex; gap: 8px; }
+  .blueprint .stage-list .line .n { color: var(--accent); font-weight: 700; min-width: 22px; }
+  .blueprint .budget-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px;
+    margin-top: 32px; padding-top: 28px; border-top: 2px solid var(--line); }
+  .blueprint .budget-row .opt { padding: 18px 20px; background: #0a0a0a;
+    border: 1px solid var(--line); border-radius: 12px; }
+  .blueprint .budget-row .opt.std { border-color: var(--accent); }
+  .blueprint .budget-row .opt .lvl { font-size: 11px; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--muted); font-weight: 700; margin-bottom: 6px; }
+  .blueprint .budget-row .opt.std .lvl { color: var(--accent); }
+  .blueprint .budget-row .opt .num { font-size: 19px; font-weight: 800;
+    letter-spacing: -0.01em; color: var(--fg); margin-bottom: 4px; }
+  .blueprint .budget-row .opt .desc { font-size: 12px; color: var(--muted); }
 
-        table { width: 100%; border-collapse: collapse; margin: 8px 0; }
-        th { background: #f8fafb; padding: 9px 14px; text-align: left; font-weight: 600; font-size: 13px; border-bottom: 2px solid var(--border); }
-        td { padding: 9px 14px; border-bottom: 1px solid var(--border); font-size: 13px; vertical-align: top; }
-        tr:hover td { background: #fafbfc; }
+  /* Editorial action card */
+  .editorial { background: var(--card); border: 1px solid var(--line); border-radius: 16px;
+    padding: 0; margin: 32px 0; overflow: hidden; }
+  .editorial .head { padding: 32px 36px 0; }
+  .editorial .num-tag { display: flex; align-items: baseline; gap: 12px; margin-bottom: 14px; }
+  .editorial .num-tag .num { color: var(--accent); font-size: 14px; font-weight: 800;
+    letter-spacing: 0.12em; }
+  .editorial .num-tag .tag { display: inline-block; font-size: 10px; letter-spacing: 0.14em;
+    text-transform: uppercase; padding: 3px 10px; border-radius: 999px; font-weight: 700; }
+  .editorial .num-tag .tag.inf { background: rgba(255,90,54,0.12); color: var(--accent); }
+  .editorial .num-tag .tag.med { background: rgba(96,165,250,0.12); color: var(--info); }
+  .editorial .num-tag .tag.str { background: rgba(255,181,71,0.12); color: var(--warm); }
+  .editorial .num-tag .tag.opn { background: rgba(52,211,153,0.12); color: var(--ok); }
+  .editorial .num-tag .tag.frn { background: rgba(244,114,182,0.12); color: var(--pink); }
+  .editorial .num-tag .tag.bra { background: rgba(167,139,250,0.12); color: var(--violet); }
+  .editorial h3 { font-size: 30px; font-weight: 800; margin: 0 0 12px;
+    letter-spacing: -0.018em; line-height: 1.2; max-width: none; padding: 0; border: none; }
+  .editorial .oneline { font-size: 16px; color: var(--accent-soft); margin: 0 0 28px;
+    line-height: 1.5; max-width: 760px; }
+  .editorial .image-wrap { margin: 0; padding: 0; background: #0a0a0a;
+    border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .editorial .image-wrap img { width: 100%; display: block; max-height: 420px; object-fit: cover; }
+  .editorial .image-wrap.placeholder { padding: 60px 36px; text-align: center;
+    border-top: 1px dashed var(--line); border-bottom: 1px dashed var(--line); }
+  .editorial .image-wrap.placeholder .ph-lbl { color: var(--muted); font-size: 11px;
+    letter-spacing: 0.18em; text-transform: uppercase; font-weight: 700; margin-bottom: 8px; }
+  .editorial .image-wrap.placeholder .ph-desc { color: var(--accent-soft); font-size: 14px;
+    font-style: italic; }
+  .editorial .caption { padding: 12px 36px; font-size: 12px; color: var(--muted);
+    background: #0a0a0a; border-bottom: 1px solid var(--line); }
+  .editorial .caption strong { color: var(--fg); font-weight: 600; }
+  .editorial .body { padding: 32px 36px; }
+  .editorial .body p { font-size: 15.5px; color: #d4d4d4; line-height: 1.75;
+    margin: 0 0 16px; max-width: none; }
+  .editorial .body p strong { color: var(--accent-soft); font-weight: 600; }
+  .editorial .body p:last-of-type { margin-bottom: 0; }
+  .editorial .detail-box { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;
+    padding: 24px 36px; background: #0a0a0a; border-top: 1px solid var(--line); }
+  .editorial .detail-box .d { font-size: 12.5px; }
+  .editorial .detail-box .d .k { color: var(--muted); display: block; font-size: 10px;
+    letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 5px; font-weight: 700; }
+  .editorial .detail-box .d .v { color: var(--fg); font-weight: 600; line-height: 1.4; }
+  .editorial .detail-box .d .v strong { color: var(--accent); }
+  .editorial .ref-box { padding: 18px 36px 28px; border-top: 1px dashed var(--line);
+    background: #0a0a0a; }
+  .editorial .ref-box .ref-lbl { font-size: 10px; letter-spacing: 0.18em;
+    color: var(--muted); text-transform: uppercase; font-weight: 700; margin-bottom: 6px; }
+  .editorial .ref-box h4 { font-size: 13px; margin: 0 0 4px; color: var(--accent-soft);
+    font-weight: 700; }
+  .editorial .ref-box p { font-size: 13px; color: #b8b8b8; margin: 0; max-width: none; line-height: 1.6; }
 
-        .highlight { color: var(--accent); font-weight: 700; }
-        .tag { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 600; background: var(--warm); color: var(--accent); }
+  /* Stage header */
+  .stage-section { padding: 60px 0 0; }
+  .stage-section .sh { display: flex; align-items: baseline; gap: 16px;
+    padding: 14px 18px; background: var(--accent-dim); border-left: 3px solid var(--accent);
+    border-radius: 4px; margin: 50px 0 24px; }
+  .stage-section .sh .when { color: var(--accent); font-size: 12px; letter-spacing: 0.16em;
+    text-transform: uppercase; font-weight: 700; }
+  .stage-section .sh .ttl { color: var(--fg); font-size: 17px; font-weight: 700; }
+  .stage-section .sh .desc { color: var(--muted); font-size: 13px; margin-left: auto; }
 
-        .quote-total { background: var(--warm); padding: 22px 26px; border-radius: 8px; margin: 16px 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
-        .qt-label { font-size: 13px; color: var(--text-light); }
-        .qt-value { font-size: 30px; font-weight: 800; color: var(--accent); letter-spacing: -0.02em; }
-        .qt-sub { font-size: 12px; color: var(--text-light); }
+  /* Options */
+  .options { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 36px 0; }
+  .options .opt { background: var(--card); border: 1px solid var(--line); border-radius: 16px;
+    padding: 30px; position: relative; }
+  .options .opt.rec { border-color: var(--accent);
+    background: linear-gradient(135deg, rgba(255,90,54,0.05), transparent); }
+  .options .opt.rec::before { content: '권장'; position: absolute; top: -12px; left: 24px;
+    background: var(--accent); color: var(--bg); font-size: 11px;
+    letter-spacing: 0.18em; padding: 4px 14px; border-radius: 999px; font-weight: 800; }
+  .options .opt .lvl { font-size: 11px; letter-spacing: 0.18em; color: var(--muted);
+    text-transform: uppercase; margin-bottom: 6px; font-weight: 700; }
+  .options .opt h3 { font-size: 22px; font-weight: 800; margin: 0 0 8px;
+    letter-spacing: -0.015em; border: none; padding: 0; }
+  .options .opt .total { font-size: 22px; font-weight: 800; margin: 14px 0 4px;
+    letter-spacing: -0.01em; color: var(--fg); }
+  .options .opt .total em { font-style: normal; color: var(--accent); }
+  .options .opt .vat { font-size: 11px; color: var(--muted); margin-bottom: 14px; }
 
-        .callout { background: var(--warm); border-left: 3px solid var(--accent); padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 12px 0; font-size: 13px; line-height: 1.7; }
-        .callout strong { color: var(--accent); }
+  /* Matrix */
+  table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 13.5px; }
+  table th, table td { padding: 12px 14px; border-bottom: 1px solid var(--line);
+    text-align: left; vertical-align: top; }
+  table th { color: var(--muted); font-weight: 600; font-size: 11.5px;
+    text-transform: uppercase; letter-spacing: 0.1em; }
+  table tr:last-child td { border-bottom: none; }
+  table .num { text-align: right; font-variant-numeric: tabular-nums; }
+  table tbody tr:hover { background: rgba(255,255,255,0.02); }
+  table .total td { font-weight: 700; color: var(--accent); border-top: 2px solid var(--line); }
+  table .center { text-align: center; }
+  table .dot { color: var(--accent); font-weight: 700; }
+  table .x { color: var(--muted); }
 
-        .hero-quote { background: linear-gradient(135deg, var(--warm), #fff); border: 1px solid rgba(200,16,46,0.15); border-radius: 10px; padding: 28px 32px; margin-bottom: 16px; text-align: center; }
-        .hero-quote p { font-size: 19px; font-weight: 700; color: var(--accent); letter-spacing: -0.01em; line-height: 1.55; }
-        .hero-quote .sub { font-size: 13px; color: var(--text-light); margin-top: 6px; }
+  .insight { padding: 24px 28px; background: var(--card); border-left: 3px solid var(--accent);
+    border-radius: 0 12px 12px 0; margin: 28px 0; }
+  .insight .lbl { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--accent); font-weight: 700; margin-bottom: 8px; }
+  .insight p { margin: 0; color: var(--fg); font-size: 15px; }
+  .insight.ok { border-left-color: var(--ok); }
+  .insight.ok .lbl { color: var(--ok); }
+  .insight.warn { border-left-color: var(--warm); }
+  .insight.warn .lbl { color: var(--warm); }
 
-        .status-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 12px 0; }
-        .status-item { padding: 10px 14px; border-radius: 6px; font-size: 12px; line-height: 1.55; }
-        .status-ready { background: #f0fdf4; border: 1px solid #bbf7d0; }
-        .status-ready::before { content: "✓ "; color: #16a34a; font-weight: 700; }
-        .status-gap { background: #fef2f2; border: 1px solid #fecaca; }
-        .status-gap::before { content: "△ "; color: #dc2626; font-weight: 700; }
+  .setup-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin: 28px 0; }
+  .setup { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 24px; }
+  .setup .lbl { color: var(--muted); font-size: 11px; letter-spacing: 0.14em;
+    text-transform: uppercase; font-weight: 700; margin-bottom: 8px; }
+  .setup h4 { font-size: 17px; font-weight: 700; margin: 0 0 10px; color: var(--fg); }
+  .setup p { font-size: 14px; color: #d4d4d4; margin: 0 0 8px; max-width: none; }
 
-        .area-card { border: 1px solid var(--border); border-radius: 8px; padding: 22px; margin: 14px 0; background: #fff; }
-        .area-card.recommended { border: 2px solid var(--accent); background: linear-gradient(135deg, var(--warm), #fff); }
-        .area-card .area-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; gap: 12px; flex-wrap: wrap; }
-        .area-card .area-title { font-size: 15px; font-weight: 700; }
-        .area-card .area-budget { font-size: 16px; font-weight: 800; color: var(--accent); }
-        .area-card .area-tagline { font-size: 12px; color: var(--text-light); font-style: italic; margin-bottom: 12px; }
-        .area-card .area-why { background: var(--warm); border-left: 3px solid var(--accent); padding: 10px 14px; border-radius: 0 6px 6px 0; font-size: 12.5px; margin: 10px 0 14px; }
-        .area-card .area-why strong { color: var(--accent); }
-        .area-card.recommended .area-why { background: #fff; }
+  .weekly { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 24px 0; }
+  .weekly .wk { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 18px; }
+  .weekly .wk .lbl { font-size: 10px; color: var(--accent); letter-spacing: 0.14em;
+    text-transform: uppercase; font-weight: 700; margin-bottom: 4px; }
+  .weekly .wk h4 { font-size: 14px; margin: 0 0 10px; color: var(--fg); }
+  .weekly .wk ul { font-size: 12px; padding-left: 16px; color: #b8b8b8; margin: 0; }
+  .weekly .wk li { margin-bottom: 4px; }
 
-        .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin: 12px 0; }
-        .col-card { border: 1px solid var(--border); border-radius: 8px; padding: 16px; background: #fff; }
-        .col-card .col-label { font-size: 11px; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: 0.06em; }
-        .col-card .col-title { font-size: 14px; font-weight: 700; margin: 4px 0 8px; }
-        .col-card .col-desc { font-size: 12px; color: var(--text); line-height: 1.65; }
+  .confirms { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin: 28px 0; }
+  .confirms .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 22px; }
+  .confirms .card .tag { display: inline-block; font-size: 10px; letter-spacing: 0.14em;
+    text-transform: uppercase; padding: 3px 10px; border-radius: 999px; font-weight: 700;
+    margin-bottom: 10px; background: rgba(255,181,71,0.12); color: var(--warm); }
+  .confirms .card .tag.info { background: rgba(96,165,250,0.12); color: var(--info); }
+  .confirms .card h4 { font-size: 15px; margin: 0 0 8px; font-weight: 700; }
+  .confirms .card p { font-size: 13px; color: #c9c9c9; margin: 0; max-width: none; }
 
-        .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 12px 0; }
+  .closing { padding: 80px 0 0; }
+  .closing h2 { font-size: 48px; font-weight: 800; margin: 0 0 18px;
+    letter-spacing: -0.025em; line-height: 1.15; border: none; padding: 0; }
+  .closing h2 em { font-style: normal; color: var(--accent); }
+  .closing p { color: var(--muted); font-size: 17px; max-width: 760px; }
 
-        .pill-row { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 4px; }
-        .pill { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 11px; font-weight: 600; background: var(--warm); color: var(--accent); border: 1px solid rgba(200,16,46,0.18); }
-
-        .kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 12px 0; }
-        .kpi-card { border: 1px solid var(--border); border-radius: 8px; padding: 14px; text-align: center; background: #fff; }
-        .kpi-card .kpi-num { font-size: 22px; font-weight: 800; color: var(--accent); letter-spacing: -0.02em; }
-        .kpi-card .kpi-label { font-size: 11px; color: var(--text-light); margin-top: 2px; }
-
-        .gantt-table th:first-child, .gantt-table td:first-child { white-space: nowrap; width: 84px; }
-        .gantt-table .d-mark { display: inline-block; background: var(--accent); color: #fff; padding: 1px 7px; border-radius: 8px; font-size: 10px; font-weight: 700; letter-spacing: 0.04em; }
-
-        .stage-card { border: 1px solid var(--border); border-radius: 8px; padding: 18px 22px; margin: 12px 0; background: #fff; }
-        .stage-card .stage-label { font-size: 11px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em; }
-        .stage-card .stage-title { font-size: 15px; font-weight: 700; margin: 4px 0 10px; }
-        .stage-card .stage-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 18px; font-size: 12.5px; }
-        .stage-card .stage-grid b { color: var(--accent); }
-
-        .faq-q { font-size: 14px; font-weight: 700; margin: 18px 0 6px; color: var(--text); }
-        .faq-q::before { content: "Q. "; color: var(--accent); }
-        .faq-a { font-size: 13px; color: var(--text); line-height: 1.75; }
-
-        .next-step-card { background: linear-gradient(135deg, var(--warm), #fff); border: 1px solid rgba(200,16,46,0.2); border-radius: 10px; padding: 22px 26px; margin: 10px 0; }
-        .next-step-card .nsc-title { font-size: 15px; font-weight: 700; margin-bottom: 10px; }
-
-        .footer { text-align: center; padding: 28px; color: var(--text-light); font-size: 12px; }
-
-        @media (max-width: 768px) {
-            .header { padding: 32px 20px 20px; }
-            .header h1 { font-size: 22px; }
-            .section { padding: 20px 16px; }
-            .toc-list { grid-template-columns: 1fr; }
-            .status-grid { grid-template-columns: 1fr; }
-            .three-col { grid-template-columns: 1fr; }
-            .two-col { grid-template-columns: 1fr; }
-            .kpi-grid { grid-template-columns: 1fr 1fr; }
-            .stage-card .stage-grid { grid-template-columns: 1fr; }
-            .quote-total { flex-direction: column; text-align: center; }
-        }
-    </style>
+  @media print {
+    body { background: white; color: black; -webkit-print-color-adjust: exact;
+      print-color-adjust: exact; }
+    .print-btn { display: none; }
+    section { break-inside: avoid; padding: 40px 0; }
+    .editorial, .options .opt, .setup, .weekly .wk, .insight, .blueprint, .confirms .card { break-inside: avoid; }
+  }
+  @media (max-width: 820px) {
+    .wrap { padding: 32px 18px 80px; }
+    .cover h1 { font-size: 38px; }
+    section h2 { font-size: 28px; }
+    .cover .meta, .options, .setup-grid, .confirms, .weekly,
+    .blueprint .budget-row { grid-template-columns: 1fr; }
+    .editorial .detail-box { grid-template-columns: repeat(2, 1fr); }
+    .editorial h3 { font-size: 22px; }
+    .blueprint .stage-head { flex-direction: column; gap: 4px; }
+    .blueprint .stage-list { margin-left: 0; grid-template-columns: 1fr; }
+  }
+</style>
 </head>
 <body>
+<div class="wrap">
 
-<div class="header">
-    <div class="header-badge">강남점 90일 오픈 부스팅 — OOS 투자안</div>
-    <h1>부산 30년 국밥의 첫 서울, 6월 강남점을 한 번에 띄웁니다</h1>
-    <div class="subtitle">미례국밥 × HIZ × 위드런 | 2026.05.12 | 미팅 자료</div>
+  <div class="brand-bar">
+    <div class="logo">BRANDRISE</div>
+    <div class="doc">미례국밥의 첫 서울 매장 · 6~8월 마케팅 액션 14개 (v7)</div>
+    <button class="print-btn" onclick="window.print()">PDF 저장</button>
+  </div>
+
+  <header class="cover">
+    <div class="kicker">미례국밥 X 브랜드라이즈 · 2026 SUMMER</div>
+    <h1>오픈하고 나서, <em>무엇을 할 것인가.</em></h1>
+    <p class="lead">
+      6월 미례국밥 강남삼성타운직영점이 서초대로74길에 오픈합니다. 본 기획안은 단순합니다 — <strong>6~8월 안에 마케팅이 직접 실행하는 14개의 액션</strong>. 인플루언서 디너·바이럴 폭발·셰프 게스트·외국인 콘텐츠·푸드 유튜브 브랜디드·자체 매거진·한정 굿즈·게릴라 팝업. 각 액션은 한국 F&B 마케팅에서 검증된 사례에 근거합니다. 표·메뉴판이 아니라 액션 하나씩 어떻게 작동하는지, 누가 보고, 무엇이 일어나는지를 보여드립니다.
+    </p>
+    <div class="meta">
+      <div class="box"><div class="label">신규 매장</div><div class="value">강남삼성타운직영점</div></div>
+      <div class="box"><div class="label">위치</div><div class="value">서초구 서초대로74길 23</div></div>
+      <div class="box"><div class="label">기간</div><div class="value">2026.06.01 — 08.31</div></div>
+      <div class="box"><div class="label">발행</div><div class="value">BRANDRISE · 2026.05.20</div></div>
+    </div>
+    <p class="note">월 500만 운영 리테이너는 5월 운영 플랜 연속선으로 별도 운영되며, 본 캠페인 견적과 미포함입니다.</p>
+  </header>
+
+  <!-- §1. 한 페이지 청사진 -->
+  <section>
+    <h2>한 페이지로, <em>14개 액션 + 3 옵션.</em></h2>
+    <p>아래 한 장이 본 기획안의 전부입니다. 14개 액션이 오픈 직전부터 8월 말까지 시점 별로 배치되고, 어떤 액션을 포함하느냐가 예산 옵션을 가릅니다. 모두 6~8월 안에 실행 가능합니다.</p>
+
+    <div class="blueprint">
+      <div class="ttl">한 페이지 청사진</div>
+      <div class="top-line">오픈하고 나서 세 달 안에, <em>서울에서도 미례국밥이 검색되고 점심·저녁 단골이 도는 매장</em>이 되게 만드는 일.</div>
+
+      <div class="stage">
+        <div class="stage-head"><div class="when">D-30 ~ D+14</div><div class="ttl-text">오픈 직전·직후 (6월)</div></div>
+        <div class="stage-list">
+          <div class="line"><span class="n">01</span>맛집 인플루언서 디너 파티 (D-3·D-1)</div>
+          <div class="line"><span class="n">02</span>D-1 인스타 라이브 프리뷰</div>
+          <div class="line"><span class="n">03</span>줄 서는 매장 셋업 + 첫 100명 굿즈</div>
+        </div>
+      </div>
+
+      <div class="stage">
+        <div class="stage-head"><div class="when">6월 말 ~ 7월</div><div class="ttl-text">시그니처 폭발</div></div>
+        <div class="stage-list">
+          <div class="line"><span class="n">04</span>얼큰돼지우동 메가 인플 폭발 + 면 카테고리 시식회</div>
+        </div>
+      </div>
+
+      <div class="stage">
+        <div class="stage-head"><div class="when">7~8월</div><div class="ttl-text">외국인 손님 만들기</div></div>
+        <div class="stage-list">
+          <div class="line"><span class="n">05</span>일본인 인플 PPL 2~3명 (7월)</div>
+          <div class="line"><span class="n">06</span>일본계 회사 사내 한식 워크숍 (7~8월)</div>
+          <div class="line"><span class="n">07</span>샤오홍슈 KOC 시딩 5~7명 (8월)</div>
+        </div>
+      </div>
+
+      <div class="stage">
+        <div class="stage-head"><div class="when">7~8월</div><div class="ttl-text">이벤트 임팩트</div></div>
+        <div class="stage-list">
+          <div class="line"><span class="n">08</span>메가 셰프 게스트 디너 1주 한정</div>
+          <div class="line"><span class="n">09</span>셰프 콜라보 한정 메뉴 (8월 출시)</div>
+          <div class="line"><span class="n">10</span>F&B 식음료 브랜드 콜라보</div>
+          <div class="line"><span class="n">11</span>푸드 유튜브 브랜디드 2~3건 (8월 게재)</div>
+        </div>
+      </div>
+
+      <div class="stage">
+        <div class="stage-head"><div class="when">6~8월 누적</div><div class="ttl-text">브랜드 자산 축적</div></div>
+        <div class="stage-list">
+          <div class="line"><span class="n">12</span>자체 매거진 "강남에서 부산을 먹는 법"</div>
+          <div class="line"><span class="n">13</span>한정 굿즈 시리즈 3종</div>
+        </div>
+      </div>
+
+      <div class="stage">
+        <div class="stage-head"><div class="when">8월 중 1일</div><div class="ttl-text">외부 노출</div></div>
+        <div class="stage-list">
+          <div class="line"><span class="n">14</span>강남 외 게릴라 팝업 1회</div>
+        </div>
+      </div>
+
+      <div class="budget-row">
+        <div class="opt"><div class="lvl">Light</div><div class="num">4,480~9,920만</div><div class="desc">액션 01~04 + 11·12·13</div></div>
+        <div class="opt std"><div class="lvl">Standard · 권장</div><div class="num">5,660~12,720만</div><div class="desc">+ 05·06·07 외국인 + 10 F&B 콜라보</div></div>
+        <div class="opt"><div class="lvl">Aggressive</div><div class="num">10,660~22,220만</div><div class="desc">+ 08 게스트 셰프 + 09 콜라보 메뉴 + 14 팝업</div></div>
+      </div>
+    </div>
+
+    <p style="color: var(--muted); font-size: 12px;">각 옵션 합계는 캠페인 견적만. 월 500 리테이너 별도. 견적 폭은 인플 등급·셰프 라인업·콘텐츠 규모에 따라 변동 — 정식 견적 협의 시 좁혀짐.</p>
+  </section>
+
+  <!-- §2. 14개 액션 -->
+  <section>
+    <h2>이제 <em>14개 액션</em>을 풀어봅니다.</h2>
+    <p>각 액션은 한국 F&B 마케팅에서 검증된 사례에 근거합니다. 어떻게 작동하는지, 누가 보는지, 무엇이 일어나는지 — 그리고 어떤 벤치마크에서 패턴을 가져왔는지까지 함께 보여드립니다.</p>
+
+    <!-- ============== STAGE 1 ============== -->
+    <div class="stage-section">
+      <div class="sh">
+        <div class="when">Stage 1 · D-30 ~ D+14</div>
+        <div class="ttl">오픈 직전·직후 · 3개 액션</div>
+        <div class="desc">검색·매체·자생 콘텐츠가 첫 2주에 동시에 일어나게</div>
+      </div>
+
+      <!-- 01 -->
+      <div class="editorial">
+        <div class="head">
+          <div class="num-tag"><div class="num">01 · INFLUENCER DINNER</div><div class="tag inf">인플루언서</div></div>
+          <h3>맛집 인플루언서 디너 파티</h3>
+          <p class="oneline">서울 맛집 인플 30~40명을 두 차례로 나눠 매장에서 저녁을 먹게 한다. 같은 시간, 같은 메뉴를 함께 경험한 30명이 그 다음 주 인스타 피드를 미례국밥으로 채우는 그림.</p>
+        </div>
+        <div class="body">
+          <p>오픈 D-3와 D-1 저녁, 매장이 정식 영업하지 않는 시간에 서울 맛집 인플루언서 30~40명을 두 차례로 나눠 초대합니다. 시그니처 얼큰돼지우동 + 돼지국밥 + 수육 + 한정 사이드를 풀세팅으로 내고, 미디어킷과 테이크아웃 패키지를 함께 손에 쥐어 보냅니다.</p>
+          <p>이 액션의 본질은 <strong>"같은 시간, 같은 메뉴를 30명이 동시에 경험"</strong>이라는 시그널입니다. 인플 한 명의 콘텐츠는 흩어지지만, 같은 자리에 30명이 함께 있던 사진이 다음 주 인스타 피드에 한꺼번에 올라오는 그림이 검색 결과 페이지를 미례국밥으로 채웁니다.</p>
+          <p>인플 보상은 <strong>식대·미디어킷·미니 굿즈로 갈음하는 시딩 패턴</strong> — 별도 광고비는 지급하지 않습니다. 한국 외식업 신규 오픈의 표준 패턴이고, 광고비 없이도 자발적 발화가 일어나는 가장 검증된 액션입니다.</p>
+        </div>
+        <div class="detail-box">
+          <div class="d"><span class="k">언제</span><span class="v">D-3·D-1 / 19시</span></div>
+          <div class="d"><span class="k">누구</span><span class="v">서울 맛집 인플<br>30~40명 × 2회차</span></div>
+          <div class="d"><span class="k">얼마</span><span class="v"><strong>500~800만</strong></span></div>
+          <div class="d"><span class="k">기대</span><span class="v">합산 도달<br>15~25만</span></div>
+        </div>
+        <div class="ref-box">
+          <div class="ref-lbl">Reference</div>
+          <h4>옥동식 한남·압구정 오픈 클로즈드 디너</h4>
+          <p>2020 한남 오픈 시 미식가·인플 디너로 인스타 피드 동시 점령. 이후 분당·역삼·하남까지 같은 패턴 반복. "같은 시간 같은 매장 30명" 시그널이 모든 매장 확장에서 가장 강한 자생 발화를 만듦.</p>
+        </div>
+      </div>
+
+      <!-- 02 -->
+      <div class="editorial">
+        <div class="head">
+          <div class="num-tag"><div class="num">02 · D-1 LIVE PREVIEW</div><div class="tag opn">오픈 운영</div></div>
+          <h3>D-1 인스타 라이브 프리뷰</h3>
+          <p class="oneline">오픈 전날 오후, 매장 셋업 중인 모습을 라이브로 흘리며 카운트다운을 건다. 비용은 거의 0, 자생 발화는 가장 큼.</p>
+        </div>
+        <div class="body">
+          <p>오픈 전날 오후 16~18시, 매장 셋업이 마무리되는 시간을 인스타 라이브로 흘려보냅니다. 가마솥 세팅, 메뉴판 부착, 식기 정리, 점주가 직접 매장을 돌며 설명하는 장면 — 정식 영업 전의 매장이 어떻게 만들어지는지를 손님이 함께 지켜보는 30분~1시간.</p>
+          <p>이 액션의 핵심은 <strong>비용 거의 0, 자생 발화 가장 큼</strong>이라는 ROI입니다. 옥동식이 합정·분당·역삼·하남·LA 모든 오픈에서 반복한 패턴 — D-1 라이브를 본 사람이 다음 날 오픈일 줄에 합류합니다. "내일 오전 10시 미례국밥 강남삼성타운직영점 오픈"이라는 한 줄 포스트가 라이브 후에 올라가면, 오픈일 줄 형성이 자연스럽게 시작됩니다.</p>
+          <p>다른 액션과 무관하게 모든 옵션에 무조건 진행하는 기본 액션입니다.</p>
+        </div>
+        <div class="detail-box">
+          <div class="d"><span class="k">언제</span><span class="v">D-1 / 16~18시</span></div>
+          <div class="d"><span class="k">누구</span><span class="v">인스타 팔로워<br>자생 시청자</span></div>
+          <div class="d"><span class="k">얼마</span><span class="v"><strong>0~20만</strong></span></div>
+          <div class="d"><span class="k">기대</span><span class="v">오픈일 줄 형성<br>+ "내일 오픈" 발화</span></div>
+        </div>
+        <div class="ref-box">
+          <div class="ref-lbl">Reference</div>
+          <h4>옥동식 합정·분당·역삼·하남·LA — 6년 반복된 패턴</h4>
+          <p>옥동식은 2017 합정 오픈 이후 모든 신규 매장에서 D-1 인스타 라이브 + "내일 X시 오픈" 포스트를 반복. 6년간 자생 발화가 가장 강했던 액션. 비용 거의 0인데 효과가 다른 어떤 액션보다 크다는 게 검증된 사례.</p>
+        </div>
+      </div>
+
+      <!-- 03 -->
+      <div class="editorial">
+        <div class="head">
+          <div class="num-tag"><div class="num">03 · QUEUE & GOODS</div><div class="tag str">매장 셋업</div><div class="tag opn">오픈 운영</div></div>
+          <h3>줄 서는 매장 셋업 + 첫 100명 굿즈</h3>
+          <p class="oneline">오픈 첫 2주, 줄은 의도적으로 생기게 한다. 외벽·바닥·POP가 사진 구도가 되고, 첫 손님 100명이 굿즈를 받아 가서 SNS에 올리는 그림.</p>
+        </div>
+        <div class="body">
+          <p>오픈 첫 2주의 줄은 우연이 아니라 의도적 설계입니다. 예약을 차단하고, 테이블 회전을 조정해 11시 30분부터 자연스럽게 줄이 30m 늘어나도록 운영합니다. 줄 자체가 사진이 되려면 매장 외벽·바닥·웨이팅 POP가 셋업되어 있어야 합니다.</p>
+          <p>외벽은 <strong>검정 베이스 + 주황 한 줄</strong> "미례국밥 강남삼성타운직영점 / SINCE 2026". 바닥에 30m 줄 표시·모던 라인, 줄 동선이 사진 구도에 자연스럽게 들어가게. 대기 손님에게는 음료·미니 굿즈를 제공해 줄 자체가 매장 경험의 일부가 되도록.</p>
+          <p>오픈 D~D+3, 첫 손님 100명에게 <strong>부산 모티프 굿즈 패키지</strong>(텀블러 or 마그넷)를 배포. 받은 손님 중 20~40%가 SNS에 인증 — 매장 외 자생 콘텐츠 자산이 만들어집니다. 서해오면 4/30 오픈런 선착순 100명 패턴 응용.</p>
+        </div>
+        <div class="detail-box">
+          <div class="d"><span class="k">언제</span><span class="v">외벽 D-7 셋업<br>굿즈 D~D+3 배포</span></div>
+          <div class="d"><span class="k">누구</span><span class="v">오픈 첫 손님 100명<br>+ 줄 선 손님</span></div>
+          <div class="d"><span class="k">얼마</span><span class="v"><strong>180~400만</strong></span></div>
+          <div class="d"><span class="k">기대</span><span class="v">자생 SNS<br>20~40건</span></div>
+        </div>
+        <div class="ref-box">
+          <div class="ref-lbl">Reference</div>
+          <h4>런던 베이글 뮤지엄 안국 · 서해오면 오픈런 100명 일러스트 굿즈</h4>
+          <p>런던 베이글 뮤지엄(안국)은 30m 줄이 매일 자생적으로 형성되고, 줄 자체가 안국 명소가 됨. 서해오면은 4/30 오픈일 선착순 100명에게 일러스트 굿즈 배포 → 인스타 인증 콘텐츠 자생 폭발. 두 패턴을 미례 강남에 묶어 적용.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============== STAGE 2 ============== -->
+    <div class="stage-section">
+      <div class="sh">
+        <div class="when">Stage 2 · 6월 말 ~ 7월</div>
+        <div class="ttl">시그니처 폭발 · 1개 액션</div>
+        <div class="desc">돼지우동을 돼지국밥과 별개의 검색 시장으로</div>
+      </div>
+
+      <!-- 04 -->
+      <div class="editorial">
+        <div class="head">
+          <div class="num-tag"><div class="num">04 · MEGA INFLUENCER VIRAL</div><div class="tag inf">인플루언서</div><div class="tag bra">시그니처</div></div>
+          <h3>얼큰돼지우동 메가 인플 폭발 + 면 카테고리 시식회</h3>
+          <p class="oneline">메가 푸드 인플 1명이 단독 콘텐츠로 트리거, 면 카테고리 미들 15~20명이 확산. 두바이 초콜릿이 한국에 들어온 그 방식.</p>
+        </div>
+        <div class="body">
+          <p>이 액션은 본 기획안에서 가장 강한 임팩트의 단발 액션입니다. 6월 말, <strong>50만+ 팔로워의 메가 푸드 인플 1명</strong>에게 얼큰돼지우동만 단독으로 시식·콘텐츠 의뢰합니다. 영상 후킹 자막은 <strong>"국밥인데 면이 들어있다고?"</strong> 또는 "강남에 줄 서는 그 한 그릇" 같이 강하게.</p>
+          <p>메가 인플 1편 발행 후 1주일 안에 면·라면·우동 카테고리 미들 인플 15~20명을 매장에서 단독 시식회로 모읍니다. 메가 인플이 트리거를 당기면, 미들 풀이 같은 메뉴를 다른 결로 확산 — <strong>"국밥 안 먹는 사람이 미례로 들어오는 입구"</strong>가 시그니처 한 메뉴입니다.</p>
+          <p>두바이 초콜릿이 한국에 들어온 패턴과 같습니다 — 한 명의 발화가 카테고리 전체의 검색량을 바꿉니다. 미례의 "돼지우동" 검색량을 5월 500 → 8월 1,000+ 목표로 끌어올리는 가장 빠른 길.</p>
+        </div>
+        <div class="detail-box">
+          <div class="d"><span class="k">언제</span><span class="v">메가 인플 6월 말<br>미들 시식회 7월 3주</span></div>
+          <div class="d"><span class="k">누구</span><span class="v">메가 인플 1명 (50만+)<br>+ 면 카테고리 미들 15~20명</span></div>
+          <div class="d"><span class="k">얼마</span><span class="v"><strong>1,800~3,500만</strong></span></div>
+          <div class="d"><span class="k">기대</span><span class="v">"돼지우동" 검색 1,000+<br>릴스 10건+</span></div>
+        </div>
+        <div class="ref-box">
+          <div class="ref-lbl">Reference</div>
+          <h4>두바이 초콜릿 · 런던 베이글 · 마라탕 후루룩</h4>
+          <p>두바이 초콜릿은 1명의 영상이 한국까지 들어오며 카테고리를 만들었음. 런던 베이글 뮤지엄도 안국 줄 사진 한 컷이 베이글 카테고리의 강남 진출 시그널로 작동. 마라탕 후루룩도 TikTok 1편이 전국 마라탕 매장의 검색 시장을 바꿈. 모두 "단일 메뉴·1편의 강한 영상이 카테고리 검색량을 바꾸는" 같은 패턴.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============== STAGE 3 ============== -->
+    <div class="stage-section">
+      <div class="sh">
+        <div class="when">Stage 3 · 7~8월</div>
+        <div class="ttl">외국인 손님 만들기 · 3개 액션</div>
+        <div class="desc">강남대로 도보권 일본계 회사부터 시작</div>
+      </div>
+
+      <!-- 05 -->
+      <div class="editorial">
+        <div class="head">
+          <div class="num-tag"><div class="num">05 · JP INFLUENCER PPL</div><div class="tag frn">외국인</div><div class="tag inf">인플루언서</div></div>
+          <h3>일본인 인플 PPL 2~3명</h3>
+          <p class="oneline">일본인 카페·푸드 vlogger를 매장에 부르고 일본어 메뉴판을 같이 깐다. 강남대로 일본계 회사 직장인이 보는 채널.</p>
+        </div>
+        <div class="body">
+          <p>강남삼성타운직영점은 위치상 강남대로 도보권 일본계 회사가 가장 가까운 외국인 손님 풀입니다. 일본인 직장인이 보는 채널은 한국 인플과 완전히 다른 풀 — yutravel·KKday JP·note.com 같은 일본어 매거진 포맷이 표준입니다.</p>
+          <p>7월 1주차에 한·영·일 3개국어 메뉴판을 발주하고, 7월 중 <strong>일본인 카페·푸드 vlogger 2~3명</strong>을 매장에 시딩합니다. 콘텐츠 톤은 한국 인플과 결을 달리해서 — 일본 매거진 다큐 톤, 매장 동선·식기·일본어 메뉴판 컷, 외국인 시선의 점심 후기.</p>
+          <p>이 액션의 두 번째 가치는 <strong>일본 진출 빌드업 자료</strong>입니다. 일본인 인플의 자생 콘텐츠 + 일본인 손님 후기가 누적되면, 본사 일본 진출 검토 시 검증 데이터로 동시 활용됩니다.</p>
+        </div>
+        <div class="detail-box">
+          <div class="d"><span class="k">언제</span><span class="v">7월 시작<br>일본어 메뉴판 7/1 발주</span></div>
+          <div class="d"><span class="k">누구</span><span class="v">일본인 vlogger 2~3명<br>(미드, 팔로워 3~10만)</span></div>
+          <div class="d"><span class="k">얼마</span><span class="v"><strong>400~1,000만</strong></span></div>
+          <div class="d"><span class="k">기대</span><span class="v">일본 vlog 2~3건<br>일본인 손님 비중 ↑</span></div>
+        </div>
+        <div class="ref-box">
+          <div class="ref-lbl">Reference</div>
+          <h4>yutravel · KKday JP "釜山 おしゃれカフェ16選" 패턴</h4>
+          <p>yutravel·KKday JP는 한국 카페·맛집을 일본인 시선에서 매거진 포맷으로 정리하는 일본 한식 매체. BTO 2025도 같은 패턴으로 일본 20·30대 여성 타겟 운영. 미례 강남에 적용 시 일본 매장 진출 빌드업과 강남 직장인 손님 동시 확보 가능.</p>
+        </div>
+      </div>
+
+      <!-- 06 -->
+      <div class="editorial">
+        <div class="head">
+          <div class="num-tag"><div class="num">06 · CORPORATE WORKSHOP</div><div class="tag frn">외국인</div><div class="tag str">매장 운영</div></div>
+          <h3>일본계 회사 사내 한식 워크숍 패키지</h3>
+          <p class="oneline">강남대로 도보권 일본계 회사 사내 행사에 미례 케이터링·단체 예약을 제안한다. 외국인 임원이 만족하면 회사 단위 인지도가 한 번에 잡힌다.</p>
+        </div>
+        <div class="body">
+          <p>강남대로 도보권에는 일본계 회사가 다수입니다 — 강남역·서초·삼성타운 일대 외국계 직장인이 점심·저녁 외식 동선의 핵심 풀. 이 회사 사내 행사(워크숍·환영회·외국인 임원 점심·문화 체험)에 미례를 케이터링 또는 단체 예약 형태로 가져갑니다.</p>
+          <p>실행 방식은 단순합니다. <strong>영문·일본어 매장 소개 1장 + 사내 한식 워크숍 패키지</strong>(매장 시식 30~50인 또는 케이터링)를 만들어 7~8월 동안 강남대로 도보권 일본계 회사 인사·총무팀에 발송합니다. 한 회사 한 번의 만족 = 회사 단위 인지도 = 자생 발화의 가장 강한 채널.</p>
+          <p>액션 05(일본인 인플 PPL)·12(자체 매거진 영문판)와 정합해서 운영하면 패키지 신뢰도가 높아집니다.</p>
+        </div>
+        <div class="detail-box">
+          <div class="d"><span class="k">언제</span><span class="v">7월 패키지 발송<br>8월 워크숍 진행</span></div>
+          <div class="d"><span class="k">누구</span><span class="v">강남대로 도보권<br>일본계 회사 인사·총무</span></div>
+          <div class="d"><span class="k">얼마</span><span class="v"><strong>80~200만</strong></span></div>
+          <div class="d"><span class="k">기대</span><span class="v">사내 워크숍<br>1~3건 성사</span></div>
+        </div>
+        <div class="ref-box">
+          <div class="ref-lbl">Reference</div>
+          <h4>샘표 The Kimchi Club × 셰프 디너 · 외국인 임원 한식 소개</h4>
+          <p>샘표는 The Kimchi Club을 운영하며 외국 미디어·PR·인플 약 20명을 매년 프라이빗 클로징 디너로 초대. 외국인 임원에게 한식을 정통 매거진 톤으로 소개하는 검증 패턴. 미례 강남도 일본계 회사 사내 행사로 같은 방식 응용 가능.</p>
+        </div>
+      </div>
+
+      <!-- 07 -->
+      <div class="editorial">
+        <div class="head">
+          <div class="num-tag"><div class="num">07 · XIAOHONGSHU KOC</div><div class="tag frn">외국인</div><div class="tag med">콘텐츠</div></div>
+          <h3>샤오홍슈 KOC 시딩 5~7명</h3>
+          <p class="oneline">중화권 부산 관광 동선에 강남 미례를 박는다. 探店·攻略 포맷이 표준, 사진 위주 짧은 포스트로 자연스럽게 확산.</p>
+        </div>
+        <div class="body">
+          <p>2025년 부산 외국인 1위가 대만(56만, 18.9% 점유)이라는 시장 신호 — 강남에서도 K-푸드 한국 관광 동선에 미례를 박을 수 있는 채널이 샤오홍슈입니다. 중화권 KOC(Key Opinion Consumer)는 메가 인플과 달리 5~7명을 동시에 시딩하는 게 표준 방식.</p>
+          <p>8월 시작, <strong>샤오홍슈 KOC 5~7명</strong>에게 매장 시식·콘텐츠 제작을 의뢰합니다. 포맷은 探店(탐방)·攻略(공략) — 사진 위주 짧은 포스트가 표준입니다. 해시태그 시리즈는 <strong>#釜山猪肉汤·#江南拉面·"江南必访"</strong> 등 중화권 관광 동선에 직접 들어가는 어휘로.</p>
+          <p>샤오홍슈 발화 후에는 Bilibili 강남 vlog와 자연 연계됩니다 — 중화권 손님의 한국 관광 후기가 매장에 누적되면, 가을·겨울 중화권 단체 관광 시즌에 자생 유입이 확장됩니다.</p>
+        </div>
+        <div class="detail-box">
+          <div class="d"><span class="k">언제</span><span class="v">8월 시작</span></div>
+          <div class="d"><span class="k">누구</span><span class="v">샤오홍슈 KOC 5~7명<br>(探店·攻略 포맷)</span></div>
+          <div class="d"><span class="k">얼마</span><span class="v"><strong>400~800만</strong></span></div>
+          <div class="d"><span class="k">기대</span><span class="v">샤오홍슈 探店 5~7건<br>+ Bilibili 자생 연계</span></div>
+        </div>
+        <div class="ref-box">
+          <div class="ref-lbl">Reference</div>
+          <h4>JUKSY 2025 釜山必訪咖啡廳 · Funliday·VERSE 부산 매거진</h4>
+          <p>JUKSY·Funliday·VERSE는 대만에서 검증된 한국 매장 매거진 포맷. "釜山必訪"·"釜山海景咖啡廳" 같은 시리즈 콘텐츠가 한국 매장을 중화권 관광 동선에 박는 표준 채널. 미례 강남에 같은 결로 적용.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============== STAGE 4 ============== -->
+    <div class="stage-section">
+      <div class="sh">
+        <div class="when">Stage 4 · 7~8월</div>
+        <div class="ttl">이벤트 임팩트 · 4개 액션</div>
+        <div class="desc">셰프 게스트 + 콜라보 + 식음료 브랜드 + 푸드 유튜브 — 화제성 4축</div>
+      </div>
+
+      <!-- 08 -->
+      <div class="editorial">
+        <div class="head">
+          <div class="num-tag"><div class="num">08 · GUEST CHEF DINNER</div><div class="tag inf">셰프 콜라보</div><div class="tag bra">이벤트</div></div>
+          <h3>메가 셰프 게스트 디너 1주 한정</h3>
+          <p class="oneline">흑백요리사 출신·인기 셰프 1명이 미례 매장에서 1주일 한정 게스트가 된다. 한정 메뉴 + 매장 운영 + 미디어 노출 트리플 임팩트.</p>
+        </div>
+        <div class="body">
+          <p>흑백요리사 출연 셰프 레스토랑의 예약율이 <strong>최대 5,000% 증가</strong>했다는 검증된 패턴. 미례 강남에도 같은 임팩트를 1주일 한정으로 가져옵니다 — 흑백요리사 출신 또는 인기 셰프 1명(안유성·정지선·송훈 라인)이 미례 매장에 게스트 셰프로 들어와 1주일간 한정 메뉴를 만들고 직접 서빙합니다.</p>
+          <p>이 액션의 임팩트는 단일 액션 중 가장 큽니다. <strong>매장 + 미식 + 미디어 3중 임팩트</strong> — 한 주 동안 매장은 풀세팅 예약, 미식가 SNS가 폭발, 외식·맛집 매체가 자연스럽게 따라옵니다. 옥동식 LA·뉴욕 팝업·샘표 The Kimchi Club 셰프 디너가 같은 패턴.</p>
+          <p>7월 1주차에 R&D 협의를 시작해 셰프와 한정 메뉴 1종을 함께 만들고, 8월 한 주(예: 8/15~8/22) 매장 운영 + 메이킹 콘텐츠 + 인스타·릴스·매체 노출 통합으로 진행합니다. <strong>매장 정착이 빠르게 잡혔을 때만 진행하는 Aggressive 옵션 전용 액션</strong>.</p>
+        </div>
+        <div class="detail-box">
+          <div class="d"><span class="k">언제</span><span class="v">7월 R&D 협의<br>8월 한 주 운영</span></div>
+          <div class="d"><span class="k">누구</span><span class="v">흑백요리사 출신·인기 셰프 1명<br>(안유성·정지선·송훈 라인)</span></div>
+          <div class="d"><span class="k">얼마</span><span class="v"><strong>3,000~5,000만</strong></span></div>
+          <div class="d"><span class="k">기대</span><span class="v">매장 1주 풀세팅 예약<br>+ 미식가 SNS 폭발</span></div>
+        </div>
+        <div class="ref-box">
+          <div class="ref-lbl">Reference</div>
+          <h4>흑백요리사 출연 셰프 효과 · 옥동식 LA 팝업 (2024)</h4>
+          <p>흑백요리사 시즌 2 출연 셰프 레스토랑은 예약율이 평균 1,000~5,000% 증가. 옥동식은 같은 시즌 LA 팝업을 진행해 미서부 미디어 노출 + 한식 정통성 강화를 동시 확보. 미례 강남도 같은 결의 1주 한정 게스트 셰프 모델로 8월 임팩트 가능.</p>
+        </div>
+      </div>
+
+      <!-- 09 -->
+      <div class="editorial">
+        <div class="head">
+          <div class="num-tag"><div class="num">09 · CHEF COLLAB MENU</div><div class="tag inf">셰프 콜라보</div><div class="tag bra">신메뉴</div></div>
+          <h3>셰프 콜라보 한정 메뉴 + PPL</h3>
+          <p class="oneline">셰프·미식가 인플과 R&D 협업으로 한정 메뉴 1종을 만들고 인플 채널에 단독 출시. 콜라보 자체가 헤드라인.</p>
+        </div>
+        <div class="body">
+          <p>액션 08(게스트 셰프)이 1주 한정 매장 이벤트라면, 액션 09는 <strong>한정 메뉴 1종을 R&D부터 함께 만드는 콜라보</strong>입니다. 셰프나 미식가 인플 1~2명과 7월 1주차부터 메뉴 R&D를 시작해 8월 중순에 한정 메뉴를 출시. 출시 시점에는 인플 채널 PPL + 자사 SNS 단독 노출로 헤드라인을 만듭니다.</p>
+          <p>빽다방 × 엄보람 사례가 가장 가깝습니다 — WBC 챔피언 바리스타와 한정 블렌드 메뉴를 함께 만들어 인플 채널 PPL로 출시. 콜라보 자체가 헤드라인이고, 메뉴는 자산이 됩니다. 미례에도 외식 평론가·미식가 인플·"먹을텐데" 라인의 셰프 1~2명과 같은 결의 콜라보 가능.</p>
+          <p>이 액션의 핵심은 <strong>"안목 따라잡기"가 아니라 미례 단독 헤드라인</strong>이라는 점입니다 — 안목은 강남구 역삼동(언주로 520), 미례는 서초구 서초동(서초대로74길 23). 강남대로 양쪽 권역 분리 덕분에 콜라보 출시 시 "강남 1위 안목 다음 부산 매장"이 아니라 "<strong>서초·삼성타운 권역의 부산 미례 한정 메뉴</strong>"라는 독립 헤드라인이 가능합니다.</p>
+        </div>
+        <div class="detail-box">
+          <div class="d"><span class="k">언제</span><span class="v">7월 1주 R&D<br>8월 중순 출시</span></div>
+          <div class="d"><span class="k">누구</span><span class="v">미식가·외식 평론가<br>1~2명</span></div>
+          <div class="d"><span class="k">얼마</span><span class="v"><strong>1,500~3,000만</strong></span></div>
+          <div class="d"><span class="k">기대</span><span class="v">콜라보 자체가<br>단독 헤드라인</span></div>
+        </div>
+        <div class="ref-box">
+          <div class="ref-lbl">Reference</div>
+          <h4>빽다방 × 엄보람 (2023 WBC 챔피언) · 현대옥 × 성시경 "먹을텐데"</h4>
+          <p>빽다방 × 엄보람은 시그니처 블렌드 콜라보 + PPL로 화제성 + 메뉴 자산 동시 확보. 현대옥은 "성시경의 먹을텐데" 노출로 강남 논현 매장의 검색 시장이 단숨에 잡힘. 두 패턴 모두 셰프·미식가의 단독 발화 = 카테고리 헤드라인이라는 검증된 외식 사례.</p>
+        </div>
+      </div>
+
+      <!-- 10 -->
+      <div class="editorial">
+        <div class="head">
+          <div class="num-tag"><div class="num">10 · F&B BRAND COLLAB</div><div class="tag bra">콜라보</div></div>
+          <h3>F&B 식음료 브랜드 콜라보</h3>
+          <p class="oneline">부산 양조장·디저트 브랜드와 미례 매장 한정 페어링 또는 회식 코스. "부산에서 온 술 × 부산에서 온 국밥".</p>
+        </div>
+        <div class="body">
+          <p>액션 09(셰프 콜라보)가 인플 중심이라면, 액션 10은 <strong>F&B 식음료 브랜드와의 콜라보</strong>입니다. 부산 양조장(거북소주·금정산성 막걸리)이나 부산 빵·디저트(옵스 등)와 미례 매장의 한정 페어링 또는 회식 코스를 함께 만듭니다.</p>
+          <p>이 액션은 두 가지를 동시에 노립니다 — <strong>(1) 두 브랜드 상호 콘텐츠 노출</strong>(양조장의 인스타·자체 채널에 미례 노출 + 미례 채널에 양조장 노출), <strong>(2) 회식 단가 차별화</strong>(부산 양조장 술 + 부산 국밥 회식 코스라는 강남 일반 한식에 없는 결). 액션 07(법조타운 회식 코스)와 시너지가 큽니다.</p>
+          <p>샘표 The Kimchi Club 셰프 디너가 같은 패턴 — 식음료 브랜드 + 셰프 + 한식 매장의 협업으로 미디어·PR·미식가를 동시에 잡습니다. 미례 강남이 부산 브랜드와 함께 가는 콜라보는 <strong>"부산 정체성을 유지하면서 강남에서 잘 팔리는"</strong> 차별화 카드.</p>
+        </div>
+        <div class="detail-box">
+          <div class="d"><span class="k">언제</span><span class="v">7월 협의<br>8월 출시·운영</span></div>
+          <div class="d"><span class="k">누구</span><span class="v">부산 양조장 1~2곳<br>(거북소주·금정산성·옵스 등)</span></div>
+          <div class="d"><span class="k">얼마</span><span class="v"><strong>300~800만</strong></span></div>
+          <div class="d"><span class="k">기대</span><span class="v">콜라보 헤드라인<br>+ 회식 단가 ↑</span></div>
+        </div>
+        <div class="ref-box">
+          <div class="ref-lbl">Reference</div>
+          <h4>샘표 The Kimchi Club · 부산 양조장 협업 사례</h4>
+          <p>샘표 The Kimchi Club은 식음료 브랜드 + 셰프 + 한식 매장 협업으로 매년 외국 미디어·미식가 20명 디너를 운영. 부산 거북소주·금정산성 막걸리는 부산 정통성 + 모던 브랜딩의 양조장으로 한식 매장 콜라보가 자연스럽게 어울리는 라인.</p>
+        </div>
+      </div>
+
+      <!-- 11 -->
+      <div class="editorial">
+        <div class="head">
+          <div class="num-tag"><div class="num">11 · YOUTUBE BRANDED</div><div class="tag bra">브랜디드</div><div class="tag med">콘텐츠</div></div>
+          <h3>푸드 유튜브 브랜디드 2~3건</h3>
+          <p class="oneline">푸드 유튜브 채널에 시음·맛 분석·매장 풀편 브랜디드 영상을 의뢰한다. 신뢰·전문성 자산 누적.</p>
+        </div>
+        <div class="body">
+          <p>인플 디너(01)·메가 인플 폭발(04)이 단발 화제성이라면, 푸드 유튜브 브랜디드는 <strong>신뢰·전문성 자산 누적</strong>의 다른 결입니다. 신메뉴 개발 없이 정규 메뉴(돼지국밥·얼큰돼지우동·수육) 안에서 깊이 있는 시음·맛 분석·매장 풀편 영상을 의뢰합니다.</p>
+          <p>7월 중순 채널 컨택·기획 → 8월 전반 분산 게재. 푸드 유튜버 후보는 <strong>입짧은햇님·맛도리·외식 채널</strong> 등 구독자 5만~50만 미드~매크로 라인. 채널마다 브랜디드 영상 1편의 단가 폭이 큽니다 — 구독자 5~10만 미드는 300~800만, 구독자 20~50만 매크로는 500~1,500만.</p>
+          <p>유튜브 영상은 게재 후 쇼츠로 미러링하면 4채널(유튜브·쇼츠·인스타 릴스·틱톡) 동시 확산이 가능합니다. 흑백요리사 출연 셰프 콜라보(09)와 결합하면 푸드 유튜버 영상이 셰프 메뉴 시음으로 자연스럽게 연결됩니다.</p>
+        </div>
+        <div class="detail-box">
+          <div class="d"><span class="k">언제</span><span class="v">7월 중순 컨택<br>8월 전반 게재</span></div>
+          <div class="d"><span class="k">누구</span><span class="v">푸드 유튜버 2~3명<br>(입짧은햇님·맛도리·외식 채널)</span></div>
+          <div class="d"><span class="k">얼마</span><span class="v"><strong>1,500~4,000만</strong></span></div>
+          <div class="d"><span class="k">기대</span><span class="v">시음 영상 2~3건<br>댓글·X 인용 확산</span></div>
+        </div>
+        <div class="ref-box">
+          <div class="ref-lbl">Reference</div>
+          <h4>안스타 × 카페 LULL · 입짧은햇님 외식 브랜디드</h4>
+          <p>안스타는 유튜브 커피 채널 브랜디드 콘텐츠로 카페 LULL의 시음·매장 풀편을 검증된 결로 풀이. 입짧은햇님·맛도리는 외식·맛집 유튜브 브랜디드의 검증된 라인. 미례 강남도 같은 결로 정규 메뉴(국밥·돼지우동·수육) 시음 영상 2~3건 가능.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============== STAGE 5 ============== -->
+    <div class="stage-section">
+      <div class="sh">
+        <div class="when">Stage 5 · 6~8월 누적</div>
+        <div class="ttl">브랜드 자산 축적 · 2개 액션</div>
+        <div class="desc">매거진·굿즈로 매장 외 자산 축적</div>
+      </div>
+
+      <!-- 12 -->
+      <div class="editorial">
+        <div class="head">
+          <div class="num-tag"><div class="num">12 · OWN MAGAZINE</div><div class="tag med">콘텐츠</div></div>
+          <h3>자체 매거진 "강남에서 부산을 먹는 법"</h3>
+          <p class="oneline">시즌 1 두 호 발행. PDF·매장 인쇄본·인스타 캐러셀 3 포맷. 시즌 어휘 자산이자 외국인 PR 자료.</p>
+        </div>
+        <div class="body">
+          <p>댄싱컵 딥라떼 매거진 톤 응용. 자체 매거진 "<strong>강남에서 부산을 먹는 법</strong>" 시즌 1 두 호를 7~8월 안에 발행합니다. PDF + 매장 인쇄본 50~100부 + 인스타 캐러셀 3 포맷.</p>
+          <p>#1호 "전포에서 강남으로" (7월 셋째 주) — 매장 오픈 1개월 차의 미례 이야기. 부산 본점 새벽 가마솥, 강남 매장 점심 회전, 미례를 처음 만난 강남 직장인 인터뷰. #2호 "회식 코스 특집" (8월 둘째 주) — 법조타운 회식 코스, 부산 양조장 콜라보 메뉴, 외식 평론가 시음. 두 호 모두 에디터 3인칭 다큐 톤.</p>
+          <p>매장 인쇄본은 카운터·테이블에 자유 배포 — <strong>들고 가는 자체가 콘텐츠</strong>입니다. 외국인 손님(액션 05·06)이 받아 가서 일본·중화권에 가져가는 PR 자료가 됩니다. 일본 진출 빌드업 자료로도 동시 활용. PDF는 자사 인스타·블로그·이메일 뉴스레터에서 다운로드 링크로.</p>
+        </div>
+        <div class="detail-box">
+          <div class="d"><span class="k">언제</span><span class="v">#1 7월 셋째 주<br>#2 8월 둘째 주</span></div>
+          <div class="d"><span class="k">누구</span><span class="v">강남 직장인·미식가·<br>부산 출향민·외국인 손님</span></div>
+          <div class="d"><span class="k">얼마</span><span class="v"><strong>300~700만</strong></span></div>
+          <div class="d"><span class="k">기대</span><span class="v">시즌 어휘 자산<br>+ 외국인 PR 자료 동시</span></div>
+        </div>
+        <div class="ref-box">
+          <div class="ref-lbl">Reference</div>
+          <h4>매거진B · 댄싱컵 딥라떼 자체 매거진</h4>
+          <p>매거진B는 브랜드 자체 매거진의 글로벌 표준. 댄싱컵도 딥라떼 시즌 매거진을 자체 발행해 매장 굿즈 + 외부 PR 자료 동시 작동. 미례 강남도 같은 결로 "강남에서 부산을 먹는 법" 시즌 매거진 운영 가능.</p>
+        </div>
+      </div>
+
+      <!-- 13 -->
+      <div class="editorial">
+        <div class="head">
+          <div class="num-tag"><div class="num">13 · LIMITED GOODS</div><div class="tag str">굿즈</div></div>
+          <h3>한정 굿즈 시리즈 3종</h3>
+          <p class="oneline">시즌별 굿즈 3종 — 6월 오픈·7월 시그니처·8월 콜라보. 들고 다니는 자체가 콘텐츠.</p>
+        </div>
+        <div class="body">
+          <p>오픈 첫 100명 굿즈(액션 03)에서 시작해 7월·8월 시즌별로 추가 굿즈를 시리즈로 운영합니다 — 6월 오픈 굿즈(텀블러 또는 마그넷), 7월 시그니처 굿즈(돼지우동 키링·스티커), 8월 콜라보 굿즈(에코백·자기 미니어처).</p>
+          <p>이 액션의 핵심은 <strong>"굿즈를 받기 위해 방문하는" 자생 SNS 자산</strong>입니다. 백소정 굿즈 이벤트, 서해오면 4/30 오픈런 100명 일러스트 굿즈, 노티드 × 카카오프렌즈 콜라보 굿즈가 모두 같은 패턴 — 굿즈가 매장 방문의 이유가 되고, 받은 손님이 SNS에 인증하는 흐름.</p>
+          <p>각 시즌 굿즈는 100~300개 한정으로 매장에서만 배포(온라인 판매 X). 손님이 굿즈를 받기 위해 다음 시즌에도 매장에 다시 오는 단골 전환 효과까지 동시에. 디자인은 부산 일러스트레이터·작가와 1년 라이선스로 묶으면 자체 매거진(12)과 톤이 일관됨.</p>
+        </div>
+        <div class="detail-box">
+          <div class="d"><span class="k">언제</span><span class="v">6월·7월·8월<br>각 시즌 한정</span></div>
+          <div class="d"><span class="k">누구</span><span class="v">매장 손님<br>+ 굿즈 콜렉터</span></div>
+          <div class="d"><span class="k">얼마</span><span class="v"><strong>200~500만</strong></span></div>
+          <div class="d"><span class="k">기대</span><span class="v">SNS 인증<br>+ 단골 재방문 동기</span></div>
+        </div>
+        <div class="ref-box">
+          <div class="ref-lbl">Reference</div>
+          <h4>백소정 굿즈 · 서해오면 오픈런 일러스트 굿즈 · 노티드 × 카카오프렌즈</h4>
+          <p>백소정(소바·돈카츠 1위)은 굿즈 이벤트를 정기적으로 운영하며 자생 SNS를 확보. 서해오면은 4/30 오픈일 선착순 100명 일러스트 굿즈로 인스타 인증 폭발. 노티드 × 카카오프렌즈는 한정 캐릭터 굿즈로 단골 + MZ 콜렉터 동시 유입. 미례도 시즌별 3종 시리즈로 같은 결.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============== STAGE 6 ============== -->
+    <div class="stage-section">
+      <div class="sh">
+        <div class="when">Stage 6 · 8월 중 1일</div>
+        <div class="ttl">외부 노출 · 1개 액션</div>
+        <div class="desc">강남 외 권역에 미례를 박는 단발 게릴라</div>
+      </div>
+
+      <!-- 14 -->
+      <div class="editorial">
+        <div class="head">
+          <div class="num-tag"><div class="num">14 · GUERRILLA POPUP</div><div class="tag bra">팝업</div></div>
+          <h3>강남 외 게릴라 팝업 1회</h3>
+          <p class="oneline">성수·이태원·홍대·잠실 중 한 곳, 1일 게릴라 팝업. "미례가 강남 외로도 나왔다"는 자생 발화.</p>
+        </div>
+        <div class="body">
+          <p>옥동식이 합정·한남·역삼·하남까지 가더니 LA·뉴욕·호놀룰루·도쿄까지 팝업을 확장한 패턴 — 한 매장이 자기 권역에 갇히지 않고 외부 권역으로 한 번씩 나와 자생 발화를 만드는 검증된 동선. 미례 강남은 6~8월 안에 강남 외 핫스팟 한 곳에서 1일 게릴라 팝업을 진행합니다.</p>
+          <p>권역 후보는 <strong>성수·이태원·홍대·잠실</strong>. 1일 임대 공간(20~50평) + 임시 매장 셋업 + 한정 메뉴 운영. 8월 중 1일(예: 8/16 토)에 집중해서 — 매장 외 노출 = 자생 SNS + 외부 매체 + 강남 매장 유입 동선 확보.</p>
+          <p>액션 08(게스트 셰프)·09(콜라보 메뉴)·10(F&B 콜라보)와 시너지 가능 — 게릴라 팝업에서 셰프 콜라보 메뉴를 선공개하거나, 부산 양조장 콜라보를 함께 운영하면 단일 팝업이 다중 콘텐츠 자산이 됩니다. Aggressive 옵션 전용 액션.</p>
+        </div>
+        <div class="detail-box">
+          <div class="d"><span class="k">언제</span><span class="v">8월 중 1일<br>(예: 8/16 토)</span></div>
+          <div class="d"><span class="k">누구</span><span class="v">강남 외 트렌드 권역<br>MZ·미식가·외국인</span></div>
+          <div class="d"><span class="k">얼마</span><span class="v"><strong>500~1,500만</strong></span></div>
+          <div class="d"><span class="k">기대</span><span class="v">"미례가 강남 외로도" 자생 발화</span></div>
+        </div>
+        <div class="ref-box">
+          <div class="ref-lbl">Reference</div>
+          <h4>옥동식 LA·뉴욕·호놀룰루·도쿄 팝업 · 인플 협업 팝업스토어</h4>
+          <p>옥동식은 합정에서 시작해 한남·역삼·하남까지 가더니 미서부 LA·뉴욕·호놀룰루·도쿄까지 팝업으로 확장. 인플 협업 팝업스토어(유병재·레오제이 등)도 1주~1개월 한정 운영으로 자생 화제 확보 검증. 미례 강남도 1일 게릴라로 같은 결의 단발 확장 가능.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- §3. 예산 옵션 -->
+  <section>
+    <h2>예산 옵션, <em>어떤 액션을 포함하느냐.</em></h2>
+    <p>본 예산은 캠페인 액션만 포함. 월 500 운영 리테이너는 별도 운영 라인입니다. 어떤 액션을 포함하느냐가 세 옵션을 가릅니다.</p>
+
+    <h3>옵션별 액션 포함 매트릭스</h3>
+    <table>
+      <thead>
+        <tr><th>액션</th><th class="center">Light</th><th class="center">Standard</th><th class="center">Aggressive</th><th class="num">견적</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>01 · 맛집 인플 디너 파티</td><td class="center dot">●</td><td class="center dot">●</td><td class="center dot">●</td><td class="num">500~800만</td></tr>
+        <tr><td>02 · D-1 인스타 라이브</td><td class="center dot">●</td><td class="center dot">●</td><td class="center dot">●</td><td class="num">0~20만</td></tr>
+        <tr><td>03 · 줄 셋업 + 첫 100명 굿즈</td><td class="center dot">●</td><td class="center dot">●</td><td class="center dot">●</td><td class="num">180~400만</td></tr>
+        <tr><td>04 · 메가 인플 폭발 + 시식회</td><td class="center dot">●</td><td class="center dot">●</td><td class="center dot">●</td><td class="num">1,800~3,500만</td></tr>
+        <tr><td>05 · 일본인 인플 PPL</td><td class="center x">—</td><td class="center dot">●</td><td class="center dot">●</td><td class="num">400~1,000만</td></tr>
+        <tr><td>06 · 일본계 사내 워크숍</td><td class="center x">—</td><td class="center dot">●</td><td class="center dot">●</td><td class="num">80~200만</td></tr>
+        <tr><td>07 · 샤오홍슈 KOC</td><td class="center x">—</td><td class="center dot">●</td><td class="center dot">●</td><td class="num">400~800만</td></tr>
+        <tr><td>08 · 메가 셰프 게스트 디너 1주</td><td class="center x">—</td><td class="center x">—</td><td class="center dot">●</td><td class="num">3,000~5,000만</td></tr>
+        <tr><td>09 · 셰프 콜라보 한정 메뉴</td><td class="center x">—</td><td class="center x">—</td><td class="center dot">●</td><td class="num">1,500~3,000만</td></tr>
+        <tr><td>10 · F&B 식음료 콜라보</td><td class="center x">—</td><td class="center dot">●</td><td class="center dot">●</td><td class="num">300~800만</td></tr>
+        <tr><td>11 · 푸드 유튜브 브랜디드</td><td class="center dot">●</td><td class="center dot">●</td><td class="center dot">●</td><td class="num">1,500~4,000만</td></tr>
+        <tr><td>12 · 자체 매거진</td><td class="center dot">●</td><td class="center dot">●</td><td class="center dot">●</td><td class="num">300~700만</td></tr>
+        <tr><td>13 · 한정 굿즈 시리즈 3종</td><td class="center dot">●</td><td class="center dot">●</td><td class="center dot">●</td><td class="num">200~500만</td></tr>
+        <tr><td>14 · 강남 외 게릴라 팝업 1회</td><td class="center x">—</td><td class="center x">—</td><td class="center dot">●</td><td class="num">500~1,500만</td></tr>
+        <tr class="total"><td>옵션 합계 (캠페인만, 리테이너 별도)</td><td class="center"><strong>4,480~9,920만</strong></td><td class="center"><strong>5,660~12,720만</strong></td><td class="center"><strong>10,660~22,220만</strong></td><td></td></tr>
+      </tbody>
+    </table>
+
+    <div class="options">
+      <div class="opt">
+        <div class="lvl">Option · Light</div>
+        <h3>꼭 해야 할 것만</h3>
+        <div class="total"><em>4,480 ~ 9,920만</em></div>
+        <div class="vat">3개월 캠페인 합 · VAT 별도</div>
+        <p style="font-size: 13px; color: #c9c9c9; margin: 14px 0 0; padding-top: 14px; border-top: 1px solid var(--line);"><strong>액션 01·02·03·04 + 11·12·13</strong>. 오픈 + 시그니처 폭발 + 푸드 유튜브 + 자산 축적. 외국인·셰프 콜라보·팝업은 빠짐.</p>
+      </div>
+      <div class="opt rec">
+        <div class="lvl">Option · Standard</div>
+        <h3>외국인 + F&B 콜라보까지</h3>
+        <div class="total"><em>5,660 ~ 12,720만</em></div>
+        <div class="vat">3개월 캠페인 합 · VAT 별도</div>
+        <p style="font-size: 13px; color: #c9c9c9; margin: 14px 0 0; padding-top: 14px; border-top: 1px solid var(--line);"><strong>액션 01·02·03·04·05·06·07·10 + 11·12·13</strong>. 외국인 라인 + F&B 콜라보까지. 메가 셰프와 팝업만 빠짐.</p>
+      </div>
+      <div class="opt">
+        <div class="lvl">Option · Aggressive</div>
+        <h3>메가 셰프 + 팝업까지 전부</h3>
+        <div class="total"><em>10,660 ~ 22,220만</em></div>
+        <div class="vat">3개월 캠페인 합 · VAT 별도</div>
+        <p style="font-size: 13px; color: #c9c9c9; margin: 14px 0 0; padding-top: 14px; border-top: 1px solid var(--line);"><strong>액션 01~14 전부</strong>. 메가 셰프 게스트 + 셰프 콜라보 + 강남 외 게릴라 팝업까지. 8월 미례 단독 헤드라인이 가장 강해지는 옵션.</p>
+      </div>
+    </div>
+
+    <div class="insight">
+      <div class="lbl">Standard 권장 이유</div>
+      <p>Light는 외국인 라인이 빠져 일본 진출 빌드업이 함께 쌓이지 않습니다. Aggressive는 메가 셰프·팝업·셰프 콜라보까지 가장 강한 임팩트지만 견적 폭(10,660~22,220만)이 큽니다 — 정식 견적 협의 시 좁혀져야 함. <strong>Standard는 외국인 + F&B 콜라보 + 자산 축적이 6~8월 매장 정착과 마케팅 사이클이 자연스럽게 도는 무게</strong>입니다.</p>
+    </div>
+  </section>
+
+  <!-- §4. 매장 운영 추가 제안 -->
+  <section>
+    <h2>매장 운영, <em>추가 제안.</em></h2>
+    <p>아래는 마케팅이 직접 실행하는 액션이 아니라, 매장 매출 코어를 만드는 <strong>매장 운영 정책 제안</strong>입니다. 매장 측 결정 사항이고, 채택되면 마케팅이 콘텐츠로 흡수합니다.</p>
+
+    <div class="setup-grid">
+      <div class="setup">
+        <div class="lbl">매장 셋업 (오픈 전)</div>
+        <h4>식기·메뉴판·유니폼·줄서기 동선</h4>
+        <p>옹기 + 강남 한정 미니멀 흰 자기 1종 · 한·영·일 메뉴판(사진 없이 타이포만) · 흰 셔츠 + 검정 앞치마 + "MIRYE GANGNAM" 명찰 · 30m 줄 동선 인스타블 셋업. 제작 리드타임 2~3주, 6월 1주차 전 발주.</p>
+      </div>
+      <div class="setup">
+        <div class="lbl">점심 운영</div>
+        <h4>삼성타운 점심 1인·단체 라인</h4>
+        <p>11:30~13:30 점심 회전 룰 — 1인 30분 안 회전 + 5~10인 단체 예약 + 법인 카드 결제. 마케팅 흡수: "삼성타운 점심 인증" 블로그 시리즈 (리테이너).</p>
+      </div>
+      <div class="setup">
+        <div class="lbl">저녁 운영</div>
+        <h4>법조타운 저녁 회식 코스</h4>
+        <p>6~8인 룸 + "부산 정통 회식 코스" (돼지국밥·수육·전·반주) + 캐치테이블 회식 옵션. 마케팅 흡수: 법조 인플 시딩 + 자체 매거진 회식 특집(액션 12).</p>
+      </div>
+      <div class="setup">
+        <div class="lbl">단골 전환</div>
+        <h4>3개월 스탬프 패스</h4>
+        <p>6/7/8월 한 번씩 방문 시 얼큰돼지우동 무료. 종이 패스 디자인이 모던 톤이라 들고 다니는 자체가 콘텐츠. 매장 원가·운영 협의 필요.</p>
+      </div>
+      <div class="setup">
+        <div class="lbl">메뉴 운영</div>
+        <h4>강남 한정 사이드 메뉴 1종</h4>
+        <p>본점 메뉴 + 강남 한정 변형 1종 (수육 모던 플레이팅 또는 미니 돼지국밥 점심 1인 셋업). 7월 출시 검토. 주방·운영 컨펌.</p>
+      </div>
+      <div class="setup">
+        <div class="lbl">미례 크루</div>
+        <h4>강남 알바 4 + 전포 알바 3 = 1기 7명</h4>
+        <p>월 활동비 10만원 × 7명 × 3개월 = 210만. 카페·편의점 검증 패턴(이디야 메이튜·올리브영 O-log) 응용. 매장발 자생 콘텐츠 풀.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- §5. 위클리 -->
+  <section>
+    <h2>주간 실행 표.</h2>
+
+    <h3>6월</h3>
+    <div class="weekly">
+      <div class="wk"><div class="lbl">6월 1주차</div><h4>6/1 — 6/7 · D-14 빌드업</h4><ul>
+        <li>NP·캐치테이블·다이닝코드 사전 등록</li>
+        <li>매장 셋업 6 항목 발주</li>
+        <li>권역 답사 1일</li>
+        <li>서울 인플 7명 1차 컨택 (액션 01)</li>
+        <li>메가 인플 (액션 04) 정탐·컨택</li>
+      </ul></div>
+      <div class="wk"><div class="lbl">6월 2주차</div><h4>6/8 — 6/14 · D-7 가속</h4><ul>
+        <li>오픈 카운트다운 시리즈 시작</li>
+        <li>블로그 체험단 강남 1차 모집 (15명)</li>
+        <li>줄서기 동선·외벽 POP 완성 (액션 03)</li>
+        <li>인플 디너 초청 발송 (액션 01)</li>
+        <li>오픈 굿즈 제작 발주 (액션 03·13)</li>
+      </ul></div>
+      <div class="wk"><div class="lbl">6월 3주차</div><h4>6/15 — 6/21 · 오픈 주간</h4><ul>
+        <li>D-3 인플 디너 1회차 (액션 01)</li>
+        <li>D-1 라이브 프리뷰 (액션 02)</li>
+        <li>D-1 인플 디너 2회차 (액션 01)</li>
+        <li>D-Day 오픈 + 첫 100명 굿즈 (액션 03)</li>
+        <li>5채널 미러링 동시 업로드</li>
+      </ul></div>
+      <div class="wk"><div class="lbl">6월 4주차</div><h4>6/22 — 6/30 · 시그니처 폭발 진입</h4><ul>
+        <li>점심·저녁 운영 사이클 가동</li>
+        <li>리뷰 답변 사이클 본격</li>
+        <li>메타 광고 강남 권역 캠페인</li>
+        <li><strong>메가 인플 단독 콘텐츠 발행 (액션 04)</strong></li>
+        <li>미례 크루 1기 모집 시작</li>
+      </ul></div>
+    </div>
+
+    <h3>7월</h3>
+    <div class="weekly">
+      <div class="wk"><div class="lbl">7월 1주차</div><h4>7/1 — 7/7</h4><ul>
+        <li>일본어 메뉴판 발주 (액션 05)</li>
+        <li>일본 인플 1차 컨택 (액션 05)</li>
+        <li><strong>셰프 R&D 시작 (액션 08·09)</strong></li>
+        <li>F&B 콜라보 브랜드 협의 (액션 10)</li>
+        <li>여름 키워드 SEO 1차 발행</li>
+      </ul></div>
+      <div class="wk"><div class="lbl">7월 2주차</div><h4>7/8 — 7/14 · 초복</h4><ul>
+        <li>"삼성타운 점심 인증" 시리즈 가속</li>
+        <li>법조 인플 1차 시딩</li>
+        <li>법조타운 회식 코스 메뉴 테스트</li>
+        <li>초복 보양 키워드 발행</li>
+        <li>푸드 유튜브 채널 컨택·기획 (액션 11)</li>
+      </ul></div>
+      <div class="wk"><div class="lbl">7월 3주차</div><h4>7/15 — 7/21</h4><ul>
+        <li><strong>면 카테고리 시식회 (액션 04 후속)</strong></li>
+        <li>일본 인플 PPL 1차 회수 (액션 05)</li>
+        <li><strong>자체 매거진 #1호 발행 (액션 12)</strong></li>
+        <li>강남 한정 사이드 메뉴 출시</li>
+      </ul></div>
+      <div class="wk"><div class="lbl">7월 4주차</div><h4>7/22 — 7/31 · 중복</h4><ul>
+        <li>일본계 사내 워크숍 발송 (액션 06)</li>
+        <li>콜라보 메뉴 D-21 빌드업 (액션 09)</li>
+        <li>유튜브 브랜디드 영상 촬영 (액션 11)</li>
+        <li>부산 출장·촬영 (월 1회)</li>
+        <li>7월 리포트</li>
+      </ul></div>
+    </div>
+
+    <h3>8월</h3>
+    <div class="weekly">
+      <div class="wk"><div class="lbl">8월 1주차</div><h4>8/1 — 8/7</h4><ul>
+        <li>샤오홍슈 KOC 시딩 (액션 07)</li>
+        <li><strong>유튜브 브랜디드 1차 게재 (액션 11)</strong></li>
+        <li>F&B 콜라보 메뉴 출시 (액션 10)</li>
+        <li>가을 키워드 SEO 사전 진입</li>
+      </ul></div>
+      <div class="wk"><div class="lbl">8월 2주차</div><h4>8/8 — 8/14 · 말복</h4><ul>
+        <li>말복 캠페인 + 3매장 통합 콘텐츠</li>
+        <li><strong>자체 매거진 #2호 발행 (액션 12)</strong></li>
+        <li>일본계 사내 워크숍 1차 진행 (액션 06)</li>
+        <li>유튜브 브랜디드 2차 게재 + 쇼츠 미러링</li>
+      </ul></div>
+      <div class="wk"><div class="lbl">8월 3주차</div><h4>8/15 — 8/21 · 콜라보 + 게스트 셰프</h4><ul>
+        <li><strong>셰프 콜라보 한정 메뉴 출시 (액션 09)</strong></li>
+        <li><strong>메가 셰프 게스트 디너 1주 시작 (액션 08)</strong></li>
+        <li>강남 외 게릴라 팝업 (액션 14, 8/16 토)</li>
+        <li>샤오홍슈 KOC 회수 (액션 07)</li>
+        <li>미례 크루 1기 수료</li>
+      </ul></div>
+      <div class="wk"><div class="lbl">8월 4주차</div><h4>8/22 — 8/31</h4><ul>
+        <li>게스트 셰프 D+7 푸쉬</li>
+        <li>콜라보 메뉴 D+14 푸쉬·회수</li>
+        <li>유튜브 브랜디드 3차 게재</li>
+        <li>한정 굿즈 시즌 3 (8월 콜라보) 배포</li>
+        <li>8월 리포트 + 3개월 통합 리포트</li>
+      </ul></div>
+    </div>
+  </section>
+
+  <!-- §6. 협의 필요 -->
+  <section>
+    <h2>시작 전 확인이 필요한 것.</h2>
+
+    <div class="confirms">
+      <div class="card">
+        <span class="tag">우선</span>
+        <h4>오픈일·도면 확정</h4>
+        <p>위치는 서초대로74길 23 확정. 남은 변수 = 도면·오픈 정확일. 6월 1주차 전.</p>
+      </div>
+      <div class="card">
+        <span class="tag">우선</span>
+        <h4>예산 옵션 결정</h4>
+        <p>Light / Standard / Aggressive 중 하나. Standard 권장. 옵션 선택 후 액션별 정식 견적 협의.</p>
+      </div>
+      <div class="card">
+        <span class="tag">우선</span>
+        <h4>매장 셋업 6 항목 발주</h4>
+        <p>식기·메뉴판·유니폼·외벽 POP·줄서기·사이드 플레이팅. 제작 리드타임 2~3주.</p>
+      </div>
+      <div class="card">
+        <span class="tag">우선</span>
+        <h4>매장 운영 추가 제안 채택 여부</h4>
+        <p>점심 1인·단체 라인, 법조타운 회식 코스, 스탬프 패스, 강남 한정 메뉴 — 매장 측 결정.</p>
+      </div>
+      <div class="card">
+        <span class="tag">계정</span>
+        <h4>NP·인스타 계정 권한</h4>
+        <p>스마트플레이스 정식 명칭 = 미례국밥 강남삼성타운직영점. 권한 공유 5월 말.</p>
+      </div>
+      <div class="card">
+        <span class="tag info">참고</span>
+        <h4>메가 인플·셰프 라인업 후보</h4>
+        <p>액션 04 메가 인플(50만+ 푸드 채널), 액션 08 게스트 셰프(흑백요리사 출신·인기 셰프) 후보 정탐 6월 1주차부터.</p>
+      </div>
+      <div class="card">
+        <span class="tag info">참고</span>
+        <h4>일본 진출 빌드업 자료</h4>
+        <p>일본어 메뉴판·매장 영문 소개·매거진 영문판은 액션 05·06과 정합. 브랜드 진출 방향 확인 필요.</p>
+      </div>
+      <div class="card">
+        <span class="tag info">참고</span>
+        <h4>레퍼런스 이미지 교체</h4>
+        <p>14개 액션 모두 외부 레퍼런스 이미지가 임시 임베드되어 있습니다. 매장 오픈 후 자체 자료(인플 디너·줄 동선·매장 정물 등) 확보되면 정확한 미례 이미지로 교체 권장.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="closing">
+    <h2>오픈하고 나면,<br><em>14개를 한다.</em></h2>
+    <p>인플 디너 · D-1 라이브 · 줄세우기 + 굿즈 · 메가 인플 폭발 · 일본 인플 · 사내 워크숍 · 샤오홍슈 KOC · 메가 셰프 게스트 디너 · 셰프 콜라보 한정 메뉴 · F&B 식음료 콜라보 · 푸드 유튜브 브랜디드 · 자체 매거진 · 한정 굿즈 시리즈 · 강남 외 게릴라 팝업. 모두 <strong>6~8월 안에 마케팅이 직접 실행하는 일</strong>. 한국 F&B 마케팅에서 검증된 사례에 근거한 14개 액션, 시점·인원·견적·기대 결과까지 손에 잡힙니다. 매주 월요일 오전 9시 위클리 메일링 + 대시보드 업데이트로 진행 상황을 함께 트래킹합니다.</p>
+  </div>
+
 </div>
-
-<div class="container">
-
-    <div class="hero-quote">
-        <p>"바이럴이 아니라 방문을, 도달이 아니라 매출을 만듭니다."</p>
-        <div class="sub">D-30 빌드업 → D-3 만찬 → D-Day 그랜드오픈 → D+30 안정화. 90일을 어떻게 쓰느냐가 강남점 1년의 매출 구조를 결정합니다.</div>
-    </div>
-
-    <div class="toc">
-        <div class="toc-title">이 자료에 담긴 것</div>
-        <ul class="toc-list">
-            <li><a href="#why-now" data-num="01">Why Now — 90일이 1년을 만든다</a></li>
-            <li><a href="#constraints" data-num="02">강남점이 마주한 네 가지 조건</a></li>
-            <li><a href="#five-stage" data-num="03">외식 신규 오픈의 5단계 게임</a></li>
-            <li><a href="#recommend-play" data-num="04">추천 플레이 — 네 축의 균형 가동</a></li>
-            <li><a href="#cases" data-num="05">케이스에서 배운 다섯 가지</a></li>
-            <li><a href="#scenario" data-num="06">투자안 — 균형형 3,000만</a></li>
-            <li><a href="#calendar" data-num="07">6주 캘린더 — D-day 역산</a></li>
-            <li><a href="#conversion" data-num="08">전환 장치 4종 — 센텀점 봉인</a></li>
-            <li><a href="#kpi" data-num="09">90일 KPI 트래킹</a></li>
-            <li><a href="#rnr" data-num="10">함께 만들어갈 리듬</a></li>
-            <li><a href="#invest" data-num="11">OOS 집행 — 3단계 분할</a></li>
-            <li><a href="#next" data-num="12">다음 한 걸음</a></li>
-        </ul>
-    </div>
-
-    <div class="section" id="why-now">
-        <h2>01. Why Now — 90일이 1년을 만든다</h2>
-
-        <p>미례국밥은 <strong>부산 30년 노포의 국밥 브랜드</strong>로, 본점·센텀점에서 검증된 맛과 운영을 가지고 있습니다. 이번 6월 강남점은 <strong>첫 서울 진출</strong>이자 향후 수도권 확장의 출발점입니다. 점심 회전·저녁 회식·야간 해장이라는 세 봉우리를 가진 강남 직장상권 한복판에 서는 자리입니다.</p>
-
-        <h3>이미 준비된 것</h3>
-        <div class="status-grid">
-            <div class="status-item status-ready">30년 부산 본점 — 검증된 맛과 운영 매뉴얼</div>
-            <div class="status-item status-ready">센텀점 운영 데이터 — 점심/저녁/야간 회전 패턴</div>
-            <div class="status-item status-ready">HIZ 마케팅 파트너십 — 월 500만 리테이너 가동 중</div>
-            <div class="status-item status-ready">위드런 운영팀 — 매장 셋업·인력·현장 운영 인프라</div>
-            <div class="status-item status-ready">부산 매장 인스타그램 — 운영 경험과 콘텐츠 자산</div>
-            <div class="status-item status-ready">위드런 Meta 광고 계정 — HIZ 인계 진행 중</div>
-        </div>
-
-        <h3>오픈 90일을 위해 비어 있는 것</h3>
-        <div class="status-grid">
-            <div class="status-item status-gap">강남점 단독 NP·캐치테이블·카카오톡 채널 인프라</div>
-            <div class="status-item status-gap">오픈 모멘텀을 만들 인플루언서 만찬 자산</div>
-            <div class="status-item status-gap">반경 500m 직장 회식·점심 단체 채널 침투</div>
-            <div class="status-item status-gap">매장 유입 정량 측정 가능한 전환 장치 4종</div>
-        </div>
-
-        <div class="callout">
-            <strong>맛은 30년 검증됐습니다.</strong> 지금 필요한 건 "오픈 사실을 강남 직장상권에 침투시키는 무대 + 도달을 매장 방문으로 바꾸는 전환 장치 + 첫 한 달의 단골 락인 시스템" 이 세 가지입니다. 이 90일이 강남점 1년 매출의 기준선을 만듭니다.
-        </div>
-
-        <h3>오픈 90일 후 강남점이 서 있을 자리</h3>
-        <div class="kpi-grid">
-            <div class="kpi-card"><div class="kpi-num">800–1,200</div><div class="kpi-label">오픈 30일 방문팀</div></div>
-            <div class="kpi-card"><div class="kpi-num">60–80개</div><div class="kpi-label">콘텐츠 자산</div></div>
-            <div class="kpi-card"><div class="kpi-num">5–8개사</div><div class="kpi-label">회식 락인 회사</div></div>
-            <div class="kpi-card"><div class="kpi-num">200–350만</div><div class="kpi-label">SNS 누적 도달</div></div>
-        </div>
-        <p style="font-size: 12px; color: var(--text-light); margin-top: 8px;">
-            이 숫자들은 단순 KPI가 아니라 <strong>강남점 1년 매출의 기준선</strong>이자, <strong>차기 매장(여의도·판교 등) 확장 IR 자료</strong>입니다. 매장 한 곳에서 만든 데이터가 다음 매장의 출점 근거가 됩니다.
-        </p>
-    </div>
-
-    <div class="section" id="constraints">
-        <h2>02. 강남점이 마주한 네 가지 조건</h2>
-
-        <p>일반론으로 짠 오픈 마케팅 플레이북은 강남점에 그대로 작동하지 않습니다. 미례국밥 강남점만이 가진 네 가지 조건을 먼저 정직하게 짚고 들어갑니다.</p>
-
-        <div class="two-col">
-            <div class="col-card">
-                <div class="col-label">조건 1 · 포토제닉</div>
-                <div class="col-title">한식 국밥 — 노티드·런베뮤 대비 비주얼 임팩트 60% 수준</div>
-                <div class="col-desc">"이쁜 컷" 한 장으로 터지는 카페·디저트와 다릅니다. <strong>인물 + 먹는 행위 + 맥락</strong>으로 보완하지 않으면 단일 컷 의존 전략은 ROI가 낮습니다. 영상·인터뷰·매장 풍경이 결합된 콘텐츠가 더 강합니다.</div>
-            </div>
-            <div class="col-card">
-                <div class="col-label">조건 2 · 시간대 분포</div>
-                <div class="col-title">점심·저녁·야간 세 봉우리</div>
-                <div class="col-desc">강남 직장상권은 점심 회전(11:30~13:30) + 저녁 회식(18:00~21:00) + 야간 해장 가능. <strong>카페식 스카시티("11~14시만 운영")가 부적합</strong>한 구조. 세 봉우리를 모두 채워야 일 매출이 안정됩니다.</div>
-            </div>
-            <div class="col-card">
-                <div class="col-label">조건 3 · 재방문 비즈니스</div>
-                <div class="col-title">1~2만원대, 주 1~2회 가능</div>
-                <div class="col-desc">1회성 인증샷보다 <strong>단골 락인 장치</strong>가 핵심 KPI. 종이 쿠폰을 4년 늦게 도입해 매출이 꺾인 노티드의 학습을 반복하지 않아야 합니다. D-Day부터 카카오 채널·NP 저장·스탬프 카드 3종 동시 가동이 필요합니다.</div>
-            </div>
-            <div class="col-card">
-                <div class="col-label">조건 4 · 전환 함정 학습</div>
-                <div class="col-title">센텀점 사례 — 릴스 3만뷰 / NP 유입 -22.6%</div>
-                <div class="col-desc">2026-04 부산 센텀점에서 릴스 1건이 3만 뷰를 달성했지만 같은 기간 네이버플레이스 유입은 -22.6%였습니다. <strong>도달은 났는데 전환 장치가 없었던 실패</strong>입니다. 강남점은 이 패턴을 절대 반복하면 안 됩니다.</div>
-            </div>
-        </div>
-
-        <div class="callout">
-            <strong>이 네 조건이 모든 전략의 필터입니다.</strong> 케이스 스터디·시나리오·캘린더 어디에 들어가든 이 네 가지 위에서 해석합니다. "강남에서 통하는 일반론"이 아니라 "미례국밥 강남점에서 통하는 한 가지 길"을 만드는 게 이 90일의 본질입니다.
-        </div>
-    </div>
-
-    <div class="section" id="five-stage">
-        <h2>03. 외식 신규 오픈의 5단계 게임</h2>
-
-        <p>국내외 외식 신규 오픈 8건(Carbone NYC, Eataly, 노티드, 런던베이글뮤지엄, 다운타우너, 한일관 등)을 해체해서 공통 패턴을 추출한 결과, 외식 오픈 부스팅은 <strong>D-30 ~ D+30의 5단계 게임</strong>입니다. 각 단계마다 무기와 KPI가 다르고, 한 단계라도 빠지면 매출이 새는 구조입니다.</p>
-
-        <div class="stage-card">
-            <div class="stage-label">Stage 1 · D-30 ~ D-8</div>
-            <div class="stage-title">빌드업 — 자산을 쌓고 인프라를 깐다</div>
-            <div class="stage-grid">
-                <div><b>핵심 액션</b> · NP/캐치테이블/카카오톡 채널 동시 등록 · 강남점 콘텐츠 30~50개 사전 비축 · 인플루언서 롱리스트 90명 → 숏리스트 30명</div>
-                <div><b>KPI</b> · 디지털 인프라 100% 등록 · 콘텐츠 소재 30개+ · 인플루언서 30명 컨택 확정</div>
-                <div><b>흔한 실수</b> · "오픈하고 시작하면 되겠지" → 첫달 매출 30~50% 손실</div>
-                <div><b>미례 적용</b> · 부산 본점 자산을 강남에 그대로 복붙 금지 — "강남점은 새로운 매장" 인식 유도</div>
-            </div>
-        </div>
-
-        <div class="stage-card">
-            <div class="stage-label">Stage 2 · D-7 ~ D-4</div>
-            <div class="stage-title">시딩 — 인지·예약·검색 노출을 3축 동시 가속</div>
-            <div class="stage-grid">
-                <div><b>핵심 액션</b> · 마이크로 인플루언서 자연 시딩 시작 · 반경 500m 회사 30개 총무팀 시식 초대장 발송 · 메타 지역타겟 + 네이버 검색광고 워밍업</div>
-                <div><b>KPI</b> · 응답 회사 5~8개 · D-Day 사전 예약 50팀+ · 사전 검색 트래픽 시작</div>
-                <div><b>흔한 실수</b> · B2B 침투를 "오픈하고 안정되면" 미룸 → 첫달 회식 락인 골든타임 놓침</div>
-                <div><b>미례 적용</b> · 한식·해장 카테고리 직장인 큐레이션 계정 우선 시딩</div>
-            </div>
-        </div>
-
-        <div class="stage-card">
-            <div class="stage-label">Stage 3 · D-3 ~ D-1</div>
-            <div class="stage-title">만찬 — 압축 콘텐츠 생산 라인 가동</div>
-            <div class="stage-grid">
-                <div><b>핵심 액션</b> · 인플루언서·미디어 30명 비공개 디너 · 콘텐츠 일제 업로드 약속 받기 · 운영 동선 마지막 디버그</div>
-                <div><b>KPI</b> · 만찬 참석률 80%+ · 콘텐츠 일제 업로드 약속 90%+ · 운영 동선 결함 0건</div>
-                <div><b>흔한 실수</b> · 만찬을 너무 화려하게 → 실제 손님 경험과 갭 → 부정 리뷰 ("오픈식이랑 다르네")</div>
-                <div><b>미례 적용</b> · 만찬 셋업도 "프리미엄 셋팅"이지 "허위 연출" 아님 — 평소 상차림 위의 한 단계만</div>
-            </div>
-        </div>
-
-        <div class="stage-card">
-            <div class="stage-label">Stage 4 · D-Day ~ D+7</div>
-            <div class="stage-title">그랜드 오픈 — 일제 폭발 + 단골 락인 장치 동시 가동</div>
-            <div class="stage-grid">
-                <div><b>핵심 액션</b> · 인플루언서 30명 일제 콘텐츠 업로드 · 첫 주 한정 프로모션 (점심 단품 + 카카오 채널 추가 쿠폰) · 카카오·NP·스탬프 3종 동시 가동</div>
-                <div><b>KPI</b> · 첫 주 방문 800~1,200팀 · 카카오 채널 추가 300명+ · NP 저장 200건+</div>
-                <div><b>흔한 실수</b> · 콘텐츠는 터졌는데 전환 장치 부재 → <strong>센텀점 사고 재현</strong></div>
-                <div><b>미례 적용</b> · 첫 주 너무 바빠 락인 장치 운영 누락 = 6개월 후 매출 감소 시작점</div>
-            </div>
-        </div>
-
-        <div class="stage-card">
-            <div class="stage-label">Stage 5 · D+8 ~ D+30 (그리고 그 이후)</div>
-            <div class="stage-title">안정화 — 재방문 락인 + B2B 확장 + 자산 재활용</div>
-            <div class="stage-grid">
-                <div><b>핵심 액션</b> · 카카오 채널 누적 1,000명+ 대상 주 1회 메시지 · 시식 응답 회사 5~8곳 분기 회식 정기 락인 · 인플루언서 콘텐츠 3~5개 메타 광고 재활용</div>
-                <div><b>KPI</b> · D+30 매출 = 첫 주 매출의 70~85% 유지 · 재방문율 30%+ · B2B 단체 월 4~6건</div>
-                <div><b>흔한 실수</b> · "오픈 끝났으니 마케팅 끝" 모드 → 자연 트래픽 정착 전에 매출 -30% 급락</div>
-                <div><b>미례 적용</b> · D+30이 진짜 시작점. 데이터 운영 모드(감 → 숫자)로 전환하는 시점</div>
-            </div>
-        </div>
-
-        <div class="callout">
-            <strong>케이스가 가르치는 건 하나입니다.</strong> Carbone은 만찬에 올인, 런베뮤는 줄세우기에 올인, 한일관은 B2B에 올인 — 각 케이스는 <strong>한 축만 잘 쓴</strong> 사례입니다. 미례국밥 강남점은 카페·디저트가 아니라 한식·국밥이고, 강남은 점심·저녁·해장 세 봉우리라서 <strong>한 축 올인이 작동하지 않습니다.</strong> 5단계를 균형 있게 가동하는 것이 유일한 길입니다.
-        </div>
-    </div>
-
-    <div class="section" id="recommend-play">
-        <h2>04. 추천 플레이 — 네 축의 균형 가동</h2>
-
-        <p>5단계 위에 올라가는 실제 플레이는 네 축입니다. 각 축은 독립적으로 작동하지 않고, <strong>서로의 결과물을 재료로 쓰는 순환 구조</strong>로 설계했습니다.</p>
-
-        <div class="area-card">
-            <div class="area-header">
-                <div class="area-title">축 1. 콘텐츠 자산 빌드업 — 매장이 열기 전에 30~50개 비축</div>
-                <div class="area-budget">D-30 ~ D-8</div>
-            </div>
-            <div class="area-tagline">"오픈 다음 날 풀가동 가능한 자산"을 D-7까지 완성합니다.</div>
-            <div class="area-why">
-                <strong>위드런 대표님의 어떤 고민을 해결하는가.</strong> 오픈 직후가 가장 바쁜 시기인데 그때 콘텐츠를 새로 찍을 시간이 없습니다. 사전에 비축된 자산이 없으면 첫 주 SNS·광고·NP 모두 부실해집니다. <strong>"강남점 영업 시작 = 강남점 마케팅 시작"이 아니라, 마케팅이 D-30부터 먼저 시작되어 있어야 영업 시작일에 풀가동</strong>됩니다.
-            </div>
-            <table>
-                <tr><th>비축 대상</th><th>수량</th><th>용도</th></tr>
-                <tr><td>매장 인테리어 비포·애프터</td><td>5~8컷</td><td>NP·인스타·언론 보도용</td></tr>
-                <tr><td>시그니처 메뉴 디테일 (돼지국밥·보쌈 등)</td><td>10~15컷 + 영상 3개</td><td>인스타 피드/릴스 + 메타 광고 소재</td></tr>
-                <tr><td>셰프·매니저 인터뷰</td><td>영상 2개 (각 30초)</td><td>"30년 부산국밥, 강남에 오다" 스토리</td></tr>
-                <tr><td>부산 본점 30년 스토리</td><td>카드뉴스 1세트</td><td>오픈 직전 SNS + 매장 사이니지</td></tr>
-                <tr><td>강남점 한정 메뉴 컷</td><td>3~5컷</td><td>인플루언서 전용 메뉴 노출</td></tr>
-            </table>
-            <p style="font-size: 12px; color: var(--text-light); margin-top: 10px;">
-                <strong>쌓이는 자산:</strong> 사전 비축 콘텐츠 30~50개. 이 자산은 D-7 시딩, D-Day 광고, D+30 안정화까지 90일 내내 재활용됩니다.
-            </p>
-        </div>
-
-        <div class="area-card">
-            <div class="area-header">
-                <div class="area-title">축 2. 인플루언서 만찬 (D-3) + 시딩 — 압축 콘텐츠 생산 라인</div>
-                <div class="area-budget">D-21 ~ D+21</div>
-            </div>
-            <div class="area-tagline">한 자리에서 30명 × 3콘텐츠 = 90개를 동시에 뽑아내는 압축 생산 메커니즘.</div>
-            <div class="area-why">
-                <strong>위드런 대표님의 어떤 고민을 해결하는가.</strong> "오픈 모멘텀"을 만들려면 단발 시딩 30개보다 <strong>동기화된 일제 노출</strong>이 강합니다. 인플루언서 30명이 같은 주에 같은 매장 이야기를 동시에 올리면 강남 직장상권 인스타 피드에 미례국밥이 도배되는 효과가 납니다. 직장인 인스타에서 "이번 주에 다들 이 매장 가던데?" 인식이 만들어지는 게 핵심입니다.
-            </div>
-            <table>
-                <tr><th>구성</th><th>인원</th><th>역할</th></tr>
-                <tr><td>매크로 (10~50만)</td><td>3명</td><td>도달 확산·콘텐츠 자산화·광고 소재 확보</td></tr>
-                <tr><td>미드 (3~10만, 한식·직장인 카테고리)</td><td>10명</td><td>카테고리 신뢰·중간 도달</td></tr>
-                <tr><td>마이크로 (1~3만, 강남 로컬 직장인)</td><td>12명</td><td>"내 동선 안 추천" 동기화·저장 전환</td></tr>
-                <tr><td>미디어/푸드기자</td><td>5명</td><td>진정성 보강·언론 보도 1건+ 확보</td></tr>
-                <tr><td><strong>합계</strong></td><td><strong>30명</strong></td><td>D-3 만찬 + D-21~D+21 시딩 30명 별도</td></tr>
-            </table>
-            <p style="font-size: 12px; color: var(--text-light); margin-top: 10px;">
-                <strong>쌓이는 자산:</strong> 인플루언서 콘텐츠 60~80개 (2차 활용 동의 포함). 메타 광고 소재 50개 + 매장 디지털 사이니지 송출 + 차기 매장 출점 IR 자료로 영구 재활용.
-            </p>
-        </div>
-
-        <div class="area-card">
-            <div class="area-header">
-                <div class="area-title">축 3. B2B 침투 — 반경 500m 회식·점심 단체 락인</div>
-                <div class="area-budget">D-7 ~ D+30</div>
-            </div>
-            <div class="area-tagline">"한 번 침투한 회사 = 분기 회식 정기 락인" — 강남 직장상권의 진짜 매출 라인.</div>
-            <div class="area-why">
-                <strong>위드런 대표님의 어떤 고민을 해결하는가.</strong> 강남점 매출의 30~40%는 점심·회식 단체에서 나옵니다. 한일관·옥된장이 87년·40년 매장을 유지하는 핵심은 회식 룸 시스템과 분기별 단체 락인입니다. 인플루언서 콘텐츠는 개인 손님을 부르지만, <strong>"우리 회사 회식 어디로 가지?"의 디폴트 답</strong>이 되는 건 다른 게임입니다.
-            </div>
-            <table>
-                <tr><th>액션</th><th>실행 시점</th><th>목표</th></tr>
-                <tr><td>반경 500m IT·금융·로펌 회사 30개 리스트업</td><td>D-21</td><td>총무팀 컨택 정보 확보</td></tr>
-                <tr><td>시식 초대장 + 단체 메뉴 PDF 발송</td><td>D-7</td><td>응답 회사 5~8개</td></tr>
-                <tr><td>응답 회사 총무팀 사전 시식 (1~2명씩)</td><td>D-Day ~ D+14</td><td>회식 정기 락인 약속</td></tr>
-                <tr><td>분기 회식 정기 예약 전환</td><td>D+15 ~ D+30</td><td>월 4~6건 정기화</td></tr>
-                <tr><td>사내 슬랙·블라인드 자발 공유 모니터링</td><td>D+1 ~ 상시</td><td>추가 회사 침투 트리거 캐치</td></tr>
-            </table>
-            <p style="font-size: 12px; color: var(--text-light); margin-top: 10px;">
-                <strong>쌓이는 자산:</strong> 5~8개 회사 정기 회식 락인 = 분기 16~24건 = 연간 80건 × 평균 객단가 8~15만 × 8~12명 = <strong>연간 매출 6,400만~14,400만 라인</strong>이 만들어집니다.
-            </p>
-        </div>
-
-        <div class="area-card">
-            <div class="area-header">
-                <div class="area-title">축 4. 전환 장치 + 단골 락인 시스템</div>
-                <div class="area-budget">D-Day부터 상시</div>
-            </div>
-            <div class="area-tagline">"도달 → 방문 → 재방문"의 다리. 센텀점 사고 봉인의 핵심.</div>
-            <div class="area-why">
-                <strong>위드런 대표님의 어떤 고민을 해결하는가.</strong> 센텀점의 릴스 3만 뷰가 NP 유입 -22.6%로 끝난 이유는 <strong>"도달은 났는데 방문으로 이어지는 다리가 없었기 때문"</strong>입니다. 도달이 5배 늘어도 다리가 없으면 매출은 0입니다. 그리고 첫 주 방문 손님이 단골이 되지 않으면 D+30 이후 매출이 자연 정착선보다 -30% 떨어집니다. 이 두 가지를 봉인하는 게 축 4의 역할입니다.
-            </div>
-            <table>
-                <tr><th>장치</th><th>내용</th><th>측정</th></tr>
-                <tr><td>캡션 첫 줄 NP 링크 + 위치 + 시간</td><td>인플루언서 콘텐츠 가이드 강제</td><td>NP 검색·저장 증가</td></tr>
-                <tr><td>인플루언서 전용 메뉴/할인 코드</td><td>POS 트래킹 가능한 시그니처 세트</td><td>인플루언서별 매장 유입 직접 측정</td></tr>
-                <tr><td>매장 내 디지털 사이니지 (만찬 30인 콘텐츠 송출)</td><td>오프라인-온라인 루프</td><td>방문 손님 인스타 인증 콘텐츠</td></tr>
-                <tr><td>"리뷰 한 그릇" 매장 인증 장치</td><td>네이버 리뷰 작성 시 사이드 무료</td><td>NP 리뷰 누적·검색 노출 가중치</td></tr>
-                <tr><td>카카오톡 채널 + 스탬프 카드</td><td>첫 주 방문 손님 모두 가입 유도</td><td>재방문율 30%+, D+30 매출 유지</td></tr>
-            </table>
-            <p style="font-size: 12px; color: var(--text-light); margin-top: 10px;">
-                <strong>쌓이는 자산:</strong> 카카오 채널 1,000명+ / NP 저장 500건+ / 측정 가능한 인플루언서별 ROI 데이터. 이 데이터는 다음 매장 출점의 마케팅 예산 산정 근거가 됩니다.
-            </p>
-        </div>
-
-        <div class="callout">
-            <strong>네 축이 서로를 먹입니다.</strong> 콘텐츠 자산 → 인플루언서 만찬 셋업 소스. 만찬 콘텐츠 → 매장 사이니지 송출 + 광고 소재. B2B 시식 응답 → 회식 정기 락인. 락인 데이터 → 차기 매장 출점 근거. 각 축은 독립 KPI를 가지지만, <strong>한 매장 안에서 하나의 엔진</strong>으로 돌아갑니다.
-        </div>
-    </div>
-
-    <div class="section" id="cases">
-        <h2>05. 케이스에서 배운 다섯 가지</h2>
-
-        <p>국내외 외식 신규 오픈 8건을 해체했습니다. 그 안에서 미례국밥 강남점에 그대로 적용 가능한 다섯 가지 인사이트만 추렸습니다.</p>
-
-        <table>
-            <tr><th style="width: 30%;">출처 케이스</th><th>인사이트</th><th>강남점 적용</th></tr>
-            <tr>
-                <td><strong>Carbone NYC (2013)</strong><br><span style="color: var(--text-light); font-size: 12px;">셀럽이 셀럽을 부른다</span></td>
-                <td>비공개 디너 1회로 NYT 3스타 + 미슐랭 1스타 동시 확보. 광고비 사실상 0원의 PR 캠페인.</td>
-                <td>한국엔 동급 셀럽 인프라가 없으므로 <strong>인플루언서 30명 + 미디어 5명 큐레이션 만찬</strong>이 대체재.</td>
-            </tr>
-            <tr>
-                <td><strong>런던베이글뮤지엄</strong><br><span style="color: var(--text-light); font-size: 12px;">매출 800억을 광고비 1.4%로</span></td>
-                <td>줄세우기·스카시티 모델로 광고 거의 없이 매출 폭발. <strong>단 2025년 추락 시작</strong> — 단골 락인 부재가 원인.</td>
-                <td>스카시티 모방 <strong>금지</strong>. 강남점은 점심·저녁·해장 세 봉우리라서 부적합. 대신 <strong>단골 락인 우선</strong>.</td>
-            </tr>
-            <tr>
-                <td><strong>노티드 도넛 청담</strong><br><span style="color: var(--text-light); font-size: 12px;">오픈런 성공, 락인 실패</span></td>
-                <td>오픈런으로 화제성 잡았지만 종이 쿠폰을 4년 늦게 도입. 2024년 매출 676억 → 630억 감소.</td>
-                <td>D-Day부터 <strong>카카오 채널·NP 저장·스탬프 카드 3종 동시 가동</strong>. 락인 늦으면 6개월 후 매출 시작.</td>
-            </tr>
-            <tr>
-                <td><strong>신정환 군자동 닭갈비</strong><br><span style="color: var(--text-light); font-size: 12px;">월 1억 신화의 함정</span></td>
-                <td>셀럽 IP·미디어 푸시만으로 단기 매출 폭발. 광고가 빠지면 즉시 추락.</td>
-                <td>미디어·페이드 광고만으로 강남점 부스팅 <strong>불가</strong>. 자체 콘텐츠 자산 60~80개 확보가 우선.</td>
-            </tr>
-            <tr>
-                <td><strong>한일관·옥된장 + PUBLY 테헤란로 30</strong><br><span style="color: var(--text-light); font-size: 12px;">B2B 침투의 장수 메커니즘</span></td>
-                <td>87년·40년 매장의 매출 안정성은 회식 룸 + 사내 슬랙·블라인드 자발 공유 + 큐레이션 매체 노출의 조합.</td>
-                <td>OOS에 <strong>B2B 침투 트랙 의무 편성</strong>. 회사 30개 시식 초대장 + 큐레이션 매체 1~2건 진입.</td>
-            </tr>
-        </table>
-
-        <div class="callout">
-            <strong>각 케이스는 한 축만 잘 쓴 사례입니다.</strong> Carbone = 만찬 / 런베뮤 = 줄세우기 / 노티드 = 오픈런 / 신정환 = 셀럽 IP / 한일관 = B2B. 강남점은 한식·국밥·세 봉우리 직장상권이라 한 축 올인이 작동하지 않습니다. 다섯 케이스의 강점만 추출해서 <strong>네 축 균형 가동</strong>이 유일한 길입니다.
-        </div>
-    </div>
-
-    <div class="section" id="scenario">
-        <h2>06. 투자안 — 균형형 OOS 3,000만</h2>
-
-        <p>월 500만 리테이너는 평상시 운영(인스타·NP·메타·리포트)에 그대로 가동됩니다. 강남점 90일 부스팅은 <strong>그 위에 얹는 일회성 OOS 투자</strong>입니다. 균형형(OOS 3,000만)을 단일 추천안으로 제안드립니다.</p>
-
-        <div class="area-card recommended">
-            <div class="area-header">
-                <div class="area-title">균형형 — 만찬 30명 + 시딩 30명 + B2B 침투 + 락인 장치</div>
-                <div class="area-budget">3,160만</div>
-            </div>
-            <div class="area-tagline">강남 오픈 모멘텀을 만들면서, 6개월 광고 자산까지 한 번에 사는 구조.</div>
-            <div class="area-why">
-                <strong>왜 이 안인가.</strong> 강남 직장상권은 <strong>"동기화 효과 > 단발 임팩트"</strong> 시장입니다. 30명이 같은 주에 일제히 콘텐츠를 올리는 것이 매크로 1명의 임팩트보다 강합니다. 또한 만찬 30명 콘텐츠 60~80개를 2차 활용 동의로 확보하면 <strong>콘텐츠 1건당 단가가 70만 → 실질 15~20만으로 떨어집니다</strong>. OOS 3,000만이 비용이 아니라 <strong>6개월 광고 소재 자산 + 차기 매장 출점 IR 자료</strong>로 환산되는 구조입니다.
-            </div>
-            <table>
-                <tr><th>구성</th><th>내용</th><th>금액</th></tr>
-                <tr><td>인플루언서 만찬 (D-3)</td><td>매크로 3 + 미드 10 + 마이크로 12 + 미디어 5 = 30명 (원고료 + 식사 + 운영)</td><td class="highlight">2,310만</td></tr>
-                <tr><td>시딩 (D-21 ~ D+21)</td><td>미드 5 + 마이크로 15 + 배달 시딩 10 = 30명 단발 콘텐츠</td><td class="highlight">600만</td></tr>
-                <tr><td>B2B 침투 운영</td><td>회사 30개 리스트업 + 초대장 + 시식 운영 + 사내 자발 공유 모니터링</td><td class="highlight">150만</td></tr>
-                <tr><td>전환 장치 셋업</td><td>매장 디지털 사이니지 1대 + 인플루언서 전용 메뉴 셋업 + 포토존</td><td class="highlight">100만</td></tr>
-                <tr><td><strong>OOS 합계</strong></td><td>VAT 별도</td><td class="highlight"><strong>3,160만</strong></td></tr>
-            </table>
-            <p style="font-size: 12px; color: var(--text-light); margin-top: 10px;">
-                <strong>예상 성과:</strong> 오픈 30일 매장 유입 800~1,200팀 · SNS 누적 도달 200~350만 · 콘텐츠 자산 60~80개 · B2B 락인 5~8개사 · 카카오 채널 1,000명+ · NP 저장 500건+
-            </p>
-        </div>
-
-        <h3>그렇다면 효율형(1,500만)·임팩트형(5,000만)은 왜 추천에서 빠졌나</h3>
-
-        <div class="two-col">
-            <div class="col-card">
-                <div class="col-label">왜 효율형이 아닌가</div>
-                <div class="col-title">1,500만 안 — 임팩트 부족</div>
-                <div class="col-desc">만찬 15명 + 시딩 20명 규모. 운영 ROI는 안정적이지만 <strong>"강남 첫 매장 모멘텀"을 만들기에 부족</strong>합니다. 매크로 부재로 광고 소재 자산화·차기 매장 IR 활용이 약해집니다. 첫 서울 진출이라는 기회를 작게 쓰는 안.</div>
-            </div>
-            <div class="col-card">
-                <div class="col-label">왜 임팩트형이 아닌가</div>
-                <div class="col-title">5,000만 안 — 운영 부하 과대</div>
-                <div class="col-desc">만찬 50명+ 매크로 다수 구성. 도달은 크지만 매장 캐파 초과·노쇼·동선 꼬임 변수가 폭증합니다. <strong>강남 직장상권은 매크로 1명의 임팩트보다 마이크로 다수의 동기화가 더 강한 시장</strong>이라, 매크로에 OOS를 더 태우는 게 효율이 떨어집니다. "광고티" 진해지는 부작용도 있습니다.</div>
-            </div>
-        </div>
-
-        <div class="callout">
-            <strong>균형형 3,000만 한 가지를 단일 추천안으로 드립니다.</strong> 위드런 대표님께서 보시기에 조정이 필요하시면, 만찬 인원 ±5명 또는 시딩 ±10명 단위로 미세 조정 가능합니다. 다만 "축 자체를 빼는 것"은 권장하지 않습니다 — 네 축 중 하나라도 빠지면 다른 축이 작동하지 않는 구조입니다.
-        </div>
-    </div>
-
-    <div class="section" id="calendar">
-        <h2>07. 6주 캘린더 — D-day 역산</h2>
-
-        <p>강남점 오픈일을 <strong>2026-06-23(월)</strong> 가정 기준 6주 간트를 그렸습니다. 정확한 오픈일이 확정되는 시점에 ±N일 이동만 하면 됩니다. <strong>화요일이 진짜 마감</strong>인 이유는 인플루언서 30명 컨택 + B2B 시식 회사 30개 리스트업이 D-30 시점에 시작되어야 하기 때문입니다.</p>
-
-        <table class="gantt-table">
-            <tr>
-                <th>주차</th>
-                <th>기간</th>
-                <th>콘텐츠 자산</th>
-                <th>인플루언서·시딩</th>
-                <th>B2B 침투</th>
-                <th>전환 장치</th>
-                <th>D-day</th>
-            </tr>
-            <tr>
-                <td><strong>W1</strong></td>
-                <td>5/20~5/26</td>
-                <td>매장 컨셉·메뉴 사전 촬영 30컷</td>
-                <td>인플루언서 롱리스트 90명</td>
-                <td>반경 500m 회사 30개 리스트업</td>
-                <td>NP·캐치테이블·카카오 채널 등록</td>
-                <td><span class="d-mark">D-30</span></td>
-            </tr>
-            <tr>
-                <td><strong>W2</strong></td>
-                <td>5/27~6/2</td>
-                <td>셰프·매니저 인터뷰 영상</td>
-                <td>숏리스트 30명 컨택 시작</td>
-                <td>총무팀 연락처 확보·초대장 디자인</td>
-                <td>매장 디지털 사이니지 발주</td>
-                <td><span class="d-mark">D-23</span></td>
-            </tr>
-            <tr>
-                <td><strong>W3</strong></td>
-                <td>6/3~6/9</td>
-                <td>부산 30년 스토리 카드뉴스</td>
-                <td>만찬 RSVP 1차 / 시딩 인플 첫 발송</td>
-                <td>시식 초대장 30개 회사 발송</td>
-                <td>인플루언서 전용 메뉴 셋업 (POS)</td>
-                <td><span class="d-mark">D-16</span></td>
-            </tr>
-            <tr>
-                <td><strong>W4</strong></td>
-                <td>6/10~6/16</td>
-                <td>강남 한정 메뉴 컷 + 메타 광고 소재</td>
-                <td>만찬 RSVP 2차 / 시딩 콘텐츠 1차 업로드</td>
-                <td>응답 5~8개사 총무팀 사전 시식</td>
-                <td>포토존 셋업 + 굿즈 박스 제작</td>
-                <td><span class="d-mark">D-9</span></td>
-            </tr>
-            <tr>
-                <td><strong>W5</strong></td>
-                <td>6/17~6/22</td>
-                <td class="highlight">D-3 만찬 30인 운영</td>
-                <td class="highlight">만찬 콘텐츠 90개 압축 생산</td>
-                <td>회식 정기 락인 1차 약속 확보</td>
-                <td>매장 사이니지 송출 시작</td>
-                <td><span class="d-mark">D-3 만찬</span></td>
-            </tr>
-            <tr>
-                <td><strong>W6</strong></td>
-                <td>6/23~6/29</td>
-                <td class="highlight">D-Day 그랜드오픈 + 미디어 보도</td>
-                <td class="highlight">인플루언서 30명 일제 업로드</td>
-                <td>회식 단체 1차 방문 시작</td>
-                <td>카카오·NP·스탬프 3종 가동</td>
-                <td><span class="d-mark">D-Day</span></td>
-            </tr>
-            <tr>
-                <td><strong>W7~W10</strong></td>
-                <td>6/30~7/27</td>
-                <td>안정화 콘텐츠·재활용 광고</td>
-                <td>D+21 시딩 잔여 진행</td>
-                <td>회식 정기 락인 5~8개사</td>
-                <td>락인 데이터 누적·재방문 운영</td>
-                <td><span class="d-mark">D+30</span></td>
-            </tr>
-        </table>
-
-        <h3>월별 산출물 (M1~M3)</h3>
-        <table>
-            <tr><th>월</th><th>콘텐츠 자산</th><th>인플루언서</th><th>B2B 침투</th><th>운영 KPI</th></tr>
-            <tr><td><strong>M1 (6월)</strong></td><td>사전 비축 30+ / 만찬 90 = 120개</td><td>만찬 30명 + 시딩 1차 10명</td><td>리스트업 30개사 / 시식 응답 5~8개</td><td>오픈 첫 주 800~1,200팀</td></tr>
-            <tr><td><strong>M2 (7월)</strong></td><td>안정화 콘텐츠 20 + 재활용 광고 소재 5세트</td><td>시딩 2차 15명 + 배달 시딩 10명</td><td>회식 단체 1차 정기 락인</td><td>D+30 매출 = 첫 주의 70~85%</td></tr>
-            <tr><td><strong>M3 (8월)</strong></td><td>인플루언서 콘텐츠 2차 활용 광고 본격화</td><td>시리즈 협업 3~5명 검토</td><td>분기 회식 정기 4~6건 페이스</td><td>재방문율 30%+ 정착</td></tr>
-        </table>
-
-        <p style="font-size: 12px; color: var(--text-light); margin-top: 8px;">
-            이 캘린더의 숫자는 <strong>OOS 집행과 함께 위드런 대표님께 매주 공유되는 KPI</strong>입니다. W1~W10 매주 금요일 리포트 + 매월 종합 분석.
-        </p>
-    </div>
-
-    <div class="section" id="conversion">
-        <h2>08. 전환 장치 4종 — 센텀점 봉인</h2>
-
-        <p>2026-04 부산 센텀점에서 릴스 1건이 3만 뷰를 달성했지만 같은 기간 네이버플레이스 유입은 -22.6%였습니다. <strong>도달이 매장 방문으로 이어지지 못한 실패</strong>입니다. 강남점에서 이 패턴을 절대 반복하지 않기 위해 전환 장치 4종을 의무 탑재합니다.</p>
-
-        <div class="three-col">
-            <div class="col-card">
-                <div class="col-label">장치 1</div>
-                <div class="col-title">캡션 첫 줄 NP 링크 + 위치 + 시간</div>
-                <div class="col-desc">모든 인플루언서 콘텐츠 캡션 첫 1/3 안에 강제 배치. <strong>#광고</strong> 다음 줄에 위치·영업시간·NP 단축 URL·인플루언서 전용 메뉴 인센티브. 영상 1~2초 컷에 매장명+위치 자막 강제.</div>
-            </div>
-            <div class="col-card">
-                <div class="col-label">장치 2</div>
-                <div class="col-title">인플루언서 전용 메뉴/코드</div>
-                <div class="col-desc">메뉴판에 없는 시그니처 세트(예: "강남 든든 세트"). 인플루언서 콘텐츠를 본 사람만 주문 가능. 주문 시 직원에게 "○○ 보고 왔어요" 또는 매장 QR 인증 → POS에서 카운트 → <strong>인플루언서별 매장 유입 직접 트래킹</strong>.</div>
-            </div>
-            <div class="col-card">
-                <div class="col-label">장치 3</div>
-                <div class="col-title">매장 디지털 사이니지 송출 루프</div>
-                <div class="col-desc">매장 입구·내부에 만찬 다녀간 30인의 콘텐츠를 디지털 사이니지로 송출. 방문 손님이 "○○도 다녀갔네" → 본인 인스타에 매장 인증 → <strong>새 시딩 콘텐츠 자발 생산</strong>. 오프라인-온라인 루프 완성.</div>
-            </div>
-        </div>
-
-        <div class="area-card" style="margin-top: 14px;">
-            <div class="area-header">
-                <div class="area-title">장치 4. 카카오 채널 + NP 저장 + 스탬프 카드 — 첫 주 락인 3종</div>
-                <div class="area-budget">D-Day부터 상시</div>
-            </div>
-            <div class="area-tagline">노티드가 종이 쿠폰을 4년 늦게 도입해서 매출이 꺾인 학습을 D-Day부터 동시 가동으로 봉인.</div>
-            <table>
-                <tr><th>장치</th><th>가입 인센티브</th><th>운영 메시지</th></tr>
-                <tr><td>카카오톡 채널 추가</td><td>다음 방문 ₩2,000 쿠폰</td><td>주 1회 신메뉴·이벤트 메시지</td></tr>
-                <tr><td>네이버플레이스 저장</td><td>"리뷰 한 그릇" — 영수증 + 네이버 리뷰 작성 시 사이드 1개 무료</td><td>NP 검색 가중치 상승 → 검색 노출 ↑</td></tr>
-                <tr><td>스탬프 카드 (5회)</td><td>5회 방문 시 시그니처 메뉴 1개 무료</td><td>"단골 5회 달성" 콘텐츠 자산화 (재방문 손님 인터뷰)</td></tr>
-            </table>
-            <p style="font-size: 12px; color: var(--text-light); margin-top: 10px;">
-                <strong>목표 KPI:</strong> D+30 시점 카카오 채널 1,000명+ / NP 저장 500건+ / 스탬프 카드 발급 800장+. 이 데이터가 D+60 이후 매출 안정선의 근거가 됩니다.
-            </p>
-        </div>
-
-        <div class="callout">
-            <strong>"바이럴"이 아니라 "방문"을 KPI로 박습니다.</strong> 인플루언서 콘텐츠 도달 200만이 의미가 있는 건 그 중 0.5%인 1만 명이 매장에 오거나, 5%인 10만 명이 카카오 채널을 추가하거나, 1%인 2만 명이 NP에 저장했을 때입니다. 도달 자체는 측정 가능한 매장 행동으로 환산되어야 OOS 3,000만의 ROI가 입증됩니다.
-        </div>
-    </div>
-
-    <div class="section" id="kpi">
-        <h2>09. 90일 KPI 트래킹</h2>
-
-        <p>OOS 3,000만의 효율을 입증하는 KPI는 네 층위입니다. 도달(상층)부터 매출 안정선(하층)까지 매주 추적합니다.</p>
-
-        <table>
-            <tr><th>층위</th><th>지표</th><th>D-7 ~ D+7 (첫 주)</th><th>D+30 (오픈 30일)</th><th>D+90 (안정화)</th></tr>
-            <tr>
-                <td rowspan="2"><strong>도달</strong></td>
-                <td>인플루언서 콘텐츠 누적 도달</td>
-                <td>100만+</td>
-                <td>200~350만</td>
-                <td>400만+ (재활용 광고 포함)</td>
-            </tr>
-            <tr>
-                <td>미디어 보도</td>
-                <td>1건+</td>
-                <td>2~3건</td>
-                <td>3~5건</td>
-            </tr>
-            <tr>
-                <td rowspan="3"><strong>전환 (방문)</strong></td>
-                <td>매장 방문 팀수</td>
-                <td>800~1,200팀</td>
-                <td class="highlight">3,000~4,500팀</td>
-                <td>D-Day 기준 70~85% 유지</td>
-            </tr>
-            <tr>
-                <td>인플루언서별 전환 메뉴 주문</td>
-                <td>50~100건</td>
-                <td>200~350건</td>
-                <td>(자연 감소, 광고 소재 재활용)</td>
-            </tr>
-            <tr>
-                <td>회식 단체 방문</td>
-                <td>1~2건</td>
-                <td>4~6건</td>
-                <td class="highlight">월 4~6건 정기</td>
-            </tr>
-            <tr>
-                <td rowspan="3"><strong>락인 (재방문)</strong></td>
-                <td>카카오톡 채널 추가</td>
-                <td>300명+</td>
-                <td>1,000명+</td>
-                <td>2,000명+</td>
-            </tr>
-            <tr>
-                <td>NP 저장</td>
-                <td>200건+</td>
-                <td>500건+</td>
-                <td>1,000건+</td>
-            </tr>
-            <tr>
-                <td>재방문율 (스탬프 카드 기반)</td>
-                <td>—</td>
-                <td>20~25%</td>
-                <td class="highlight">30%+ 정착</td>
-            </tr>
-            <tr>
-                <td rowspan="2"><strong>자산</strong></td>
-                <td>2차 활용 콘텐츠 자산</td>
-                <td>30~50개</td>
-                <td>60~80개</td>
-                <td>(재활용 광고 운영 중)</td>
-            </tr>
-            <tr>
-                <td>B2B 락인 회사</td>
-                <td>0~1개</td>
-                <td>5~8개</td>
-                <td>8~12개</td>
-            </tr>
-        </table>
-
-        <div class="callout">
-            <strong>매주 금요일 KPI 리포트로 위드런 대표님께 공유</strong>됩니다. 차이가 크면 즉시 OOS 운용 조정. 90일 종합 리포트는 <strong>차기 매장(여의도·판교 등) 출점 IR 자료</strong>로 그대로 활용 가능한 포맷입니다.
-        </div>
-    </div>
-
-    <div class="section" id="rnr">
-        <h2>10. 함께 만들어갈 리듬</h2>
-
-        <h3>R&R — HIZ × 위드런 × 미례 본점</h3>
-        <table>
-            <tr><th>역할</th><th>HIZ (마케팅 파트너)</th><th>위드런 (운영사)</th><th>미례 본점</th></tr>
-            <tr><td>전략 설계</td><td>리드 (Lead PM Green)</td><td>의사결정</td><td>—</td></tr>
-            <tr><td>콘텐츠 자산 빌드</td><td>리드 (콘텐츠 크리에이터 + 디자이너)</td><td>매장 운영 협조</td><td>본점 30년 스토리 자료 제공</td></tr>
-            <tr><td>인플루언서 컨택·만찬 운영</td><td>리드 (APD 2명 6주 풀가동)</td><td>현장 동선 운영</td><td>본점 사장 D-3 만찬 동반 (스토리 진정성)</td></tr>
-            <tr><td>B2B 침투</td><td>리스트업·초대장·운영 가이드</td><td>총무팀 시식 현장 응대</td><td>—</td></tr>
-            <tr><td>전환 장치 셋업</td><td>설계·메뉴 정의·POS 트래킹 설계</td><td>매장 셋업·디지털 사이니지 설치·POS 운영</td><td>—</td></tr>
-            <tr><td>KPI 트래킹·리포트</td><td>리드 (퍼포먼스 분석가)</td><td>매장 데이터 공유</td><td>—</td></tr>
-        </table>
-
-        <h3>주간 리듬 — 화·금 2박자</h3>
-        <table>
-            <tr><th>요일</th><th>내용</th></tr>
-            <tr><td>화요일 오전</td><td>주간 미팅 30분 — 이번 주 액션 · 지난 주 성과 · 의사결정 필요 사항</td></tr>
-            <tr><td>금요일 오후</td><td>주간 KPI 리포트 — 도달·전환·락인·자산 4층위 숫자 + 다음 주 계획</td></tr>
-        </table>
-
-        <h3>월간 산출물</h3>
-        <div class="pill-row">
-            <span class="pill">월간 종합 KPI 리포트 (4층위 통합)</span>
-            <span class="pill">콘텐츠 자산 인벤토리 (재활용 가능 소재 목록)</span>
-            <span class="pill">인플루언서·B2B 회사별 ROI 분석</span>
-            <span class="pill">다음 달 OOS 운용 조정안</span>
-            <span class="pill">매장 운영 인사이트 (점심·저녁·해장 시간대 데이터)</span>
-        </div>
-
-        <div class="callout">
-            <strong>이 리듬은 90일 후 끝나지 않습니다.</strong> 강남점 안정화 이후에도 월 500만 리테이너 안에서 그대로 이어지는 운영 모델입니다. OOS는 강남점 90일 한정이지만, 거기서 만들어진 인프라(전환 장치·B2B 락인·콘텐츠 자산)는 차기 매장 출점 시 그대로 복제 가능합니다.
-        </div>
-    </div>
-
-    <div class="section" id="invest">
-        <h2>11. OOS 집행 — 3단계 분할</h2>
-
-        <p>OOS 3,160만(VAT 별도)을 한 번에 집행하지 않고, <strong>오픈 전·만찬·오픈 후 3단계로 분할</strong>합니다. 각 단계에서 성과를 확인한 후 다음 단계 집행을 결정하는 구조입니다.</p>
-
-        <table>
-            <tr><th>시점</th><th>금액</th><th>해당 범위</th></tr>
-            <tr>
-                <td><strong>1차 — D-21 (5월 말)</strong></td>
-                <td class="highlight">1,200만</td>
-                <td>인플루언서 30명 1차 컨택비·계약금 + 콘텐츠 자산 빌드업 + B2B 리스트업·초대장 + 전환 장치 셋업비</td>
-            </tr>
-            <tr>
-                <td><strong>2차 — D-3 (만찬 직전)</strong></td>
-                <td class="highlight">1,460만</td>
-                <td>만찬 30명 잔여 원고료·식사·굿즈·운영비 + 시딩 1차 (마이크로 10명)</td>
-            </tr>
-            <tr>
-                <td><strong>3차 — D+7 (그랜드오픈 직후)</strong></td>
-                <td class="highlight">500만</td>
-                <td>시딩 2차 (미드 5 + 배달 시딩 10) + B2B 시식 운영 + 카카오·NP·스탬프 락인 운영</td>
-            </tr>
-            <tr><td><strong>OOS 합계</strong></td><td class="highlight"><strong>3,160만</strong></td><td>VAT 별도</td></tr>
-        </table>
-
-        <div class="quote-total">
-            <div>
-                <div class="qt-label">강남점 90일 부스팅 OOS</div>
-                <div class="qt-value">3,160만</div>
-                <div class="qt-sub">VAT 별도 · 3단계 분할 집행</div>
-            </div>
-            <div style="text-align:right;">
-                <div class="qt-label">실질 환산 가치</div>
-                <div style="font-size: 16px; font-weight: 700; color: var(--accent);">콘텐츠 자산 60~80개 + 6개월 광고 소재</div>
-                <div class="qt-sub">콘텐츠 단가 70만 → 실질 15~20만 환산</div>
-            </div>
-        </div>
-
-        <h3>OOS와 월 500만 리테이너의 관계</h3>
-        <table>
-            <tr><th>구분</th><th>월 500만 리테이너</th><th>OOS 3,160만 (90일 한정)</th></tr>
-            <tr><td>대상</td><td>본점·센텀점·강남점 통합 운영</td><td>강남점 오픈 부스팅 한정</td></tr>
-            <tr><td>범위</td><td>인스타·NP·메타 광고 운영·월간 리포트</td><td>인플루언서 만찬·시딩·B2B·전환 장치·콘텐츠 빌드업</td></tr>
-            <tr><td>지속성</td><td>상시</td><td>90일 일회성</td></tr>
-            <tr><td>이후</td><td>그대로 유지</td><td>만들어진 인프라(전환 장치·B2B 락인·콘텐츠 자산)는 리테이너 안에서 운영 계속</td></tr>
-        </table>
-
-        <div class="callout">
-            <strong>"받을 수 있는 매출을 먼저 남겨둔다"</strong>는 원칙을 지킵니다. OOS는 오픈 모멘텀을 만드는 일회성 투자이고, 그 후 운영은 월 500만 리테이너로 이어집니다. <strong>1년에 한 번 있는 강남점 첫 오픈이라는 기회</strong>를, 작게 쓰지도 과하게 쓰지도 않는 균형선이 3,000만입니다.
-        </div>
-    </div>
-
-    <div class="section" id="next">
-        <h2>12. 다음 한 걸음</h2>
-
-        <div class="next-step-card">
-            <div class="nsc-title">의사결정 흐름</div>
-            <table>
-                <tr><th>일정</th><th>내용</th></tr>
-                <tr><td><strong>5/14~16 (수·목·금)</strong></td><td>위드런 대표님 서울 방문 · 이 자료 기준 미팅 · 의사결정 4가지 컨펌</td></tr>
-                <tr><td><strong>5/19 (월)</strong></td><td>OOS 1차 집행 시점 확정 · HIZ 인플루언서 컨택 착수</td></tr>
-                <tr><td><strong>5/20 (화)</strong></td><td>W1 시작 — 콘텐츠 자산 빌드업 · 인플루언서 롱리스트 작성 · B2B 회사 리스트업</td></tr>
-                <tr><td><strong>6/20 (금)</strong></td><td>D-3 만찬 운영 · 압축 콘텐츠 90개 생산</td></tr>
-                <tr class="highlight"><td><strong>6/23 (월)</strong></td><td class="highlight"><strong>강남점 그랜드오픈 — 인플루언서 30명 일제 업로드 + 락인 장치 3종 동시 가동</strong></td></tr>
-            </table>
-        </div>
-
-        <h3>위드런 대표님 컨펌 사항 (미팅에서 의사결정 필요)</h3>
-        <table>
-            <tr><th>항목</th><th>내용</th></tr>
-            <tr><td>1. OOS 규모</td><td>균형형 3,160만 컨펌 · 조정 시 ±N만 단위</td></tr>
-            <tr><td>2. 3단계 집행 시점</td><td>1차 D-21 · 2차 D-3 · 3차 D+7 시점 확정</td></tr>
-            <tr><td>3. 인플루언서 풀 컨택 착수일</td><td>5월 19일(월) 또는 20일(화) — D-30 시작점 확정</td></tr>
-            <tr><td>4. 매장 디지털 사이니지·포토존 셋업 일정</td><td>D-7(6/16) 완료 의무 — 위드런 매장 셋업 일정과 동기화 필요</td></tr>
-        </table>
-
-        <p style="margin-top: 16px;">
-            이 자료에 궁금하신 점이나 조정하고 싶은 부분이 있으시면 편하게 말씀 주세요.<br>
-            <strong>미팅 30분</strong>이면 이 모든 항목을 위드런 대표님 관점으로 다시 정리해드릴 수 있습니다.
-        </p>
-
-        <div class="callout" style="margin-top: 16px;">
-            <strong>D-42.</strong> 오늘 결정이 6/23 강남점 첫 주 매출을 만들고, 첫 주 매출이 강남점 1년의 매출 기준선을 만듭니다. <strong>부산 30년 국밥이 처음으로 서울에 서는 순간</strong>, 단발 오픈이 아니라 향후 수도권 확장의 출발점이 되도록 만드는 것이 이 90일의 본질입니다.
-        </div>
-    </div>
-
-</div>
-
-<div class="footer">
-    HIZ × 위드런 × 미례국밥 | 강남점 90일 오픈 부스팅 — OOS 투자안<br>
-    2026.05.12 | 위드런 대표님 미팅 자료 | Confidential
-</div>
-
 </body>
 </html>
