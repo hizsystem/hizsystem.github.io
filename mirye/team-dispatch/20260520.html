@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>강남점 90일 부스팅 — BC2팀 리서치 분담 (2026-05-20)</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif; background: #f4f7f9; color: #1a1b18; line-height: 1.7; font-size: 14px; word-break: keep-all; overflow-wrap: break-word; }
+
+.toolbar { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: #0D0D0D; height: 56px; display: flex; align-items: center; justify-content: space-between; padding: 0 32px; }
+.toolbar-left { display: flex; align-items: center; gap: 16px; }
+.toolbar-logo { font-size: 13px; font-weight: 700; color: #EA580C; letter-spacing: 0.05em; }
+.toolbar-sep { width: 1px; height: 20px; background: rgba(255,255,255,0.15); }
+.toolbar-title { font-size: 14px; font-weight: 500; color: #fff; }
+.toolbar-actions { display: flex; gap: 8px; }
+.btn-toolbar { padding: 7px 18px; border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; background: transparent; color: #fff; font-size: 12px; font-weight: 500; cursor: pointer; transition: all 0.2s; }
+.btn-toolbar:hover { background: rgba(255,255,255,0.1); }
+.internal-banner { position: fixed; top: 56px; left: 0; right: 0; z-index: 99; background: #FEE2E2; border-bottom: 2px solid #DC2626; padding: 6px 32px; font-size: 11.5px; color: #991B1B; font-weight: 700; text-align: center; letter-spacing: 0.04em; }
+
+.container { max-width: 940px; margin: 0 auto; padding: 100px 24px 60px; }
+
+/* HERO */
+.hero { background: linear-gradient(135deg, #0D0D0D 0%, #1a1b18 100%); color: #fff; border-radius: 16px; padding: 50px 44px; margin-bottom: 22px; position: relative; overflow: hidden; }
+.hero::before { content: ""; position: absolute; top: -100px; right: -100px; width: 360px; height: 360px; background: radial-gradient(circle, rgba(234,88,12,0.18), transparent 70%); }
+.hero-label { font-size: 11px; font-weight: 700; color: #EA580C; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 16px; position: relative; }
+.hero h1 { font-size: 34px; font-weight: 900; line-height: 1.3; letter-spacing: -0.025em; margin-bottom: 20px; position: relative; }
+.hero h1 em { color: #EA580C; font-style: normal; }
+.hero-sub { font-size: 14.5px; font-weight: 400; color: rgba(255,255,255,0.78); line-height: 1.85; max-width: 720px; position: relative; }
+.hero-sub strong { color: #fff; font-weight: 600; }
+.hero-meta { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 28px; padding-top: 22px; border-top: 1px solid rgba(255,255,255,0.1); position: relative; }
+.hero-meta .mk { font-size: 10px; color: rgba(255,255,255,0.45); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 4px; }
+.hero-meta .mv { font-size: 13px; font-weight: 600; color: #fff; }
+
+/* SECTION */
+.section { background: #fff; border-radius: 14px; padding: 32px 40px; margin-bottom: 20px; border: 1px solid #e8edf1; }
+.section h2 { font-size: 20px; font-weight: 900; margin-bottom: 6px; letter-spacing: -0.02em; }
+.section h2 em { color: #EA580C; font-style: normal; }
+.section .sec-label { font-size: 11px; font-weight: 700; color: #EA580C; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 10px; }
+.section .sec-sub { font-size: 13px; color: #636569; margin-bottom: 20px; line-height: 1.8; }
+.section h3 { font-size: 14px; font-weight: 700; margin-top: 24px; margin-bottom: 10px; }
+
+/* OWNER BADGES */
+.owner-badge { display: inline-block; font-size: 10.5px; font-weight: 800; padding: 3px 10px; border-radius: 4px; letter-spacing: 0.04em; margin-right: 4px; white-space: nowrap; }
+.owner-green { background: #FED7AA; color: #9A3412; }
+.owner-namjung { background: #DBEAFE; color: #1E40AF; }
+.owner-sumin { background: #FCE7F3; color: #9D174D; }
+.owner-seokhwan { background: #D1FAE5; color: #065F46; }
+.owner-jieun { background: #E0E7FF; color: #3730A3; }
+.owner-agent { background: #FEF3C7; color: #92400E; }
+.owner-external { background: #E5E7EB; color: #374151; }
+
+/* PRIORITY DOTS */
+.pri { display: inline-block; width: 20px; text-align: center; font-size: 14px; }
+.pri.p1 { color: #dc2626; }
+.pri.p2 { color: #EA580C; }
+.pri.p3 { color: #ca8a04; }
+.pri.p4 { color: #16a34a; }
+
+/* TABLE */
+table { width: 100%; border-collapse: collapse; font-size: 12.5px; margin-top: 8px; }
+th { background: #f8fafb; padding: 11px 12px; font-weight: 700; border-bottom: 2px solid #e8edf1; color: #525252; font-size: 11px; text-align: left; white-space: nowrap; letter-spacing: 0.04em; text-transform: uppercase; }
+td { padding: 12px; border-bottom: 1px solid #f0f2f5; vertical-align: top; line-height: 1.7; }
+td.item { font-weight: 700; color: #1a1b18; }
+td.num { text-align: center; font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
+td.due { font-weight: 700; color: #EA580C; white-space: nowrap; }
+tr.urgent td { background: #FEF2F2; }
+tr.urgent td.item { color: #991B1B; font-weight: 800; }
+tr.urgent td.due { color: #DC2626; }
+tr:hover td:not(.no-hover) { background: #fafbfc; }
+
+/* OWNER CARDS */
+.owner-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.owner-card { background: #fafbfc; border: 1px solid #e8edf1; border-radius: 12px; padding: 20px 22px; position: relative; }
+.owner-card.lead { background: #FFF7ED; border-color: #EA580C; }
+.owner-card .oc-name { font-size: 15px; font-weight: 900; margin-bottom: 4px; letter-spacing: -0.01em; }
+.owner-card.lead .oc-name { color: #9A3412; }
+.owner-card .oc-role { font-size: 11px; color: #999; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 14px; }
+.owner-card .oc-tracks { font-size: 12.5px; color: #525252; line-height: 1.85; }
+.owner-card .oc-tracks strong { color: #1a1b18; }
+.owner-card .oc-tracks .tk { display: block; padding: 8px 12px; background: #fff; border-left: 3px solid #EA580C; border-radius: 0 6px 6px 0; margin-bottom: 6px; }
+.owner-card .oc-tracks .tk.urgent { border-left-color: #dc2626; background: #FEF9F9; }
+.owner-card .oc-tracks .tk-id { font-size: 10.5px; font-weight: 800; color: #EA580C; letter-spacing: 0.06em; margin-right: 6px; }
+.owner-card .oc-tracks .tk-due { font-size: 10.5px; color: #999; float: right; font-weight: 700; }
+
+/* TIMELINE */
+.timeline { position: relative; padding-left: 28px; margin-top: 8px; }
+.timeline::before { content: ''; position: absolute; top: 4px; bottom: 4px; left: 8px; width: 2px; background: #EA580C; }
+.tl-item { position: relative; margin-bottom: 18px; }
+.tl-item::before { content: ''; position: absolute; left: -27px; top: 4px; width: 14px; height: 14px; border-radius: 50%; background: #fff; border: 3px solid #EA580C; }
+.tl-item.peak::before { background: #EA580C; box-shadow: 0 0 0 4px rgba(234,88,12,0.18); }
+.tl-date { font-size: 11px; font-weight: 800; color: #EA580C; letter-spacing: 0.06em; margin-bottom: 4px; }
+.tl-title { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+.tl-desc { font-size: 12.5px; color: #525252; line-height: 1.7; }
+
+/* TOOL GRID */
+.tool-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.tool-card { background: #fafbfc; border: 1px solid #e8edf1; border-radius: 10px; padding: 16px 18px; }
+.tool-card .tc-name { font-size: 13px; font-weight: 800; margin-bottom: 4px; color: #1a1b18; font-family: 'SF Mono', Monaco, monospace; }
+.tool-card .tc-desc { font-size: 11.5px; color: #636569; line-height: 1.65; margin-bottom: 8px; }
+.tool-card .tc-use { font-size: 11px; color: #525252; line-height: 1.6; padding-top: 8px; border-top: 1px dashed #e8edf1; }
+.tool-card .tc-use strong { color: #EA580C; font-weight: 700; }
+
+/* INFO BOX */
+.info-box { background: #FFF7ED; border-left: 4px solid #EA580C; border-radius: 0 8px 8px 0; padding: 14px 20px; margin-top: 16px; font-size: 12.5px; color: #525252; line-height: 1.85; }
+.info-box strong { color: #1a1b18; }
+.info-box.dark { background: #0D0D0D; border-left-color: #EA580C; color: rgba(255,255,255,0.85); }
+.info-box.dark strong { color: #fff; }
+.info-box.danger { background: #FEF2F2; border-left-color: #DC2626; }
+
+/* STD SHEET */
+.std-list { list-style: none; margin-top: 8px; }
+.std-list li { padding: 10px 16px; background: #f8fafb; border-radius: 8px; margin-bottom: 6px; font-size: 12.5px; border-left: 3px solid #EA580C; }
+.std-list li strong { color: #1a1b18; font-weight: 800; }
+.std-list li code { background: #1a1b18; color: #EA580C; padding: 2px 6px; border-radius: 3px; font-size: 11px; font-family: 'SF Mono', Monaco, monospace; }
+
+/* FOOTER */
+.footer { text-align: center; padding: 32px 0 10px; color: #999; font-size: 11.5px; line-height: 2; }
+.footer .brand { font-size: 15px; font-weight: 900; color: #1a1b18; margin-bottom: 4px; }
+
+@media (max-width: 768px) {
+  .container { padding: 110px 16px 40px; }
+  .hero { padding: 32px 22px; }
+  .hero h1 { font-size: 24px; }
+  .hero-meta { grid-template-columns: repeat(2, 1fr); }
+  .section { padding: 24px 20px; }
+  .owner-grid, .tool-grid { grid-template-columns: 1fr; }
+  table { font-size: 11.5px; }
+  th, td { padding: 8px 6px; }
+}
+@media print {
+  .toolbar, .internal-banner { display: none !important; }
+  body { background: #fff; }
+  .container { padding: 20px; max-width: 100%; }
+  .section, .hero { box-shadow: none; border: 1px solid #ddd; page-break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="toolbar-left">
+    <span class="toolbar-logo">MIRYE × HIZ BC2</span>
+    <span class="toolbar-sep"></span>
+    <span class="toolbar-title">강남점 90일 부스팅 — BC2팀 리서치 분담</span>
+  </div>
+  <div class="toolbar-actions">
+    <button class="btn-toolbar" onclick="window.print()">PDF</button>
+  </div>
+</div>
+<div class="internal-banner">⚠️ BC2팀 내부 자료 — 클라이언트 공유 금지 · noindex 비공개 배포</div>
+
+<div class="container">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-label">미례국밥 강남점 · 2026-05-20 위드런 대표 미팅 follow-up</div>
+    <h1>9개 트랙을 <em>찢어서</em> · 1주일 안에 v4로 진화합니다.</h1>
+    <div class="hero-sub">
+      5/20 위드런 대표 미팅에서 "<strong>강남점에 사활이 달렸다</strong>"·"<strong>부산 관광공사와 올해 말 대만 진출</strong>" 발언 회수. 인플루언서 활용이 캠페인의 본체이고, 매출 KPI까지 명시적으로 약속해야 합니다. v3 통합본 위에 <strong>BC2팀 5명이 9개 트랙을 나눠 1주일 안에 회수 → v4 진화 → 6/2 발송</strong> 흐름.
+    </div>
+    <div class="hero-meta">
+      <div><div class="mk">킥오프</div><div class="mv">2026-05-22 (목)</div></div>
+      <div><div class="mk">1차 회수</div><div class="mv">2026-05-29 (목)</div></div>
+      <div><div class="mk">v4 발송</div><div class="mv">2026-06-02 (월)</div></div>
+      <div><div class="mk">D-30 컨택</div><div class="mv">5/22 동시 진행</div></div>
+    </div>
+  </div>
+
+  <!-- 1. WHY -->
+  <div class="section">
+    <div class="sec-label">왜 이 리서치인가</div>
+    <h2>v3 통합본의 약점 3가지를 보강합니다.</h2>
+    <div class="sec-sub">현재 v3 (hizsystem.github.io/mirye/gangnam-meeting-20260520.html)는 마케팅 plan으로는 95점이지만, 대표 정서 무게에 맞춰 매출 임팩트·인플 풀 실명·직장인 정보 채널 등에서 보강 필요.</div>
+    <table>
+      <thead><tr><th>v3 약점</th><th>보강 트랙</th><th>회수 가치</th></tr></thead>
+      <tbody>
+        <tr><td class="item">직장인 정보 채널 0건</td><td>B4 직장인 맛집 정보 채널</td><td>캠페인 효율 +20~30% 가속 (인플 콘텐츠 도착지 결정)</td></tr>
+        <tr><td class="item">옥외광고·전단지 ROI 자료 0건</td><td>B2 옥외·지하철·전단지 ROI</td><td>매출 KPI 직접 가속 + 매장 반경 500m 도착 끝매기</td></tr>
+        <tr><td class="item">인플 풀 실명 = 자연 멘션 4명 + @mukja_muksta 1명만</td><td>A1·A2 지역·메가 인플 풀 확장</td><td>만찬 30 + 시딩 30 풀 실명 확정 → D-30 컨택 즉시 착수</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 2. TRACK MATRIX -->
+  <div class="section">
+    <div class="sec-label">10개 트랙 매트릭스 — 인지도 3 + 매출 6 + 신규 1</div>
+    <h2>각 트랙 = 핵심 질문 1개 + 산출물 1쪽 + Owner 1명.</h2>
+    <div class="sec-sub">🔴 1순위 = 자료 0건 · 가치 최대 / 🟠 2~4순위 = 신규 영역 / 🟡 5~8순위 = v3 deepen / 🟢 9~10순위 = 운영·시즌 1.5 deferred 대비</div>
+
+    <h3>트랙 A — 인지도 (인플루언서 본체)</h3>
+    <table>
+      <thead><tr><th style="width:30px;"></th><th style="width:90px;">트랙</th><th>핵심 질문 + 산출물</th><th style="width:130px;">Owner</th><th style="width:60px;">DUE</th></tr></thead>
+      <tbody>
+        <tr class="urgent"><td class="num"><span class="pri p1">🔴</span></td><td class="item">A1<br>지역 인플 풀</td><td>강남 직장 + 한식·국밥·해장 마이크로 30~50명 + 인게이지 3%+ 필터 + 자연 매칭도. <strong>산출물</strong>: 인플 시트 (핸들·티어·인게이지·자연매칭)</td><td><span class="owner-badge owner-seokhwan">석환 APD</span></td><td class="due">5/26</td></tr>
+        <tr><td class="num"><span class="pri p2">🟠</span></td><td class="item">A2<br>메가 인플 후보</td><td>최자·맛관부·더들리·먹자 외 한식·국밥·강남 톤 매칭 메가 3~5명 + 단가·인게이지·미례 톤. <strong>산출물</strong>: 메가 풀 3~5명 시트 + 협상 시작 단가</td><td><span class="owner-badge owner-jieun">지은 APD</span> <span class="owner-badge owner-green">Green</span></td><td class="due">5/26</td></tr>
+        <tr><td class="num"><span class="pri p3">🟡</span></td><td class="item">A3<br>프리오픈 만찬 매뉴얼</td><td>30명 운영 시뮬레이션 + 매장 동선 + MC 스크립트 + 노쇼 5종 + 인터뷰 코너 셋업. <strong>산출물</strong>: 만찬 운영 매뉴얼 + D-3 체크리스트</td><td><span class="owner-badge owner-green">Green</span> <span class="owner-badge owner-namjung">남중</span></td><td class="due">5/29</td></tr>
+      </tbody>
+    </table>
+
+    <h3>트랙 B — 매출 (인플 콘텐츠 도착지 + 위성 채널)</h3>
+    <table>
+      <thead><tr><th style="width:30px;"></th><th style="width:90px;">트랙</th><th>핵심 질문 + 산출물</th><th style="width:130px;">Owner</th><th style="width:60px;">DUE</th></tr></thead>
+      <tbody>
+        <tr><td class="num"><span class="pri p3">🟡</span></td><td class="item">B1<br>지역 마케팅 케이스</td><td>강남 1급 상권 첫 진출 외식 매장 첫 30일 매출 회수 사례 (다운타우너·블루보틀·노티드·런베뮤·올드페리도넛). <strong>산출물</strong>: 케이스 5~8건 + 미례 적용 1줄</td><td><span class="owner-badge owner-agent">🔍 시장조사</span> <span class="owner-badge owner-green">Green</span></td><td class="due">5/26</td></tr>
+        <tr class="urgent"><td class="num"><span class="pri p1">🔴</span></td><td class="item">B2<br>옥외·지하철·전단지 ROI</td><td>강남역·역삼·선릉 OOH 단가·도달·전환 표준치. 디지털 사이니지·지하철·빌딩 게시판 전단지 ROI. <strong>산출물</strong>: OOH 매체별 단가표 + 미례 추천 1개</td><td><span class="owner-badge owner-namjung">남중</span> <span class="owner-badge owner-green">Green</span></td><td class="due">5/27</td></tr>
+        <tr><td class="num"><span class="pri p2">🟠</span></td><td class="item">B3<br>B2B 회사 30개</td><td>강남 반경 500m IT/금융/로펌/스타트업 회사 리스트 + 총무팀 컨택 채널 + 단체 메뉴 패키지. <strong>산출물</strong>: 회사 30개 시트 + 컨택 가이드 + 단체 메뉴 PDF 초안</td><td><span class="owner-badge owner-jieun">지은 APD</span></td><td class="due">5/29</td></tr>
+        <tr class="urgent"><td class="num"><span class="pri p1">🔴</span></td><td class="item">B4<br>⭐ 직장인 맛집 정보 채널</td><td>강남 직장인이 점심·회식 맛집을 어디서 알게 되는가 — 블라인드·잡플래닛·사내 슬랙·당근·PUBLY·롱블랙·매거진B·네이버 큐레이션·인스타 저장 등 8~10종 + 진입 방법 + 미례 적용. <strong>산출물</strong>: 채널 8~10종 시트 + 진입 메소드 + 우선순위 3개</td><td><span class="owner-badge owner-jieun">지은</span> <span class="owner-badge owner-agent">🔍 시장조사</span></td><td class="due">5/27</td></tr>
+        <tr><td class="num"><span class="pri p3">🟡</span></td><td class="item">B5<br>메타 광고 ROAS</td><td>인플 콘텐츠 → Meta paid 재활용 ROAS 시나리오 + 위드런 BM 광고계정 활용 + 일 예산·소재 5~7건. <strong>산출물</strong>: ROAS 시나리오 + 소재 가이드</td><td><span class="owner-badge owner-green">Green</span> <span class="owner-badge owner-external">HIZ 미디어바이어</span></td><td class="due">5/29</td></tr>
+        <tr><td class="num"><span class="pri p4">🟢</span></td><td class="item">B6<br>사전 바이럴 콘텐츠</td><td>만찬 전 D-21~D-7 자사 인스타 5~7건 (부산 헤리티지·셰프 손·위생모/새우젓/수저 받침 디테일). <strong>산출물</strong>: 콘텐츠 캘린더 5~7건 + 비주얼 가이드 + 부산 본점 촬영 일정</td><td><span class="owner-badge owner-sumin">수민</span> <span class="owner-badge owner-external">인국 (미례 본사)</span></td><td class="due">5/29</td></tr>
+      </tbody>
+    </table>
+
+    <h3>트랙 C — 시즌 1.5 deferred 대비 (신규)</h3>
+    <table>
+      <thead><tr><th style="width:30px;"></th><th style="width:90px;">트랙</th><th>핵심 질문 + 산출물</th><th style="width:130px;">Owner</th><th style="width:60px;">DUE</th></tr></thead>
+      <tbody>
+        <tr><td class="num"><span class="pri p4">🟢</span></td><td class="item">C1<br>다국어 카피 + 외국인 인증</td><td>transcript L873 "부산 관광공사 대만 진출" 흡수. 영어·대만번체 메뉴판 + SNS 인증 쿠폰 운영 매뉴얼. The Assignment 답변 ③ 거점 흐름이면 즉시 활성화. <strong>산출물</strong>: 다국어 메뉴판 디자인 + 외국인 인증 운영 매뉴얼</td><td><span class="owner-badge owner-sumin">수민</span> <span class="owner-badge owner-agent">🔍 시장조사</span></td><td class="due">5/29</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 3. OWNER VIEW -->
+  <div class="section">
+    <div class="sec-label">Owner별 작업표 — 본인 트랙만 확인</div>
+    <h2>BC2팀 5명 + 외부 협업.</h2>
+    <div class="sec-sub">슬랙/카톡에서 "내 거 어디?" 빠르게 찾을 수 있도록 Owner별 정렬.</div>
+
+    <div class="owner-grid">
+      <div class="owner-card lead">
+        <div class="oc-name">Green (우성민)</div>
+        <div class="oc-role">Lead · 종합 · v4 진화</div>
+        <div class="oc-tracks">
+          <div class="tk"><span class="tk-id">A2</span> 메가 인플 후보 (지은과 공동) <span class="tk-due">5/26</span></div>
+          <div class="tk"><span class="tk-id">A3</span> 프리오픈 만찬 매뉴얼 (남중과 공동) <span class="tk-due">5/29</span></div>
+          <div class="tk"><span class="tk-id">B1</span> 지역 마케팅 케이스 (시장조사와 공동) <span class="tk-due">5/26</span></div>
+          <div class="tk"><span class="tk-id">B2</span> OOH·전단지 ROI (남중과 공동) <span class="tk-due">5/27</span></div>
+          <div class="tk"><span class="tk-id">B5</span> 메타 광고 ROAS (미디어바이어와 공동) <span class="tk-due">5/29</span></div>
+          <div class="tk" style="border-left-color:#dc2626;background:#FEF9F9;">🔴 <strong>종합 + v4 진화 + 6/2 발송</strong> <span class="tk-due">5/30~6/2</span></div>
+        </div>
+      </div>
+
+      <div class="owner-card">
+        <div class="oc-name">석환 APD</div>
+        <div class="oc-role">지역 인플 직접 써칭</div>
+        <div class="oc-tracks">
+          <div class="tk urgent"><span class="tk-id">A1</span> 🔴 지역 인플 풀 30~50명 발굴 <span class="tk-due">5/26</span></div>
+          <p style="margin-top:10px; font-size:11.5px; color:#636569; line-height:1.7;"><strong>도구</strong>: <code>/sns-scrape</code> Apify hashtag-scraper (#강남맛집·#강남점심·#강남해장) + 인플 마켓 (마플·뷰리드)</p>
+        </div>
+      </div>
+
+      <div class="owner-card">
+        <div class="oc-name">지은 APD</div>
+        <div class="oc-role">메가 인플 + B2B + 직장인 채널</div>
+        <div class="oc-tracks">
+          <div class="tk"><span class="tk-id">A2</span> 메가 인플 후보 (Green과 공동) <span class="tk-due">5/26</span></div>
+          <div class="tk urgent"><span class="tk-id">B4</span> 🔴 ⭐ 직장인 맛집 정보 채널 <span class="tk-due">5/27</span></div>
+          <div class="tk"><span class="tk-id">B3</span> B2B 회사 30개 <span class="tk-due">5/29</span></div>
+        </div>
+      </div>
+
+      <div class="owner-card">
+        <div class="oc-name">남중 PM</div>
+        <div class="oc-role">옥외광고 + 만찬 운영</div>
+        <div class="oc-tracks">
+          <div class="tk urgent"><span class="tk-id">B2</span> 🔴 OOH·지하철·전단지 ROI (Green과 공동) <span class="tk-due">5/27</span></div>
+          <div class="tk"><span class="tk-id">A3</span> 프리오픈 만찬 매뉴얼 (Green과 공동) <span class="tk-due">5/29</span></div>
+        </div>
+      </div>
+
+      <div class="owner-card">
+        <div class="oc-name">수민 디자이너</div>
+        <div class="oc-role">사전 콘텐츠 + 다국어 디자인</div>
+        <div class="oc-tracks">
+          <div class="tk"><span class="tk-id">B6</span> 사전 바이럴 콘텐츠 5~7건 (인국과 공동) <span class="tk-due">5/29</span></div>
+          <div class="tk"><span class="tk-id">C1</span> 다국어 메뉴판 + 외국인 인증 매뉴얼 <span class="tk-due">5/29</span></div>
+        </div>
+      </div>
+
+      <div class="owner-card">
+        <div class="oc-name">외부 협업</div>
+        <div class="oc-role">시장조사 에이전트 · 미디어바이어 · 인국</div>
+        <div class="oc-tracks">
+          <div class="tk"><span class="tk-id">B1</span> 시장조사 에이전트 — 지역 마케팅 케이스 <span class="tk-due">5/26</span></div>
+          <div class="tk"><span class="tk-id">B4</span> 시장조사 에이전트 — 직장인 정보 채널 보조 <span class="tk-due">5/27</span></div>
+          <div class="tk"><span class="tk-id">B5</span> HIZ 미디어바이어 — 메타 ROAS 시나리오 <span class="tk-due">5/29</span></div>
+          <div class="tk"><span class="tk-id">B6</span> 인국 (미례 본사) — 사전 콘텐츠 발행 <span class="tk-due">5/29</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. TOOLS -->
+  <div class="section">
+    <div class="sec-label">리서치 도구 — 3-Layer API 인프라</div>
+    <h2>스킬 한 줄로 5분~10분 회수.</h2>
+    <div class="sec-sub">사람 2시간 작업 → API 5~10분 + 비용 $0.30~1.5. 메모리 reference_research_api_infrastructure 적용.</div>
+
+    <div class="tool-grid">
+      <div class="tool-card">
+        <div class="tc-name">/sns-scrape</div>
+        <div class="tc-desc">Apify 인스타·틱톡·구글맵 raw 메트릭 수집. 인플 발굴·경쟁사 진단 1차 데이터.</div>
+        <div class="tc-use"><strong>활용 트랙</strong>: A1 (hashtag-scraper #강남맛집) · A2 (profile-scraper 메가 후보)</div>
+      </div>
+      <div class="tool-card">
+        <div class="tc-name">/deep-research</div>
+        <div class="tc-desc">Perplexity Sonar API 시장조사·경쟁사·트렌드 딥리서치. 출처 자동 인용.</div>
+        <div class="tc-use"><strong>활용 트랙</strong>: B1 (지역 마케팅 케이스) · B2 (OOH 단가) · B3 (B2B 총무팀 채널)</div>
+      </div>
+      <div class="tool-card">
+        <div class="tc-name">/grok-research</div>
+        <div class="tc-desc">xAI Grok Live Search (X+웹+뉴스 합성). 실시간 트렌드·인플 발굴·직장인 슬랙/블라인드 정보 특화.</div>
+        <div class="tc-use"><strong>활용 트랙</strong>: B4 (직장인 정보 채널 — Grok이 X 데이터 강점)</div>
+      </div>
+    </div>
+
+    <h3>산출물 표준</h3>
+    <ul class="std-list">
+      <li><strong>저장 위치</strong>: <code>clients/mirye-gukbap/research/2026-05-22-gangnam-bc2-research/</code> (트랙별 .md 파일 1개씩)</li>
+      <li><strong>파일명</strong>: <code>{트랙코드}-{슬러그}-{Owner}.md</code> (예: <code>A1-influencer-pool-seokhwan.md</code>)</li>
+      <li><strong>구조</strong>: 0. 메타 (Owner·DUE·도구) / 1. 핵심 질문 / 2. 결과 (시트 또는 표) / 3. 미례 적용 1줄 / 4. 출처</li>
+      <li><strong>분량</strong>: 1쪽 (A4 1매) 이내 권장. 시트는 표 형식. raw 인용은 부록.</li>
+      <li><strong>커밋 메시지</strong>: <code>docs(mirye-bc2): {트랙코드} {제목} ({Owner})</code></li>
+    </ul>
+  </div>
+
+  <!-- 5. TIMELINE -->
+  <div class="section">
+    <div class="sec-label">일정 — 5/22 킥오프 → 6/2 발송</div>
+    <h2>1주일 안에 v3 → v4 진화.</h2>
+    <div class="sec-sub">D-30 컨택 착수와 동시 진행. 리서치 끝나기 전에 만찬 시드 4명 컨택은 이미 시작됨.</div>
+
+    <div class="timeline">
+      <div class="tl-item peak">
+        <div class="tl-date">5/22 (목)</div>
+        <div class="tl-title">킥오프 + D-30 컨택 착수</div>
+        <div class="tl-desc">본 분담 시트 공유 + 각자 트랙 확인 + 도구 셋업. 동시에 자연 멘션 4명 DM 컨택(석환) + 자사 핸들 grep+replace(Green).</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">5/26 (월)</div>
+        <div class="tl-title">A1·A2·B1 1차 회수</div>
+        <div class="tl-desc">인플 풀 + 메가 후보 + 지역 마케팅 케이스. Green 1차 검토 (월요일 오전).</div>
+      </div>
+      <div class="tl-item peak">
+        <div class="tl-date">5/27 (화)</div>
+        <div class="tl-title">B2·B4 회수 (1순위 신규 영역)</div>
+        <div class="tl-desc">옥외·전단지 ROI + ⭐ 직장인 정보 채널. 가장 가치 큰 2건 회수 → v4 진화의 결정적 입력값.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">5/29 (목)</div>
+        <div class="tl-title">A3·B3·B5·B6·C1 회수 + 종합 시작</div>
+        <div class="tl-desc">남은 5건 일괄 회수. Green이 v4 진화 작업 착수.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">5/30 (금)</div>
+        <div class="tl-title">v4 진화 (HTML 업데이트)</div>
+        <div class="tl-desc">9개 트랙 결과 흡수 → 옵션 A/B 사이즈 재검토 + KPI 정밀화 + 인플 풀 실명 + OOH 옵션 C 가능성 검토.</div>
+      </div>
+      <div class="tl-item peak">
+        <div class="tl-date">6/2 (월)</div>
+        <div class="tl-title">위드런 대표 v4 정식 발송</div>
+        <div class="tl-desc">URL + 옵션 A/B 선택 요청 + The Assignment 답변 회수 요청. 컨펌 회수 후 만찬 D-3 역산 본격.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. CONTEXT -->
+  <div class="section">
+    <div class="sec-label">컨텍스트 자료 (작업 전 필독)</div>
+    <h2>이미 회수된 자료부터 읽고 시작합니다.</h2>
+    <div class="sec-sub">새로 만들지 마세요. 이미 있는 거 위에 deepen만.</div>
+
+    <ul class="std-list">
+      <li><strong>v3 통합본 HTML</strong>: <code>hizsystem.github.io/mirye/gangnam-meeting-20260520.html</code> — 현재 위드런 대표 발송 대기 정본. 인플 중심 구조·옵션 A/B·매출 KPI</li>
+      <li><strong>5/20 미팅 transcript 추출본</strong>: <code>clients/mirye-gukbap/raw/transcript-extract-20260520.md</code> — 대표 "사활"·"대만 진출" 발언 인용. The Assignment 답변 추정</li>
+      <li><strong>v2 인텔리전스 (Apify 실측)</strong>: <code>clients/mirye-gukbap/research/2026-05-18-gangnam-boost-v2/synthesis/index.html</code> — 동동국밥 1,395·자연 멘션 4명·@mukja_muksta 106,652 실측 데이터</li>
+      <li><strong>케이스 스터디 5카테고리×8건</strong>: <code>clients/mirye-gukbap/gangnam-launch-cases-research.md</code> — Carbone·Eataly·런베뮤·노티드·한일관 외 8건 + 5단계 프레임</li>
+      <li><strong>시딩 마스터플랜</strong>: <code>clients/mirye-gukbap/gangnam-launch-seeding-playbook.md</code> — 만찬 시나리오 3안·전환장치 4종·노쇼 5종</li>
+      <li><strong>미례 브랜드 가이드</strong>: <code>clients/mirye-gukbap/context/brand-profile.md</code> + brand-guidelines — 톤·시그니처·헤리티지</li>
+      <li><strong>미팅 큰 그림 brief</strong>: <code>clients/mirye-gukbap/gangnam-meeting-brief-20260520.md</code> — 9섹션 한글 정리본 (HTML과 동일 내용)</li>
+    </ul>
+
+    <div class="info-box dark"><strong>도움 요청 채널</strong>: 트랙 진행 중 막힘 발생 시 Green에게 직접 슬랙 또는 카톡. 미례 워크트리 (<code>~/AI/.claude/worktrees/mirye-gukbap/</code>) 안에서 Claude Code 통해 도구 직접 활용 가능.</div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="brand">BRANDRISE by HIZ · BC2</div>
+    9개 트랙을 찢어서 1주일 안에 v4로 · 강남점 첫 30일이 1년을 결정합니다.<br>
+    본 자료는 BC2팀 내부 자료입니다 · 클라이언트 공유 금지 · noindex 비공개 배포
+  </div>
+
+</div>
+
+</body>
+</html>

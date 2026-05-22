@@ -3,102 +3,47 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>미례국밥 4월 운영 견적서 — 브랜드라이즈</title>
+<title>미례국밥 · 브랜드라이즈 운영 허브</title>
+<meta name="description" content="미례국밥 × 브랜드라이즈 운영 산출물 모음 — 월별 견적서·보고서·플랜·강남점 자료">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Noto Sans KR', -apple-system, sans-serif; background: #f4f7f9; color: #1a1b18; line-height: 1.7; font-size: 14px; }
+body { font-family: 'Noto Sans KR', -apple-system, sans-serif; background: #f4f7f9; color: #1a1b18; line-height: 1.7; font-size: 14px; word-break: keep-all; overflow-wrap: break-word; }
+a { color: inherit; text-decoration: none; }
 
 .toolbar { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: #0D0D0D; height: 56px; display: flex; align-items: center; justify-content: space-between; padding: 0 32px; }
 .toolbar-left { display: flex; align-items: center; gap: 16px; }
 .toolbar-logo { font-size: 13px; font-weight: 700; color: #EA580C; letter-spacing: 0.05em; }
 .toolbar-sep { width: 1px; height: 20px; background: rgba(255,255,255,0.15); }
 .toolbar-title { font-size: 14px; font-weight: 500; color: #fff; }
-.toolbar-actions { display: flex; gap: 10px; }
-.btn-toolbar { padding: 7px 18px; border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; background: transparent; color: #fff; font-size: 12px; font-weight: 500; cursor: pointer; transition: all 0.2s; }
-.btn-toolbar:hover { background: rgba(255,255,255,0.1); }
 
-.container { max-width: 900px; margin: 0 auto; padding: 80px 24px 60px; }
+.container { max-width: 900px; margin: 0 auto; padding: 88px 24px 60px; }
 
-/* HEADER */
-.report-header { background: #fff; border-radius: 12px; padding: 40px; margin-bottom: 20px; border: 1px solid #e8edf1; }
-.report-header .label { font-size: 11px; font-weight: 700; color: #EA580C; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 14px; }
-.report-header h1 { font-size: 26px; font-weight: 900; line-height: 1.35; letter-spacing: -0.02em; margin-bottom: 0; }
-.report-header h1 em { color: #EA580C; font-style: normal; }
-.meta-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 28px; padding-top: 24px; border-top: 1px solid #e8edf1; }
-.meta-item .mk { font-size: 11px; color: #999; letter-spacing: 0.04em; margin-bottom: 4px; }
-.meta-item .mv { font-size: 13px; font-weight: 600; }
+.hero { background: #fff; border-radius: 12px; padding: 40px; margin-bottom: 24px; border: 1px solid #e8edf1; }
+.hero .label { font-size: 11px; font-weight: 700; color: #EA580C; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 14px; }
+.hero h1 { font-size: 26px; font-weight: 900; line-height: 1.35; letter-spacing: -0.02em; margin-bottom: 14px; }
+.hero h1 em { color: #EA580C; font-style: normal; }
+.hero p { color: #636569; font-size: 14px; max-width: 640px; }
 
-/* SECTION */
 .section { background: #fff; border-radius: 12px; padding: 32px 40px; margin-bottom: 20px; border: 1px solid #e8edf1; }
+.section.is-latest { border-color: #EA580C; border-width: 2px; padding: 30px 38px; }
 
-/* PART HEADER */
-.part-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
-.part-header h3 { font-size: 16px; font-weight: 700; }
-.part-price { font-size: 18px; font-weight: 900; color: #EA580C; }
+.section-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 22px; padding-bottom: 16px; border-bottom: 1px solid #f0f2f5; }
+.section-head h2 { font-size: 18px; font-weight: 800; letter-spacing: -0.01em; }
+.section-head .badge { font-size: 10px; font-weight: 700; color: #fff; background: #EA580C; padding: 3px 10px; border-radius: 999px; letter-spacing: 0.08em; }
+.section-head .meta { font-size: 12px; color: #999; }
 
-/* TABLE */
-table { width: 100%; border-collapse: collapse; font-size: 13px; }
-th { background: #f8fafb; padding: 10px 16px; font-weight: 600; border-bottom: 2px solid #e8edf1; color: #999; font-size: 11px; text-align: left; white-space: nowrap; }
-th:last-child { text-align: right; }
-td { padding: 12px 16px; border-bottom: 1px solid #f0f2f5; vertical-align: middle; }
-td.item { font-weight: 600; color: #1a1b18; white-space: nowrap; width: 200px; }
-td.desc { color: #636569; font-size: 12px; }
-td.amount { text-align: right; font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; width: 120px; }
-tr:hover td { background: #fafbfc; }
-tr.subtotal-row td { background: #f8fafb; font-weight: 700; border-top: 1px solid #e8edf1; }
+.card-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+@media (max-width: 720px) { .card-grid { grid-template-columns: 1fr; } .container { padding: 80px 16px 40px; } .section { padding: 24px 22px; } .hero { padding: 28px 22px; } }
 
-/* KPI GRID */
-.kpi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-.kpi-card { background: #f8fafb; border-radius: 10px; padding: 24px 20px; text-align: center; border: 1px solid #e8edf1; }
-.kpi-card .kc-label { font-size: 11px; color: #999; font-weight: 500; letter-spacing: 0.05em; margin-bottom: 8px; }
-.kpi-card .kc-value { font-size: 28px; font-weight: 900; color: #1a1b18; letter-spacing: -0.02em; }
-.kpi-card .kc-unit { font-size: 14px; font-weight: 500; color: #999; }
-.kpi-card .kc-desc { font-size: 11px; color: #999; margin-top: 6px; }
-.kpi-card.dark { background: #0D0D0D; border-color: #0D0D0D; }
-.kpi-card.dark .kc-label { color: #EA580C; }
-.kpi-card.dark .kc-value { color: #fff; }
-.kpi-card.dark .kc-value em { color: #EA580C; font-style: normal; }
-.kpi-card.dark .kc-desc { color: rgba(255,255,255,0.4); }
+.card { display: block; padding: 20px 22px; background: #f8fafb; border: 1px solid #e8edf1; border-radius: 10px; transition: all 0.18s; }
+.card:hover { background: #fff; border-color: #EA580C; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(234,88,12,0.08); }
+.card .ck { font-size: 10px; font-weight: 700; color: #EA580C; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 6px; }
+.card .ct { font-size: 15px; font-weight: 700; color: #1a1b18; margin-bottom: 4px; }
+.card .cd { font-size: 12px; color: #636569; line-height: 1.55; }
 
-/* TOTAL BOX */
-.total-box { background: #0D0D0D; border-radius: 12px; padding: 32px 40px; margin-bottom: 20px; display: flex; align-items: center; justify-content: space-between; }
-.total-box .tl { font-size: 15px; font-weight: 600; color: #fff; }
-.total-box .ts { font-size: 12px; color: rgba(255,255,255,0.3); margin-top: 4px; }
-.total-box .ta { font-size: 40px; font-weight: 900; color: #fff; letter-spacing: -0.03em; }
-.total-box .ta span { font-size: 16px; font-weight: 600; }
-
-/* INFO BOX */
-.info-box { background: #FFF7ED; border-left: 4px solid #EA580C; border-radius: 0 8px 8px 0; padding: 14px 20px; margin-top: 16px; font-size: 12px; color: #636569; line-height: 1.8; }
-.info-box strong { color: #1a1b18; }
-
-/* BADGE */
-.badge { display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 20px; background: #FFF7ED; color: #EA580C; margin-left: 8px; vertical-align: middle; }
-
-/* NOTES */
-.note-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
-.note-item { font-size: 12px; color: #636569; line-height: 1.8; padding: 18px 22px; background: #f8fafb; border-radius: 10px; border: 1px solid #e8edf1; }
-.note-item strong { color: #1a1b18; display: block; margin-bottom: 4px; font-size: 13px; }
-.section h2 { font-size: 18px; font-weight: 800; margin-bottom: 16px; }
-
-/* FOOTER */
-.footer { text-align: center; padding: 40px 0; color: #999; font-size: 12px; line-height: 2; }
-.footer .brand { font-size: 15px; font-weight: 800; color: #1a1b18; margin-bottom: 4px; }
-
-@media (max-width: 768px) {
-  .container { padding: 70px 16px 40px; }
-  .meta-grid { grid-template-columns: repeat(2, 1fr); }
-  .kpi-grid { grid-template-columns: 1fr; }
-  .note-grid { grid-template-columns: 1fr; }
-  .section { padding: 24px 20px; }
-  .total-box { flex-direction: column; text-align: center; gap: 16px; }
-  td.item { white-space: normal; width: auto; }
-}
-@media print {
-  .toolbar { display: none; }
-  .container { padding: 20px; }
-  body { background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-}
+.footer { text-align: center; color: #999; font-size: 12px; padding: 32px 0 0; }
+.footer strong { color: #1a1b18; }
 </style>
 </head>
 <body>
@@ -107,199 +52,105 @@ tr.subtotal-row td { background: #f8fafb; font-weight: 700; border-top: 1px soli
   <div class="toolbar-left">
     <div class="toolbar-logo">BRANDRISE</div>
     <div class="toolbar-sep"></div>
-    <div class="toolbar-title">미례국밥 4월 운영 견적서</div>
-  </div>
-  <div class="toolbar-actions">
-    <button class="btn-toolbar" onclick="window.print()">PDF 저장</button>
+    <div class="toolbar-title">미례국밥 운영 허브</div>
   </div>
 </div>
 
 <div class="container">
 
-  <!-- HEADER -->
-  <div class="report-header">
-    <div class="label">미례국밥 x 브랜드라이즈</div>
-    <h1 style="font-size:36px;">4월 운영 견적서</h1>
-    <div class="meta-grid">
-      <div class="meta-item">
-        <div class="mk">공급자</div>
-        <div class="mv">브랜드라이즈 by HIZ</div>
-      </div>
-      <div class="meta-item">
-        <div class="mk">수신</div>
-        <div class="mv">(주)위드런 · 미례국밥</div>
-      </div>
-      <div class="meta-item">
-        <div class="mk">기준일</div>
-        <div class="mv">2026. 04. 10</div>
-      </div>
-      <div class="meta-item">
-        <div class="mk">유효기간</div>
-        <div class="mv">발행일로부터 30일</div>
-      </div>
+  <div class="hero">
+    <div class="label">CLIENT HUB · 2026</div>
+    <h1>미례국밥 × <em>브랜드라이즈</em><br>운영 산출물 허브</h1>
+    <p>월별 견적서·종합 보고서·운영 플랜과 강남점 오픈 자료를 한 자리에서 확인하실 수 있습니다. 이번 달 자료가 가장 위에 노출되며, 이전 달 자료는 아카이브로 유지됩니다.</p>
+  </div>
+
+  <!-- 5월 -->
+  <div class="section is-latest">
+    <div class="section-head">
+      <h2>2026년 5월 · 운영</h2>
+      <span class="badge">현재 진행</span>
+    </div>
+    <div class="card-grid">
+      <a class="card" href="may/">
+        <div class="ck">QUOTE</div>
+        <div class="ct">5월 운영 견적서</div>
+        <div class="cd">Scale-up 단계 운영 견적. 강남점 사전 노출 시딩 5~7명, UTM 추적 도입.</div>
+      </a>
+      <a class="card" href="may/plan.html">
+        <div class="ck">PLAN</div>
+        <div class="ct">5월 운영 플랜</div>
+        <div class="cd">월간 작업 일정·콘텐츠 라인업·KPI 목표.</div>
+      </a>
     </div>
   </div>
 
-  <!-- TOTAL -->
-  <div class="total-box">
-    <div>
-      <div class="tl">4월 합계</div>
-      <div class="ts">VAT 별도</div>
-    </div>
-    <div class="ta">6,000,000<span>원</span></div>
-  </div>
-
-  <!-- OVERVIEW -->
+  <!-- 강남점 오픈 -->
   <div class="section">
-    <div class="kpi-grid">
-      <div class="kpi-card">
-        <div class="kc-label">Part 1</div>
-        <div class="kc-value">300<span class="kc-unit">만원</span></div>
-        <div class="kc-desc">채널 전략 & 운영</div>
-      </div>
-      <div class="kpi-card">
-        <div class="kc-label">Part 2</div>
-        <div class="kc-value">200<span class="kc-unit">만원</span></div>
-        <div class="kc-desc">체험단 & 씨딩 & 광고</div>
-      </div>
-      <div class="kpi-card dark">
-        <div class="kc-label">Part 3</div>
-        <div class="kc-value"><em>100</em><span class="kc-unit" style="color:rgba(255,255,255,0.4);">만원</span></div>
-        <div class="kc-desc">부산 출장 + 촬영</div>
-      </div>
+    <div class="section-head">
+      <h2>강남점 오픈 · 90일 부스팅</h2>
+      <span class="meta">2026-05 ~ 2026-08</span>
+    </div>
+    <div class="card-grid">
+      <a class="card" href="gangnam/launch.html">
+        <div class="ck">PITCH</div>
+        <div class="ct">강남점 오픈 90일 부스팅</div>
+        <div class="cd">위드런 OOS 3,160만 균형형 제안. 인스타·메타·시딩 통합 전략.</div>
+      </a>
+      <a class="card" href="gangnam/meeting-20260520.html">
+        <div class="ck">BRIEF</div>
+        <div class="ct">5/20 강남 미팅 브리프</div>
+        <div class="cd">위드런 대표 미팅 의제·근거 자료.</div>
+      </a>
     </div>
   </div>
 
-  <!-- PART 1 -->
+  <!-- 4월 -->
   <div class="section">
-    <div class="part-header">
-      <h3>Part 1 — 채널 전략 & 운영</h3>
-      <div class="part-price">3,000,000원</div>
+    <div class="section-head">
+      <h2>2026년 4월 · 운영</h2>
+      <span class="meta">아카이브</span>
     </div>
-    <table>
-      <thead><tr><th>항목</th><th>내용</th><th>금액</th></tr></thead>
-      <tbody>
-        <tr>
-          <td class="item">인스타그램 채널 전략</td>
-          <td class="desc">톤앤매너 확정, 무드보드, 콘텐츠 가이드라인, 프로필 설계</td>
-          <td class="amount">700,000</td>
-        </tr>
-        <tr>
-          <td class="item">인스타그램 콘텐츠 운영</td>
-          <td class="desc">월간 콘텐츠 제작, 캡션 작성, 해시태그 관리, 피드 발행</td>
-          <td class="amount">1,000,000</td>
-        </tr>
-        <tr>
-          <td class="item">네이버플레이스 최적화</td>
-          <td class="desc">센텀점 + 전포점 키워드 교체, 소개문, 예약/쿠폰 세팅</td>
-          <td class="amount">600,000</td>
-        </tr>
-        <tr>
-          <td class="item">키워드 전략 + 모니터링</td>
-          <td class="desc">검색량 측정, 키워드 순위 추적, 주간 리포트</td>
-          <td class="amount">400,000</td>
-        </tr>
-        <tr>
-          <td class="item">얼큰돼지우동 바이럴 전략</td>
-          <td class="desc">바이럴 설계, 릴스 포맷 가이드, 콘텐츠 방향 수립</td>
-          <td class="amount">300,000</td>
-        </tr>
-        <tr class="subtotal-row">
-          <td class="item" colspan="2">Part 1 소계</td>
-          <td class="amount">3,000,000</td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="card-grid">
+      <a class="card" href="april/">
+        <div class="ck">QUOTE</div>
+        <div class="ct">4월 운영 견적서</div>
+        <div class="cd">초기 구축 단계 운영 견적.</div>
+      </a>
+      <a class="card" href="april/report.html">
+        <div class="ck">REPORT</div>
+        <div class="ct">4월 종합 보고서</div>
+        <div class="cd">월간 성과 분석·인사이트·개선 사항.</div>
+      </a>
+    </div>
   </div>
 
-  <!-- PART 2 -->
+  <!-- 프로젝트 기준 -->
   <div class="section">
-    <div class="part-header">
-      <h3>Part 2 — 체험단 & 씨딩 & 광고</h3>
-      <div class="part-price">2,000,000원</div>
+    <div class="section-head">
+      <h2>프로젝트 기준 자료</h2>
+      <span class="meta">상시 참조</span>
     </div>
-    <table>
-      <thead><tr><th>항목</th><th>내용</th><th>금액</th></tr></thead>
-      <tbody>
-        <tr>
-          <td class="item">블로그 체험단 운영</td>
-          <td class="desc">키워드 기반 월 10~15건, 영수증 리뷰 동시 수집</td>
-          <td class="amount">400,000</td>
-        </tr>
-        <tr>
-          <td class="item">인플루언서 씨딩</td>
-          <td class="desc">부산 로컬 5~7명 선정, 촬영 가이드, 방문 코디, 릴스 QC</td>
-          <td class="amount">700,000</td>
-        </tr>
-        <tr>
-          <td class="item">메타 광고</td>
-          <td class="desc">계정 세팅, 씨딩 릴스 기반 광고 집행 (광고비 50만 포함)</td>
-          <td class="amount">800,000</td>
-        </tr>
-        <tr>
-          <td class="item">리뷰 시스템 구축</td>
-          <td class="desc">리뷰 답변 템플릿, 별점 가이드</td>
-          <td class="amount">100,000</td>
-        </tr>
-        <tr class="subtotal-row">
-          <td class="item" colspan="2">Part 2 소계</td>
-          <td class="amount">2,000,000</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <!-- PART 3 -->
-  <div class="section">
-    <div class="part-header">
-      <h3>Part 3 — 부산 출장 + 촬영<span class="badge">NEW</span></h3>
-      <div class="part-price">1,000,000원</div>
-    </div>
-    <table>
-      <thead><tr><th>항목</th><th>내용</th><th>금액</th></tr></thead>
-      <tbody>
-        <tr>
-          <td class="item">KTX 왕복 (4명)</td>
-          <td class="desc">서울 ↔ 부산 왕복</td>
-          <td class="amount">500,000</td>
-        </tr>
-        <tr>
-          <td class="item">부산 내 이동</td>
-          <td class="desc">부산역 ↔ 센텀점 택시</td>
-          <td class="amount">50,000</td>
-        </tr>
-        <tr>
-          <td class="item">촬영 디렉팅 (반일)</td>
-          <td class="desc">주요 메뉴 촬영, 매장 내부/외관, 조리 과정, 씨즐컷</td>
-          <td class="amount">450,000</td>
-        </tr>
-        <tr class="subtotal-row">
-          <td class="item" colspan="2">Part 3 소계</td>
-          <td class="amount">1,000,000</td>
-        </tr>
-      </tbody>
-    </table>
-    <div class="info-box">
-      <strong>참고</strong> 식사는 매장 제공 · 촬영 장비 별도 렌탈 없음 · 촬영 소스는 인스타 + 광고 + 가이드에 다중 활용
+    <div class="card-grid">
+      <a class="card" href="kickoff/">
+        <div class="ck">KICKOFF</div>
+        <div class="ct">킥오프 자료</div>
+        <div class="cd">파트너십 시작 자료·운영 원칙·R&R.</div>
+      </a>
+      <a class="card" href="team-dispatch/20260520.html">
+        <div class="ck">TEAM</div>
+        <div class="ct">5/20 팀 배치</div>
+        <div class="cd">BC2팀 R&R + 미례국밥 운영 담당.</div>
+      </a>
     </div>
   </div>
 
-  <!-- FINAL TOTAL -->
-  <div class="total-box">
-    <div>
-      <div class="tl">4월 최종 합계</div>
-      <div class="ts">VAT 별도</div>
-    </div>
-    <div class="ta">6,000,000<span>원</span></div>
-  </div>
-
-  <!-- FOOTER -->
   <div class="footer">
-    <div class="brand">BRANDRISE</div>
-    본 견적서는 발행일로부터 30일간 유효합니다.<br>
-    금액은 VAT 별도이며, 실 집행 시 조정될 수 있습니다.
+    <strong>BRANDRISE</strong> · 미례국밥 운영 파트너십 · <span id="year">2026</span>
   </div>
 
 </div>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
 </body>
 </html>
