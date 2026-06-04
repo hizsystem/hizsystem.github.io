@@ -54,6 +54,10 @@ body.editing [contenteditable="true"]:focus { outline-color: #EA580C; background
 .ch-icon.c3 { background: #16a34a; }
 .ch-icon.c4 { background: linear-gradient(135deg, #f09433, #dc2743, #bc1888); }
 .ch-icon.c5 { background: #0D0D0D; }
+.ch-icon.c6 { background: #2563eb; }
+.tbl-group td { background: #f8fafb; font-weight: 700; color: #1a1b18; font-size: 12px; }
+td.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+th.num { text-align: right; }
 .ch-header h3 { font-size: 15px; font-weight: 700; }
 .ch-header .ch-badge { font-size: 11px; color: #999; font-weight: 500; }
 
@@ -327,10 +331,70 @@ td.desc { color: #636569; font-size: 12px; line-height: 1.7; }
     </div>
   </div>
 
-  <!-- 5. 6월로 이어가는 것 -->
+  <!-- 5. 메타 광고 성과 -->
   <div class="section">
     <div class="ch-header">
-      <div class="ch-icon c5">5</div>
+      <div class="ch-icon c6">5</div>
+      <div>
+        <h3>메타 광고 — 돼지우동 바이럴</h3>
+        <div class="ch-badge">5월 말 시동 · 인플루언서 + 자체제작 2캠페인 · CTR 4.40%로 효율 검증</div>
+      </div>
+    </div>
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kc-label">광고 노출</div>
+        <div class="kc-value" contenteditable="false">37,723</div>
+        <div class="kc-change up" contenteditable="false">도달 27,847</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kc-label">광고 클릭</div>
+        <div class="kc-value" contenteditable="false">1,659</div>
+        <div class="kc-change up" contenteditable="false">CPC 180원 · 효율적</div>
+      </div>
+      <div class="kpi-card dark">
+        <div class="kc-label">CTR</div>
+        <div class="kc-value" contenteditable="false"><em>4.40</em><span class="kc-unit">%</span></div>
+        <div class="kc-change" contenteditable="false">업계 평균(1.67%)의 2.6배</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kc-label">광고비 집행</div>
+        <div class="kc-value" contenteditable="false">29.9<span class="kc-unit">만</span></div>
+        <div class="kc-change" contenteditable="false">5월 시동분 · 6월 본격 확대</div>
+      </div>
+    </div>
+
+    <table style="margin-top:22px;">
+      <thead><tr><th>캠페인</th><th class="num">광고비</th><th class="num">노출</th><th class="num">도달</th><th class="num">클릭</th><th class="num">CTR</th><th class="num">CPC</th></tr></thead>
+      <tbody>
+        <tr><td>인플루언서 협업</td><td class="num">199,603</td><td class="num">22,052</td><td class="num">17,402</td><td class="num">1,004</td><td class="num">4.55%</td><td class="num">199원</td></tr>
+        <tr><td>HIZ 자체제작</td><td class="num">99,746</td><td class="num">15,671</td><td class="num">11,349</td><td class="num">655</td><td class="num">4.18%</td><td class="num">152원</td></tr>
+      </tbody>
+    </table>
+
+    <table style="margin-top:14px;">
+      <thead><tr><th>소재 (노출순)</th><th class="num">노출</th><th class="num">도달</th><th class="num">클릭</th><th class="num">CTR</th><th class="num">CPC</th></tr></thead>
+      <tbody>
+        <tr class="tbl-group"><td colspan="6">인플루언서 협업 — 4개 소재</td></tr>
+        <tr><td>소재1 (메인)</td><td class="num">19,689</td><td class="num">16,170</td><td class="num">891</td><td class="num">4.53%</td><td class="num">199원</td></tr>
+        <tr><td>소재4 · 부산경집</td><td class="num">1,687</td><td class="num">1,505</td><td class="num">91</td><td class="num">5.39%</td><td class="num">180원</td></tr>
+        <tr><td>소재3</td><td class="num">551</td><td class="num">525</td><td class="num">20</td><td class="num">3.63%</td><td class="num">231원</td></tr>
+        <tr><td>소재2 · 부산한입</td><td class="num">125</td><td class="num">116</td><td class="num">2</td><td class="num">1.60%</td><td class="num">617원</td></tr>
+        <tr class="tbl-group"><td colspan="6">HIZ 자체제작 — 3개 소재</td></tr>
+        <tr><td>술상세트 (단일)</td><td class="num">15,253</td><td class="num">11,147</td><td class="num">631</td><td class="num">4.14%</td><td class="num">152원</td></tr>
+        <tr><td>식사모습 (캐러셀)</td><td class="num">355</td><td class="num">342</td><td class="num">18</td><td class="num">5.07%</td><td class="num">171원</td></tr>
+        <tr><td>브랜드필름 (릴스)</td><td class="num">63</td><td class="num">61</td><td class="num">6</td><td class="num">9.52%</td><td class="num">97원</td></tr>
+      </tbody>
+    </table>
+
+    <div class="info-box">
+      <strong>광고로 증명된 것</strong> — 5월 말 시동한 "돼지우동 바이럴"이 <strong>CTR 4.40%(업계 평균의 2.6배)</strong>로 효율을 검증했습니다. 인플루언서 소재(4.55%)가 자체제작(4.18%)을 근소하게 앞섰고, 노출의 90%가 상위 2개 소재에 집중됐습니다. 광고비 대부분은 6월로 이월해 본격 확대하며, <strong>6월 검색 콘텐츠 투트랙이 "돼지우동" 키워드를 받으면 광고 도달이 검색 유입으로 이어집니다.</strong>
+    </div>
+  </div>
+
+  <!-- 6. 6월로 이어가는 것 -->
+  <div class="section">
+    <div class="ch-header">
+      <div class="ch-icon c5">6</div>
       <div>
         <h3>6월로 이어가는 것</h3>
         <div class="ch-badge">상세는 별도 6월 운영 계획서 참조</div>
