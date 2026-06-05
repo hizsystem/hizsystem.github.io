@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<title>미례국밥 6월 운영 견적서 — 브랜드라이즈</title>
+<title>미례국밥 6월 마케팅 견적 — 브랜드라이즈</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -15,83 +15,86 @@ body { font-family: 'Noto Sans KR', -apple-system, sans-serif; background: #f4f7
 .toolbar-logo { font-size: 13px; font-weight: 700; color: #EA580C; letter-spacing: 0.05em; }
 .toolbar-sep { width: 1px; height: 20px; background: rgba(255,255,255,0.15); }
 .toolbar-title { font-size: 14px; font-weight: 500; color: #fff; }
-.toolbar-actions { display: flex; gap: 10px; }
-.btn-toolbar { padding: 7px 18px; border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; background: transparent; color: #fff; font-size: 12px; font-weight: 500; cursor: pointer; transition: all 0.2s; }
+.btn-toolbar { padding: 7px 18px; border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; background: transparent; color: #fff; font-size: 12px; font-weight: 500; cursor: pointer; transition: all 0.2s; text-decoration: none; }
 .btn-toolbar:hover { background: rgba(255,255,255,0.1); }
 
 .container { max-width: 900px; margin: 0 auto; padding: 80px 24px 60px; }
 
-/* HEADER */
 .report-header { background: #fff; border-radius: 12px; padding: 40px; margin-bottom: 20px; border: 1px solid #e8edf1; }
 .report-header .label { font-size: 11px; font-weight: 700; color: #EA580C; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 14px; }
-.report-header h1 { font-size: 26px; font-weight: 900; line-height: 1.35; letter-spacing: -0.02em; margin-bottom: 0; }
+.report-header h1 { font-size: 36px; font-weight: 900; line-height: 1.35; letter-spacing: -0.02em; }
 .report-header h1 em { color: #EA580C; font-style: normal; }
+.report-header .sub { font-size: 14px; font-weight: 500; color: #999; margin-top: 8px; }
 .meta-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 28px; padding-top: 24px; border-top: 1px solid #e8edf1; }
 .meta-item .mk { font-size: 11px; color: #999; letter-spacing: 0.04em; margin-bottom: 4px; }
 .meta-item .mv { font-size: 13px; font-weight: 600; }
 
-/* SECTION */
 .section { background: #fff; border-radius: 12px; padding: 32px 40px; margin-bottom: 20px; border: 1px solid #e8edf1; }
+.section h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+.section .sdesc { font-size: 12.5px; color: #999; margin-bottom: 20px; }
 
-/* PART HEADER */
-.part-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
-.part-header h3 { font-size: 16px; font-weight: 700; }
-.part-price { font-size: 18px; font-weight: 900; color: #EA580C; }
+/* PRINCIPLE */
+.principle { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.principle .pcard { border-radius: 10px; padding: 20px 22px; border: 1px solid #e8edf1; }
+.principle .pcard.hq { background: #EEF2FF; border-color: #dfe4ff; }
+.principle .pcard.branch { background: #FFF7ED; border-color: #ffe6cc; }
+.principle .ptag { font-size: 11px; font-weight: 700; letter-spacing: 0.06em; margin-bottom: 8px; }
+.principle .pcard.hq .ptag { color: #4F46E5; }
+.principle .pcard.branch .ptag { color: #EA580C; }
+.principle .pdef { font-size: 13px; color: #4a4c50; line-height: 1.7; }
+.principle .pdef strong { color: #1a1b18; }
+
+/* QUOTE CARDS */
+.qcards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.qcard { display: block; text-decoration: none; color: inherit; border: 1px solid #e8edf1; border-radius: 12px; padding: 24px 22px; transition: all 0.18s; background: #fff; }
+.qcard:hover { border-color: #EA580C; box-shadow: 0 6px 20px rgba(234,88,12,0.10); transform: translateY(-2px); }
+.qcard .qscope { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; margin-bottom: 6px; }
+.qcard.hq .qscope { color: #4F46E5; }
+.qcard.branch .qscope { color: #EA580C; }
+.qcard .qname { font-size: 17px; font-weight: 800; letter-spacing: -0.01em; margin-bottom: 14px; }
+.qcard .qprice { font-size: 24px; font-weight: 900; letter-spacing: -0.02em; }
+.qcard .qprice span { font-size: 13px; font-weight: 600; color: #999; }
+.qcard .qsub { font-size: 11.5px; color: #999; margin-top: 8px; line-height: 1.6; }
+.qcard .qgo { font-size: 12px; font-weight: 700; color: #EA580C; margin-top: 16px; }
 
 /* TABLE */
 table { width: 100%; border-collapse: collapse; font-size: 13px; }
 th { background: #f8fafb; padding: 10px 16px; font-weight: 600; border-bottom: 2px solid #e8edf1; color: #999; font-size: 11px; text-align: left; white-space: nowrap; }
-th:last-child { text-align: right; }
+th.r { text-align: right; }
 td { padding: 12px 16px; border-bottom: 1px solid #f0f2f5; vertical-align: middle; }
-td.item { font-weight: 600; color: #1a1b18; white-space: nowrap; width: 220px; }
-td.desc { color: #636569; font-size: 12px; }
-td.amount { text-align: right; font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; width: 130px; }
-tr:hover td { background: #fafbfc; }
+td.item { font-weight: 600; }
+td.scope { font-size: 11px; }
+td.scope .s-hq { color: #4F46E5; font-weight: 700; }
+td.scope .s-br { color: #EA580C; font-weight: 700; }
+td.amount { text-align: right; font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
 tr.subtotal-row td { background: #f8fafb; font-weight: 700; border-top: 1px solid #e8edf1; }
+tr.grand td { background: #0D0D0D; color: #fff; font-weight: 800; }
 
-/* KPI GRID */
-.kpi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-.kpi-card { background: #f8fafb; border-radius: 10px; padding: 24px 20px; text-align: center; border: 1px solid #e8edf1; }
-.kpi-card .kc-label { font-size: 11px; color: #999; font-weight: 500; letter-spacing: 0.05em; margin-bottom: 8px; }
-.kpi-card .kc-value { font-size: 28px; font-weight: 900; color: #1a1b18; letter-spacing: -0.02em; }
-.kpi-card .kc-unit { font-size: 14px; font-weight: 500; color: #999; }
-.kpi-card .kc-desc { font-size: 11px; color: #999; margin-top: 6px; }
-.kpi-card.dark { background: #0D0D0D; border-color: #0D0D0D; }
-.kpi-card.dark .kc-label { color: #EA580C; }
-.kpi-card.dark .kc-value { color: #fff; }
-.kpi-card.dark .kc-value em { color: #EA580C; font-style: normal; }
-.kpi-card.dark .kc-desc { color: rgba(255,255,255,0.4); }
-
-/* TOTAL BOX */
-.total-box { background: #0D0D0D; border-radius: 12px; padding: 32px 40px; margin-bottom: 20px; display: flex; align-items: center; justify-content: space-between; }
+.total-box { background: #0D0D0D; border-radius: 12px; padding: 28px 40px; margin-bottom: 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
 .total-box .tl { font-size: 15px; font-weight: 600; color: #fff; }
-.total-box .ts { font-size: 12px; color: rgba(255,255,255,0.3); margin-top: 4px; }
-.total-box .ta { font-size: 40px; font-weight: 900; color: #fff; letter-spacing: -0.03em; }
-.total-box .ta span { font-size: 16px; font-weight: 600; }
+.total-box .ts { font-size: 12px; color: rgba(255,255,255,0.35); margin-top: 4px; }
+.total-box .ta { font-size: 30px; font-weight: 900; color: #fff; letter-spacing: -0.02em; }
+.total-box .ta .plus { font-size: 16px; color: rgba(255,255,255,0.4); margin: 0 8px; }
+.total-box .ta span { font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.5); }
 
-/* INFO BOX */
 .info-box { background: #FFF7ED; border-left: 4px solid #EA580C; border-radius: 0 8px 8px 0; padding: 14px 20px; margin-top: 16px; font-size: 12px; color: #636569; line-height: 1.8; }
 .info-box strong { color: #1a1b18; }
 
-/* BADGE */
-.badge { display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 20px; background: #FFF7ED; color: #EA580C; margin-left: 8px; vertical-align: middle; }
-
-/* FOOTER */
 .footer { text-align: center; padding: 40px 0; color: #999; font-size: 12px; line-height: 2; }
 .footer .brand { font-size: 15px; font-weight: 800; color: #1a1b18; margin-bottom: 4px; }
 
 @media (max-width: 768px) {
   .container { padding: 70px 16px 40px; }
   .meta-grid { grid-template-columns: repeat(2, 1fr); }
-  .kpi-grid { grid-template-columns: 1fr; }
+  .principle, .qcards { grid-template-columns: 1fr; }
   .section { padding: 24px 20px; }
-  .total-box { flex-direction: column; text-align: center; gap: 16px; }
-  td.item { white-space: normal; width: auto; }
+  .total-box { flex-direction: column; text-align: center; }
 }
 @media print {
   .toolbar { display: none; }
   .container { padding: 20px; }
   body { background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .section { break-inside: avoid; }
 }
 </style>
 </head>
@@ -101,11 +104,9 @@ tr.subtotal-row td { background: #f8fafb; font-weight: 700; border-top: 1px soli
   <div class="toolbar-left">
     <div class="toolbar-logo">BRANDRISE</div>
     <div class="toolbar-sep"></div>
-    <div class="toolbar-title">미례국밥 6월 운영 견적서</div>
+    <div class="toolbar-title">미례국밥 6월 마케팅 견적 (통합)</div>
   </div>
-  <div class="toolbar-actions">
-    <button class="btn-toolbar" onclick="window.print()">PDF 저장</button>
-  </div>
+  <button class="btn-toolbar" onclick="window.print()">PDF 저장</button>
 </div>
 
 <div class="container">
@@ -113,175 +114,84 @@ tr.subtotal-row td { background: #f8fafb; font-weight: 700; border-top: 1px soli
   <!-- HEADER -->
   <div class="report-header">
     <div class="label">미례국밥 x 브랜드라이즈</div>
-    <h1 style="font-size:36px;">6월 운영 견적서 <span style="font-size:15px; font-weight:600; color:#999; display:block; margin-top:8px;">본점·센텀·강남 3개 매장 통합 운영</span></h1>
+    <h1>6월 마케팅 견적 <span style="font-size:15px; font-weight:600; color:#999; display:block; margin-top:8px;">본사 · 부산센텀직영점 · 강남삼성타운직영점 — 비용 분리 견적</span></h1>
     <div class="meta-grid">
-      <div class="meta-item">
-        <div class="mk">공급자</div>
-        <div class="mv">브랜드라이즈 by HIZ</div>
-      </div>
-      <div class="meta-item">
-        <div class="mk">수신</div>
-        <div class="mv">(주)위드런 · 미례국밥</div>
-      </div>
-      <div class="meta-item">
-        <div class="mk">기준일</div>
-        <div class="mv">2026. 06. 02</div>
-      </div>
-      <div class="meta-item">
-        <div class="mk">유효기간</div>
-        <div class="mv">발행일로부터 30일</div>
-      </div>
+      <div class="meta-item"><div class="mk">공급자</div><div class="mv">브랜드라이즈 by HIZ</div></div>
+      <div class="meta-item"><div class="mk">수신</div><div class="mv">(주)위드런 · 미례국밥</div></div>
+      <div class="meta-item"><div class="mk">기준일</div><div class="mv">2026. 06. 05</div></div>
+      <div class="meta-item"><div class="mk">유효기간</div><div class="mv">발행일로부터 30일</div></div>
     </div>
   </div>
 
-  <!-- TOTAL -->
-  <div class="total-box">
-    <div>
-      <div class="tl">6월 합계</div>
-      <div class="ts">정규 운영 500만 + 여행객 바이럴 200만 · VAT 별도</div>
-    </div>
-    <div class="ta">7,000,000<span>원</span></div>
-  </div>
-
-  <!-- OVERVIEW -->
+  <!-- 비용 귀속 원칙 -->
   <div class="section">
-    <div class="kpi-grid" style="grid-template-columns:repeat(4,1fr);">
-      <div class="kpi-card">
-        <div class="kc-label">Part 1</div>
-        <div class="kc-value">300<span class="kc-unit">만원</span></div>
-        <div class="kc-desc">채널 전략 & 운영</div>
+    <h3>비용 귀속 원칙</h3>
+    <div class="sdesc">가맹 확장을 대비해, "브랜드 자체를 위한 마케팅"과 "지점 매출 견인 마케팅"을 분리했습니다.</div>
+    <div class="principle">
+      <div class="pcard hq">
+        <div class="ptag">본사 비용</div>
+        <div class="pdef">미례국밥 <strong>브랜드 자체</strong>를 위한 액션. 모든 직영점·향후 가맹점이 공통으로 올라타는 자산 — 브랜드 인스타, 키워드·쿼리 인사이트, 통합 보고, 본점 운영</div>
       </div>
-      <div class="kpi-card">
-        <div class="kc-label">Part 2</div>
-        <div class="kc-value">200<span class="kc-unit">만원</span></div>
-        <div class="kc-desc">체험단 & 씨딩 & 광고</div>
-      </div>
-      <div class="kpi-card">
-        <div class="kc-label">Part 3 <span style="color:#EA580C;">추가</span></div>
-        <div class="kc-value">200<span class="kc-unit">만원</span></div>
-        <div class="kc-desc">센텀 여행객 바이럴</div>
-      </div>
-      <div class="kpi-card dark">
-        <div class="kc-label">6월 합계</div>
-        <div class="kc-value"><em>700</em><span class="kc-unit" style="color:rgba(255,255,255,0.4);">만원</span></div>
-        <div class="kc-desc">VAT 별도</div>
+      <div class="pcard branch">
+        <div class="ptag">지점 비용</div>
+        <div class="pdef">각 지점 <strong>매출 견인</strong>을 위한 액션. 그 지점에 직접 귀속 — 지점 플레이스 운영, 지점 타깃 씨딩·체험단·여행객 바이럴·오픈 부스팅</div>
       </div>
     </div>
   </div>
 
-  <!-- PART 1 -->
+  <!-- 견적서 3종 -->
   <div class="section">
-    <div class="part-header">
-      <h3>Part 1 — 채널 전략 & 운영</h3>
-      <div class="part-price">3,000,000원</div>
+    <h3>견적서 3종</h3>
+    <div class="sdesc">각 견적서를 클릭하면 항목별 상세로 이동합니다.</div>
+    <div class="qcards">
+      <a class="qcard hq" href="hq.html">
+        <div class="qscope">본사 · 브랜드 자산</div>
+        <div class="qname">본사</div>
+        <div class="qprice">345<span>만원/월</span></div>
+        <div class="qsub">인스타·본점 플레이스·키워드 인사이트·보고·메타</div>
+        <div class="qgo">견적서 열기 →</div>
+      </a>
+      <a class="qcard branch" href="centum.html">
+        <div class="qscope">지점 · 부산센텀직영점</div>
+        <div class="qname">센텀점</div>
+        <div class="qprice">435<span>만원/월</span></div>
+        <div class="qsub">정규 215만 + 여행객 바이럴 220만</div>
+        <div class="qgo">견적서 열기 →</div>
+      </a>
+      <a class="qcard branch" href="gangnam.html">
+        <div class="qscope">지점 · 강남삼성타운직영점</div>
+        <div class="qname">강남점</div>
+        <div class="qprice">35<span>만원/월</span></div>
+        <div class="qsub">+ 오픈 부스팅 2,300만 (일회성)</div>
+        <div class="qgo">견적서 열기 →</div>
+      </a>
     </div>
+  </div>
+
+  <!-- 총괄표 -->
+  <div class="section">
+    <h3>총괄 요약</h3>
+    <div class="sdesc">월 정기 운영과 강남 오픈 부스팅(일회성)을 분리해 표기했습니다.</div>
     <table>
-      <thead><tr><th>항목</th><th>내용</th><th>금액</th></tr></thead>
+      <thead><tr><th>견적</th><th>구분</th><th class="r">월 정기 운영</th><th class="r">일회성</th></tr></thead>
       <tbody>
-        <tr>
-          <td class="item">인스타그램 운영 + 콘텐츠 제작</td>
-          <td class="desc">콘텐츠 9건 제작·운영(단일 이미지·캐러셀·영상), 강남점 오픈 카운트다운 시리즈 포함, 캡션 작성, 댓글·해시태그 관리, 프로필 바이오 관리 등 채널 상시 운영</td>
-          <td class="amount">1,600,000</td>
-        </tr>
-        <tr>
-          <td class="item">네이버플레이스 셋업 + 운영</td>
-          <td class="desc">강남점 셋업 및 최적화, 부산 2개 지점(본점·센텀) 상시 운영. 지속적 키워드 트래킹 기반 관리와 선점 키워드 확보로 핵심 검색 영역 내 랭킹 우위 점유</td>
-          <td class="amount">800,000</td>
-        </tr>
-        <tr>
-          <td class="item">키워드 데이터 분석 + 위클리 인사이트</td>
-          <td class="desc">검색량·키워드 순위 데이터 분석, 강남 신규 키워드 추가, 위클리 인사이트를 통한 세부 액션 조정</td>
-          <td class="amount">300,000</td>
-        </tr>
-        <tr>
-          <td class="item">6월 종합 보고서 + 7월 계획서</td>
-          <td class="desc">월말 데이터 결산, 3개 매장 통합 성과 분석, 7월 실행 계획서 발송</td>
-          <td class="amount">300,000</td>
-        </tr>
-        <tr class="subtotal-row">
-          <td class="item" colspan="2">Part 1 소계</td>
-          <td class="amount">3,000,000</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <!-- PART 2 -->
-  <div class="section">
-    <div class="part-header">
-      <h3>Part 2 — 체험단 & 씨딩 & 광고</h3>
-      <div class="part-price">2,000,000원</div>
-    </div>
-    <table>
-      <thead><tr><th>항목</th><th>내용</th><th>금액</th></tr></thead>
-      <tbody>
-        <tr>
-          <td class="item">블로그 체험단 (40명)</td>
-          <td class="desc">40명 블로그 체험단 집행(센텀점·강남점), 키워드 분배 + 영수증 리뷰 동시 수집</td>
-          <td class="amount">400,000</td>
-        </tr>
-        <tr>
-          <td class="item">인플루언서 씨딩 (3팀)</td>
-          <td class="desc">센텀점 돼지우동 콘텐츠 지속 생산 중심 3팀 운영 (유료 광고가 도달 확장을 담당)</td>
-          <td class="amount">1,000,000</td>
-        </tr>
-        <tr>
-          <td class="item">메타 광고 운영 (수수료+광고비)</td>
-          <td class="desc">타겟 오디언스 설정·캠페인 세팅·소재 운영·최적화 및 광고비 포함 — 씨딩·강남 오픈 부스팅 집행</td>
-          <td class="amount">600,000</td>
-        </tr>
-        <tr class="subtotal-row">
-          <td class="item" colspan="2">Part 2 소계</td>
-          <td class="amount">2,000,000</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <!-- PART 3 (추가 집행) -->
-  <div class="section">
-    <div class="part-header">
-      <h3>Part 3 — 센텀 여행객 바이럴 <span class="badge">6월 추가 집행</span></h3>
-      <div class="part-price">2,000,000원</div>
-    </div>
-    <table>
-      <thead><tr><th>항목</th><th>내용</th><th>금액</th></tr></thead>
-      <tbody>
-        <tr>
-          <td class="item">여행객 타깃 인플루언서 협업 (3팀)</td>
-          <td class="desc">여름 성수기 부산 여행·맛집 인플루언서 3팀 협업 — 센텀 반등을 성수기 방문으로 전환하는 도달 확보("부산 여행 국밥 코스"·"해운대·센텀 근처 한 끼"·돼지우동 시그니처)</td>
-          <td class="amount">1,700,000</td>
-        </tr>
-        <tr>
-          <td class="item">메타 광고 운영 (수수료+광고비)</td>
-          <td class="desc">여행객 타깃 캠페인 세팅·소재 운영·최적화 및 광고비 포함 — 부산 여행객 도달 확장</td>
-          <td class="amount">300,000</td>
-        </tr>
-        <tr class="subtotal-row">
-          <td class="item" colspan="2">Part 3 소계</td>
-          <td class="amount">2,000,000</td>
-        </tr>
+        <tr><td class="item">본사</td><td class="scope"><span class="s-hq">브랜드 자산</span></td><td class="amount">3,450,000</td><td class="amount">—</td></tr>
+        <tr><td class="item">부산센텀직영점</td><td class="scope"><span class="s-br">지점</span></td><td class="amount">4,350,000</td><td class="amount">—</td></tr>
+        <tr><td class="item">강남삼성타운직영점</td><td class="scope"><span class="s-br">지점</span></td><td class="amount">350,000</td><td class="amount">23,000,000</td></tr>
+        <tr class="subtotal-row"><td class="item" colspan="2">소계</td><td class="amount">8,150,000</td><td class="amount">23,000,000</td></tr>
+        <tr class="grand"><td colspan="3">6월 총액 (월 운영 815만 + 오픈 부스팅 2,300만)</td><td class="amount">31,150,000</td></tr>
       </tbody>
     </table>
     <div class="info-box">
-      <strong>왜 추가 집행인가</strong> — 5월 센텀 방문 유입이 월말 <strong>+44% 반등</strong>했습니다. 6~7월 검색 비수기에도 부산은 여름 성수기인 만큼, 여행객 타깃 인플루언서·광고로 이 반등을 매출로 굳히기 위한 한시 집행입니다.
+      <strong>기존 대비</strong> — 기존 월 운영 700만 → <strong>815만 (+115만)</strong>. 인스타 콘텐츠 강화(+40)·씨딩 3→4팀(+40)·여행객 메타(+20)·본점/강남 플레이스 신설(+25), 정규 메타 효율화(-10)의 순증입니다. 강남 오픈 부스팅 2,300만은 기존과 동일(일회성). 모든 금액 VAT 별도.
     </div>
-  </div>
-
-  <!-- FINAL TOTAL -->
-  <div class="total-box">
-    <div>
-      <div class="tl">6월 최종 합계</div>
-      <div class="ts">정규 운영 500만 + 여행객 바이럴 200만 · VAT 별도</div>
-    </div>
-    <div class="ta">7,000,000<span>원</span></div>
   </div>
 
   <!-- FOOTER -->
   <div class="footer">
     <div class="brand">BRANDRISE</div>
-    본 견적서는 발행일로부터 30일간 유효합니다.<br>
-    금액은 VAT 별도이며, 실 집행 시 조정될 수 있습니다.
+    미례국밥 6월 마케팅 견적 (통합) · 2026. 06. 05<br>
+    본 견적은 발행일로부터 30일간 유효합니다. 금액은 VAT 별도이며, 실 집행 시 조정될 수 있습니다.
   </div>
 
 </div>
