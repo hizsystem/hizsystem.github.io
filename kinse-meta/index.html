@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>다나스픽(KINSE) 메타 광고 초기 세팅 가이드</title>
+<meta name="description" content="다나스픽 메타 광고 연동 세팅 가이드 — HIZ 발신, 킨스팀 · 약 20분 소요">
+<meta property="og:title" content="다나스픽(KINSE) 메타 광고 초기 세팅 가이드">
+<meta property="og:description" content="킨스팀 · 계정 연동에 필요한 정보와 순서">
+<meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root { --accent: #2563eb; }
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif;
+  background: #f4f7f9;
+  color: #1a1b18;
+  line-height: 1.75;
+  font-size: 15px;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+}
+.container { max-width: 760px; margin: 0 auto; padding: 32px 20px 80px; }
+.header {
+  background: #fff;
+  border-radius: 14px;
+  padding: 36px 32px;
+  margin-bottom: 20px;
+  border: 1px solid #e8edf1;
+  border-top: 4px solid var(--accent);
+}
+.header .brand-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--accent);
+  letter-spacing: 0.12em;
+  margin-bottom: 14px;
+  padding: 4px 10px;
+  background: rgba(37, 99, 235, 0.08);
+  border-radius: 4px;
+}
+.header h1 {
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+.header .subtitle {
+  font-size: 14px;
+  color: #636569;
+  font-weight: 500;
+}
+.content {
+  background: #fff;
+  border-radius: 14px;
+  padding: 36px 32px;
+  border: 1px solid #e8edf1;
+}
+.content h2 {
+  font-size: 22px;
+  font-weight: 800;
+  margin: 36px 0 14px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #f0f2f5;
+  letter-spacing: -0.02em;
+}
+.content h2:first-child { margin-top: 0; }
+.content h3 {
+  font-size: 17px;
+  font-weight: 700;
+  margin: 28px 0 10px;
+  color: #1a1b18;
+}
+.content h4 {
+  font-size: 15px;
+  font-weight: 700;
+  margin: 20px 0 8px;
+}
+.content p { margin-bottom: 12px; }
+.content ul, .content ol { margin: 12px 0 16px 24px; }
+.content li { margin-bottom: 8px; }
+.content code {
+  background: #eff6ff;
+  color: #1d4ed8;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-family: 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 0.9em;
+  font-weight: 600;
+  word-break: break-all;
+}
+.content pre {
+  background: #0d0d0d;
+  color: #fff;
+  padding: 18px 22px;
+  border-radius: 10px;
+  margin: 16px 0;
+  overflow-x: auto;
+  font-family: 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 14px;
+  line-height: 1.7;
+}
+.content pre code {
+  background: transparent;
+  color: #fff;
+  padding: 0;
+  font-weight: 400;
+}
+.content blockquote {
+  border-left: 4px solid var(--accent);
+  background: #eff6ff;
+  padding: 14px 18px;
+  margin: 16px 0;
+  border-radius: 0 8px 8px 0;
+  color: #1a1b18;
+  font-size: 14px;
+}
+.content blockquote p:last-child { margin-bottom: 0; }
+.content blockquote strong { color: var(--accent); }
+.content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-size: 14px;
+  border: 1px solid #e8edf1;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.content th {
+  background: #f8fafb;
+  padding: 12px 14px;
+  font-weight: 700;
+  border-bottom: 2px solid #e8edf1;
+  text-align: left;
+  font-size: 13px;
+}
+.content td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #f0f2f5;
+  vertical-align: top;
+}
+.content tr:last-child td { border-bottom: none; }
+.content hr {
+  border: none;
+  border-top: 1px solid #e8edf1;
+  margin: 32px 0;
+}
+.content a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+.content strong { font-weight: 700; }
+.footer {
+  margin-top: 32px;
+  padding: 20px;
+  text-align: center;
+  font-size: 12px;
+  color: #999;
+}
+.footer .brand { font-weight: 700; color: var(--accent); }
+
+@media (max-width: 640px) {
+  .container { padding: 16px 12px 60px; }
+  .header { padding: 24px 20px; border-radius: 10px; }
+  .header h1 { font-size: 22px; }
+  .content { padding: 24px 18px; border-radius: 10px; }
+  .content h2 { font-size: 19px; }
+  .content h3 { font-size: 16px; }
+  .content table { font-size: 13px; }
+  .content th, .content td { padding: 10px 8px; }
+  .content pre { font-size: 12px; padding: 14px; }
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="brand-tag">다나스픽 · KINSE · HIZ</div>
+    <h1>다나스픽 메타 광고 초기 세팅 가이드</h1>
+    <div class="subtitle">킨스팀 · 계정 연동에 필요한 정보와 순서 · 약 20분 소요</div>
+  </div>
+  <div class="content">
+<h2>먼저 — 신재님 질문에 대한 답</h2>
+<p>"그들 계정을 우리(HIZ) 계정에 연동할 때 어떤 정보가 필요한가?" → 결론부터:</p>
+<blockquote>
+<p><strong>딱 하나만 주고받으면 됩니다.</strong><br>
+① HIZ가 드리는 것: <strong>HIZ 비즈니스 매니저 ID <code>244896071103516</code></strong> (아래 Step 6에서 입력)<br>
+② 킨스팀이 회신하는 것: <strong>다나스픽 비즈니스 매니저 ID · 픽셀 ID</strong> (세팅 끝나고 슬랙 한 줄)</p>
+</blockquote>
+<p>단, 그 숫자를 주고받기 <strong>전에</strong> 연동할 "자산"(페이지·인스타·픽셀)이 실제로 존재해야 합니다. 다나스픽은 지금 이게 비어있는 상태라, <strong>만드는 단계부터 순서대로</strong> 아래에 정리했습니다.</p>
+<hr>
+<h2>한 줄 요약</h2>
+<pre><code>[비즈니스 매니저 확인] → [없으면 만들기] → [KINSE 페이지 연결]
+  → [다나스픽 인스타 연결] → [픽셀 만들기] → [HIZ 파트너 추가]
+</code></pre>
+<blockquote>
+<p><strong>연동 방식 = "파트너 초대"</strong>입니다. 다나스픽 자산을 HIZ로 옮기는 게 아니라, <strong>다나스픽 비즈니스 매니저 안에 자산을 모아두고 HIZ를 파트너로 초대</strong>하는 구조예요. 이렇게 하면 계정·광고비·책임이 전부 다나스픽에 남고, HIZ는 운영 권한만 받습니다. (미례국밥·댄싱컵 등 모든 클라이언트 동일 방식)</p>
+</blockquote>
+<hr>
+<h2>계정 관련 사전 결정 2가지 (읽고 시작하세요)</h2>
+<h3>① "대표님 계정 쓰면 광고로 뜨나?" → 계정과 무관하게 모든 유료 광고는 광고로 뜹니다</h3>
+<p>유료 메타 광고는 <strong>어떤 계정을 쓰든 무조건 <code>Sponsored(광고)</code> 라벨</strong>이 붙습니다. 메타 정책 + 한국 표시광고법상 필수라 못 없앱니다. 즉 "대표님 계정을 쓰면 광고로 뜬다"가 아니라 "모든 유료 광고가 광고로 뜬다"가 정확합니다.</p>
+<p>그래서 진짜 결정할 건 <strong>"광고 하단에 어떤 이름·프로필이 광고주로 노출될까"</strong>입니다. 대표님 <strong>개인 계정</strong>을 쓰면 대표님 개인 신원이 광고에 공개로 묶이고, 클릭해도 브랜드 자산이 안 쌓입니다. → <strong>개인 계정은 쓰지 않는 걸 권장</strong>합니다. (참고: 개인 계정의 기존 게시물이 자동으로 광고가 되는 건 아니에요. 우리가 만든 광고 소재만 광고로 나갑니다.)</p>
+<h3>② 광고 노출 계정 추천: KINSE(뼈대) + 다나스픽 인스타(노출)</h3>
+<table>
+<thead><tr><th>계정</th><th>역할</th><th>비고</th></tr></thead>
+<tbody>
+<tr><td><strong>KINSE 채널</strong></td><td>비즈니스 매니저 · 광고계정 · 결제 주체 (뼈대)</td><td>팔로워 0이어도 무방 — 유료 광고 도달은 팔로워 수와 무관</td></tr>
+<tr><td><strong>@danaspick_crew</strong></td><td>인스타 광고 노출 계정 (identity)</td><td>팔로워 ~1,000 → 클릭 후 신뢰도 확보</td></tr>
+<tr><td>대표님 개인 계정</td><td>미사용</td><td>위 ① 이유</td></tr>
+</tbody>
+</table>
+<hr>
+<h2>시작 전 준비물</h2>
+<ul>
+<li>노트북 (PC 권장)</li>
+<li>본인 페이스북 계정 로그인</li>
+<li>다나스픽/킨스 사업자등록증 (비즈니스 정보 입력 시 필요 — 옆에 두세요)</li>
+<li>@danaspick_crew 인스타 계정 로그인 정보 (Step 4에서 사용)</li>
+<li>다나스픽 사이트 관리자/개발 담당 연락처 (Step 5 픽셀·전환 API 연동에 필요)</li>
+<li>HIZ 비즈니스 매니저 ID: <strong><code>244896071103516</code></strong> ← Step 6에서 입력</li>
+</ul>
+<hr>
+<h2>Step 1. KINSE/다나스픽 비즈니스 매니저가 이미 있는지 확인</h2>
+<blockquote>
+<p>⚠️ <strong>꼭 <code>business.facebook.com</code>으로 들어가셔야 해요.</strong> 평소 쓰시는 <code>facebook.com</code>(일반 페이스북)이 아닙니다. 일반 페이스북의 "광고 센터" 메뉴로는 이 가이드 화면이 안 나와요.</p>
+</blockquote>
+<ol>
+<li>새 탭에서 주소창에 <code>business.facebook.com</code> 직접 입력 (또는 <a href="https://business.facebook.com" target="_blank">여기 클릭해서 새 탭으로 열기</a>)</li>
+<li>좌상단 비즈니스 셀렉터 클릭</li>
+<li>목록에 <strong>KINSE 또는 다나스픽 관련 비즈니스 매니저</strong>가 있는지 확인</li>
+</ol>
+<blockquote>
+<p>💡 페이스북 페이지나 인스타 비즈니스 계정을 만든 적 있으면 빈 비즈니스 매니저가 자동 생성돼있는 경우가 종종 있어요. 새로 만들기 전에 꼭 확인.</p>
+</blockquote>
+<table>
+<thead><tr><th>결과</th><th>다음 단계</th></tr></thead>
+<tbody>
+<tr><td>KINSE/다나스픽 비즈니스 매니저가 보임</td><td><strong>Step 2 스킵, Step 3부터</strong> 진행. 그 비즈니스 매니저 선택</td></tr>
+<tr><td>없음</td><td><strong>Step 2부터</strong> 진행 (새로 만들기)</td></tr>
+</tbody>
+</table>
+<hr>
+<h2>Step 2. 비즈니스 매니저 신설 (없을 때만)</h2>
+<ol>
+<li>좌상단 비즈니스 셀렉터에서 <strong>[+ 비즈니스 포트폴리오 만들기]</strong> 클릭 (옛 UI에선 "비즈니스 만들기")</li>
+<li>"비즈니스 포트폴리오 만들기" 창에서 4개 항목 입력:
+<ul>
+<li><strong>비즈니스 포트폴리오 이름</strong>: <strong>"KINSE"</strong> 또는 <strong>"다나스픽"</strong> (정식 법인명 권장)</li>
+<li><strong>이름 / 성</strong>: 담당자 본인 이름·성</li>
+<li><strong>비즈니스 이메일 주소</strong>: 본인 업무 이메일</li>
+</ul>
+</li>
+<li><strong>[만들기]</strong> 클릭</li>
+</ol>
+<blockquote>
+<p>💡 <strong>이름·성·이메일은 회사 정보가 아니라 담당자 본인 연락처</strong>예요. 메타가 비즈니스 운영자(대리인) 등록에 쓰는 정보라 본인 이름이 정상입니다. 사업자등록 정보는 이 단계에서 안 받아요 — 만든 뒤 비즈니스 정보 메뉴에서 별도 입력하며, 광고계정 신설 때 HIZ가 같이 안내합니다.</p>
+</blockquote>
+<p>생성 직후 좌상단 셀렉터에 <strong>비즈니스 매니저 ID 숫자</strong>가 보입니다. <strong>그 숫자를 슬랙으로 HIZ에 알려주세요.</strong></p>
+<hr>
+<h2>Step 3. KINSE 페이스북 페이지를 비즈니스 매니저에 연결</h2>
+<ol>
+<li>비즈니스 매니저 선택 → <strong>좌측 사이드바 맨 아래 톱니바퀴 ⚙️</strong> → "설정" 진입</li>
+<li>좌측 메뉴 <strong>계정</strong> 펼치기(▼) → <strong>페이지</strong> 클릭</li>
+<li>우상단 파란 <strong>[추가 ▼]</strong> → <strong>"페이지 추가"</strong> 선택</li>
+<li>KINSE 공식 페이스북 페이지 검색 → 선택 → <strong>[페이지 추가]</strong></li>
+</ol>
+<blockquote>
+<p>💡 페이지가 없거나 검색 안 되면: 본인이 페이지 관리자가 아닐 수 있어요. 페이지가 아예 없다면 먼저 <code>facebook.com</code>에서 KINSE 페이지를 만든 뒤 이 단계로 돌아오세요. (막히면 슬랙으로 — HIZ가 안내)</p>
+</blockquote>
+<hr>
+<h2>Step 4. 다나스픽 인스타(@danaspick_crew) 비즈니스 전환 + 연결</h2>
+<h3>4-1. 인스타 계정을 비즈니스 계정으로 전환 (개인 계정이라면)</h3>
+<blockquote>
+<p>💡 <strong>왜 하느냐</strong>: 메타 광고는 비즈니스/프로페셔널 계정만 게재 가능합니다. 개인 계정으론 광고 못 돌려요.</p>
+</blockquote>
+<p>휴대폰 인스타그램 앱에서:</p>
+<ol>
+<li>@danaspick_crew 계정 로그인</li>
+<li>프로필 → 우상단 ☰ → <strong>설정 및 개인정보</strong></li>
+<li><strong>계정 → 프로페셔널 계정으로 전환</strong></li>
+<li>카테고리: 사업 성격에 맞게 선택 (예: "쇼핑·리테일" 또는 "상품·서비스")</li>
+<li><strong>비즈니스</strong> 선택 (크리에이터 X)</li>
+<li>페이스북 페이지 연결: KINSE 공식 페이지 선택</li>
+</ol>
+<p>이미 비즈니스 계정이라면 4-2로.</p>
+<h3>4-2. 비즈니스 매니저에 인스타 계정 추가</h3>
+<p>PC에서 설정 화면(좌측 ⚙️)으로 돌아와서:</p>
+<ol>
+<li>좌측 메뉴 <strong>계정 → Instagram 계정</strong> 클릭</li>
+<li>우상단 파란 <strong>[추가 ▼]</strong></li>
+<li>@danaspick_crew 계정으로 로그인 (팝업)</li>
+<li>페이스북 페이지에 연결할지 물으면 <strong>연결</strong></li>
+</ol>
+<hr>
+<h2>Step 5. 픽셀 만들기 (+ 전환 API 사전 안내)</h2>
+<blockquote>
+<p>💡 <strong>왜 하느냐</strong>: 픽셀은 광고를 보고 다나스픽 사이트에 들어온 손님이 무엇을 보고 구매까지 했는지 추적하는 코드입니다. <strong>카탈로그 광고·ROAS 최적화·전환 가치 최적화의 필수 기반</strong>이에요. 다나스픽은 자체 사이트(회원 24,800명)가 있으므로 픽셀이 실제로 작동합니다 — 미루지 말고 이번에 꼭 만드세요.</p>
+</blockquote>
+<ol>
+<li>설정 화면 좌측 <strong>데이터 소스</strong> 펼치기(▼) → <strong>데이터세트</strong> (또는 "픽셀") 클릭</li>
+<li>우상단 파란 <strong>[추가 ▼]</strong> 또는 <strong>[새 데이터세트 만들기]</strong></li>
+<li>이름: <strong>"다나스픽 픽셀"</strong></li>
+<li>웹사이트 URL: 다나스픽 공식 사이트 주소 입력</li>
+<li><strong>[만들기]</strong></li>
+</ol>
+<p>생성 후 <strong>픽셀 ID(15자리 숫자)</strong>와 픽셀 코드(JavaScript 박스)가 표시됩니다.</p>
+<blockquote>
+<p>📌 <strong>여기서 멈추세요.</strong> 코드를 사이트에 직접 심는 건 개발 작업입니다. 다음 두 가지만:</p>
+<ol>
+<li><strong>픽셀 ID 숫자</strong>를 슬랙으로 HIZ에 알려주세요</li>
+<li><strong>픽셀 코드</strong> 전체를 복사해 슬랙에 붙여주세요</li>
+</ol>
+<p>HIZ가 받아서 다나스픽 사이트 개발 담당에게 설치 방법을 전달합니다.</p>
+</blockquote>
+<blockquote>
+<p><strong>전환 API(CAPI) 연동은 HIZ가 후속으로 처리합니다.</strong> 킨스팀 문서에 적어주신 "전환 API + 픽셀 연동"이 바로 이 부분이에요. 픽셀만 위처럼 만들어 <strong>Step 6에서 HIZ에 파트너로 공유</strong>해주시면, 서버 이벤트(CAPI) 세팅은 HIZ가 다나스픽 개발 담당과 함께 진행합니다. 킨스팀은 <strong>사이트 개발 담당 연결</strong>만 해주시면 됩니다.</p>
+</blockquote>
+<hr>
+<h2>Step 6. HIZ를 파트너로 추가 (가장 중요 — 이게 "연동")</h2>
+<ol>
+<li>설정 화면 좌측 <strong>사용자</strong> 펼치기(▼) → <strong>파트너</strong> 클릭</li>
+<li>우상단 파란 <strong>[추가 ▼]</strong> → <strong>"파트너 비즈니스에 자산 관리 권한 부여"</strong> 선택</li>
+<li>HIZ 비즈니스 매니저 ID 입력: <code>244896071103516</code></li>
+<li>자산 권한 체크 (있는 자산만):</li>
+</ol>
+<table>
+<thead><tr><th>탭</th><th>선택</th><th>권한</th></tr></thead>
+<tbody>
+<tr><td>광고 계정</td><td>(이 시점엔 비어있음)</td><td>스킵 — HIZ가 신설</td></tr>
+<tr><td>페이지</td><td>KINSE 공식 페이지</td><td>콘텐츠/광고 관리</td></tr>
+<tr><td>Instagram 계정</td><td>@danaspick_crew</td><td>콘텐츠/광고 관리</td></tr>
+<tr><td>픽셀 (데이터세트)</td><td>다나스픽 픽셀</td><td>광고 관리 / 이벤트 관리</td></tr>
+</tbody>
+</table>
+<blockquote>
+<p>💡 광고 계정은 아직 안 만들었어요. HIZ가 다나스픽 비즈니스 매니저 안에 신설합니다. 일단 페이지·인스타·픽셀 3종만 공유하면 됩니다.</p>
+</blockquote>
+<ol start="5"><li><strong>[공유]</strong></li></ol>
+<hr>
+<h2>끝나면 — HIZ에 한 줄만</h2>
+<p>슬랙으로:</p>
+<blockquote>
+<p>"다나스픽 세팅 끝났습니다.<br>
+비즈니스 매니저 ID: [숫자]<br>
+픽셀 ID: [숫자]<br>
+(픽셀 코드는 별도 메시지로 첨부)<br>
+사이트 개발 담당: [이름/연락처]"</p>
+</blockquote>
+<p>이 한 줄로 HIZ가 광고계정 신설 → 전환 API 연동 → 첫 캠페인까지 진행합니다.</p>
+<hr>
+<h2>같이 준비해두시면 좋은 것 (연동과 별개, 캠페인용)</h2>
+<blockquote>
+<p>⚠️ <strong>회원 24,800명 리스트(맞춤 타겟)는 개인정보 사전 점검이 먼저입니다.</strong> 회원 연락처를 메타 광고 타겟으로 올리려면 <strong>광고성 정보 수신 동의 + 제3자 처리위탁 근거</strong>가 확보된 회원만 가능해요. 엑셀 회신 전에 "동의 받은 회원 범위"를 킨스팀 내부에서 먼저 확인해주세요. (근거 없는 전체 업로드는 개인정보보호법 리스크)</p>
+</blockquote>
+<hr>
+<h2>막힐 때 분기</h2>
+<table>
+<thead><tr><th>상황</th><th>어떻게</th></tr></thead>
+<tbody>
+<tr><td>메뉴 위치를 못 찾겠다</td><td>화면 스크린샷 슬랙으로</td></tr>
+<tr><td>신설 시 "이미 비즈니스가 있다" 알림</td><td>좋은 신호 — 기존 비즈니스 매니저 있음. Step 1로 돌아가 선택 후 진행</td></tr>
+<tr><td>KINSE 페이지가 검색 안 됨</td><td>본인이 페이지 관리자가 아닐 수 있음. 관리자 확인 (없으면 페이지부터 생성)</td></tr>
+<tr><td>인스타 비즈니스 전환 시 페이지 연결 안 됨</td><td>인스타와 페이스북 페이지가 같은 사람으로 로그인됐는지 확인</td></tr>
+<tr><td>픽셀 만들 때 "도메인 인증 필요" 알림</td><td>일단 무시하고 진행 (HIZ가 추후 처리)</td></tr>
+<tr><td>사업자등록번호가 거부됨</td><td>정확한 번호로 재시도. 그래도 안 되면 슬랙으로</td></tr>
+</tbody>
+</table>
+<hr>
+<h2>끝난 후 HIZ가 하는 일 (참고)</h2>
+<ol>
+<li>파트너 공유 요청 수락</li>
+<li>다나스픽 비즈니스 매니저 안에 광고계정 신설 (결제수단은 킨스팀 카드로 별도 등록 안내)</li>
+<li>픽셀 코드 설치 방법 전달 + <strong>전환 API(CAPI) 서버 연동</strong> (개발 담당과 협업)</li>
+<li>7월 캠페인 구조(카탈로그·ROAS·가치 최적화) 예산안 제안 → 운영 시작</li>
+</ol>
+<p><strong>킨스팀이 추가로 하실 일</strong>: 광고계정 결제수단(카드) 등록은 킨스팀 본인이 입력해야 합니다 (HIZ가 카드 정보 받으면 안 됨 — 책임·보안 분리). 광고계정 신설 후 HIZ가 등록 가이드를 별도로 보냅니다.</p>
+<hr>
+<p><strong>문의</strong>: HIZ 우성민 (슬랙·카톡 어디로든, 막히면 즉시)</p>
+  </div>
+  <div class="footer">
+    HIZ × <span class="brand">다나스픽 · KINSE</span> · 2026-07-02
+  </div>
+</div>
+</body>
+</html>
