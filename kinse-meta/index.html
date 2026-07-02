@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>다나스픽(KINSE) 메타 광고 초기 세팅 가이드</title>
-<meta name="description" content="다나스픽 메타 광고 연동 세팅 가이드 — HIZ 발신, 킨스팀 · 약 20분 소요">
-<meta property="og:title" content="다나스픽(KINSE) 메타 광고 초기 세팅 가이드">
+<title>데이나스픽(KINSE) 메타 광고 초기 세팅 가이드</title>
+<meta name="description" content="데이나스픽 메타 광고 연동 세팅 가이드 — HIZ 발신, 킨스팀 · 약 20분 소요">
+<meta property="og:title" content="데이나스픽(KINSE) 메타 광고 초기 세팅 가이드">
 <meta property="og:description" content="킨스팀 · 계정 연동에 필요한 정보와 순서">
 <meta name="robots" content="noindex">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -179,8 +179,8 @@ body {
 <body>
 <div class="container">
   <div class="header">
-    <div class="brand-tag">다나스픽 · KINSE · HIZ</div>
-    <h1>다나스픽 메타 광고 초기 세팅 가이드</h1>
+    <div class="brand-tag">데이나스픽 · KINSE · HIZ</div>
+    <h1>데이나스픽 메타 광고 초기 세팅 가이드</h1>
     <div class="subtitle">킨스팀 · 계정 연동에 필요한 정보와 순서 · 약 20분 소요</div>
   </div>
   <div class="content">
@@ -189,23 +189,23 @@ body {
 <blockquote>
 <p><strong>딱 하나만 주고받으면 됩니다.</strong><br>
 ① HIZ가 드리는 것: <strong>HIZ 비즈니스 매니저 ID <code>244896071103516</code></strong> (아래 Step 6에서 입력)<br>
-② 킨스팀이 회신하는 것: <strong>다나스픽 비즈니스 매니저 ID · 픽셀 ID</strong> (세팅 끝나고 슬랙 한 줄)</p>
+② 킨스팀이 회신하는 것: <strong>데이나스픽 비즈니스 매니저 ID · 픽셀 ID</strong> (세팅 끝나고 슬랙 한 줄)</p>
 </blockquote>
-<p>단, 그 숫자를 주고받기 <strong>전에</strong> 연동할 "자산"(페이지·인스타·픽셀)이 실제로 존재해야 합니다. 다나스픽은 지금 이게 비어있는 상태라, <strong>만드는 단계부터 순서대로</strong> 아래에 정리했습니다.</p>
+<p>단, 그 숫자를 주고받기 <strong>전에</strong> 연동할 "자산"(페이지·인스타·픽셀)이 실제로 존재해야 합니다. 데이나스픽은 지금 이게 비어있는 상태라, <strong>만드는 단계부터 순서대로</strong> 아래에 정리했습니다.</p>
 <hr>
 <h2>한 줄 요약</h2>
 <pre><code>[비즈니스 매니저 확인] → [없으면 만들기] → [KINSE 페이지 연결]
-  → [다나스픽 인스타 연결] → [픽셀 만들기] → [HIZ 파트너 추가]
+  → [데이나스픽 인스타 연결] → [픽셀 만들기] → [HIZ 파트너 추가]
 </code></pre>
 <blockquote>
-<p><strong>연동 방식 = "파트너 초대"</strong>입니다. 다나스픽 자산을 HIZ로 옮기는 게 아니라, <strong>다나스픽 비즈니스 매니저 안에 자산을 모아두고 HIZ를 파트너로 초대</strong>하는 구조예요. 이렇게 하면 계정·광고비·책임이 전부 다나스픽에 남고, HIZ는 운영 권한만 받습니다. (미례국밥·댄싱컵 등 모든 클라이언트 동일 방식)</p>
+<p><strong>연동 방식 = "파트너 초대"</strong>입니다. 데이나스픽 자산을 HIZ로 옮기는 게 아니라, <strong>데이나스픽 비즈니스 매니저 안에 자산을 모아두고 HIZ를 파트너로 초대</strong>하는 구조예요. 이렇게 하면 계정·광고비·책임이 전부 데이나스픽에 남고, HIZ는 운영 권한만 받습니다. (미례국밥·댄싱컵 등 모든 클라이언트 동일 방식)</p>
 </blockquote>
 <hr>
 <h2>계정 관련 사전 결정 2가지 (읽고 시작하세요)</h2>
 <h3>① "대표님 계정 쓰면 광고로 뜨나?" → 계정과 무관하게 모든 유료 광고는 광고로 뜹니다</h3>
 <p>유료 메타 광고는 <strong>어떤 계정을 쓰든 무조건 <code>Sponsored(광고)</code> 라벨</strong>이 붙습니다. 메타 정책 + 한국 표시광고법상 필수라 못 없앱니다. 즉 "대표님 계정을 쓰면 광고로 뜬다"가 아니라 "모든 유료 광고가 광고로 뜬다"가 정확합니다.</p>
 <p>그래서 진짜 결정할 건 <strong>"광고 하단에 어떤 이름·프로필이 광고주로 노출될까"</strong>입니다. 대표님 <strong>개인 계정</strong>을 쓰면 대표님 개인 신원이 광고에 공개로 묶이고, 클릭해도 브랜드 자산이 안 쌓입니다. → <strong>개인 계정은 쓰지 않는 걸 권장</strong>합니다. (참고: 개인 계정의 기존 게시물이 자동으로 광고가 되는 건 아니에요. 우리가 만든 광고 소재만 광고로 나갑니다.)</p>
-<h3>② 광고 노출 계정 추천: KINSE(뼈대) + 다나스픽 인스타(노출)</h3>
+<h3>② 광고 노출 계정 추천: KINSE(뼈대) + 데이나스픽 인스타(노출)</h3>
 <table>
 <thead><tr><th>계정</th><th>역할</th><th>비고</th></tr></thead>
 <tbody>
@@ -219,20 +219,20 @@ body {
 <ul>
 <li>노트북 (PC 권장)</li>
 <li>본인 페이스북 계정 로그인</li>
-<li>다나스픽/킨스 사업자등록증 (비즈니스 정보 입력 시 필요 — 옆에 두세요)</li>
+<li>데이나스픽/킨스 사업자등록증 (비즈니스 정보 입력 시 필요 — 옆에 두세요)</li>
 <li>@danaspick_crew 인스타 계정 로그인 정보 (Step 4에서 사용)</li>
-<li>다나스픽 사이트 관리자/개발 담당 연락처 (Step 5 픽셀·전환 API 연동에 필요)</li>
+<li>데이나스픽 사이트 관리자/개발 담당 연락처 (Step 5 픽셀·전환 API 연동에 필요)</li>
 <li>HIZ 비즈니스 매니저 ID: <strong><code>244896071103516</code></strong> ← Step 6에서 입력</li>
 </ul>
 <hr>
-<h2>Step 1. KINSE/다나스픽 비즈니스 매니저가 이미 있는지 확인</h2>
+<h2>Step 1. KINSE/데이나스픽 비즈니스 매니저가 이미 있는지 확인</h2>
 <blockquote>
 <p>⚠️ <strong>꼭 <code>business.facebook.com</code>으로 들어가셔야 해요.</strong> 평소 쓰시는 <code>facebook.com</code>(일반 페이스북)이 아닙니다. 일반 페이스북의 "광고 센터" 메뉴로는 이 가이드 화면이 안 나와요.</p>
 </blockquote>
 <ol>
 <li>새 탭에서 주소창에 <code>business.facebook.com</code> 직접 입력 (또는 <a href="https://business.facebook.com" target="_blank">여기 클릭해서 새 탭으로 열기</a>)</li>
 <li>좌상단 비즈니스 셀렉터 클릭</li>
-<li>목록에 <strong>KINSE 또는 다나스픽 관련 비즈니스 매니저</strong>가 있는지 확인</li>
+<li>목록에 <strong>KINSE 또는 데이나스픽 관련 비즈니스 매니저</strong>가 있는지 확인</li>
 </ol>
 <blockquote>
 <p>💡 페이스북 페이지나 인스타 비즈니스 계정을 만든 적 있으면 빈 비즈니스 매니저가 자동 생성돼있는 경우가 종종 있어요. 새로 만들기 전에 꼭 확인.</p>
@@ -240,7 +240,7 @@ body {
 <table>
 <thead><tr><th>결과</th><th>다음 단계</th></tr></thead>
 <tbody>
-<tr><td>KINSE/다나스픽 비즈니스 매니저가 보임</td><td><strong>Step 2 스킵, Step 3부터</strong> 진행. 그 비즈니스 매니저 선택</td></tr>
+<tr><td>KINSE/데이나스픽 비즈니스 매니저가 보임</td><td><strong>Step 2 스킵, Step 3부터</strong> 진행. 그 비즈니스 매니저 선택</td></tr>
 <tr><td>없음</td><td><strong>Step 2부터</strong> 진행 (새로 만들기)</td></tr>
 </tbody>
 </table>
@@ -250,7 +250,7 @@ body {
 <li>좌상단 비즈니스 셀렉터에서 <strong>[+ 비즈니스 포트폴리오 만들기]</strong> 클릭 (옛 UI에선 "비즈니스 만들기")</li>
 <li>"비즈니스 포트폴리오 만들기" 창에서 4개 항목 입력:
 <ul>
-<li><strong>비즈니스 포트폴리오 이름</strong>: <strong>"KINSE"</strong> 또는 <strong>"다나스픽"</strong> (정식 법인명 권장)</li>
+<li><strong>비즈니스 포트폴리오 이름</strong>: <strong>"KINSE"</strong> 또는 <strong>"데이나스픽"</strong> (정식 법인명 권장)</li>
 <li><strong>이름 / 성</strong>: 담당자 본인 이름·성</li>
 <li><strong>비즈니스 이메일 주소</strong>: 본인 업무 이메일</li>
 </ul>
@@ -273,7 +273,7 @@ body {
 <p>💡 페이지가 없거나 검색 안 되면: 본인이 페이지 관리자가 아닐 수 있어요. 페이지가 아예 없다면 먼저 <code>facebook.com</code>에서 KINSE 페이지를 만든 뒤 이 단계로 돌아오세요. (막히면 슬랙으로 — HIZ가 안내)</p>
 </blockquote>
 <hr>
-<h2>Step 4. 다나스픽 인스타(@danaspick_crew) 비즈니스 전환 + 연결</h2>
+<h2>Step 4. 데이나스픽 인스타(@danaspick_crew) 비즈니스 전환 + 연결</h2>
 <h3>4-1. 인스타 계정을 비즈니스 계정으로 전환 (개인 계정이라면)</h3>
 <blockquote>
 <p>💡 <strong>왜 하느냐</strong>: 메타 광고는 비즈니스/프로페셔널 계정만 게재 가능합니다. 개인 계정으론 광고 못 돌려요.</p>
@@ -299,13 +299,13 @@ body {
 <hr>
 <h2>Step 5. 픽셀 만들기 (+ 전환 API 사전 안내)</h2>
 <blockquote>
-<p>💡 <strong>왜 하느냐</strong>: 픽셀은 광고를 보고 다나스픽 사이트에 들어온 손님이 무엇을 보고 구매까지 했는지 추적하는 코드입니다. <strong>카탈로그 광고·ROAS 최적화·전환 가치 최적화의 필수 기반</strong>이에요. 다나스픽은 자체 사이트(회원 24,800명)가 있으므로 픽셀이 실제로 작동합니다 — 미루지 말고 이번에 꼭 만드세요.</p>
+<p>💡 <strong>왜 하느냐</strong>: 픽셀은 광고를 보고 데이나스픽 사이트에 들어온 손님이 무엇을 보고 구매까지 했는지 추적하는 코드입니다. <strong>카탈로그 광고·ROAS 최적화·전환 가치 최적화의 필수 기반</strong>이에요. 데이나스픽은 자체 사이트(회원 24,800명)가 있으므로 픽셀이 실제로 작동합니다 — 미루지 말고 이번에 꼭 만드세요.</p>
 </blockquote>
 <ol>
 <li>설정 화면 좌측 <strong>데이터 소스</strong> 펼치기(▼) → <strong>데이터세트</strong> (또는 "픽셀") 클릭</li>
 <li>우상단 파란 <strong>[추가 ▼]</strong> 또는 <strong>[새 데이터세트 만들기]</strong></li>
-<li>이름: <strong>"다나스픽 픽셀"</strong></li>
-<li>웹사이트 URL: 다나스픽 공식 사이트 주소 입력</li>
+<li>이름: <strong>"데이나스픽 픽셀"</strong></li>
+<li>웹사이트 URL: 데이나스픽 공식 사이트 주소 입력</li>
 <li><strong>[만들기]</strong></li>
 </ol>
 <p>생성 후 <strong>픽셀 ID(15자리 숫자)</strong>와 픽셀 코드(JavaScript 박스)가 표시됩니다.</p>
@@ -315,10 +315,10 @@ body {
 <li><strong>픽셀 ID 숫자</strong>를 슬랙으로 HIZ에 알려주세요</li>
 <li><strong>픽셀 코드</strong> 전체를 복사해 슬랙에 붙여주세요</li>
 </ol>
-<p>HIZ가 받아서 다나스픽 사이트 개발 담당에게 설치 방법을 전달합니다.</p>
+<p>HIZ가 받아서 데이나스픽 사이트 개발 담당에게 설치 방법을 전달합니다.</p>
 </blockquote>
 <blockquote>
-<p><strong>전환 API(CAPI) 연동은 HIZ가 후속으로 처리합니다.</strong> 킨스팀 문서에 적어주신 "전환 API + 픽셀 연동"이 바로 이 부분이에요. 픽셀만 위처럼 만들어 <strong>Step 6에서 HIZ에 파트너로 공유</strong>해주시면, 서버 이벤트(CAPI) 세팅은 HIZ가 다나스픽 개발 담당과 함께 진행합니다. 킨스팀은 <strong>사이트 개발 담당 연결</strong>만 해주시면 됩니다.</p>
+<p><strong>전환 API(CAPI) 연동은 HIZ가 후속으로 처리합니다.</strong> 킨스팀 문서에 적어주신 "전환 API + 픽셀 연동"이 바로 이 부분이에요. 픽셀만 위처럼 만들어 <strong>Step 6에서 HIZ에 파트너로 공유</strong>해주시면, 서버 이벤트(CAPI) 세팅은 HIZ가 데이나스픽 개발 담당과 함께 진행합니다. 킨스팀은 <strong>사이트 개발 담당 연결</strong>만 해주시면 됩니다.</p>
 </blockquote>
 <hr>
 <h2>Step 6. HIZ를 파트너로 추가 (가장 중요 — 이게 "연동")</h2>
@@ -334,18 +334,18 @@ body {
 <tr><td>광고 계정</td><td>(이 시점엔 비어있음)</td><td>스킵 — HIZ가 신설</td></tr>
 <tr><td>페이지</td><td>KINSE 공식 페이지</td><td>콘텐츠/광고 관리</td></tr>
 <tr><td>Instagram 계정</td><td>@danaspick_crew</td><td>콘텐츠/광고 관리</td></tr>
-<tr><td>픽셀 (데이터세트)</td><td>다나스픽 픽셀</td><td>광고 관리 / 이벤트 관리</td></tr>
+<tr><td>픽셀 (데이터세트)</td><td>데이나스픽 픽셀</td><td>광고 관리 / 이벤트 관리</td></tr>
 </tbody>
 </table>
 <blockquote>
-<p>💡 광고 계정은 아직 안 만들었어요. HIZ가 다나스픽 비즈니스 매니저 안에 신설합니다. 일단 페이지·인스타·픽셀 3종만 공유하면 됩니다.</p>
+<p>💡 광고 계정은 아직 안 만들었어요. HIZ가 데이나스픽 비즈니스 매니저 안에 신설합니다. 일단 페이지·인스타·픽셀 3종만 공유하면 됩니다.</p>
 </blockquote>
 <ol start="5"><li><strong>[공유]</strong></li></ol>
 <hr>
 <h2>끝나면 — HIZ에 한 줄만</h2>
 <p>슬랙으로:</p>
 <blockquote>
-<p>"다나스픽 세팅 끝났습니다.<br>
+<p>"데이나스픽 세팅 끝났습니다.<br>
 비즈니스 매니저 ID: [숫자]<br>
 픽셀 ID: [숫자]<br>
 (픽셀 코드는 별도 메시지로 첨부)<br>
@@ -374,7 +374,7 @@ body {
 <h2>끝난 후 HIZ가 하는 일 (참고)</h2>
 <ol>
 <li>파트너 공유 요청 수락</li>
-<li>다나스픽 비즈니스 매니저 안에 광고계정 신설 (결제수단은 킨스팀 카드로 별도 등록 안내)</li>
+<li>데이나스픽 비즈니스 매니저 안에 광고계정 신설 (결제수단은 킨스팀 카드로 별도 등록 안내)</li>
 <li>픽셀 코드 설치 방법 전달 + <strong>전환 API(CAPI) 서버 연동</strong> (개발 담당과 협업)</li>
 <li>7월 캠페인 구조(카탈로그·ROAS·가치 최적화) 예산안 제안 → 운영 시작</li>
 </ol>
@@ -383,7 +383,7 @@ body {
 <p><strong>문의</strong>: HIZ 우성민 (슬랙·카톡 어디로든, 막히면 즉시)</p>
   </div>
   <div class="footer">
-    HIZ × <span class="brand">다나스픽 · KINSE</span> · 2026-07-02
+    HIZ × <span class="brand">데이나스픽 · KINSE</span> · 2026-07-02
   </div>
 </div>
 </body>
