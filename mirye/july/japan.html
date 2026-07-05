@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>미례국밥 일본 인바운드 전략 — 브랜드라이즈</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Noto Sans KR', -apple-system, sans-serif; background: #f4f7f9; color: #1a1b18; line-height: 1.7; font-size: 14px; -webkit-font-smoothing: antialiased; word-break: keep-all; overflow-wrap: break-word; }
+
+.toolbar { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: #0D0D0D; height: 56px; display: flex; align-items: center; justify-content: space-between; padding: 0 32px; }
+.toolbar-left { display: flex; align-items: center; gap: 16px; }
+.toolbar-logo { font-size: 13px; font-weight: 700; color: #EA580C; letter-spacing: 0.05em; }
+.toolbar-sep { width: 1px; height: 20px; background: rgba(255,255,255,0.15); }
+.toolbar-title { font-size: 14px; font-weight: 500; color: #fff; }
+.toolbar-actions { display: flex; gap: 10px; }
+.btn-toolbar { padding: 7px 18px; border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; background: transparent; color: #fff; font-size: 12px; font-weight: 500; cursor: pointer; transition: all 0.2s; text-decoration: none; display: inline-block; }
+.btn-toolbar:hover { background: rgba(255,255,255,0.1); }
+.btn-toolbar.alt { border-color: rgba(234,88,12,0.5); color: #EA580C; }
+
+.container { max-width: 920px; margin: 0 auto; padding: 80px 24px 60px; }
+
+.report-header { background: #fff; border-radius: 12px; padding: 40px; margin-bottom: 20px; border: 1px solid #e8edf1; }
+.report-header .label { font-size: 11px; font-weight: 700; color: #EA580C; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 14px; }
+.report-header h1 { font-size: 32px; font-weight: 900; line-height: 1.32; letter-spacing: -0.02em; }
+.report-header h1 em { color: #EA580C; font-style: normal; }
+.meta-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 28px; padding-top: 24px; border-top: 1px solid #e8edf1; }
+.meta-item .mk { font-size: 11px; color: #999; letter-spacing: 0.04em; margin-bottom: 4px; }
+.meta-item .mv { font-size: 13px; font-weight: 600; }
+
+.mission-box { background: #0D0D0D; border-radius: 12px; padding: 30px 36px; margin-bottom: 20px; color: #fff; }
+.mission-box .hl-label { font-size: 11px; font-weight: 700; color: #EA580C; letter-spacing: 0.1em; margin-bottom: 14px; text-transform: uppercase; }
+.mission-box .lede { font-size: 18px; font-weight: 700; line-height: 1.55; letter-spacing: -0.01em; }
+.mission-box .lede em { color: #FDBA8C; font-style: normal; }
+.mission-box .sub { margin-top: 16px; font-size: 13px; color: rgba(255,255,255,0.72); line-height: 1.95; }
+.mission-box .sub strong { color: #fff; }
+
+.section { background: #fff; border-radius: 12px; padding: 32px 40px; margin-bottom: 20px; border: 1px solid #e8edf1; }
+.section h2 { font-size: 18px; font-weight: 800; margin-bottom: 6px; letter-spacing: -0.02em; }
+.section h2 em { color: #EA580C; font-style: normal; }
+.section .sec-sub { font-size: 12px; color: #999; margin-bottom: 20px; }
+.action-tag { display: inline-block; font-size: 11px; font-weight: 800; color: #fff; background:#EA580C; letter-spacing: 0.06em; margin-bottom: 10px; padding:3px 11px; border-radius:20px; }
+
+.detail { border-left: 3px solid #f0f2f5; padding: 4px 0 4px 18px; margin-bottom: 16px; }
+.detail:hover { border-left-color: #FED7AA; }
+.detail .dt { font-size: 14px; font-weight: 800; margin-bottom: 4px; }
+.detail .dd { font-size: 13px; color: #636569; }
+.detail .dd strong { color: #1a1b18; }
+
+.leg-grid { display:grid; grid-template-columns: repeat(3,1fr); gap:14px; }
+.leg { border:1px solid #e8edf1; border-radius:12px; padding:22px 20px; background:#f8fafb; }
+.leg .ln { width:26px; height:26px; border-radius:7px; background:#0D0D0D; color:#EA580C; font-weight:900; font-size:13px; display:flex; align-items:center; justify-content:center; margin-bottom:12px; }
+.leg .lt { font-size:14px; font-weight:800; margin-bottom:7px; line-height:1.4; }
+.leg .ld { font-size:12.5px; color:#636569; line-height:1.7; }
+.leg .ld strong { color:#1a1b18; }
+
+.four { display:grid; grid-template-columns: repeat(2,1fr); gap:12px; margin-top:4px; }
+.four .fc { border:1px solid #e8edf1; border-radius:10px; padding:16px 18px; background:#f8fafb; }
+.four .fc .fk { font-size:11px; font-weight:800; color:#EA580C; margin-bottom:5px; }
+.four .fc .fv { font-size:12.5px; color:#3a3c40; line-height:1.65; }
+.four .fc .fv b { color:#1a1b18; }
+
+.context-lead { font-size: 13.5px; color: #3a3c40; line-height: 1.85; }
+.context-lead strong { color: #1a1b18; font-weight: 700; }
+
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th { background: #f8fafb; padding: 10px 14px; font-weight: 600; border-bottom: 2px solid #e8edf1; color: #999; font-size: 11px; text-align: left; white-space: nowrap; }
+th.c { text-align:center; }
+td { padding: 9px 14px; border-bottom: 1px solid #f0f2f5; vertical-align: top; }
+td.ja { font-weight: 700; color: #1a1b18; font-size:13px; }
+td.desc { color: #636569; font-size: 12px; }
+td.c { text-align:center; white-space:nowrap; }
+.star { color:#EA580C; font-weight:800; letter-spacing:-1px; }
+tr.grp td { background:#FFF7ED; font-weight:800; color:#9a3412; font-size:11px; letter-spacing:0.03em; }
+
+.tier-grid { display:grid; grid-template-columns: 1fr 1fr; gap:16px; }
+.tier { border:1px solid #e8edf1; border-radius:12px; padding:24px; }
+.tier.base { background:#f8fafb; }
+.tier.focus { background:#FFFBF7; border:2px solid #EA580C; }
+.tier .th { display:flex; align-items:baseline; justify-content:space-between; margin-bottom:6px; }
+.tier .tn { font-size:15px; font-weight:900; }
+.tier .tp { font-size:15px; font-weight:900; color:#EA580C; }
+.tier .tg { font-size:12px; font-weight:700; color:#EA580C; margin-bottom:14px; }
+.tier ul { list-style:none; padding:0; margin:0; }
+.tier ul li { position:relative; padding-left:16px; margin-bottom:7px; font-size:12.5px; color:#3a3c40; line-height:1.6; }
+.tier ul li::before { content:''; position:absolute; left:0; top:8px; width:5px; height:5px; border-radius:50%; background:#FB923C; }
+.tier ul li strong { color:#1a1b18; }
+
+.week { border: 1px solid #e8edf1; border-radius: 10px; padding: 16px 20px; margin-bottom: 12px; }
+.week .wk-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 8px; }
+.week .wk-range { font-size: 12px; font-weight: 800; color: #fff; background: #EA580C; padding: 3px 12px; border-radius: 20px; white-space: nowrap; }
+.week .wk-theme { font-size: 14px; font-weight: 800; }
+.week ul { padding-left: 20px; font-size: 13px; color: #3a3c40; margin:0; }
+.week ul li { margin-bottom: 3px; }
+
+.measure { background: #f8fafb; border: 1px solid #e8edf1; border-radius: 8px; padding: 12px 16px; margin-top: 16px; font-size: 12.5px; color: #3a3c40; }
+.measure strong { color: #EA580C; font-weight: 700; }
+
+.closing-box { background: #0D0D0D; border-radius: 12px; padding: 36px 40px; text-align: center; color: #fff; margin-bottom: 20px; }
+.closing-box .cl-msg { font-size: 21px; font-weight: 900; letter-spacing: -0.02em; line-height: 1.45; }
+.closing-box .cl-msg em { color: #FDBA8C; font-style: normal; }
+.closing-box .cl-sub { font-size: 13px; color: rgba(255,255,255,0.6); margin-top: 12px; }
+
+.footer { text-align: center; padding: 40px 0 10px; color: #999; font-size: 12px; line-height: 2; }
+.footer .brand { font-size: 15px; font-weight: 800; color: #1a1b18; margin-bottom: 4px; }
+
+@media (max-width: 768px) {
+  .container { padding: 70px 16px 40px; }
+  .meta-grid { grid-template-columns: repeat(2, 1fr); }
+  .leg-grid, .four, .tier-grid { grid-template-columns: 1fr; }
+  .section { padding: 24px 20px; }
+  .report-header h1 { font-size: 25px; }
+}
+@media print {
+  .toolbar { display: none; }
+  .container { padding: 20px; max-width: none; }
+  body { background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .section, .mission-box, .closing-box, .week, .tier { break-inside: avoid; }
+  @page { size: A4; margin: 12mm; }
+}
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="toolbar-left">
+    <div class="toolbar-logo">BRANDRISE</div>
+    <div class="toolbar-sep"></div>
+    <div class="toolbar-title">미례국밥 일본 인바운드 전략</div>
+  </div>
+  <div class="toolbar-actions">
+    <a class="btn-toolbar alt" href="plan-v2.html">← 7월 운영 플랜</a>
+    <button class="btn-toolbar" onclick="window.print()">PDF 저장</button>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <div class="report-header">
+    <div class="label">미례국밥 × 브랜드라이즈 · 강남점 전용</div>
+    <h1>일본 손님을 <em>먼저 차지합니다</em><br>— 인스타 일본어 검색 선점</h1>
+    <div class="meta-grid">
+      <div class="meta-item"><div class="mk">대상</div><div class="mv">강남점 (서울 관광 상권)</div></div>
+      <div class="meta-item"><div class="mk">타깃</div><div class="mv">방한 일본 관광객</div></div>
+      <div class="meta-item"><div class="mk">채널</div><div class="mv">인스타 자연어 검색 · 방한 인플루언서</div></div>
+      <div class="meta-item"><div class="mk">제안</div><div class="mv">1,000 집중 · 7~8월 성수기</div></div>
+    </div>
+  </div>
+
+  <!-- MISSION -->
+  <div class="mission-box">
+    <div class="hl-label">왜 지금 일본인가</div>
+    <div class="lede">강남점 손님이 곧 <em>일본 관광객</em>입니다. 그들이 인스타에서 찾는 <em>일본어 검색어</em>를, 아직 아무도 안 잡은 지금 <em>우리 영상으로 먼저</em> 차지합니다.</div>
+    <div class="sub">일본 사람은 한국 맛집을 찾을 때 인스타에 <strong>일본어로 그냥 검색</strong>합니다 — "서울 맛있는 가게(ソウル 美味しいお店)", "강남 맛집(江南 グルメ)"처럼요. 그런데 <strong>한국 식당 대부분은 한글로만 올려서, 일본어로 검색하면 뜰 가게가 거의 없습니다.</strong> 이 <strong>비어 있는 자리(화이트 스페이스)</strong>를 강남 오픈 골든타임인 지금 선점하는 게임입니다. 특히 <strong>7~8월은 여름방학·오봉(お盆) 연휴로 방한 일본객이 연중 가장 몰리는 시기</strong>라, 바로 지금이 한 번에 몰아칠 타이밍입니다.</div>
+  </div>
+
+  <!-- 왜 우리가 할 수 있나 — 리솔츠팀 3다리 -->
+  <div class="section">
+    <div class="action-tag">신뢰</div>
+    <h2>맨땅이 아닙니다 — 우리는 <em>일본 인플루언서 판을 압니다</em></h2>
+    <div class="sec-sub">브랜드라이즈로선 새로 꺼내는 카드지만, 그룹 안에 이미 검증된 자산이 있습니다</div>
+    <div class="leg-grid">
+      <div class="leg">
+        <div class="ln">1</div>
+        <div class="lt">운영 경험 · 네트워크</div>
+        <div class="ld"><strong>HIZ 그룹이 일본 인플루언서 캠페인을 운영해온 이력</strong>이 있습니다. 그때 확보한 주요 일본 인플루언서·바이럴 계정 네트워크를 미례에 그대로 붙입니다.</div>
+      </div>
+      <div class="leg">
+        <div class="ln">2</div>
+        <div class="lt">방한 예정자 풀</div>
+        <div class="ld"><strong>이미 한국에 올 예정인 일본 인플루언서</strong>를 중심으로 1차 섭외합니다. 그래야 "일본 현지 광고"가 아니라 <strong>실제 강남점 방문 콘텐츠</strong>가 나옵니다.</div>
+      </div>
+      <div class="leg">
+        <div class="ln">3</div>
+        <div class="lt">맛집 탐색 동선 이해</div>
+        <div class="ld">일본 인플루언서가 방한 시 <strong>한국 맛집을 어떻게 찾고 콘텐츠로 만드는지 그 동선</strong>을 압니다. 그 동선 위에 미례를 자연스럽게 심습니다.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 어떻게 검색 위에 뜨나 -->
+  <div class="section">
+    <div class="action-tag">방법</div>
+    <h2>어떻게 <em>검색 위에</em> 뜨나 — 영상 하나에 같은 일본어를 네 곳에</h2>
+    <div class="sec-sub">인스타는 이제 영상의 글자·자막·소리·위치까지 읽어 검색에 반영합니다</div>
+    <div class="four">
+      <div class="fc"><div class="fk">① 설명글 (1순위)</div><div class="fv">첫 2줄에 자연어 문장 — <b>"서울·강남에서 부산 돼지국밥(테지쿳파)을 먹을 수 있는 집"</b></div></div>
+      <div class="fc"><div class="fk">② 화면 자막</div><div class="fv">첫 장면(1초 내) 큰 글씨로 <b>"ソウル 江南 テジクッパ"</b> — 인스타가 영상 속 글자를 읽어 인덱싱</div></div>
+      <div class="fc"><div class="fk">③ 소리 · 사진 설명</div><div class="fv">말(보이스·자막)로도, 사진 설명글(alt)에도 <b>같은 일본어를 발화·입력</b></div></div>
+      <div class="fc"><div class="fk">④ 위치 표시</div><div class="fv">강남/서울 <b>위치 태그</b> — 없으면 지역 검색에서 아예 빠집니다</div></div>
+    </div>
+    <div class="measure">인스타는 '좋아요'보다 <strong>저장·공유·오래 본 영상</strong>을 위로 올립니다. 그래서 <strong>"가는 길·가격·주문법 정리(保存推奨)"</strong>처럼 여행자가 저장할 수밖에 없는 영상을 만듭니다.</div>
+  </div>
+
+  <!-- 노릴 검색어 30개 -->
+  <div class="section">
+    <div class="action-tag">타깃</div>
+    <h2>노릴 <em>일본어 검색어</em> — 전체 30개</h2>
+    <div class="sec-sub"><span class="star">★★★</span> = 미례 관련성 최우선 · 실제 일본인 검색 행태 리서치 기반</div>
+    <table>
+      <thead><tr><th>일본어</th><th>뜻</th><th>언제 검색</th><th class="c">우선</th></tr></thead>
+      <tbody>
+        <tr class="grp"><td colspan="4">메뉴 — 돼지국밥으로 바로 찾을 때</td></tr>
+        <tr><td class="ja">テジクッパ</td><td class="desc">돼지국밥(표준 표기)</td><td class="desc">메뉴</td><td class="c star">★★★</td></tr>
+        <tr><td class="ja">豚スープご飯 / 豚クッパ</td><td class="desc">돼지국밥(설명형)</td><td class="desc">메뉴명 몰라 서술 검색</td><td class="c star">★★★</td></tr>
+        <tr><td class="ja">ソウル テジクッパ</td><td class="desc">서울 돼지국밥</td><td class="desc">메뉴+지역</td><td class="c star">★★★</td></tr>
+        <tr><td class="ja">釜山 テジクッパ</td><td class="desc">부산 돼지국밥</td><td class="desc">메뉴+지역(원조성)</td><td class="c star">★★★</td></tr>
+        <tr><td class="ja">韓国 スープ 料理 / 温かい スープ</td><td class="desc">한국 국물요리</td><td class="desc">메뉴 탐색</td><td class="c star">★★</td></tr>
+        <tr><td class="ja">韓国 豚肉 料理</td><td class="desc">한국 돼지고기 요리</td><td class="desc">메뉴 탐색</td><td class="c star">★★</td></tr>
+        <tr class="grp"><td colspan="4">지역 — 강남·서울에서 뭐 먹지</td></tr>
+        <tr><td class="ja">江南 グルメ / カンナム グルメ</td><td class="desc">강남 맛집</td><td class="desc">지역</td><td class="c star">★★★</td></tr>
+        <tr><td class="ja">ソウル 江南 グルメ</td><td class="desc">서울 강남 맛집</td><td class="desc">지역(롱테일)</td><td class="c star">★★★</td></tr>
+        <tr><td class="ja">江南駅 グルメ</td><td class="desc">강남역 맛집</td><td class="desc">지역 롱테일</td><td class="c star">★★★</td></tr>
+        <tr><td class="ja">ソウル グルメ</td><td class="desc">서울 맛집</td><td class="desc">여행</td><td class="c star">★★★</td></tr>
+        <tr><td class="ja">ソウル 焼肉 / 江南 焼肉</td><td class="desc">서울·강남 고기구이</td><td class="desc">메뉴+지역(연관어)</td><td class="c star">★★★</td></tr>
+        <tr><td class="ja">江南 ランチ</td><td class="desc">강남 점심</td><td class="desc">상황+지역</td><td class="c star">★★</td></tr>
+        <tr class="grp"><td colspan="4">여행 — 한국·서울 여행 준비 단계</td></tr>
+        <tr><td class="ja">韓国 グルメ</td><td class="desc">한국 맛집</td><td class="desc">여행</td><td class="c star">★★★</td></tr>
+        <tr><td class="ja">ソウル 旅行 グルメ / 韓国 旅行 グルメ</td><td class="desc">서울·한국 여행 맛집</td><td class="desc">여행 계획</td><td class="c star">★★★</td></tr>
+        <tr><td class="ja">ソウル おすすめ 店 / 美味しいお店</td><td class="desc">서울 추천·맛있는 가게</td><td class="desc">여행</td><td class="c star">★★★</td></tr>
+        <tr><td class="ja">ソウル 韓国料理 / 韓国 ご飯</td><td class="desc">서울 한식·한국 밥</td><td class="desc">여행</td><td class="c star">★★</td></tr>
+        <tr><td class="ja">ソウル ローカル / 韓国 現地 グルメ</td><td class="desc">서울·한국 현지 맛집</td><td class="desc">여행(로컬 지향)</td><td class="c star">★★</td></tr>
+        <tr><td class="ja">ソウル 食べ歩き</td><td class="desc">서울 맛집 투어</td><td class="desc">여행</td><td class="c star">★★</td></tr>
+        <tr><td class="ja">釜山 グルメ</td><td class="desc">부산 맛집</td><td class="desc">지역(부산 지점)</td><td class="c star">★★</td></tr>
+        <tr class="grp"><td colspan="4">상황 — 해장·혼밥·아침·야식</td></tr>
+        <tr><td class="ja">韓国 二日酔い スープ / ヘジャンクク</td><td class="desc">한국 해장국</td><td class="desc">상황(해장)</td><td class="c star">★★</td></tr>
+        <tr><td class="ja">ソウル 一人ご飯</td><td class="desc">서울 혼밥</td><td class="desc">상황(혼밥)</td><td class="c star">★★</td></tr>
+        <tr><td class="ja">韓国 朝ごはん</td><td class="desc">한국 아침식사</td><td class="desc">상황(국밥=아침)</td><td class="c star">★★</td></tr>
+        <tr><td class="ja">ソウル 深夜 グルメ</td><td class="desc">서울 심야 맛집</td><td class="desc">상황(야식)</td><td class="c star">★★</td></tr>
+        <tr><td class="ja">モクスタグラム</td><td class="desc">먹스타그램</td><td class="desc">커뮤니티 태그</td><td class="c star">★</td></tr>
+      </tbody>
+    </table>
+    <div class="measure">※ 위 검색어를 릴스별로 <strong>3~5개씩 자연 문장에 녹여</strong> 스터핑 없이 심습니다. 메뉴명은 위키·비짓코리아 공통 표기인 <strong>「テジクッパ」</strong>를 표준으로 통일합니다.</div>
+  </div>
+
+  <!-- 500 / 1,000 티어 -->
+  <div class="section">
+    <div class="action-tag">제안</div>
+    <h2>얼마나 — <em>1,000 집중을 권장합니다</em></h2>
+    <div class="sec-sub">7~8월 방한 최성수기엔 나눠 찌르기보다 1,000으로 한 번에 점유하는 게 맞습니다 (최소 진입 500도 가능)</div>
+    <div class="tier-grid">
+      <div class="tier base">
+        <div class="th"><div class="tn">최소</div><div class="tp">500</div></div>
+        <div class="tg">선점 증명 — 일본어 검색에 미례를 띄운다</div>
+        <ul>
+          <li><strong>방한 예정 일본 인플루언서 1차 섭외</strong> — 실제 강남점 방문 콘텐츠</li>
+          <li>일본어 <strong>자연어 검색어 세팅</strong>(핵심 20~30개) + 4중 최적화 틀</li>
+          <li>일본어 릴스 발행 — <strong>비어 있는 검색 공간 진입</strong></li>
+          <li>계정·프로필 일본어 세팅 + 검색 노출 추적</li>
+          <li><strong>목표:</strong> 타깃 검색어에서 미례 영상이 <strong>뜨기 시작</strong></li>
+        </ul>
+      </div>
+      <div class="tier focus">
+        <div class="th"><div class="tn">집중 · 권장</div><div class="tp">1,000</div></div>
+        <div class="tg">선점 + 점유 — 7~8월 성수기에 검색어를 차지한다</div>
+        <ul>
+          <li>기본 500의 모든 것 <strong>+ 섭외 풀 확대</strong>(방한 인플루언서 다수)</li>
+          <li><strong>대형 바이럴 계정 확산</strong>으로 도달을 한 번에 끌어올림</li>
+          <li><strong>시차를 둔 지속 발행</strong> — 저장·공유 신호 누적</li>
+          <li>강남 골든타임에 <strong>임팩트를 몰아 상위 점유</strong></li>
+          <li><strong>목표:</strong> 핵심 검색어 <strong>상위 노출 + 외국인 내점</strong></li>
+        </ul>
+      </div>
+    </div>
+    <div class="measure"><strong>왜 지금이 몰아줄 때인가</strong> — 강남 오픈 골든타임(90일 중 절반)과 <strong>7~8월 방한 일본객 최성수기</strong>가 겹치는 지금이, 일본어 검색을 한 번에 선점할 유일한 타이밍입니다. 화제성이 살아 있는 이때 선점하면, 이후엔 광고 없이도 일본인 검색에 미례가 먼저 뜨는 자산이 됩니다.</div>
+  </div>
+
+  <!-- 4주 타임라인 -->
+  <div class="section">
+    <div class="action-tag">실행</div>
+    <h2>7월 <em>4주 실행</em></h2>
+    <div class="sec-sub">섭외 → 발행 → 점검 → 확산</div>
+    <div class="week">
+      <div class="wk-head"><span class="wk-range">7/6 — 7/12</span><span class="wk-theme">섭외 + 세팅</span></div>
+      <ul><li>방한 예정 일본 인플루언서 1차 섭외 · 브리프</li><li>일본어 검색어 확정 · 영상 설명·자막·위치 4중 최적화 틀 세팅</li><li>계정 name·바이오 일본어 병기</li></ul>
+    </div>
+    <div class="week">
+      <div class="wk-head"><span class="wk-range">7/13 — 7/19</span><span class="wk-theme">발행 개시 — 검색어 선점</span></div>
+      <ul><li>일본어 릴스 발행 시작(검색 공간 진입)</li><li>바이럴 계정 노출로 도달 확산(집중안)</li><li>저장·공유 유도 콘텐츠(가는 길·가격·주문법)</li></ul>
+    </div>
+    <div class="week">
+      <div class="wk-head"><span class="wk-range">7/20 — 7/26</span><span class="wk-theme">D+30 점검 · 더블다운</span></div>
+      <ul><li>일본어 검색 노출 점검 · 잘 뜨는 검색어·인플루언서에 집중</li><li>강남 오픈 한 달 데이터와 교차 확인</li></ul>
+    </div>
+    <div class="week">
+      <div class="wk-head"><span class="wk-range">7/27 — 7/31</span><span class="wk-theme">정리 + 8월 설계</span></div>
+      <ul><li>일본어 검색 노출·저장·외국인 방문 정리</li><li>8월 확산(1,000 전환 여부) 판단</li></ul>
+    </div>
+  </div>
+
+  <!-- 측정 -->
+  <div class="section">
+    <div class="action-tag">측정</div>
+    <h2>무엇으로 <em>성과를 본다</em></h2>
+    <div class="sec-sub">7월은 매출보다 "검색 자산이 생겼나"를 본다</div>
+    <div class="four">
+      <div class="fc"><div class="fk">① 검색 노출</div><div class="fv">타깃 일본어 검색어에서 <b>미례 영상이 뜨는 개수·순위</b></div></div>
+      <div class="fc"><div class="fk">② 저장 · 공유</div><div class="fv">일본어 릴스의 <b>저장·DM 공유·시청시간</b>(랭킹 코어 신호)</div></div>
+      <div class="fc"><div class="fk">③ 인플루언서 성과</div><div class="fv">방한 인플루언서 콘텐츠 <b>도달·반응·방문 인증</b></div></div>
+      <div class="fc"><div class="fk">④ 외국인 내점</div><div class="fv">강남점 <b>외국인 손님·일본어 리뷰</b> 증가 신호</div></div>
+    </div>
+  </div>
+
+  <!-- CLOSING -->
+  <div class="closing-box">
+    <div class="cl-msg">비어 있는 일본어 검색을, <em>강남 골든타임인 지금</em> 먼저 차지합니다</div>
+    <div class="cl-sub">방한 인플루언서 실제 방문 · 인스타 자연어 4중 선점 · 저장되는 콘텐츠</div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="brand">BRANDRISE</div>
+    미례국밥 × 브랜드라이즈 · 강남점 일본 인바운드 전략<br>
+    세부 검색어·인플루언서·일정은 실행 단계에서 조정될 수 있습니다.
+  </div>
+
+</div>
+</body>
+</html>
