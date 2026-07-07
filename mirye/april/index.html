@@ -17,6 +17,9 @@ body { font-family: 'Noto Sans KR', -apple-system, sans-serif; background: #f4f7
 .toolbar-actions { display: flex; gap: 10px; }
 .btn-toolbar { padding: 7px 18px; border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; background: transparent; color: #fff; font-size: 12px; font-weight: 500; cursor: pointer; transition: all 0.2s; }
 .btn-toolbar:hover { background: rgba(255,255,255,0.1); }
+.btn-toolbar.pdf { display: inline-flex; align-items: center; gap: 6px; background: #EA580C; border-color: #EA580C; font-weight: 700; }
+.btn-toolbar.pdf:hover { background: #c2410c; }
+.btn-toolbar.pdf svg { width: 13px; height: 13px; }
 
 .container { max-width: 900px; margin: 0 auto; padding: 80px 24px 60px; }
 
@@ -110,7 +113,10 @@ tr.subtotal-row td { background: #f8fafb; font-weight: 700; border-top: 1px soli
     <div class="toolbar-title">미례국밥 4월 운영 견적서</div>
   </div>
   <div class="toolbar-actions">
-    <button class="btn-toolbar" onclick="window.print()">PDF 저장</button>
+    <button class="btn-toolbar pdf" onclick="window.print()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      PDF 저장
+    </button>
   </div>
 </div>
 

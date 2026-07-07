@@ -208,7 +208,21 @@ table .muted { color: var(--gray-500); font-size: 12px; }
 .ref-card .rc-type { font-size: 11px; color: var(--gray-500); margin-bottom: 8px; }
 .ref-card .rc-why { font-size: 11px; color: var(--gray-700); line-height: 1.55; }
 
+/* PDF 저장 버튼 */
+.pdf-btn {
+  position: fixed; top: 24px; right: 24px; z-index: 100;
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 12px 22px; border: none; border-radius: 999px; cursor: pointer;
+  background: var(--accent); color: var(--white);
+  font-family: 'Noto Sans KR', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.02em;
+  box-shadow: 0 4px 16px rgba(234,88,12,0.35); transition: all 0.2s;
+}
+.pdf-btn:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(234,88,12,0.45); }
+.pdf-btn svg { width: 15px; height: 15px; }
+
 @media print {
+  @page { size: A4 landscape; margin: 0; }
+  .pdf-btn { display: none; }
   .slide { min-height: 100vh; padding: 60px 80px; }
   body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 }
@@ -216,6 +230,11 @@ table .muted { color: var(--gray-500); font-size: 12px; }
 <script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
 </head>
 <body>
+
+<button class="pdf-btn" onclick="window.print()">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+  PDF 저장
+</button>
 
 <!-- ========== 01. COVER ========== -->
 <div class="slide cover" data-page="01">
