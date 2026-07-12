@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>미례국밥 가맹 확장 마케팅 전략 — 브랜드라이즈</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Noto Sans KR', -apple-system, sans-serif; background: #f4f7f9; color: #1a1b18; line-height: 1.7; font-size: 14px; -webkit-font-smoothing: antialiased; word-break: keep-all; overflow-wrap: break-word; }
+
+.toolbar { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: #0D0D0D; height: 56px; display: flex; align-items: center; justify-content: space-between; padding: 0 32px; }
+.toolbar-left { display: flex; align-items: center; gap: 16px; }
+.toolbar-logo { font-size: 13px; font-weight: 700; color: #EA580C; letter-spacing: 0.05em; }
+.toolbar-sep { width: 1px; height: 20px; background: rgba(255,255,255,0.15); }
+.toolbar-title { font-size: 14px; font-weight: 500; color: #fff; }
+.toolbar-actions { display: flex; gap: 10px; }
+.btn-toolbar { padding: 7px 18px; border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; background: transparent; color: #fff; font-size: 12px; font-weight: 500; cursor: pointer; transition: all 0.2s; text-decoration: none; display: inline-block; }
+.btn-toolbar:hover { background: rgba(255,255,255,0.1); }
+.btn-toolbar.alt { border-color: rgba(234,88,12,0.5); color: #EA580C; }
+
+.container { max-width: 920px; margin: 0 auto; padding: 80px 24px 60px; }
+
+.report-header { background: #fff; border-radius: 12px; padding: 40px; margin-bottom: 20px; border: 1px solid #e8edf1; }
+.report-header .label { font-size: 11px; font-weight: 700; color: #EA580C; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 14px; }
+.report-header h1 { font-size: 34px; font-weight: 900; line-height: 1.3; letter-spacing: -0.02em; }
+.report-header h1 em { color: #EA580C; font-style: normal; }
+.meta-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 28px; padding-top: 24px; border-top: 1px solid #e8edf1; }
+.meta-item .mk { font-size: 11px; color: #999; letter-spacing: 0.04em; margin-bottom: 4px; }
+.meta-item .mv { font-size: 13px; font-weight: 600; }
+
+.mission-box { background: #0D0D0D; border-radius: 12px; padding: 30px 36px; margin-bottom: 20px; color: #fff; }
+.mission-box .hl-label { font-size: 11px; font-weight: 700; color: #EA580C; letter-spacing: 0.1em; margin-bottom: 14px; text-transform: uppercase; }
+.mission-box .lede { font-size: 18px; font-weight: 700; line-height: 1.55; letter-spacing: -0.01em; }
+.mission-box .lede em { color: #FDBA8C; font-style: normal; }
+
+.section { background: #fff; border-radius: 12px; padding: 32px 40px; margin-bottom: 20px; border: 1px solid #e8edf1; }
+.section h2 { font-size: 18px; font-weight: 800; margin-bottom: 6px; letter-spacing: -0.02em; }
+.section h2 em { color: #EA580C; font-style: normal; }
+.section .sec-sub { font-size: 12px; color: #999; margin-bottom: 20px; }
+
+.action-tag { display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: 0.06em; margin-bottom: 6px; }
+.action-tag.new { background:#EA580C; color:#fff; padding:3px 10px; border-radius:20px; }
+.action-tag.grow { background:#16a34a; color:#fff; padding:3px 10px; border-radius:20px; }
+.action-tag.base { background:#eef1f4; color:#636569; padding:3px 10px; border-radius:20px; }
+
+.context-lead { font-size: 13.5px; color: #3a3c40; line-height: 1.85; margin-bottom: 12px; }
+.context-lead strong { color: #1a1b18; font-weight: 700; }
+
+.detail { border-left: 3px solid #f0f2f5; padding: 4px 0 4px 18px; margin-bottom: 18px; }
+.detail .dt { font-size: 14px; font-weight: 800; margin-bottom: 4px; }
+.detail .dd { font-size: 13px; color: #636569; }
+.detail .dd .lab { font-weight: 800; color: #1a1b18; }
+
+.measure { background: #f8fafb; border: 1px solid #e8edf1; border-radius: 8px; padding: 12px 16px; margin-top: 14px; font-size: 12.5px; color: #3a3c40; }
+.measure strong { color: #EA580C; font-weight: 700; }
+.measure.grow strong { color:#16a34a; }
+
+/* Fork */
+.fork-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:4px; }
+.fork-card { border-radius:12px; padding:22px 24px; border:1px solid #e8edf1; background:#f8fafb; }
+.fork-card .fc-tag { font-size:11px; font-weight:800; letter-spacing:0.05em; margin-bottom:8px; }
+.fork-card .fc-t { font-size:16px; font-weight:900; letter-spacing:-0.01em; margin-bottom:8px; }
+.fork-card .fc-d { font-size:12.5px; color:#636569; line-height:1.75; }
+.fork-card .fc-v { font-size:12.5px; font-weight:800; margin-top:14px; padding-top:12px; border-top:1px dashed #d8dde2; }
+.fork-card.trap .fc-tag { color:#999; }
+.fork-card.trap .fc-v { color:#b91c1c; }
+.fork-card.pick { background:#f0fdf4; border-color:#bbf7d0; }
+.fork-card.pick .fc-tag { color:#16a34a; }
+.fork-card.pick .fc-v { color:#16a34a; border-top-color:#bbf7d0; }
+
+/* Lines (본사 3라인) */
+.line-card { border:1px solid #e8edf1; border-radius:12px; padding:22px 24px; margin-bottom:14px; display:flex; gap:20px; align-items:flex-start; }
+.line-card .lc-idx { font-size:26px; font-weight:900; color:#e0e4e8; line-height:1; letter-spacing:-0.02em; flex-shrink:0; width:34px; }
+.line-card .lc-body { flex:1; }
+.line-card .lc-head { display:flex; align-items:baseline; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-bottom:4px; }
+.line-card .lc-t { font-size:15px; font-weight:800; }
+.line-card .lc-p { font-size:15px; font-weight:900; color:#EA580C; white-space:nowrap; }
+.line-card .lc-d { font-size:12.5px; color:#636569; line-height:1.7; }
+.line-card.star { border-color:#bbf7d0; background:#f0fdf4; }
+.line-card.star .lc-idx { color:#86efac; }
+.line-card.star .lc-p { color:#16a34a; }
+
+/* 표준 패키지 steps */
+.glance-steps { display:grid; grid-template-columns: repeat(3,1fr); gap:12px; margin-bottom:4px; }
+.glance-step { border:1px solid #e8edf1; border-radius:10px; padding:18px 20px; background:#f8fafb; }
+.glance-step.hero { background:#FFF7ED; border-color:#FED7AA; }
+.glance-step .gs-n { font-size:11px; font-weight:800; color:#EA580C; letter-spacing:0.04em; margin-bottom:6px; }
+.glance-step .gs-t { font-size:15px; font-weight:800; line-height:1.4; }
+.glance-step .gs-p { font-size:20px; font-weight:900; letter-spacing:-0.02em; margin-top:6px; }
+.glance-step .gs-p small { font-size:12px; font-weight:600; color:#999; }
+.glance-step ul { list-style:none; padding:0; margin:10px 0 0; }
+.glance-step ul li { position:relative; padding-left:14px; margin-bottom:5px; font-size:12px; color:#636569; }
+.glance-step ul li::before { content:''; position:absolute; left:0; top:8px; width:4px; height:4px; border-radius:50%; background:#FB923C; }
+.glance-step ul li b { color:#1a1b18; font-weight:800; }
+
+table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top:6px; }
+th { background: #f8fafb; padding: 10px 14px; font-weight: 600; border-bottom: 2px solid #e8edf1; color: #999; font-size: 11px; text-align: left; white-space: nowrap; }
+th.amt-h { text-align:right; }
+td { padding: 11px 14px; border-bottom: 1px solid #f0f2f5; vertical-align: top; }
+td.item { font-weight: 700; color: #1a1b18; }
+td.desc { color: #636569; font-size: 12px; }
+td.amt { text-align:right; font-weight:700; font-variant-numeric:tabular-nums; white-space:nowrap; width:120px; }
+tr.sub td { background:#f8fafb; font-weight:800; color:#1a1b18; border-top:1px solid #e8edf1; }
+
+.principle { display:flex; gap:16px; align-items:flex-start; padding:16px 0; border-bottom:1px solid #f0f2f5; }
+.principle:last-child { border-bottom:none; }
+.principle .pr-n { font-size:13px; font-weight:900; color:#fff; background:#EA580C; width:26px; height:26px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.principle .pr-t { font-size:14px; font-weight:800; margin-bottom:2px; }
+.principle .pr-d { font-size:12.5px; color:#636569; line-height:1.7; }
+
+.closing-box { background: #0D0D0D; border-radius: 12px; padding: 36px 40px; text-align: center; color: #fff; margin-bottom: 20px; }
+.closing-box .cl-msg { font-size: 22px; font-weight: 900; letter-spacing: -0.02em; line-height: 1.4; }
+.closing-box .cl-msg em { color: #FDBA8C; font-style: normal; }
+.closing-box .cl-sub { font-size: 13px; color: rgba(255,255,255,0.6); margin-top: 12px; }
+
+.footer { text-align: center; padding: 40px 0 10px; color: #999; font-size: 12px; line-height: 2; }
+.footer .brand { font-size: 15px; font-weight: 800; color: #1a1b18; margin-bottom: 4px; }
+
+@media (max-width: 768px) {
+  .container { padding: 70px 16px 40px; }
+  .meta-grid { grid-template-columns: repeat(2, 1fr); }
+  .fork-grid, .glance-steps { grid-template-columns: 1fr; }
+  .section { padding: 24px 20px; }
+  .report-header h1 { font-size: 26px; }
+  .line-card { flex-direction:column; gap:8px; }
+}
+@media print {
+  .toolbar { display: none; }
+  .container { padding: 20px; max-width: none; }
+  body { background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .section, .mission-box, .closing-box, .line-card { break-inside: avoid; }
+  @page { size: A4; margin: 12mm; }
+}
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="toolbar-left">
+    <div class="toolbar-logo">BRANDRISE</div>
+    <div class="toolbar-sep"></div>
+    <div class="toolbar-title">미례국밥 가맹 확장 마케팅 전략</div>
+  </div>
+  <div class="toolbar-actions">
+    <a class="btn-toolbar alt" href="quote-v2.html">← 7월 견적 (2차)</a>
+    <button class="btn-toolbar" onclick="window.print()">PDF 저장</button>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <div class="report-header">
+    <div class="label">미례국밥 × 브랜드라이즈 · 향후 전략</div>
+    <h1>3개 직영점에서 <em>가맹 확장 인프라</em>로</h1>
+    <div class="meta-grid">
+      <div class="meta-item"><div class="mk">공급자</div><div class="mv">브랜드라이즈 by HIZ</div></div>
+      <div class="meta-item"><div class="mk">수신</div><div class="mv">(주)위드런 · 미례국밥</div></div>
+      <div class="meta-item"><div class="mk">첫 적용</div><div class="mv">부산시청점 (8월 중순 오픈)</div></div>
+      <div class="meta-item"><div class="mk">근거</div><div class="mv">7/8 대표님 미팅</div></div>
+    </div>
+  </div>
+
+  <!-- MISSION -->
+  <div class="mission-box">
+    <div class="hl-label">전략의 큰 틀</div>
+    <div class="lede">이제 마케팅을 <em>매장 하나하나</em>가 아니라, 가맹점이 늘어날수록 <em>같이 커지는 인프라</em>로 설계합니다.</div>
+    <div style="margin-top:16px;font-size:13px;color:rgba(255,255,255,0.72);line-height:1.95;">7/8 미팅에서 대표님이 프레임을 바꿨습니다 — "3개 직영점 운영"이 아니라 <strong style="color:#fff;">"가맹 확장 인프라"</strong>. 본사가 파는 브랜드 자산과, 가맹점주에게 재판매할 표준 오픈 패키지를 분리하고, 매장이 늘수록 마케팅 규모도 함께 커지는 구조를 만듭니다. 부산시청점이 그 첫 적용 대상입니다.</div>
+  </div>
+
+  <!-- 1. 프레임 전환 -->
+  <div class="section">
+    <h2>왜 <em>구조</em>를 바꾸나</h2>
+    <div class="sec-sub">지금 방식 그대로 가맹점을 늘리면, 매장이 늘수록 오히려 힘들어진다</div>
+
+    <p class="context-lead">지금은 <strong>"다 우리 것"으로 묶인 통합 구조</strong>입니다. 매장이 3개일 땐 괜찮지만, 부산시청점·A·B·C로 늘어나면 매장마다 따로 기획하고 따로 청구해야 해서 <strong>매장이 늘수록 공수는 늘고 단가는 눌립니다.</strong> 가맹점주는 "월 50만 이상 안 쓴다"는 현실적 상한이 있고, "다른 매장도 혜택 보는데 왜 나 혼자 내냐"는 저항이 큽니다.</p>
+    <p class="context-lead">그래서 대표님과 <strong>본사(브랜딩) vs 지점(로컬)의 예산 가르마</strong>를 타기로 했습니다. 본사가 사는 브랜드 자산(인스타·전략)과, 가맹점 단위로 찍어낼 표준 패키지를 나눕니다. 이렇게 하면 <strong>표준은 붕어빵처럼 찍어내고, 손이 많이 가는 화력은 강남·일본 같은 특수 케이스에만</strong> 투입할 수 있습니다.</p>
+
+    <div class="measure">대표님의 진짜 니즈 = <strong>가맹점주에게 팔 수 있는 표준 오픈 마케팅 패키지 + 본사/지점 예산 분리.</strong> 이후 모든 미례 견적의 구조가 "지점별 나열"에서 "기본 + 옵션 2단"으로 바뀝니다.</div>
+  </div>
+
+  <!-- 2. 두 갈래 -->
+  <div class="section">
+    <h2>핵심 갈림길 — 우리 수익을 <em>무엇에 연동</em>할까</h2>
+    <div class="sec-sub">"가맹점이 늘수록 우리 수익이 떨어진다"는 걱정의 답은 여기서 갈린다</div>
+
+    <div class="fork-grid">
+      <div class="fork-card trap">
+        <div class="fc-tag">A · 프로젝트 벤더</div>
+        <div class="fc-t">매장당 정액</div>
+        <div class="fc-d">매장 N개 × 소액으로 청구. 본사는 "표준이니 싸게" 압박하고, 매장마다 손은 여전히 간다. 매장이 늘수록 단가가 눌린다.</div>
+        <div class="fc-v">→ 가맹점 늘수록 수익 압축 (지금의 걱정)</div>
+      </div>
+      <div class="fork-card pick">
+        <div class="fc-tag">B · 본사 마케팅 본부 ✓</div>
+        <div class="fc-t">시스템 매출 연동</div>
+        <div class="fc-d">본사 리테이너(고정) + 신규 오픈(건당) + 전 지점 통합 마케팅을 <strong>전체 매출의 일정 %</strong>로. 매장이 늘면 전체 매출이 커지고, 우리 몫도 함께 커진다.</div>
+        <div class="fc-v">→ 가맹점 늘수록 총량 성장 (걱정을 정반대로)</div>
+      </div>
+    </div>
+
+    <div class="measure grow">핵심은 "펀드를 쓰냐"가 아니라 <strong>정액이냐 · 매출 %냐</strong>입니다. 매출 %로 가려면 이를 정당화할 그릇이 필요한데, 그게 마침 <strong>프랜차이즈 업계 표준인 광고분담금</strong>이라 대표님 설득이 자연스럽습니다. 물류처럼 마케팅도 본사가 걷어 통합하는 표준 인프라로 자리잡는 그림입니다.</div>
+  </div>
+
+  <!-- 3. 본사 3라인 -->
+  <div class="section">
+    <div class="action-tag grow">B안 실행 구조</div>
+    <h2>본사 트랙 <em>3라인</em> (9월 이후 안정 구조)</h2>
+    <div class="sec-sub">매장 수에 눌리지 않는(오히려 커지는) 세 개의 수익 라인</div>
+
+    <div class="line-card">
+      <div class="lc-idx">01</div>
+      <div class="lc-body">
+        <div class="lc-head"><div class="lc-t">브랜딩 리테이너 <span style="font-size:11px;color:#999;font-weight:700;">고정</span></div><div class="lc-p">월 340~400</div></div>
+        <div class="lc-d">인스타 통합 운영 + 브랜드 전략 + 통합 키워드. 본사가 사는 브랜드 자산. 매장 10개든 50개든 공수가 거의 같아 <strong>마진이 가장 좋은 라인</strong>이다.</div>
+      </div>
+    </div>
+    <div class="line-card">
+      <div class="lc-idx">02</div>
+      <div class="lc-body">
+        <div class="lc-head"><div class="lc-t">신규 오픈 패키지 <span style="font-size:11px;color:#999;font-weight:700;">건당</span></div><div class="lc-p">건당 120</div></div>
+        <div class="lc-d">표준 상품. 매장이 늘면 건수는 늘되, SOP로 찍어내 <strong>단위 공수는 0에 수렴</strong>한다. 부산시청점이 이 상품의 1호.</div>
+      </div>
+    </div>
+    <div class="line-card star">
+      <div class="lc-idx">03</div>
+      <div class="lc-body">
+        <div class="lc-head"><div class="lc-t">전 지점 통합 마케팅 <span style="font-size:11px;color:#16a34a;font-weight:800;">★ 매출 연동</span></div><div class="lc-p">매장 수 연동</div></div>
+        <div class="lc-d">본사가 걷는 광고분담금(가맹점 매출의 일정 %)을 HIZ가 통합 위탁받아 전 지점 공통 캠페인을 규모로 집행. <strong>매장 수 따라 자동 확대되는 유일한 라인.</strong> 점주 광고분담금은 사전약정·동의가 법정 의무(2022.7~)라, 가맹 계약서에 처음부터 조항으로 심어두면 HIZ가 "대행사"가 아니라 <strong>본사 마케팅 파트너</strong>로 자리잡는다.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. 표준 패키지 -->
+  <div class="section">
+    <div class="action-tag new">부산시청점 = 표준 상품 1호</div>
+    <h2>신규 가맹점 <em>표준 셋업 패키지</em></h2>
+    <div class="sec-sub">"기본 세팅(전 지점 공통) + 상권 옵션(모듈)" — 붕어빵처럼 찍어낸다</div>
+
+    <div class="glance-steps">
+      <div class="glance-step hero">
+        <div class="gs-n">첫 달 · 오픈 패키지</div>
+        <div class="gs-t">오픈 화력 세팅</div>
+        <div class="gs-p">120<small> / 1회</small></div>
+      </div>
+      <div class="glance-step">
+        <div class="gs-n">이후 · 롱런 유지</div>
+        <div class="gs-t">낮게 오래 관리</div>
+        <div class="gs-p">월 30~50</div>
+      </div>
+      <div class="glance-step">
+        <div class="gs-n">필요 시 · 상권 옵션</div>
+        <div class="gs-t">기본 위에 토핑</div>
+        <div class="gs-p" style="font-size:15px;color:#636569;">모듈 추가</div>
+      </div>
+    </div>
+
+    <div class="detail" style="margin-top:22px;"><div class="dt">첫 달 — 오픈 패키지 120만 (1회)</div><div class="dd">체험단 20인으로 블로그 키워드를 선점하고, 네이버플레이스를 세팅하고, 오픈 화력을 한 번에 붙인다.</div></div>
+    <table>
+      <thead><tr><th>항목</th><th>내용</th><th class="amt-h">금액</th></tr></thead>
+      <tbody>
+        <tr><td class="item">네이버플레이스 세팅·키워드 최적화</td><td class="desc">점주 아이디 대행 + 등록 매뉴얼·캡처 (4050 점주 대응)</td><td class="amt">300,000</td></tr>
+        <tr><td class="item">블로그 체험단 (20인)</td><td class="desc">오픈 블로그 키워드 선점 · 영수증 리뷰</td><td class="amt">200,000</td></tr>
+        <tr><td class="item">오픈 부스팅</td><td class="desc">부산 인스타 채널 40 + 메타 광고 30</td><td class="amt">700,000</td></tr>
+        <tr class="sub"><td colspan="2">오픈 패키지 합계 (1회)</td><td class="amt">1,200,000</td></tr>
+      </tbody>
+    </table>
+
+    <div class="detail" style="margin-top:24px;"><div class="dt">이후 — 롱런 유지 (점주 부담 최소화)</div><div class="dd">오픈발이 빠지면 낮은 비용으로 오래 관리한다. 이슈(신메뉴 등) 있을 때 모듈로 붙였다 뗀다.</div></div>
+    <table>
+      <thead><tr><th>티어</th><th>내용</th><th class="amt-h">월 금액</th></tr></thead>
+      <tbody>
+        <tr><td class="item">Lite</td><td class="desc">네이버플레이스 관리 · 리뷰 답변 · 순위 추적</td><td class="amt">300,000</td></tr>
+        <tr><td class="item">Standard</td><td class="desc">Lite + 월 체험단 10인 / 소액 콘텐츠 1~2건</td><td class="amt">500,000</td></tr>
+      </tbody>
+    </table>
+    <div class="measure">점주 상한은 <strong>월 50만</strong>(댄싱컵 실측 기준). 이를 넘는 브랜드 단위 활동은 본사 브랜딩 트랙(리테이너)이 흡수한다. 개별 청구로 점주를 압박하지 않는 게 이탈 방지의 핵심.</div>
+
+    <div class="detail" style="margin-top:24px;"><div class="dt">상권별 추가 옵션 — 기본 위에 얹는 토핑</div><div class="dd"><ul style="list-style:none;padding:0;margin:6px 0 0;">
+      <li style="position:relative;padding-left:16px;margin-bottom:6px;"><span style="position:absolute;left:0;top:9px;width:5px;height:5px;border-radius:50%;background:#FB923C;display:block;"></span><span class="lab">오피스형</span> (시청·센텀) — 점심 직장인·회식 프로모션 <span style="color:#999;">+월 20~30</span></li>
+      <li style="position:relative;padding-left:16px;margin-bottom:6px;"><span style="position:absolute;left:0;top:9px;width:5px;height:5px;border-radius:50%;background:#FB923C;display:block;"></span><span class="lab">주거형</span> — 배달·가족 단위, 지역맘 카페·당근 <span style="color:#999;">+월 20~30</span></li>
+      <li style="position:relative;padding-left:16px;"><span style="position:absolute;left:0;top:9px;width:5px;height:5px;border-radius:50%;background:#FB923C;display:block;"></span><span class="lab">관광·특수형</span> (강남·해운대) — 외국인·인플루언서 <span style="color:#999;">별도 프로젝트 (강남처럼 고강도)</span></li>
+    </ul></div></div>
+  </div>
+
+  <!-- 5. 거래 원칙 -->
+  <div class="section">
+    <h2>거래 <em>원칙</em> 3</h2>
+    <div class="sec-sub">미례와 오래 가기 위한 룰</div>
+
+    <div class="principle"><div class="pr-n">1</div><div><div class="pr-t">종료 시점을 항상 명기한다</div><div class="pr-d">"언제 원래 금액으로 돌아가는지"를 못 박아야 증액도 통과된다. 대표님 공포 포인트 = "이번 달이면 끝난다더니 또 붙어요." 강남 8·9월 커브처럼 내려가는 그림을 먼저 준다.</div></div></div>
+    <div class="principle"><div class="pr-n">2</div><div><div class="pr-t">커스텀은 플래그십·특수에만</div><div class="pr-d">강남·일본 수준의 화력을 표준 매장에 붓지 않는다. 표준은 찍어내고, 손이 많이 가는 건 특수 프로젝트로만 격리한다. 이게 1인 운영이 무너지지 않는 유일한 길.</div></div></div>
+    <div class="principle"><div class="pr-n">3</div><div><div class="pr-t">자금 집행은 월 캘린더로 선공유</div><div class="pr-d">대표님은 이해관계자에 자금계획을 미리 말해두는 스타일. 집행 타이밍이 사전 공유와 어긋나면 "우리 잘못이 아니어도" 곤란해진다. 월 단위 소진 캘린더를 변팀장에게 먼저 공유하고, 바뀌면 즉시 알린다.</div></div></div>
+  </div>
+
+  <!-- CLOSING -->
+  <div class="closing-box">
+    <div class="cl-msg">매장이 늘수록 <em>같이 커지는</em> 마케팅을 만듭니다</div>
+    <div class="cl-sub">본사 브랜딩 + 표준 오픈 패키지 + 매출 연동 통합 마케팅 · 부산시청점부터 적용</div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="brand">BRANDRISE</div>
+    미례국밥 × 브랜드라이즈 · 가맹 확장 마케팅 전략<br>
+    본 문서는 방향 제안이며, 금액·구조는 협의로 확정됩니다. 금액은 부가세 별도입니다.
+  </div>
+
+</div>
+</body>
+</html>
