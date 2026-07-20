@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>미례국밥 8월 운영 플랜 + 견적 (초안) — 브랜드라이즈</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Noto Sans KR', -apple-system, sans-serif; background: #f4f7f9; color: #1a1b18; line-height: 1.7; font-size: 14px; -webkit-font-smoothing: antialiased; word-break: keep-all; overflow-wrap: break-word; }
+
+.toolbar { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: #0D0D0D; height: 56px; display: flex; align-items: center; justify-content: space-between; padding: 0 32px; }
+.toolbar-left { display: flex; align-items: center; gap: 16px; }
+.toolbar-logo { font-size: 13px; font-weight: 700; color: #EA580C; letter-spacing: 0.05em; }
+.toolbar-sep { width: 1px; height: 20px; background: rgba(255,255,255,0.15); }
+.toolbar-title { font-size: 14px; font-weight: 500; color: #fff; }
+.toolbar-actions { display: flex; gap: 10px; }
+.btn-toolbar { padding: 7px 18px; border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; background: transparent; color: #fff; font-size: 12px; font-weight: 500; cursor: pointer; transition: all 0.2s; text-decoration: none; display: inline-block; }
+.btn-toolbar:hover { background: rgba(255,255,255,0.1); }
+.btn-toolbar.alt { border-color: rgba(234,88,12,0.5); color: #EA580C; }
+
+.draft-ribbon { background: #b45309; color: #fff; text-align: center; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; padding: 7px 0; margin-top: 56px; }
+
+.container { max-width: 920px; margin: 0 auto; padding: 24px 24px 60px; }
+
+.report-header { background: #fff; border-radius: 12px; padding: 40px; margin-bottom: 20px; border: 1px solid #e8edf1; }
+.report-header .label { font-size: 11px; font-weight: 700; color: #EA580C; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 14px; }
+.report-header h1 { font-size: 34px; font-weight: 900; line-height: 1.3; letter-spacing: -0.02em; }
+.report-header h1 em { color: #EA580C; font-style: normal; }
+.report-header .draft-tag { display:inline-block; font-size:12px; font-weight:800; background:#FEF3C7; color:#b45309; padding:3px 12px; border-radius:20px; margin-left:10px; vertical-align:middle; }
+.meta-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 28px; padding-top: 24px; border-top: 1px solid #e8edf1; }
+.meta-item .mk { font-size: 11px; color: #999; letter-spacing: 0.04em; margin-bottom: 4px; }
+.meta-item .mv { font-size: 13px; font-weight: 600; }
+
+.mission-box { background: #0D0D0D; border-radius: 12px; padding: 30px 36px; margin-bottom: 20px; color: #fff; }
+.mission-box .hl-label { font-size: 11px; font-weight: 700; color: #EA580C; letter-spacing: 0.1em; margin-bottom: 14px; text-transform: uppercase; }
+.mission-box .lede { font-size: 18px; font-weight: 700; line-height: 1.55; letter-spacing: -0.01em; }
+.mission-box .lede em { color: #FDBA8C; font-style: normal; }
+
+.section { background: #fff; border-radius: 12px; padding: 32px 40px; margin-bottom: 20px; border: 1px solid #e8edf1; }
+.section h2 { font-size: 18px; font-weight: 800; margin-bottom: 6px; letter-spacing: -0.02em; }
+.section h2 em { color: #EA580C; font-style: normal; }
+.section .sec-sub { font-size: 12px; color: #999; margin-bottom: 20px; }
+
+.action-tag { display: inline-block; font-size: 11px; font-weight: 800; color: #EA580C; letter-spacing: 0.06em; margin-bottom: 6px; }
+.action-tag.new { background:#EA580C; color:#fff; padding:3px 10px; border-radius:20px; }
+.action-tag.base { background:#eef1f4; color:#636569; padding:3px 10px; border-radius:20px; }
+
+.detail { border-left: 3px solid #f0f2f5; padding: 4px 0 4px 18px; margin-bottom: 18px; }
+.detail:hover { border-left-color: #FED7AA; }
+.detail .dt { font-size: 14px; font-weight: 800; margin-bottom: 4px; }
+.detail .dd { font-size: 13px; color: #636569; }
+.detail .dd ul { list-style: none; padding-left: 0; margin: 6px 0 0; }
+.detail .dd ul li { position: relative; padding-left: 14px; margin-bottom: 4px; }
+.detail .dd ul li::before { content: ''; position: absolute; left: 0; top: 9px; width: 4px; height: 4px; border-radius: 50%; background: #FB923C; }
+.detail .dd ul li .lab { font-weight: 800; color: #1a1b18; }
+
+.measure { background: #f8fafb; border: 1px solid #e8edf1; border-radius: 8px; padding: 12px 16px; margin-top: 14px; font-size: 12.5px; color: #3a3c40; }
+.measure strong { color: #EA580C; font-weight: 700; }
+.src { font-size: 10.5px; color: #aeb2b8; font-weight: 600; }
+
+.kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 4px; }
+.kpi-grid.g3 { grid-template-columns: repeat(3, 1fr); }
+.kpi-card { background: #f8fafb; border-radius: 10px; padding: 20px 16px; text-align: center; border: 1px solid #e8edf1; }
+.kpi-card .kc-label { font-size: 11px; color: #999; font-weight: 600; margin-bottom: 8px; }
+.kpi-card .kc-value { font-size: 22px; font-weight: 900; color: #1a1b18; letter-spacing: -0.02em; line-height: 1.15; }
+.kpi-card .kc-value em { color:#EA580C; font-style:normal; }
+.kpi-card .kc-value .u { font-size:13px; font-weight:600; color:#999; }
+.kpi-card .kc-desc { font-size: 11px; color: #16a34a; margin-top: 6px; font-weight: 600; }
+.kpi-card.dark { background:#0D0D0D; border-color:#0D0D0D; }
+.kpi-card.dark .kc-label { color:#EA580C; }
+.kpi-card.dark .kc-value { color:#fff; }
+.kpi-card.dark .kc-value em { color:#EA580C; }
+.kpi-card.dark .kc-desc { color:rgba(255,255,255,0.45); }
+
+.deliv-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+.deliv-chip { display: inline-flex; align-items: baseline; gap: 5px; background: #FFF7ED; border: 1px solid #FED7AA; border-radius: 8px; padding: 6px 12px; font-size: 12px; color: #9a3412; font-weight: 600; white-space: nowrap; }
+.deliv-chip b { font-size: 14px; font-weight: 900; color: #EA580C; }
+.deliv-chip.plain { color: #636569; background: #f8fafb; border-color: #e8edf1; }
+
+.context-lead { font-size: 13.5px; color: #3a3c40; line-height: 1.85; margin-bottom: 4px; }
+.context-lead strong { color: #1a1b18; font-weight: 700; }
+
+.glance-steps { display:grid; grid-template-columns: repeat(3,1fr); gap:12px; margin-bottom:18px; }
+.glance-step { border:1px solid #e8edf1; border-radius:10px; padding:16px 18px; background:#f8fafb; }
+.glance-step.hero { background:#FFF7ED; border-color:#FED7AA; }
+.glance-step .gs-n { font-size:11px; font-weight:800; color:#EA580C; letter-spacing:0.04em; margin-bottom:6px; }
+.glance-step .gs-t { font-size:15px; font-weight:800; line-height:1.4; }
+.glance-step .gs-d { font-size:12px; color:#636569; margin-top:4px; line-height:1.6; }
+
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th { background: #f8fafb; padding: 10px 14px; font-weight: 600; border-bottom: 2px solid #e8edf1; color: #999; font-size: 11px; text-align: left; white-space: nowrap; }
+th.r { text-align: right; }
+td { padding: 11px 14px; border-bottom: 1px solid #f0f2f5; vertical-align: top; }
+td.item { font-weight: 700; color: #1a1b18; }
+td.desc { color: #636569; font-size: 12px; }
+td.c { text-align: center; font-variant-numeric: tabular-nums; }
+td.up { color:#16a34a; font-weight:700; text-align:center; }
+td.amt { text-align:right; font-weight:700; font-variant-numeric:tabular-nums; white-space:nowrap; width:120px; }
+td.amt.new { color:#EA580C; }
+th.amt-h { text-align:right; }
+tr.sub td { background:#f8fafb; font-weight:800; color:#1a1b18; border-top:1px solid #e8edf1; }
+tr.total-row td { background:#0D0D0D; color:#fff; font-weight:800; font-size:14px; }
+
+.week { border: 1px solid #e8edf1; border-radius: 10px; padding: 18px 22px; margin-bottom: 14px; }
+.week .wk-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 10px; }
+.week .wk-range { font-size: 12px; font-weight: 800; color: #fff; background: #EA580C; padding: 3px 12px; border-radius: 20px; white-space: nowrap; }
+.week .wk-theme { font-size: 14px; font-weight: 800; }
+.week ul { padding-left: 20px; font-size: 13px; color: #3a3c40; }
+.week ul li { margin-bottom: 4px; }
+
+.closing-box { background: #0D0D0D; border-radius: 12px; padding: 36px 40px; text-align: center; color: #fff; margin-bottom: 20px; }
+.closing-box .cl-msg { font-size: 22px; font-weight: 900; letter-spacing: -0.02em; line-height: 1.4; }
+.closing-box .cl-msg em { color: #FDBA8C; font-style: normal; }
+.closing-box .cl-sub { font-size: 13px; color: rgba(255,255,255,0.6); margin-top: 12px; }
+
+.quote-total { background:#0D0D0D; border-radius:12px; padding:26px 34px; margin-bottom:20px; display:flex; align-items:center; justify-content:space-between; color:#fff; flex-wrap:wrap; gap:12px; }
+.quote-total .qt-l { font-size:14px; font-weight:600; }
+.quote-total .qt-s { font-size:11px; color:rgba(255,255,255,0.5); margin-top:4px; }
+.quote-total .qt-s em { color:#EA580C; font-style:normal; font-weight:700; }
+.quote-total .qt-a { font-size:34px; font-weight:900; letter-spacing:-0.03em; }
+.quote-total .qt-a span { font-size:15px; font-weight:600; }
+.part-block { margin-top:24px; }
+.part-bar { display:flex; align-items:baseline; justify-content:space-between; margin-bottom:6px; padding-bottom:8px; border-bottom:2px solid #f0f2f5; }
+.part-bar .pb-t { font-size:14.5px; font-weight:800; }
+.part-bar .pb-p { font-size:16px; font-weight:900; color:#EA580C; white-space:nowrap; }
+.part-block.sep { border:2px solid #EA580C; border-radius:12px; padding:22px 24px; background:#FFFBF7; margin-top:26px; }
+.part-block.sep .part-bar { border-bottom-color:#FED7AA; }
+
+.quote-delta { background:#FFF7ED; border-left:4px solid #EA580C; border-radius:0 8px 8px 0; padding:14px 20px; margin-top:20px; font-size:12.5px; color:#636569; line-height:1.85; }
+.quote-delta strong { color:#1a1b18; }
+
+.footer { text-align: center; padding: 40px 0 10px; color: #999; font-size: 12px; line-height: 2; }
+.footer .brand { font-size: 15px; font-weight: 800; color: #1a1b18; margin-bottom: 4px; }
+
+@media (max-width: 768px) {
+  .container { padding: 20px 16px 40px; }
+  .meta-grid { grid-template-columns: repeat(2, 1fr); }
+  .kpi-grid, .kpi-grid.g3, .glance-steps { grid-template-columns: 1fr; }
+  .section { padding: 24px 20px; }
+  .report-header h1 { font-size: 26px; }
+}
+@media print {
+  .toolbar, .draft-ribbon { display: none; }
+  .container { padding: 20px; max-width: none; }
+  body { background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .section, .mission-box, .closing-box, .week, .part-block.sep { break-inside: avoid; }
+  @page { size: A4; margin: 12mm; }
+}
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="toolbar-left">
+    <div class="toolbar-logo">BRANDRISE</div>
+    <div class="toolbar-sep"></div>
+    <div class="toolbar-title">미례국밥 8월 운영 플랜 + 견적 (초안)</div>
+  </div>
+  <div class="toolbar-actions">
+    <a class="btn-toolbar alt" href="../july/plan-v2.html">← 7월 운영 플랜</a>
+    <button class="btn-toolbar" onclick="window.print()">PDF 저장</button>
+  </div>
+</div>
+
+<div class="draft-ribbon">초안 (DRAFT) · 내부 검토용 · 7월 콜 이후 숫자·범위 확정 예정</div>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <div class="report-header">
+    <div class="label">미례국밥 × 브랜드라이즈</div>
+    <h1>8월 <em>운영 플랜 + 견적</em><span class="draft-tag">초안</span></h1>
+    <div class="meta-grid">
+      <div class="meta-item"><div class="mk">공급자</div><div class="mv">브랜드라이즈 by HIZ</div></div>
+      <div class="meta-item"><div class="mk">수신</div><div class="mv">(주)위드런 · 미례국밥</div></div>
+      <div class="meta-item"><div class="mk">대상 기간</div><div class="mv">2026. 08. 01 — 08. 31</div></div>
+      <div class="meta-item"><div class="mk">한 줄 요약</div><div class="mv">강남 일본 성수기 화력 집중 · 본사 엔진 안정 · 센텀 유지</div></div>
+    </div>
+  </div>
+
+  <!-- MISSION -->
+  <div class="mission-box">
+    <div class="hl-label">8월 한 줄 전략</div>
+    <div class="lede">7월에 미뤄 둔 강남 화력을, <em>방한이 가장 몰리는 8월</em>에 몰아서 태웁니다 — <em>일본 손님</em>을 인스타 검색으로 선점하고, 본사 엔진은 <em>안정 운영</em>으로 전 지점을 밀어줍니다.</div>
+    <div style="margin-top:16px;font-size:13px;color:rgba(255,255,255,0.72);line-height:1.95;">7월은 본사 엔진으로 센텀을 회복시키고 강남은 기본 운영으로 지켰습니다. 8월은 <strong style="color:#fff;">여름방학·오봉(お盆) 연휴로 일본인 방한이 연중 최대가 되는 이 타이밍에 강남 화력(일본 인플루언서 500 + 마이크로·돋보기 500)을 집중</strong>합니다. 두 달에 흩뿌리는 대신 성수기 한 달에 모아, 일본어 검색 선점과 강남 방문 전환을 한 번에 끌어올립니다. 본사 엔진(인스타·인플루언서 200)은 기본 운영으로 내려와 전 지점 브랜드 도달을 유지하고, 센텀은 회복 궤도를 이어갑니다.</div>
+  </div>
+
+  <!-- 8월 한눈에 -->
+  <div class="section">
+    <h2>8월 <em>한눈에</em> — 무엇을 · 목표 · 비용</h2>
+    <div class="sec-sub">7월 이월 강남 화력을 방한 성수기에 집중 · 본사·센텀은 안정 운영으로 전환</div>
+
+    <div class="glance-steps">
+      <div class="glance-step"><div class="gs-n">① 무엇을 하나</div><div class="gs-t">강남 일본·마이크로 화력 집중 · 본사 엔진 안정</div><div class="gs-d">7월 이월 1,000만을 성수기 한 달에</div></div>
+      <div class="glance-step"><div class="gs-n">② 목표는</div><div class="gs-t">일본어 검색 선점 착수 · 강남 방문 전환</div><div class="gs-d">센텀 회복 유지 · 브랜드 도달 지속</div></div>
+      <div class="glance-step hero"><div class="gs-n">③ 비용은</div><div class="gs-t">지점별 · 총 1,820만</div><div class="gs-d">7월 1,020 → 8월 성수기 피크</div></div>
+    </div>
+
+    <table>
+      <thead><tr><th>지점</th><th>내용</th><th class="r">8월 금액</th></tr></thead>
+      <tbody>
+        <tr><td class="item">본사</td><td class="desc">브랜드 전략 · 인스타 운영 · 전포 플레이스 · <strong>인플루언서 200(기본 운영 전환)</strong></td><td class="amt">5,400,000</td></tr>
+        <tr><td class="item">센텀점</td><td class="desc">플레이스 · 체험단 · <strong>메타 지역 정밀 타겟 100</strong> (회복 궤도 유지)</td><td class="amt">1,800,000</td></tr>
+        <tr><td class="item" style="color:#EA580C;">강남점</td><td class="desc">기본 운영 + <strong>일본 인플루언서 500 + 마이크로 인플루언서·돋보기 500</strong> (성수기 화력)</td><td class="amt new">11,000,000</td></tr>
+        <tr class="total-row"><td colspan="2">8월 합계 (부가세 별도)</td><td class="amt">18,200,000</td></tr>
+      </tbody>
+    </table>
+    <div class="measure"><strong>7월(1,020만)에서 8월 1,820만으로, 강남 성수기 화력만큼 일시 상승합니다.</strong> 원래 7~8월 두 달에 나눠 태우려던 강남 일본·마이크로 화력(1,000)을 <strong>방한이 가장 몰리는 8월 한 달에 집중</strong>하는 구조입니다. 본사 인플루언서는 7월 300(센텀 회복)에서 8월 200(기본 운영)으로 내려오고, 센텀도 200→100으로 안정화합니다. <strong>강남 화력이 끝나는 9월부터는 전 지점 합계 900만의 안정 궤도</strong>로 진입합니다. <span style="color:#999;">(6~12월 전체 커브는 7월 플랜 별첨 A 참조)</span></div>
+  </div>
+
+  <!-- ACTION 1 — 강남 일본 인바운드 -->
+  <div class="section">
+    <div class="action-tag new">강남점 · 일본 인플루언서 500</div>
+    <h2>일본 손님을 <em>잡습니다</em> — 인스타 자연어 검색 선점</h2>
+    <div class="sec-sub">일본인이 인스타에서 서울 맛집을 찾는 그 검색어를, 방한 최성수기 8월에 우리 영상으로 먼저 차지합니다</div>
+
+    <p class="context-lead">일본 사람들은 한국 맛집을 찾을 때 인스타그램에 <strong>일본어로 그냥 검색</strong>합니다 — "서울 맛있는 가게(ソウル 美味しいお店)", "강남 맛집(江南 グルメ)"처럼요. 그런데 <strong>한국 식당은 대부분 한글로만 올려서, 일본어로 검색하면 뜰 가게가 거의 없습니다.</strong> 강남점 손님이 바로 이 일본 관광객이라, <strong>방한이 가장 몰리는 8월</strong>에 일본어 영상으로 이 <strong>비어 있는 자리를 먼저 차지</strong>합니다.</p>
+
+    <div class="detail"><div class="dt">왜 8월인가 — 방한 최성수기에 화력을 모읍니다</div><div class="dd"><strong>여름방학·오봉(お盆) 연휴가 낀 8월은 일본인 해외여행이 연중 가장 몰리는 시기</strong>입니다(5월 골든위크와 함께 양대 피크). 7월에 얇게 시작하기보다 <strong>방문객이 최대인 8월 한 달에 인플루언서·바이럴을 집중</strong>해, 검색 선점과 실제 방문을 같은 시점에 끌어올립니다.</div></div>
+
+    <div class="detail"><div class="dt">맨땅이 아닙니다 — 이미 일본 인플루언서 판을 압니다</div><div class="dd">브랜드라이즈로선 새로 꺼내는 카드지만, <strong>HIZ 그룹이 일본 인플루언서 캠페인을 운영해온 경험</strong>이 있습니다. 그래서 ① <strong>방한 예정인 일본 인플루언서 풀</strong>을 중심으로 섭외하고(이미 한국에 올 사람이라 실제 방문 콘텐츠가 나옵니다), ② 그들이 <strong>한국 맛집을 찾아 콘텐츠로 만드는 실제 동선</strong>을 알기에 그 동선 위에 미례를 심고, ③ 주요 일본 바이럴 계정 네트워크로 확산합니다.</div></div>
+
+    <div class="detail"><div class="dt">어떻게 검색 위에 뜨나 — 네 군데에 같은 말 넣기</div><div class="dd">인스타는 이제 영상의 자막·글자·소리까지 읽어 검색에 반영합니다. 영상 하나에 같은 일본어를 네 곳에:<ul>
+      <li><span class="lab">설명글</span> — "서울·강남에서 부산 돼지국밥(테지쿳파)을 먹을 수 있는 집"</li>
+      <li><span class="lab">화면 자막</span> — 첫 장면에 "서울 강남 テジクッパ" 크게</li>
+      <li><span class="lab">소리·사진 설명</span> — 말로도, 사진 설명글에도 일본어</li>
+      <li><span class="lab">위치 표시</span> — 강남/서울 위치 (없으면 지역 검색에서 빠짐)</li>
+    </ul></div></div>
+    <div class="detail"><div class="dt">저장·공유 유도</div><div class="dd">인스타는 '좋아요'보다 <strong>저장·공유·오래 본 영상</strong>을 위로 올립니다. "가는 길·가격·주문법 정리(保存推奨)"처럼 여행자가 저장할 영상을 만듭니다.</div></div>
+
+    <p class="context-lead" style="font-weight:800;color:#1a1b18;margin-top:20px;margin-bottom:6px;">노릴 일본어 검색어 (전체 30개는 따로 정리)</p>
+    <table>
+      <thead><tr><th>일본어</th><th>뜻</th><th>언제 검색</th></tr></thead>
+      <tbody>
+        <tr><td class="item">テジクッパ / 豚スープご飯</td><td class="desc">돼지국밥</td><td class="desc">메뉴 찾을 때</td></tr>
+        <tr><td class="item">ソウル グルメ / 江南 グルメ</td><td class="desc">서울·강남 맛집</td><td class="desc">여행·맛집</td></tr>
+        <tr><td class="item">ソウル 美味しいお店 / 韓国 グルメ</td><td class="desc">서울 맛있는 가게·한국 맛집</td><td class="desc">여행 준비</td></tr>
+        <tr><td class="item">江南駅 グルメ / ソウル 焼肉</td><td class="desc">강남역 맛집·서울 고기</td><td class="desc">지역·메뉴</td></tr>
+      </tbody>
+    </table>
+
+    <div class="detail" style="margin-top:20px;"><div class="dt">8월 진행 후, 일본 자산은 본사 엔진으로 흡수</div><div class="dd">월 500으로 방한 예정 일본 인플루언서를 섭외해 일본어 검색 선점을 시작합니다. 8월 집중 진행 후, 여기서 쌓은 일본어 검색·인플루언서 자산은 <strong>본사 엔진으로 흡수해 브랜드 전체가 지속 활용</strong>합니다 — 강남만의 일회성 지출이 아닙니다. <span style="color:#999;">(상세는 별도 '일본 인바운드 전략' <a href="../july/japan.html" style="color:#EA580C;">문서</a> 참조)</span></div></div>
+
+    <div class="measure"><strong>측정</strong> — 위 일본어 검색어에서 미례 영상 노출 · 일본어 영상 저장·공유 · 강남 외국인 방문</div>
+  </div>
+
+  <!-- ACTION 2 — 강남 마이크로 -->
+  <div class="section">
+    <div class="action-tag new">강남점 · 마이크로 인플루언서 + 돋보기 500</div>
+    <h2>강남을 <em>계속 뜨게</em> — 마이크로 다수 반복 노출 + 돋보기 확산</h2>
+    <div class="sec-sub">메가 한 방이 아니라, 맛집 계정 다수가 시차를 두고 계속 올려 "요즘 여기 자주 보이네" 신호를 만듭니다</div>
+
+    <div class="deliv-row">
+      <span class="deliv-chip">마이크로~매크로 맛집 계정 다수 반복 노출</span>
+      <span class="deliv-chip">돋보기 콘텐츠로 도달 확산</span>
+    </div>
+
+    <div class="detail"><div class="dt">마이크로 인플루언서 다수 — 반복 노출로 화제 유지</div><div class="dd"><strong>마이크로~매크로 맛집 계정 다수가 시차를 두고 계속 올리는 방식</strong>입니다. "요즘 여기 자주 보이네 → 줄 서네 → 나도 가봐야지"의 신호를 유지합니다. 8월 일본 인플루언서 콘텐츠와 겹쳐, 내국인·일본 관광객 양쪽에 동시에 노출됩니다.</div></div>
+    <div class="detail"><div class="dt">돋보기 바이럴 — 도달을 받쳐 검색·리뷰 자산 방어</div><div class="dd">돋보기 콘텐츠로 도달을 받쳐 강남 검색·리뷰 자산을 방어합니다. 오픈 3개월간 쌓은 방문 4,812·리뷰 355 위에서, 순위와 화제를 성수기에 한 번 더 끌어올립니다.</div></div>
+
+    <div class="measure"><strong>측정</strong> — 마이크로 인플루언서 발행·저장 · 돋보기 도달 · 강남 방문·리뷰 순위</div>
+  </div>
+
+  <!-- ACTION 3 — 본사 엔진 + 센텀 -->
+  <div class="section">
+    <div class="action-tag base">본사 엔진 + 센텀 · 안정 운영</div>
+    <h2>본사 엔진은 <em>기본 운영</em>으로 · 센텀은 회복 궤도 유지</h2>
+    <div class="sec-sub">7월 센텀 회복 집중을 마치고, 8월부터 본사·센텀은 안정 운영으로 내려옵니다</div>
+
+    <div class="detail"><div class="dt">본사 인플루언서 엔진 <span style="font-size:10px;color:#EA580C;font-weight:800;">300 → 200</span></div><div class="dd">7월 센텀 회복에 집중했던 본사 인플루언서 엔진을 <strong>8월부터 기본 운영(200)으로 내려</strong> 전 지점 브랜드 도달을 유지합니다. 인스타 공식 채널 운영·전략 기획은 그대로 이어갑니다.</div></div>
+    <div class="detail"><div class="dt">센텀 <span style="font-size:10px;color:#EA580C;font-weight:800;">메타 200 → 100</span></div><div class="dd">7월 회복 집중(지역 정밀 타겟 200)으로 반등을 만든 뒤, <strong>8월은 100으로 안정화</strong>합니다. 플레이스·체험단으로 지역 검색을 지키고, 소액 메타로 방문 전환을 유지합니다.</div></div>
+    <div class="detail"><div class="dt">지점 공통 — 플레이스·체험단</div><div class="dd">각 지점 네이버플레이스 상시 관리 + 리뷰·댓글 대응 + 블로그 체험단으로 검색 콘텐츠를 계속 쌓습니다. 로컬 검색 방어는 지점이 담당합니다.</div></div>
+
+    <div class="measure"><strong>측정</strong> — 인스타 도달·팔로워 · 본사 인플루언서 발행·도달 · 센텀 방문 유지 · 지점 플레이스 순위·유입</div>
+  </div>
+
+  <!-- KPI -->
+  <div class="section">
+    <h2>8월 <em>목표</em></h2>
+    <div class="sec-sub">7월 대비 · 강남 일본 검색 선점 착수가 8월 1순위</div>
+    <table>
+      <thead><tr><th>무엇을</th><th class="r">7월 목표</th><th class="r">8월 목표</th></tr></thead>
+      <tbody>
+        <tr><td class="item">일본어 검색 노출 <span style="font-size:10px;color:#EA580C;font-weight:800;">1순위</span></td><td class="c">0 (미착수)</td><td class="c"><b style="color:#EA580C;">검색에 뜨기 시작</b></td></tr>
+        <tr><td class="item">강남 방문 / 리뷰</td><td class="c">순위·리뷰 유지</td><td class="c">성수기 방문 반등</td></tr>
+        <tr><td class="item">강남 외국인 방문</td><td class="c">—</td><td class="c">일본 관광객 유입 시작</td></tr>
+        <tr><td class="item">센텀 방문</td><td class="c">3,000+ 반등</td><td class="c">반등 유지</td></tr>
+        <tr><td class="item">인스타 도달 / 팔로워</td><td class="c">30만+ / 350+</td><td class="c">유지·증가</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 주간 -->
+  <div class="section">
+    <h2>8월 <em>주간 일정</em></h2>
+    <div class="sec-sub">매주 월요일 오전 9시 주간 메일 + 대시보드 보고 · 7/27~31 사전 섭외를 8월에 발행으로 연결</div>
+    <div class="week">
+      <div class="wk-head"><span class="wk-range">8/1 — 8/9</span><span class="wk-theme">일본 인플루언서 확정 + 일본어 영상 세팅</span></div>
+      <ul><li>7월 말 1차 섭외한 방한 예정 일본 인플루언서 확정 · 일정 조율</li><li>일본어 검색어 최종 확정 · 영상 설명·자막·위치 틀 세팅</li><li>마이크로 맛집 계정·돋보기 섭외 마무리</li></ul>
+    </div>
+    <div class="week">
+      <div class="wk-head"><span class="wk-range">8/10 — 8/17</span><span class="wk-theme">오봉 성수기 발행 개시 (일본 + 마이크로 동시)</span></div>
+      <ul><li><strong>일본어 영상 발행 시작</strong>(검색어 선점) · 방한 인플루언서 실방문 콘텐츠</li><li>마이크로 인플루언서 강남·브랜드 콘텐츠 발행 · 돋보기 도달</li><li>오봉 연휴(8월 중순) 방한 피크에 노출 집중</li></ul>
+    </div>
+    <div class="week">
+      <div class="wk-head"><span class="wk-range">8/18 — 8/24</span><span class="wk-theme">일본어 검색 노출 점검 · 확산</span></div>
+      <ul><li>일본어 검색어에서 미례 영상 노출 점검 · 잘 되는 소재 더블다운</li><li>강남 외국인 방문·저장·공유 추적 · 부산 확산 검토</li></ul>
+    </div>
+    <div class="week">
+      <div class="wk-head"><span class="wk-range">8/25 — 8/31</span><span class="wk-theme">마무리 + 9월 안정 궤도 준비</span></div>
+      <ul><li>8월 성수기 화력 성과 정리 · 일본 자산 본사 엔진 흡수 계획</li><li>8월 보고서 + 9월 안정 운영 플랜(전 지점 900) 공유</li></ul>
+    </div>
+  </div>
+
+  <!-- 견적 -->
+  <div class="section">
+    <h2>8월 <em>견적</em> <span class="draft-tag">초안</span></h2>
+    <div class="sec-sub">지점별 · 항목별로 명확하게 · 부가세 별도 · 7월 콜 이후 확정</div>
+
+    <div class="quote-total">
+      <div>
+        <div class="qt-l">8월 합계 (부가세 별도)</div>
+        <div class="qt-s">본사 540 + 센텀 180 + 강남 1,100 <em>· 강남 화력(일본·마이크로 1,000)은 7월에서 이월</em></div>
+      </div>
+      <div class="qt-a">1,820<span>만원</span></div>
+    </div>
+
+    <!-- 본사 -->
+    <div class="part-block">
+      <div class="part-bar"><div class="pb-t">본사 <span style="font-size:11px;color:#999;font-weight:700;">— 브랜드 엔진 (기본 운영)</span></div><div class="pb-p">540만원</div></div>
+      <table>
+        <thead><tr><th>항목</th><th>내용</th><th class="amt-h">금액</th></tr></thead>
+        <tbody>
+          <tr><td class="item">브랜드 마케팅 전략 기획</td><td class="desc">전 지점 통합 전략·방향 설계 + 월간 운영 보고</td><td class="amt">1,000,000</td></tr>
+          <tr><td class="item">인스타그램 운영</td><td class="desc">브랜드 공식 인스타 콘텐츠 제작·운영 (월 6~8회) — 전 지점 대표 채널</td><td class="amt">2,000,000</td></tr>
+          <tr><td class="item">네이버플레이스 운영 (전포본점)</td><td class="desc">전포 플레이스 상시 관리 + 키워드·순위</td><td class="amt">400,000</td></tr>
+          <tr><td class="item">인플루언서 운영 <span style="font-size:10px;color:#636569;font-weight:800;">기본 운영 전환</span></td><td class="desc">맛집 인플루언서 바이럴을 본사에서 상시 운영 → 전 지점 도달. 8월부터 기본 운영(200)</td><td class="amt">2,000,000</td></tr>
+          <tr class="sub"><td colspan="2">본사 소계</td><td class="amt">5,400,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 센텀 -->
+    <div class="part-block">
+      <div class="part-bar"><div class="pb-t">센텀점 <span style="font-size:11px;color:#999;font-weight:700;">— 회복 후 안정화</span></div><div class="pb-p">180만원</div></div>
+      <table>
+        <thead><tr><th>항목</th><th>내용</th><th class="amt-h">금액</th></tr></thead>
+        <tbody>
+          <tr><td class="item">네이버플레이스 운영</td><td class="desc">플레이스 상시 관리 + 키워드·순위 (지역 검색 랜딩)</td><td class="amt">400,000</td></tr>
+          <tr><td class="item">블로그 체험단</td><td class="desc">방문형 후기 · 키워드 분배 + 영수증 리뷰</td><td class="amt">400,000</td></tr>
+          <tr><td class="item">바이럴 (메타 광고) <span style="font-size:10px;color:#636569;font-weight:800;">안정화 100</span></td><td class="desc">센텀 거주·주거상권 지역 타겟 유지 · 랜딩=센텀 플레이스 (수수료+광고비 포함)</td><td class="amt">1,000,000</td></tr>
+          <tr class="sub"><td colspan="2">센텀 소계</td><td class="amt">1,800,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 강남 -->
+    <div class="part-block sep">
+      <div class="part-bar"><div class="pb-t">강남점 <span style="font-size:11px;color:#EA580C;font-weight:700;">— 8월 성수기 화력 (7월 이월)</span></div><div class="pb-p">1,100만원</div></div>
+      <table>
+        <thead><tr><th>항목</th><th>내용</th><th class="amt-h">금액</th></tr></thead>
+        <tbody>
+          <tr><td colspan="3" style="background:#f8fafb;font-weight:800;color:#636569;font-size:11.5px;padding:8px 14px;">기본 운영 — 매월 쌓는 것</td></tr>
+          <tr><td class="item">네이버플레이스 운영 + 댓글</td><td class="desc">강남점 플레이스 상시 관리 + 댓글 작업</td><td class="amt">600,000</td></tr>
+          <tr><td class="item">블로그 체험단</td><td class="desc">강남 검색 콘텐츠 축적</td><td class="amt">400,000</td></tr>
+          <tr><td colspan="3" style="background:#FFF7ED;font-weight:800;color:#9a3412;font-size:11.5px;padding:8px 14px;">8월 성수기 화력 — 방한 최성수기 집중 (7월 이월)</td></tr>
+          <tr><td class="item">일본 인플루언서</td><td class="desc">방한 예정 일본 계정 섭외 · 자연어 검색 선점 (8월 오봉 방한 최성수기)</td><td class="amt new">5,000,000</td></tr>
+          <tr><td class="item">마이크로 인플루언서 + 돋보기 바이럴</td><td class="desc">마이크로~매크로 맛집 다수 반복 노출 + 돋보기 도달 확산</td><td class="amt new">5,000,000</td></tr>
+          <tr class="sub"><td colspan="2">강남 소계</td><td class="amt">11,000,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="quote-delta"><strong>7월 → 8월 변화.</strong> 7월(1,020만)에서 <strong>8월 1,820만으로, 강남 성수기 화력만큼 일시 상승</strong>합니다. 원래 7~8월 두 달에 나눠 태우려던 강남 일본·마이크로 화력(1,000)을 <strong>방한이 가장 몰리는 8월 한 달에 집중</strong>한 결과입니다. 본사 인플루언서는 300→200, 센텀 메타는 200→100으로 내려옵니다. <strong>강남 화력이 끝나는 9월부터는 전 지점 합계 900만의 안정 궤도</strong>로 진입합니다(6~12월 전체 커브는 <a href="../july/plan-v2.html" style="color:#EA580C;">7월 플랜 별첨 A</a> 참조).</div>
+
+  </div>
+
+  <!-- CLOSING -->
+  <div class="closing-box">
+    <div class="cl-msg">방한이 가장 몰리는 <em>8월</em>에, 강남 화력을 <em>한 번에</em> 태웁니다</div>
+    <div class="cl-sub">8월 — 일본 검색 선점 착수 · 마이크로 반복 노출 · 본사 엔진 안정 · 9월부터 900만 안정 궤도</div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="brand">BRANDRISE</div>
+    미례국밥 × 브랜드라이즈 · 2026년 8월 운영 플랜 + 견적 (초안)<br>
+    본 문서는 내부 검토용 초안입니다. 세부 일정·목표·금액은 7월 콜 이후 확정되며 조정될 수 있습니다. 금액은 부가세 별도입니다.
+  </div>
+
+</div>
+</body>
+</html>
