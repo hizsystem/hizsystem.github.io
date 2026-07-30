@@ -36,16 +36,18 @@ const PLAN = {
   },
 
   /* ── 인플루언서 ────────────────────────────────────────────────────────────
-     방문일·시간을 확정하지 않는 방식입니다.
-     visitWindow = 방문 시기 / uploadFocus = 업로드 집중 구간(오픈 주간)       */
+     방문일·시간은 확정하지 않고, 업로드만 주 단위로 나눠서 올립니다.
+     uploads = 업로드 회차. 업로드와 동시에 메타 광고를 1주일 돌립니다.
+     (인원은 uploads 의 count 를 더해 자동 계산됩니다)                          */
   influencer: {
-    count: 4,
     visitWindow: '8월 중 (확정 시 사전 안내)',
-    uploadStart: '8/10',
-    uploadEnd:   '8/16',
-    uploadLabel: '오픈 주간',
     menu: '시그니처 돼지우동 2개 + 사이드 중 택 1',
     need: '촬영 가능한 자리(창가/조명 밝은 곳) ·조리 장면 촬영 협조 ',
+    uploads: [
+      { label: '2주차 · 오픈 주간', count: 2, adStart: '8/10', adEnd: '8/16' },
+      { label: '3주차',             count: 1, adStart: '8/17', adEnd: '8/23' },
+      { label: '4주차',             count: 1, adStart: '8/24', adEnd: '8/30' },
+    ],
   },
 
   /* ── 그 외 일정 (직접 적는 항목) ── */
@@ -53,16 +55,15 @@ const PLAN = {
     { date: '8/3',  type: 'key', text: '사장님 자료 전달 마감' },
     { date: '8/3',  type: 'np',  text: '플레이스 등록 신청' },
     { date: '8/4',  type: 'np',  text: '등록 승인 대기' },
-    { date: '8/5',  type: 'np',  text: '정보·메뉴 입력' },
+    { date: '8/5',  type: 'np',  text: '최적화 세팅' },
     { date: '8/5',  type: 'exp', text: '체험단 모집 시작', soft: true },
-    { date: '8/6',  type: 'np',  text: '사진 등록·키워드' },
+    { date: '8/6',  type: 'np',  text: '최적화 세팅' },
     { date: '8/7',  type: 'np',  text: '키워드 세팅 마무리' },
     { date: '8/8',  type: 'np',  text: '사장님 최종 확인' },
     { date: '8/10', type: 'key', text: '🎉 오픈' },
     { date: '8/10', type: 'np',  text: '지도·검색 노출 시작' },
-    { date: '8/12', type: 'ad',  text: '광고 시작' },
+    { date: '8/17', type: 'np',  text: "플레이스 '새로오픈' 활성화" },
     { date: '8/25', type: 'ghost', text: '중간 점검 · 순위 확인' },
-    { date: '8/31', type: 'ad',  text: '광고 종료' },
     { date: '9/4',  type: 'key', text: '8월 운영보고서 전달' },
   ],
 };
@@ -165,6 +166,7 @@ table.cal td.band-exp.off { background:#F2F8FF; }
 table { width: 100%; border-collapse: collapse; font-size: 13px; }
 th { background: #f8fafb; padding: 10px 14px; font-weight: 600; border-bottom: 2px solid #e8edf1; color: #999; font-size: 11px; text-align: left; white-space: nowrap; }
 th.r { text-align: right; }
+th.c { text-align: center; }
 td { padding: 12px 14px; border-bottom: 1px solid #f0f2f5; vertical-align: top; }
 td.item { font-weight: 700; }
 td.desc { color: #636569; font-size: 12.5px; }
@@ -242,7 +244,7 @@ tr.total-row td { background:#0D0D0D; color:#fff; font-weight:800; font-size:15p
   <div class="mission-box">
     <div class="hl-label">오픈 첫 달, 우리가 할 일</div>
     <div class="lede">오픈 첫 달은 <em>손님이 우리 가게를 찾을 수 있게</em> 만드는 달입니다 — 지도에 뜨고, 검색에 뜨고, SNS에 뜨게.</div>
-    <div class="sub">가게가 아무리 맛있어도 <strong>처음엔 아무도 모릅니다.</strong> 그래서 8월 한 달 동안 세 가지를 합니다. ① <strong>네이버 지도·검색에 가게를 제대로 등록</strong>해서 "부산시청 국밥"을 검색하면 우리가 뜨게 하고, ② <strong>블로그 체험단 <span data-fill="review-count">—</span></strong>이 다녀가며 후기를 쌓고, ③ <strong>인플루언서 <span data-fill="inf-count">—</span></strong>이 8월 중 방문해 <strong>오픈 주간에 맞춰</strong> 영상을 올립니다. 사장님은 <strong>가게 운영에만 집중</strong>하시면 되고, 아래 일정표에 <strong>언제 누가 오는지</strong> 다 적어뒀습니다.</div>
+    <div class="sub">가게가 아무리 맛있어도 <strong>처음엔 아무도 모릅니다.</strong> 그래서 8월 한 달 동안 세 가지를 합니다. ① <strong>네이버 지도·검색에 가게를 제대로 등록</strong>해서 "부산시청 국밥"을 검색하면 우리가 뜨게 하고, ② <strong>블로그 체험단 <span data-fill="review-count">—</span></strong>이 다녀가며 후기를 쌓고, ③ <strong>인플루언서 <span data-fill="inf-count">—</span></strong>이 8월 중 방문해 <strong>오픈 주간부터 매주 한 명씩</strong> 영상을 올리고, 그 영상으로 <strong>매주 광고</strong>를 돌립니다. 사장님은 <strong>가게 운영에만 집중</strong>하시면 되고, 아래 일정표에 <strong>언제 누가 오는지</strong> 다 적어뒀습니다.</div>
   </div>
 
   <!-- 4 STEP -->
@@ -251,8 +253,8 @@ tr.total-row td { background:#0D0D0D; color:#fff; font-weight:800; font-size:15p
     <div class="sec-sub">오픈 전 준비 → 오픈 → 후기 쌓기 → 첫 달 결과 보고</div>
     <div class="steps">
       <div class="step"><div class="st-n">① 8/1 — 8/9</div><div class="st-t">오픈 전 준비</div><div class="st-d">네이버 지도 등록·사진·메뉴 세팅 / 체험단 모집</div></div>
-      <div class="step hero"><div class="st-n">② 8/10 (월)</div><div class="st-t">오픈 · 체험단 선정</div><div class="st-d">지도·검색 노출 시작 / 인플루언서 영상 업로드 집중</div></div>
-      <div class="step"><div class="st-n">③ 8/11 — 8/31</div><div class="st-t">후기·영상 쌓기</div><div class="st-d">체험단 <span data-fill="review-count">—</span> + 인플루언서 <span data-fill="inf-count">—</span> + 광고</div></div>
+      <div class="step hero"><div class="st-n">② 8/10 (월)</div><div class="st-t">오픈 · 체험단 선정</div><div class="st-d">지도·검색 노출 시작 / 인플루언서 2인 업로드 + 광고 시작</div></div>
+      <div class="step"><div class="st-n">③ 8/11 — 8/31</div><div class="st-t">후기·영상 쌓기</div><div class="st-d">체험단 <span data-fill="review-count">—</span> + 인플루언서 매주 1인 업로드 + 매주 광고</div></div>
       <div class="step"><div class="st-n">④ 9월 초</div><div class="st-t">첫 달 보고서</div><div class="st-d">얼마나 노출됐고 뭐가 잘 됐는지 정리</div></div>
     </div>
   </div>
@@ -284,15 +286,15 @@ tr.total-row td { background:#0D0D0D; color:#fff; font-weight:800; font-size:15p
   <!-- 인플루언서 -->
   <div class="section">
     <h2>인플루언서 <em>운영 방식</em> — <span data-fill="inf-count">—</span></h2>
-    <div class="sec-sub">평균 조회수 3만 이상 계정 · 방문은 8월 중 협의 · 영상 업로드는 오픈 주간에 집중합니다</div>
+    <div class="sec-sub">평균 조회수 3만 이상 계정 · 방문은 8월 중 협의 · 오픈 주간부터 매주 나눠서 업로드하고, 업로드할 때마다 메타 광고를 1주씩 붙입니다</div>
 
     <table>
-      <thead><tr><th>인원</th><th>방문</th><th>영상 업로드</th><th>현장에서 필요한 것</th></tr></thead>
+      <thead><tr><th>회차</th><th class="c">영상 업로드</th><th class="c">인원</th><th class="c">메타 광고 (업로드와 동시 · 1주)</th></tr></thead>
       <!-- 아래 tbody 는 맨 위 PLAN.influencer 로 자동 생성됩니다. 직접 고치지 마세요. -->
       <tbody id="inf-body"></tbody>
     </table>
 
-    <div class="note"><strong>방문일은 미리 정해두지 않습니다.</strong> 인플루언서 개인 일정에 맞춰 <span data-fill="inf-visit">—</span> 방문하고, <strong>영상 업로드만 <span data-fill="inf-upload">—</span>에 최대한 몰아서</strong> 올립니다. 오픈 직후에 영상이 한꺼번에 도는 게 "지금 새로 열었다"는 신호로 가장 세게 먹히기 때문입니다. <strong>방문이 확정되면 최소 2일 전, 그리고 방문 전날 문자로 다시 알려드립니다.</strong> 제공 메뉴는 <strong><span data-fill="inf-menu">—</span></strong>이고, 별도 출연료는 저희가 이미 지급합니다. 촬영은 보통 <strong>30~40분</strong> 걸리며, 손님이 적은 시간대로 맞춰 잡습니다.</div>
+    <div class="note"><strong>영상을 한 번에 몰아서 올리지 않고, <span data-fill="inf-upload">—</span> 나눠서 올립니다.</strong> 오픈 주간에 <strong>2인 업로드</strong>로 세게 시작하고 이후 <strong>매주 1인씩</strong> 올려, 8월 내내 계속 회자되게 만드는 방식입니다. <strong>업로드하는 그 주에 맞춰 메타(인스타그램·페이스북) 광고를 1주일씩 돌리기 때문에</strong>, 영상이 올라온 타이밍에 노출이 가장 크게 잡힙니다. <strong>방문일은 미리 정해두지 않습니다.</strong> 인플루언서 개인 일정에 맞춰 <span data-fill="inf-visit">—</span> 방문합니다. <strong>방문이 확정되면 최소 2일 전, 그리고 방문 전날 문자로 다시 알려드립니다.</strong> 제공 메뉴는 <strong><span data-fill="inf-menu">—</span></strong>이고, 별도 출연료는 저희가 이미 지급합니다. 촬영은 보통 <strong>30~40분</strong> 걸리며, 손님이 적은 시간대로 맞춰 잡습니다.</div>
   </div>
 
   <!-- 항목별 -->
@@ -304,7 +306,7 @@ tr.total-row td { background:#0D0D0D; color:#fff; font-weight:800; font-size:15p
       <div class="tl-item np">
         <div class="tl-d">8/3 — 8/8 · 오픈 전</div>
         <div class="tl-t">네이버플레이스 등록·최적화</div>
-        <div class="tl-x"><strong>네이버 지도와 검색에 가게를 올리는 작업</strong>입니다. 가게 이름·주소·전화번호·영업시간·메뉴·가격·사진을 등록하고, <strong>"부산시청 국밥", "시청역 맛집"처럼 손님이 실제로 검색하는 단어</strong>에 우리 가게가 뜨도록 설정합니다. 등록 신청 후 네이버 승인에 2~3일 걸리기 때문에 <strong>오픈 일주일 전에 시작</strong>합니다. 오픈 첫날부터 검색에 잡혀야 하니까요.</div>
+        <div class="tl-x"><strong>네이버 지도와 검색에 가게를 올리는 작업</strong>입니다. 가게 이름·주소·전화번호·영업시간·메뉴·가격·사진을 등록하고, <strong>"부산시청 국밥", "시청역 맛집"처럼 손님이 실제로 검색하는 단어</strong>에 우리 가게가 뜨도록 설정합니다. 등록 신청 후 네이버 승인에 2~3일 걸리기 때문에 <strong>오픈 일주일 전에 시작</strong>합니다. 오픈 첫날부터 검색에 잡혀야 하니까요. 오픈 후 <strong>8/17에는 플레이스 '새로오픈' 기능을 활성화</strong>합니다 — <strong>네이버가 직접 "이 가게 새로 열었어요"라고 홍보해주는 기능</strong>입니다. 지도·검색에서 신규 오픈 매장으로 따로 묶여 노출되기 때문에, 광고비를 쓰지 않고도 한 번 더 눈에 띄는 구간을 만들 수 있습니다.</div>
       </div>
       <div class="tl-item exp">
         <div class="tl-d"><span data-fill="review-range">—</span> · 오픈 직후 집중</div>
@@ -320,12 +322,12 @@ tr.total-row td { background:#0D0D0D; color:#fff; font-weight:800; font-size:15p
       <div class="tl-item inf">
         <div class="tl-d">방문 <span data-fill="inf-visit">—</span> · 업로드 <span data-fill="inf-upload">—</span></div>
         <div class="tl-t">인플루언서 콘텐츠 <span data-fill="inf-count">—</span> (광고 포함)</div>
-        <div class="tl-x"><strong>인스타그램·유튜브에서 맛집 영상을 올리는 분들</strong>입니다. 평균 조회수 3만 이상인 계정으로만 섭외합니다. 방문은 각자 일정에 맞춰 <strong>8월 중에 나눠서</strong> 하되, <strong>영상 업로드는 오픈 주간에 최대한 맞춥니다.</strong> 오픈 직후에 여러 영상이 한꺼번에 도는 게 "여기 새로 열었네"라는 신호로 가장 세게 먹히고, 그때 검색해본 사람을 블로그 후기가 받아주기 때문입니다.</div>
+        <div class="tl-x"><strong>인스타그램·유튜브에서 맛집 영상을 올리는 분들</strong>입니다. 평균 조회수 3만 이상인 계정으로만 섭외합니다. 방문은 각자 일정에 맞춰 <strong>8월 중에 나눠서</strong> 하고, <strong>영상 업로드는 오픈 주간에 2인, 이후 매주 1인씩</strong> 진행합니다. 한 주에 몰아 터뜨리고 끝내는 대신 <strong>8월 내내 끊기지 않게</strong> 노출을 이어가는 방식이고, 새로 올라온 영상은 곧바로 광고로 밀어줍니다. 영상을 보고 검색해본 사람은 그때 쌓여 있는 블로그 후기가 받아줍니다.</div>
       </div>
       <div class="tl-item ad">
-        <div class="tl-d">8/12 — 8/31</div>
-        <div class="tl-t">광고 (인스타그램·페이스북)</div>
-        <div class="tl-x">인플루언서가 만든 영상 중 <strong>반응이 좋은 것을 골라 광고로 더 많은 사람에게 보여줍니다.</strong> 부산시청 주변에 사는 분·직장인에게 집중적으로 노출하고, 영상을 본 사람이 <strong>바로 네이버 지도로 이동</strong>하게 연결합니다. 광고비는 인플루언서 비용에 포함돼 있어 따로 청구되지 않습니다.</div>
+        <div class="tl-d"><span data-fill="inf-ad-range">—</span> · 매주 1주씩</div>
+        <div class="tl-t">메타 광고 (인스타그램·페이스북)</div>
+        <div class="tl-x"><strong>인플루언서 영상이 올라가는 그 주에 맞춰, 그 영상으로 광고를 1주일씩 돌립니다.</strong> 영상이 가장 신선할 때 광고비를 태우는 게 반응이 제일 좋기 때문입니다. 오픈 주간(2인 업로드)부터 시작해 <strong>매주 새 영상으로 갈아끼우며</strong> 3주 연속 돌아갑니다. 부산시청 주변에 사는 분·직장인에게 집중적으로 노출하고, 영상을 본 사람이 <strong>바로 네이버 지도로 이동</strong>하게 연결합니다. 광고비는 인플루언서 비용에 포함돼 있어 따로 청구되지 않습니다.</div>
       </div>
       <div class="tl-item key">
         <div class="tl-d">9월 초</div>
@@ -421,10 +423,13 @@ tr.total-row td { background:#0D0D0D; color:#fff; font-weight:800; font-size:15p
   /* 체험단 선정일 */
   put(R.selectDate, { type: 'exp', soft: true, text: '체험단 ' + R.count + '명 선정' });
 
-  /* 인플루언서 — 업로드 집중 구간(오픈 주간). 방문일은 확정하지 않음 */
-  put(F.uploadStart, {
-    type: 'inf', soft: true,
-    text: '인플루언서 영상 업로드 집중 — ' + F.uploadLabel,
+  /* 인플루언서 — 업로드 회차. 방문일은 확정하지 않고, 업로드 주에 광고를 1주 붙임 */
+  const infCount = F.uploads.reduce((a, u) => a + u.count, 0);
+  F.uploads.forEach((u, i) => {
+    put(u.adStart, { type: 'inf', text: '인플루언서 ' + u.count + '인 업로드' });
+    put(u.adStart, { type: 'ad', text: '메타 광고 ' + (i + 1) + '주차 시작' });
+    /* 주차가 이어서 붙기 때문에 마지막 주 종료일만 표시합니다 */
+    if (i === F.uploads.length - 1) put(u.adEnd, { type: 'ad', soft: true, text: '메타 광고 종료' });
   });
 
   /* 체험단 방문·리뷰 작성 기간 — 하루하루 반복하지 않고 하나의 기간 밴드로 표시 */
@@ -484,22 +489,27 @@ tr.total-row td { background:#0D0D0D; color:#fff; font-weight:800; font-size:15p
   document.getElementById('cal-body').innerHTML = html;
 
   /* ---- 3. 인플루언서 표 ---- */
-  const uploadWindow = F.uploadLabel + ' (' + short(F.uploadStart) + ' — ' + short(F.uploadEnd) + ')';
+  const firstUp = F.uploads[0];
+  const lastUp = F.uploads[F.uploads.length - 1];
+  const adRange = short(firstUp.adStart) + ' — ' + short(lastUp.adEnd);
+  const uploadWindow = '오픈 주간부터 매주 (' + adRange + ')';
 
-  document.getElementById('inf-body').innerHTML =
-    '<tr><td class="item">' + F.count + '명</td>' +
-    '<td class="c">' + F.visitWindow + '</td>' +
-    '<td class="c"><b>' + uploadWindow + '</b></td>' +
-    '<td class="desc">' + F.menu + ' 제공<br>' + F.need + '</td></tr>';
+  document.getElementById('inf-body').innerHTML = F.uploads.map((u) =>
+    '<tr><td class="item">' + u.label + '</td>' +
+    '<td class="c">' + short(u.adStart) + ' — ' + short(u.adEnd) + '</td>' +
+    '<td class="c"><b>' + u.count + '인 업로드</b></td>' +
+    '<td class="c">' + short(u.adStart) + ' — ' + short(u.adEnd) + ' <span style="color:#999;font-size:11px;font-weight:600;">1주</span></td></tr>'
+  ).join('');
 
   /* ---- 4. 본문 안 날짜 채우기 ---- */
   const fills = {
     'review-range': short(R.start) + ' — ' + short(R.end),
     'review-count': R.count + '명',
     'review-menu': R.menu,
-    'inf-count': F.count + '명',
+    'inf-count': infCount + '명',
     'inf-visit': F.visitWindow,
     'inf-upload': uploadWindow,
+    'inf-ad-range': adRange,
     'inf-menu': F.menu,
   };
 
