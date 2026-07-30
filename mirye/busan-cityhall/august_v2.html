@@ -145,9 +145,6 @@ table.cal td.off { background:#fbfcfd; }
 .ev.bar { margin-left:-6px; margin-right:-6px; padding-left:6px; padding-right:6px; border-radius:0; }
 .ev.bar.b-s { border-top-left-radius:5px; border-bottom-left-radius:5px; }
 .ev.bar.b-e { border-top-right-radius:5px; border-bottom-right-radius:5px; }
-/* 인플루언서 막대는 뒤의 체험단 배경이 보이도록 더 얇게 */
-.ev.bar.inf { font-size:9.5px; padding-top:1px; padding-bottom:1px; margin-top:2px; margin-bottom:4px; }
-
 /* 기간 밴드 */
 table.cal td.band-exp { background:#F2F8FF; }
 table.cal td.band-exp.off { background:#F2F8FF; }
@@ -453,7 +450,7 @@ tr.total-row td { background:#0D0D0D; color:#fff; font-weight:800; font-size:15p
   /* 인플루언서 — 업로드 회차. 방문일은 확정하지 않고, 업로드 주에 광고를 1주 붙임 */
   const infCount = F.uploads.reduce((a, u) => a + u.count, 0);
   F.uploads.forEach((u, i) => {
-    putSpan({ date: u.adStart, end: u.adEnd, type: 'inf', text: u.count + '인 업로드 주간' });
+    put(u.adStart, { type: 'inf', text: u.count + '인 업로드 주간' });
     put(u.adStart, { type: 'ad', text: '메타 광고 ' + (i + 1) + '주차 시작' });
     /* 주차가 이어서 붙기 때문에 마지막 주 종료일만 표시합니다 */
     if (i === F.uploads.length - 1) put(u.adEnd, { type: 'ad', soft: true, text: '메타 광고 종료' });
