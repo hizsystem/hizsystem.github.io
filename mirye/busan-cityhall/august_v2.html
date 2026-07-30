@@ -18,6 +18,7 @@
                   inf=인플루언서(주황) / ad=광고(보라) / key=주요날짜(검정)
                   ghost=테두리만(회색)
    · soft:true 를 붙이면 연한 색으로 표시됩니다.
+   · end 를 붙이면 date~end 가 하나의 막대로 이어져 그려집니다. 예) date:'8/5', end:'8/6'
    ========================================================================== */
 const PLAN = {
 
@@ -55,9 +56,8 @@ const PLAN = {
     { date: '8/3',  type: 'key', text: '사장님 자료 전달 마감' },
     { date: '8/3',  type: 'np',  text: '플레이스 등록 신청' },
     { date: '8/4',  type: 'np',  text: '등록 승인 대기' },
-    { date: '8/5',  type: 'np',  text: '최적화 세팅' },
+    { date: '8/5',  end: '8/6', type: 'np', text: '최적화 세팅' },
     { date: '8/5',  type: 'exp', text: '체험단 모집 시작', soft: true },
-    { date: '8/6',  type: 'np',  text: '최적화 세팅' },
     { date: '8/7',  type: 'np',  text: '키워드 세팅 마무리' },
     { date: '8/8',  type: 'np',  text: '사장님 최종 확인' },
     { date: '8/10', type: 'key', text: '🎉 오픈' },
@@ -141,6 +141,13 @@ table.cal td.off { background:#fbfcfd; }
 .ev.ad.soft { background:#EDE9FE; color:#6D28D9; }
 .ev.inf.soft { background:#FFEDD5; color:#C2410C; }
 .ev.out { opacity:.75; }
+/* 기간 막대 — 여러 날을 하나로 이어 그립니다 (셀 좌우 여백까지 채움) */
+.ev.bar { margin-left:-6px; margin-right:-6px; padding-left:6px; padding-right:6px; border-radius:0; }
+.ev.bar.b-s { border-top-left-radius:5px; border-bottom-left-radius:5px; }
+.ev.bar.b-e { border-top-right-radius:5px; border-bottom-right-radius:5px; }
+/* 인플루언서 막대는 뒤의 체험단 배경이 보이도록 더 얇게 */
+.ev.bar.inf { font-size:9.5px; padding-top:1px; padding-bottom:1px; margin-top:2px; margin-bottom:4px; }
+
 /* 기간 밴드 */
 table.cal td.band-exp { background:#F2F8FF; }
 table.cal td.band-exp.off { background:#F2F8FF; }
@@ -413,12 +420,32 @@ tr.total-row td { background:#0D0D0D; color:#fff; font-weight:800; font-size:15p
     (bucket[k] = bucket[k] || []).push(ev);
   };
 
+  /* end 가 있는 항목을 날짜별 조각으로 쪼개, 이어진 하나의 막대처럼 보이게 합니다.
+     글자는 시작일과 (2일 이상 남은) 주 시작일에만 넣고 나머지는 빈 칸으로 이어붙입니다. */
+  const DAY = 86400000;
+  const putSpan = (ev) => {
+    const s = md(ev.date), e = md(ev.end);
+    const startD = dateOf(s.m, s.d), endD = dateOf(e.m, e.d);
+    let cur = startD;
+    while (cur <= endD) {
+      const first = cur.getTime() === startD.getTime();
+      const left = Math.round((endD - cur) / DAY) + 1;
+      put(key(cur.getMonth() + 1, cur.getDate()), Object.assign({}, ev, {
+        bar: true,
+        barS: first,
+        barE: cur.getTime() === endD.getTime(),
+        text: (first || (cur.getDay() === 0 && left >= 2)) ? ev.text : '',
+      }));
+      cur = new Date(cur.getFullYear(), cur.getMonth(), cur.getDate() + 1);
+    }
+  };
+
   const band = {};   // 기간 밴드로 배경색을 칠할 날짜
 
   const R = PLAN.review;
   const F = PLAN.influencer;
 
-  PLAN.events.forEach((e) => put(e.date, e));
+  PLAN.events.forEach((e) => (e.end ? putSpan(e) : put(e.date, e)));
 
   /* 체험단 선정일 */
   put(R.selectDate, { type: 'exp', soft: true, text: '체험단 ' + R.count + '명 선정' });
@@ -426,7 +453,7 @@ tr.total-row td { background:#0D0D0D; color:#fff; font-weight:800; font-size:15p
   /* 인플루언서 — 업로드 회차. 방문일은 확정하지 않고, 업로드 주에 광고를 1주 붙임 */
   const infCount = F.uploads.reduce((a, u) => a + u.count, 0);
   F.uploads.forEach((u, i) => {
-    put(u.adStart, { type: 'inf', text: '인플루언서 ' + u.count + '인 업로드' });
+    putSpan({ date: u.adStart, end: u.adEnd, type: 'inf', text: u.count + '인 업로드 주간' });
     put(u.adStart, { type: 'ad', text: '메타 광고 ' + (i + 1) + '주차 시작' });
     /* 주차가 이어서 붙기 때문에 마지막 주 종료일만 표시합니다 */
     if (i === F.uploads.length - 1) put(u.adEnd, { type: 'ad', soft: true, text: '메타 광고 종료' });
@@ -472,14 +499,18 @@ tr.total-row td { background:#0D0D0D; color:#fff; font-weight:800; font-size:15p
       const m = inMonth ? PLAN.month : PLAN.month + 1;
       const d = inMonth ? n : n - dim;
       const k = key(m, d);
-      const evs = bucket[k] || [];
+      /* 막대는 항상 셀 맨 윗줄에 — 그래야 날짜가 달라도 높이가 맞아 이어져 보입니다 */
+      const raw = bucket[k] || [];
+      const evs = raw.filter((e) => e.bar).concat(raw.filter((e) => !e.bar));
       const tdCls = [inMonth ? '' : 'off', band[k] ? 'band-exp' : ''].filter(Boolean).join(' ');
 
       html += '<td class="' + tdCls + '">';
       html += '<div class="dnum' + wd + (inMonth ? '' : ' out') + '">' + (inMonth ? d : m + '/' + d) + '</div>';
       evs.forEach((e) => {
-        const cls = ['ev', e.type, e.soft ? 'soft' : '', e.cont ? 'cont' : '', inMonth ? '' : 'out'].filter(Boolean).join(' ');
-        html += '<span class="' + cls + '">' + e.text + '</span>';
+        const cls = ['ev', e.type, e.soft ? 'soft' : '', e.cont ? 'cont' : '',
+                     e.bar ? 'bar' : '', e.barS ? 'b-s' : '', e.barE ? 'b-e' : '',
+                     inMonth ? '' : 'out'].filter(Boolean).join(' ');
+        html += '<span class="' + cls + '">' + (e.text || '&nbsp;') + '</span>';
       });
       html += '</td>';
     }
