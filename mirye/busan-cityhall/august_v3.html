@@ -42,11 +42,14 @@ const PLAN = {
         end:   '8/28',              // 방문·리뷰 작성 마감
         menu: '시그니처 돼지우동 2개 + 사이드 (맛보기 냉제육 or 가마솥순대) 택 1',
         menuNote: '*이외 추가 메뉴는 체험단이 직접 결제합니다',
+        visitHours: '평일·주말 구분 없이 오후 2:00 — 7:30',
       },
 
       /* ── 인플루언서 ──
          uploads = 업로드 회차. 업로드와 동시에 메타 광고를 1주일 돌립니다.
-         visits  = 그 회차 인플루언서의 방문 예정일(변동 가능). 비워두면 '협의 후 안내'. */
+         visits  = 그 회차 인플루언서의 방문 예정일(변동 가능). 비워두면 '협의 후 안내'.
+         upEnd   = 업로드 주 마감일. 광고를 업로드 주보다 길게 돌릴 때만 씁니다.
+                   (생략하면 adEnd 와 같은 값으로 봅니다) */
       influencer: {
         visitWindow: '8월 중 (확정 시 사전 안내)',
         uploadPrefix: '오픈 주간부터 매주',
@@ -85,6 +88,7 @@ const PLAN = {
         end:   '9/28',
         menu: '시그니처 돼지우동 2개 + 사이드 (맛보기 냉제육 or 가마솥순대) 택 1',
         menuNote: '*이외 추가 메뉴는 체험단이 직접 결제합니다',
+        visitHours: '평일·주말 구분 없이 오후 2:00 — 7:30',
       },
 
       influencer: {
@@ -93,8 +97,9 @@ const PLAN = {
         menu: '시그니처 돼지우동 2개 + 사이드(맛보기 냉제육 or 가마솥순대) 중 택 1',
         need: '촬영 가능한 자리(창가/조명 밝은 곳) ·조리 장면 촬영 협조 ',
         uploads: [
-          { label: '2주차', count: 1, visits: [], adStart: '9/7',  adEnd: '9/13' },
-          { label: '4주차', count: 1, visits: [], adStart: '9/21', adEnd: '9/27' },
+          /* 광고는 한 편당 2주 — 다음 영상 광고가 바로 이어져 9월 내내 끊기지 않습니다 */
+          { label: '2주차', count: 1, visits: [], upEnd: '9/13', adStart: '9/7',  adEnd: '9/20' },
+          { label: '4주차', count: 1, visits: [], upEnd: '9/27', adStart: '9/21', adEnd: '10/4' },
         ],
       },
 
@@ -439,6 +444,7 @@ tr.sum-row td { background:#FFF7ED; color:#C2410C; font-weight:800; font-size:14
           <div class="pv-b"><strong style="color:#C2410C;font-size:14px;"><span data-fill="m1-review-menu">시그니처 돼지우동 2개 + 사이드 (맛보기 냉제육 or 가마솥순대) 택 1</span></strong>
             <span style="display:block;margin-top:3px;font-size:11.5px;color:#C2410C;font-weight:600;" data-fill="m1-review-menunote">*이외 추가 메뉴는 체험단이 직접 결제합니다</span>
             체험단 한 팀에게 제공되는 구성입니다. 현장에서 이 구성대로만 내주시면 됩니다.
+            <span style="display:block;margin-top:10px;padding-top:10px;border-top:1px dashed #FED7AA;"><b style="color:#C2410C;">방문 시간</b> &nbsp;<b><span data-fill="m1-review-hours">—</span></b></span>
           </div>
         </div>
       </div>
@@ -511,11 +517,12 @@ tr.sum-row td { background:#FFF7ED; color:#C2410C; font-weight:800; font-size:14
     <div class="sec-sub">8월과 같은 기준으로 섭외합니다 · 방문일은 9월 초에 확정해 따로 안내드립니다</div>
 
     <table>
-      <thead><tr><th>회차</th><th class="c">방문일 <span style="color:#bbb;font-weight:500;">(변동 가능)</span></th><th class="c">영상 업로드</th><th class="c">인원</th><th class="c">메타 광고 (업로드와 동시 · 1주)</th></tr></thead>
+      <thead><tr><th>회차</th><th class="c">방문일 <span style="color:#bbb;font-weight:500;">(변동 가능)</span></th><th class="c">영상 업로드</th><th class="c">인원</th><th class="c">메타 광고 (업로드와 동시 · 2주)</th></tr></thead>
       <tbody id="inf-m2"></tbody>
     </table>
 
-    <div class="note calm">8월은 "여기 새로 열었다"를 한꺼번에 알려야 해서 인원을 몰았습니다. 9월부터는 이미 알려진 가게라 <strong>새 영상을 꾸준히 얹는 쪽</strong>이 효율이 높습니다. 그래서 <strong>2주에 1편씩, 끊기지 않게</strong> 가는 방식으로 바꿉니다.</div>
+    <div class="note calm">8월은 "여기 새로 열었다"를 한꺼번에 알려야 해서 인원을 몰았습니다. 9월부터는 이미 알려진 가게라 <strong>새 영상을 꾸준히 얹는 쪽</strong>이 효율이 높습니다. 그래서 <strong>2주에 1편씩, 끊기지 않게</strong> 가는 방식으로 바꿉니다.
+      <br><br><strong>광고는 영상 한 편당 2주씩 돌립니다.</strong> 앞 영상의 광고가 <strong>다음 영상이 올라오는 날까지</strong> 계속 돌아가고, 그 자리를 새 영상 광고가 바로 이어받습니다. 그래서 <strong>9월 내내 광고가 한 번도 끊기지 않습니다</strong> — 쉬는 구간 없이 <span data-fill="m2-inf-ad-range">—</span> 계속 노출됩니다.</div>
   </div>
 
   <!-- (9월 쓰임표 섹션 삭제됨 — 되살리려면 id="spend-m2" tbody 를 가진 표 섹션을 넣으면 PLAN.cost 로 자동 생성됩니다) -->
@@ -584,6 +591,9 @@ tr.sum-row td { background:#FFF7ED; color:#C2410C; font-weight:800; font-size:14
   const dayOf = (s) => { const { m, d } = md(s); return dateOf(m, d); };
   const short = (s) => { const { m, d } = md(s); return m + '/' + d; };
   const won = (n) => n.toLocaleString('ko-KR') + '만원';
+  /* 광고 집행 주수 — adStart~adEnd 를 주 단위로 환산 */
+  const weeksOf = (u) => Math.max(1, Math.round(((dayOf(u.adEnd) - dayOf(u.adStart)) / DAY + 1) / 7));
+  const upEndOf = (u) => u.upEnd || u.adEnd;   // 업로드 주 마감 (생략 시 광고 종료일과 동일)
 
   const fills = {};
 
@@ -643,11 +653,12 @@ tr.sum-row td { background:#FFF7ED; color:#C2410C; font-weight:800; font-size:14
       infCount = F.uploads.reduce((a, u) => a + u.count, 0);
       F.uploads.forEach((u, i) => {
         put(u.adStart, { type: 'inf', text: u.count + '인 업로드 주간' });
-        put(u.adStart, { type: 'ad', text: '메타 광고 ' + (i + 1) + '주차 시작' });
+        put(u.adStart, { type: 'ad', text: '메타 광고 시작 (' + weeksOf(u) + '주)' });
       });
       const first = F.uploads[0], last = F.uploads[F.uploads.length - 1];
       adRange = short(first.adStart) + ' — ' + short(last.adEnd);
-      uploadWindow = (F.uploadPrefix ? F.uploadPrefix + ' ' : '') + '(' + adRange + ')';
+      uploadWindow = (F.uploadPrefix ? F.uploadPrefix + ' ' : '') +
+                     '(' + short(first.adStart) + ' — ' + short(upEndOf(last)) + ')';
     }
 
     /* ---- 캘린더 ---- */
@@ -698,9 +709,9 @@ tr.sum-row td { background:#FFF7ED; color:#C2410C; font-weight:800; font-size:14
       infEl.innerHTML = F.uploads.map((u) =>
         '<tr><td class="item">' + u.label + '</td>' +
         '<td class="c">' + (u.visits && u.visits.length ? u.visits.map(short).join(', ') : '협의 후 안내') + '</td>' +
-        '<td class="c">' + short(u.adStart) + ' — ' + short(u.adEnd) + '</td>' +
+        '<td class="c">' + short(u.adStart) + ' — ' + short(upEndOf(u)) + '</td>' +
         '<td class="c"><b>' + u.count + '인 업로드</b></td>' +
-        '<td class="c">' + short(u.adStart) + ' — ' + short(u.adEnd) + ' <span style="color:#999;font-size:11px;font-weight:600;">1주</span></td></tr>'
+        '<td class="c">' + short(u.adStart) + ' — ' + short(u.adEnd) + ' <span style="color:#999;font-size:11px;font-weight:600;">' + weeksOf(u) + '주</span></td></tr>'
       ).join('');
     }
 
@@ -711,6 +722,7 @@ tr.sum-row td { background:#FFF7ED; color:#C2410C; font-weight:800; font-size:14
       fills[p + 'review-count'] = R.count + '명';
       fills[p + 'review-menu'] = R.menu;
       fills[p + 'review-menunote'] = R.menuNote || '';
+      fills[p + 'review-hours'] = R.visitHours || '';
     }
     if (F) {
       fills[p + 'inf-count'] = infCount + '명';
