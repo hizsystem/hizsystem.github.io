@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>미례국밥 부산시청점 8·9월 운영 플랜 — 브랜드라이즈</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet">
+
+
+
+<script>
+/* ============================================================================
+   PLAN — 일정·금액은 여기서만 고칩니다
+   ----------------------------------------------------------------------------
+   · 날짜는 '월/일' 형식으로 씁니다.  예) '8/12'  '9/3'
+   · type 값(색): np=네이버플레이스(초록) / exp=블로그체험단(파랑)
+                  inf=인플루언서(주황) / ad=광고(보라) / key=주요날짜(검정)
+                  ghost=테두리만(회색)
+   · soft:true 를 붙이면 연한 색으로 표시됩니다.
+   · end 를 붙이면 date~end 가 하나의 막대로 이어져 그려집니다. 예) date:'8/5', end:'8/6'
+   ----------------------------------------------------------------------------
+   months 배열에 달을 추가하면 그 달 캘린더·표가 통째로 하나 더 생깁니다.
+   (셋째 달이 필요해지면 여기에 { key:'m3', month:10, ... } 을 넣고,
+    본문에 id="cal-m3" / id="inf-m3" 를 가진 섹션을 복사해 붙이면 됩니다)
+   ========================================================================== */
+const PLAN = {
+
+  year: 2026,
+
+  months: [
+
+    /* ══ 첫 달 ══════════════════════════════════════════════════════════════ */
+    {
+      key: 'm1',
+      month: 8,
+
+      /* ── 블로그 체험단 ── */
+      review: {
+        count: 40,                  // 모집 인원
+        selectDate: '8/10',         // 선정일
+        start: '8/11',              // 방문·리뷰 작성 시작
+        end:   '8/28',              // 방문·리뷰 작성 마감
+        menu: '시그니처 돼지우동 2개 + 사이드 (맛보기 냉제육 or 가마솥순대) 택 1',
+        menuNote: '*이외 추가 메뉴는 체험단이 직접 결제합니다',
+      },
+
+      /* ── 인플루언서 ──
+         uploads = 업로드 회차. 업로드와 동시에 메타 광고를 1주일 돌립니다.
+         visits  = 그 회차 인플루언서의 방문 예정일(변동 가능). 비워두면 '협의 후 안내'. */
+      influencer: {
+        visitWindow: '8월 중 (확정 시 사전 안내)',
+        uploadPrefix: '오픈 주간부터 매주',
+        menu: '시그니처 돼지우동 2개 + 사이드(맛보기 냉제육 or 가마솥순대) 중 택 1',
+        need: '촬영 가능한 자리(창가/조명 밝은 곳) ·조리 장면 촬영 협조 ',
+        uploads: [
+          { label: '2주차 · 오픈 주간', count: 2, visits: ['8/10', '8/11'], adStart: '8/10', adEnd: '8/16' },
+          { label: '3주차',             count: 1, visits: ['8/18'],         adStart: '8/17', adEnd: '8/23' },
+          { label: '4주차',             count: 1, visits: ['8/20'],         adStart: '8/24', adEnd: '8/30' },
+        ],
+      },
+
+      events: [
+        { date: '8/3',  type: 'key', text: '사장님 자료 전달 마감' },
+        { date: '8/3',  type: 'np',  text: '플레이스 등록 신청' },
+        { date: '8/4',  type: 'np',  text: '등록 승인 대기' },
+        { date: '8/5',  end: '8/6', type: 'np', text: '최적화 세팅' },
+        { date: '8/5',  type: 'exp', text: '체험단 모집 시작', soft: true },
+        { date: '8/10', type: 'key', text: '🎉 오픈' },
+        { date: '8/10', type: 'np',  text: '지도·검색 노출 시작' },
+        { date: '8/17', type: 'np',  text: "플레이스 '새로오픈' 활성화" },
+        { date: '8/25', type: 'ghost', text: '중간 점검 · 순위 확인' },
+        { date: '9/4',  type: 'key', text: '8월 운영보고서 전달' },
+      ],
+    },
+
+    /* ══ 둘째 달 ═════════════════════════════════════════════════════════════ */
+    {
+      key: 'm2',
+      month: 9,
+
+      review: {
+        count: 20,
+        selectDate: '9/10',
+        start: '9/11',
+        end:   '9/28',
+        menu: '시그니처 돼지우동 2개 + 사이드 (맛보기 냉제육 or 가마솥순대) 택 1',
+        menuNote: '*이외 추가 메뉴는 체험단이 직접 결제합니다',
+      },
+
+      influencer: {
+        visitWindow: '9월 중 (확정 시 사전 안내)',
+        uploadPrefix: '2주 간격으로',
+        menu: '시그니처 돼지우동 2개 + 사이드(맛보기 냉제육 or 가마솥순대) 중 택 1',
+        need: '촬영 가능한 자리(창가/조명 밝은 곳) ·조리 장면 촬영 협조 ',
+        uploads: [
+          { label: '2주차', count: 1, visits: [], adStart: '9/7',  adEnd: '9/13' },
+          { label: '4주차', count: 1, visits: [], adStart: '9/21', adEnd: '9/27' },
+        ],
+      },
+
+      events: [
+        { date: '9/1',  type: 'exp', text: '체험단 모집 시작', soft: true },
+        { date: '9/4',  type: 'key', text: '8월 운영보고서 전달' },
+        { date: '9/24', type: 'ghost', text: '중간 점검 · 순위 확인' },
+        { date: '10/2', type: 'key', text: '9월 운영보고서 전달' },
+      ],
+    },
+  ],
+
+  /* ── 비용 ────────────────────────────────────────────────────────────────
+     단위는 만원. m2work / m2out 은 '9월 쓰임' 표에 그대로 들어갑니다.        */
+  cost: {
+    rows: [
+      {
+        item: '네이버플레이스',
+        m1: 100, m1note: '등록·최적화',
+        m2: 40,  m2note: '관리',
+        m2work: '매주 후기 답글, 가게 소식·사진 갱신, 검색 순위 점검. 8월에 잡아둔 순위가 내려가지 않게 관리합니다.',
+        m2out: '주 1회 점검 (월 4~5회) · 후기 답글 전건',
+      },
+      {
+        item: '블로그 체험단',
+        m1: 40, m1note: '40명',
+        m2: 20, m2note: '20명',
+        m2work: '9/11 — 9/28 방문. 8월에 몰아서 쌓은 후기가 한 달만 지나면 오래된 글이 되기 때문에, 매달 새 후기를 얹어 검색에 계속 걸리게 합니다.',
+        m2out: '신규 후기 20건 · 누적 60건',
+      },
+      {
+        item: '인플루언서 콘텐츠(광고 포함)',
+        sub: '평균 조회수 3만 이상',
+        m1: 160, m1note: '4명',
+        m2: 90,  m2note: '2명',
+        m2work: '2주 간격으로 1편씩 업로드하고, 업로드하는 그 주에 메타 광고를 1주일씩 돌립니다.',
+        m2out: '영상 2편 · 메타 광고 2주',
+      },
+    ],
+  },
+};
+</script>
+
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Noto Sans KR', -apple-system, sans-serif; background: #f4f7f9; color: #1a1b18; line-height: 1.7; font-size: 14px; -webkit-font-smoothing: antialiased; word-break: keep-all; overflow-wrap: break-word; }
+
+.toolbar { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: #0D0D0D; height: 56px; display: flex; align-items: center; justify-content: space-between; padding: 0 32px; }
+.toolbar-left { display: flex; align-items: center; gap: 16px; }
+.toolbar-logo { font-size: 13px; font-weight: 700; color: #EA580C; letter-spacing: 0.05em; }
+.toolbar-sep { width: 1px; height: 20px; background: rgba(255,255,255,0.15); }
+.toolbar-title { font-size: 14px; font-weight: 500; color: #fff; }
+.btn-toolbar { padding: 7px 18px; border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; background: transparent; color: #fff; font-size: 12px; font-weight: 500; cursor: pointer; }
+.btn-toolbar:hover { background: rgba(255,255,255,0.1); }
+
+.container { max-width: 980px; margin: 0 auto; padding: 80px 24px 60px; }
+
+.report-header { background: #fff; border-radius: 12px; padding: 40px; margin-bottom: 20px; border: 1px solid #e8edf1; }
+.report-header .label { font-size: 11px; font-weight: 700; color: #EA580C; letter-spacing: 0.12em; margin-bottom: 14px; }
+.report-header h1 { font-size: 34px; font-weight: 900; line-height: 1.3; letter-spacing: -0.02em; }
+.report-header h1 em { color: #EA580C; font-style: normal; }
+.meta-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 28px; padding-top: 24px; border-top: 1px solid #e8edf1; }
+.meta-item .mk { font-size: 11px; color: #999; margin-bottom: 4px; }
+.meta-item .mv { font-size: 13px; font-weight: 600; }
+
+.mission-box { background: #0D0D0D; border-radius: 12px; padding: 30px 36px; margin-bottom: 20px; color: #fff; }
+.mission-box .hl-label { font-size: 11px; font-weight: 700; color: #EA580C; letter-spacing: 0.1em; margin-bottom: 14px; }
+.mission-box .lede { font-size: 19px; font-weight: 700; line-height: 1.55; letter-spacing: -0.01em; }
+.mission-box .lede em { color: #FDBA8C; font-style: normal; }
+.mission-box .sub { margin-top:16px; font-size:13px; color:rgba(255,255,255,0.72); line-height:1.95; }
+.mission-box .sub strong { color:#fff; }
+
+.section { background: #fff; border-radius: 12px; padding: 32px 40px; margin-bottom: 20px; border: 1px solid #e8edf1; }
+.section h2 { font-size: 19px; font-weight: 800; margin-bottom: 6px; letter-spacing: -0.02em; }
+.section h2 em { color: #EA580C; font-style: normal; }
+.section .sec-sub { font-size: 12.5px; color: #999; margin-bottom: 20px; }
+
+/* 확정 전 표시 */
+.tbd { display:inline-block; border:1px dashed #EA580C; background:#FFF7ED; color:#C2410C; font-weight:800; font-size:11.5px; border-radius:5px; padding:0 7px; line-height:1.7; white-space:nowrap; vertical-align:baseline; }
+.mission-box .tbd { border-color:#FDBA8C; background:rgba(253,186,140,.14); color:#FDBA8C; }
+
+/* 달 구분 머리글 */
+.month-head { display:flex; align-items:center; gap:14px; margin:38px 0 16px; }
+.month-head:first-child { margin-top:0; }
+.month-head .mh-n { flex:none; background:#0D0D0D; color:#fff; font-size:11.5px; font-weight:800; padding:6px 14px; border-radius:20px; letter-spacing:.04em; }
+.month-head .mh-t { flex:none; font-size:21px; font-weight:900; letter-spacing:-.02em; }
+.month-head .mh-t em { color:#EA580C; font-style:normal; }
+.month-head .mh-line { flex:1; height:2px; background:#e8edf1; border-radius:2px; }
+.month-head .mh-amt { flex:none; font-size:13px; font-weight:800; color:#EA580C; }
+
+/* 두 달 비교 카드 */
+.two { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.mcard { border:1px solid #e8edf1; border-radius:10px; padding:20px; background:#f8fafb; }
+.mcard.hero { background:#FFF7ED; border-color:#FED7AA; }
+.mcard .mc-n { font-size:11px; font-weight:800; color:#EA580C; letter-spacing:.06em; margin-bottom:6px; }
+.mcard .mc-t { font-size:16px; font-weight:900; letter-spacing:-.01em; }
+.mcard .mc-d { font-size:12.5px; color:#636569; margin-top:6px; line-height:1.75; }
+.mcard .mc-amt { margin-top:12px; padding-top:12px; border-top:1px dashed #dbe2e8; font-size:13px; font-weight:800; }
+.mcard .mc-amt span { color:#EA580C; }
+
+/* 4 STEP */
+.steps { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
+.step { border:1px solid #e8edf1; border-radius:10px; padding:16px 16px; background:#f8fafb; }
+.step.hero { background:#FFF7ED; border-color:#FED7AA; }
+.step .st-n { font-size:11px; font-weight:800; color:#EA580C; margin-bottom:6px; }
+.step .st-t { font-size:15px; font-weight:800; line-height:1.4; }
+.step .st-d { font-size:12px; color:#636569; margin-top:5px; line-height:1.6; }
+
+/* 범례 */
+.legend { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px; }
+.lg { display:inline-flex; align-items:center; gap:6px; font-size:12px; font-weight:700; padding:5px 12px; border-radius:20px; border:1px solid #e8edf1; background:#fff; }
+.lg i { width:10px; height:10px; border-radius:3px; display:inline-block; }
+.c-np { background:#16A34A; } .c-inf { background:#EA580C; } .c-exp { background:#2563EB; }
+.c-ad { background:#7C3AED; } .c-key { background:#0D0D0D; }
+
+/* 캘린더 */
+.cal-wrap { overflow-x:auto; -webkit-overflow-scrolling:touch; border:1px solid #e8edf1; border-radius:10px; }
+table.cal { width:100%; min-width:760px; border-collapse:collapse; table-layout:fixed; }
+table.cal th { background:#f8fafb; padding:9px 6px; font-size:11px; font-weight:800; color:#636569; text-align:center; border-bottom:2px solid #e8edf1; }
+table.cal th.sun { color:#dc2626; } table.cal th.sat { color:#2563EB; }
+table.cal td { border:1px solid #f0f2f5; vertical-align:top; padding:6px 6px 8px; height:104px; }
+table.cal td.off { background:#fbfcfd; }
+.dnum { font-size:13px; font-weight:800; color:#3a3c40; margin-bottom:4px; }
+.dnum.sun { color:#dc2626; } .dnum.sat { color:#2563EB; }
+.dnum.out { color:#cbd5e1; }
+.ev { display:block; font-size:10.5px; font-weight:700; line-height:1.35; padding:3px 6px; border-radius:5px; margin-bottom:3px; color:#fff; }
+.ev.np { background:#16A34A; } .ev.inf { background:#EA580C; } .ev.exp { background:#2563EB; }
+.ev.ad { background:#7C3AED; } .ev.key { background:#0D0D0D; }
+.ev.ghost { background:#fff; border:1px dashed #cbd5e1; color:#64748b; }
+.ev.exp.soft { background:#DBEAFE; color:#1D4ED8; }
+.ev.ad.soft { background:#EDE9FE; color:#6D28D9; }
+.ev.inf.soft { background:#FFEDD5; color:#C2410C; }
+.ev.out { opacity:.75; }
+
+/* 기간 막대 — 여러 날을 하나로 이어 그립니다 (셀 좌우 여백까지 채움) */
+.ev.bar { margin-left:-6px; margin-right:-6px; padding-left:6px; padding-right:6px; border-radius:0; }
+.ev.bar.b-s { border-top-left-radius:5px; border-bottom-left-radius:5px; }
+.ev.bar.b-e { border-top-right-radius:5px; border-bottom-right-radius:5px; }
+
+/* 기간 밴드 */
+table.cal td.band-exp { background:#F2F8FF; }
+table.cal td.band-exp.off { background:#F2F8FF; }
+.ev.cont { background:transparent; border:1px dashed #93C5FD; color:#1D4ED8; }
+
+/* 리스트 */
+.tl { border-left:2px solid #f0f2f5; margin-left:8px; padding-left:0; }
+.tl-item { position:relative; padding:0 0 16px 22px; }
+.tl-item::before { content:''; position:absolute; left:-7px; top:6px; width:12px; height:12px; border-radius:50%; background:#fff; border:3px solid #cbd5e1; }
+.tl-item.np::before { border-color:#16A34A; } .tl-item.inf::before { border-color:#EA580C; }
+.tl-item.exp::before { border-color:#2563EB; } .tl-item.ad::before { border-color:#7C3AED; }
+.tl-item.key::before { border-color:#0D0D0D; background:#0D0D0D; }
+.tl-d { font-size:12px; font-weight:800; color:#EA580C; }
+.tl-t { font-size:14px; font-weight:800; margin-top:1px; }
+.tl-x { font-size:12.5px; color:#636569; margin-top:2px; }
+
+/* 제공 내역 박스 */
+.provide { margin-top:10px; border:1px dashed #EA580C; background:#FFF7ED; border-radius:8px; padding:12px 16px; }
+.provide .pv-h { font-size:11px; font-weight:800; color:#C2410C; letter-spacing:.06em; margin-bottom:6px; }
+.provide .pv-b { font-size:12.5px; color:#636569; line-height:1.8; }
+.provide .pv-blank { display:block; margin-top:6px; border-bottom:1.5px dotted #EA580C; height:22px; }
+
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th { background: #f8fafb; padding: 10px 14px; font-weight: 600; border-bottom: 2px solid #e8edf1; color: #999; font-size: 11px; text-align: left; white-space: nowrap; }
+th.r { text-align: right; }
+th.c { text-align: center; }
+td { padding: 12px 14px; border-bottom: 1px solid #f0f2f5; vertical-align: top; }
+td.item { font-weight: 700; }
+td.desc { color: #636569; font-size: 12.5px; }
+td.c { text-align:center; font-variant-numeric:tabular-nums; }
+td.amt { text-align:right; font-weight:800; font-variant-numeric:tabular-nums; white-space:nowrap; }
+tr.total-row td { background:#0D0D0D; color:#fff; font-weight:800; font-size:15px; }
+tr.sum-row td { background:#FFF7ED; color:#C2410C; font-weight:800; font-size:14px; border-bottom:1px solid #FED7AA; }
+
+.chk { list-style:none; padding:0; }
+.chk li { position:relative; padding:9px 0 9px 30px; border-bottom:1px dashed #eef1f4; font-size:13.5px; }
+.chk li:last-child { border-bottom:none; }
+.chk li::before { content:'□'; position:absolute; left:6px; top:8px; font-size:16px; color:#EA580C; font-weight:800; }
+.chk li b { color:#1a1b18; }
+.chk li span.when { display:inline-block; font-size:11px; font-weight:800; color:#fff; background:#EA580C; border-radius:20px; padding:1px 9px; margin-right:8px; vertical-align:middle; }
+.chk li span.when.g { background:#16A34A; } .chk li span.when.b { background:#2563EB; }
+
+.note { background:#FFF7ED; border-left:4px solid #EA580C; border-radius:0 8px 8px 0; padding:14px 20px; margin-top:18px; font-size:12.5px; color:#636569; line-height:1.85; }
+.note strong { color:#1a1b18; }
+.note.calm { background:#f8fafb; border-left-color:#cbd5e1; }
+
+.footer { text-align: center; padding: 40px 0 10px; color: #999; font-size: 12px; line-height: 2; }
+.footer .brand { font-size: 15px; font-weight: 800; color: #1a1b18; margin-bottom: 4px; }
+
+@media (max-width: 768px) {
+  .container { padding: 76px 14px 40px; }
+  .meta-grid { grid-template-columns: repeat(2, 1fr); }
+  .steps { grid-template-columns: 1fr 1fr; }
+  .two { grid-template-columns: 1fr; }
+  .section { padding: 24px 18px; }
+  .report-header { padding: 28px 20px; }
+  .report-header h1 { font-size: 25px; }
+  .mission-box { padding: 24px 20px; } .mission-box .lede { font-size:17px; }
+  .toolbar { padding: 0 16px; } .toolbar-title { display:none; }
+  .month-head { flex-wrap:wrap; gap:10px; } .month-head .mh-line { display:none; }
+  table.cal td { height:82px; }
+}
+@media print {
+  .toolbar { display: none; }
+  .container { padding: 16px; max-width: none; }
+  body { background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .section, .mission-box, .cal-wrap { break-inside: avoid; }
+  .month-head { break-after: avoid; }
+  .month-head.newpage { break-before: page; }
+  .cal-wrap { overflow: visible; }
+  @page { size: A4; margin: 10mm; }
+}
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="toolbar-left">
+    <div class="toolbar-logo">BRANDRISE</div>
+    <div class="toolbar-sep"></div>
+    <div class="toolbar-title">미례국밥 부산시청점 · 8·9월 운영 플랜</div>
+  </div>
+  <button class="btn-toolbar" onclick="window.print()">PDF 저장 · 인쇄</button>
+</div>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <div class="report-header">
+    <div class="label">미례국밥 부산시청점 × 브랜드라이즈</div>
+    <h1>8·9월 <em>운영 플랜</em> — 오픈 두 달</h1>
+    <div class="meta-grid">
+      <div class="meta-item"><div class="mk">매장</div><div class="mv">미례국밥 부산시청점</div></div>
+      <div class="meta-item"><div class="mk">오픈일</div><div class="mv">2026. 08. 10 (월)</div></div>
+      <div class="meta-item"><div class="mk">대상 기간</div><div class="mv">2026. 08. 01 — 09. 30</div></div>
+      <div class="meta-item"><div class="mk">두 달 비용</div><div class="mv"><span data-fill="cost-total">450만원</span> <span style="color:#999;font-weight:500;">부가세 별도</span></div></div>
+    </div>
+  </div>
+
+  <!-- MISSION -->
+  <div class="mission-box">
+    <div class="hl-label">두 달 동안 우리가 할 일</div>
+    <div class="lede">첫 달은 <em>손님이 우리 가게를 찾을 수 있게</em>, 둘째 달은 <em>그 흐름이 끊기지 않게</em> 만드는 두 달입니다.</div>
+    <div class="sub">가게가 아무리 맛있어도 <strong>처음엔 아무도 모릅니다.</strong> 그래서 <strong>8월</strong>에는 네이버 지도·검색에 가게를 제대로 올리고, 체험단 <span data-fill="m1-review-count">40명</span>과 인플루언서 <span data-fill="m1-inf-count">4명</span>으로 후기와 영상을 한꺼번에 쌓습니다. 문제는 <strong>이걸 한 달만 하고 멈추면 그대로 가라앉는다</strong>는 점입니다. 후기는 금방 오래된 글이 되고, 영상도 한 번 돌고 나면 끝입니다. 그래서 <strong>9월</strong>에는 오픈 첫 달의 화력을 유지합니다&nbsp;— 체험단 <span data-fill="m2-review-count">20명</span>, 인플루언서 <span data-fill="m2-inf-count">2명</span>, 그리고 플레이스 관리. 사장님은 <strong>가게 운영에만 집중</strong>하시면 되고, 아래 일정표에 <strong>언제 누가 오는지</strong> 달별로 다 적어뒀습니다.</div>
+  </div>
+
+  <!-- 두 달 비교 -->
+  <div class="section">
+    <h2>두 달 <em>한눈에</em></h2>
+    <div class="sec-sub">첫 달은 만드는 달, 둘째 달은 유지하는 달 — 하는 일은 같고 규모만 줄어듭니다</div>
+    <div class="two">
+      <div class="mcard hero">
+        <div class="mc-n">첫 달 · 8월</div>
+        <div class="mc-t">알리는 달</div>
+        <div class="mc-d">지도·검색에 가게를 <b>새로 등록</b>하고, 후기와 영상을 <b>한꺼번에 쌓아</b> 오픈을 알립니다. 한 번만 하면 되는 세팅 작업이 들어가 비용이 더 큽니다.</div>
+        <div class="mc-amt">플레이스 등록·최적화 + 체험단 <span data-fill="m1-review-count">40명</span> + 인플루언서 <span data-fill="m1-inf-count">—</span></div>
+      </div>
+      <div class="mcard">
+        <div class="mc-n">둘째 달 · 9월</div>
+        <div class="mc-t">유지하는 달</div>
+        <div class="mc-d">8월에 올려놓은 순위와 후기가 <b>내려가지 않게</b> 관리하고, 새 후기·새 영상을 얹습니다. 세팅이 끝났으므로 <b>비용은 절반</b>으로 내려갑니다.</div>
+        <div class="mc-amt">플레이스 관리 + 체험단 <span data-fill="m2-review-count">20명</span> + 인플루언서 <span data-fill="m2-inf-count">—</span></div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ══════════════ 첫 달 · 8월 ══════════════ -->
+  <div class="month-head">
+    <span class="mh-n">첫 달</span>
+    <span class="mh-t">8월 — <em>오픈</em></span>
+    <span class="mh-line"></span>
+    <span class="mh-amt"><span data-fill="cost-m1">300만원</span></span>
+  </div>
+
+  <!-- 4 STEP -->
+  <div class="section">
+    <h2>8월 <em>한눈에</em></h2>
+    <div class="sec-sub">오픈 전 준비 → 오픈 → 후기 쌓기 → 첫 달 결과 보고</div>
+    <div class="steps">
+      <div class="step"><div class="st-n">① 8/1 — 8/9</div><div class="st-t">오픈 전 준비</div><div class="st-d">네이버 지도 등록·사진·메뉴 세팅 / 체험단 모집</div></div>
+      <div class="step hero"><div class="st-n">② 8/10 (월)</div><div class="st-t">오픈 · 체험단 선정</div><div class="st-d">지도·검색 노출 시작 / 인플루언서 2인 업로드 + 광고 시작</div></div>
+      <div class="step"><div class="st-n">③ 8/11 — 8/31</div><div class="st-t">후기·영상 쌓기</div><div class="st-d">체험단 <span data-fill="m1-review-count">40명</span> + 인플루언서 매주 1인 업로드 + 매주 광고</div></div>
+      <div class="step"><div class="st-n">④ 9월 초</div><div class="st-t">첫 달 보고서</div><div class="st-d">얼마나 노출됐고 뭐가 잘 됐는지 정리</div></div>
+    </div>
+  </div>
+
+  <!-- 8월 캘린더 -->
+  <div class="section">
+    <h2>8월 <em>일정표</em> — 언제 누가 오나</h2>
+    <div class="sec-sub">인쇄해서 주방·카운터에 붙여두시면 편합니다 · 방문 일정은 변동 시 최소 2일 전에 연락드립니다</div>
+
+    <div class="legend">
+      <span class="lg"><i class="c-np"></i>네이버플레이스</span>
+      <span class="lg"><i class="c-exp"></i>블로그 체험단</span>
+      <span class="lg"><i class="c-inf"></i>인플루언서</span>
+      <span class="lg"><i class="c-ad"></i>광고</span>
+      <span class="lg"><i class="c-key"></i>주요 날짜</span>
+    </div>
+
+    <div class="cal-wrap">
+      <table class="cal">
+        <thead><tr><th class="sun">일</th><th>월</th><th>화</th><th>수</th><th>목</th><th>금</th><th class="sat">토</th></tr></thead>
+        <!-- 아래 tbody 는 맨 위 PLAN 값으로 자동 생성됩니다. 직접 고치지 마세요. -->
+        <tbody id="cal-m1"></tbody>
+      </table>
+    </div>
+
+    <div class="note"><strong>파란색으로 칠해진 <span data-fill="m1-review-range">8/11 — 8/28</span>가 체험단 기간입니다.</strong> 이때 체험단 <span data-fill="m1-review-count">40명</span>이 방문하고 리뷰를 씁니다. 오픈 직후라 가게도 정신없을 때인데, <strong>체험단은 일반 손님처럼 오셔서 드시고 후기를 남기는 분들</strong>이라 명단 확인 말고는 따로 응대하실 필요 없습니다. 인플루언서는 <strong>날짜를 미리 못 박지 않고 <span data-fill="m1-inf-visit">8월 중 (확정 시 사전 안내)</span> 방문</strong>하며, 방문이 확정되면 그때 따로 알려드립니다.</div>
+  </div>
+
+  <!-- 8월 인플루언서 -->
+  <div class="section">
+    <h2>인플루언서 <em>운영 방식</em> — <span data-fill="m1-inf-count">4명</span></h2>
+    <div class="sec-sub">평균 조회수 3만 이상 계정 · 방문은 8월 중 협의 · 오픈 주간부터 매주 나눠서 업로드하고, 업로드할 때마다 메타 광고를 1주씩 붙입니다</div>
+
+    <table>
+      <thead><tr><th>회차</th><th class="c">방문일 <span style="color:#bbb;font-weight:500;">(변동 가능)</span></th><th class="c">영상 업로드</th><th class="c">인원</th><th class="c">메타 광고 (업로드와 동시 · 1주)</th></tr></thead>
+      <!-- 아래 tbody 는 맨 위 PLAN 으로 자동 생성됩니다. 직접 고치지 마세요. -->
+      <tbody id="inf-m1"></tbody>
+    </table>
+
+    <div class="note"><strong>영상을 한 번에 몰아서 올리지 않고, <span data-fill="m1-inf-upload">오픈 주간부터 매주 (8/10 — 8/30)</span> 나눠서 올립니다.</strong> 오픈 주간에 <strong>2인 업로드</strong>로 시작하고 이후 <strong>매주 1인씩</strong> 올려, 8월 내내 계속 회자되게 만드는 방식입니다. <strong>업로드하는 그 주에 맞춰 메타 광고를 1주일씩 돌리기 때문에</strong>, 영상이 올라온 타이밍에 노출이 가장 크게 잡힙니다.&nbsp;인플루언서 개인 일정에 맞춰 <span data-fill="m1-inf-visit">8월 중 (확정 시 사전 안내)</span> 방문합니다. <strong>방문이 확정되면 최소 2일 전 공유해드립니다.</strong>&nbsp;제공 메뉴는 <strong><span data-fill="m1-inf-menu">시그니처 돼지우동 2개 + 사이드(맛보기 냉제육 or 가마솥순대) 중 택 1</span></strong>이고, 이외 추가 메뉴는 인플루언서가 직접 결제합니다. 별도 출연료는 저희가 이미 지급합니다.</div>
+  </div>
+
+  <!-- 8월 항목별 -->
+  <div class="section">
+    <h2>무엇을 <em>하는지</em> — 항목별 설명</h2>
+    <div class="sec-sub">쉽게 말하면 이런 일들입니다</div>
+
+    <div class="tl">
+      <div class="tl-item np">
+        <div class="tl-d">8/3 — 8/8 · 오픈 전</div>
+        <div class="tl-t">네이버플레이스 등록·최적화</div>
+        <div class="tl-x"><strong>네이버 지도와 검색에 가게를 올리는 작업</strong>입니다. <strong>"부산시청 국밥", "시청역 맛집"처럼 손님이 실제로 검색하는 단어</strong>에 우리 가게가 뜨도록 설정합니다. 등록 신청 후 네이버 승인에 2~3일 걸리기 때문에 <strong>오픈 일주일 전에 시작</strong>합니다. 오픈 후 <strong>8/17에는 플레이스 '새로오픈' 기능을 활성화</strong>합니다 — <strong>네이버가 직접 "이 가게 새로 열었어요"라고 홍보해주는 기능</strong>입니다. 지도·검색에서 신규 오픈 매장으로 따로 묶여 노출되기 때문에, 광고비를 쓰지 않고도 한 번 더 눈에 띄는 구간을 만들 수 있습니다.</div>
+      </div>
+      <div class="tl-item exp">
+        <div class="tl-d"><span data-fill="m1-review-range">8/11 — 8/28</span> · 오픈 직후 집중</div>
+        <div class="tl-t">블로그 체험단 <span data-fill="m1-review-count">40명</span></div>
+        <div class="tl-x"><strong>블로그에 후기를 써주는 손님 <span data-fill="m1-review-count">40명</span></strong>을 모집해 보냅니다. 새로 연 가게는 <strong>후기가 하나도 없어서 손님이 망설입니다.</strong>&nbsp;이때 체험단을 통해 "검색하면 좋은 후기가 많은 가게"로 만듭니다. 방문 날짜는 각자 편한 날로 나눠서 오고, 후기는 <span data-fill="m1-review-range">8/11 — 8/28</span> 기간 안에 전부 올라옵니다.&nbsp;</div>
+        <div class="provide">
+          <div class="pv-h">체험단 제공 내역</div>
+          <div class="pv-b"><strong style="color:#C2410C;font-size:14px;"><span data-fill="m1-review-menu">—</span></strong>
+            <span style="display:block;margin-top:3px;font-size:11.5px;color:#C2410C;font-weight:600;" data-fill="m1-review-menunote">—</span>
+            체험단 한 팀에게 제공되는 구성입니다. 현장에서 이 구성대로만 내주시면 됩니다.
+          </div>
+        </div>
+      </div>
+      <div class="tl-item inf">
+        <div class="tl-d">방문 <span data-fill="m1-inf-visit">8월 중 (확정 시 사전 안내)</span> · 업로드 <span data-fill="m1-inf-upload">오픈 주간부터 매주 (8/10 — 8/30)</span></div>
+        <div class="tl-t">인플루언서 콘텐츠 <span data-fill="m1-inf-count">4명</span> (광고 포함)</div>
+        <div class="tl-x"><strong>인스타그램에서 부산 맛집 영상을 올리는 분들</strong>입니다. 평균 조회수 3만 이상인 계정으로만 섭외합니다. 방문은 각자 일정에 맞춰 <strong>8월 중에 나눠서</strong> 하고, <strong>영상 업로드는 오픈 주간에 2인, 이후 매주 1인씩</strong> 진행합니다. 한 주에 몰아 터뜨리고 끝내는 대신 <strong>8월 내내 끊기지 않게</strong> 노출을 이어가는 방식이고, 새로 올라온 영상은 곧바로 광고로 밀어줍니다. 영상을 보고 검색해본 사람은 그때 쌓여 있는 블로그 후기가 받아줍니다.</div>
+      </div>
+      <div class="tl-item ad">
+        <div class="tl-d"><span data-fill="m1-inf-ad-range">8/10 — 8/30</span> · 매주 1주씩</div>
+        <div class="tl-t">메타 광고 (인스타그램·페이스북)</div>
+        <div class="tl-x"><strong>인플루언서 영상이 올라가는 그 주에 맞춰, 그 영상으로 광고를 1주일씩 돌립니다.</strong> 영상이 가장 신선할 때 광고비를 태우는 게 반응이 제일 좋기 때문입니다. 부산시청 주변에 사는 분·직장인에게 집중적으로 노출하고, 영상을 본 사람이 <strong>바로 네이버 지도로 이동</strong>하게 연결합니다. 광고비는 인플루언서 비용에 포함돼 있어 따로 청구되지 않습니다.</div>
+      </div>
+      <div class="tl-item key">
+        <div class="tl-d">9월 초</div>
+        <div class="tl-t">8월 운영보고서</div>
+        <div class="tl-x"><strong>9/4(금)에 첫 달 결과를 정리해서 보내드립니다.</strong> 네이버 지도에서 몇 번 노출됐는지, 후기가 몇 개 쌓였는지 등을&nbsp;<strong>숫자로 보여드리고</strong>, 9월에 무엇을 이어갈지 알려드립니다.</div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ══════════════ 둘째 달 · 9월 ══════════════ -->
+  <div class="month-head newpage">
+    <span class="mh-n">둘째 달</span>
+    <span class="mh-t">9월 — <em>유지</em></span>
+    <span class="mh-line"></span>
+    <span class="mh-amt"><span data-fill="cost-m2">150만원</span></span>
+  </div>
+
+  <!-- 9월 한눈에 -->
+  <div class="section">
+    <h2>9월 <em>한눈에</em></h2>
+    <div class="sec-sub">8월 결산 → 체험단 모집 → 후기·영상 다시 쌓기 → 둘째 달 결과 보고</div>
+    <div class="steps">
+      <div class="step"><div class="st-n">① 9/1 — 9/6</div><div class="st-t">8월 결산 · 9월 준비</div><div class="st-d">9/4 첫 달 보고서 전달 / 플레이스 주간 점검 시작</div></div>
+      <div class="step"><div class="st-n">② 9/7 — 9/14</div><div class="st-t">체험단 모집 · 영상 1편</div><div class="st-d">인플루언서 1인 업로드 + 광고 1주 / 9/14 체험단 선정</div></div>
+      <div class="step hero"><div class="st-n">③ <span data-fill="m2-review-range">9/15 — 9/29</span></div><div class="st-t">후기·영상 다시 쌓기</div><div class="st-d">체험단 <span data-fill="m2-review-count">20명</span> 방문 + 인플루언서 1인 업로드 + 광고 1주</div></div>
+      <div class="step"><div class="st-n">④ 10월 초</div><div class="st-t">둘째 달 보고서</div><div class="st-d">8월과 비교해 얼마나 올라갔는지 정리</div></div>
+    </div>
+  </div>
+
+  <!-- 9월 캘린더 -->
+  <div class="section">
+    <h2>9월 <em>일정표</em> — 언제 누가 오나</h2>
+    <div class="sec-sub">8월과 같은 방식입니다 · 초록색이 매주 반복되는 플레이스 관리, 파란색이 체험단 기간입니다</div>
+
+    <div class="legend">
+      <span class="lg"><i class="c-np"></i>네이버플레이스</span>
+      <span class="lg"><i class="c-exp"></i>블로그 체험단</span>
+      <span class="lg"><i class="c-inf"></i>인플루언서</span>
+      <span class="lg"><i class="c-ad"></i>광고</span>
+      <span class="lg"><i class="c-key"></i>주요 날짜</span>
+    </div>
+
+    <div class="cal-wrap">
+      <table class="cal">
+        <thead><tr><th class="sun">일</th><th>월</th><th>화</th><th>수</th><th>목</th><th>금</th><th class="sat">토</th></tr></thead>
+        <!-- 아래 tbody 는 맨 위 PLAN 값으로 자동 생성됩니다. 직접 고치지 마세요. -->
+        <tbody id="cal-m2"></tbody>
+      </table>
+    </div>
+
+    <div class="note"><strong>9월은 8월처럼 몰아치지 않고, 일정하게 반복됩니다.</strong> <strong>파란색 <span data-fill="m2-review-range">—</span></strong>가 체험단 기간으로, <strong>8월과 같은 날짜대</strong>에 <span data-fill="m2-review-count">—</span>이 나눠서 방문합니다. <strong>네이버플레이스 관리는 날짜를 잡지 않고 주 1회씩 상시로</strong> 돌아갑니다 — 후기 답글, 가게 소식·사진 갱신, 검색 순위 점검입니다. 인플루언서는 <strong>2주 간격으로 1편씩</strong> 올리고 그때마다 광고를 1주씩 붙입니다.</div>
+  </div>
+
+  <!-- 9월 인플루언서 -->
+  <div class="section">
+    <h2>9월 인플루언서 — <span data-fill="m2-inf-count">2명</span></h2>
+    <div class="sec-sub">8월과 같은 기준으로 섭외합니다 · 방문일은 9월 초에 확정해 따로 안내드립니다</div>
+
+    <table>
+      <thead><tr><th>회차</th><th class="c">방문일 <span style="color:#bbb;font-weight:500;">(변동 가능)</span></th><th class="c">영상 업로드</th><th class="c">인원</th><th class="c">메타 광고 (업로드와 동시 · 1주)</th></tr></thead>
+      <tbody id="inf-m2"></tbody>
+    </table>
+
+    <div class="note calm">8월은 "여기 새로 열었다"를 한꺼번에 알려야 해서 인원을 몰았습니다. 9월부터는 이미 알려진 가게라 <strong>새 영상을 꾸준히 얹는 쪽</strong>이 효율이 높습니다. 그래서 <strong>2주에 1편씩, 끊기지 않게</strong> 가는 방식으로 바꿉니다.</div>
+  </div>
+
+  <!-- 9월 150만원 쓰임 -->
+  <div class="section">
+    <h2>9월 <em><span data-fill="cost-m2">150만원</span></em>, 어디에 쓰나</h2>
+    <div class="sec-sub">항목별로 실제로 무슨 일을 하고, 무엇이 남는지 정리했습니다</div>
+
+    <table>
+      <thead><tr><th>항목</th><th class="r">금액</th><th>9월에 하는 일</th><th class="c">남는 것</th></tr></thead>
+      <!-- 아래 tbody 는 맨 위 PLAN.cost 로 자동 생성됩니다. 직접 고치지 마세요. -->
+      <tbody id="spend-m2"></tbody>
+    </table>
+
+    <div class="note"><strong>9월 비용은 8월의 절반입니다.</strong> 8월에 들어간 <strong>플레이스 등록·최적화는 한 번만 하면 되는 세팅 작업</strong>이라 9월에는 관리 비용만 남고, 체험단·인플루언서도 오픈 때만큼 몰아칠 필요가 없어 규모가 줄기 때문입니다. 대신 <strong>매달 새 후기와 새 영상이 얹히기 때문에</strong>, 8월에 만들어둔 검색 순위와 후기가 시간이 지나도 내려가지 않습니다.</div>
+  </div>
+
+
+  <!-- ══════════════ 공통 ══════════════ -->
+  <div class="month-head">
+    <span class="mh-n">두 달 공통</span>
+    <span class="mh-t">사장님 <em>확인 사항</em></span>
+    <span class="mh-line"></span>
+  </div>
+
+  <!-- 사장님 체크리스트 -->
+  <div class="section">
+    <h2>사장님이 <em>해주실 것</em></h2>
+    <div class="sec-sub">이것만 해주시면 나머지는 저희가 진행합니다</div>
+
+    <ul class="chk">
+      <li><span class="when g">8/3까지</span><b>가게 자료 전달</b> — 사업자등록증 사본, 가게 사진(외관·내부·대표 메뉴), 메뉴판과 가격, 영업시간·휴무일, 대표 전화번호, 주차 안내. <b>사진은 휴대폰으로 찍으신 것도 괜찮습니다.</b></li>
+      <li><span class="when g">8/8</span><b>네이버 지도 최종 확인</b> — 저희가 등록한 내용을 보내드리면 <b>전화번호·영업시간·가격이 맞는지만</b> 봐주세요.</li>
+      <li><span class="when">8월 · 9월 중</span><b>인플루언서 방문 응대</b> — <b><span data-fill="m1-inf-menu">시그니처 돼지우동 2개 + 사이드 중 택 1</span></b>을 내주시고, 촬영에 협조해주세요. <b>방문이 확정되면 미리 알려드립니다.</b></li>
+      <li><span class="when b"><span data-fill="m1-review-range">8/11 — 8/28</span> · <span data-fill="m2-review-range">9/15 — 9/29</span></span><b>체험단 확인</b> — "체험단으로 왔습니다"라고 하면 명단 확인 후 <b><span data-fill="m1-review-menu">시그니처 돼지우동 2개 + 사이드 중 택 1</span></b> 제공. 8월 <span data-fill="m1-review-count">40명</span>, 9월 <span data-fill="m2-review-count">20명</span>이 기간 내에 나눠서 옵니다.</li>
+      <li><span class="when">수시</span><b>가게에 변경이 생기면 알려주세요</b> — 영업시간·휴무일·메뉴·가격이 바뀌면 지도 정보도 같이 고쳐야 합니다.</li>
+    </ul>
+
+    <div class="note calm"><strong>연락 창구 (위드런 변미혜 팀장 010-4816-6697).</strong> 일정 변경·문의는 담당자에게 편하게 연락 주세요. 인플루언서 방문은 <strong>전날 문자로 다시 안내</strong>드립니다.</div>
+  </div>
+
+  <!-- 비용 -->
+  <div class="section">
+    <h2>두 달 <em>비용</em></h2>
+    <div class="sec-sub">단위는 만원 · 부가세 별도</div>
+
+    <table>
+      <thead><tr><th>항목</th><th class="r">첫 달 (8월)</th><th class="r">둘째 달 (9월)</th></tr></thead>
+      <!-- 아래 tbody 는 맨 위 PLAN.cost 로 자동 생성됩니다. 직접 고치지 마세요. -->
+      <tbody id="cost-body"></tbody>
+    </table>
+  </div>
+
+
+  <div class="footer">
+    <div class="brand">BRANDRISE</div>
+    미례국밥 부산시청점 × 브랜드라이즈 · 2026년 8·9월 운영 플랜<br>
+    일정은 현장 상황에 따라 조정될 수 있으며, 변경 시 최소 2일 전에 안내드립니다. 금액은 부가세 별도입니다.
+  </div>
+
+</div>
+
+<script>
+/* ============================================================================
+   렌더러 — 이 아래는 건드리지 않아도 됩니다.
+   맨 위 PLAN 값을 읽어 달마다 캘린더 · 인플루언서 표를 그리고,
+   비용표 · 9월 쓰임표 · 본문 안 날짜를 채웁니다.
+   ========================================================================== */
+(function () {
+  const WD = ['일', '월', '화', '수', '목', '금', '토'];
+  const DAY = 86400000;
+
+  const md = (s) => {
+    const [m, d] = String(s).split('/').map(Number);
+    return { m, d };
+  };
+  const key = (m, d) => m + '/' + d;
+  const dateOf = (m, d) => new Date(PLAN.year, m - 1, d);
+  const dayOf = (s) => { const { m, d } = md(s); return dateOf(m, d); };
+  const short = (s) => { const { m, d } = md(s); return m + '/' + d; };
+  const won = (n) => n.toLocaleString('ko-KR') + '만원';
+
+  const fills = {};
+
+  /* ── 달 하나를 그립니다 ─────────────────────────────────────────────────── */
+  function renderMonth(cfg) {
+    const bucket = {};
+    const band = {};
+    const put = (date, ev) => {
+      const k = key(md(date).m, md(date).d);
+      (bucket[k] = bucket[k] || []).push(ev);
+    };
+
+    /* end 가 있는 항목을 날짜별 조각으로 쪼개, 이어진 하나의 막대처럼 보이게 합니다.
+       글자는 시작일과 (2일 이상 남은) 주 시작일에만 넣고 나머지는 빈 칸으로 이어붙입니다. */
+    const putSpan = (ev) => {
+      const startD = dayOf(ev.date), endD = dayOf(ev.end);
+      let cur = startD;
+      while (cur <= endD) {
+        const first = cur.getTime() === startD.getTime();
+        const left = Math.round((endD - cur) / DAY) + 1;
+        put(key(cur.getMonth() + 1, cur.getDate()), Object.assign({}, ev, {
+          bar: true,
+          barS: first,
+          barE: cur.getTime() === endD.getTime(),
+          text: (first || (cur.getDay() === 0 && left >= 2)) ? ev.text : '',
+        }));
+        cur = new Date(cur.getFullYear(), cur.getMonth(), cur.getDate() + 1);
+      }
+    };
+
+    const R = cfg.review;
+    const F = cfg.influencer;
+
+    (cfg.events || []).forEach((e) => (e.end ? putSpan(e) : put(e.date, e)));
+
+    /* 체험단 — 선정일 + 방문·리뷰 작성 기간 밴드 */
+    if (R) {
+      if (R.selectDate) put(R.selectDate, { type: 'exp', soft: true, text: '체험단 ' + R.count + '명 선정' });
+
+      const startD = dayOf(R.start), endD = dayOf(R.end);
+      let cur = startD;
+      while (cur <= endD) {
+        const k = key(cur.getMonth() + 1, cur.getDate());
+        band[k] = true;
+        if (cur.getTime() === startD.getTime()) {
+          put(k, { type: 'exp', text: '체험단 방문 · 리뷰 작성 시작 (' + R.count + '명)' });
+        } else if (cur.getTime() === endD.getTime()) {
+          put(k, { type: 'exp', text: '체험단 리뷰 작성 마감' });
+        }
+        cur = new Date(cur.getFullYear(), cur.getMonth(), cur.getDate() + 1);
+      }
+    }
+
+    /* 인플루언서 — 업로드 회차마다 광고를 1주씩 붙임 */
+    let infCount = 0, adRange = '', uploadWindow = '';
+    if (F && F.uploads.length) {
+      infCount = F.uploads.reduce((a, u) => a + u.count, 0);
+      F.uploads.forEach((u, i) => {
+        put(u.adStart, { type: 'inf', text: u.count + '인 업로드 주간' });
+        put(u.adStart, { type: 'ad', text: '메타 광고 ' + (i + 1) + '주차 시작' });
+      });
+      const first = F.uploads[0], last = F.uploads[F.uploads.length - 1];
+      adRange = short(first.adStart) + ' — ' + short(last.adEnd);
+      uploadWindow = (F.uploadPrefix ? F.uploadPrefix + ' ' : '') + '(' + adRange + ')';
+    }
+
+    /* ---- 캘린더 ---- */
+    const firstDay = dateOf(cfg.month, 1);
+    const offset = firstDay.getDay();
+    const dim = new Date(PLAN.year, cfg.month, 0).getDate();
+    const cells = Math.ceil((offset + dim) / 7) * 7;
+
+    let html = '';
+    for (let i = 0; i < cells; i++) {
+      const col = i % 7;
+      if (col === 0) html += '<tr>';
+
+      const n = i - offset + 1;
+      const wd = col === 0 ? ' sun' : col === 6 ? ' sat' : '';
+
+      if (n < 1) {
+        html += '<td class="off"></td>';
+      } else {
+        const inMonth = n <= dim;
+        const m = inMonth ? cfg.month : cfg.month + 1;
+        const d = inMonth ? n : n - dim;
+        const k = key(m, d);
+        /* 막대는 항상 셀 맨 윗줄에 — 그래야 날짜가 달라도 높이가 맞아 이어져 보입니다 */
+        const raw = bucket[k] || [];
+        const evs = raw.filter((e) => e.bar).concat(raw.filter((e) => !e.bar));
+        const tdCls = [inMonth ? '' : 'off', band[k] ? 'band-exp' : ''].filter(Boolean).join(' ');
+
+        html += '<td class="' + tdCls + '">';
+        html += '<div class="dnum' + wd + (inMonth ? '' : ' out') + '">' + (inMonth ? d : m + '/' + d) + '</div>';
+        evs.forEach((e) => {
+          const cls = ['ev', e.type, e.soft ? 'soft' : '', e.cont ? 'cont' : '',
+                       e.bar ? 'bar' : '', e.barS ? 'b-s' : '', e.barE ? 'b-e' : '',
+                       inMonth ? '' : 'out'].filter(Boolean).join(' ');
+          html += '<span class="' + cls + '">' + (e.text || '&nbsp;') + '</span>';
+        });
+        html += '</td>';
+      }
+
+      if (col === 6) html += '</tr>';
+    }
+    const calEl = document.getElementById('cal-' + cfg.key);
+    if (calEl) calEl.innerHTML = html;
+
+    /* ---- 인플루언서 표 ---- */
+    const infEl = document.getElementById('inf-' + cfg.key);
+    if (infEl && F) {
+      infEl.innerHTML = F.uploads.map((u) =>
+        '<tr><td class="item">' + u.label + '</td>' +
+        '<td class="c">' + (u.visits && u.visits.length ? u.visits.map(short).join(', ') : '협의 후 안내') + '</td>' +
+        '<td class="c">' + short(u.adStart) + ' — ' + short(u.adEnd) + '</td>' +
+        '<td class="c"><b>' + u.count + '인 업로드</b></td>' +
+        '<td class="c">' + short(u.adStart) + ' — ' + short(u.adEnd) + ' <span style="color:#999;font-size:11px;font-weight:600;">1주</span></td></tr>'
+      ).join('');
+    }
+
+    /* ---- 본문 채울 값 ---- */
+    const p = cfg.key + '-';
+    if (R) {
+      fills[p + 'review-range'] = short(R.start) + ' — ' + short(R.end);
+      fills[p + 'review-count'] = R.count + '명';
+      fills[p + 'review-menu'] = R.menu;
+      fills[p + 'review-menunote'] = R.menuNote || '';
+    }
+    if (F) {
+      fills[p + 'inf-count'] = infCount + '명';
+      fills[p + 'inf-visit'] = F.visitWindow;
+      fills[p + 'inf-upload'] = uploadWindow;
+      fills[p + 'inf-ad-range'] = adRange;
+      fills[p + 'inf-menu'] = F.menu;
+    }
+  }
+
+  PLAN.months.forEach(renderMonth);
+
+  /* ── 비용표 ─────────────────────────────────────────────────────────────── */
+  const C = PLAN.cost;
+  const sub = (t) => t ? '<br><span style="font-size:11px;color:#EA580C;font-weight:800;">' + t + '</span>' : '';
+  const note = (t) => t ? ' <span style="font-size:11px;color:#999;font-weight:600;">' + t + '</span>' : '';
+  const sum1 = C.rows.reduce((a, r) => a + r.m1, 0);
+  const sum2 = C.rows.reduce((a, r) => a + r.m2, 0);
+
+  const costEl = document.getElementById('cost-body');
+  if (costEl) {
+    costEl.innerHTML =
+      C.rows.map((r) =>
+        '<tr><td class="item">' + r.item + sub(r.sub) + '</td>' +
+        '<td class="amt">' + r.m1 + note(r.m1note) + '</td>' +
+        '<td class="amt">' + r.m2 + note(r.m2note) + '</td></tr>'
+      ).join('') +
+      '<tr class="sum-row"><td>월 합계</td><td class="amt">' + sum1 + '</td><td class="amt">' + sum2 + '</td></tr>' +
+      '<tr class="total-row"><td>두 달 합계 (부가세 별도)</td><td class="amt" colspan="2">' + (sum1 + sum2) + '</td></tr>';
+  }
+
+  /* ── 9월 쓰임표 ─────────────────────────────────────────────────────────── */
+  const spendEl = document.getElementById('spend-m2');
+  if (spendEl) {
+    spendEl.innerHTML =
+      C.rows.map((r) =>
+        '<tr><td class="item">' + r.item + note(r.m2note) + '</td>' +
+        '<td class="amt">' + r.m2 + '</td>' +
+        '<td class="desc">' + (r.m2work || '') + '</td>' +
+        '<td class="c"><b>' + (r.m2out || '') + '</b></td></tr>'
+      ).join('') +
+      '<tr class="total-row"><td>합계</td><td class="amt">' + sum2 + '</td><td colspan="2">부가세 별도</td></tr>';
+  }
+
+  fills['cost-m1'] = won(sum1);
+  fills['cost-m2'] = won(sum2);
+  fills['cost-total'] = won(sum1 + sum2);
+
+  /* ── 본문 안 값 채우기 ──────────────────────────────────────────────────── */
+  document.querySelectorAll('[data-fill]').forEach((el) => {
+    const v = fills[el.getAttribute('data-fill')];
+    if (v) el.textContent = v;
+  });
+})();
+</script>
+
+<!-- ===== 편집 UI (저장 시 자동으로 빠집니다) ===== -->
+
+
+
+
+
+
+
+</body></html>
