@@ -303,7 +303,21 @@ tr.sum-row td { background:#FFF7ED; color:#C2410C; font-weight:800; font-size:14
 }
 @media print {
   .toolbar { display: none; }
-  .container { padding: 16px; max-width: none; }
+  .container { padding: 0; max-width: none; }
+  .section { padding: 20px 22px; margin-bottom: 14px; }
+
+  /* 캘린더를 A4 폭에 맞춥니다 — min-width 760px 때문에 오른쪽이 잘렸습니다 */
+  table.cal { min-width: 0; width: 100%; }
+  table.cal th { padding: 6px 3px; font-size: 10px; }
+  table.cal td { height: 88px; padding: 4px 4px 6px; }
+  .dnum { font-size: 11px; margin-bottom: 3px; }
+  .ev { font-size: 8.5px; padding: 2px 4px; margin-bottom: 2px; line-height: 1.3; }
+  .ev.bar { margin-left: -4px; margin-right: -4px; padding-left: 4px; padding-right: 4px; }
+
+  /* 본문 표(인플루언서·비용)도 폭에 맞춰 줄입니다 */
+  table { font-size: 11.5px; }
+  th { font-size: 10px; padding: 7px 8px; white-space: normal; }
+  td { padding: 9px 8px; }
   body { background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   .section, .mission-box, .cal-wrap { break-inside: avoid; }
   .month-head { break-after: avoid; }
@@ -444,7 +458,7 @@ tr.sum-row td { background:#FFF7ED; color:#C2410C; font-weight:800; font-size:14
           <div class="pv-b"><strong style="color:#C2410C;font-size:14px;"><span data-fill="m1-review-menu">시그니처 돼지우동 2개 + 사이드 (맛보기 냉제육 or 가마솥순대) 택 1</span></strong>
             <span style="display:block;margin-top:3px;font-size:11.5px;color:#C2410C;font-weight:600;" data-fill="m1-review-menunote">*이외 추가 메뉴는 체험단이 직접 결제합니다</span>
             체험단 한 팀에게 제공되는 구성입니다. 현장에서 이 구성대로만 내주시면 됩니다.
-            <span style="display:block;margin-top:10px;padding-top:10px;border-top:1px dashed #FED7AA;"><b style="color:#C2410C;">방문 시간</b> &nbsp;<b><span data-fill="m1-review-hours">—</span></b></span>
+            <span style="display:block;margin-top:10px;padding-top:10px;border-top:1px dashed #FED7AA;"><b style="color:#C2410C;">방문 시간</b> &nbsp;<b><span data-fill="m1-review-hours">평일·주말 구분 없이 오후 2:00 — 7:30</span></b></span>
           </div>
         </div>
       </div>
@@ -455,7 +469,7 @@ tr.sum-row td { background:#FFF7ED; color:#C2410C; font-weight:800; font-size:14
       </div>
       <div class="tl-item ad">
         <div class="tl-d"><span data-fill="m1-inf-ad-range">8/10 — 8/30</span> · 매주 1주씩</div>
-        <div class="tl-t">메타 광고 (인스타그램·페이스북)</div>
+        <div class="tl-t">메타 광고 (인스타그램)</div>
         <div class="tl-x"><strong>인플루언서 영상이 올라가는 그 주에 맞춰, 그 영상으로 광고를 1주일씩 돌립니다.</strong> 영상이 가장 신선할 때 광고비를 태우는 게 반응이 제일 좋기 때문입니다. 부산시청 주변에 사는 분·직장인에게 집중적으로 노출하고, 영상을 본 사람이 <strong>바로 네이버 지도로 이동</strong>하게 연결합니다.</div>
       </div>
       <div class="tl-item key">
@@ -508,7 +522,7 @@ tr.sum-row td { background:#FFF7ED; color:#C2410C; font-weight:800; font-size:14
       </table>
     </div>
 
-    <div class="note"><strong>9월은 8월처럼 몰아치지 않고, 일정하게 반복됩니다.</strong> <strong>파란색 <span data-fill="m2-review-range">9/11 — 9/28</span></strong>가 체험단 기간으로, <strong>8월과 같은 날짜대</strong>에 <span data-fill="m2-review-count">20명</span>이 나눠서 방문합니다. <strong>네이버플레이스 관리는 날짜를 잡지 않고 주 1회씩 상시로</strong> 돌아갑니다 — 후기 답글, 가게 소식·사진 갱신, 검색 순위 점검입니다. 인플루언서는 <strong>2주 간격으로 1편씩</strong> 올리고 그때마다 광고를 1주씩 붙입니다.</div>
+    <div class="note"><strong>9월은 8월처럼 몰아치지 않고, 일정하게 반복됩니다.</strong> <strong>파란색 <span data-fill="m2-review-range">9/11 — 9/28</span></strong>가 체험단 기간으로, <strong>8월과 같은 날짜대</strong>에 <span data-fill="m2-review-count">20명</span>이 나눠서 방문합니다. <strong>네이버플레이스 관리는 날짜를 잡지 않고 주 1회씩 상시로</strong> 돌아갑니다 — 후기 답글, 가게 소식·사진 갱신, 검색 순위 점검입니다. 인플루언서는 <strong>2주 간격으로 1편씩</strong> 올리고 그때마다 광고를 붙입니다.</div>
   </div>
 
   <!-- 9월 인플루언서 -->
@@ -522,7 +536,7 @@ tr.sum-row td { background:#FFF7ED; color:#C2410C; font-weight:800; font-size:14
     </table>
 
     <div class="note calm">8월은 "여기 새로 열었다"를 한꺼번에 알려야 해서 인원을 몰았습니다. 9월부터는 이미 알려진 가게라 <strong>새 영상을 꾸준히 얹는 쪽</strong>이 효율이 높습니다. 그래서 <strong>2주에 1편씩, 끊기지 않게</strong> 가는 방식으로 바꿉니다.
-      <br><br><strong>광고는 영상 한 편당 2주씩 돌립니다.</strong> 앞 영상의 광고가 <strong>다음 영상이 올라오는 날까지</strong> 계속 돌아가고, 그 자리를 새 영상 광고가 바로 이어받습니다. 그래서 <strong>9월 내내 광고가 한 번도 끊기지 않습니다</strong> — 쉬는 구간 없이 <span data-fill="m2-inf-ad-range">—</span> 계속 노출됩니다.</div>
+      <br><br><strong>광고는 영상 한 편당 2주씩 돌립니다.</strong> 앞 영상의 광고가 <strong>다음 영상이 올라오는 날까지</strong> 계속 돌아가고, 그 자리를 새 영상 광고가 바로 이어받습니다. 그래서 <strong>9월 내내 광고가 한 번도 끊기지 않습니다.</strong></div>
   </div>
 
   <!-- (9월 쓰임표 섹션 삭제됨 — 되살리려면 id="spend-m2" tbody 를 가진 표 섹션을 넣으면 PLAN.cost 로 자동 생성됩니다) -->
@@ -548,7 +562,7 @@ tr.sum-row td { background:#FFF7ED; color:#C2410C; font-weight:800; font-size:14
       <li><span class="when">수시</span><b>가게에 변경이 생기면 알려주세요</b> — 영업시간·휴무일·메뉴·가격이 바뀌면 지도 정보도 같이 고쳐야 합니다.</li>
     </ul>
 
-    <div class="note calm"><strong>연락 창구 (위드런 변미혜 팀장 010-4816-6697).</strong> 일정 변경·문의는 담당자에게 편하게 연락 주세요.&nbsp;</div>
+    <div class="note calm"><strong>연락 창구 (히즈 우성민 팀장 010-4048-0276).</strong> 일정 변경·문의는 담당자에게 편하게 연락 주세요.&nbsp;</div>
   </div>
 
   <!-- 비용 -->
@@ -781,6 +795,14 @@ tr.sum-row td { background:#FFF7ED; color:#C2410C; font-weight:800; font-size:14
 
 <!-- ===== 편집 UI (저장 시 자동으로 빠집니다) ===== -->
 
+
+
+
+
+
+
+
+<!-- ===== 편집 UI (저장 시 자동으로 빠집니다) ===== -->
 
 
 
