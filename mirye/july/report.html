@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>미례국밥 7월 운영 보고서 — 브랜드라이즈</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Noto Sans KR', -apple-system, sans-serif; background: #f4f7f9; color: #1a1b18; line-height: 1.7; font-size: 14px; word-break: keep-all; overflow-wrap: break-word; }
+
+.toolbar { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: #0D0D0D; height: 56px; display: flex; align-items: center; justify-content: space-between; padding: 0 32px; }
+.toolbar-left { display: flex; align-items: center; gap: 16px; }
+.toolbar-logo { font-size: 13px; font-weight: 700; color: #EA580C; letter-spacing: 0.05em; }
+.toolbar-sep { width: 1px; height: 20px; background: rgba(255,255,255,0.15); }
+.toolbar-title { font-size: 14px; font-weight: 500; color: #fff; }
+.toolbar-actions { display: flex; gap: 8px; }
+.btn-toolbar { padding: 7px 16px; border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; background: transparent; color: #fff; font-size: 12px; font-weight: 500; cursor: pointer; transition: all 0.2s; text-decoration: none; display: inline-block; }
+.btn-toolbar:hover { background: rgba(255,255,255,0.1); }
+.btn-toolbar.active { background: #EA580C; color: #fff; border-color: #EA580C; }
+
+.edit-banner { display: none; position: fixed; top: 56px; left: 0; right: 0; z-index: 99; background: #FFF7ED; border-bottom: 2px solid #EA580C; padding: 8px 32px; font-size: 12px; color: #EA580C; font-weight: 600; text-align: center; }
+body.editing .edit-banner { display: block; }
+body.editing .container { padding-top: 110px; }
+body.editing [contenteditable="true"] { outline: 2px dashed rgba(234,88,12,0.3); outline-offset: 2px; border-radius: 4px; }
+body.editing [contenteditable="true"]:focus { outline-color: #EA580C; background: #FFF7ED; }
+
+.container { max-width: 940px; margin: 0 auto; padding: 80px 24px 60px; transition: padding-top 0.2s; }
+
+.report-header { background: #fff; border-radius: 12px; padding: 40px; margin-bottom: 20px; border: 1px solid #e8edf1; }
+.report-header .label { font-size: 11px; font-weight: 700; color: #EA580C; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 14px; }
+.report-header h1 { font-size: 26px; font-weight: 900; line-height: 1.35; letter-spacing: -0.02em; margin-bottom: 0; }
+.report-header h1 em { color: #EA580C; font-style: normal; }
+.meta-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 28px; padding-top: 24px; border-top: 1px solid #e8edf1; }
+.meta-item .mk { font-size: 11px; color: #999; letter-spacing: 0.04em; margin-bottom: 4px; }
+.meta-item .mv { font-size: 13px; font-weight: 600; }
+
+.section { background: #fff; border-radius: 12px; padding: 32px 40px; margin-bottom: 20px; border: 1px solid #e8edf1; }
+
+.highlight-box { background: #0D0D0D; border-radius: 12px; padding: 28px 36px; margin-bottom: 20px; color: #fff; }
+.highlight-box .hl-label { font-size: 11px; font-weight: 700; color: #EA580C; letter-spacing: 0.08em; margin-bottom: 10px; }
+.highlight-box .hl-text { font-size: 16px; font-weight: 600; line-height: 1.8; }
+.highlight-box .hl-text em { color: #EA580C; font-style: normal; }
+
+.ch-header { display: flex; align-items: center; gap: 12px; margin-bottom: 22px; padding-bottom: 14px; border-bottom: 1px solid #e8edf1; }
+.ch-icon { width: 30px; height: 30px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 800; color: #fff; flex-shrink: 0; }
+.ch-icon.c1 { background: #0D0D0D; }
+.ch-icon.c2 { background: #EA580C; }
+.ch-icon.c3 { background: #16a34a; }
+.ch-icon.c4 { background: linear-gradient(135deg, #f09433, #dc2743, #bc1888); }
+.ch-icon.c5 { background: #0D0D0D; }
+.ch-icon.c6 { background: #2563eb; }
+.ch-icon.c7 { background: #94a3b8; }
+.ch-header h3 { font-size: 15px; font-weight: 700; }
+.ch-header .ch-badge { font-size: 11px; color: #999; font-weight: 500; }
+
+.kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.kpi-card { background: #f8fafb; border-radius: 10px; padding: 22px 18px; text-align: center; border: 1px solid #e8edf1; }
+.kpi-card .kc-label { font-size: 11px; color: #999; font-weight: 500; margin-bottom: 8px; }
+.kpi-card .kc-value { font-size: 26px; font-weight: 900; color: #1a1b18; letter-spacing: -0.02em; }
+.kpi-card .kc-unit { font-size: 13px; font-weight: 500; color: #999; }
+.kpi-card .kc-change { font-size: 11px; margin-top: 5px; font-weight: 600; line-height: 1.4; }
+.kpi-card .kc-change.up { color: #16a34a; }
+.kpi-card .kc-change.down { color: #dc2626; }
+.kpi-card .kc-change.neutral { color: #999; }
+.kpi-card.dark { background: #0D0D0D; border-color: #0D0D0D; }
+.kpi-card.dark .kc-label { color: #EA580C; }
+.kpi-card.dark .kc-value { color: #fff; }
+.kpi-card.dark .kc-value em { color: #EA580C; font-style: normal; }
+.kpi-card.dark .kc-change { color: rgba(255,255,255,0.45); }
+
+.status { display: inline-block; padding: 3px 11px; border-radius: 12px; font-size: 10px; font-weight: 800; letter-spacing: 0.04em; white-space: nowrap; }
+.status.done { background: #dcfce7; color: #16a34a; }
+.status.over { background: #0D0D0D; color: #EA580C; }
+.status.partial { background: #fef3c7; color: #b45309; }
+.status.miss { background: #fee2e2; color: #dc2626; }
+
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th { background: #f8fafb; padding: 10px 16px; font-weight: 600; border-bottom: 2px solid #e8edf1; color: #999; font-size: 11px; text-align: left; white-space: nowrap; }
+td { padding: 13px 16px; border-bottom: 1px solid #f0f2f5; vertical-align: top; }
+td.item { font-weight: 700; color: #1a1b18; width: 30%; }
+td.desc { color: #636569; font-size: 12px; line-height: 1.7; }
+td.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+th.num { text-align: right; }
+.rank-up { color: #16a34a; font-weight: 800; }
+.rank-down { color: #dc2626; font-weight: 800; }
+.rank-keep { color: #636569; font-weight: 700; }
+
+.store-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.store-card { border-radius: 12px; padding: 24px; border: 1px solid #e8edf1; }
+.store-card.up { background: linear-gradient(180deg, #f0fdf4 0%, #fff 60%); border-color: #bbf7d0; }
+.store-card.down { background: linear-gradient(180deg, #fef2f2 0%, #fff 60%); border-color: #fecaca; }
+.store-card.flat { background: #f8fafb; }
+.store-card .sc-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+.store-card .sc-name { font-size: 15px; font-weight: 800; }
+.store-card .sc-tag { font-size: 10px; font-weight: 800; padding: 3px 10px; border-radius: 12px; }
+.store-card .sc-tag.up { background: #16a34a; color: #fff; }
+.store-card .sc-tag.down { background: #dc2626; color: #fff; }
+.store-card .sc-tag.flat { background: #94a3b8; color: #fff; }
+.store-card .sc-main { display: flex; align-items: baseline; gap: 8px; margin-bottom: 4px; flex-wrap: wrap; }
+.store-card .sc-main .scm-val { font-size: 30px; font-weight: 900; letter-spacing: -0.02em; }
+.store-card .sc-main .scm-arrow { font-size: 13px; color: #999; font-weight: 600; }
+.store-card .sc-main .scm-chg { font-size: 13px; font-weight: 800; }
+.store-card .sc-main .scm-chg.up { color: #16a34a; }
+.store-card .sc-main .scm-chg.down { color: #dc2626; }
+.store-card .sc-sub { font-size: 11px; color: #999; margin-bottom: 16px; }
+.store-card .sc-list { font-size: 12px; color: #636569; line-height: 1.85; border-top: 1px dashed #e2e8f0; padding-top: 14px; }
+.store-card .sc-list strong { color: #1a1b18; }
+.store-card .sc-list .k { display: inline-block; min-width: 108px; color: #94a3b8; }
+
+.info-box { background: #FFF7ED; border-left: 4px solid #EA580C; border-radius: 0 8px 8px 0; padding: 14px 20px; margin-top: 18px; font-size: 12px; color: #636569; line-height: 1.85; }
+.info-box strong { color: #1a1b18; }
+.info-box.dark { background: #0D0D0D; border-left-color: #EA580C; color: rgba(255,255,255,0.78); }
+.info-box.dark strong { color: #fff; }
+.info-box.warn { background: #fffbeb; border-left-color: #f59e0b; }
+
+.flow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 18px; }
+.flow-step { background: #f8fafb; border: 1px solid #e8edf1; border-radius: 10px; padding: 16px 14px; text-align: center; }
+.flow-step.hero { background: #0D0D0D; border-color: #0D0D0D; }
+.flow-step .fs-when { font-size: 10px; font-weight: 800; color: #EA580C; letter-spacing: 0.06em; margin-bottom: 6px; }
+.flow-step .fs-val { font-size: 22px; font-weight: 900; letter-spacing: -0.02em; }
+.flow-step.hero .fs-val { color: #fff; }
+.flow-step .fs-note { font-size: 11px; color: #999; margin-top: 4px; }
+.flow-step.hero .fs-note { color: rgba(255,255,255,0.5); }
+
+.next-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 4px; }
+.next-card { padding: 20px 18px; border-radius: 10px; border: 1px solid #e8edf1; background: #f8fafb; }
+.next-card.hero { background: #FFF7ED; border-color: #EA580C; }
+.next-card .nc-label { font-size: 10px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #EA580C; margin-bottom: 9px; }
+.next-card .nc-title { font-size: 14px; font-weight: 800; margin-bottom: 7px; }
+.next-card .nc-desc { font-size: 12px; color: #636569; line-height: 1.7; }
+.next-card .nc-desc strong { color: #1a1b18; }
+
+.footer { text-align: center; padding: 40px 0; color: #999; font-size: 12px; line-height: 2; }
+.footer .brand { font-size: 15px; font-weight: 800; color: #1a1b18; margin-bottom: 4px; }
+
+@media (max-width: 768px) {
+  .container { padding: 70px 16px 40px; }
+  .meta-grid { grid-template-columns: repeat(2, 1fr); }
+  .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+  .store-grid { grid-template-columns: 1fr; }
+  .next-grid { grid-template-columns: 1fr; }
+  .flow { grid-template-columns: 1fr; }
+  .section { padding: 24px 20px; }
+  .toolbar { padding: 0 16px; }
+  table { display: block; overflow-x: auto; }
+}
+@media print {
+  .toolbar, .edit-banner { display: none !important; }
+  .container { padding: 20px; }
+  body { background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="toolbar-left">
+    <div class="toolbar-logo">BRANDRISE</div>
+    <div class="toolbar-sep"></div>
+    <div class="toolbar-title">미례국밥 7월 운영 보고서</div>
+  </div>
+  <div class="toolbar-actions">
+    <button class="btn-toolbar" id="editToggle" onclick="toggleEdit()">편집</button>
+    <button class="btn-toolbar" onclick="window.print()">PDF 저장</button>
+  </div>
+</div>
+
+<div class="edit-banner">편집 모드 — 텍스트와 숫자를 클릭해서 수정하세요.</div>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <div class="report-header">
+    <div class="label" contenteditable="false">미례국밥 X 브랜드라이즈</div>
+    <h1 contenteditable="false">미례국밥 7월 <em>운영 보고서</em></h1>
+    <div class="meta-grid">
+      <div class="meta-item"><div class="mk">기간</div><div class="mv" contenteditable="false">2026. 07. 01 — 07. 31</div></div>
+      <div class="meta-item"><div class="mk">단계</div><div class="mv" contenteditable="false">7월 — 센텀 회복 + 강남 안정화</div></div>
+      <div class="meta-item"><div class="mk">작성</div><div class="mv" contenteditable="false">우성민 LEAD</div></div>
+      <div class="meta-item"><div class="mk">작성일</div><div class="mv" contenteditable="false">2026. 08. 01</div></div>
+    </div>
+  </div>
+
+  <!-- SUMMARY -->
+  <div class="highlight-box">
+    <div class="hl-label">한 줄 요약</div>
+    <div class="hl-text" contenteditable="false">
+      7월 1순위였던 <em>센텀 회복</em>은 회복을 넘어 <em>역대 최고</em>를 찍었습니다. 광고가 사는 것을 "인스타 프로필 방문"에서 "센텀 매장 플레이스 유입"으로 바꾸자, 센텀 주간 방문 유입이 <em>2,384 → 16,157(6.8배)</em>로 뛰었습니다. 강남은 <em>"강남역 돼지국밥" 9위 → 1위</em>로 검색을 굳혔고, 인스타 도달은 목표 30만을 넘겨 <em>51만</em>을 기록했습니다. 다만 화력 배분에서 빠진 <em>전포는 6월 고점 대비 -33%</em>로 내려왔습니다 — 8월의 숙제입니다.
+    </div>
+  </div>
+
+  <!-- 1. 한눈에 보기 -->
+  <div class="section">
+    <div class="ch-header">
+      <div class="ch-icon c1">1</div>
+      <div>
+        <h3>7월 한눈에 보기</h3>
+        <div class="ch-badge">센텀을 살리고, 강남을 굳히고, 브랜드 도달을 2배로 키운 달</div>
+      </div>
+    </div>
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kc-label">센텀 방문 유입 (월)</div>
+        <div class="kc-value" contenteditable="false">26,315</div>
+        <div class="kc-change up" contenteditable="false">6월 10,089 → +161%</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kc-label">강남 방문 유입 (월)</div>
+        <div class="kc-value" contenteditable="false">24,647</div>
+        <div class="kc-change up" contenteditable="false">주평균 6,162 (6월 4,376) +41%</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kc-label">인스타 도달(조회)</div>
+        <div class="kc-value" contenteditable="false">51.0<span class="kc-unit">만</span></div>
+        <div class="kc-change up" contenteditable="false">6월 25.5만 → 2배 · 목표 30만 초과</div>
+      </div>
+      <div class="kpi-card dark">
+        <div class="kc-label">"미례국밥" 검색량</div>
+        <div class="kc-value" contenteditable="false"><em>7,910</em></div>
+        <div class="kc-change" contenteditable="false">월간 검색수 최고치 (6월 6,370)</div>
+      </div>
+    </div>
+    <div class="info-box">
+      <strong>7월을 한 문장으로</strong> — 6월이 "강남 오픈으로 브랜드를 띄운 달"이었다면, 7월은 <strong>그 브랜드 파워를 실제 매장 유입으로 바꾼 달</strong>입니다. 특히 센텀은 광고 구조를 바꾼 7/16 이후 2주 만에 유입이 <strong>2,041 → 16,157</strong>로 뛰었습니다. 브랜드 도달(인스타 51만)과 매장 유입(센텀·강남 합계 월 5만)이 처음으로 함께 올라온 달입니다.
+    </div>
+  </div>
+
+  <!-- 2. 약속 × 결과 -->
+  <div class="section">
+    <div class="ch-header">
+      <div class="ch-icon c2">2</div>
+      <div>
+        <h3>7월 약속 × 결과</h3>
+        <div class="ch-badge">7월 운영 플랜에서 약속한 4가지</div>
+      </div>
+    </div>
+    <table>
+      <tbody>
+        <tr>
+          <td class="item" contenteditable="false">① 센텀 회복<br><span style="font-weight:500; color:#999; font-size:11px;">7월 1순위 · 목표 주 3,000+</span></td>
+          <td style="width:14%;"><span class="status over">초과 달성</span></td>
+          <td class="desc" contenteditable="false">주간 방문 유입 <strong>16,157</strong>(목표의 5.4배), 월 합계 <strong>26,315</strong>로 6월 대비 <strong>+161%</strong>. "센텀 맛집"·"센텀시티 맛집"이 7위 → <strong>3위</strong>로 올라섰습니다.</td>
+        </tr>
+        <tr>
+          <td class="item" contenteditable="false">② 강남 자산 방어<br><span style="font-weight:500; color:#999; font-size:11px;">순위·리뷰 유지</span></td>
+          <td><span class="status over">초과 달성</span></td>
+          <td class="desc" contenteditable="false">유지를 넘어 상승. "강남역 돼지국밥" <strong>9위 → 1위</strong>, "강남역 국밥" <strong>40위 → 2위</strong>, 리뷰 <strong>월 660건</strong> 추가. 방문 유입도 주평균 4,376 → <strong>6,162(+41%)</strong>.</td>
+        </tr>
+        <tr>
+          <td class="item" contenteditable="false">③ 브랜드 도달·팔로워<br><span style="font-weight:500; color:#999; font-size:11px;">목표 도달 30만+ / 팔로워 350+</span></td>
+          <td><span class="status done">달성</span></td>
+          <td class="desc" contenteditable="false">도달 <strong>51.0만</strong>(목표의 170%), 팔로워 <strong>349명</strong>(목표 350의 99.7%). 단일 주 최고 도달 <strong>29.4만</strong>을 기록했습니다.</td>
+        </tr>
+        <tr>
+          <td class="item" contenteditable="false">④ 전포 유지<br><span style="font-weight:500; color:#999; font-size:11px;">목표 주 4,650 유지</span></td>
+          <td><span class="status miss">미달</span></td>
+          <td class="desc" contenteditable="false">주간 <strong>3,107</strong>로 6월 고점 대비 <strong>-33%</strong>(다만 5월 2,583보다는 높음). 7월 화력을 센텀·강남에 집중 배치하면서 전포 전용 광고·콘텐츠가 빠진 결과입니다. <strong>8월 대응이 필요한 유일한 지표</strong>입니다.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 3. 센텀 -->
+  <div class="section">
+    <div class="ch-header">
+      <div class="ch-icon c2">3</div>
+      <div>
+        <h3>센텀점 — 광고가 사는 것을 바꾸자 유입이 6.8배</h3>
+        <div class="ch-badge">7/16 광고 구조 전환 · 이후 2주 실측</div>
+      </div>
+    </div>
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kc-label">월 방문 유입</div>
+        <div class="kc-value" contenteditable="false">26,315</div>
+        <div class="kc-change up" contenteditable="false">6월 10,089 → +161%</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kc-label">주간 최고</div>
+        <div class="kc-value" contenteditable="false">16,157</div>
+        <div class="kc-change up" contenteditable="false">6월말 2,384 → 6.8배</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kc-label">리뷰 등록 (월)</div>
+        <div class="kc-value" contenteditable="false">358<span class="kc-unit">건</span></div>
+        <div class="kc-change up" contenteditable="false">6월 315건 → +14%</div>
+      </div>
+      <div class="kpi-card dark">
+        <div class="kc-label">"센텀 맛집" 순위</div>
+        <div class="kc-value" contenteditable="false"><em>3</em><span class="kc-unit">위</span></div>
+        <div class="kc-change" contenteditable="false">6월말 7위 → 3위 (월 1.4만 검색)</div>
+      </div>
+    </div>
+
+    <div class="flow">
+      <div class="flow-step">
+        <div class="fs-when">7/7 — 7/12</div>
+        <div class="fs-val" contenteditable="false">2,041</div>
+        <div class="fs-note">전환 전 · 기존 구조</div>
+      </div>
+      <div class="flow-step">
+        <div class="fs-when">7/13 — 7/19</div>
+        <div class="fs-val" contenteditable="false">5,781</div>
+        <div class="fs-note">7/16 광고 구조 전환</div>
+      </div>
+      <div class="flow-step hero">
+        <div class="fs-when">7/20 — 7/26</div>
+        <div class="fs-val" contenteditable="false">16,157</div>
+        <div class="fs-note">전환 후 2주차</div>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <strong>무엇을 바꿨나 — 광고가 "사는 것"을 바꿨습니다</strong><br>
+      6월까지 센텀 광고는 <strong>인스타 프로필 방문</strong>을 사고, <strong>전국</strong>에 노출했습니다. 프로필 방문 단가는 좋았지만, 그게 센텀 매장 방문으로 이어진다는 증거가 없었습니다. 7/16부터 두 가지를 바꿨습니다 — ① <strong>도착지를 센텀점 네이버플레이스로</strong>(광고를 본 사람이 바로 위치·영업시간·리뷰를 보고 저장·길찾기로 넘어가게), ② <strong>노출을 센텀 반경 3km로</strong>(여행객이 아니라 센텀 상권 실거주·직장 손님에게만). 결과가 위 흐름입니다.
+    </div>
+    <div class="info-box warn">
+      <strong>다만 정확히 보고드립니다</strong> — 이번 증가분은 <strong>광고를 눌러 들어온 유입</strong>이 주력입니다. 같은 기간 네이버 지도·검색을 거쳐 들어온 유입은 6월 6,769 → 7월 6,547로 거의 같습니다. 즉 <strong>"광고로 사람을 플레이스까지 데려오는 것"까지는 검증됐고, 이제 "그 사람을 매장 방문으로 바꾸는 것"이 남았습니다.</strong> 8월엔 인플루언서 6인을 센텀에 직접 배치해 방문 동기를 만들고, 광고는 그 콘텐츠를 증폭하는 역할로 붙입니다.
+    </div>
+  </div>
+
+  <!-- 4. 강남 -->
+  <div class="section">
+    <div class="ch-header">
+      <div class="ch-icon c3">4</div>
+      <div>
+        <h3>강남점 — 오픈 3개월, 검색 1위를 굳혔습니다</h3>
+        <div class="ch-badge">6/15 오픈 · 7월 한 달 실측</div>
+      </div>
+    </div>
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kc-label">월 방문 유입</div>
+        <div class="kc-value" contenteditable="false">24,647</div>
+        <div class="kc-change up" contenteditable="false">주평균 6,162 (6월 4,376) +41%</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kc-label">네이버지도 유입 (월)</div>
+        <div class="kc-value" contenteditable="false">19,781</div>
+        <div class="kc-change up" contenteditable="false">지도 검색이 유입의 80%</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kc-label">리뷰 등록 (월)</div>
+        <div class="kc-value" contenteditable="false">660<span class="kc-unit">건</span></div>
+        <div class="kc-change up" contenteditable="false">오픈 후 누적 1,015건</div>
+      </div>
+      <div class="kpi-card dark">
+        <div class="kc-label">"강남역 돼지국밥"</div>
+        <div class="kc-value" contenteditable="false"><em>1</em><span class="kc-unit">위</span></div>
+        <div class="kc-change" contenteditable="false">6월 9위 → 7월 내내 1위 사수</div>
+      </div>
+    </div>
+
+    <table style="margin-top:18px;">
+      <thead>
+        <tr><th>강남 키워드</th><th class="num">월 검색량</th><th class="num">6월말</th><th class="num">7월말</th><th>해석</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="item">강남역 돼지국밥</td><td class="num">160</td><td class="num">9위</td><td class="num rank-up">1위</td><td class="desc">핵심 메뉴 키워드 완전 장악</td></tr>
+        <tr><td class="item">강남역 국밥</td><td class="num">1,520</td><td class="num">40위</td><td class="num rank-up">2위</td><td class="desc">한 달 만에 38계단 상승</td></tr>
+        <tr><td class="item">서초 국밥</td><td class="num">190</td><td class="num">미노출</td><td class="num rank-up">2위</td><td class="desc">인접 상권까지 확장</td></tr>
+        <tr><td class="item">강남역순대국밥</td><td class="num">270</td><td class="num">미노출</td><td class="num rank-up">4위</td><td class="desc">신규 진입</td></tr>
+        <tr><td class="item">강남역5번출구맛집</td><td class="num">780</td><td class="num">미노출</td><td class="num rank-up">5위</td><td class="desc">출구 단위 로컬 선점</td></tr>
+        <tr><td class="item">강남역 한식 맛집</td><td class="num">1,090</td><td class="num">미노출</td><td class="num rank-up">13위</td><td class="desc">메뉴 → 카테고리로 확장</td></tr>
+        <tr><td class="item">강남역 맛집</td><td class="num">100,100</td><td class="num">미노출</td><td class="num rank-up">38위</td><td class="desc">월 10만 대형 키워드 진입</td></tr>
+        <tr><td class="item">돼지국밥 <span style="font-weight:500;color:#999;font-size:11px;">(전국)</span></td><td class="num">56,400</td><td class="num">미노출</td><td class="num rank-up">114위</td><td class="desc">전국 키워드에 처음 이름을 올림</td></tr>
+      </tbody>
+    </table>
+
+    <div class="info-box">
+      <strong>오픈 3개월 만에 강남 검색에서 자리를 잡았습니다</strong> — 6월엔 "강남역 돼지국밥 9위 진입"이 성과였다면, 7월엔 <strong>그 키워드 1위 + 인접 키워드 6개 신규 진입</strong>입니다. 특히 월 10만 검색의 <strong>"강남역 맛집" 38위</strong>, 전국 <strong>"돼지국밥" 114위</strong>는 강남점이 이제 <strong>메뉴 검색이 아니라 상권 검색에서 발견되기 시작했다</strong>는 뜻입니다. 오픈 부스팅 예산은 6월로 끝났고, 7월은 플레이스·체험단 기본 운영(100만)만으로 이 결과를 냈습니다.
+    </div>
+  </div>
+
+  <!-- 5. 전포 -->
+  <div class="section">
+    <div class="ch-header">
+      <div class="ch-icon c7">5</div>
+      <div>
+        <h3>전포본점 — 화력이 빠진 자리가 그대로 보였습니다</h3>
+        <div class="ch-badge">7월 유일한 목표 미달 지표 · 원인과 대응</div>
+      </div>
+    </div>
+    <div class="store-grid">
+      <div class="store-card down">
+        <div class="sc-top"><div class="sc-name">전포 방문 유입 (주간)</div><div class="sc-tag down">하락</div></div>
+        <div class="sc-main">
+          <div class="scm-val" contenteditable="false">3,107</div>
+          <div class="scm-arrow">← 4,650</div>
+          <div class="scm-chg down" contenteditable="false">-33%</div>
+        </div>
+        <div class="sc-sub" contenteditable="false">월 합계 18,823 → 13,566 · 5월(10,726)보다는 +26%</div>
+        <div class="sc-list" contenteditable="false">
+          <span class="k">전포 맛집</span> 6위 → <strong style="color:#dc2626;">172위</strong><br>
+          <span class="k">전포역맛집</span> 2위 → <strong style="color:#dc2626;">118위</strong><br>
+          <span class="k">서면전포맛집</span> 57위 → <strong style="color:#dc2626;">89위</strong><br>
+          <span class="k">리뷰 등록</span> 월 202건 → <strong>134건</strong>
+        </div>
+      </div>
+      <div class="store-card flat">
+        <div class="sc-top"><div class="sc-name">단, 핵심 키워드는 지켰습니다</div><div class="sc-tag flat">방어</div></div>
+        <div class="sc-main">
+          <div class="scm-val" contenteditable="false">1~2<span style="font-size:15px;color:#999;">위</span></div>
+          <div class="scm-arrow">메인 키워드 4종</div>
+        </div>
+        <div class="sc-sub" contenteditable="false">매출과 직결되는 메뉴·지역 키워드는 유지</div>
+        <div class="sc-list" contenteditable="false">
+          <span class="k">전포동 국밥</span> 1위 → <strong>2위</strong><br>
+          <span class="k">전포돼지국밥</span> 1위 → <strong>2위</strong><br>
+          <span class="k">전포 미례국밥</span> <strong>1위</strong> 사수<br>
+          <span class="k">서면돼지국밥</span> 41위 → <strong style="color:#16a34a;">37위</strong> 개선
+        </div>
+      </div>
+    </div>
+    <div class="info-box">
+      <strong>원인은 명확합니다 — 7월 화력이 전포에 배정되지 않았습니다</strong><br>
+      7월 예산 1,020만 중 전포 몫은 <strong>본사 플레이스 관리 40만</strong>뿐이었고, 광고·인플루언서·체험단은 전부 센텀 회복과 강남 안정화에 들어갔습니다. 6월 4,650은 강남 오픈 화제성이 부산으로 번진 <strong>일시적 고점</strong>이었고, 그 특수가 걷히면서 5월(2,583)과 6월 고점 사이로 내려앉았습니다.<br><br>
+      <strong>여기서 확인된 것</strong> — "전포 맛집"처럼 경쟁이 센 대형 로컬 키워드는 <strong>콘텐츠 발행이 끊기면 한 달 안에 바로 빠집니다</strong>(6위 → 172위). 반대로 <strong>브랜드·메뉴 키워드(전포 미례국밥·전포돼지국밥)는 화력 없이도 1~2위를 지켰습니다.</strong> 즉 전포는 브랜드 자산은 튼튼하고, 신규 손님을 끌어오는 노출만 끊긴 상태입니다.
+    </div>
+  </div>
+
+  <!-- 6. 콘텐츠 & 인스타 -->
+  <div class="section">
+    <div class="ch-header">
+      <div class="ch-icon c4">6</div>
+      <div>
+        <h3>콘텐츠 · 인스타그램 — 도달 51만, 목표의 170%</h3>
+        <div class="ch-badge">본사 엔진 하나로 전 지점 노출을 뿌린 결과</div>
+      </div>
+    </div>
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kc-label">블로그 누적</div>
+        <div class="kc-value" contenteditable="false">130<span class="kc-unit">건</span></div>
+        <div class="kc-change up" contenteditable="false">6월말 100 → 130건</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kc-label">인스타 팔로워</div>
+        <div class="kc-value" contenteditable="false">349<span class="kc-unit">명</span></div>
+        <div class="kc-change up" contenteditable="false">207 → 349 (+142명)</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kc-label">인스타 반응</div>
+        <div class="kc-value" contenteditable="false">7,395</div>
+        <div class="kc-change up" contenteditable="false">좋아요·댓글·저장 월 누적 (+30%)</div>
+      </div>
+      <div class="kpi-card dark">
+        <div class="kc-label">인스타 도달(조회)</div>
+        <div class="kc-value" contenteditable="false"><em>51.0</em><span class="kc-unit">만</span></div>
+        <div class="kc-change" contenteditable="false">단일 주 최고 29.4만 · 목표 30만 초과</div>
+      </div>
+    </div>
+    <div class="info-box">
+      <strong>한 달 만에 도달이 다시 2배로</strong> — 6월 25.5만 → 7월 <strong>51.0만</strong>. 인플루언서 <strong>6인</strong>(부산 로랑·보람·앵두·얌희·먹슬라 / 강남 시장한부부 11.2만)의 콘텐츠를 본사 엔진에서 상시로 돌리고, 반응이 좋은 소재를 광고로 증폭한 구조가 작동했습니다. "미례국밥" 검색량은 <strong>월간 7,910</strong>까지 올라 4개월 연속 상승 중이고, 메뉴 브랜드인 "돼지우동"도 350 → <strong>530(+51%)</strong>으로 함께 올라왔습니다 — 브랜드가 아니라 <strong>메뉴 이름 자체가 검색어가 되기 시작했습니다.</strong>
+    </div>
+  </div>
+
+  <!-- 7. 메타 광고 -->
+  <div class="section">
+    <div class="ch-header">
+      <div class="ch-icon c6">7</div>
+      <div>
+        <h3>메타 광고 — 프로필 방문에서 매장 유입으로</h3>
+        <div class="ch-badge">7/1 ~ 7/31 실측 · 센텀 164만 / 강남 92만</div>
+      </div>
+    </div>
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kc-label">광고 도달</div>
+        <div class="kc-value" contenteditable="false">38.3<span class="kc-unit">만</span></div>
+        <div class="kc-change up" contenteditable="false">6월 4.0만 → 9.5배</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kc-label">노출 / 링크 클릭</div>
+        <div class="kc-value" contenteditable="false">72.0<span class="kc-unit">만</span></div>
+        <div class="kc-change up" contenteditable="false">클릭 40,195회</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kc-label">클릭당 비용</div>
+        <div class="kc-value" contenteditable="false">60<span class="kc-unit">원</span></div>
+        <div class="kc-change up" contenteditable="false">센텀 정밀 타겟 최저 44원</div>
+      </div>
+      <div class="kpi-card dark">
+        <div class="kc-label">CTR (클릭률)</div>
+        <div class="kc-value" contenteditable="false"><em>5.89</em><span class="kc-unit">%</span></div>
+        <div class="kc-change" contenteditable="false">업계 평균 1.67% 대비 3.5배</div>
+      </div>
+    </div>
+    <table style="margin-top:18px;">
+      <thead>
+        <tr><th>구분</th><th class="num">집행</th><th class="num">링크 클릭</th><th class="num">클릭당</th><th>구조</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="item">센텀점</td>
+          <td class="num">164만</td><td class="num">27,913</td><td class="num" style="font-weight:800;color:#16a34a;">55원</td>
+          <td class="desc">센텀 반경 3km 정밀 타겟 · <strong>랜딩 = 센텀 네이버플레이스</strong> · 인플루언서 소재 재활용</td>
+        </tr>
+        <tr>
+          <td class="item">강남점</td>
+          <td class="num">92만</td><td class="num">10,950</td><td class="num" style="font-weight:800;">79원</td>
+          <td class="desc">본사 엔진의 인플루언서·인터뷰 소재 확산 · 강남 별도 광고 예산 없이 집행</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="info-box">
+      <strong>같은 돈으로 훨씬 멀리 갔습니다</strong> — 6월 광고 도달 4.0만 → 7월 <strong>38.3만(9.5배)</strong>, 클릭률은 <strong>5.89%로 업계 평균의 3.5배</strong>입니다. 가장 효율이 좋았던 소재는 센텀 정밀 타겟에 붙인 인플루언서 영상으로 <strong>클릭당 44~52원</strong>을 기록했습니다. <span style="color:#999;">※ 7월 광고의 도착지는 인스타 프로필(강남)과 네이버플레이스(센텀)로 나뉘어 있어, 매출 전환(ROAS) 대신 도달·클릭·플레이스 유입으로 평가합니다.</span>
+    </div>
+  </div>
+
+  <!-- 8. 8월로 이어가는 것 -->
+  <div class="section">
+    <div class="ch-header">
+      <div class="ch-icon c5">8</div>
+      <div>
+        <h3>8월로 이어가는 것</h3>
+        <div class="ch-badge">상세는 별도 8월 운영 플랜·견적 참조</div>
+      </div>
+    </div>
+    <div class="info-box dark">
+      <strong>8월 한 줄</strong> — 7월이 <strong>"광고로 사람을 데려오는 것"</strong>을 증명했다면, 8월은 <strong>그 사람을 매장 방문으로 바꾸는 달</strong>입니다. 화력을 본사에서 <strong>매장별로 직접 배치</strong>하고, 방한이 연중 가장 몰리는 <strong>오봉 성수기에 강남 화력 1,000만</strong>을 집중합니다. 여기에 <strong>부산시청점</strong>이 표준 오픈 패키지 1호로 출발합니다.
+    </div>
+    <div class="next-grid">
+      <div class="next-card hero">
+        <div class="nc-label">성수기</div>
+        <div class="nc-title">강남 — 일본 인바운드</div>
+        <div class="nc-desc" contenteditable="false">방한 최성수기 8월에 <strong>일본 인플루언서 500 + 마이크로·돋보기 500</strong>을 집중. 일본어 자연어 검색을 선점해 강남 손님의 실체(일본 관광객)를 직접 잡습니다.</div>
+      </div>
+      <div class="next-card">
+        <div class="nc-label">전환</div>
+        <div class="nc-title">센텀 — 인플루언서 6인</div>
+        <div class="nc-desc" contenteditable="false">광고로 만든 유입을 <strong>방문으로 바꾸는 단계</strong>. 부산 로컬 계정 6인을 센텀에 직접 배치해 한 달 내내 발행하고, 광고(100)는 그 소재를 증폭합니다.</div>
+      </div>
+      <div class="next-card">
+        <div class="nc-label">신규</div>
+        <div class="nc-title">부산시청점 오픈</div>
+        <div class="nc-desc" contenteditable="false">7월 플랜에서 정한 <strong>신규 매장 표준 패키지(셋업 300 → 지속 150)</strong>의 첫 적용. 플레이스 등록·체험단·인플루언서 4인으로 오픈 첫 달을 세팅합니다.</div>
+      </div>
+    </div>
+    <div class="info-box warn">
+      <strong>🔴 함께 결정이 필요한 것 — 전포본점</strong><br>
+      7월에 확인된 대로, 전포는 <strong>노출이 끊기면 대형 로컬 키워드가 한 달 안에 빠집니다</strong>. 현재 8월 플랜에서 전포 몫은 <strong>본사 플레이스 관리 40만</strong>뿐이라, 지금 흐름이 이어질 가능성이 높습니다. 8월 확정 전에 ① 이대로 두고 브랜드 키워드만 방어할지, ② 소액 체험단·광고를 붙여 대형 키워드를 되찾을지 <strong>방향을 정해주시면 반영하겠습니다.</strong>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="brand">BRANDRISE</div>
+    본 리포트는 위드런 측 전달 목적으로 작성되었습니다.<br>
+    데이터 기준일: 2026. 08. 01 · 작성: 우성민 LEAD<br>
+    <span style="font-size:11px;">출처 — 네이버플레이스 통계 · 네이버 키워드 도구 · Meta 광고 관리자 실측 · 미례국밥 마스터시트</span>
+  </div>
+
+</div>
+
+<script>
+function toggleEdit() {
+  const body = document.body;
+  const btn = document.getElementById('editToggle');
+  body.classList.toggle('editing');
+  const isEditing = body.classList.contains('editing');
+  btn.textContent = isEditing ? '편집 완료' : '편집';
+  btn.classList.toggle('active', isEditing);
+  document.querySelectorAll('[contenteditable]').forEach(el => {
+    el.contentEditable = isEditing ? 'true' : 'false';
+  });
+}
+</script>
+</body>
+</html>
