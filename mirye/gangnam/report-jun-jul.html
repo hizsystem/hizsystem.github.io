@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>미례국밥 강남삼성타운직영점 6·7월 운영 보고서 — 브랜드라이즈</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Noto Sans KR', -apple-system, sans-serif; background: #f4f7f9; color: #1a1b18; line-height: 1.7; font-size: 14px; word-break: keep-all; overflow-wrap: break-word; }
+
+.toolbar { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: #0D0D0D; height: 56px; display: flex; align-items: center; justify-content: space-between; padding: 0 32px; }
+.toolbar-left { display: flex; align-items: center; gap: 16px; }
+.toolbar-logo { font-size: 13px; font-weight: 700; color: #EA580C; letter-spacing: 0.05em; }
+.toolbar-sep { width: 1px; height: 20px; background: rgba(255,255,255,0.15); }
+.toolbar-title { font-size: 14px; font-weight: 500; color: #fff; }
+.toolbar-actions { display: flex; gap: 8px; }
+.btn-toolbar { padding: 7px 16px; border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; background: transparent; color: #fff; font-size: 12px; font-weight: 500; cursor: pointer; transition: all 0.2s; text-decoration: none; display: inline-block; }
+.btn-toolbar:hover { background: rgba(255,255,255,0.1); }
+.btn-toolbar.active { background: #EA580C; color: #fff; border-color: #EA580C; }
+
+.edit-banner { display: none; position: fixed; top: 56px; left: 0; right: 0; z-index: 99; background: #FFF7ED; border-bottom: 2px solid #EA580C; padding: 8px 32px; font-size: 12px; color: #EA580C; font-weight: 600; text-align: center; }
+body.editing .edit-banner { display: block; }
+body.editing .container { padding-top: 110px; }
+body.editing [contenteditable="true"] { outline: 2px dashed rgba(234,88,12,0.3); outline-offset: 2px; border-radius: 4px; }
+body.editing [contenteditable="true"]:focus { outline-color: #EA580C; background: #FFF7ED; }
+
+.container { max-width: 940px; margin: 0 auto; padding: 80px 24px 60px; transition: padding-top 0.2s; }
+
+.report-header { background: #fff; border-radius: 12px; padding: 40px; margin-bottom: 20px; border: 1px solid #e8edf1; }
+.report-header .label { font-size: 11px; font-weight: 700; color: #EA580C; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 14px; }
+.report-header h1 { font-size: 26px; font-weight: 900; line-height: 1.35; letter-spacing: -0.02em; margin-bottom: 0; }
+.report-header h1 em { color: #EA580C; font-style: normal; }
+.meta-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 28px; padding-top: 24px; border-top: 1px solid #e8edf1; }
+.meta-item .mk { font-size: 11px; color: #999; letter-spacing: 0.04em; margin-bottom: 4px; }
+.meta-item .mv { font-size: 13px; font-weight: 600; }
+
+.section { background: #fff; border-radius: 12px; padding: 32px 40px; margin-bottom: 20px; border: 1px solid #e8edf1; }
+
+.highlight-box { background: #0D0D0D; border-radius: 12px; padding: 28px 36px; margin-bottom: 20px; color: #fff; }
+.highlight-box .hl-label { font-size: 11px; font-weight: 700; color: #EA580C; letter-spacing: 0.08em; margin-bottom: 10px; }
+.highlight-box .hl-text { font-size: 16px; font-weight: 600; line-height: 1.8; }
+.highlight-box .hl-text em { color: #EA580C; font-style: normal; }
+
+.ch-header { display: flex; align-items: center; gap: 12px; margin-bottom: 22px; padding-bottom: 14px; border-bottom: 1px solid #e8edf1; }
+.ch-icon { width: 30px; height: 30px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 800; color: #fff; flex-shrink: 0; }
+.ch-icon.c1 { background: #0D0D0D; }
+.ch-icon.c2 { background: #EA580C; }
+.ch-icon.c3 { background: #16a34a; }
+.ch-icon.c4 { background: linear-gradient(135deg, #f09433, #dc2743, #bc1888); }
+.ch-icon.c5 { background: #0D0D0D; }
+.ch-icon.c6 { background: #2563eb; }
+.ch-icon.c7 { background: #94a3b8; }
+.ch-header h3 { font-size: 15px; font-weight: 700; }
+.ch-header .ch-badge { font-size: 11px; color: #999; font-weight: 500; }
+
+.kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.kpi-card { background: #f8fafb; border-radius: 10px; padding: 22px 18px; text-align: center; border: 1px solid #e8edf1; }
+.kpi-card .kc-label { font-size: 11px; color: #999; font-weight: 500; margin-bottom: 8px; }
+.kpi-card .kc-value { font-size: 26px; font-weight: 900; color: #1a1b18; letter-spacing: -0.02em; }
+.kpi-card .kc-unit { font-size: 13px; font-weight: 500; color: #999; }
+.kpi-card .kc-change { font-size: 11px; margin-top: 5px; font-weight: 600; line-height: 1.4; }
+.kpi-card .kc-change.up { color: #16a34a; }
+.kpi-card .kc-change.down { color: #dc2626; }
+.kpi-card .kc-change.neutral { color: #999; }
+.kpi-card.dark { background: #0D0D0D; border-color: #0D0D0D; }
+.kpi-card.dark .kc-label { color: #EA580C; }
+.kpi-card.dark .kc-value { color: #fff; }
+.kpi-card.dark .kc-value em { color: #EA580C; font-style: normal; }
+.kpi-card.dark .kc-change { color: rgba(255,255,255,0.45); }
+
+.status { display: inline-block; padding: 3px 11px; border-radius: 12px; font-size: 10px; font-weight: 800; letter-spacing: 0.04em; white-space: nowrap; }
+.status.done { background: #dcfce7; color: #16a34a; }
+.status.over { background: #0D0D0D; color: #EA580C; }
+.status.partial { background: #fef3c7; color: #b45309; }
+.status.miss { background: #fee2e2; color: #dc2626; }
+
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th { background: #f8fafb; padding: 10px 16px; font-weight: 600; border-bottom: 2px solid #e8edf1; color: #999; font-size: 11px; text-align: left; white-space: nowrap; }
+td { padding: 13px 16px; border-bottom: 1px solid #f0f2f5; vertical-align: top; }
+td.item { font-weight: 700; color: #1a1b18; width: 30%; }
+td.desc { color: #636569; font-size: 12px; line-height: 1.7; }
+td.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+th.num { text-align: right; }
+.rank-up { color: #16a34a; font-weight: 800; }
+.rank-down { color: #dc2626; font-weight: 800; }
+.rank-keep { color: #636569; font-weight: 700; }
+
+.store-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.store-card { border-radius: 12px; padding: 24px; border: 1px solid #e8edf1; }
+.store-card.up { background: linear-gradient(180deg, #f0fdf4 0%, #fff 60%); border-color: #bbf7d0; }
+.store-card.down { background: linear-gradient(180deg, #fef2f2 0%, #fff 60%); border-color: #fecaca; }
+.store-card.flat { background: #f8fafb; }
+.store-card .sc-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+.store-card .sc-name { font-size: 15px; font-weight: 800; }
+.store-card .sc-tag { font-size: 10px; font-weight: 800; padding: 3px 10px; border-radius: 12px; }
+.store-card .sc-tag.up { background: #16a34a; color: #fff; }
+.store-card .sc-tag.down { background: #dc2626; color: #fff; }
+.store-card .sc-tag.flat { background: #94a3b8; color: #fff; }
+.store-card .sc-main { display: flex; align-items: baseline; gap: 8px; margin-bottom: 4px; flex-wrap: wrap; }
+.store-card .sc-main .scm-val { font-size: 30px; font-weight: 900; letter-spacing: -0.02em; }
+.store-card .sc-main .scm-arrow { font-size: 13px; color: #999; font-weight: 600; }
+.store-card .sc-main .scm-chg { font-size: 13px; font-weight: 800; }
+.store-card .sc-main .scm-chg.up { color: #16a34a; }
+.store-card .sc-main .scm-chg.down { color: #dc2626; }
+.store-card .sc-sub { font-size: 11px; color: #999; margin-bottom: 16px; }
+.store-card .sc-list { font-size: 12px; color: #636569; line-height: 1.85; border-top: 1px dashed #e2e8f0; padding-top: 14px; }
+.store-card .sc-list strong { color: #1a1b18; }
+.store-card .sc-list .k { display: inline-block; min-width: 108px; color: #94a3b8; }
+
+.info-box { background: #FFF7ED; border-left: 4px solid #EA580C; border-radius: 0 8px 8px 0; padding: 14px 20px; margin-top: 18px; font-size: 12px; color: #636569; line-height: 1.85; }
+.info-box strong { color: #1a1b18; }
+.info-box.dark { background: #0D0D0D; border-left-color: #EA580C; color: rgba(255,255,255,0.78); }
+.info-box.dark strong { color: #fff; }
+.info-box.warn { background: #fffbeb; border-left-color: #f59e0b; }
+
+.flow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 18px; }
+.flow-step { background: #f8fafb; border: 1px solid #e8edf1; border-radius: 10px; padding: 16px 14px; text-align: center; }
+.flow-step.hero { background: #0D0D0D; border-color: #0D0D0D; }
+.flow-step .fs-when { font-size: 10px; font-weight: 800; color: #EA580C; letter-spacing: 0.06em; margin-bottom: 6px; }
+.flow-step .fs-val { font-size: 22px; font-weight: 900; letter-spacing: -0.02em; }
+.flow-step.hero .fs-val { color: #fff; }
+.flow-step .fs-note { font-size: 11px; color: #999; margin-top: 4px; }
+.flow-step.hero .fs-note { color: rgba(255,255,255,0.5); }
+
+.next-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 4px; }
+.next-card { padding: 20px 18px; border-radius: 10px; border: 1px solid #e8edf1; background: #f8fafb; }
+.next-card.hero { background: #FFF7ED; border-color: #EA580C; }
+.next-card .nc-label { font-size: 10px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #EA580C; margin-bottom: 9px; }
+.next-card .nc-title { font-size: 14px; font-weight: 800; margin-bottom: 7px; }
+.next-card .nc-desc { font-size: 12px; color: #636569; line-height: 1.7; }
+.next-card .nc-desc strong { color: #1a1b18; }
+
+.footer { text-align: center; padding: 40px 0; color: #999; font-size: 12px; line-height: 2; }
+.footer .brand { font-size: 15px; font-weight: 800; color: #1a1b18; margin-bottom: 4px; }
+
+@media (max-width: 768px) {
+  .container { padding: 70px 16px 40px; }
+  .meta-grid { grid-template-columns: repeat(2, 1fr); }
+  .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+  .store-grid { grid-template-columns: 1fr; }
+  .next-grid { grid-template-columns: 1fr; }
+  .flow { grid-template-columns: 1fr; }
+  .section { padding: 24px 20px; }
+  .toolbar { padding: 0 16px; }
+  table { display: block; overflow-x: auto; }
+}
+@media print {
+  .toolbar, .edit-banner { display: none !important; }
+  .container { padding: 20px; }
+  body { background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="toolbar-left">
+    <div class="toolbar-logo">BRANDRISE</div>
+    <div class="toolbar-sep"></div>
+    <div class="toolbar-title">강남삼성타운직영점 6·7월 운영 보고서</div>
+  </div>
+  <div class="toolbar-actions">
+    <button class="btn-toolbar" id="editToggle" onclick="toggleEdit()">편집</button>
+    <button class="btn-toolbar" onclick="window.print()">PDF 저장</button>
+  </div>
+</div>
+
+<div class="edit-banner">편집 모드 — 텍스트와 숫자를 클릭해서 수정하세요.</div>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <div class="report-header">
+    <div class="label" contenteditable="false">미례국밥 X 브랜드라이즈 · 강남삼성타운직영점</div>
+    <h1 contenteditable="false">강남점 6·7월 <em>운영 보고서</em></h1>
+    <div class="meta-grid">
+      <div class="meta-item"><div class="mk">대상</div><div class="mv" contenteditable="false">강남삼성타운직영점</div></div>
+      <div class="meta-item"><div class="mk">기간</div><div class="mv" contenteditable="false">2026. 06. 15 (오픈) — 07. 31</div></div>
+      <div class="meta-item"><div class="mk">단계</div><div class="mv" contenteditable="false">오픈 골든타임 90일 (D+46)</div></div>
+      <div class="meta-item"><div class="mk">작성</div><div class="mv" contenteditable="false">우성민 LEAD · 2026. 08. 03</div></div>
+    </div>
+  </div>
+
+  <!-- SUMMARY -->
+  <div class="highlight-box">
+    <div class="hl-label">한 줄 요약</div>
+    <div class="hl-text" contenteditable="false">
+      강남점은 <em>제로에서 시작해 6주 만에 강남 검색에 자리를 잡았습니다.</em> 6월 오픈 2주에 방문 유입 <em>4,812</em>·리뷰 <em>355건</em>으로 출발했고, 7월엔 월 유입 <em>24,647</em>·리뷰 <em>660건</em>으로 올라섰습니다. "강남역 돼지국밥"은 <em>9위 → 1위</em>, "강남역 국밥"은 <em>40위 → 2위</em>. 월 10만 명이 검색하는 <em>"강남역 맛집"에도 38위로 처음 진입</em>했습니다. 오픈 특수가 끝난 뒤에도 순위가 밀리지 않고 올라갔다는 것이 이 두 달의 핵심입니다.
+    </div>
+  </div>
+
+  <!-- 1. 한눈에 -->
+  <div class="section">
+    <div class="ch-header">
+      <div class="ch-icon c1">1</div>
+      <div>
+        <h3>강남점 6·7월 한눈에 보기</h3>
+        <div class="ch-badge">오픈 2주 → 첫 온전한 한 달 · 누적 실측</div>
+      </div>
+    </div>
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kc-label">7월 방문 유입 (월)</div>
+        <div class="kc-value" contenteditable="false">24,647</div>
+        <div class="kc-change up" contenteditable="false">주평균 6,162 (6월 4,376) +41%</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kc-label">네이버지도 유입 (7월)</div>
+        <div class="kc-value" contenteditable="false">19,781</div>
+        <div class="kc-change up" contenteditable="false">지도 검색이 유입의 80%</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kc-label">누적 리뷰</div>
+        <div class="kc-value" contenteditable="false">1,015<span class="kc-unit">건</span></div>
+        <div class="kc-change up" contenteditable="false">6월 355 + 7월 660</div>
+      </div>
+      <div class="kpi-card dark">
+        <div class="kc-label">"강남역 돼지국밥"</div>
+        <div class="kc-value" contenteditable="false"><em>1</em><span class="kc-unit">위</span></div>
+        <div class="kc-change" contenteditable="false">6월 9위 → 7월 내내 1위 사수</div>
+      </div>
+    </div>
+    <div class="info-box">
+      <strong>두 달을 한 문장으로</strong> — 6월이 <strong>"오픈을 알린 달"</strong>이었다면, 7월은 <strong>"강남에서 밥집을 찾는 사람의 검색에 잡힌 달"</strong>입니다. 강남점은 부산 매장과 별개 플레이스라 리뷰·저장이 <strong>0에서 시작</strong>했습니다. 그 상태로 6주 만에 유입 월 2.4만·누적 리뷰 1,015건을 쌓았고, 메뉴 키워드(강남역 돼지국밥)를 1위로 올린 뒤 <strong>상권 키워드(강남역 국밥·서초 국밥)와 카테고리 키워드(강남역 맛집)까지 넓혔습니다.</strong>
+    </div>
+  </div>
+
+  <!-- 2. 오픈 이후 흐름 -->
+  <div class="section">
+    <div class="ch-header">
+      <div class="ch-icon c2">2</div>
+      <div>
+        <h3>오픈 이후 흐름 — 특수가 끝나고도 올라갔습니다</h3>
+        <div class="ch-badge">주간 방문 유입 · 6/15 오픈 ~ 7월말</div>
+      </div>
+    </div>
+    <div class="flow">
+      <div class="flow-step">
+        <div class="fs-when">6/15 — 6/21 · 오픈 1주</div>
+        <div class="fs-val" contenteditable="false">3,940</div>
+        <div class="fs-note">제로 베이스에서 출발</div>
+      </div>
+      <div class="flow-step">
+        <div class="fs-when">6/22 — 6/30 · 오픈 2주</div>
+        <div class="fs-val" contenteditable="false">4,812</div>
+        <div class="fs-note">오픈 부스팅 집중 구간</div>
+      </div>
+      <div class="flow-step hero">
+        <div class="fs-when">7월 · 주평균</div>
+        <div class="fs-val" contenteditable="false">6,162</div>
+        <div class="fs-note">월 합계 24,647 · +41%</div>
+      </div>
+    </div>
+    <div class="info-box">
+      <strong>보통 신규 매장은 오픈 한 달이 지나면 유입이 꺾입니다</strong> — 오픈 이벤트와 초기 화제성이 걷히기 때문입니다. 강남점은 반대로 <strong>7월에 주평균이 41% 더 올라갔습니다.</strong> 6월에 쌓은 리뷰·사진·키워드가 <strong>네이버 검색에서 계속 일하고 있다는 뜻</strong>이고, 신규 오픈 90일 가점 구간(~9/12)이 아직 <strong>남아 있는 상태에서 만든 숫자</strong>입니다.
+    </div>
+  </div>
+
+  <!-- 3. 검색 순위 -->
+  <div class="section">
+    <div class="ch-header">
+      <div class="ch-icon c3">3</div>
+      <div>
+        <h3>검색 순위 — 메뉴에서 시작해 상권·카테고리로 넓혔습니다</h3>
+        <div class="ch-badge">네이버 검색 노출 순위 · 6월말 → 7월말</div>
+      </div>
+    </div>
+    <table style="margin-top:4px;">
+      <thead>
+        <tr><th>강남 키워드</th><th class="num">월 검색량</th><th class="num">6월말</th><th class="num">7월말</th><th>해석</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="item">강남역 돼지국밥</td><td class="num">160</td><td class="num">9위</td><td class="num rank-up">1위</td><td class="desc">핵심 메뉴 키워드 1위 (검색량은 작은 편)</td></tr>
+        <tr><td class="item">강남역 국밥</td><td class="num">1,520</td><td class="num">40위</td><td class="num rank-up">2위</td><td class="desc">한 달 만에 38계단 상승</td></tr>
+        <tr><td class="item">서초 국밥</td><td class="num">190</td><td class="num">미노출</td><td class="num rank-up">2위</td><td class="desc">인접 상권까지 확장</td></tr>
+        <tr><td class="item">강남역순대국밥</td><td class="num">270</td><td class="num">미노출</td><td class="num rank-up">4위</td><td class="desc">신규 진입</td></tr>
+        <tr><td class="item">강남역5번출구맛집</td><td class="num">780</td><td class="num">미노출</td><td class="num rank-up">5위</td><td class="desc">출구 단위 로컬 선점</td></tr>
+        <tr><td class="item">강남역 한식 맛집</td><td class="num">1,090</td><td class="num">미노출</td><td class="num rank-up">13위</td><td class="desc">메뉴 → 카테고리로 확장</td></tr>
+        <tr><td class="item">강남역 맛집</td><td class="num">100,100</td><td class="num">미노출</td><td class="num rank-up">38위</td><td class="desc">월 10만 대형 키워드 진입</td></tr>
+        <tr><td class="item">돼지국밥 <span style="font-weight:500;color:#999;font-size:11px;">(전국)</span></td><td class="num">56,400</td><td class="num">미노출</td><td class="num rank-up">114위</td><td class="desc">전국 키워드에 처음 이름을 올림</td></tr>
+      </tbody>
+    </table>
+    <div class="info-box">
+      <strong>순서가 중요합니다</strong> — 처음부터 "강남역 맛집"(월 10만) 같은 큰 키워드를 노리면 돈만 쓰고 안 잡힙니다. 그래서 <strong>①경쟁이 적은 메뉴 키워드(강남역 돼지국밥)를 1위로 만들고 → ②그 신뢰를 발판으로 상권 키워드(강남역 국밥 2위·서초 국밥 2위)로 넓히고 → ③마지막에 대형 카테고리(강남역 맛집 38위)에 진입</strong>하는 순서로 갔습니다. 지금은 <strong>국밥을 찾는 사람뿐 아니라, 강남에서 그냥 밥집을 찾는 사람에게도 뜨기 시작한 단계</strong>입니다.
+    </div>
+  </div>
+
+  <!-- 4. 리뷰 -->
+  <div class="section">
+    <div class="ch-header">
+      <div class="ch-icon c4">4</div>
+      <div>
+        <h3>리뷰 — 6주 만에 1,015건, 강남 국밥집 중 상위권</h3>
+        <div class="ch-badge">체험단 + 영수증 리뷰 + 자연 리뷰 누적</div>
+      </div>
+    </div>
+    <div class="store-grid">
+      <div class="store-card up">
+        <div class="sc-top"><div class="sc-name">6월 · 오픈 2주</div><div class="sc-tag up">출발</div></div>
+        <div class="sc-main">
+          <div class="scm-val" contenteditable="false">355</div>
+          <div class="scm-arrow">← 0</div>
+          <div class="scm-chg up" contenteditable="false">신규</div>
+        </div>
+        <div class="sc-sub" contenteditable="false">제로 베이스 · 오픈 2주 누적</div>
+        <div class="sc-list" contenteditable="false">
+          <span class="k">플레이스 유입</span> 3,940 → <strong>4,812</strong><br>
+          <span class="k">네이버지도 유입</span> 2,679 → <strong>3,510</strong><br>
+          <span class="k">강남역 돼지국밥</span> <strong>9위</strong> 진입<br>
+          <span class="k">역할</span> 검색에 잡히는 최소 리뷰 수 확보
+        </div>
+      </div>
+      <div class="store-card up">
+        <div class="sc-top"><div class="sc-name">7월 · 첫 온전한 한 달</div><div class="sc-tag up">가속</div></div>
+        <div class="sc-main">
+          <div class="scm-val" contenteditable="false">660</div>
+          <div class="scm-arrow">← 355</div>
+          <div class="scm-chg up" contenteditable="false">누적 1,015</div>
+        </div>
+        <div class="sc-sub" contenteditable="false">6주 누적 1,015건 — 강남 국밥 카테고리 상위</div>
+        <div class="sc-list" contenteditable="false">
+          <span class="k">월 방문 유입</span> <strong>24,647</strong><br>
+          <span class="k">네이버지도 유입</span> <strong>19,781</strong> (80%)<br>
+          <span class="k">강남역 돼지국밥</span> <strong>1위</strong> 사수<br>
+          <span class="k">역할</span> 순위 방어 + 방문 전 확신 제공
+        </div>
+      </div>
+    </div>
+    <div class="info-box">
+      <strong>리뷰는 두 가지 일을 동시에 합니다</strong> — ① <strong>검색 순위를 올립니다</strong>(네이버는 리뷰 수·최신성·사진을 순위에 반영합니다). ② <strong>보고 나서 갈지 말지를 결정하게 합니다.</strong> 강남역은 선택지가 넘치는 상권이라, 리뷰가 얇으면 노출돼도 안 들어옵니다. 6주 만에 1,015건은 <strong>같은 시기 오픈한 매장 기준으로 빠른 속도</strong>이고, 이게 7월 유입이 안 꺾인 이유 중 하나입니다.
+    </div>
+  </div>
+
+  <!-- 5. 광고 -->
+  <div class="section">
+    <div class="ch-header">
+      <div class="ch-icon c6">5</div>
+      <div>
+        <h3>강남 광고 — 많이 닿았지만, 매장으로 오는 길이 없었습니다</h3>
+        <div class="ch-badge">6월 오픈 부스팅 80만 / 7월 92만 실측 · 있는 그대로</div>
+      </div>
+    </div>
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kc-label">6월 광고 집행</div>
+        <div class="kc-value" contenteditable="false">80<span class="kc-unit">만원</span></div>
+        <div class="kc-change up" contenteditable="false">오픈 부스팅 · CTR 4.46%</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kc-label">7월 광고 집행</div>
+        <div class="kc-value" contenteditable="false">92<span class="kc-unit">만원</span></div>
+        <div class="kc-change up" contenteditable="false">링크 클릭 10,950회</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kc-label">클릭당 비용 (7월)</div>
+        <div class="kc-value" contenteditable="false">79<span class="kc-unit">원</span></div>
+        <div class="kc-change up" contenteditable="false">6월 316원 → 4분의 1로</div>
+      </div>
+      <div class="kpi-card dark">
+        <div class="kc-label">광고를 누른 비율</div>
+        <div class="kc-value" contenteditable="false"><em>4.5~5.9</em><span class="kc-unit">%</span></div>
+        <div class="kc-change" contenteditable="false">업계 평균 1.67% 대비 높음</div>
+      </div>
+    </div>
+    <div class="info-box warn">
+      <strong>그대로 말씀드립니다 — 6·7월 강남 광고는 "인스타 프로필 방문"을 샀습니다</strong><br>
+      오픈 시점엔 브랜드를 알리는 게 먼저라 <strong>전국에 틀어서 프로필로 보내는 구조</strong>였습니다. 덕분에 도달과 클릭 단가는 좋게 나왔지만(클릭 1회 79원), <strong>매장 장사인데 광고를 누른 사람이 매장 정보로 가는 길이 없었습니다.</strong> 광고를 누른 1만 명 중 몇 명이 강남점에 왔는지 셀 방법이 없었다는 뜻입니다.<br><br>
+      <strong>8월에 바꿉니다</strong> — 같은 실수를 센텀점에서 먼저 고쳤고, 결과가 나왔습니다. 센텀은 7/16에 ①누르면 <strong>플레이스로</strong> ②<strong>매장 반경 3km에만</strong> 노출로 바꾸자 2주 만에 주간 유입이 <strong>2,041 → 16,157(6.8배)</strong>로 올라왔습니다. 강남도 8월부터 <strong>직장 상권·호텔 상권으로 지역을 나눠, 누르면 강남점 플레이스로 가게</strong> 다시 겁니다(8월 플랜 참조).
+    </div>
+  </div>
+
+  <!-- 6. 이 두 달에 쓴 돈 -->
+  <div class="section">
+    <div class="ch-header">
+      <div class="ch-icon c7">6</div>
+      <div>
+        <h3>이 두 달에 강남점에 들어간 비용</h3>
+        <div class="ch-badge">강남점 몫만 · 부가세 별도</div>
+      </div>
+    </div>
+    <table>
+      <thead>
+        <tr><th>구분</th><th>내용</th><th class="num">금액</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="item">6월 — 오픈 부스팅 1회차</td><td class="desc">인플루언서 1차 파도 · 오픈 바이럴 콘텐츠 · 오픈 광고 (오픈 약정 2,300 중 6월분)</td><td class="num">1,000만</td></tr>
+        <tr><td class="item">6월 — 상시 운영</td><td class="desc">네이버플레이스 관리 + 블로그 체험단</td><td class="num">35만</td></tr>
+        <tr><td class="item">7월 — 오픈 부스팅 2회차</td><td class="desc">인플루언서 2·3차 파도 · 바이럴 콘텐츠 · 강남 직장인 B2B 루트 (오픈 약정 2,300의 잔여분)</td><td class="num">1,300만</td></tr>
+        <tr><td class="item">7월 — 상시 운영</td><td class="desc">네이버플레이스 관리·댓글 60 + 블로그 체험단 40</td><td class="num">100만</td></tr>
+        <tr><td class="item" style="font-weight:800;">합계</td><td class="desc">오픈 골든타임 집중 투입 구간 (부가세 별도)</td><td class="num" style="font-weight:800;">2,435만</td></tr>
+      </tbody>
+    </table>
+    <div class="info-box">
+      <strong>오픈 부스팅 2,300은 6월 오픈 때 약속한 금액</strong>입니다 — 6월에 1,000, 7월에 1,300으로 나눠 청구했습니다(7월분은 7월에 새로 정한 게 아니라 오픈 건의 남은 금액입니다). 여기에 <strong>7월에 논의했던 성수기 화력 1,000은 집행하지 않고 8월로 넘겼습니다</strong> — 일본 손님이 가장 많이 오는 8월에 몰아 쓰는 것이 낫다고 판단해서입니다.<br><br>
+      <strong>이 돈으로 남은 것</strong> — 사라지는 광고비가 아니라 <strong>계속 일하는 자산</strong>으로 남았습니다. ① <strong>누적 리뷰 1,015건</strong>(계속 순위를 받쳐줍니다) ② <strong>검색 순위 8개 키워드</strong>(광고를 꺼도 유지됩니다) ③ <strong>인플루언서 콘텐츠</strong>(8월 광고 소재로 재사용합니다). 실제로 7월 유입 2.4만 중 <strong>80%가 네이버지도 검색</strong>으로, 광고가 아니라 쌓아둔 자산에서 나온 유입입니다.
+    </div>
+  </div>
+
+  <!-- 7. 8월로 -->
+  <div class="section">
+    <div class="ch-header">
+      <div class="ch-icon c5">7</div>
+      <div>
+        <h3>8월로 이어가는 것</h3>
+        <div class="ch-badge">상세는 강남점 8월 운영 플랜 + 견적 참조</div>
+      </div>
+    </div>
+    <div class="info-box dark">
+      <strong>8월 한 줄</strong> — 6·7월이 <strong>"강남 검색에서 자리를 잡은 두 달"</strong>이었다면, 8월은 <strong>강남점 손님의 실체(일본 관광객)를 직접 잡는 달</strong>입니다. 일본인 방한이 연중 가장 몰리는 달(일본 추석 연휴 + 여름방학)에 화력을 몰아넣고, 광고는 <strong>프로필이 아니라 매장으로</strong> 다시 겁니다.
+    </div>
+    <div class="next-grid">
+      <div class="next-card hero">
+        <div class="nc-label">성수기</div>
+        <div class="nc-title">일본 인플루언서 8인</div>
+        <div class="nc-desc" contenteditable="false">방한 예정 일본 계정 8인을 섭외해 <strong>일본어 검색을 먼저 차지</strong>합니다. 일본인은 인스타에 일본어로 검색하는데, 한국 식당은 대부분 한글로만 올려 <strong>비어 있는 자리</strong>입니다.</div>
+      </div>
+      <div class="next-card">
+        <div class="nc-label">지속</div>
+        <div class="nc-title">마이크로 + 돋보기</div>
+        <div class="nc-desc" contenteditable="false">맛집 계정 다수가 시차를 두고 계속 올려 <strong>"요즘 여기 자주 보이네"</strong> 신호를 유지합니다. 돋보기 콘텐츠로 도달을 받쳐 검색·리뷰 자산을 방어합니다.</div>
+      </div>
+      <div class="next-card">
+        <div class="nc-label">전환</div>
+        <div class="nc-title">광고를 매장으로</div>
+        <div class="nc-desc" contenteditable="false">전국 프로필 광고를 끝내고 <strong>직장 상권(매장 2km)·호텔 상권(코엑스)</strong> 두 세트로 나눠, 누르면 <strong>강남점 플레이스</strong>로 가게 합니다.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="brand">BRANDRISE</div>
+    본 보고서는 미례국밥 강남삼성타운직영점 전달 목적으로 작성되었습니다.<br>
+    데이터 기준일: 2026. 08. 01 · 작성: 우성민 LEAD<br>
+    <span style="font-size:11px;">출처 — 네이버플레이스 통계 · 네이버 키워드 도구 · Meta 광고 관리자 실측 · 미례국밥 마스터시트</span>
+  </div>
+
+</div>
+
+<script>
+function toggleEdit() {
+  const body = document.body;
+  const btn = document.getElementById('editToggle');
+  body.classList.toggle('editing');
+  const isEditing = body.classList.contains('editing');
+  btn.textContent = isEditing ? '편집 완료' : '편집';
+  btn.classList.toggle('active', isEditing);
+  document.querySelectorAll('[contenteditable]').forEach(el => {
+    el.contentEditable = isEditing ? 'true' : 'false';
+  });
+}
+</script>
+</body>
+</html>
