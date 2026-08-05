@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>미례국밥 7월 운영 플랜 + 견적 — 브랜드라이즈</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Noto Sans KR', -apple-system, sans-serif; background: #f4f7f9; color: #1a1b18; line-height: 1.7; font-size: 14px; -webkit-font-smoothing: antialiased; word-break: keep-all; overflow-wrap: break-word; }
+
+.toolbar { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: #0D0D0D; height: 56px; display: flex; align-items: center; justify-content: space-between; padding: 0 32px; }
+.toolbar-left { display: flex; align-items: center; gap: 16px; }
+.toolbar-logo { font-size: 13px; font-weight: 700; color: #EA580C; letter-spacing: 0.05em; }
+.toolbar-sep { width: 1px; height: 20px; background: rgba(255,255,255,0.15); }
+.toolbar-title { font-size: 14px; font-weight: 500; color: #fff; }
+.toolbar-actions { display: flex; gap: 10px; }
+.btn-toolbar { padding: 7px 18px; border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; background: transparent; color: #fff; font-size: 12px; font-weight: 500; cursor: pointer; transition: all 0.2s; text-decoration: none; display: inline-block; }
+.btn-toolbar:hover { background: rgba(255,255,255,0.1); }
+.btn-toolbar.alt { border-color: rgba(234,88,12,0.5); color: #EA580C; }
+
+.container { max-width: 920px; margin: 0 auto; padding: 80px 24px 60px; }
+
+.report-header { background: #fff; border-radius: 12px; padding: 40px; margin-bottom: 20px; border: 1px solid #e8edf1; }
+.report-header .label { font-size: 11px; font-weight: 700; color: #EA580C; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 14px; }
+.report-header h1 { font-size: 34px; font-weight: 900; line-height: 1.3; letter-spacing: -0.02em; }
+.report-header h1 em { color: #EA580C; font-style: normal; }
+.meta-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 28px; padding-top: 24px; border-top: 1px solid #e8edf1; }
+.meta-item .mk { font-size: 11px; color: #999; letter-spacing: 0.04em; margin-bottom: 4px; }
+.meta-item .mv { font-size: 13px; font-weight: 600; }
+
+.mission-box { background: #0D0D0D; border-radius: 12px; padding: 30px 36px; margin-bottom: 20px; color: #fff; }
+.mission-box .hl-label { font-size: 11px; font-weight: 700; color: #EA580C; letter-spacing: 0.1em; margin-bottom: 14px; text-transform: uppercase; }
+.mission-box .lede { font-size: 18px; font-weight: 700; line-height: 1.55; letter-spacing: -0.01em; }
+.mission-box .lede em { color: #FDBA8C; font-style: normal; }
+
+.section { background: #fff; border-radius: 12px; padding: 32px 40px; margin-bottom: 20px; border: 1px solid #e8edf1; }
+.section h2 { font-size: 18px; font-weight: 800; margin-bottom: 6px; letter-spacing: -0.02em; }
+.section h2 em { color: #EA580C; font-style: normal; }
+.section .sec-sub { font-size: 12px; color: #999; margin-bottom: 20px; }
+
+.action-tag { display: inline-block; font-size: 11px; font-weight: 800; color: #EA580C; letter-spacing: 0.06em; margin-bottom: 6px; }
+.action-tag.new { background:#EA580C; color:#fff; padding:3px 10px; border-radius:20px; }
+.action-tag.base { background:#eef1f4; color:#636569; padding:3px 10px; border-radius:20px; }
+
+.detail { border-left: 3px solid #f0f2f5; padding: 4px 0 4px 18px; margin-bottom: 18px; }
+.detail:hover { border-left-color: #FED7AA; }
+.detail .dt { font-size: 14px; font-weight: 800; margin-bottom: 4px; }
+.detail .dd { font-size: 13px; color: #636569; }
+.detail .dd ul { list-style: none; padding-left: 0; margin: 6px 0 0; }
+.detail .dd ul li { position: relative; padding-left: 14px; margin-bottom: 4px; }
+.detail .dd ul li::before { content: ''; position: absolute; left: 0; top: 9px; width: 4px; height: 4px; border-radius: 50%; background: #FB923C; }
+.detail .dd ul li .lab { font-weight: 800; color: #1a1b18; }
+
+.measure { background: #f8fafb; border: 1px solid #e8edf1; border-radius: 8px; padding: 12px 16px; margin-top: 14px; font-size: 12.5px; color: #3a3c40; }
+.measure strong { color: #EA580C; font-weight: 700; }
+.src { font-size: 10.5px; color: #aeb2b8; font-weight: 600; }
+
+.kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 4px; }
+.kpi-grid.g3 { grid-template-columns: repeat(3, 1fr); }
+.kpi-card { background: #f8fafb; border-radius: 10px; padding: 20px 16px; text-align: center; border: 1px solid #e8edf1; }
+.kpi-card .kc-label { font-size: 11px; color: #999; font-weight: 600; margin-bottom: 8px; }
+.kpi-card .kc-value { font-size: 22px; font-weight: 900; color: #1a1b18; letter-spacing: -0.02em; line-height: 1.15; }
+.kpi-card .kc-value em { color:#EA580C; font-style:normal; }
+.kpi-card .kc-value .u { font-size:13px; font-weight:600; color:#999; }
+.kpi-card .kc-desc { font-size: 11px; color: #16a34a; margin-top: 6px; font-weight: 600; }
+.kpi-card.dark { background:#0D0D0D; border-color:#0D0D0D; }
+.kpi-card.dark .kc-label { color:#EA580C; }
+.kpi-card.dark .kc-value { color:#fff; }
+.kpi-card.dark .kc-value em { color:#EA580C; }
+.kpi-card.dark .kc-desc { color:rgba(255,255,255,0.45); }
+
+.deliv-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+.deliv-chip { display: inline-flex; align-items: baseline; gap: 5px; background: #FFF7ED; border: 1px solid #FED7AA; border-radius: 8px; padding: 6px 12px; font-size: 12px; color: #9a3412; font-weight: 600; white-space: nowrap; }
+.deliv-chip b { font-size: 14px; font-weight: 900; color: #EA580C; }
+.deliv-chip.plain { color: #636569; background: #f8fafb; border-color: #e8edf1; }
+
+.context-lead { font-size: 13.5px; color: #3a3c40; line-height: 1.85; margin-bottom: 4px; }
+.context-lead strong { color: #1a1b18; font-weight: 700; }
+
+.glance-steps { display:grid; grid-template-columns: repeat(3,1fr); gap:12px; margin-bottom:18px; }
+.glance-step { border:1px solid #e8edf1; border-radius:10px; padding:16px 18px; background:#f8fafb; }
+.glance-step.hero { background:#FFF7ED; border-color:#FED7AA; }
+.glance-step .gs-n { font-size:11px; font-weight:800; color:#EA580C; letter-spacing:0.04em; margin-bottom:6px; }
+.glance-step .gs-t { font-size:15px; font-weight:800; line-height:1.4; }
+.glance-step .gs-d { font-size:12px; color:#636569; margin-top:4px; line-height:1.6; }
+
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th { background: #f8fafb; padding: 10px 14px; font-weight: 600; border-bottom: 2px solid #e8edf1; color: #999; font-size: 11px; text-align: left; white-space: nowrap; }
+th.r { text-align: right; }
+td { padding: 11px 14px; border-bottom: 1px solid #f0f2f5; vertical-align: top; }
+td.item { font-weight: 700; color: #1a1b18; }
+td.desc { color: #636569; font-size: 12px; }
+td.c { text-align: center; font-variant-numeric: tabular-nums; }
+td.up { color:#16a34a; font-weight:700; text-align:center; }
+td.amt { text-align:right; font-weight:700; font-variant-numeric:tabular-nums; white-space:nowrap; width:120px; }
+td.amt.new { color:#EA580C; }
+th.amt-h { text-align:right; }
+tr.sub td { background:#f8fafb; font-weight:800; color:#1a1b18; border-top:1px solid #e8edf1; }
+tr.total-row td { background:#0D0D0D; color:#fff; font-weight:800; font-size:14px; }
+
+.week { border: 1px solid #e8edf1; border-radius: 10px; padding: 18px 22px; margin-bottom: 14px; }
+.week .wk-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 10px; }
+.week .wk-range { font-size: 12px; font-weight: 800; color: #fff; background: #EA580C; padding: 3px 12px; border-radius: 20px; white-space: nowrap; }
+.week .wk-theme { font-size: 14px; font-weight: 800; }
+.week ul { padding-left: 20px; font-size: 13px; color: #3a3c40; }
+.week ul li { margin-bottom: 4px; }
+
+.closing-box { background: #0D0D0D; border-radius: 12px; padding: 36px 40px; text-align: center; color: #fff; margin-bottom: 20px; }
+.closing-box .cl-msg { font-size: 22px; font-weight: 900; letter-spacing: -0.02em; line-height: 1.4; }
+.closing-box .cl-msg em { color: #FDBA8C; font-style: normal; }
+.closing-box .cl-sub { font-size: 13px; color: rgba(255,255,255,0.6); margin-top: 12px; }
+
+.quote-total { background:#0D0D0D; border-radius:12px; padding:26px 34px; margin-bottom:20px; display:flex; align-items:center; justify-content:space-between; color:#fff; flex-wrap:wrap; gap:12px; }
+.quote-total .qt-l { font-size:14px; font-weight:600; }
+.quote-total .qt-s { font-size:11px; color:rgba(255,255,255,0.5); margin-top:4px; }
+.quote-total .qt-s em { color:#EA580C; font-style:normal; font-weight:700; }
+.quote-total .qt-a { font-size:34px; font-weight:900; letter-spacing:-0.03em; }
+.quote-total .qt-a span { font-size:15px; font-weight:600; }
+.part-block { margin-top:24px; }
+.part-bar { display:flex; align-items:baseline; justify-content:space-between; margin-bottom:6px; padding-bottom:8px; border-bottom:2px solid #f0f2f5; }
+.part-bar .pb-t { font-size:14.5px; font-weight:800; }
+.part-bar .pb-p { font-size:16px; font-weight:900; color:#EA580C; white-space:nowrap; }
+.part-block.sep { border:2px solid #EA580C; border-radius:12px; padding:22px 24px; background:#FFFBF7; margin-top:26px; }
+.part-block.sep .part-bar { border-bottom-color:#FED7AA; }
+.sep-flag { display:inline-block; font-size:10px; font-weight:800; background:#EA580C; color:#fff; padding:2px 9px; border-radius:20px; margin-left:8px; vertical-align:middle; }
+
+.quote-delta { background:#FFF7ED; border-left:4px solid #EA580C; border-radius:0 8px 8px 0; padding:14px 20px; margin-top:20px; font-size:12.5px; color:#636569; line-height:1.85; }
+.quote-delta strong { color:#1a1b18; }
+
+.footer { text-align: center; padding: 40px 0 10px; color: #999; font-size: 12px; line-height: 2; }
+.footer .brand { font-size: 15px; font-weight: 800; color: #1a1b18; margin-bottom: 4px; }
+
+@media (max-width: 768px) {
+  .container { padding: 70px 16px 40px; }
+  .meta-grid { grid-template-columns: repeat(2, 1fr); }
+  .kpi-grid, .kpi-grid.g3, .glance-steps { grid-template-columns: 1fr; }
+  .section { padding: 24px 20px; }
+  .report-header h1 { font-size: 26px; }
+}
+@media print {
+  .toolbar { display: none; }
+  .container { padding: 20px; max-width: none; }
+  body { background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .section, .mission-box, .closing-box, .week, .part-block.sep { break-inside: avoid; }
+  @page { size: A4; margin: 12mm; }
+}
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="toolbar-left">
+    <div class="toolbar-logo">BRANDRISE</div>
+    <div class="toolbar-sep"></div>
+    <div class="toolbar-title">미례국밥 7월 운영 플랜 + 견적</div>
+  </div>
+  <div class="toolbar-actions">
+    <a class="btn-toolbar alt" href="../june/report.html">← 6월 운영 보고</a>
+    <button class="btn-toolbar" onclick="window.print()">PDF 저장</button>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <div class="report-header">
+    <div class="label">미례국밥 × 브랜드라이즈 · 지점별 비용 배분 기준</div>
+    <h1>7월 <em>운영 플랜 + 견적</em></h1>
+    <div class="meta-grid">
+      <div class="meta-item"><div class="mk">공급자</div><div class="mv">브랜드라이즈 by HIZ</div></div>
+      <div class="meta-item"><div class="mk">수신</div><div class="mv">(주)위드런 · 미례국밥</div></div>
+      <div class="meta-item"><div class="mk">대상 기간</div><div class="mv">2026. 07. 01 — 07. 31</div></div>
+      <div class="meta-item"><div class="mk">한 줄 요약</div><div class="mv">본사 엔진으로 밀고 · 센텀 살리고 · 강남 안정화</div></div>
+    </div>
+  </div>
+
+  <!-- MISSION -->
+  <div class="mission-box">
+    <div class="hl-label">7월 한 줄 전략</div>
+    <div class="lede">강남에서 붙은 불로, 이번엔 <em>센텀을 살립니다</em> — 인스타·인플루언서를 <em>본사 한 곳</em>으로 모아 브랜드를 밀고, 강남은 <em>기본 운영</em>으로 안정시킵니다.</div>
+    <div style="margin-top:16px;font-size:13px;color:rgba(255,255,255,0.72);line-height:1.95;">6월 강남 오픈이 브랜드 전체를 띄웠습니다(강남 방문 4,812 · 전포 +80% · "미례국밥" 검색 2배). 7월은 이 화력을 지점마다 흩뿌리는 대신, <strong style="color:#fff;">인스타·인플루언서를 본사 엔진 하나로 모아</strong> 전 지점에 노출을 뿌립니다. 이 엔진의 7월 1순위 미션은 <strong style="color:#fff;">매출이 빠지고 있는 센텀 회복</strong>이고, 강남은 쌓인 자산 위에서 기본 운영으로 안정시킵니다. <strong style="color:#fff;">강남의 일본 인플루언서·마이크로 바이럴 화력은 방한 최성수기인 8월(오봉 연휴)에 몰아서 집중</strong>합니다. 강남 오픈 부스팅은 6월로 종료됐습니다.</div>
+  </div>
+
+  <!-- 7월 한눈에 -->
+  <div class="section">
+    <h2>7월 <em>한눈에</em> — 무엇을 · 목표 · 비용</h2>
+    <div class="sec-sub">강남 오픈 화력은 6월로 종료 · 7월부터 본사 엔진 중심의 안정 운영으로 전환</div>
+
+    <div class="glance-steps">
+      <div class="glance-step"><div class="gs-n">① 무엇을 하나</div><div class="gs-t">본사 엔진으로 밀기 · 센텀 살리기 · 강남 안정화</div><div class="gs-d">인스타·인플루언서를 본사 한곳으로</div></div>
+      <div class="glance-step"><div class="gs-n">② 목표는</div><div class="gs-t">센텀 방문 회복 · 강남 자산 방어</div><div class="gs-d">전포 유지 · 브랜드 도달 지속</div></div>
+      <div class="glance-step hero"><div class="gs-n">③ 비용은</div><div class="gs-t">지점별 · 총 1,020만</div><div class="gs-d">강남 화력은 8월(방한 성수기)로</div></div>
+    </div>
+
+    <table>
+      <thead><tr><th>지점</th><th>내용</th><th class="r">7월 금액</th></tr></thead>
+      <tbody>
+        <tr><td class="item">본사</td><td class="desc">브랜드 전략 · 인스타 운영 · 전포 플레이스 · <strong>인플루언서 160(브랜드 상시)</strong></td><td class="amt">5,000,000</td></tr>
+        <tr><td class="item" style="color:#EA580C;">센텀점</td><td class="desc">플레이스 · 체험단 · <strong>인플루언서 140 + 메타 지역 정밀 타겟 200</strong> (매출 회복 집중)</td><td class="amt new">4,200,000</td></tr>
+        <tr><td class="item">강남점</td><td class="desc">플레이스 · 체험단 (기본 운영 유지 · <strong>일본·마이크로 화력은 8월 성수기 집중</strong>)</td><td class="amt">1,000,000</td></tr>
+        <tr class="total-row"><td colspan="2">7월 합계 (부가세 별도)</td><td class="amt">10,200,000</td></tr>
+      </tbody>
+    </table>
+    <div class="measure"><strong>6월(3,000만, 강남 오픈 부스팅 포함)에서 7월 1,020만으로 내려옵니다.</strong> 지점마다 화력을 쪼개 태우는 대신 <strong>인스타·인플루언서를 본사 엔진 하나로 모으는 게 핵심</strong>입니다 — 한 엔진이 전 지점과 앞으로 생길 가맹점까지 노출을 뿌립니다. 7월 이 엔진의 1순위는 <strong>매출이 빠지는 센텀 회복</strong>이라, <strong>센텀에 직접 투입되는 인플루언서 140은 센텀점 비용으로 배분</strong>했습니다. 강남은 기본 운영으로 자산을 지키고 <strong>일본·마이크로 화력은 방한 최성수기인 8월(오봉 연휴)에 몰아서 집중</strong>합니다. <span style="color:#999;">(8월 화력·이후 커브·신규 매장 요금은 문서 끝 별첨 참조)</span></div>
+  </div>
+
+  <!-- 6월 돌아보기 -->
+  <div class="section">
+    <h2>6월 <em>돌아보기</em> — 무엇이 통했나</h2>
+    <div class="sec-sub">7월 전략은 6월 데이터에서 나왔습니다</div>
+
+    <div class="kpi-grid">
+      <div class="kpi-card"><div class="kc-label">강남 방문 (2주)</div><div class="kc-value">4,812</div><div class="kc-desc">제로 → 4,812</div></div>
+      <div class="kpi-card"><div class="kc-label">전포 방문</div><div class="kc-value">4,650</div><div class="kc-desc">+80% (2,583→)</div></div>
+      <div class="kpi-card"><div class="kc-label">인스타 도달</div><div class="kc-value">25.5<span class="u">만</span></div><div class="kc-desc">팔로워 2.4배(90→214)</div></div>
+      <div class="kpi-card dark"><div class="kc-label">"미례국밥" 검색</div><div class="kc-value"><em>6,370</em></div><div class="kc-desc">주 2,880 → 2배+</div></div>
+    </div>
+
+    <div class="detail" style="margin-top:22px;"><div class="dt">✅ 통한 것 — 강남 오픈이 브랜드 전체를 띄웠다</div><div class="dd">강남 오픈 화제성이 부산까지 번져 전포 +80%, 센텀 +22%, "미례국밥" 검색 2배. 한 점포 오픈이 세 지점을 동시에 끌어올렸습니다.</div></div>
+    <div class="detail"><div class="dt">⚠️ 배운 것 — 범용 소재·광역 타겟으로는 센텀을 못 살렸다</div><div class="dd"><strong>6월 센텀에 바이럴 200을 넣었는데 +22%에 그쳤고, 정작 전포가 +80%로 튀었습니다.</strong> 여행 손님이 몰리는 곳은 유동인구가 훨씬 큰 전포(서면)라, 광역·범용 접근은 자연히 전포로 흐릅니다. <strong>센텀은 여행 손님이 아니라 지역 실거주 손님이 매출원</strong>이라 접근을 따로 가져가야 합니다.</div></div>
+
+    <div class="measure"><strong>데이터 근거</strong> — 서면(전포) 지하철 일평균 <strong>124,388명</strong>(전국 8위·비수도권 1위) vs 센텀시티 <strong>41,517명</strong> = <strong>약 3배</strong>. <span class="src">출처: 부산교통공사 승하차(2025)</span> → <strong>7월엔 전포를 본사 인플루언서 엔진이 자연히 커버하고, 센텀은 소재를 제대로 만들어 지역 실거주 손님을 정밀 타겟으로 다시 공략합니다(아래 '센텀 살리기').</strong></div>
+  </div>
+
+  <!-- ACTION 1 — 강남 안정화 -->
+  <div class="section">
+    <div class="action-tag new">강남점 · 오픈 여진 마무리</div>
+    <h2>강남은 <em>기본 운영</em>으로 안정 — 화력은 8월로 미룹니다</h2>
+    <div class="sec-sub">오픈 대형 부스팅은 6월로 끝났습니다. 7월은 쌓인 자산을 기본 운영으로 지키고, 일본·마이크로 화력은 방한 최성수기 8월에 몰아 태웁니다</div>
+
+    <div class="deliv-row">
+      <span class="deliv-chip plain">기본 운영(플레이스+댓글) <b>60</b></span>
+      <span class="deliv-chip plain">블로그 체험단 <b>40</b></span>
+      <span class="deliv-chip">8월 예정 · 일본 인플루언서 <b>500</b></span>
+      <span class="deliv-chip">8월 예정 · 마이크로+돋보기 <b>500</b></span>
+    </div>
+
+    <div class="detail"><div class="dt">오픈 부스팅은 6월로 종료 — 7월은 확 내려옵니다</div><div class="dd">6월 강남 오픈에 집중한 대형 부스팅(<span class="lab">2,300 전액, 6월 귀속</span>)은 끝났습니다. 강남은 오픈 3개월간 방문 4,812·리뷰 355·검색 콘텐츠를 이미 쌓았습니다. <strong>7월은 이 자산 위에서 플레이스·체험단만으로 순위와 리뷰를 지키는 기본 운영(100)으로 전환</strong>합니다.</div></div>
+    <div class="detail"><div class="dt">일본 인플루언서·마이크로 화력은 8월에 몰아서 — 방한 성수기 타이밍</div><div class="dd">원래 7~8월 두 달에 나눠 태우려던 <strong>일본 인플루언서 500 + 마이크로·돋보기 바이럴 500(합 1,000)을 8월 한 달에 집중</strong>합니다. <strong>여름방학·오봉(お盆) 연휴가 낀 8월이 일본인 방한이 연중 가장 몰리는 피크</strong>라, 두 달에 흩뿌리기보다 성수기 한 달에 화력을 모으는 편이 검색 선점·방문 전환에 유리합니다. 상세 전략은 <strong>8월 운영 플랜</strong>에서 다룹니다.</div></div>
+
+    <div class="measure"><strong>측정</strong> — 강남 방문·리뷰 순위 유지 · 플레이스 저장·길찾기 · 검색 콘텐츠 축적 <span style="color:#999;">(일본어 검색 선점 지표는 8월 착수)</span></div>
+  </div>
+
+  <!-- ACTION 3 — 센텀 살리기 -->
+  <div class="section">
+    <div class="action-tag new">센텀점 · 7월 1순위</div>
+    <h2>센텀을 <em>다시 살립니다</em> — 지역 정밀 타겟 + "당장 가봐야겠다" 소재</h2>
+    <div class="sec-sub">매출이 빠지는 센텀에, 강남에서 번 브랜드 파워를 지역 손님에게 정확히 꽂습니다</div>
+
+    <p class="context-lead"><strong>지금 센텀 매출이 빠지고 있습니다.</strong> 강남 오픈 화제성이 전포(+80%)로는 크게 번졌는데 센텀은 +22%에 그쳤습니다. 6월엔 센텀에 바이럴 200을 넣었지만 <strong>소재·타겟이 광역이라 정작 센텀 상권 손님을 못 잡았습니다.</strong> 7월은 접근을 바꿉니다 — <strong>소재를 제대로 만들고, 센텀에 사는 사람에게만 정확히 보여줍니다.</strong></p>
+
+    <div class="detail"><div class="dt">① 지역 한정 타겟 — 센텀 거주·주거상권만 조준</div><div class="dd">부산 전역에 뿌리는 대신, <span class="lab">센텀시티 거주자·주변 주거상권</span>으로 노출을 좁힙니다. "여행 와서 찾는 손님"이 아니라 <strong>"우리 동네 저녁 한 끼"를 고르는 실거주 손님</strong>이 센텀점의 진짜 매출원이기 때문입니다. 반경·동네 단위 정밀 타겟으로 광고비 낭비를 줄이고 방문 전환을 올립니다.</div></div>
+    <div class="detail"><div class="dt">② 소재 — "당장 미례국밥 가봐야겠는데" 심리 유발</div><div class="dd">강남에서 뜬 브랜드 인지를 지렛대로 씁니다. 소재 메시지는:<ul>
+      <li><span class="lab">"캐치테이블 예약 TOP 5"</span> — 지금 뜨는 집이라는 사회적 증거</li>
+      <li><span class="lab">"강남에서도 줄 서는 그 미례국밥, 센텀에 있다"</span> — 우리 동네 자부심 + 검증된 맛</li>
+    </ul>이런 식으로 "핫한 집인데 우리 동네에 있네 → 오늘 가볼까"로 이어지는 즉각 방문 욕구를 건드립니다.</div></div>
+    <div class="detail"><div class="dt">③ 랜딩 = 센텀점 네이버플레이스</div><div class="dd">광고를 본 손님이 바로 <span class="lab">센텀점 네이버플레이스</span>로 도착하게 합니다 — 위치·영업시간·메뉴·리뷰를 그 자리에서 확인하고 <strong>저장·길찾기·방문</strong>으로 바로 넘어가도록. 광고가 인지에서 끝나지 않고 실제 발걸음까지 연결되는 구조입니다.</div></div>
+
+    <div class="measure"><strong>측정</strong> — 센텀 방문 회복 · 센텀 네이버플레이스 저장·길찾기 클릭 · 지역 타겟 광고 방문 전환 · 센텀 검색어 순위</div>
+  </div>
+
+  <!-- ACTION 4 — 기본 운영 -->
+  <div class="section">
+    <div class="action-tag base">본사 엔진 + 지점 공통</div>
+    <h2>기본 <em>운영</em> — 본사 엔진이 전 지점을 밀어줍니다</h2>
+    <div class="sec-sub">인스타·인플루언서는 본사 한 곳에서 돌려 전 지점(+앞으로 가맹점)에 노출을 뿌리고, 지점은 플레이스·체험단으로 로컬을 지킵니다</div>
+
+    <div class="detail"><div class="dt">공식 인스타그램 운영 <span style="font-size:10px;color:#EA580C;font-weight:800;">본사</span></div><div class="dd">사람이 계속 모이고 리뷰·줄서기가 보이도록 브랜드 공식 채널을 매일 운영합니다. 지점별로 쪼개지 않고 <strong>브랜드 계정 하나가 전 지점을 대표</strong>합니다.</div></div>
+    <div class="detail"><div class="dt">인플루언서 바이럴 엔진 <span style="font-size:10px;color:#EA580C;font-weight:800;">본사</span></div><div class="dd">맛집 인플루언서 바이럴을 <strong>본사에서 상시로 돌려 전 지점에 뿌립니다</strong>. 7월 이 엔진은 총 300 규모로 돌아가는데, <strong>브랜드 상시분 160은 본사, 센텀 회복에 직접 투입되는 140은 센텀점 비용으로 나눠 배분</strong>했습니다. 8월부터는 기본 운영(200)으로 브랜드 도달을 유지합니다. <strong>한 엔진이 전 지점과 앞으로 생길 가맹점까지 커버</strong>하는 게 핵심입니다.</div></div>
+    <div class="detail"><div class="dt">네이버플레이스 관리 (지점별)</div><div class="dd">검색 데이터·순위 관리 + 리뷰·댓글 대응. 검색해서 온 손님이 각 지점을 바로 찾게. 로컬 검색 방어는 지점이 담당합니다.</div></div>
+    <div class="detail"><div class="dt">네이버 블로그 체험단 (지점별)</div><div class="dd">방문형 후기로 지점 검색 콘텐츠를 쌓습니다. 식사는 매장 제공이라 순수 콘텐츠 자산.</div></div>
+
+    <div class="measure"><strong>측정</strong> — 인스타 도달·팔로워 · 인플루언서 발행·도달 · 지점 플레이스 순위·유입 · 체험단 발행 건수</div>
+  </div>
+
+  <!-- KPI -->
+  <div class="section">
+    <h2>7월 <em>목표</em></h2>
+    <div class="sec-sub">6월 실적 기준 · 센텀 회복이 1순위, 강남·전포는 자산 방어</div>
+    <table>
+      <thead><tr><th>무엇을</th><th class="r">6월 실적</th><th class="r">7월 목표</th></tr></thead>
+      <tbody>
+        <tr><td class="item">센텀 방문 <span style="font-size:10px;color:#EA580C;font-weight:800;">1순위</span></td><td class="c">2,384</td><td class="c"><b style="color:#EA580C;">3,000+ 반등</b></td></tr>
+        <tr><td class="item">강남 방문</td><td class="c">4,812 (2주)</td><td class="c">순위·리뷰 유지</td></tr>
+        <tr><td class="item">강남 리뷰</td><td class="c">355건</td><td class="c">지속 축적</td></tr>
+        <tr><td class="item">전포 방문</td><td class="c">4,650</td><td class="c">유지</td></tr>
+        <tr><td class="item">인스타 도달 / 팔로워</td><td class="c">25.5만 / 214</td><td class="c">30만+ / 350+</td></tr>
+        <tr><td class="item">일본어 검색 노출 (신규)</td><td class="c">0</td><td class="c" style="color:#999;">8월 착수 (방한 성수기)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 주간 -->
+  <div class="section">
+    <h2>7월 <em>주간 일정</em></h2>
+    <div class="sec-sub">매주 월요일 오전 9시 주간 메일 + 대시보드 보고</div>
+    <div class="week">
+      <div class="wk-head"><span class="wk-range">7/1 — 7/5</span><span class="wk-theme">6월 운영 보고 + 7월 운영 플랜 (콜 미팅 7/3)</span></div>
+      <ul><li>6월 성과 종합 보고 · 7월 운영 플랜·견적 공유</li><li>7/3 콜 미팅 — 방향·예산 확정</li></ul>
+    </div>
+    <div class="week">
+      <div class="wk-head"><span class="wk-range">7/6 — 7/12</span><span class="wk-theme">센텀 소재 개발 + 본사 엔진 가동</span></div>
+      <ul><li><strong>센텀 회복 소재 개발</strong>("캐치테이블 TOP5"·"강남에서도 줄 서는") · 센텀 지역 정밀 타겟 세팅</li><li>본사 인플루언서 엔진(300) 센텀 회복 방향으로 상시 가동</li><li>강남 플레이스·체험단 기본 운영 유지</li></ul>
+    </div>
+    <div class="week">
+      <div class="wk-head"><span class="wk-range">7/13 — 7/19</span><span class="wk-theme">센텀 광고 라이브 · 본사 발행</span></div>
+      <ul><li><strong>센텀 지역 정밀 타겟 광고 라이브</strong> (랜딩 = 센텀 네이버플레이스)</li><li>본사 인플루언서·인스타 콘텐츠 발행 → 전 지점 도달</li><li>강남·전포 체험단 가동</li></ul>
+    </div>
+    <div class="week">
+      <div class="wk-head"><span class="wk-range">7/20 — 7/26</span><span class="wk-theme">센텀 반등 점검 · 강남 D+30</span></div>
+      <ul><li>센텀 광고 방문 전환 점검 · 잘 되는 소재 더블다운</li><li>강남 오픈 한 달 데이터 점검 · 자산 방어 확인</li></ul>
+    </div>
+    <div class="week">
+      <div class="wk-head"><span class="wk-range">7/27 — 7/31</span><span class="wk-theme">마무리 + 8월 화력 준비</span></div>
+      <ul><li>7월 성과 정리 · 7월 보고서 + 8월 운영 플랜 공유</li><li><strong>8월 강남 화력 사전 준비</strong> — 방한 예정 일본 인플루언서·마이크로 맛집 계정·돋보기 1차 섭외 착수, 일본어 검색어 세팅</li></ul>
+    </div>
+  </div>
+
+  <!-- 견적 -->
+  <div class="section">
+    <h2>7월 <em>견적</em></h2>
+    <div class="sec-sub">지점별 · 항목별로 명확하게 · 부가세 별도</div>
+
+    <div class="quote-total">
+      <div>
+        <div class="qt-l">7월 합계 (부가세 별도)</div>
+        <div class="qt-s">본사 500 + 센텀 420 + 강남 100 <em>· 강남 화력(일본·마이크로 1,000)은 8월로 이월</em></div>
+      </div>
+      <div class="qt-a">1,020<span>만원</span></div>
+    </div>
+
+    <!-- 본사 -->
+    <div class="part-block">
+      <div class="part-bar"><div class="pb-t">본사 <span style="font-size:11px;color:#999;font-weight:700;">— 브랜드 엔진</span></div><div class="pb-p">500만원</div></div>
+      <table>
+        <thead><tr><th>항목</th><th>내용</th><th class="amt-h">금액</th></tr></thead>
+        <tbody>
+          <tr><td class="item">브랜드 마케팅 전략 기획</td><td class="desc">전 지점 통합 전략·방향 설계 + 월간 운영 보고</td><td class="amt">1,000,000</td></tr>
+          <tr><td class="item">인스타그램 운영</td><td class="desc">브랜드 공식 인스타 콘텐츠 제작·운영 (월 6~8회) — 전 지점 대표 채널</td><td class="amt">2,000,000</td></tr>
+          <tr><td class="item">네이버플레이스 운영 (전포본점)</td><td class="desc">전포 플레이스 상시 관리 + 키워드·순위</td><td class="amt">400,000</td></tr>
+          <tr><td class="item">인플루언서 운영 <span style="font-size:10px;color:#999;font-weight:800;">브랜드 상시</span></td><td class="desc">맛집 인플루언서 바이럴을 본사에서 상시 운영 → 전 지점 도달 <span style="color:#EA580C;font-weight:700;">(센텀 회복 직접 투입분 140은 센텀점으로 배분)</span></td><td class="amt">1,600,000</td></tr>
+          <tr class="sub"><td colspan="2">본사 소계</td><td class="amt">5,000,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 센텀 -->
+    <div class="part-block">
+      <div class="part-bar"><div class="pb-t">센텀점 <span style="font-size:11px;color:#EA580C;font-weight:700;">— 7월 회복 1순위</span></div><div class="pb-p">420만원</div></div>
+      <table>
+        <thead><tr><th>항목</th><th>내용</th><th class="amt-h">금액</th></tr></thead>
+        <tbody>
+          <tr><td class="item">네이버플레이스 운영</td><td class="desc">플레이스 상시 관리 + 키워드·순위 (지역 검색 랜딩)</td><td class="amt">400,000</td></tr>
+          <tr><td class="item">블로그 체험단</td><td class="desc">방문형 후기 · 키워드 분배 + 영수증 리뷰</td><td class="amt">400,000</td></tr>
+          <tr><td class="item">인플루언서 운영 <span style="font-size:10px;color:#EA580C;font-weight:800;">센텀 회복 직접 투입</span></td><td class="desc">본사 인플루언서 엔진 중 센텀 회복에 직접 투입되는 몫 · 센텀 방문 유도 콘텐츠 집중</td><td class="amt new">1,400,000</td></tr>
+          <tr><td class="item">바이럴 (메타 광고) <span style="font-size:10px;color:#EA580C;font-weight:800;">지역 정밀 타겟</span></td><td class="desc">센텀 거주·주거상권 한정 타겟 + "캐치테이블 TOP5"·"강남에서도 줄 서는" 소재 · 랜딩=센텀 플레이스 (수수료+광고비 포함)</td><td class="amt new">2,000,000</td></tr>
+          <tr class="sub"><td colspan="2">센텀 소계</td><td class="amt">4,200,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 강남 -->
+    <div class="part-block">
+      <div class="part-bar"><div class="pb-t">강남점 <span style="font-size:11px;color:#999;font-weight:700;">— 기본 운영 유지 (화력은 8월)</span></div><div class="pb-p">100만원</div></div>
+      <table>
+        <thead><tr><th>항목</th><th>내용</th><th class="amt-h">금액</th></tr></thead>
+        <tbody>
+          <tr><td colspan="3" style="background:#f8fafb;font-weight:800;color:#636569;font-size:11.5px;padding:8px 14px;">기본 운영 — 매월 쌓는 것</td></tr>
+          <tr><td class="item">네이버플레이스 운영 + 댓글</td><td class="desc">강남점 플레이스 상시 관리 + 댓글 작업</td><td class="amt">600,000</td></tr>
+          <tr><td class="item">블로그 체험단</td><td class="desc">강남 검색 콘텐츠 축적</td><td class="amt">400,000</td></tr>
+          <tr class="sub"><td colspan="2">강남 소계</td><td class="amt">1,000,000</td></tr>
+        </tbody>
+      </table>
+      <div style="margin-top:12px;padding:12px 16px;background:#FFF7ED;border:1px dashed #FED7AA;border-radius:8px;font-size:12.5px;color:#9a3412;line-height:1.8;"><strong>↳ 8월 이월 — 강남 화력 1,000만</strong><br>일본 인플루언서 500 + 마이크로 인플루언서·돋보기 바이럴 500. 방한 최성수기인 8월(오봉 연휴)에 몰아서 집행합니다. <strong>상세·집행 계획은 별도 8월 운영 플랜</strong> 참조.</div>
+    </div>
+
+    <div class="quote-delta"><strong>6월 → 7월 변화.</strong> 6월(3,000만, 강남 오픈 부스팅 2,300 포함)에서 <strong>7월 1,020만으로 내려옵니다.</strong> 강남 대형 부스팅은 6월로 종료됐고, 7월은 본사 엔진으로 전 지점을 밀며 센텀 회복에 집중합니다. <strong>강남의 일본·마이크로 화력(1,000)은 방한 최성수기 8월에 몰아서 집행</strong>하며, <strong>8월 이후 커브와 신규 매장(가맹) 요금은 아래 별첨</strong>에서 확인하실 수 있습니다.</div>
+
+  </div>
+
+  <!-- 별첨 구분 -->
+  <div class="mission-box" style="text-align:center;">
+    <div class="hl-label" style="margin-bottom:8px;">별첨 · 중장기 예산 설계</div>
+    <div class="lede" style="font-size:20px;">한 달짜리 견적이 아니라, <em>12월까지 어떻게 흘러가는지</em>를 함께 봅니다</div>
+    <div style="margin-top:12px;font-size:13px;color:rgba(255,255,255,0.72);line-height:1.9;">"이번 달 얼마"가 아니라 "언제 내려가고, 어디서 안정되고, 새 매장은 얼마인지"까지 미리 정해둡니다. 매달 다시 협의하는 부담을 없애고, 본사·지점·가맹점이 각자 얼마를 부담하는지 명확히 합니다.</div>
+  </div>
+
+  <!-- 별첨 A — 6~12월 예산 커브 -->
+  <div class="section">
+    <div class="action-tag new">별첨 A · 예산 커브</div>
+    <h2>6월 → 12월 <em>예산 커브</em> — 두 번의 화력, 그다음 안정</h2>
+    <div class="sec-sub">6월 강남 오픈 피크 → 7월 저점(준비·기본) → 8월 일본 방한 성수기 화력 → 9월~ 본사 엔진 안정 운영 · 단위 만원 · 부가세 별도</div>
+
+    <div class="glance-steps" style="grid-template-columns:repeat(4,1fr);">
+      <div class="glance-step"><div class="gs-n">6월 · 오픈 피크</div><div class="gs-t">3,000</div><div class="gs-d">강남 오픈 부스팅 포함</div></div>
+      <div class="glance-step"><div class="gs-n">7월 · 전환 저점</div><div class="gs-t">1,020</div><div class="gs-d">본사 엔진 + 센텀 회복</div></div>
+      <div class="glance-step hero"><div class="gs-n">8월 · 일본 성수기 화력</div><div class="gs-t">1,820</div><div class="gs-d">강남 일본+마이크로 집중</div></div>
+      <div class="glance-step"><div class="gs-n">9~12월 · 안정</div><div class="gs-t">900</div><div class="gs-d">✓ 기본 운영 궤도</div></div>
+    </div>
+
+    <table style="margin-top:4px;">
+      <thead><tr><th>지점</th><th class="r">6월</th><th class="r">7월</th><th class="r">8월</th><th class="r">9~12월</th></tr></thead>
+      <tbody>
+        <tr><td class="item">본사 <span style="font-size:10px;color:#EA580C;font-weight:800;">엔진</span></td><td class="c">250</td><td class="c">500</td><td class="c">540</td><td class="c">540</td></tr>
+        <tr><td class="item">센텀점</td><td class="c">415</td><td class="c">420</td><td class="c">180</td><td class="c">180</td></tr>
+        <tr><td class="item">강남점</td><td class="c">2,335</td><td class="c">100</td><td class="c">1,100</td><td class="c">180</td></tr>
+        <tr class="total-row"><td>합계 (부가세 별도)</td><td class="c">3,000</td><td class="c">1,020</td><td class="c">1,820</td><td class="c">900</td></tr>
+      </tbody>
+    </table>
+
+    <div class="detail" style="margin-top:22px;"><div class="dt">본사 — 브랜드 엔진 (고정)</div><div class="dd">전략 기획 100 + 인스타 운영 200 + 전포 플레이스 40 <strong>+ 인플루언서 운영 160</strong>. 7월 인플루언서 엔진은 총 300 규모지만 <span class="lab">센텀 회복 직접 투입분 140은 센텀점 비용으로 배분</span>했고, 8월부터는 200(기본 운영)으로 본사에 통합됩니다. 가맹점이 늘어도 이 엔진 하나가 전 지점을 커버합니다.</div></div>
+    <div class="detail"><div class="dt">센텀 — 회복 후 기본으로</div><div class="dd">플레이스 40 + 체험단 40 + <strong>인플루언서 140 + 메타 광고 200</strong>. <span class="lab">7월은 회복 집중으로 340 → 8월부터 100</span>으로 안정화.</div></div>
+    <div class="detail"><div class="dt">강남 — 7월 저점 → 8월 성수기 화력 → 자립</div><div class="dd"><span class="lab">7월 100</span>(플레이스 60 + 체험단 40, 기본 운영만) → <span class="lab">8월 1,100</span>(일본 500 + 마이크로·돋보기 500 + 기본 100, 방한 성수기 화력 집중) → <span class="lab">9월~ 180</span>(플레이스 40 + 체험단 40 + 메타 100). 원래 7~8월 두 달에 나누려던 일본·마이크로 화력을 <strong>방한이 가장 몰리는 8월 한 달에 집중</strong>하고, 이후 일본 인플루언서 자산은 본사 엔진으로 흡수됩니다.</div></div>
+
+    <div class="measure"><strong>핵심</strong> — 강남은 9월부터 <strong>월 180만으로 자립</strong>합니다. 오픈 3개월간 쌓은 리뷰·검색·콘텐츠 자산 위에서 플레이스·체험단·소액 메타만으로 순위를 지키는 이 세트가, <strong>앞으로 생길 모든 매장의 표준 운영 기준</strong>이 됩니다.</div>
+  </div>
+
+  <!-- 별첨 B — 신규 매장 / 가맹 요금제 -->
+  <div class="section">
+    <div class="action-tag new">별첨 B · 가맹·신규 매장</div>
+    <h2>새 매장이 생기면 <em>얼마</em>? — 셋업 300 · 지속 150</h2>
+    <div class="sec-sub">가맹점·신규 직영이 생겼을 때의 표준 요금 · 단위 만원 · 부가세 별도</div>
+
+    <p class="context-lead">새 매장은 <strong>첫 한 달에 로컬 시장을 세팅</strong>하고, 이후엔 <strong>안정 관리로 내려갑니다.</strong> 강남에서 검증한 "오픈 집중 → 자립" 커브를 그대로 축소해 적용한 구조입니다.</p>
+
+    <div class="part-block" style="margin-top:20px;">
+      <table>
+        <thead><tr><th>항목</th><th class="r">첫 달 (셋업)</th><th class="r">이후 (지속·월)</th></tr></thead>
+        <tbody>
+          <tr><td class="item">네이버플레이스</td><td class="c">100 <span style="font-size:10px;color:#999;">등록·최적화</span></td><td class="c">40</td></tr>
+          <tr><td class="item">블로그 체험단</td><td class="c">40</td><td class="c">20</td></tr>
+          <tr><td class="item">인플루언서 콘텐츠(광고 포함)<br><span style="font-size:10px;color:#EA580C;font-weight:800;">평균 조회수 3만 이상</span></td><td class="c">160 <span style="font-size:10px;color:#999;">4인</span></td><td class="c">90 <span style="font-size:10px;color:#999;">2인</span></td></tr>
+          <tr class="total-row"><td>합계 (부가세 별도)</td><td class="c">300</td><td class="c">150</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="detail" style="margin-top:20px;"><div class="dt">첫 달 셋업 300 — 로컬 기반을 까는 달</div><div class="dd">네이버플레이스 <span class="lab">등록·정보·사진·메뉴·키워드 최적화(100)</span> + 체험단으로 초기 리뷰 확보(40) + <span class="lab">인플루언서 콘텐츠 4인 — 한 주에 한 명씩(콘텐츠 광고 포함, 160)</span>. 오픈 순간 검색·지도·인스타에 매장이 제대로 뜨게 만드는 세팅입니다.</div></div>
+    <div class="detail"><div class="dt">지속 150 — 자립 운영</div><div class="dd">플레이스 관리(40) + 체험단(20) + 인플루언서 콘텐츠 2인(광고 포함, 90). 여기에 <strong>본사 브랜드 엔진(인스타·인플루언서) 노출은 추가 비용 없이 얹힙니다</strong> — 가맹점이 가만히 있어도 브랜드 화제성의 수혜를 받습니다.</div></div>
+  </div>
+
+  <!-- CLOSING -->
+  <div class="closing-box">
+    <div class="cl-msg">화력은 <em>6월에 태웠고</em>, 이제 <em>본사 엔진 하나로</em> 오래 갑니다</div>
+    <div class="cl-sub">7월 — 본사 엔진으로 브랜드 밀기 · 센텀 회복 집중 · 강남 안정화 · 12월까지 커브 확정</div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="brand">BRANDRISE</div>
+    미례국밥 × 브랜드라이즈 · 2026년 7월 운영 플랜 + 견적<br>
+    세부 일정·목표·금액은 추후 조정될 수 있습니다. 금액은 부가세 별도입니다.
+  </div>
+
+</div>
+</body>
+</html>
