@@ -39,7 +39,7 @@ const PLAN = {
         count: 40,                  // 모집 인원
         selectDate: '9/14',         // 선정일
         start: '9/15',              // 방문·리뷰 작성 시작
-        end:   '9/30',              // 방문·리뷰 작성 마감
+        end:   '10/2',              // 방문·리뷰 작성 마감
         menu: '시그니처 돼지우동 2개 + 사이드 (맛보기 냉제육 or 가마솥순대) 택 1',
         menuNote: '*이외 추가 메뉴는 체험단이 직접 결제합니다',
         visitHours: '평일·주말 구분 없이 오후 2:00 — 7:30',
@@ -56,9 +56,9 @@ const PLAN = {
         menu: '시그니처 돼지우동 2개 + 사이드(맛보기 냉제육 or 가마솥순대) 중 택 1',
         need: '촬영 가능한 자리(창가/조명 밝은 곳) ·조리 장면 촬영 협조 ',
         uploads: [
-          { label: '3주차 · 오픈 주간', count: 2, visits: ['9/14', '9/15'], adStart: '9/14', adEnd: '9/20' },
-          { label: '4주차',             count: 1, visits: ['9/22'],         adStart: '9/21', adEnd: '9/27' },
-          { label: '5주차',             count: 1, visits: ['9/24'],         adStart: '9/28', adEnd: '10/4' },
+          { label: '3주차 · 오픈 주간', count: 2, visits: ['9/14', '9/15'], adStart: '9/18', adEnd: '9/24' },
+          { label: '4주차',             count: 1, visits: ['9/22'],         adStart: '9/25', adEnd: '10/1' },
+          { label: '5주차',             count: 1, visits: ['9/24'],         adStart: '10/2', adEnd: '10/8' },
         ],
       },
 
@@ -73,7 +73,7 @@ const PLAN = {
         { date: '9/14', type: 'np',  text: '지도·검색 노출 시작' },
         { date: '9/21', type: 'np',  text: "플레이스 '새로오픈' 활성화" },
         { date: '9/29', type: 'ghost', text: '중간 점검 · 순위 확인' },
-        { date: '10/2', type: 'key', text: '9월 운영보고서 전달' },
+        { date: '10/9', type: 'key', text: '9월 운영보고서 전달' },
       ],
     },
 
@@ -100,14 +100,14 @@ const PLAN = {
         uploads: [
           /* 광고는 한 편당 2주 — 9월 마지막 광고(~10/4)를 10/5 광고가 바로 이어받아
              9월과 10월 사이에도 공백이 생기지 않습니다 */
-          { label: '2주차', count: 1, visits: [], upEnd: '10/11', adStart: '10/5',  adEnd: '10/18' },
-          { label: '4주차', count: 1, visits: [], upEnd: '10/25', adStart: '10/19', adEnd: '11/1' },
+          { label: '2주차', count: 1, visits: [], upEnd: '10/11', adStart: '10/9',  adEnd: '10/22' },
+          { label: '4주차', count: 1, visits: [], upEnd: '10/25', adStart: '10/23', adEnd: '11/5' },
         ],
       },
 
       events: [
         { date: '10/1',  type: 'exp', text: '체험단 모집 시작', soft: true },
-        { date: '10/2',  type: 'key', text: '9월 운영보고서 전달' },
+        { date: '10/9',  type: 'key', text: '9월 운영보고서 전달' },
         { date: '10/27', type: 'ghost', text: '중간 점검 · 순위 확인' },
         { date: '11/4',  type: 'key', text: '10월 운영보고서 전달' },
       ],
@@ -346,12 +346,11 @@ tr.sum-row td { background:#FFF7ED; color:#C2410C; font-weight:800; font-size:14
   <div id="CONFIRM-BOX" style="background:#FEF2F2;border:2px dashed #DC2626;border-radius:12px;padding:24px 28px;margin-bottom:20px;">
     <div style="font-size:12px;font-weight:800;color:#DC2626;letter-spacing:.08em;margin-bottom:12px;">내부 확인 필요 — 점주님 전달 전 이 박스를 삭제하세요</div>
     <ol style="margin:0;padding-left:20px;font-size:13px;line-height:2;color:#1a1b18;">
-      <li><b>오픈일 9/14(월)은 가정값입니다.</b> 위드런 측 공유는 "9/10~15 사이, 정확한 날짜 미확정". 부산시청점과 같은 월요일 오픈으로 잡았습니다. 확정되면 맨 위 <code>PLAN</code> 의 날짜만 고치면 캘린더·표·본문이 전부 따라 바뀝니다.</li>
-      <li><b>비용 300 / 150 = 450만원은 부산시청점 기준을 그대로 옮긴 값</b>입니다. 울산삼산점 금액은 미확정.</li>
-      <li><b>체험단 40명 / 20명, 인플루언서 4명 / 2명도 부산시청점 기준</b>입니다.</li>
-      <li><b>정식 지점명 확인 필요</b> — "울산삼산점" 인지 "울산삼산직영점" 인지. 사업자등록증 표기와 일치해야 네이버 등록이 통과됩니다.</li>
+      <li><b>오픈일 9/14(월)은 가정값입니다.</b> 위드런 측 공유는 "9/10~15 사이, 정확한 날짜 미확정". 부산시청점과 같은 월요일 오픈으로 잡았고, 헤더에도 <b>(가정)</b> 으로 표기해뒀습니다. 확정되면 맨 위 <code>PLAN</code> 의 날짜만 고치면 캘린더·표·본문이 전부 따라 바뀝니다.</li>
+      <li><b>자료 전달 방법이 비어 있습니다.</b> 점주님이 슬랙에 계시지 않아 창구 미정 — 「오픈 전에 주셔야 할 것」 맨 아래 밑줄 칸을 채워야 합니다.</li>
       <li><b>본문의 예시 키워드("삼산동 국밥", "울산 돼지국밥")는 임시</b>입니다. 대표키워드는 검색량 조사 후 확정합니다.</li>
-      <li>체험단 방문 기간을 <b>9/15 — 9/30</b>(16일)로 잡아 9월 안에 닫았습니다. 부산시청점은 18일이었습니다.</li>
+      <li>메타 광고·업로드는 <b>방문 당일이 아니라 그 주 금요일</b>에 시작하도록 잡았습니다 (9/18 · 9/25 · 10/2).</li>
+      <li>체험단 방문 기간은 <b>9/15 — 10/2</b>(부산시청점과 같은 18일). 이에 맞춰 9월 보고서를 <b>10/9(금)</b> 로 잡았습니다.</li>
     </ol>
   </div>
   <!-- ▲▲▲ CONFIRM-BOX 끝 ▲▲▲ -->
@@ -362,7 +361,7 @@ tr.sum-row td { background:#FFF7ED; color:#C2410C; font-weight:800; font-size:14
     <h1>9·10월 <em>운영 플랜</em> — 오픈 두 달</h1>
     <div class="meta-grid">
       <div class="meta-item"><div class="mk">매장</div><div class="mv">미례국밥 울산삼산점</div></div>
-      <div class="meta-item"><div class="mk">오픈일</div><div class="mv">2026. 09. 14 (월)</div></div>
+      <div class="meta-item"><div class="mk">오픈일</div><div class="mv">2026. 09. 14 (월) <span style="color:#EA580C;font-weight:800;">(가정)</span></div></div>
       <div class="meta-item"><div class="mk">대상 기간</div><div class="mv">2026. 09. 01 — 10. 31</div></div>
       <div class="meta-item"><div class="mk">두 달 비용</div><div class="mv"><span data-fill="cost-total">450만원</span> <span style="color:#999;font-weight:500;">부가세 별도</span></div></div>
     </div>
@@ -410,8 +409,8 @@ tr.sum-row td { background:#FFF7ED; color:#C2410C; font-weight:800; font-size:14
     <div class="sec-sub">오픈 전 준비 → 오픈 → 후기 쌓기 → 첫 달 결과 보고</div>
     <div class="steps">
       <div class="step"><div class="st-n">① 9/1 — 9/13</div><div class="st-t">오픈 전 준비</div><div class="st-d">사장님 자료 수령 → 네이버 지도 등록·심사·세팅 / 체험단 모집</div></div>
-      <div class="step hero"><div class="st-n">② 9/14 (월)</div><div class="st-t">오픈 · 체험단 선정</div><div class="st-d">지도·검색 노출 시작 / 인플루언서 2인 업로드 + 광고 시작</div></div>
-      <div class="step"><div class="st-n">③ 9/15 — 9/30</div><div class="st-t">후기·영상 쌓기</div><div class="st-d">체험단 <span data-fill="m1-review-count">40명</span> + 인플루언서 매주 1인 업로드 + 매주 광고</div></div>
+      <div class="step hero"><div class="st-n">② 9/14 (월)</div><div class="st-t">오픈 · 체험단 선정</div><div class="st-d">지도·검색 노출 시작 / 체험단 40명 선정 · 인플루언서 방문 시작</div></div>
+      <div class="step"><div class="st-n">③ 9/15 — 10/2</div><div class="st-t">후기·영상 쌓기</div><div class="st-d">체험단 <span data-fill="m1-review-count">40명</span> + 인플루언서 매주 1인 업로드 + 매주 광고</div></div>
       <div class="step"><div class="st-n">④ 10월 초</div><div class="st-t">첫 달 보고서</div><div class="st-d">얼마나 노출됐고 뭐가 잘 됐는지 정리</div></div>
     </div>
   </div>
@@ -421,7 +420,7 @@ tr.sum-row td { background:#FFF7ED; color:#C2410C; font-weight:800; font-size:14
     <h2>오픈 전에 <em>주셔야 할 것</em></h2>
     <div class="sec-sub">9/1(화)까지 · 이 자료가 모여야 네이버 지도 등록을 시작할 수 있습니다</div>
 
-    <div class="note"><strong>왜 2주 전까지인가요?</strong> 네이버 지도(플레이스)는 신청한다고 바로 올라가지 않습니다. <strong>네이버 담당자가 직접 심사</strong>하는 구조라 영업일 기준 <strong>2~5일</strong>이 걸리고, <strong>주말·공휴일에는 승인이 나지 않습니다.</strong> 게다가 서류가 하나라도 비면 <strong>반려된 뒤 처음부터 다시</strong> 신청해야 합니다.
+    <div class="note"><strong>왜 2주 전까지인가요?</strong> 네이버 지도(플레이스)는 신청한다고 바로 올라가지 않습니다. <strong>네이버 담당자가 직접 심사</strong>하는 구조라 영업일 기준 <strong>2~5일</strong>이 걸리고, <strong>주말·공휴일에는 승인이 나지 않습니다.</strong> 게다가 <strong>매장 대표번호가 없으면 신청 자체가 되지 않고</strong>, 서류가 흐리거나 빠지면 반려된 뒤 처음부터 다시 신청해야 합니다.
       <br><br>오픈 날 지도에 가게가 없으면 <strong>① 손님이 후기를 남길 수 없고, ② QR코드를 만들 수 없고, ③ 손님이 정확한 주소를 찾지 못합니다.</strong> 오픈 첫 주가 검색이 가장 많이 일어나는 때라, 이 일주일을 놓치면 뒤에서 만회하기 어렵습니다. 그래서 <strong>넉넉히 2주를 잡아뒀습니다.</strong></div>
 
     <div style="font-size:12px;font-weight:800;color:#EA580C;letter-spacing:.04em;margin:24px 0 10px;">A · 이게 없으면 등록 신청 자체가 안 됩니다</div>
@@ -429,10 +428,9 @@ tr.sum-row td { background:#FFF7ED; color:#C2410C; font-weight:800; font-size:14
       <thead><tr><th style="width:170px;">주실 것</th><th>왜 필요한지 · 주의점</th></tr></thead>
       <tbody>
         <tr><td><b>사업자등록증 사본</b></td><td>플레이스 신규 등록의 <b>필수 첨부 서류</b>입니다. 휴대폰으로 찍은 사진도 괜찮지만 <b>글자가 흐리면 반려</b>되니 밝은 곳에서 반듯하게 찍어주세요.</td></tr>
-        <tr><td><b>정식 상호 · 지점명</b></td><td>네이버는 최초 등록 시 <b>사업자등록증에 적힌 이름과 똑같아야</b> 승인합니다. 등록 후에 이름을 바꾸려면 <b>심사를 처음부터 다시</b> 받습니다. <b>'울산삼산점'인지 '울산삼산직영점'인지</b> 처음에 확정해주세요.</td></tr>
+        <tr><td><b>네이버 계정</b><br><span style="font-size:11.5px;color:#999;">아이디 · 비밀번호</span></td><td>스마트플레이스는 <b>이 계정에 귀속</b>됩니다. 저희가 등록·최적화 세팅을 하고 이후 <b>후기 답글·정보 수정·새로오픈 활성화</b>까지 대신 하려면 계정이 필요합니다. 가게 운영에 쓰실 <b>업체용 계정</b>으로 주시는 걸 권해드립니다(개인 계정과 분리).<br><b style="color:#C2410C;">※ 비밀번호는 여러 사람이 보는 곳에 올리지 마시고, 담당자에게 개별로 전달해주세요.</b></td></tr>
         <tr><td><b>매장 주소</b><br><span style="font-size:11.5px;color:#999;">도로명 + 층 / 호수</span></td><td>지도 등록에도, <b>체험단 모집 공고에도</b> 들어갑니다. 주소가 없으면 체험단 모집을 시작할 수 없습니다.</td></tr>
-        <tr><td><b>매장 대표 전화번호</b></td><td><b>번호가 없으면 등록 신청 버튼이 눌리지 않습니다.</b> 아직 개통 전이시면 <b>개통 예정일</b>이라도 알려주세요. 그에 맞춰 신청 날짜를 잡겠습니다.</td></tr>
-        <tr><td><b>점주님 휴대폰 번호</b><br><span style="font-size:11.5px;color:#999;">+ 연락 가능한 시간대</span></td><td>등록 도중 <b>점주님 휴대폰으로 인증번호(SMS)</b>가 발송되고, 그 번호를 저희에게 전달해주셔야 다음 단계로 넘어갑니다. 오픈 준비로 바쁘실 테니 <b>"몇 시~몇 시 사이면 바로 확인 가능"</b>을 미리 알려주시면 그 시간에 맞춰 신청하겠습니다.</td></tr>
+        <tr><td><b>매장 대표 전화번호</b></td><td><b>번호가 없으면 등록 신청 자체가 불가능합니다.</b> 반려되는 게 아니라 아예 접수가 되지 않습니다. 아직 개통 전이시면 <b>개통 예정일</b>이라도 알려주세요. 그에 맞춰 신청 날짜를 잡겠습니다.</td></tr>
       </tbody>
     </table>
 
@@ -459,7 +457,7 @@ tr.sum-row td { background:#FFF7ED; color:#C2410C; font-weight:800; font-size:14
       </tbody>
     </table>
 
-    <div class="note calm"><strong>전달 방법 — 슬랙 &lt;울산삼산점&gt; 채널에 올려주시면 됩니다.</strong> 한 번에 다 모으지 않으셔도 됩니다. <strong>A부터 먼저</strong> 주시면 저희가 등록 신청을 걸어두고, B는 심사가 도는 동안 받아 채워 넣겠습니다. 빠진 항목은 저희가 다시 여쭙겠습니다.</div>
+    <div class="note calm"><strong>전달 방법 — <span style="display:inline-block;min-width:180px;border-bottom:1px dashed #94a3b8;">&nbsp;</span></strong> 한 번에 다 모으지 않으셔도 됩니다. <strong>A부터 먼저</strong> 주시면 저희가 등록 신청을 걸어두고, B는 심사가 도는 동안 받아 채워 넣겠습니다. 빠진 항목은 저희가 다시 여쭙겠습니다.</div>
   </div>
 
   <!-- 9월 캘린더 -->
@@ -483,7 +481,7 @@ tr.sum-row td { background:#FFF7ED; color:#C2410C; font-weight:800; font-size:14
       </table>
     </div>
 
-    <div class="note"><strong>파란색으로 칠해진 <span data-fill="m1-review-range">9/15 — 9/30</span>가 체험단 기간입니다.</strong> 이때 체험단 <span data-fill="m1-review-count">40명</span>이 방문하고 리뷰를 씁니다. 오픈 직후라 가게도 정신없을 때인데, <strong>체험단은 일반 손님처럼 오셔서 드시고 후기를 남기는 분들</strong>이라 명단 확인 말고는 따로 응대하실 필요 없습니다. 인플루언서는 <strong>날짜를 미리 못 박지 않고 <span data-fill="m1-inf-visit">9월 중 (확정 시 사전 안내)</span> 방문</strong>하며, 방문이 확정되면 그때 따로 알려드립니다.</div>
+    <div class="note"><strong>파란색으로 칠해진 <span data-fill="m1-review-range">9/15 — 10/2</span>가 체험단 기간입니다.</strong> 이때 체험단 <span data-fill="m1-review-count">40명</span>이 방문하고 리뷰를 씁니다. 오픈 직후라 가게도 정신없을 때인데, <strong>체험단은 일반 손님처럼 오셔서 드시고 후기를 남기는 분들</strong>이라 명단 확인 말고는 따로 응대하실 필요 없습니다. 인플루언서는 <strong>날짜를 미리 못 박지 않고 <span data-fill="m1-inf-visit">9월 중 (확정 시 사전 안내)</span> 방문</strong>하며, 방문이 확정되면 그때 따로 알려드립니다.</div>
   </div>
 
   <!-- 9월 인플루언서 -->
@@ -497,7 +495,7 @@ tr.sum-row td { background:#FFF7ED; color:#C2410C; font-weight:800; font-size:14
       <tbody id="inf-m1"></tbody>
     </table>
 
-    <div class="note"><strong>영상을 한 번에 몰아서 올리지 않고, <span data-fill="m1-inf-upload">오픈 주간부터 매주 (9/14 — 10/4)</span> 나눠서 올립니다.</strong> 오픈 주간에 <strong>2인 업로드</strong>로 시작하고 이후 <strong>매주 1인씩</strong> 올려, 9월 내내 계속 회자되게 만드는 방식입니다. <strong>업로드하는 그 주에 맞춰 메타 광고를 1주일씩 돌리기 때문에</strong>, 영상이 올라온 타이밍에 노출이 가장 크게 잡힙니다.&nbsp;인플루언서 개인 일정에 맞춰 <span data-fill="m1-inf-visit">9월 중 (확정 시 사전 안내)</span> 방문합니다. <strong>방문이 확정되면 최소 2일 전 공유해드립니다.</strong>&nbsp;제공 메뉴는 <strong><span data-fill="m1-inf-menu">시그니처 돼지우동 2개 + 사이드(맛보기 냉제육 or 가마솥순대) 중 택 1</span></strong>이고, 이외 추가 메뉴는 인플루언서가 직접 결제합니다. 별도 출연료는 저희가 이미 지급합니다.</div>
+    <div class="note"><strong>영상을 한 번에 몰아서 올리지 않고, <span data-fill="m1-inf-upload">오픈 주간부터 매주 (9/18 — 10/8)</span> 나눠서 올립니다.</strong> 오픈 주간에 <strong>2인 업로드</strong>로 시작하고 이후 <strong>매주 1인씩</strong> 올려, 9월 내내 계속 회자되게 만드는 방식입니다. <strong>업로드하는 그 주에 맞춰 메타 광고를 1주일씩 돌리기 때문에</strong>, 영상이 올라온 타이밍에 노출이 가장 크게 잡힙니다.&nbsp;인플루언서 개인 일정에 맞춰 <span data-fill="m1-inf-visit">9월 중 (확정 시 사전 안내)</span> 방문합니다. <strong>방문이 확정되면 최소 2일 전 공유해드립니다.</strong>&nbsp;<strong>방문한 그 주에 바로 올라가는 것이 아니라, 촬영·편집 시간을 두고 그 주 후반(금요일 전후)에 업로드되며 광고도 그때 함께 시작됩니다.</strong>&nbsp;제공 메뉴는 <strong><span data-fill="m1-inf-menu">시그니처 돼지우동 2개 + 사이드(맛보기 냉제육 or 가마솥순대) 중 택 1</span></strong>이고, 이외 추가 메뉴는 인플루언서가 직접 결제합니다. 별도 출연료는 저희가 이미 지급합니다.</div>
   </div>
 
   <!-- 9월 항목별 -->
@@ -512,9 +510,9 @@ tr.sum-row td { background:#FFF7ED; color:#C2410C; font-weight:800; font-size:14
         <div class="tl-x"><strong>네이버 지도와 검색에 가게를 올리는 작업</strong>입니다. <strong>"삼산동 국밥", "울산 돼지국밥"처럼 손님이 실제로 검색하는 단어</strong>에 우리 가게가 뜨도록 설정합니다. 등록은 신청하면 끝이 아니라 <strong>네이버 담당자가 직접 심사</strong>하는 구조라 승인까지 영업일 기준 <strong>2~5일</strong>이 걸리고, <strong>주말에는 승인이 나지 않습니다.</strong> 그래서 <strong>오픈 2주 전(9/1)부터</strong> 시작합니다. 오픈 후 <strong>9/21에는 플레이스 '새로오픈' 기능을 활성화</strong>합니다 — <strong>네이버가 직접 "이 가게 새로 열었어요"라고 홍보해주는 기능</strong>입니다. 지도·검색에서 신규 오픈 매장으로 따로 묶여 노출되기 때문에, 광고비를 쓰지 않고도 한 번 더 눈에 띄는 구간을 만들 수 있습니다.</div>
       </div>
       <div class="tl-item exp">
-        <div class="tl-d"><span data-fill="m1-review-range">9/15 — 9/30</span> · 오픈 직후 집중</div>
+        <div class="tl-d"><span data-fill="m1-review-range">9/15 — 10/2</span> · 오픈 직후 집중</div>
         <div class="tl-t">블로그 체험단 <span data-fill="m1-review-count">40명</span></div>
-        <div class="tl-x"><strong>블로그에 후기를 써주는 손님 <span data-fill="m1-review-count">40명</span></strong>을 모집해 보냅니다. 새로 연 가게는 <strong>후기가 하나도 없어서 손님이 망설입니다.</strong>&nbsp;이때 체험단을 통해 "검색하면 좋은 후기가 많은 가게"로 만듭니다. 방문 날짜는 각자 편한 날로 나눠서 오고, 후기는 <span data-fill="m1-review-range">9/15 — 9/30</span> 기간 안에 전부 올라옵니다.&nbsp;</div>
+        <div class="tl-x"><strong>블로그에 후기를 써주는 손님 <span data-fill="m1-review-count">40명</span></strong>을 모집해 보냅니다. 새로 연 가게는 <strong>후기가 하나도 없어서 손님이 망설입니다.</strong>&nbsp;이때 체험단을 통해 "검색하면 좋은 후기가 많은 가게"로 만듭니다. 방문 날짜는 각자 편한 날로 나눠서 오고, 후기는 <span data-fill="m1-review-range">9/15 — 10/2</span> 기간 안에 전부 올라옵니다.&nbsp;</div>
         <div class="provide">
           <div class="pv-h">체험단 제공 내역</div>
           <div class="pv-b"><strong style="color:#C2410C;font-size:14px;"><span data-fill="m1-review-menu">시그니처 돼지우동 2개 + 사이드 (맛보기 냉제육 or 가마솥순대) 택 1</span></strong>
@@ -525,19 +523,19 @@ tr.sum-row td { background:#FFF7ED; color:#C2410C; font-weight:800; font-size:14
         </div>
       </div>
       <div class="tl-item inf">
-        <div class="tl-d">방문 <span data-fill="m1-inf-visit">9월 중 (확정 시 사전 안내)</span> · 업로드 <span data-fill="m1-inf-upload">오픈 주간부터 매주 (9/14 — 10/4)</span></div>
+        <div class="tl-d">방문 <span data-fill="m1-inf-visit">9월 중 (확정 시 사전 안내)</span> · 업로드 <span data-fill="m1-inf-upload">오픈 주간부터 매주 (9/18 — 10/8)</span></div>
         <div class="tl-t">인플루언서 콘텐츠 <span data-fill="m1-inf-count">4명</span></div>
         <div class="tl-x"><strong>인스타그램에서 울산 맛집 영상을 올리는 분들</strong>입니다. 평균 조회수 3만 이상인 계정으로만 섭외합니다. 방문은 각자 일정에 맞춰 <strong>9월 중에 나눠서</strong> 하고, <strong>영상 업로드는 오픈 주간에 2인, 이후 매주 1인씩</strong> 진행합니다. 한 주에 몰아 터뜨리고 끝내는 대신 <strong>9월 내내 끊기지 않게</strong> 노출을 이어가는 방식이고, 새로 올라온 영상은 곧바로 광고로 밀어줍니다. 영상을 보고 검색해본 사람은 그때 쌓여 있는 블로그 후기가 받아줍니다.</div>
       </div>
       <div class="tl-item ad">
-        <div class="tl-d"><span data-fill="m1-inf-ad-range">9/14 — 10/4</span> · 매주 1주씩</div>
+        <div class="tl-d"><span data-fill="m1-inf-ad-range">9/18 — 10/8</span> · 매주 1주씩</div>
         <div class="tl-t">메타 광고 (인스타그램)</div>
         <div class="tl-x"><strong>인플루언서 영상이 올라가는 그 주에 맞춰, 그 영상으로 광고를 1주일씩 돌립니다.</strong> 영상이 가장 신선할 때 광고비를 태우는 게 반응이 제일 좋기 때문입니다. 삼산동·울산 시내 주변에 사는 분·직장인에게 집중적으로 노출하고, 영상을 본 사람이 <strong>바로 네이버 지도로 이동</strong>하게 연결합니다.</div>
       </div>
       <div class="tl-item key">
         <div class="tl-d">10월 초</div>
         <div class="tl-t">9월 운영보고서</div>
-        <div class="tl-x"><strong>10/2(금)에 첫 달 결과를 정리해서 보내드립니다.</strong> 네이버 지도에서 몇 번 노출됐는지, 후기가 몇 개 쌓였는지 등을&nbsp;<strong>숫자로 보여드리고</strong>, 10월에 무엇을 이어갈지 알려드립니다.</div>
+        <div class="tl-x"><strong>10/9(금)에 첫 달 결과를 정리해서 보내드립니다.</strong> 네이버 지도에서 몇 번 노출됐는지, 후기가 몇 개 쌓였는지 등을&nbsp;<strong>숫자로 보여드리고</strong>, 10월에 무엇을 이어갈지 알려드립니다.</div>
       </div>
     </div>
   </div>
@@ -556,7 +554,7 @@ tr.sum-row td { background:#FFF7ED; color:#C2410C; font-weight:800; font-size:14
     <h2>10월 <em>한눈에</em></h2>
     <div class="sec-sub">9월 결산 → 체험단 모집 → 후기·영상 다시 쌓기 → 둘째 달 결과 보고</div>
     <div class="steps">
-      <div class="step"><div class="st-n">① 10/1 — 10/2</div><div class="st-t">체험단 모집 · 9월 결산</div><div class="st-d">10/1 체험단 모집 시작 / 10/2 첫 달 보고서 전달</div></div>
+      <div class="step"><div class="st-n">① 10/1 — 10/9</div><div class="st-t">체험단 모집 · 9월 결산</div><div class="st-d">10/1 체험단 모집 시작 / 10/9 첫 달 보고서 전달</div></div>
       <div class="step"><div class="st-n">② 10/5 — 10/10</div><div class="st-t">영상 1편 · 체험단 선정</div><div class="st-d">인플루언서 1인 업로드 + 광고 2주 / 10/10 체험단 선정</div></div>
       <div class="step hero"><div class="st-n">③ <span data-fill="m2-review-range">10/11 — 10/28</span></div><div class="st-t">후기·영상 다시 쌓기</div><div class="st-d">체험단 <span data-fill="m2-review-count">20명</span> 방문 + 인플루언서 1인 업로드 + 광고 2주</div></div>
       <div class="step"><div class="st-n">④ 11월 초</div><div class="st-t">둘째 달 보고서</div><div class="st-d">9월과 비교해 얼마나 올라갔는지 정리</div></div>
@@ -617,11 +615,10 @@ tr.sum-row td { background:#FFF7ED; color:#C2410C; font-weight:800; font-size:14
     <div class="sec-sub">이것만 해주시면 나머지는 저희가 진행합니다</div>
 
     <ul class="chk">
-      <li><span class="when g">9/1까지</span><b>가게 자료 전달</b> — 사업자등록증 사본, 정식 상호·지점명, 주소, 매장 대표번호, 점주님 휴대폰 번호. 그리고 영업시간·메뉴·사진·주차·결제수단. <b>위 「오픈 전에 주셔야 할 것」에 항목별로 정리해뒀습니다.</b></li>
-      <li><span class="when g">9/1 — 9/4 중</span><b>인증번호 전달</b> — 등록 신청 시 <b>점주님 휴대폰으로 인증번호가 발송됩니다.</b> 받으시면 바로 알려주세요. 이게 늦어지면 등록 전체가 그만큼 밀립니다.</li>
+      <li><span class="when g">9/1까지</span><b>가게 자료 전달</b> — 사업자등록증 사본, 네이버 계정, 매장 주소, 매장 대표번호. 그리고 영업시간·메뉴·사진·주차·결제수단. <b>위 「오픈 전에 주셔야 할 것」에 항목별로 정리해뒀습니다.</b></li>
       <li><span class="when g">9/10</span><b>네이버 지도 최종 확인</b> — 저희가 등록한 내용을 보내드리면 <b>전화번호·영업시간·가격이 맞는지만</b> 봐주세요. 오픈 나흘 전이라 이때 고쳐야 오픈일에 반영됩니다.</li>
       <li><span class="when">9월 · 10월 중</span><b>인플루언서 방문 응대</b> — <b><span data-fill="m1-inf-menu">시그니처 돼지우동 2개 + 사이드(맛보기 냉제육 or 가마솥순대) 중 택 1</span></b>을 내주시고, 촬영에 협조해주세요. <b>방문이 확정되면 미리 알려드립니다.</b></li>
-      <li><span class="when b"><span data-fill="m1-review-range">9/15 — 9/30</span> · <span data-fill="m2-review-range">10/11 — 10/28</span></span><b>체험단 확인</b> — "체험단으로 왔습니다"라고 하면 명단 확인 후 <b><span data-fill="m1-review-menu">시그니처 돼지우동 2개 + 사이드 (맛보기 냉제육 or 가마솥순대) 택 1</span></b> 제공. 9월 <span data-fill="m1-review-count">40명</span>, 10월 <span data-fill="m2-review-count">20명</span>이 기간 내에 나눠서 옵니다.</li>
+      <li><span class="when b"><span data-fill="m1-review-range">9/15 — 10/2</span> · <span data-fill="m2-review-range">10/11 — 10/28</span></span><b>체험단 확인</b> — "체험단으로 왔습니다"라고 하면 명단 확인 후 <b><span data-fill="m1-review-menu">시그니처 돼지우동 2개 + 사이드 (맛보기 냉제육 or 가마솥순대) 택 1</span></b> 제공. 9월 <span data-fill="m1-review-count">40명</span>, 10월 <span data-fill="m2-review-count">20명</span>이 기간 내에 나눠서 옵니다.</li>
       <li><span class="when">수시</span><b>가게에 변경이 생기면 알려주세요</b> — 영업시간·휴무일·메뉴·가격이 바뀌면 지도 정보도 같이 고쳐야 합니다.</li>
     </ul>
 
