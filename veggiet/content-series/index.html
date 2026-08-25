@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<!-- rev: 2026-08-26 -->
+<title>베지어트 콘텐츠 시리즈 기획안 v2</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Noto Sans KR', -apple-system, sans-serif; background: #F1F5F2; color: #16221C; line-height: 1.7; font-size: 14px; -webkit-font-smoothing: antialiased; word-break: keep-all; overflow-wrap: break-word; }
+
+.toolbar { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: #16221C; height: 56px; display: flex; align-items: center; justify-content: space-between; padding: 0 32px; }
+.toolbar-title { font-size: 14px; font-weight: 500; color: #fff; }
+.btn-toolbar { padding: 7px 18px; border: 1px solid rgba(255,255,255,0.22); border-radius: 6px; background: transparent; color: #fff; font-size: 12px; font-weight: 500; cursor: pointer; }
+.btn-toolbar:hover { background: rgba(16,185,129,0.18); border-color: #10B981; }
+
+.container { max-width: 980px; margin: 0 auto; padding: 80px 24px 60px; }
+
+.report-header { background: #fff; border-radius: 12px; padding: 40px; margin-bottom: 20px; border: 1px solid #E2E8E4; }
+.report-header .label { font-size: 11px; font-weight: 700; color: #067A4E; letter-spacing: 0.12em; margin-bottom: 14px; }
+.report-header h1 { font-size: 34px; font-weight: 900; line-height: 1.3; letter-spacing: -0.02em; }
+.report-header h1 em { color: #067A4E; font-style: normal; }
+.meta-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 28px; padding-top: 24px; border-top: 1px solid #E2E8E4; }
+.meta-item .mk { font-size: 11px; color: #8E9A92; margin-bottom: 4px; }
+.meta-item .mv { font-size: 13px; font-weight: 600; }
+
+.mission-box { background: #16221C; border-radius: 12px; padding: 30px 36px; margin-bottom: 20px; color: #fff; }
+.mission-box .hl-label { font-size: 11px; font-weight: 700; color: #10B981; letter-spacing: 0.1em; margin-bottom: 14px; }
+.mission-box .lede { font-size: 19px; font-weight: 700; line-height: 1.55; letter-spacing: -0.01em; }
+.mission-box .lede em { color: #6EE7B7; font-style: normal; }
+.mission-box .sub { margin-top:16px; font-size:13px; color:rgba(255,255,255,0.74); line-height:1.95; }
+.mission-box .sub strong { color:#fff; }
+
+.section { background: #fff; border-radius: 12px; padding: 32px 40px; margin-bottom: 20px; border: 1px solid #E2E8E4; }
+.section h2 { font-size: 19px; font-weight: 800; margin-bottom: 6px; letter-spacing: -0.02em; }
+.section h2 em { color: #067A4E; font-style: normal; }
+.section .sec-sub { font-size: 12.5px; color: #8E9A92; margin-bottom: 20px; }
+.section p.body { font-size:13.5px; color:#5B655E; line-height:1.9; }
+.section p.body b { color:#16221C; }
+
+/* 시리즈 머리글 */
+.s-head { display:flex; align-items:center; gap:14px; margin:38px 0 16px; }
+.s-head .sh-n { flex:none; background:#16221C; color:#fff; font-size:11.5px; font-weight:800; padding:6px 14px; border-radius:20px; letter-spacing:.04em; }
+.s-head .sh-t { flex:none; font-size:21px; font-weight:900; letter-spacing:-.02em; }
+.s-head .sh-t em { color:#067A4E; font-style:normal; }
+.s-head .sh-line { flex:1; height:2px; background:#E2E8E4; border-radius:2px; }
+.s-head .sh-tag { flex:none; font-size:12px; font-weight:800; color:#067A4E; }
+
+/* 시리즈 한눈에 그리드 */
+.map { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+.mp { border:1px solid #E2E8E4; border-radius:10px; padding:16px; background:#F7FAF8; border-top:3px solid #CDD5D0; }
+.mp.hero { background:#E9FBF2; border-color:#B4EFD1; }
+.mp .mp-n { font-size:11px; font-weight:800; color:#067A4E; margin-bottom:6px; }
+.mp .mp-t { font-size:15px; font-weight:800; line-height:1.4; letter-spacing:-.01em; }
+.mp .mp-d { font-size:11.5px; color:#5B655E; margin-top:5px; line-height:1.6; }
+.mp .mp-f { font-size:11px; color:#8E9A92; margin-top:8px; padding-top:8px; border-top:1px dashed #E2E8E4; font-weight:700; }
+.mp.k1{border-top-color:#10B981} .mp.k2{border-top-color:#3B82F6} .mp.k3{border-top-color:#EC4899}
+.mp.k4{border-top-color:#F97316} .mp.k5{border-top-color:#14B8A6} .mp.k6{border-top-color:#16221C}
+
+/* 축 라벨 */
+.axis { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px; }
+.ax { display:inline-flex; align-items:center; gap:6px; font-size:12px; font-weight:700; padding:5px 12px; border-radius:20px; border:1px solid #E2E8E4; background:#fff; }
+.ax i { width:10px; height:10px; border-radius:3px; display:inline-block; }
+.c-core { background:#10B981; } .c-light { background:#F95708; } .c-camp { background:#16221C; }
+
+/* 칩 */
+.chips { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:14px; }
+.chip { font-size:11px; font-weight:800; padding:4px 11px; border-radius:20px; background:#F1F5F2; color:#5B655E; }
+.chip.on { background:#16221C; color:#fff; }
+.chip.gr { background:#E9FBF2; color:#067A4E; }
+.chip.rd { background:#FDECEE; color:#B3162A; }
+
+/* 두 갈래 */
+.two { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.mcard { border:1px solid #E2E8E4; border-radius:10px; padding:20px; background:#F7FAF8; }
+.mcard.hero { background:#E9FBF2; border-color:#B4EFD1; }
+.mcard .mc-n { font-size:11px; font-weight:800; color:#067A4E; letter-spacing:.06em; margin-bottom:6px; }
+.mcard .mc-t { font-size:16px; font-weight:900; letter-spacing:-.01em; }
+.mcard .mc-d { font-size:12.5px; color:#5B655E; margin-top:6px; line-height:1.75; }
+.mcard .mc-x { margin-top:12px; padding-top:12px; border-top:1px dashed #DCE3DD; font-size:12px; color:#5B655E; line-height:1.7; }
+.mcard .mc-x b { color:#16221C; }
+
+/* 시리즈 스펙 표 */
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th { background: #F7FAF8; padding: 10px 14px; font-weight: 600; border-bottom: 2px solid #E2E8E4; color: #8E9A92; font-size: 11px; text-align: left; white-space: nowrap; }
+th.c { text-align: center; }
+td { padding: 12px 14px; border-bottom: 1px solid #F1F5F2; vertical-align: top; }
+td.item { font-weight: 700; }
+td.desc { color: #5B655E; font-size: 12.5px; }
+td.c { text-align:center; }
+td .num { display:inline-block; width:20px; height:20px; line-height:20px; border-radius:50%; background:#16221C; color:#fff; font-size:11px; font-weight:800; text-align:center; }
+td .o { color:#067A4E; font-weight:800; } td .x { color:#B3162A; font-weight:800; } td .t { color:#C79A0B; font-weight:800; }
+
+/* 예시 카피 블록 */
+.copy { background:#F7FAF8; border:1px solid #E2E8E4; border-left:3px solid #10B981; border-radius:0 8px 8px 0; padding:6px 20px; margin-top:12px; }
+.copy .cl { display:grid; grid-template-columns:72px 1fr; gap:12px; padding:10px 0; border-bottom:1px dashed #E6ECE7; }
+.copy .cl:last-child { border-bottom:none; }
+.copy .ck { font-size:10.5px; font-weight:800; color:#067A4E; letter-spacing:.04em; padding-top:3px; }
+.copy .cv { font-size:13.5px; line-height:1.85; white-space:pre-line; }
+.copy .cv b { font-weight:800; }
+.copy.rd { border-left-color:#DF1C33; } .copy.rd .ck { color:#B3162A; }
+.copy.yl { border-left-color:#EAB939; } .copy.yl .ck { color:#8B5E08; }
+.copy-t { font-size:13.5px; font-weight:800; margin:22px 0 0; }
+.copy-t span { font-size:11px; font-weight:800; color:#8E9A92; margin-left:8px; }
+.copy-x { font-size:12px; color:#5B655E; line-height:1.8; margin-top:8px; padding-left:2px; }
+.copy-x b { color:#16221C; }
+
+/* 타임스탬프 */
+.tl { background:#FFFBF0; border:1px solid #F3E4A9; border-radius:8px; padding:6px 18px; margin-top:12px; }
+.tl .tr { display:grid; grid-template-columns:64px 1fr; gap:14px; padding:7px 0; border-bottom:1px dashed #F3E4A9; font-size:13px; }
+.tl .tr:last-child { border-bottom:none; }
+.tl .tt { font-weight:800; color:#8B5E08; font-variant-numeric:tabular-nums; }
+.tl .tr.rz { color:#8E9A92; font-size:12px; }
+
+.tbd { display:inline-block; border:1px dashed #C79A0B; background:#FFFBF0; color:#8B5E08; font-weight:800; font-size:11.5px; border-radius:5px; padding:0 7px; line-height:1.7; white-space:nowrap; }
+.stop { display:inline-block; background:#FDECEE; color:#B3162A; font-weight:800; font-size:11.5px; border-radius:5px; padding:0 7px; line-height:1.7; white-space:nowrap; }
+
+.chk { list-style:none; padding:0; }
+.chk li { position:relative; padding:9px 0 9px 30px; border-bottom:1px dashed #ECF1ED; font-size:13.5px; }
+.chk li:last-child { border-bottom:none; }
+.chk li::before { content:'\25A1'; position:absolute; left:6px; top:8px; font-size:16px; color:#10B981; font-weight:800; }
+.chk li b { color:#16221C; }
+
+.note { background:#E9FBF2; border-left:4px solid #10B981; border-radius:0 8px 8px 0; padding:14px 20px; margin-top:18px; font-size:12.5px; color:#4C574F; line-height:1.85; }
+.note strong { color:#16221C; }
+.note.calm { background:#F7FAF8; border-left-color:#CDD5D0; color:#5B655E; }
+.note.warn { background:#FDECEE; border-left-color:#DF1C33; color:#7A2430; }
+.note.warn strong { color:#B3162A; }
+
+.ref { margin-top:14px; border:1px dashed #CDD5D0; border-radius:8px; padding:12px 16px; background:#F7FAF8; }
+.ref .rf-h { font-size:11px; font-weight:800; color:#5B655E; letter-spacing:.06em; margin-bottom:6px; }
+.ref .rf-x { font-size:12px; color:#5B655E; line-height:1.8; }
+
+/* 캘린더 */
+.legend { display:flex; flex-wrap:wrap; gap:7px; margin-bottom:16px; }
+.lg { display:inline-flex; align-items:center; gap:6px; font-size:11.5px; font-weight:700; padding:4px 11px; border-radius:20px; border:1px solid #E2E8E4; background:#fff; }
+.lg i { width:10px; height:10px; border-radius:3px; display:inline-block; }
+.b1{background:#10B981}.b2{background:#3B82F6}.b3{background:#EC4899}.b4{background:#F97316}.b5{background:#14B8A6}.b6{background:#16221C}
+
+.cal-wrap { overflow-x:auto; -webkit-overflow-scrolling:touch; border:1px solid #E2E8E4; border-radius:10px; }
+table.cal { width:100%; min-width:760px; border-collapse:collapse; table-layout:fixed; }
+table.cal th { background:#F7FAF8; padding:9px 6px; font-size:11px; font-weight:800; color:#5B655E; text-align:center; border-bottom:2px solid #E2E8E4; }
+table.cal th.sun { color:#dc2626; } table.cal th.sat { color:#2563EB; }
+table.cal td { border:1px solid #F1F5F2; vertical-align:top; padding:6px 6px 8px; height:112px; }
+table.cal td.off { background:#FBFCFA; }
+.dnum { font-size:13px; font-weight:800; color:#4C574F; margin-bottom:4px; }
+.dnum.sun { color:#dc2626; } .dnum.sat { color:#2563EB; }
+.dnum.out { color:#CDD5D0; }
+.ev { display:block; font-size:10px; font-weight:700; line-height:1.35; padding:4px 6px; border-radius:5px; margin-bottom:3px; color:#fff; }
+.ev .et { display:block; font-size:9px; font-weight:800; opacity:.85; letter-spacing:.03em; }
+.ev.e1{background:#10B981}.ev.e2{background:#3B82F6}.ev.e3{background:#EC4899}
+.ev.e4{background:#F97316}.ev.e5{background:#14B8A6}.ev.e6{background:#16221C}
+.ev.ghost { background:#fff; border:1px dashed #CDD5D0; color:#6B756C; }
+.ev.hol { background:#FDECEE; color:#B3162A; }
+
+.footer { text-align: center; padding: 40px 0 10px; color: #8E9A92; font-size: 12px; line-height: 2; }
+
+@media (max-width: 768px) {
+  .container { padding: 76px 14px 40px; }
+  .meta-grid { grid-template-columns: repeat(2, 1fr); }
+  .map { grid-template-columns: 1fr 1fr; }
+  .two { grid-template-columns: 1fr; }
+  .section { padding: 24px 18px; }
+  .report-header { padding: 28px 20px; }
+  .report-header h1 { font-size: 25px; }
+  .mission-box { padding: 24px 20px; } .mission-box .lede { font-size:17px; }
+  .toolbar { padding: 0 16px; } .toolbar-title { display:none; }
+  .s-head { flex-wrap:wrap; gap:10px; } .s-head .sh-line { display:none; }
+  .copy .cl { grid-template-columns:60px 1fr; gap:8px; }
+  .copy { padding:6px 14px; }
+}
+@media print {
+  .toolbar { display: none; }
+  .container { padding: 0; max-width: none; }
+  .section { padding: 20px 22px; margin-bottom: 14px; }
+  table { font-size: 11.5px; }
+  th { font-size: 10px; padding: 7px 8px; white-space: normal; }
+  td { padding: 9px 8px; }
+  table.cal { min-width:0; width:100%; }
+  table.cal td { height:96px; padding:4px; }
+  .ev { font-size:8.5px; padding:3px 4px; }
+  body { background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .section, .mission-box, .cal-wrap { break-inside: avoid; }
+  .s-head { break-after: avoid; }
+  @page { size: A4; margin: 10mm; }
+}
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="toolbar-title">베지어트 · 콘텐츠 시리즈 기획안 v2</div>
+  <button class="btn-toolbar" onclick="window.print()">PDF 저장 · 인쇄</button>
+</div>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <div class="report-header">
+    <div class="label">VEGGIET CONTENT SERIES v2</div>
+    <h1>콘텐츠 <em>시리즈 기획안</em></h1>
+    <div class="meta-grid">
+      <div class="meta-item"><div class="mk">구성</div><div class="mv">코어 3 · 경량 2 · 캠페인 1</div></div>
+      <div class="meta-item"><div class="mk">채널</div><div class="mv">인스타그램 피드 · 릴스</div></div>
+      <div class="meta-item"><div class="mk">업로드</div><div class="mv">주 3~4편 (월 13~15편)</div></div>
+      <div class="meta-item"><div class="mk">작성일</div><div class="mv">2026. 08. 26</div></div>
+    </div>
+  </div>
+
+  <!-- MISSION -->
+  <div class="mission-box">
+    <div class="hl-label">이 기획안의 목적</div>
+    <div class="lede">기존 8개는 틀리지 않았습니다. 다만 <em>화력을 만든 두 개가 그 8개 안에 없었습니다.</em></div>
+    <div class="sub">4~5월에 8개 시리즈를 설계했습니다. 7~8월 실측을 보면 <strong>팔로워를 가장 싸게 만든 것</strong>(베지어트톡 · CPF ₩134~257)과 <strong>도달을 가장 크게 만든 것</strong>(브랜디드필름 · 28.8만)은 둘 다 그 8개에 <strong>없던 포맷</strong>입니다. 반대로 8개 중 절반은 8월에 한 번도 나가지 않았습니다.<br><br>그래서 v2는 <strong>새 시리즈를 더하는 기획이 아닙니다.</strong> 실제로 굴러간 것을 시리즈로 승격하고, 안 굴러간 것을 흡수·강등해 <strong>6개로 고정</strong>합니다. 그리고 8월 도달 붕괴의 원인이 포맷이 아니라 <strong>화자 자격</strong>이었다는 진단을 여섯 개 전부에 적용합니다. 맨 뒤에 <strong>9월 업로드 캘린더</strong>까지 붙였습니다.</div>
+  </div>
+
+  <!-- 진단 -->
+  <div class="section">
+    <h2>죽은 건 포맷이 아니라 <em>화자 자격</em>입니다</h2>
+    <div class="sec-sub">같은 시리즈 · 같은 제작비 · 다른 결과 — 차이는 &ldquo;누가 말했는가&rdquo; 하나입니다</div>
+    <table>
+      <thead><tr><th style="width:96px;">&nbsp;</th><th>7월 &mdash; 먹힘</th><th>8월 &mdash; 죽음</th></tr></thead>
+      <tbody>
+        <tr><td class="item">같은 시리즈</td><td class="desc">베지어트톡 3편</td><td class="desc">베지어트톡 마케팅팀편</td></tr>
+        <tr><td class="item">문형</td><td class="desc"><b>&ldquo;먹을 게 정말 없었어요&rdquo;</b> &mdash; 1인칭 고백</td><td class="desc">&ldquo;어디서 사야 가장 이득인가요&rdquo; &mdash; 3인칭 안내</td></tr>
+        <tr><td class="item">화자 자격</td><td class="desc">못 먹어 본 <b>당사자</b></td><td class="desc">부서 <b>소개자</b></td></tr>
+        <tr><td class="item">실측</td><td class="desc"><b>광고비 0원</b> · 도달 4,000 · 팔로우 <b>+53 (1.33%)</b></td><td class="desc">도달 3,521 · 프로필 방문 106</td></tr>
+        <tr><td class="item">대비</td><td class="desc">브랜디드필름의 <b>12배</b> · 올영 1위 인증의 <b>33배</b> 전환</td><td class="desc">&mdash;</td></tr>
+      </tbody>
+    </table>
+    <div class="note warn"><strong>어느 브랜드나 할 수 있는 말은 도달을 못 만듭니다.</strong> 홀블렌딩이 8/16부터 광고 물량을 5소구(약사·맛·허기짐·클린·간편)로 넓혔습니다. <strong>공용어로 붙으면 예산 큰 쪽이 이깁니다.</strong> 우리가 이길 수 있는 자리는 홀블렌딩이 구조적으로 못 쓰는 문장 하나뿐입니다.</div>
+    <div class="note calm"><strong>물량으로도 이미 이기고 있습니다.</strong> 홀블렌딩은 게시물 <strong>523개</strong>로 팔로워 6,747명, 베지어트는 <strong>130개</strong>로 8,879명입니다. 편수를 늘리는 건 우리가 유리한 판을 버리는 선택입니다. <span class="tbd">팔로워 실측 8,879 &mdash; 내부 &ldquo;~1만&rdquo; 표기는 정정 필요</span></div>
+  </div>
+
+  <!-- 자른 기준 -->
+  <div class="section">
+    <h2>8개를 <em>6개로 자른 기준</em></h2>
+    <div class="sec-sub">세 가지를 전부 통과해야 코어입니다 &mdash; 하나라도 걸리면 경량 · 캠페인 · 흡수로 내립니다</div>
+    <table>
+      <thead><tr><th style="width:120px;">기준</th><th>뜻</th></tr></thead>
+      <tbody>
+        <tr><td class="item">A · 화자 자격</td><td class="desc"><b>못 먹던 사람</b>이거나 <b>어려운 쪽을 떠맡은 사람</b>이 말하는가 &mdash; 소개자가 말하면 탈락</td></tr>
+        <tr><td class="item">B · 유일성</td><td class="desc">홀블렌딩이 <b>똑같이 못 하는가</b></td></tr>
+        <tr><td class="item">C · 양산</td><td class="desc">섭외비·외주 없이 <b>우리 손으로 주 단위로</b> 굴릴 수 있는가</td></tr>
+      </tbody>
+    </table>
+
+    <table style="margin-top:22px;">
+      <thead><tr><th>후보 (기존 8 + 실운영 3)</th><th class="c" style="width:42px;">A</th><th class="c" style="width:42px;">B</th><th class="c" style="width:42px;">C</th><th style="width:230px;">판정</th></tr></thead>
+      <tbody>
+        <tr><td class="item">베지어트톡 <span style="font-weight:400;color:#8E9A92;">(기획안에 없던 것)</span></td><td class="c"><span class="o">◎</span></td><td class="c"><span class="o">◎</span></td><td class="c"><span class="o">◎</span></td><td class="item" style="color:#067A4E;">코어 1 <span class="tbd">승격</span></td></tr>
+        <tr><td class="item">VEGGIET LAB <span style="font-weight:400;color:#8E9A92;">(=베지어트랩)</span></td><td class="c"><span class="o">○</span></td><td class="c"><span class="o">◎</span></td><td class="c"><span class="o">○</span></td><td class="item" style="color:#1D4ED8;">코어 2 &mdash; 유지 + 훅 교체</td></tr>
+        <tr><td class="item">잘 채우는 사람들 <span style="font-weight:400;color:#8E9A92;">(+ 이달의 베지어터 통합)</span></td><td class="c"><span class="t">△</span></td><td class="c"><span class="o">○</span></td><td class="c"><span class="t">△</span></td><td class="item" style="color:#BE1D6C;">코어 3 <span class="tbd">섭외 기준 교체 조건</span></td></tr>
+        <tr><td class="item">MY VEGGIET</td><td class="c"><span class="t">△</span></td><td class="c"><span class="o">○</span></td><td class="c"><span class="o">◎</span></td><td class="item" style="color:#C2410C;">경량 1 &mdash; 주제 기준만 교체</td></tr>
+        <tr><td class="item">SNS 이벤트</td><td class="c"><span class="x">✗</span></td><td class="c"><span class="t">△</span></td><td class="c"><span class="o">◎</span></td><td class="item" style="color:#0F766E;">경량 2 &mdash; 8월 유일한 참여 포맷</td></tr>
+        <tr><td class="item">30일 1기 <span style="font-weight:400;color:#8E9A92;">(신규 · 커뮤니티)</span></td><td class="c"><span class="o">◎</span></td><td class="c"><span class="o">◎</span></td><td class="c"><span class="x">✗</span></td><td class="item">캠페인 (분기 1회)</td></tr>
+        <tr><td class="desc">브랜디드필름 <span style="color:#8E9A92;">(기획안에 없던 것)</span></td><td class="c"><span class="o">○</span></td><td class="c"><span class="o">○</span></td><td class="c"><span class="x">✗</span></td><td class="desc">↓ 시리즈 아님 &rarr; <b>코어 3의 분기 대형편</b>으로 흡수</td></tr>
+        <tr><td class="desc">베지터뷰 · 길터뷰</td><td class="c"><span class="o">○</span></td><td class="c"><span class="o">○</span></td><td class="c"><span class="t">△</span></td><td class="desc">↓ <b>코어 1의 화자 3층</b>으로 흡수 (7월 길터뷰 자산 재활용)</td></tr>
+        <tr><td class="desc">베지어택!</td><td class="c"><span class="o">○</span></td><td class="c"><span class="t">△</span></td><td class="c"><span class="x">✗</span></td><td class="desc">↓ <b>코어 3의 현장 포착 레이어</b>로 흡수 &mdash; 단독 섭외 부담이 실행을 막았음</td></tr>
+        <tr><td class="desc">VEGGIET MOMENT</td><td class="c"><span class="x">✗</span></td><td class="c"><span class="x">✗</span></td><td class="c"><span class="o">◎</span></td><td class="desc">↑ 시리즈 아님 &rarr; <b>전 시리즈 공통 비주얼 규칙</b>으로 승격</td></tr>
+        <tr><td class="desc">Let&rsquo;s Veggiet</td><td class="c"><span class="t">△</span></td><td class="c"><span class="o">○</span></td><td class="c">—</td><td class="desc">↓ <b>스팟</b>(행사 시) &mdash; 상시 축 아님. 8/12 야외요가 도달 <b>744</b></td></tr>
+      </tbody>
+    </table>
+    <div class="note warn"><strong>코어를 4개 이상 두면 안 되는 이유</strong> &mdash; 코어가 늘면 전부 주 1회 미만이 되고, 리뉴얼이 &ldquo;바뀐 티&rdquo;가 안 납니다. 3개는 각각 주 1편 = <strong>월 12편</strong>이 나오는 최소 단위입니다. 그리고 <strong>8월에 편수는 유지했는데 도달·전환이 같이 빠졌습니다.</strong> 편수는 답이 아니었습니다.</div>
+  </div>
+
+  <!-- 한눈에 -->
+  <div class="section">
+    <h2>6개 시리즈 <em>한눈에</em></h2>
+    <div class="sec-sub">색은 시리즈 구분이며, 맨 뒤 9월 캘린더에서도 같은 색을 씁니다</div>
+    <div class="axis">
+      <span class="ax"><i class="c-core"></i>코어 · 주 1편</span>
+      <span class="ax"><i class="c-light"></i>경량 · 손이 덜 가는 것</span>
+      <span class="ax"><i class="c-camp"></i>캠페인 · 분기 1회</span>
+    </div>
+    <div class="map">
+      <div class="mp k1 hero"><div class="mp-n">코어 1</div><div class="mp-t">베지어트톡</div><div class="mp-d">사람이 말한다 &mdash; 팔로워 전환</div><div class="mp-f">주 1 · CPF ₩134~257</div></div>
+      <div class="mp k2"><div class="mp-n">코어 2</div><div class="mp-t">VEGGIET LAB</div><div class="mp-d">제품이 말한다 &mdash; 신뢰 · SKU 확장</div><div class="mp-f">주 1 · 신제품마다 1편</div></div>
+      <div class="mp k3"><div class="mp-n">코어 3</div><div class="mp-t">잘 채우는 사람들</div><div class="mp-d">고객이 말한다 &mdash; 도달 · 모수</div><div class="mp-f">주 1 · 분기 대형편</div></div>
+      <div class="mp k4"><div class="mp-n">경량 1</div><div class="mp-t">MY VEGGIET</div><div class="mp-d">먹는 법 &mdash; 저장 유도</div><div class="mp-f">주 1 · 제작 부담 최소</div></div>
+      <div class="mp k5"><div class="mp-n">경량 2</div><div class="mp-t">SNS 이벤트</div><div class="mp-d">참여 &mdash; 채널 확장</div><div class="mp-f">월 1</div></div>
+      <div class="mp k6"><div class="mp-n">캠페인</div><div class="mp-t">30일 1기</div><div class="mp-d">증명 &mdash; 커뮤니티 · 자사몰</div><div class="mp-f">분기 1회 · 9월 시작</div></div>
+    </div>
+    <div class="note"><strong>여섯 개 전부 한 사람에게 말합니다 &mdash; 「먹을 게 없던 사람」.</strong> 운동하는 사람이 아닙니다. 식물성 실구매 720만 명 중 <strong>97%가 채식주의자가 아니고</strong>(건강 33.5% · 맛 궁금 26.0% · 채식 2.9%), 지금 우리 시딩은 그 2.9%를 향하고 있습니다. <strong>운동하는 사람은 먹을 게 많은 사람입니다.</strong></div>
+    <div class="note calm"><strong>키 메시지는 8/27 콜미팅에서 확정됩니다.</strong> 현행 「매일 먹어도 속 편한, 식물성 프로틴의 기준」은 ①라인 6종 중 절반도 못 덮고 ②홀블렌딩 문장의 부분집합이며 ③검색 결과 0건이고 ④리뷰 3,091건에서 고객이 안 쓰는 말입니다(&ldquo;고소하다&rdquo; 698회 : &ldquo;속 편하다&rdquo; 60회 = 11.6:1). 이 기획안은 <strong>A안 「먹을 게 없어서, 만듭니다」</strong> 기준으로 작성했습니다. <span class="tbd">문장 미확정 &mdash; 8/27 확정</span></div>
+  </div>
+
+
+  <!-- ══════════════ 코어 1 ══════════════ -->
+  <div class="s-head">
+    <span class="sh-n">코어 1</span>
+    <span class="sh-t">베지어트<em>톡</em></span>
+    <span class="sh-line"></span>
+    <span class="sh-tag">사람이 말한다 · 팔로워 엔진</span>
+  </div>
+
+  <div class="section">
+    <h2>부서를 소개하지 말고, <em>자격을 걸고 나옵니다</em></h2>
+    <div class="sec-sub">기획안에 없던 포맷인데 가장 싼 팔로워를 만들었습니다 &mdash; 이번에 정식 시리즈로 승격합니다</div>
+    <div class="chips">
+      <span class="chip on">릴스 40~60초 · 토킹헤드</span>
+      <span class="chip gr">제작비 0원 포맷</span>
+      <span class="chip">주 1편 고정 요일</span>
+      <span class="chip rd">부서 릴레이 폐기</span>
+    </div>
+    <p class="body">7월 CPF 실측은 톡4 <b>₩134</b> · 톡2 <b>₩215</b> · 톡3 <b>₩257</b>입니다. 같은 기간 브랜디드필름은 <b>₩3,136~6,164</b>였습니다. <b>20배 차이</b>입니다. 그런데 8월에 화자를 대표에서 부서로 넘기면서 도달이 3,521까지 떨어졌습니다. 포맷은 그대로였습니다. <b>바뀐 건 나오는 사람의 자격입니다.</b></p>
+
+    <div class="two" style="margin-top:18px;">
+      <div class="mcard hero"><div class="mc-n">출연 자격 A</div><div class="mc-t">못 먹던 사람</div><div class="mc-d">본인이 유당불내증·아침 못 먹음·속 불편 등 <b>당사자</b>인 사람</div><div class="mc-x"><b>검증</b> &mdash; 7월 톡3 「먹을게 정말 없었어요」가 이 자격의 유일한 사례이자 최고 효율편입니다.</div></div>
+      <div class="mcard hero"><div class="mc-n">출연 자격 B</div><div class="mc-t">어려운 쪽을 떠맡은 사람</div><div class="mc-d">남들은 안 하는 걸 우리는 한다 &mdash; 직접 물류·원물 검수·소량 생산</div><div class="mc-x"><b>검증</b> &mdash; 물류편이 살아난 이유가 여기입니다. 대표님이 직접 넣은 <b>&ldquo;휴닉은 직접 물류를 관리한다&rdquo;</b> 한 줄이 부서 소개를 <b>떠맡음의 증거</b>로 바꿨습니다.</div></div>
+    </div>
+    <div class="note warn"><strong>둘 다 아니면 찍지 않습니다.</strong> 마케팅팀편이 죽은 이유가 정확히 이것입니다 &mdash; A도 B도 아니었습니다. <strong>부서 단위로 섭외하지 않습니다.</strong> 부서는 유한하고(다 돌면 끝), 시청자는 우리 조직도에 관심이 없습니다. 자격 보유자를 부서와 무관하게 찾습니다.</div>
+
+    <table style="margin-top:22px;">
+      <thead><tr><th style="width:110px;">항목</th><th>규칙</th></tr></thead>
+      <tbody>
+        <tr><td class="item">훅 공식</td><td class="desc"><b>[1인칭 결핍 고백] + [그래서 우리가 한 일]</b><br>&ldquo;저는 우유를 못 마셔요&rdquo; / &ldquo;저는 아침을 못 먹어요&rdquo; / &ldquo;남들은 이걸 안 합니다&rdquo;</td></tr>
+        <tr><td class="item">중간 구조</td><td class="desc">① 결핍 고백 &rarr; ② <b>그때 시장에 있던 것들의 문제</b> &rarr; ③ 그래서 바꾼 것 = <b>사실 1개</b> &rarr; ④ 지금은 이렇게 먹는다</td></tr>
+        <tr><td class="item">문법 규칙</td><td class="desc"><span class="stop">소개 금지</span> &ldquo;저희 팀은요&rdquo;·&ldquo;오늘은 소개해드릴&rdquo;로 시작하지 않습니다. <b>첫 문장이 곧 고백</b>이어야 합니다</td></tr>
+        <tr><td class="item">양산</td><td class="desc">◎ 촬영 장비·인트로 모션(5초)·썸네일 컬러 배리에이션 <b>이미 확보</b>(8/10 전달 완료) &mdash; 남은 건 <b>자격 보유자 명단</b>뿐입니다</td></tr>
+        <tr><td class="item">CTA</td><td class="desc">&ldquo;다음 편 놓치지 않으려면 팔로우&rdquo; + 시리즈 라벨 &mdash; <b>열린 루프</b> 유지 (7월 검증분)</td></tr>
+      </tbody>
+    </table>
+
+    <div class="copy-t">화자 3층 &mdash; 누가 어느 시제를 맡는가 <span>대표님 출연 부담이 여기서 구조적으로 줄어듭니다</span></div>
+    <table style="margin-top:10px;">
+      <thead><tr><th style="width:76px;">층</th><th style="width:120px;">화자</th><th style="width:150px;">맡는 시제</th><th>빈도</th></tr></thead>
+      <tbody>
+        <tr><td class="item">원본</td><td class="desc">대표(진아)</td><td class="desc"><b>왜 만들기 시작했나</b> (과거)</td><td class="desc"><span class="stop">매주 아님</span> 분기 앵커 <b>1편</b></td></tr>
+        <tr><td class="item">증거</td><td class="desc">직원 (자격 A/B)</td><td class="desc"><b>지금도 그렇게 하고 있다</b> (현재)</td><td class="desc">주간 축 = 여기</td></tr>
+        <tr><td class="item">결과</td><td class="desc">고객 · 앰버서더</td><td class="desc"><b>그래서 이렇게 됐다</b> (결과)</td><td class="desc">코어 3에서 처리</td></tr>
+      </tbody>
+    </table>
+    <div class="copy-x"><b>이 구조가 8/10 미회신 건을 풉니다</b> &mdash; 위클리 질문(&ldquo;대표님이 혹시 더 출연할 계획이 있을까요&rdquo;)에 우리가 먼저 답을 줄 수 있습니다. 대표님은 <b>분기 1편의 원본</b>만 맡고, 주간 화력은 직원이 맡습니다. 다만 <b>원본 없이 증거만 쌓으면 다시 부서 릴레이로 돌아갑니다</b> &mdash; 9월 1편은 대표 원본으로 여는 게 안전합니다.</div>
+
+    <div style="font-size:12px;font-weight:800;color:#067A4E;letter-spacing:.04em;margin:26px 0 4px;">대기 소재 &mdash; 자격만 확인되면 바로 편성</div>
+    <table>
+      <thead><tr><th style="width:76px;">자격</th><th style="width:230px;">회차</th><th>근거 · 상태</th></tr></thead>
+      <tbody>
+        <tr><td class="item">A</td><td class="desc">우유를 못 마시는 사람 &mdash; 9월 신제품 연계</td><td class="desc">서리태 콩물두유 출시(9/1~10)와 정확히 겹침. <b>A문장의 첫 증명</b></td></tr>
+        <tr><td class="item">A</td><td class="desc">아침을 못 먹는 사람</td><td class="desc">클렌즈 라인의 진짜 대상. 리뷰 원문 루틴 확보</td></tr>
+        <tr><td class="item">A</td><td class="desc">명절에 먹을 게 없는 사람</td><td class="desc"><b>추석 D-14주(9/11~17)에 배치.</b> 명절은 못 먹는 사람이 1년 중 가장 힘든 주간</td></tr>
+        <tr><td class="item">B</td><td class="desc">3PL을 안 쓰는 이유</td><td class="desc">물류편 확정 문구 재활용. <b>3PL 전환 없음 확인됨</b></td></tr>
+        <tr><td class="item">B</td><td class="desc">원물을 직접 보러 가는 이유</td><td class="desc">산지 방문분 &mdash; Let&rsquo;s Veggiet 스팟 촬영분과 공유</td></tr>
+        <tr><td class="desc" colspan="3" style="color:#8E9A92;">🔴 자격 A/B 보유 직원 명단을 우리가 모릅니다 &mdash; 인국님·예랑님에게 요청해야 9~10월 편성이 닫힙니다</td></tr>
+      </tbody>
+    </table>
+    <div class="note warn"><strong>규제 가드</strong> &mdash; 광고 소재에 <strong>질병명 직접 노출 금지</strong>, 제품–질병 개선 연결 금지. &ldquo;먹을 게 없었다&rdquo;는 <strong>동기 서술까지만</strong> 갑니다. 개인 경험 상세는 오가닉 롱폼에서만, 광고 증폭 소재엔 축약형. <strong>&ldquo;속 편한&rdquo;은 식품표시광고법 별표1 4호 라목(신체조직 기능 표현)에 걸립니다</strong> &mdash; 식약처가 &ldquo;목에 좋은 차&rdquo;를 실제 적발했습니다.</div>
+  </div>
+
+
+  <!-- ══════════════ 코어 2 ══════════════ -->
+  <div class="s-head">
+    <span class="sh-n">코어 2</span>
+    <span class="sh-t">VEGGIET <em>LAB</em></span>
+    <span class="sh-line"></span>
+    <span class="sh-tag">제품이 말한다 · SKU 확장 엔진</span>
+  </div>
+
+  <div class="section">
+    <h2>성분을 나열하지 말고, <em>누가 못 먹어서 만들었는지</em>부터 말합니다</h2>
+    <div class="sec-sub">기존 설계에서 가장 잘 살아남은 시리즈입니다 &mdash; 훅 한 줄만 교체합니다</div>
+    <div class="chips">
+      <span class="chip on">캐러셀 또는 릴스</span>
+      <span class="chip gr">Sweetgreen &mdash; 식재료가 히어로</span>
+      <span class="chip">단색 배경 + 원재료 누끼 + 타이포</span>
+    </div>
+
+    <table style="margin-top:16px;">
+      <thead><tr><th style="width:130px;">&nbsp;</th><th style="width:44%;">기존 (4~5월 설계)</th><th>v2 업그레이드</th></tr></thead>
+      <tbody>
+        <tr><td class="item">🟢 그대로 살림</td><td class="desc">Sweetgreen 레퍼런스 · 단색 배경 원재료 누끼 · <b>성분표 나열 금지</b> · &ldquo;재료 자체가 말하는&rdquo; 방식</td><td class="desc">변경 없음. <b>이 시리즈의 비주얼 규칙은 8개 중 유일하게 지켜졌습니다</b></td></tr>
+        <tr><td class="item">🔄 바꿈 &mdash; 훅</td><td class="desc">&ldquo;이 한 스쿱이 만들어지기까지&rdquo; &mdash; <b>공정 서사</b></td><td class="desc"><b>&ldquo;누가 못 먹어서 이 원물이어야 했나&rdquo;</b> &mdash; 첫 장에 대상을 박습니다</td></tr>
+        <tr><td class="item">🔄 바꿈 &mdash; 축</td><td class="desc">원물 순도 · 함량 · 산지</td><td class="desc"><span class="stop">순도 싸움 금지</span> 홀블렌딩 「블랙빈」(6/17 출시 · 서리태 30%)이 이미 있습니다. <b>&ldquo;서리태 독자 축 보유&rdquo;는 더 이상 사실이 아닙니다</b></td></tr>
+        <tr><td class="item">🆕 추가</td><td class="desc">&mdash;</td><td class="desc"><b>신제품 출시마다 1편 고정.</b> SKU가 늘 때 새 시리즈를 만들지 않고 <b>이 시리즈가 흡수</b>합니다</td></tr>
+      </tbody>
+    </table>
+
+    <div class="copy-t">EP · 서리태 콩물두유 <span>9월 출시 &mdash; A문장의 첫 증명</span></div>
+    <div class="copy">
+      <div class="cl"><div class="ck">1 · 대상</div><div class="cv">우유를 못 마시는 사람은
+아침에 마실 게 없습니다.</div></div>
+      <div class="cl"><div class="ck">2 · 오답부정</div><div class="cv">두유요? 대부분 설탕이 먼저 들어갑니다.
+락토프리요? 그건 여전히 우유예요.</div></div>
+      <div class="cl"><div class="ck">3 · 원물</div><div class="cv">그래서 서리태로 갔습니다.
+(원물 히어로 샷 &mdash; 서리태 클로즈업)</div></div>
+      <div class="cl"><div class="ck">4 · 사실</div><div class="cv">[검증된 숫자 1개만]</div></div>
+      <div class="cl"><div class="ck">엔딩</div><div class="cv">먹을 게 없어서, 만듭니다.</div></div>
+    </div>
+    <div class="copy-x"><b>🔴 주어는 &ldquo;콩물&rdquo;이 아니라 &ldquo;서리태&rdquo;입니다.</b> 콩물은 완전한 여름 키워드입니다(9/1 19.7 &rarr; 9/22 8.3). <b>서리태는 11월 피크</b>입니다. 9월은 인지 확보, 진짜 화력은 <b>11/16 브랜드 세일</b>에 겁니다.</div>
+
+    <div style="font-size:12px;font-weight:800;color:#067A4E;letter-spacing:.04em;margin:26px 0 4px;">대기 소재 &mdash; 기존 설계에서 그대로 가져오는 것</div>
+    <table>
+      <thead><tr><th style="width:170px;">회차</th><th>상태</th></tr></thead>
+      <tbody>
+        <tr><td class="item">베지어트랩 1탄 &mdash; 완두</td><td class="desc">8/14 완성본 수령. <b>발행일 미확정</b></td></tr>
+        <tr><td class="item">베지어트랩 2탄 &mdash; 딸기</td><td class="desc">9월 이월 확정. 1탄 아웃트로에 프리뷰가 걸려 있어 <b>간격이 벌어지면 김이 빠집니다</b> &mdash; 9/18~22 배치</td></tr>
+        <tr><td class="item">딸기 프로틴 개발 237일</td><td class="desc">기존 설계 자산. 동결건조 딸기 23% &mdash; <b>&ldquo;원가 감당 안 된다고 모두가 말렸지만&rdquo;</b> = 자격 B(떠맡음)와 같은 축</td></tr>
+        <tr><td class="item">서리태 산지 기록</td><td class="desc">기존 설계 자산. Let&rsquo;s Veggiet 산지 방문 스팟과 촬영 공유</td></tr>
+      </tbody>
+    </table>
+    <div class="note warn"><strong>규제 &mdash; 발행 전 처리해야 하는 4건</strong><br>① <strong>&ldquo;No.1&rdquo; 표기 삭제</strong> ② <strong>&ldquo;한국인 75% 유당불내증&rdquo; 삭제</strong> &mdash; 원논문 2025-01 철회, 대체 수치 31.9% ③ <strong>「클렌즈」 제품명 검토</strong> &mdash; 2026.7.23 &lsquo;클렌즈·디톡스&rsquo; 표현 <strong>26개소 115억 적발</strong>, 제품명이라고 면제되지 않습니다 ④ <strong>&ldquo;-23kg 감량&rdquo; 카피 교체</strong>. <strong>챌린지로 트래픽이 늘기 전에</strong> 처리합니다.</div>
+  </div>
+
+
+  <!-- ══════════════ 코어 3 ══════════════ -->
+  <div class="s-head">
+    <span class="sh-n">코어 3</span>
+    <span class="sh-t">잘 채우는 <em>사람들</em></span>
+    <span class="sh-line"></span>
+    <span class="sh-tag">고객이 말한다 · 도달 · 모수</span>
+  </div>
+
+  <div class="section">
+    <h2>섭외 기준을 <em>운동에서 &ldquo;못 먹음&rdquo;으로</em> 바꿉니다</h2>
+    <div class="sec-sub">기존 「이달의 베지어터」 + 현재 운영 중인 앰버서더 브랜디드를 <b>한 시리즈로 통합</b>합니다</div>
+    <div class="chips">
+      <span class="chip on">릴스 (인플루언서 콘텐츠 재가공)</span>
+      <span class="chip gr">29CM_HOME &mdash; 일상 공간 · 자연광 · 진짜 사람</span>
+      <span class="chip rd">운동인 섭외 중단</span>
+    </div>
+
+    <table style="margin-top:16px;">
+      <thead><tr><th style="width:130px;">&nbsp;</th><th style="width:44%;">기존 (4~5월 설계)</th><th>v2 업그레이드</th></tr></thead>
+      <tbody>
+        <tr><td class="item">🟢 그대로 살림</td><td class="desc">29CM_HOME 레퍼런스 · 인플루언서 콘텐츠에 <b>브랜드 인트로를 붙여 재가공</b> · 일상 공간 실사</td><td class="desc">변경 없음. <b>제작비 대비 가장 효율적인 구조</b>입니다</td></tr>
+        <tr><td class="item">🔴 바꿈 &mdash; 섭외</td><td class="desc">러너 지은 · 필라테스 강사 수진 · 두 아이 엄마 지혜 &mdash; <b>3명 중 2명이 운동인</b></td><td class="desc"><b>&ldquo;못 먹던 사람&rdquo;으로 교체.</b> 유당불내증 · 아침 못 먹는 직장인 · 우유 못 먹는 아이의 부모 · 수험생</td></tr>
+        <tr><td class="item">🔄 흡수</td><td class="desc">베지어택!(시딩 현장 포착) &mdash; 단독 섭외 부담으로 미실행</td><td class="desc">이 시리즈의 <b>현장 포착 레이어</b>로 붙입니다. 섭외를 두 번 하지 않습니다</td></tr>
+        <tr><td class="item">🔄 흡수</td><td class="desc">브랜디드필름 &mdash; 시리즈 아닌 단발</td><td class="desc">이 시리즈의 <b>분기 대형편</b>. 도달 13만+ 담당, <b>편당 ₩200만 캡</b> 유지</td></tr>
+      </tbody>
+    </table>
+
+    <div class="note warn"><strong>🔴 지금 우리는 720만 중 2.9%에게 시딩하고 있습니다.</strong> 시딩 타겟이 <strong>넓어지는 게 아니라 정확해지는</strong> 변경입니다. 운동하는 사람은 이미 먹을 게 많은 사람입니다.</div>
+
+    <table style="margin-top:20px;">
+      <thead><tr><th style="width:120px;">제품</th><th style="width:130px;">지금 시딩</th><th>바꿀 대상</th></tr></thead>
+      <tbody>
+        <tr><td class="item">프로틴</td><td class="desc">운동인</td><td class="desc">유청에 속이 뒤집히는 사람 · 유당불내증</td></tr>
+        <tr><td class="item">클렌즈</td><td class="desc">운동인</td><td class="desc"><b>아침을 못 먹는 직장인</b></td></tr>
+        <tr><td class="item">베지포유</td><td class="desc">운동인</td><td class="desc"><b>아이 · 수험생</b> &mdash; 단백질 쉐이크를 줄 일이 없는 대상</td></tr>
+        <tr><td class="item">넛츠밀크</td><td class="desc">운동인</td><td class="desc">우유를 못 먹는 사람 <span class="tbd">콩물두유와 충돌 &mdash; §SKU 참조</span></td></tr>
+      </tbody>
+    </table>
+    <div class="copy-x"><b>선결</b> &mdash; 팔로워 전용 쿠폰 코드 + UTM. 없으면 &ldquo;자사몰 구매 활성화&rdquo;를 달성해도 증명이 안 됩니다. <span class="tbd">8/27 요청</span></div>
+  </div>
+
+
+  <!-- ══════════════ 경량 1 ══════════════ -->
+  <div class="s-head">
+    <span class="sh-n">경량 1</span>
+    <span class="sh-t">MY <em>VEGGIET</em></span>
+    <span class="sh-line"></span>
+    <span class="sh-tag">먹는 법 · 저장 유도</span>
+  </div>
+
+  <div class="section">
+    <h2>&ldquo;맛있게 먹는 법&rdquo;이 아니라 <em>&ldquo;못 먹는 사람이 먹는 법&rdquo;</em></h2>
+    <div class="sec-sub">기존 컨셉(&ldquo;이렇게 먹으면 맛있어요&rdquo;가 아니라 &ldquo;이렇게 먹고 있어요&rdquo;)이 이미 정답에 가까웠습니다 &mdash; 주제 선정 기준만 겁니다</div>
+    <div class="chips">
+      <span class="chip on">릴스 30~60초 · 탑뷰/사이드뷰</span>
+      <span class="chip gr">얼음 · 셰이커 · 따르는 소리</span>
+      <span class="chip">제작 부담 최소 &mdash; 경량 축</span>
+    </div>
+    <p class="body">리뷰 3,091건에서 <b>&ldquo;고소하다&rdquo;가 698회</b>로 압도적 1위입니다. <b>맛 축은 살아 있습니다.</b> 다만 레시피를 &ldquo;더 맛있게&rdquo;로 열면 어느 브랜드나 하는 말이 되므로, 도입부를 <b>결핍</b>으로 엽니다.</p>
+    <table style="margin-top:18px;">
+      <thead><tr><th style="width:130px;">&nbsp;</th><th style="width:44%;">기존 예시</th><th>v2 &mdash; 같은 레시피, 다른 도입</th></tr></thead>
+      <tbody>
+        <tr><td class="item">얼죽아 미숫가루</td><td class="desc">&ldquo;예랑님 실제 루틴 &mdash; 바이럴 가능&rdquo;</td><td class="desc">&ldquo;<b>커피를 못 마시는 날</b>의 아침&rdquo;</td></tr>
+        <tr><td class="item">아침 5분 프로틴 볼</td><td class="desc">&ldquo;오트밀+서리태+과일 &mdash; 저장 유도&rdquo;</td><td class="desc">&ldquo;<b>아침을 못 먹는 사람</b>의 5분&rdquo;</td></tr>
+        <tr><td class="item">딸기 스무디</td><td class="desc">&ldquo;신제품 연계 레시피&rdquo;</td><td class="desc">&ldquo;<b>우유를 못 먹는 사람</b>의 라떼&rdquo;</td></tr>
+      </tbody>
+    </table>
+    <div class="note calm">🟢 <strong>고객이 이미 하고 있는 루틴이 소재입니다.</strong> 리뷰 원문 &mdash; <em>&ldquo;아침 베지포유 / 점심 일반식+효소 / 저녁 베지어트 2스푼&rdquo;</em>. <strong>하루 3회 접점 × 30일 = 90번의 접촉</strong>이고, 이건 그대로 캠페인(30일 1기)의 뼈대가 됩니다.</div>
+  </div>
+
+
+  <!-- ══════════════ 경량 2 ══════════════ -->
+  <div class="s-head">
+    <span class="sh-n">경량 2</span>
+    <span class="sh-t">SNS <em>이벤트</em></span>
+    <span class="sh-line"></span>
+    <span class="sh-tag">참여 · 채널 확장</span>
+  </div>
+
+  <div class="section">
+    <h2>8월에 <em>유일하게 참여를 만든 포맷</em>입니다</h2>
+    <div class="sec-sub">브랜드 문장과 분리해서 굴리지 말고, <b>캠페인 모집 장치</b>로 씁니다</div>
+    <p class="body">8/5 멧챠 카멜레온 이벤트 &mdash; 도달 <b>9,263</b> · 댓글 <b>130</b> · 프로필 방문 <b>436</b>. <b>8월 전체 최고 기록</b>이고, 8월에 참여를 만든 유일한 포맷입니다.</p>
+    <table style="margin-top:16px;">
+      <thead><tr><th style="width:130px;">&nbsp;</th><th style="width:44%;">기존</th><th>v2 업그레이드</th></tr></thead>
+      <tbody>
+        <tr><td class="item">🟢 그대로 살림</td><td class="desc">트렌디한 포맷 차용 · 브랜드 무드 해치지 않는 선 · 월 1회</td><td class="desc">변경 없음. <b>실측이 가장 명확한 포맷</b>입니다</td></tr>
+        <tr><td class="item">🔄 바꿈</td><td class="desc">단발 이벤트 &mdash; 끝나면 남는 게 없음</td><td class="desc"><b>9월 이벤트 = 30일 1기 모집</b>으로 연결. 참여자가 <b>명단</b>으로 남습니다</td></tr>
+      </tbody>
+    </table>
+    <div class="copy-x">🔴 <b>이벤트가 전환까지 갔는지 아직 모릅니다.</b> 멧챠 이벤트의 자사몰 전환 수치(주문·유입)는 <b>2주 넘게 미회신</b> 상태입니다. 이 숫자가 있어야 9월 이벤트에 예산을 붙일지 정할 수 있습니다. <span class="tbd">8/27 재요청</span></div>
+  </div>
+
+
+  <!-- ══════════════ 캠페인 ══════════════ -->
+  <div class="s-head">
+    <span class="sh-n">캠페인</span>
+    <span class="sh-t">30일 <em>1기</em></span>
+    <span class="sh-line"></span>
+    <span class="sh-tag">증명 · 분기 1회</span>
+  </div>
+
+  <div class="section">
+    <h2>새로 만드는 게 아니라 <em>재점화</em>입니다</h2>
+    <div class="sec-sub">팀이 &ldquo;커뮤니티를 만들까 말까&rdquo;로 3시간을 쓴 이유는, 이미 팔리고 있다는 사실을 몰라서였습니다</div>
+    <table>
+      <thead><tr><th style="width:150px;">이미 있는 것</th><th>상태</th></tr></thead>
+      <tbody>
+        <tr><td class="item">[30일 챌린지팩]</td><td class="desc"><b>74,900원에 이미 판매 중</b>입니다. 게다가 <b>상시 판매</b>로 확인됐습니다 &rarr; 소구축은 &ldquo;마감 임박&rdquo;이 아니라 <b>&ldquo;왜 30일인가&rdquo;</b> 하나입니다</td></tr>
+        <tr><td class="item">직원 챌린지 서사</td><td class="desc">[4주 식단완성] 상품 카피에 <b>이미 들어가 있습니다</b> &mdash; 코어 1의 자격 A와 같은 자산</td></tr>
+        <tr><td class="item">카페24 게시판 4종</td><td class="desc"><b>개발비 0</b>으로 세팅 가능</td></tr>
+        <tr><td class="item">굿즈</td><td class="desc">30일을 눈에 보이게 하는 물건 &mdash; <b>9/15 발주 마감</b>, 별건 진행 중</td></tr>
+      </tbody>
+    </table>
+    <div class="note"><strong>이지 스타터팩 = 30일 키트 = 챌린지 입장권.</strong> 세 개가 같은 물건입니다. 8/20 베지어트톡 아웃트로에 이미 &ldquo;30일 챌린지 이지 스타터팩&rdquo;이 들어가 있어서, <strong>문장이 굳으면 이게 우연이 아니라 시리즈가 됩니다.</strong></div>
+    <div class="note warn"><strong>🔴 정기구독은 올영이 아니라 자기 단품에 지고 있습니다.</strong> 자사몰 안에서 3+1 패키지가 <strong>57% 할인</strong>인데 정기구독은 <strong>최대 8%</strong>입니다. 할인율을 고치지 말고 <strong>비교를 없애는</strong> 구독 전용 SKU(「30일 루틴 키트」)가 필요합니다 &mdash; 8/27 안건 5번.</div>
+
+    <div class="copy-t">스팟 &mdash; Let&rsquo;s Veggiet <span>상시 축에서 내리고, 행사 있을 때만 굴립니다</span></div>
+    <div class="copy yl">
+      <div class="cl"><div class="ck">근거</div><div class="cv">8/12 대전 야외요가 도달 <b>744</b>. 현장 콘텐츠는 우리가 통제할 수 없는 변수(날씨·인원·현장)가 많아 주간 축으로 못 씁니다.</div></div>
+      <div class="cl"><div class="ck">9월 건</div><div class="cv"><b>올영 라이징브랜드 커피차 &mdash; 「대전에 갚습니다」</b>
+올영이 우리에게 커피차 → 우리가 대전에 100개 → 받은 분들 리액션. <b>받고 → 갚는 흐름이 한 편 안에서 닫힙니다.</b></div></div>
+      <div class="cl"><div class="ck">보너스</div><div class="cv">신임 MD 교체(강혜연·윤하희)와 타이밍이 겹칩니다 → 커피차 콘텐츠가 <b>신임 MD 첫 인사 자리</b>를 겸합니다.</div></div>
+      <div class="cl"><div class="ck">병목</div><div class="cv">대전 현수막 <b>제작 가능 여부 확인 중</b>(대표님 8/25 지시). 회신이 오는 순간 병목은 <b>문구</b>가 됩니다 → 문구 시안 선제작 필요.</div></div>
+    </div>
+  </div>
+
+
+  <!-- ══════════════ SKU 확장 ══════════════ -->
+  <div class="s-head">
+    <span class="sh-n">확장</span>
+    <span class="sh-t">SKU가 늘어도 <em>피드는 안 늘어납니다</em></span>
+    <span class="sh-line"></span>
+    <span class="sh-tag">종합몰화 해법</span>
+  </div>
+
+  <div class="section">
+    <h2>나열하면 지고, <em>목록으로 바꾸면</em> 이깁니다</h2>
+    <div class="sec-sub">대표님 원안 &mdash; &ldquo;인스타그램은 종합몰처럼 운영 필요(프로틴 &lt; 베지어트 전제품)&rdquo;</div>
+    <p class="body">🔴 <b>여기가 가장 위험한 항목입니다.</b> 피드를 카탈로그로 바꾸면 7월에 유일하게 깨끗했던 신호(베지어트톡 문법, CPF <b>28배</b> 우위)가 죽습니다. SKU가 늘 때마다 시리즈를 하나씩 붙이면, 1년 뒤 피드는 쇼핑몰이 되고 도달은 8월 수준에 고정됩니다.</p>
+
+    <div class="two" style="margin-top:18px;">
+      <div class="mcard"><div class="mc-n">층 1</div><div class="mc-t">카탈로그</div><div class="mc-d">프로필 · 하이라이트 · 숍태그 · 고정게시물</div><div class="mc-x"><b>✅ 전제품 노출.</b> SKU 증가 시 항목만 추가</div></div>
+      <div class="mcard hero"><div class="mc-n">층 2</div><div class="mc-t">서사</div><div class="mc-d">피드 · 릴스</div><div class="mc-x"><span class="stop">제품 나열 금지</span> <b>SKU가 늘어도 시리즈 개수는 불변</b></div></div>
+    </div>
+
+    <div class="note"><strong>피드에서 전제품을 다루는 유일하게 뾰족한 방법</strong> &mdash; 제품을 나열하지 말고 <strong>&ldquo;못 먹던 것의 목록&rdquo;</strong>으로 배치합니다. <em>&ldquo;우유를 못 먹어서 두유를, 아침을 못 먹어서 클렌즈를&rdquo;</em> &mdash; 카탈로그가 아니라 <strong>서사의 확장</strong>이 되고, 문법이 안 죽습니다. 슬로건이 제품을 나열할 의무도 사라집니다.</div>
+
+    <div class="copy-t">SKU별 「못 먹는 사람」 정의표 <span>이 표 하나가 시딩·콘텐츠·하이라이트를 동시에 결정합니다</span></div>
+    <table style="margin-top:10px;">
+      <thead><tr><th style="width:180px;">SKU</th><th style="width:120px;">지금 시딩</th><th>문장이 지시하는 대상</th></tr></thead>
+      <tbody>
+        <tr><td class="item">프로틴</td><td class="desc">운동인</td><td class="desc">유청에 속이 뒤집히는 사람 · 유당불내증</td></tr>
+        <tr><td class="item">넛츠밀크</td><td class="desc">운동인</td><td class="desc"><b>우유를 못 먹는 사람</b></td></tr>
+        <tr><td class="item">클렌즈</td><td class="desc">운동인</td><td class="desc"><b>아침을 못 먹는 직장인</b></td></tr>
+        <tr><td class="item">곡물효소</td><td class="desc">운동인</td><td class="desc">소화가 안 되는 사람</td></tr>
+        <tr><td class="item">식이섬유 / 전해질 / 진저샷</td><td class="desc">운동인</td><td class="desc"><span class="tbd">미정 &mdash; 8/26 내부회의에서 채움</span></td></tr>
+        <tr><td class="item">베지포유</td><td class="desc">운동인</td><td class="desc"><b>아이 · 수험생</b> &mdash; 단백질 쉐이크를 줄 일이 없는 대상</td></tr>
+        <tr><td class="item">베지포유 서리태 콩물두유 <span style="font-weight:400;color:#8E9A92;">(9월)</span></td><td class="desc">&mdash;</td><td class="desc"><b>우유를 못 먹는 사람</b> <span class="stop">넛츠밀크와 중복</span></td></tr>
+      </tbody>
+    </table>
+
+    <div class="note warn"><strong>🔴 구멍 &mdash; 넛츠밀크와 서리태 콩물두유가 같은 대상입니다.</strong> 제품 레벨 자기잠식(베지포유 콩물두유 vs 베지어트 리얼 서리태 · 올영 푸드 1위)은 이미 잡혀 있었는데, <strong>문장 레벨에서도 겹칩니다.</strong> 분리가 안 되면 9월 첫 증명 콘텐츠가 자기 제품끼리 싸웁니다.<br><br><strong>잠정안</strong> &mdash; 넛츠밀크 = <strong>마시는 우유 대체</strong> / 콩물두유 = <strong>요리 · 한 끼 대체</strong>. 다만 확정에 필요한 제품 기획 정보(용량·용도·가격대)가 휴닉에 있습니다. <strong>8/27 콜미팅에서 묻습니다.</strong></div>
+
+    <div class="copy-t">하이라이트 구조 &mdash; 여기서 확장 대응이 끝납니다</div>
+    <div class="copy">
+      <div class="cl"><div class="ck">✗ 안 함</div><div class="cv"><b>SKU 개수만큼</b> 하이라이트를 만든다 &rarr; 제품이 늘 때마다 하이라이트가 늘고, 프로필이 쇼핑몰 메뉴판이 됩니다</div></div>
+      <div class="cl"><div class="ck">◎ 함</div><div class="cv"><b>&ldquo;못 먹는 사람&rdquo; 유형별</b>로 만든다 &mdash; 우유를 못 먹는 / 아침을 못 먹는 / 속이 뒤집히는 / 소화가 안 되는
+&rarr; <b>SKU가 늘어도 하이라이트 개수는 그대로</b>이고, 새 제품은 해당 유형 안에 들어갑니다</div></div>
+    </div>
+  </div>
+
+
+  <!-- ══════════════ 공통 장치 ══════════════ -->
+  <div class="s-head">
+    <span class="sh-n">공통</span>
+    <span class="sh-t">여섯 개가 <em>한 계정처럼</em> 보이게 하는 장치</span>
+    <span class="sh-line"></span>
+    <span class="sh-tag">시리즈 아님 · 전편 적용</span>
+  </div>
+
+  <div class="section">
+    <h2>기존 8개 중 <em>하나는 시리즈가 아니라 규칙</em>이었습니다</h2>
+    <div class="sec-sub">VEGGIET MOMENT는 발행 대상이 아니라 <b>피드 그리드의 톤을 지키는 앵커</b>였습니다 &mdash; 그래서 규칙으로 승격합니다</div>
+    <table>
+      <thead><tr><th style="width:150px;">장치</th><th>규칙</th></tr></thead>
+      <tbody>
+        <tr><td class="item">VEGGIET MOMENT<br><span style="font-weight:400;color:#8E9A92;">→ 비주얼 규칙</span></td><td class="desc">자연스러운 사진 + 스토리 텍스트 박스 톤. <b>전 시리즈의 피드 컷이 이 톤을 따릅니다.</b> 월 1회 발행하던 걸 <b>상시 규칙</b>으로 바꾸면 그리드가 안 깨집니다<br><span class="stop">숫자 소구 금지</span> &ldquo;단백질 20g&rdquo; 같은 스펙이 아니라 <b>장면이 설득</b>합니다 (기존 규칙 유지)</td></tr>
+        <tr><td class="item">인트로 모션 5초</td><td class="desc">8/10 전달 완료 &mdash; <b>전 릴스 공통</b> 적용</td></tr>
+        <tr><td class="item">썸네일 컬러</td><td class="desc">시리즈별 컬러 배리에이션 확보 완료. <b>위 6색 = 캘린더 색 = 썸네일 색</b>으로 통일</td></tr>
+        <tr><td class="item">엔딩</td><td class="desc">전 시리즈 마지막 컷에 <b>브랜드 문장 1줄</b>. 로고가 아니라 <b>문장이 먼저 읽히게</b> 합니다</td></tr>
+        <tr><td class="item">CTA</td><td class="desc">코어 1·3에만 &ldquo;다음 편&rdquo; 열린 루프. 경량·캠페인에는 붙이지 않습니다(남발하면 죽습니다)</td></tr>
+        <tr><td class="item">광고 분리</td><td class="desc"><span class="stop">전환광고에는 문장을 쓰지 않습니다</span> 브랜드 문장과 프로모션은 소재를 나눕니다. 올영세일 소재는 <b>혜택만</b></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <!-- ══════════════ 9월 캘린더 ══════════════ -->
+  <div class="s-head">
+    <span class="sh-n">운영</span>
+    <span class="sh-t">9월엔 <em>이렇게</em> 올립니다</span>
+    <span class="sh-line"></span>
+    <span class="sh-tag">실질 3주</span>
+  </div>
+
+  <div class="section">
+    <h2>편수를 늘리면 <em>지는 달</em>입니다</h2>
+    <div class="sec-sub">추석 9/25(금) · 연휴 9/24~26 &rarr; <b>9월 실질 가용 3주</b>(9/1~9/22). 가을 올영세일이 8/30 시작이라 <b>9월 1주차는 이미 후반전</b>입니다</div>
+    <div class="legend">
+      <span class="lg"><i class="b1"></i>베지어트톡</span>
+      <span class="lg"><i class="b2"></i>VEGGIET LAB</span>
+      <span class="lg"><i class="b3"></i>잘 채우는 사람들</span>
+      <span class="lg"><i class="b4"></i>MY VEGGIET</span>
+      <span class="lg"><i class="b5"></i>SNS 이벤트</span>
+      <span class="lg"><i class="b6"></i>캠페인 · 스팟</span>
+    </div>
+    <div class="cal-wrap">
+      <table class="cal">
+        <thead><tr><th class="sun">일</th><th>월</th><th>화</th><th>수</th><th>목</th><th>금</th><th class="sat">토</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="off"><div class="dnum sun out">8/30</div><span class="ev ghost">올영세일 시작</span></td>
+            <td class="off"><div class="dnum out">8/31</div></td>
+            <td><div class="dnum">1</div><span class="ev e2"><span class="et">LAB</span>서리태 콩물두유 출시</span></td>
+            <td><div class="dnum">2</div></td>
+            <td><div class="dnum">3</div><span class="ev e1"><span class="et">톡 · 자격A</span>우유를 못 마시는 사람</span></td>
+            <td><div class="dnum sun">4</div></td>
+            <td class="off"><div class="dnum sat">5</div><span class="ev e4"><span class="et">MY</span>우유 못 먹는 사람의 라떼</span></td>
+          </tr>
+          <tr>
+            <td class="off"><div class="dnum sun">6</div></td>
+            <td><div class="dnum">7</div></td>
+            <td><div class="dnum">8</div><span class="ev e1"><span class="et">톡 · 자격B</span>3PL을 안 쓰는 이유</span></td>
+            <td><div class="dnum">9</div></td>
+            <td><div class="dnum">10</div><span class="ev e3"><span class="et">잘 채우는</span>못 먹던 사람 1호</span></td>
+            <td><div class="dnum">11</div><span class="ev e5"><span class="et">이벤트</span>30일 1기 모집 시작</span></td>
+            <td class="off"><div class="dnum sat">12</div></td>
+          </tr>
+          <tr>
+            <td class="off"><div class="dnum sun">13</div></td>
+            <td><div class="dnum">14</div></td>
+            <td><div class="dnum">15</div><span class="ev e1"><span class="et">톡 · 추석</span>명절에 먹을 게 없는 사람</span><span class="ev ghost">굿즈 발주 마감</span></td>
+            <td><div class="dnum">16</div><span class="ev e2"><span class="et">LAB</span>명절 선물의 조건</span></td>
+            <td><div class="dnum">17</div><span class="ev e3"><span class="et">잘 채우는</span>추석 · 못 먹는 가족</span></td>
+            <td><div class="dnum">18</div><span class="ev e2"><span class="et">LAB</span>베지어트랩 2탄 · 딸기</span></td>
+            <td class="off"><div class="dnum sat">19</div></td>
+          </tr>
+          <tr>
+            <td class="off"><div class="dnum sun">20</div></td>
+            <td><div class="dnum">21</div></td>
+            <td><div class="dnum">22</div><span class="ev e1"><span class="et">톡 · 자격A</span>아침을 못 먹는 사람</span></td>
+            <td><div class="dnum">23</div><span class="ev e4"><span class="et">MY</span>명절 다음날의 한 잔</span></td>
+            <td><div class="dnum">24</div><span class="ev hol">추석 연휴</span></td>
+            <td><div class="dnum">25</div><span class="ev hol">추석</span></td>
+            <td class="off"><div class="dnum sat">26</div><span class="ev hol">연휴</span></td>
+          </tr>
+          <tr>
+            <td class="off"><div class="dnum sun">27</div></td>
+            <td><div class="dnum">28</div></td>
+            <td><div class="dnum">29</div><span class="ev e6"><span class="et">캠페인</span>30일 1기 시작</span></td>
+            <td><div class="dnum">30</div><span class="ev e1"><span class="et">톡 · 원본</span>대표 분기 앵커</span></td>
+            <td class="off"><div class="dnum out">10/1</div></td>
+            <td class="off"><div class="dnum out">10/2</div></td>
+            <td class="off"><div class="dnum sat out">10/3</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note"><strong>총 14편</strong> &mdash; 베지어트톡 5 · LAB 3 · 잘 채우는 사람들 2 · MY VEGGIET 2 · 이벤트 1 · 캠페인 1. <strong>추석 키워드 피크는 D-14주</strong>(건강선물세트 43.9 = D-21의 2.7배)라 <strong>9/11~9/17에 화력을 집중</strong>했습니다. 명절은 「못 먹는 사람」이 1년 중 가장 힘든 주간이라, <strong>A문장이 가장 강해지는 지점</strong>이기도 합니다.</div>
+    <div class="note calm"><strong>전환광고는 캘린더에 없습니다.</strong> 상시로 돌되 <strong>브랜드 문장을 쓰지 않고 혜택만</strong> 씁니다(올영세일 8/30~9/5). ROAS 550~2,344% 구간이라 축 자체는 건드리지 않습니다.</div>
+  </div>
+
+
+  <!-- ══════════════ 선결 ══════════════ -->
+  <div class="s-head">
+    <span class="sh-n">선결</span>
+    <span class="sh-t">이게 정해져야 <em>9월이 굴러갑니다</em></span>
+    <span class="sh-line"></span>
+    <span class="sh-tag">8/26~8/27</span>
+  </div>
+
+  <div class="section">
+    <h2>여섯 개 전부가 <em>문장 하나</em>에 걸려 있습니다</h2>
+    <div class="sec-sub">문장이 안 정해지면 화자 자격도 SKU 정의표도 전부 잠정으로 남습니다</div>
+    <ul class="chk">
+      <li><b>키 메시지 확정</b> &mdash; A/B/C 택 1. 이 기획안은 A안 「먹을 게 없어서, 만듭니다」 기준 <span class="tbd">8/27 콜미팅</span></li>
+      <li><b>자격 A/B 보유 직원 명단</b> &mdash; 부서 무관, 5명. 이게 있어야 9~10월 코어 1 편성이 닫힙니다 <span class="tbd">인국님·예랑님</span></li>
+      <li><b>넛츠밀크 ↔ 서리태 콩물두유 역할 분리</b> &mdash; 용량·용도·가격대 확인 필요 <span class="tbd">8/27 콜미팅</span></li>
+      <li><b>규제 4건 처리</b> &mdash; No.1 삭제 / 유당불내증 75% 삭제 / 「클렌즈」 제품명 검토 / &ldquo;-23kg&rdquo; 카피 교체</li>
+      <li><b>멧챠 이벤트 자사몰 전환 수치</b> &mdash; 2주 넘게 미회신. 9월 이벤트 예산 판단의 입력값</li>
+      <li><b>팔로워 전용 쿠폰 코드 + UTM</b> &mdash; 없으면 자사몰 전환을 만들어도 증명이 안 됩니다</li>
+      <li><b>9월 광고예산</b> &mdash; <b>3주 연속 미회신.</b> 콘텐츠 구조를 고쳐도 예산이 없으면 9월도 8월이 됩니다</li>
+      <li><b>베지어트랩 1탄(완두) 발행일</b> &mdash; 8/14 완성본 수령 후 미확정. 2탄 프리뷰가 걸려 있어 간격이 벌어지면 김이 빠집니다</li>
+      <li><b>대전 현수막 제작 가능 여부 + 디자인 주체</b> &mdash; 회신 즉시 병목은 문구로 이동합니다</li>
+    </ul>
+    <div class="note warn"><strong>이 기획안이 못 정하는 것 두 가지</strong> &mdash; ① 제품 기획 정보(넛츠밀크·콩물두유 역할) ② 직원 자격 보유자 명단. 둘 다 <strong>휴닉에 있는 정보</strong>라 8/27에 묻는 것 외에 방법이 없습니다.</div>
+  </div>
+
+  <div class="footer">
+    HIZ × HUENIC · 베지어트 콘텐츠 시리즈 기획안 v2 · 2026. 08. 26<br>
+    근거 &mdash; 7~8월 발행 실측 · 광고 CPF 실측 · 리뷰 3,091건 · 경쟁 슬로건 국내 59 / 해외 48문장 · 슬랙 「휴닉과히즈」 8/4~8/25
+  </div>
+
+</div>
+
+</body>
+</html>
