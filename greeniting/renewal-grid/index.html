@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<!-- rev: 2026-08-25 -->
+<title>그리니팅 리뉴얼 알림 그리드 · 무드 기획</title>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;800;900&family=Poppins:wght@400;500;600&family=Noto+Sans+KR:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Pretendard', 'Noto Sans KR', -apple-system, sans-serif; background: #F1F4F0; color: #231814; line-height: 1.7; font-size: 14px; -webkit-font-smoothing: antialiased; word-break: keep-all; overflow-wrap: break-word; }
+
+.toolbar { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: #231814; height: 56px; display: flex; align-items: center; justify-content: space-between; padding: 0 32px; }
+.toolbar-title { font-size: 14px; font-weight: 500; color: #fff; }
+.btn-toolbar { padding: 7px 18px; border: 1px solid rgba(255,255,255,0.22); border-radius: 6px; background: transparent; color: #fff; font-size: 12px; font-weight: 500; cursor: pointer; }
+.btn-toolbar:hover { background: rgba(43,201,110,0.18); border-color: #2BC96E; }
+
+.container { max-width: 980px; margin: 0 auto; padding: 80px 24px 60px; }
+
+.report-header { background: #fff; border-radius: 12px; padding: 40px; margin-bottom: 20px; border: 1px solid #E3E5E2; }
+.report-header .label { font-size: 11px; font-weight: 700; color: #0E7A45; letter-spacing: 0.12em; margin-bottom: 14px; }
+.report-header h1 { font-size: 34px; font-weight: 900; line-height: 1.3; letter-spacing: -0.02em; }
+.report-header h1 em { color: #0E7A45; font-style: normal; }
+.meta-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 28px; padding-top: 24px; border-top: 1px solid #E3E5E2; }
+.meta-item .mk { font-size: 11px; color: #97A093; margin-bottom: 4px; }
+.meta-item .mv { font-size: 13px; font-weight: 600; }
+
+.mission-box { background: #231814; border-radius: 12px; padding: 30px 36px; margin-bottom: 20px; color: #fff; }
+.mission-box .hl-label { font-size: 11px; font-weight: 700; color: #2BC96E; letter-spacing: 0.1em; margin-bottom: 14px; }
+.mission-box .lede { font-size: 19px; font-weight: 700; line-height: 1.55; letter-spacing: -0.01em; }
+.mission-box .lede em { color: #7BE8AC; font-style: normal; }
+.mission-box .sub { margin-top:16px; font-size:13px; color:rgba(255,255,255,0.74); line-height:1.95; }
+.mission-box .sub strong { color:#fff; }
+
+.section { background: #fff; border-radius: 12px; padding: 32px 40px; margin-bottom: 20px; border: 1px solid #E3E5E2; }
+.section h2 { font-size: 19px; font-weight: 800; margin-bottom: 6px; letter-spacing: -0.02em; }
+.section h2 em { color: #0E7A45; font-style: normal; }
+.section .sec-sub { font-size: 12.5px; color: #97A093; margin-bottom: 20px; }
+.section p.body { font-size:13.5px; color:#5F6560; line-height:1.9; }
+.section p.body b { color:#231814; }
+
+.s-head { display:flex; align-items:center; gap:14px; margin:38px 0 16px; }
+.s-head .sh-n { flex:none; background:#231814; color:#fff; font-size:11.5px; font-weight:800; padding:6px 14px; border-radius:20px; letter-spacing:.04em; }
+.s-head .sh-t { flex:none; font-size:21px; font-weight:900; letter-spacing:-.02em; }
+.s-head .sh-t em { color:#0E7A45; font-style:normal; }
+.s-head .sh-line { flex:1; height:2px; background:#E3E5E2; border-radius:2px; }
+.s-head .sh-tag { flex:none; font-size:12px; font-weight:800; color:#0E7A45; }
+
+/* ── 그리드 목업 ───────────────────────────── */
+.phone { max-width: 430px; margin: 0 auto; border:1px solid #E3E5E2; border-radius:16px; overflow:hidden; background:#fff; }
+.phone-bar { background:#FAFAF8; border-bottom:1px solid #EDF0EA; padding:12px 16px; display:flex; align-items:center; gap:10px; }
+.phone-bar .av { width:38px; height:38px; border-radius:50%; background:#2BC96E; color:#fff; font-family:'Lexend',sans-serif; font-weight:900; font-size:17px; display:flex; align-items:center; justify-content:center; }
+.phone-bar .nm { font-size:12.5px; font-weight:800; }
+.phone-bar .nm span { display:block; font-size:10.5px; font-weight:500; color:#97A093; }
+.g9 { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; background:#EDF0EA; }
+.cell { position:relative; aspect-ratio:1/1; padding:10px; display:flex; flex-direction:column; justify-content:space-between; overflow:hidden; }
+.cell .cn { position:absolute; top:6px; left:7px; font-family:'Lexend',sans-serif; font-size:9px; font-weight:800; color:rgba(35,24,20,.32); z-index:3; }
+.cell .ct { font-size:9.5px; font-weight:800; letter-spacing:.03em; z-index:2; }
+.cell .cd { font-size:9.5px; line-height:1.45; font-weight:600; z-index:2; }
+/* 타이포 카드 */
+.cell.type { background:#FAFAF8; align-items:flex-start; justify-content:center; }
+.cell.type .big { font-family:'Lexend',sans-serif; font-weight:900; font-size:34px; letter-spacing:-.03em; line-height:.98; color:#231814; }
+.cell.type .big i { color:#2BC96E; font-style:normal; }
+.cell.type .kr { font-weight:900; font-size:17px; letter-spacing:-.04em; line-height:1.28; }
+.cell.type .kr b { color:#0E7A45; }
+.cell.type .sm { font-family:'Poppins',sans-serif; font-size:8px; font-weight:500; letter-spacing:.12em; color:#97A093; margin-top:8px; text-transform:uppercase; }
+.cell.anchor { background:#231814; }
+.cell.anchor .kr { color:#fff; }
+.cell.anchor .kr b { color:#2BC96E; }
+.cell.anchor .sm { color:rgba(255,255,255,.5); }
+/* 사진 자리 */
+.cell.ph { color:#fff; justify-content:flex-end; }
+.cell.ph::after { content:''; position:absolute; inset:0; background:linear-gradient(180deg,rgba(35,24,20,.06) 0%,rgba(35,24,20,.42) 100%); z-index:1; }
+.cell.ph .ct, .cell.ph .cd { position:relative; }
+.cell.ph .ct { opacity:.9; }
+.p-face { background:linear-gradient(140deg,#EAB939 0%,#CDD977 100%); }
+.p-face2 { background:linear-gradient(140deg,#F95708 0%,#EAB939 55%,#7B5789 100%); }
+.p-hand { background:linear-gradient(140deg,#CFD8DC 0%,#8FA6AE 100%); }
+.p-hand2 { background:linear-gradient(140deg,#2BC96E 0%,#0E7A45 100%); }
+.p-still { background:linear-gradient(140deg,#B7C7CE 0%,#5F7883 100%); }
+.p-still2 { background:linear-gradient(90deg,#AAB93C 0%,#7BA566 20%,#EAB939 40%,#F95708 60%,#BA1420 80%,#7B5789 100%); }
+.badge { position:absolute; top:6px; right:7px; font-size:8.5px; font-weight:800; padding:2px 6px; border-radius:20px; z-index:3; }
+.bg-face { background:#231814; color:#EAB939; }
+.bg-hand { background:#231814; color:#7BE8AC; }
+.bg-still { background:#231814; color:#fff; }
+.bg-type { background:#2BC96E; color:#fff; }
+.tilt { outline:2px dashed rgba(255,255,255,.55); outline-offset:-7px; }
+.gcap { text-align:center; font-size:11.5px; color:#97A093; margin-top:12px; line-height:1.7; }
+.rowtag { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; }
+.rowtag div { font-size:10px; font-weight:800; text-align:center; padding:7px 0; background:#F8FAF7; color:#5F6560; border-radius:0 0 6px 6px; }
+
+/* 컬러 스와치 */
+.sw { display:grid; grid-template-columns:repeat(6,1fr); gap:10px; }
+.sw .s { border:1px solid #E3E5E2; border-radius:8px; overflow:hidden; }
+.sw .s .chip { height:56px; }
+.sw .s .lb { padding:7px 8px; font-size:10px; line-height:1.5; }
+.sw .s .lb b { display:block; font-size:10.5px; }
+.sw .s .lb code { font-family:'Poppins',monospace; font-size:9.5px; color:#97A093; }
+
+/* 타이포 샘플 */
+.tsample { border:1px solid #E3E5E2; border-radius:10px; padding:22px 24px; background:#FAFAF8; margin-top:12px; }
+.tsample .lx { font-family:'Lexend',sans-serif; font-weight:900; font-size:44px; letter-spacing:-.03em; line-height:1; }
+.tsample .lx i { color:#2BC96E; font-style:normal; }
+.tsample .pt { font-weight:900; font-size:26px; letter-spacing:-.04em; line-height:1.3; margin-top:14px; }
+.tsample .pt b { color:#0E7A45; }
+.tsample .pp { font-family:'Poppins',sans-serif; font-weight:500; font-size:11px; letter-spacing:.14em; color:#97A093; margin-top:12px; text-transform:uppercase; }
+.tsample .meta { margin-top:16px; padding-top:14px; border-top:1px dashed #DDE2DA; font-size:11.5px; color:#97A093; line-height:1.9; }
+.tsample .meta b { color:#231814; }
+
+.two { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.mcard { border:1px solid #E3E5E2; border-radius:10px; padding:20px; background:#F8FAF7; }
+.mcard.hero { background:#EAFBF1; border-color:#B7EFD0; }
+.mcard .mc-n { font-size:11px; font-weight:800; color:#0E7A45; letter-spacing:.06em; margin-bottom:6px; }
+.mcard .mc-t { font-size:16px; font-weight:900; letter-spacing:-.01em; }
+.mcard .mc-d { font-size:12.5px; color:#5F6560; margin-top:6px; line-height:1.75; }
+.mcard .mc-x { margin-top:12px; padding-top:12px; border-top:1px dashed #DDE2DA; font-size:12px; color:#5F6560; line-height:1.7; }
+.mcard .mc-x b { color:#231814; }
+
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th { background: #F8FAF7; padding: 10px 14px; font-weight: 600; border-bottom: 2px solid #E3E5E2; color: #97A093; font-size: 11px; text-align: left; white-space: nowrap; }
+th.c { text-align:center; }
+td { padding: 12px 14px; border-bottom: 1px solid #F1F4F0; vertical-align: top; }
+td.item { font-weight: 700; }
+td.desc { color: #5F6560; font-size: 12.5px; }
+td.c { text-align:center; }
+td .num { display:inline-block; width:22px; height:22px; line-height:22px; border-radius:50%; background:#231814; color:#fff; font-size:11px; font-weight:800; text-align:center; font-family:'Lexend',sans-serif; }
+
+.tbd { display:inline-block; border:1px dashed #C79A0B; background:#FFFBF0; color:#8B5E08; font-weight:800; font-size:11.5px; border-radius:5px; padding:0 7px; line-height:1.7; white-space:nowrap; }
+.stop { display:inline-block; background:#FDECEE; color:#B3162A; font-weight:800; font-size:11.5px; border-radius:5px; padding:0 7px; line-height:1.7; white-space:nowrap; }
+.ok { display:inline-block; background:#EAFBF1; color:#0E7A45; font-weight:800; font-size:11.5px; border-radius:5px; padding:0 7px; line-height:1.7; white-space:nowrap; }
+
+.chk { list-style:none; padding:0; }
+.chk li { position:relative; padding:9px 0 9px 30px; border-bottom:1px dashed #EDF0EA; font-size:13.5px; }
+.chk li:last-child { border-bottom:none; }
+.chk li::before { content:'\25A1'; position:absolute; left:6px; top:8px; font-size:16px; color:#2BC96E; font-weight:800; }
+.chk li b { color:#231814; }
+
+.note { background:#EAFBF1; border-left:4px solid #2BC96E; border-radius:0 8px 8px 0; padding:14px 20px; margin-top:18px; font-size:12.5px; color:#4F5A52; line-height:1.85; }
+.note strong { color:#231814; }
+.note.calm { background:#F8FAF7; border-left-color:#CFD1CE; color:#5F6560; }
+.note.warn { background:#FDECEE; border-left-color:#DF1C33; color:#7A2430; }
+.note.warn strong { color:#B3162A; }
+
+.order { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:14px; }
+.od { border:1px solid #E3E5E2; border-radius:10px; padding:14px 16px; background:#F8FAF7; }
+.od .dh { font-family:'Lexend',sans-serif; font-size:11px; font-weight:800; color:#0E7A45; letter-spacing:.06em; }
+.od .dd { font-size:13px; font-weight:800; margin-top:4px; }
+.od .dx { font-size:11.5px; color:#5F6560; margin-top:6px; line-height:1.7; }
+.od .seq { margin-top:8px; font-family:'Lexend',sans-serif; font-size:12px; font-weight:800; color:#231814; letter-spacing:.04em; }
+
+.footer { text-align: center; padding: 40px 0 10px; color: #97A093; font-size: 12px; line-height: 2; }
+
+@media (max-width: 768px) {
+  .container { padding: 76px 14px 40px; }
+  .meta-grid { grid-template-columns: repeat(2, 1fr); }
+  .two { grid-template-columns: 1fr; }
+  .sw { grid-template-columns: repeat(3,1fr); }
+  .order { grid-template-columns:1fr; }
+  .section { padding: 24px 18px; }
+  .report-header { padding: 28px 20px; }
+  .report-header h1 { font-size: 25px; }
+  .mission-box { padding: 24px 20px; } .mission-box .lede { font-size:17px; }
+  .toolbar { padding: 0 16px; } .toolbar-title { display:none; }
+  .s-head { flex-wrap:wrap; gap:10px; } .s-head .sh-line { display:none; }
+  .cell.type .big { font-size:27px; }
+  .cell.type .kr { font-size:14px; }
+  .tsample .lx { font-size:32px; }
+  .tsample .pt { font-size:20px; }
+}
+@media print {
+  .toolbar { display:none; }
+  .container { padding:0; max-width:none; }
+  .section { padding:20px 22px; margin-bottom:14px; }
+  body { background:#fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .section, .mission-box, .phone { break-inside: avoid; }
+  .s-head { break-after: avoid; }
+  @page { size:A4; margin:10mm; }
+}
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="toolbar-title">그리니팅 · 리뉴얼 알림 그리드 + 무드 기획</div>
+  <button class="btn-toolbar" onclick="window.print()">PDF 저장 · 인쇄</button>
+</div>
+
+<div class="container">
+
+  <div class="report-header">
+    <div class="label">GREENITING RENEWAL &middot; GRID TAKEOVER</div>
+    <h1>클린이팅? <em>그리니팅.</em></h1>
+    <div class="meta-grid">
+      <div class="meta-item"><div class="mk">분량</div><div class="mv">9컷 (3×3) · 3일</div></div>
+      <div class="meta-item"><div class="mk">소재</div><div class="mv">8/20 촬영본 (신규 촬영 0)</div></div>
+      <div class="meta-item"><div class="mk">스튜</div><div class="mv">미포함 · 런칭과 분리</div></div>
+      <div class="meta-item"><div class="mk">작성일</div><div class="mv">2026. 08. 25</div></div>
+    </div>
+  </div>
+
+  <div class="mission-box">
+    <div class="hl-label">이 그리드가 하는 일</div>
+    <div class="lede">기존 게시물을 화면 밖으로 내리고, <em>“달라진다”를 말이 아니라 화면으로</em> 알립니다.</div>
+    <div class="sub"><strong>「클린이팅, 그리니팅」은 새 카피가 아닙니다.</strong> 2차 워크샵에서 대표님이 최종 픽한 브랜드 컨셉이 「가장 쉽게 완성하는 <strong>클린 이팅</strong>, 그리니팅」이고, 스튜 슬로건도 <strong>Eat Clean, Glow Green</strong>입니다. 이미 확정해 놓고 <strong>한 번도 피드에 걸지 않은 문장</strong>을 꺼내는 일입니다 — 새 슬로건을 발명하면 또 흔들리지만, 이건 되돌릴 게 없습니다.<br><br>그리고 <strong>9컷이어야 합니다.</strong> 프로필 첫 화면은 3행(9칸)까지 보입니다. 6컷은 2행이라 <strong>기존 티저 한 줄이 첫 화면에 그대로 남습니다.</strong></div>
+  </div>
+
+
+  <!-- 그리드 목업 -->
+  <div class="s-head">
+    <span class="sh-n">GRID</span>
+    <span class="sh-t">9컷 <em>배치</em></span>
+    <span class="sh-line"></span>
+    <span class="sh-tag">프로필에서 보이는 대로</span>
+  </div>
+
+  <div class="section">
+    <h2>세 행이 <em>한 문장</em>을 만듭니다</h2>
+    <div class="sec-sub">위에서 아래로 — 클린이팅? → 가장 쉽게 완성하는 → 그리니팅.</div>
+
+    <div class="phone">
+      <div class="phone-bar">
+        <div class="av">g!</div>
+        <div class="nm">greeniting_official<span>게시물 · 팔로워 · 팔로잉</span></div>
+      </div>
+      <div class="g9">
+        <!-- 1행 -->
+        <div class="cell type"><span class="cn">01</span><span class="badge bg-type">타이포</span>
+          <div><div class="big">CLEAN</div><div class="sm">Lexend 900</div></div>
+        </div>
+        <div class="cell ph p-face tilt"><span class="cn">02</span><span class="badge bg-face">얼굴</span>
+          <div><div class="ct">SP4-3</div><div class="cd">마시고 내려놓은 뒤 0.5초</div></div>
+        </div>
+        <div class="cell type"><span class="cn">03</span><span class="badge bg-type">타이포</span>
+          <div><div class="big">EATING<i>?</i></div><div class="sm">Lexend 900</div></div>
+        </div>
+        <!-- 2행 -->
+        <div class="cell ph p-hand"><span class="cn">04</span><span class="badge bg-hand">손</span>
+          <div><div class="ct">SP2-2</div><div class="cd">냉동실에서 한 포 꺼내는 손</div></div>
+        </div>
+        <div class="cell type anchor"><span class="cn">05</span><span class="badge bg-type">앵커</span>
+          <div><div class="kr">가장 쉽게<br>완성하는<br><b>클린 이팅,</b><br>그리니팅</div><div class="sm">Pretendard 900</div></div>
+        </div>
+        <div class="cell ph p-still"><span class="cn">06</span><span class="badge bg-still">무인물</span>
+          <div><div class="ct">SP2-1</div><div class="cd">가득 찬 냉동실 (20포+)</div></div>
+        </div>
+        <!-- 3행 -->
+        <div class="cell ph p-face2 tilt"><span class="cn">07</span><span class="badge bg-face">얼굴 2인</span>
+          <div><div class="ct">SP6-4 / SP7</div><div class="cd">혼자보다 같이</div></div>
+        </div>
+        <div class="cell ph p-still2"><span class="cn">08</span><span class="badge bg-still">무인물</span>
+          <div><div class="ct">SP1-9</div><div class="cd">전 라인업 컬러 배열</div></div>
+        </div>
+        <div class="cell ph p-hand2 tilt"><span class="cn">09</span><span class="badge bg-hand">손 + g!</span>
+          <div><div class="ct">SP1 계열</div><div class="cd">짜 먹는 손 + 느낌표</div></div>
+        </div>
+      </div>
+      <div class="rowtag">
+        <div>1행 · 질문</div><div>2행 · 답</div><div>3행 · 선언</div>
+      </div>
+    </div>
+    <div class="gcap">사진 칸은 <b>컷 지정 + 컬러 온도</b>만 표시한 자리입니다 &mdash; 셀렉본이 오면 실사로 교체합니다.<br>점선 테두리 = 비정형(기울인) 앵글 3칸 · 대각선으로 흩어 놓았습니다.</div>
+
+    <table style="margin-top:26px;">
+      <thead><tr><th class="c" style="width:44px;">#</th><th style="width:96px;">유형</th><th style="width:130px;">컷</th><th>캡션</th></tr></thead>
+      <tbody>
+        <tr><td class="c"><span class="num">1</span></td><td class="item">타이포</td><td class="desc">—</td><td class="desc">없음 (또는 <b>.</b> 한 글자)</td></tr>
+        <tr><td class="c"><span class="num">2</span></td><td class="item">얼굴</td><td class="desc">SP4-3</td><td class="desc">클린 이팅이 어렵던 이유는<br>맛없어서가 아니라 번거로워서였어요.</td></tr>
+        <tr><td class="c"><span class="num">3</span></td><td class="item">타이포</td><td class="desc">—</td><td class="desc">없음</td></tr>
+        <tr><td class="c"><span class="num">4</span></td><td class="item">손</td><td class="desc">SP2-2</td><td class="desc">준비랄 게 없어요.<br>꺼내는 게 전부예요.</td></tr>
+        <tr><td class="c"><span class="num">5</span></td><td class="item">앵커 🔒</td><td class="desc">—</td><td class="desc">우리가 하려던 말을<br>이제야 제대로 겁니다.</td></tr>
+        <tr><td class="c"><span class="num">6</span></td><td class="item">무인물</td><td class="desc">SP2-1</td><td class="desc">쟁여둔 만큼이<br>이번 달의 컨디션이 됩니다.</td></tr>
+        <tr><td class="c"><span class="num">7</span></td><td class="item">얼굴 2인</td><td class="desc">SP6-4 / SP7</td><td class="desc">혼자 지키는 것보다<br>같이 하는 게 오래 가더라고요.</td></tr>
+        <tr><td class="c"><span class="num">8</span></td><td class="item">무인물</td><td class="desc">SP1-9</td><td class="desc">색이 곧 라인업입니다.</td></tr>
+        <tr><td class="c"><span class="num">9</span></td><td class="item">손 + 그래픽</td><td class="desc">SP1 계열</td><td class="desc">9월,<br>그리니팅이 달라집니다.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <!-- 컬러 -->
+  <div class="s-head">
+    <span class="sh-n">무드 1</span>
+    <span class="sh-t"><em>컬러</em></span>
+    <span class="sh-line"></span>
+    <span class="sh-tag">배경은 뉴트럴, 색은 제품이 낸다</span>
+  </div>
+
+  <div class="section">
+    <h2>배경에 색을 칠하는 순간 <em>원래 카테고리로 돌아갑니다</em></h2>
+    <div class="sec-sub">기존 스무디 카테고리의 자연주의·파스텔과 정면으로 가르는 것이 이번 리뉴얼의 시각 전략입니다</div>
+
+    <div class="sw">
+      <div class="s"><div class="chip" style="background:#FAFAF8;border-bottom:1px solid #E3E5E2;"></div><div class="lb"><b>Natural White</b><code>#FAFAF8</code></div></div>
+      <div class="s"><div class="chip" style="background:#2BC96E;"></div><div class="lb"><b>브랜드그린</b><code>#2BC96E</code></div></div>
+      <div class="s"><div class="chip" style="background:#26F28A;"></div><div class="lb"><b>뉴그린</b><code>#26F28A</code></div></div>
+      <div class="s"><div class="chip" style="background:#231814;"></div><div class="lb"><b>로고블랙</b><code>#231814</code></div></div>
+      <div class="s"><div class="chip" style="background:#8B5E08;"></div><div class="lb"><b>Naughty Brown</b><code>#8B5E08</code></div></div>
+      <div class="s"><div class="chip" style="background:#DF1C33;"></div><div class="lb"><b>느낌표 레드</b><code>#DF1C33</code></div></div>
+    </div>
+
+    <div style="font-size:12px;font-weight:800;color:#0E7A45;letter-spacing:.04em;margin:24px 0 8px;">제품 6색 &mdash; 사진 칸의 원색은 이것만</div>
+    <div class="sw">
+      <div class="s"><div class="chip" style="background:#AAB93C;"></div><div class="lb"><b>마일드그린</b><code>#AAB93C</code></div></div>
+      <div class="s"><div class="chip" style="background:#7BA566;"></div><div class="lb"><b>그린</b><code>#7BA566</code></div></div>
+      <div class="s"><div class="chip" style="background:#EAB939;"></div><div class="lb"><b>골든</b><code>#EAB939</code></div></div>
+      <div class="s"><div class="chip" style="background:#F95708;"></div><div class="lb"><b>CCA</b><code>#F95708</code></div></div>
+      <div class="s"><div class="chip" style="background:#BA1420;"></div><div class="lb"><b>ABC+T</b><code>#BA1420</code></div></div>
+      <div class="s"><div class="chip" style="background:#7B5789;"></div><div class="lb"><b>퍼플베리</b><code>#7B5789</code></div></div>
+    </div>
+
+    <table style="margin-top:24px;">
+      <thead><tr><th style="width:130px;">역할</th><th>운용</th></tr></thead>
+      <tbody>
+        <tr><td class="item">Natural White</td><td class="desc">타이포 3칸(①③⑤)의 배경. 그리드에 <b>숨 쉬는 칸</b>을 만듭니다</td></tr>
+        <tr><td class="item">브랜드그린</td><td class="desc">타이포 · 느낌표 · 물음표 <b>에만</b>. 사진 배경으로 쓰지 않습니다</td></tr>
+        <tr><td class="item">뉴그린</td><td class="desc">도트 · 아주 작게만. <b>넓게 쓰면 형광</b>이 되어 톤이 깨집니다</td></tr>
+        <tr><td class="item">제품 6색</td><td class="desc">배경이 아니라 <b>제품 · 원물 · 의상</b>으로 들어갑니다</td></tr>
+        <tr><td class="item">금지 톤</td><td class="desc"><span class="stop">금지</span> 리넨 · 베이지 · 파스텔 · 저채도 필터 — 기존 가이드가 베이스로 쓰던 계열입니다</td></tr>
+      </tbody>
+    </table>
+
+    <div style="font-size:12px;font-weight:800;color:#0E7A45;letter-spacing:.04em;margin:26px 0 4px;">행별 색 온도 &mdash; 아래로 갈수록 색이 늘어난다</div>
+    <table>
+      <thead><tr><th style="width:120px;">행</th><th style="width:200px;">색</th><th>이유</th></tr></thead>
+      <tbody>
+        <tr><td class="item">1행 · 질문</td><td class="desc">뉴트럴 + 그린 포인트만</td><td class="desc">질문은 <b>정돈돼 보여야</b> 합니다</td></tr>
+        <tr><td class="item">2행 · 답</td><td class="desc">뉴트럴 + 냉동실의 블루그레이</td><td class="desc">중간 톤. 위아래를 잇습니다</td></tr>
+        <tr><td class="item">3행 · 선언</td><td class="desc">제품 6색 전부</td><td class="desc">답이 나온 뒤 <b>색이 터집니다</b></td></tr>
+      </tbody>
+    </table>
+    <div class="note"><strong>보정 규칙</strong> — 채도 <strong>+10~15%</strong>, 대비 살짝(8/20 현장 확정 &ldquo;쨍하게&rdquo;). <strong>조명·색보정 올드 금지</strong> — 노란기·따뜻한 필름톤을 걷고 흰색이 흰색으로 나오게 합니다. 화이트밸런스는 <strong>9칸 전부 같은 기준</strong>으로 — 한 칸만 톤이 달라도 그리드가 깨집니다.</div>
+  </div>
+
+
+  <!-- 타이포 -->
+  <div class="s-head">
+    <span class="sh-n">무드 2</span>
+    <span class="sh-t"><em>타이포</em></span>
+    <span class="sh-line"></span>
+    <span class="sh-tag">브랜드 확정 서체 · 신규 도입 0</span>
+  </div>
+
+  <div class="section">
+    <h2>썸네일 <em>161px</em>에서 안 읽히면 없는 글자입니다</h2>
+    <div class="sec-sub">아래는 실제 서체로 렌더한 샘플입니다 — Pretendard · Lexend · Poppins 전부 무료 오픈 폰트</div>
+
+    <div class="tsample">
+      <div class="lx">CLEAN EATING<i>?</i></div>
+      <div class="pt">가장 쉽게 완성하는 <b>클린 이팅,</b><br>그리니팅</div>
+      <div class="pp">green!ting &middot; renewal 2026.09</div>
+      <div class="meta">
+        <b>Lexend</b> 800~900 · ALL CAPS · 자간 -2% &mdash; 영문 헤드라인 · 슬로건<br>
+        <b>Pretendard</b> 900 · 자간 -3% · 행간 1.3 &mdash; 한글 전부<br>
+        <b>Poppins</b> 400~500 · 자간 +4% · 소문자 &mdash; 날짜 · 채널 보조
+      </div>
+    </div>
+
+    <table style="margin-top:22px;">
+      <thead><tr><th class="c" style="width:44px;">#</th><th>규칙</th></tr></thead>
+      <tbody>
+        <tr><td class="c"><span class="num">1</span></td><td class="desc"><b>한 칸에 한 문장.</b> 최대 3행. 넘어가면 캡션으로 내립니다</td></tr>
+        <tr><td class="c"><span class="num">2</span></td><td class="desc"><b>글자 높이 = 캔버스 세로의 12% 이상</b> (1080px 기준 130px+). 그리드 썸네일은 한 칸이 <b>161px</b>입니다</td></tr>
+        <tr><td class="c"><span class="num">3</span></td><td class="desc"><b>좌측 정렬 고정.</b> 가운데 정렬은 앵커 카드(⑤) 하나만</td></tr>
+        <tr><td class="c"><span class="num">4</span></td><td class="desc"><b>느낌표는 폰트가 아니라 그래픽 자산 <code style="font-family:Lexend;">g!</code></b> — 키보드로 타이핑 금지. 전 시리즈 공통 엔딩과 같은 자산을 씁니다</td></tr>
+        <tr><td class="c"><span class="num">5</span></td><td class="desc">여백은 사방 <b>캔버스의 10% 이상.</b> 꽉 채우면 촌스러워집니다</td></tr>
+        <tr><td class="c"><span class="num">6</span></td><td class="desc"><span class="stop">금지</span> 그림자 · 외곽선 · 그라디언트 텍스트 · 스크립트체 · 자간 넓힌 한글 · 사진 위 반투명 검은 박스</td></tr>
+      </tbody>
+    </table>
+
+    <div class="note warn"><strong>사진 6칸에는 글자를 얹지 않습니다.</strong> 말은 타이포 3칸이 전담합니다(⑨의 <strong>g!</strong> 그래픽만 예외). 9칸 중 6칸에 글자가 얹히면 <strong>카드뉴스 계정처럼 보이고</strong>, 사진의 힘이 죽습니다.</div>
+  </div>
+
+
+  <!-- 사람 -->
+  <div class="s-head">
+    <span class="sh-n">무드 3</span>
+    <span class="sh-t">사람 <em>배치</em></span>
+    <span class="sh-line"></span>
+    <span class="sh-tag">얼굴 2 · 손 2 · 무인물 2</span>
+  </div>
+
+  <div class="section">
+    <h2>촬영 기획과 현장 확정이 <em>어긋나 있습니다</em></h2>
+    <div class="sec-sub">이걸 먼저 정리하지 않으면 셀렉에서 사람이 계속 밀립니다</div>
+    <div class="two">
+      <div class="mcard">
+        <div class="mc-n">촬영 기획서</div>
+        <div class="mc-t">무인물 70 · 손 20 · 얼굴 10</div>
+        <div class="mc-d">제품 물성과 상세페이지를 우선한 비중입니다.</div>
+      </div>
+      <div class="mcard hero">
+        <div class="mc-n">8/20 현장 확정</div>
+        <div class="mc-t">&ldquo;사람이 나온다&rdquo; · &ldquo;혼자보다 같이&rdquo;</div>
+        <div class="mc-d">촬영 중 발견 — <b>&ldquo;같이 즐기는 게 훨씬 그리니팅스럽다&rdquo;.</b> 그래픽은 쨍한 사진과 충돌해 배제.</div>
+      </div>
+    </div>
+    <div class="note"><strong>그리드 판정 &mdash; 얼굴 2 · 손 2 · 무인물 2 · 타이포 3.</strong> 사진 6칸만 놓고 보면 얼굴 33% · 손 33% · 무인물 33%입니다. 촬영 비중(얼굴 10%)이 아니라 <strong>현장 확정</strong> 쪽을 따릅니다 &mdash; 리뉴얼 알림에서 사람이 안 보이면 &ldquo;달라졌다&rdquo;가 전달되지 않습니다.</div>
+
+    <table style="margin-top:22px;">
+      <thead><tr><th style="width:130px;">항목</th><th>규칙</th></tr></thead>
+      <tbody>
+        <tr><td class="item">얼굴 칸 위치</td><td class="desc">②(중상) · ⑦(좌하) — <b>대각선으로 떨어뜨립니다.</b> 붙여 놓으면 인물 계정처럼 보입니다</td></tr>
+        <tr><td class="item">인원</td><td class="desc"><span class="ok">필수</span> <b>⑦은 2인 이상.</b> 혼자 먹는 컷은 &ldquo;혼자보다 같이&rdquo; 확정을 정면으로 어깁니다</td></tr>
+        <tr><td class="item">시선</td><td class="desc"><span class="stop">금지</span> <b>정면 응시.</b> 시선은 서로에게 또는 제품에 — 카메라를 보면 광고가 됩니다</td></tr>
+        <tr><td class="item">손 칸</td><td class="desc">반드시 <b>행위 중</b>. 꺼내는 손 · 짜는 손 · 내려놓는 손. <b>들고 정지한 손은 탈락</b></td></tr>
+        <tr><td class="item">손 조건</td><td class="desc">가느다란 손 · 네일 없음 · 시계/반지 최소</td></tr>
+        <tr><td class="item">무인물 칸</td><td class="desc">사람의 <b>흔적</b>은 남깁니다(열린 서랍, 내려놓은 자리). 완전한 정물은 1칸까지</td></tr>
+        <tr><td class="item">대표 노출</td><td class="desc">②가 대표 컷일 경우 사전 동의 확인. <b>대표 얼굴은 그리드에 1칸까지</b> — 브랜드 계정이지 대표 계정이 아닙니다</td></tr>
+        <tr><td class="item">앵글</td><td class="desc"><b>기울인 컷은 3칸까지</b> · 인접 배치 금지(대각선). 나머지는 정면·탑뷰로 대비를 만듭니다. 리프트·낙하는 <b>아이레벨 측면</b>(중력이 보여야 합니다)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <!-- 발행 -->
+  <div class="s-head">
+    <span class="sh-n">운영</span>
+    <span class="sh-t">발행 <em>순서</em></span>
+    <span class="sh-line"></span>
+    <span class="sh-tag">역순 업로드</span>
+  </div>
+
+  <div class="section">
+    <h2>아래 행부터 <em>거꾸로</em> 올립니다</h2>
+    <div class="sec-sub">인스타는 최신 게시물이 좌상단에 붙습니다 — 순서를 뒤집지 않으면 문장이 거꾸로 읽힙니다</div>
+    <div class="order">
+      <div class="od"><div class="dh">DAY 1</div><div class="dd">3행 · 선언</div><div class="dx">첫 게시물이 <b>⑨ 짜 먹는 손 + g!</b>입니다. &ldquo;9월, 달라집니다&rdquo;를 여기서 한 번 선언합니다.</div><div class="seq">⑨ → ⑧ → ⑦</div></div>
+      <div class="od"><div class="dh">DAY 2</div><div class="dd">2행 · 답</div><div class="dx">가운데 <b>⑤ 앵커 카드</b>가 프로필 정중앙에 앉습니다. 가장 먼저 눈에 걸리는 칸입니다.</div><div class="seq">⑥ → ⑤ → ④</div></div>
+      <div class="od"><div class="dh">DAY 3</div><div class="dd">1행 · 질문</div><div class="dx">마지막에 <b>CLEAN / EATING?</b>이 올라가며 그리드가 완성되고, 문장이 위에서부터 읽힙니다.</div><div class="seq">③ → ② → ①</div></div>
+    </div>
+
+    <table style="margin-top:22px;">
+      <thead><tr><th style="width:110px;">항목</th><th>안</th></tr></thead>
+      <tbody>
+        <tr><td class="item">시간</td><td class="desc">오전 8시 · 12시 · 저녁 7시</td></tr>
+        <tr><td class="item">캡션</td><td class="desc">3줄 이내 · 해시태그 5개 이하 · <b>링크 없음</b>(기대감 유지)</td></tr>
+        <tr><td class="item">스토리</td><td class="desc">매일 &ldquo;한 칸 더 열렸어요&rdquo; 3컷 + 그리드 캡처. 마지막 날 <b>그리드 전체 캡처</b></td></tr>
+        <tr><td class="item">하이라이트</td><td class="desc">그리드 완성일에 커버 6종 교체 (제품 6색)</td></tr>
+        <tr><td class="item">광고</td><td class="desc"><span class="stop">금지</span> 이 기간엔 그리드 게시물에 광고를 태우지 않습니다. 도배는 오가닉 자산입니다</td></tr>
+      </tbody>
+    </table>
+
+    <div style="font-size:12px;font-weight:800;color:#C24605;letter-spacing:.04em;margin:26px 0 4px;">6컷 축소안 (2×3)</div>
+    <div class="two">
+      <div class="mcard hero">
+        <div class="mc-n">살림</div>
+        <div class="mc-t">① + ③ 합침 · ⑤ · ④ · ⑥ · ⑦ · ⑨</div>
+        <div class="mc-d">타이포 카드 두 장을 <b>「CLEAN EATING?」 한 칸</b>으로 합칩니다.</div>
+      </div>
+      <div class="mcard">
+        <div class="mc-n">버림</div>
+        <div class="mc-t">② 얼굴 0.5초 · ⑧ 라인업</div>
+        <div class="mc-d">얼굴이 1칸으로 줄어 &ldquo;사람이 나온다&rdquo;가 약해지고, <b>제품이 몇 종인지 안 보입니다</b> — 신규 유입에게 이게 제일 아픕니다.</div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- 스튜 -->
+  <div class="s-head">
+    <span class="sh-n">경계</span>
+    <span class="sh-t">스튜를 <em>넣지 않는 이유</em></span>
+    <span class="sh-line"></span>
+    <span class="sh-tag">런칭과 분리</span>
+  </div>
+
+  <div class="section">
+    <h2>연기로 생긴 공백을 <em>이 그리드가 메웁니다</em></h2>
+    <div class="sec-sub">리뉴얼 알림을 런칭에 묶으면, 런칭이 밀릴 때 알림도 같이 밀립니다</div>
+    <table>
+      <tbody>
+        <tr><td class="item" style="width:110px;">사실</td><td class="desc">8/19 패키지 착색 재현 → <b>입고분 전량 폐기</b> → 재발주(최소 2주) → 8/24 올영 런칭 연기</td></tr>
+        <tr><td class="item">판단</td><td class="desc">8/20에 찍은 스튜 컷은 <b>폐기된 패키지로 찍은 것</b>입니다. 재입고분과 외관이 같다는 확인 전에는 쓸 수 없습니다</td></tr>
+        <tr><td class="item">그래서</td><td class="desc">리뉴얼 그리드 = <b>스무디 · 넛츠 · 레몬 라인만.</b> 스튜 0칸</td></tr>
+        <tr><td class="item">효과</td><td class="desc">런칭이 언제 잡히든 <b>그리드는 먼저 굴러갑니다</b></td></tr>
+      </tbody>
+    </table>
+    <div class="note warn"><strong>기존 티저 게시물 처리가 선결입니다.</strong> 8/18부터 나간 「08.24 olivebetter」 고지가 피드에 남아 있다면, 그리드 아래에 <strong>지나간 날짜가 그대로 보입니다.</strong> 아카이브할지 캡션만 정정할지 확인이 필요합니다.</div>
+  </div>
+
+
+  <!-- 결정 -->
+  <div class="s-head">
+    <span class="sh-n">선결</span>
+    <span class="sh-t">결정 · <em>확인</em></span>
+    <span class="sh-line"></span>
+    <span class="sh-tag">제작 발주 전</span>
+  </div>
+
+  <div class="section">
+    <h2>이게 정해지면 <em>바로 디자인 발주</em>입니다</h2>
+    <div class="sec-sub">타이포 3칸은 디자인 작업, 사진 6칸은 셀렉·보정 작업입니다</div>
+
+    <div style="font-size:12px;font-weight:800;color:#0E7A45;letter-spacing:.04em;margin:6px 0 2px;">성민님 결정</div>
+    <ul class="chk">
+      <li><b>9컷 vs 6컷</b> &mdash; 제작 발주의 전제</li>
+      <li><b>「클린이팅? 그리니팅.」을 그리드 문장으로 확정</b> &mdash; 워크샵 확정 컨셉을 피드에 처음 거는 것</li>
+      <li><b>얼굴 2칸 중 대표 컷 사용 여부</b> &mdash; 미사용 시 ② 대체 컷 지정 필요</li>
+      <li><b>발행 시작일</b> &mdash; 9월 캘린더의 9/1 리뉴얼 선언편(Feel · ASMR)과 <b>겹칠지 앞설지</b></li>
+    </ul>
+
+    <div style="font-size:12px;font-weight:800;color:#B3162A;letter-spacing:.04em;margin:22px 0 2px;">확인</div>
+    <ul class="chk">
+      <li><b>기존 티저 게시물 처리</b> &mdash; 8/18~ 「08.24 olivebetter」 고지가 피드에 남아 있는지</li>
+      <li><b>셀렉 · 보정본 수급</b> &mdash; 위 6개 컷이 실제 촬영본에 있는지 대조. 없으면 대체 컷 지정</li>
+      <li><b>스튜 재입고 패키지 외관</b>이 폐기분과 동일한지 &mdash; 동일하면 8/20 스튜 컷 재사용 가능</li>
+      <li><b><code style="font-family:Lexend;">g!</code> 느낌표 그래픽 자산 + 전용 사운드</b> 발주 상태 &mdash; ⑨와 전 시리즈 공통 엔딩이 같은 자산을 써야 합니다</li>
+    </ul>
+
+    <div class="note calm"><strong>이 그리드가 9월 시리즈로 넘어가는 지점</strong><br>
+      ⑨ 짜 먹기+g! → <strong>경량1 Feel the Greeniting</strong>(ASMR · ONE CUT) &nbsp;/&nbsp; ④·⑥ 냉동실 → <strong>10월 「30일」 캠페인</strong> 비포애프터 소재 &nbsp;/&nbsp; ②·⑦ 사람 → <strong>코어3 OO의 아침</strong> 톤 레퍼런스 &nbsp;/&nbsp; ⑧ 라인업 → <strong>코어1 한 잔의 질문</strong> 커버 &nbsp;/&nbsp; ①③⑤ 타이포 → <strong>전 시리즈 타이포 시스템 기준</strong>
+    </div>
+  </div>
+
+  <div class="footer">
+    그리니팅 · 리뉴얼 알림 그리드 + 무드 기획 · 2026. 08. 25<br>
+    사진 칸은 컷 지정 + 컬러 온도만 표시한 자리입니다. 셀렉본 수령 후 실사로 교체합니다.
+  </div>
+
+</div>
+
+</body></html>
