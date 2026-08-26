@@ -154,8 +154,8 @@ table.cal td.off { background:#fbfcfd; }
 .sp-th { font-size:13.5px; font-weight:900; color:#1a1b18; margin:26px 0 11px; padding-left:11px; border-left:3px solid #EA580C; }
 .sp-th:first-of-type { margin-top:0; }
 .sp-th span { font-size:11.5px; font-weight:600; color:#999; margin-left:9px; }
-.sp-grid { column-count:5; column-gap:9px; }
-.sp { break-inside:avoid; -webkit-column-break-inside:avoid; display:inline-block; width:100%; margin-bottom:9px; border:1px solid #e8edf1; border-radius:7px; overflow:hidden; background:#fff; vertical-align:top; }
+.sp-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:9px; align-items:start; }
+.sp { border:1px solid #e8edf1; border-radius:7px; overflow:hidden; background:#fff; }
 .sp img { display:block; width:100%; height:auto; background:#f1f4f7; }
 .sp-c { padding:8px 9px; font-size:10.5px; color:#636569; line-height:1.55; border-top:1px solid #f0f2f5; }
 .sp-c b { display:block; color:#1a1b18; font-size:11px; margin-bottom:3px; }
@@ -167,7 +167,7 @@ table.cal td.off { background:#fbfcfd; }
   .map { grid-template-columns: 1fr 1fr; }
   .two { grid-template-columns: 1fr; }
   .shots, .shots.n3 { grid-template-columns: repeat(2,1fr); }
-  .sp-grid { column-count:2; }
+  .sp-grid { grid-template-columns:repeat(2,1fr); }
   #shootplan { padding:18px 14px; }
   .section { padding: 24px 18px; }
   .report-header { padding: 28px 20px; }
@@ -187,7 +187,7 @@ table.cal td.off { background:#fbfcfd; }
   table.cal td { height:96px; padding:4px; }
   .ev { font-size:8.5px; padding:3px 4px; }
   .embed { display:none; }
-  .sp-grid { column-count:5; }
+  .sp-grid { grid-template-columns:repeat(5,1fr); }
   #shootplan { break-inside:auto; }
   body { background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   .section, .mission-box, .cal-wrap { break-inside: avoid; }
