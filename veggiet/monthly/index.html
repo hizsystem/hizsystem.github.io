@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<!-- rev: 2026-08-27 -->
+<title>베지어트 월간 미팅 리딩</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Noto Sans KR', -apple-system, sans-serif; background: #F1F5F2; color: #16221C; line-height: 1.7; font-size: 14px; -webkit-font-smoothing: antialiased; word-break: keep-all; overflow-wrap: break-word; }
+
+.toolbar { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: #16221C; height: 56px; display: flex; align-items: center; justify-content: space-between; padding: 0 32px; }
+.toolbar-title { font-size: 14px; font-weight: 500; color: #fff; }
+.btn-toolbar { padding: 7px 18px; border: 1px solid rgba(255,255,255,0.22); border-radius: 6px; background: transparent; color: #fff; font-size: 12px; font-weight: 500; cursor: pointer; }
+.btn-toolbar:hover { background: rgba(16,185,129,0.18); border-color: #10B981; }
+
+.container { max-width: 980px; margin: 0 auto; padding: 80px 24px 60px; }
+
+.report-header { background: #fff; border-radius: 12px; padding: 40px; margin-bottom: 20px; border: 1px solid #E2E8E4; }
+.report-header .label { font-size: 11px; font-weight: 700; color: #067A4E; letter-spacing: 0.12em; margin-bottom: 14px; }
+.report-header h1 { font-size: 34px; font-weight: 900; line-height: 1.3; letter-spacing: -0.02em; }
+.report-header h1 em { color: #067A4E; font-style: normal; }
+.meta-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 28px; padding-top: 24px; border-top: 1px solid #E2E8E4; }
+.meta-item .mk { font-size: 11px; color: #8E9A92; margin-bottom: 4px; }
+.meta-item .mv { font-size: 13px; font-weight: 600; }
+
+.mission-box { background: #16221C; border-radius: 12px; padding: 30px 36px; margin-bottom: 20px; color: #fff; }
+.mission-box .hl-label { font-size: 11px; font-weight: 700; color: #10B981; letter-spacing: 0.1em; margin-bottom: 14px; }
+.mission-box .lede { font-size: 19px; font-weight: 700; line-height: 1.55; letter-spacing: -0.01em; }
+.mission-box .lede em { color: #6EE7B7; font-style: normal; }
+.mission-box .sub { margin-top:16px; font-size:13px; color:rgba(255,255,255,0.74); line-height:1.95; }
+.mission-box .sub strong { color:#fff; }
+
+.section { background: #fff; border-radius: 12px; padding: 32px 40px; margin-bottom: 20px; border: 1px solid #E2E8E4; }
+.section h2 { font-size: 19px; font-weight: 800; margin-bottom: 6px; letter-spacing: -0.02em; }
+.section h2 em { color: #067A4E; font-style: normal; }
+.section .sec-sub { font-size: 12.5px; color: #8E9A92; margin-bottom: 20px; }
+.section p.body { font-size:13.5px; color:#5B655E; line-height:1.9; }
+.section p.body b { color:#16221C; }
+
+/* 시리즈 머리글 */
+.s-head { display:flex; align-items:center; gap:14px; margin:38px 0 16px; }
+.s-head .sh-n { flex:none; background:#16221C; color:#fff; font-size:11.5px; font-weight:800; padding:6px 14px; border-radius:20px; letter-spacing:.04em; }
+.s-head .sh-t { flex:none; font-size:21px; font-weight:900; letter-spacing:-.02em; }
+.s-head .sh-t em { color:#067A4E; font-style:normal; }
+.s-head .sh-line { flex:1; height:2px; background:#E2E8E4; border-radius:2px; }
+.s-head .sh-tag { flex:none; font-size:12px; font-weight:800; color:#067A4E; }
+
+/* 시리즈 한눈에 그리드 */
+.map { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+.mp { border:1px solid #E2E8E4; border-radius:10px; padding:16px; background:#F7FAF8; border-top:3px solid #CDD5D0; }
+.mp.hero { background:#E9FBF2; border-color:#B4EFD1; }
+.mp .mp-n { font-size:11px; font-weight:800; color:#067A4E; margin-bottom:6px; }
+.mp .mp-t { font-size:15px; font-weight:800; line-height:1.4; letter-spacing:-.01em; }
+.mp .mp-d { font-size:11.5px; color:#5B655E; margin-top:5px; line-height:1.6; }
+.mp .mp-f { font-size:11px; color:#8E9A92; margin-top:8px; padding-top:8px; border-top:1px dashed #E2E8E4; font-weight:700; }
+.mp.k1{border-top-color:#10B981} .mp.k2{border-top-color:#3B82F6} .mp.k3{border-top-color:#EC4899}
+.mp.k4{border-top-color:#F97316} .mp.k5{border-top-color:#14B8A6} .mp.k6{border-top-color:#16221C}
+
+/* 축 라벨 */
+.axis { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px; }
+.ax { display:inline-flex; align-items:center; gap:6px; font-size:12px; font-weight:700; padding:5px 12px; border-radius:20px; border:1px solid #E2E8E4; background:#fff; }
+.ax i { width:10px; height:10px; border-radius:3px; display:inline-block; }
+.c-core { background:#10B981; } .c-light { background:#F95708; } .c-camp { background:#16221C; }
+
+/* 칩 */
+.chips { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:14px; }
+.chip { font-size:11px; font-weight:800; padding:4px 11px; border-radius:20px; background:#F1F5F2; color:#5B655E; }
+.chip.on { background:#16221C; color:#fff; }
+.chip.gr { background:#E9FBF2; color:#067A4E; }
+.chip.rd { background:#FDECEE; color:#B3162A; }
+
+/* 두 갈래 */
+.two { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.mcard { border:1px solid #E2E8E4; border-radius:10px; padding:20px; background:#F7FAF8; }
+.mcard.hero { background:#E9FBF2; border-color:#B4EFD1; }
+.mcard .mc-n { font-size:11px; font-weight:800; color:#067A4E; letter-spacing:.06em; margin-bottom:6px; }
+.mcard .mc-t { font-size:16px; font-weight:900; letter-spacing:-.01em; }
+.mcard .mc-d { font-size:12.5px; color:#5B655E; margin-top:6px; line-height:1.75; }
+.mcard .mc-x { margin-top:12px; padding-top:12px; border-top:1px dashed #DCE3DD; font-size:12px; color:#5B655E; line-height:1.7; }
+.mcard .mc-x b { color:#16221C; }
+
+/* 시리즈 스펙 표 */
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th { background: #F7FAF8; padding: 10px 14px; font-weight: 600; border-bottom: 2px solid #E2E8E4; color: #8E9A92; font-size: 11px; text-align: left; white-space: nowrap; }
+th.c { text-align: center; }
+td { padding: 12px 14px; border-bottom: 1px solid #F1F5F2; vertical-align: top; }
+td.item { font-weight: 700; }
+td.desc { color: #5B655E; font-size: 12.5px; }
+td.c { text-align:center; }
+td .num { display:inline-block; width:20px; height:20px; line-height:20px; border-radius:50%; background:#16221C; color:#fff; font-size:11px; font-weight:800; text-align:center; }
+td .o { color:#067A4E; font-weight:800; } td .x { color:#B3162A; font-weight:800; } td .t { color:#C79A0B; font-weight:800; }
+
+/* 예시 카피 블록 */
+.copy { background:#F7FAF8; border:1px solid #E2E8E4; border-left:3px solid #10B981; border-radius:0 8px 8px 0; padding:6px 20px; margin-top:12px; }
+.copy .cl { display:grid; grid-template-columns:72px 1fr; gap:12px; padding:10px 0; border-bottom:1px dashed #E6ECE7; }
+.copy .cl:last-child { border-bottom:none; }
+.copy .ck { font-size:10.5px; font-weight:800; color:#067A4E; letter-spacing:.04em; padding-top:3px; }
+.copy .cv { font-size:13.5px; line-height:1.85; white-space:pre-line; }
+.copy .cv b { font-weight:800; }
+.copy.rd { border-left-color:#DF1C33; } .copy.rd .ck { color:#B3162A; }
+.copy.yl { border-left-color:#EAB939; } .copy.yl .ck { color:#8B5E08; }
+.copy-t { font-size:13.5px; font-weight:800; margin:22px 0 0; }
+.copy-t span { font-size:11px; font-weight:800; color:#8E9A92; margin-left:8px; }
+.copy-x { font-size:12px; color:#5B655E; line-height:1.8; margin-top:8px; padding-left:2px; }
+.copy-x b { color:#16221C; }
+
+/* 타임스탬프 */
+.tl { background:#FFFBF0; border:1px solid #F3E4A9; border-radius:8px; padding:6px 18px; margin-top:12px; }
+.tl .tr { display:grid; grid-template-columns:64px 1fr; gap:14px; padding:7px 0; border-bottom:1px dashed #F3E4A9; font-size:13px; }
+.tl .tr:last-child { border-bottom:none; }
+.tl .tt { font-weight:800; color:#8B5E08; font-variant-numeric:tabular-nums; }
+.tl .tr.rz { color:#8E9A92; font-size:12px; }
+
+.tbd { display:inline-block; border:1px dashed #C79A0B; background:#FFFBF0; color:#8B5E08; font-weight:800; font-size:11.5px; border-radius:5px; padding:0 7px; line-height:1.7; white-space:nowrap; }
+.stop { display:inline-block; background:#FDECEE; color:#B3162A; font-weight:800; font-size:11.5px; border-radius:5px; padding:0 7px; line-height:1.7; white-space:nowrap; }
+
+.chk { list-style:none; padding:0; }
+.chk li { position:relative; padding:9px 0 9px 30px; border-bottom:1px dashed #ECF1ED; font-size:13.5px; }
+.chk li:last-child { border-bottom:none; }
+.chk li::before { content:'\25A1'; position:absolute; left:6px; top:8px; font-size:16px; color:#10B981; font-weight:800; }
+.chk li b { color:#16221C; }
+
+.note { background:#E9FBF2; border-left:4px solid #10B981; border-radius:0 8px 8px 0; padding:14px 20px; margin-top:18px; font-size:12.5px; color:#4C574F; line-height:1.85; }
+.note strong { color:#16221C; }
+.note.calm { background:#F7FAF8; border-left-color:#CDD5D0; color:#5B655E; }
+.note.warn { background:#FDECEE; border-left-color:#DF1C33; color:#7A2430; }
+.note.warn strong { color:#B3162A; }
+
+.ref { margin-top:14px; border:1px dashed #CDD5D0; border-radius:8px; padding:12px 16px; background:#F7FAF8; }
+.ref .rf-h { font-size:11px; font-weight:800; color:#5B655E; letter-spacing:.06em; margin-bottom:6px; }
+.ref .rf-x { font-size:12px; color:#5B655E; line-height:1.8; }
+
+/* 캘린더 */
+.legend { display:flex; flex-wrap:wrap; gap:7px; margin-bottom:16px; }
+.lg { display:inline-flex; align-items:center; gap:6px; font-size:11.5px; font-weight:700; padding:4px 11px; border-radius:20px; border:1px solid #E2E8E4; background:#fff; }
+.lg i { width:10px; height:10px; border-radius:3px; display:inline-block; }
+.b1{background:#10B981}.b2{background:#3B82F6}.b3{background:#EC4899}.b4{background:#F97316}.b5{background:#14B8A6}.b6{background:#16221C}
+
+.cal-wrap { overflow-x:auto; -webkit-overflow-scrolling:touch; border:1px solid #E2E8E4; border-radius:10px; }
+table.cal { width:100%; min-width:760px; border-collapse:collapse; table-layout:fixed; }
+table.cal th { background:#F7FAF8; padding:9px 6px; font-size:11px; font-weight:800; color:#5B655E; text-align:center; border-bottom:2px solid #E2E8E4; }
+table.cal th.sun { color:#dc2626; } table.cal th.sat { color:#2563EB; }
+table.cal td { border:1px solid #F1F5F2; vertical-align:top; padding:6px 6px 8px; height:112px; }
+table.cal td.off { background:#FBFCFA; }
+.dnum { font-size:13px; font-weight:800; color:#4C574F; margin-bottom:4px; }
+.dnum.sun { color:#dc2626; } .dnum.sat { color:#2563EB; }
+.dnum.out { color:#CDD5D0; }
+.ev { display:block; font-size:10px; font-weight:700; line-height:1.35; padding:4px 6px; border-radius:5px; margin-bottom:3px; color:#fff; }
+.ev .et { display:block; font-size:9px; font-weight:800; opacity:.85; letter-spacing:.03em; }
+.ev.e1{background:#10B981}.ev.e2{background:#3B82F6}.ev.e3{background:#EC4899}
+.ev.e4{background:#F97316}.ev.e5{background:#14B8A6}.ev.e6{background:#16221C}
+.ev.ghost { background:#fff; border:1px dashed #CDD5D0; color:#6B756C; }
+.ev.hol { background:#FDECEE; color:#B3162A; }
+
+.footer { text-align: center; padding: 40px 0 10px; color: #8E9A92; font-size: 12px; line-height: 2; }
+
+@media (max-width: 768px) {
+  .container { padding: 76px 14px 40px; }
+  .meta-grid { grid-template-columns: repeat(2, 1fr); }
+  .map { grid-template-columns: 1fr 1fr; }
+  .two { grid-template-columns: 1fr; }
+  .section { padding: 24px 18px; }
+  .report-header { padding: 28px 20px; }
+  .report-header h1 { font-size: 25px; }
+  .mission-box { padding: 24px 20px; } .mission-box .lede { font-size:17px; }
+  .toolbar { padding: 0 16px; } .toolbar-title { display:none; }
+  .s-head { flex-wrap:wrap; gap:10px; } .s-head .sh-line { display:none; }
+  .copy .cl { grid-template-columns:60px 1fr; gap:8px; }
+  .copy { padding:6px 14px; }
+}
+@media print {
+  .toolbar { display: none; }
+  .container { padding: 0; max-width: none; }
+  .section { padding: 20px 22px; margin-bottom: 14px; }
+  table { font-size: 11.5px; }
+  th { font-size: 10px; padding: 7px 8px; white-space: normal; }
+  td { padding: 9px 8px; }
+  table.cal { min-width:0; width:100%; }
+  table.cal td { height:96px; padding:4px; }
+  .ev { font-size:8.5px; padding:3px 4px; }
+  body { background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .section, .mission-box, .cal-wrap { break-inside: avoid; }
+  .s-head { break-after: avoid; }
+  @page { size: A4; margin: 10mm; }
+}
+
+/* 실물 포스트 카드 */
+.posts { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
+.pc { border:1px solid #E2E8E4; border-radius:10px; overflow:hidden; background:#fff; text-decoration:none; color:inherit; display:block; }
+.pc:hover { border-color:#10B981; }
+.pc .pc-img { width:100%; aspect-ratio:1/1; object-fit:cover; display:block; background:#F1F5F2; }
+.pc .pc-b { padding:10px 11px 12px; }
+.pc .pc-s { font-size:10px; font-weight:800; letter-spacing:.04em; color:#067A4E; }
+.pc .pc-t { font-size:12px; font-weight:700; line-height:1.5; margin-top:3px; letter-spacing:-.01em; }
+.pc .pc-m { font-size:10.5px; color:#8E9A92; margin-top:7px; padding-top:7px; border-top:1px dashed #E2E8E4; font-variant-numeric:tabular-nums; }
+.pc .pc-m b { color:#16221C; }
+.pc.win { border-color:#10B981; box-shadow:0 0 0 2px #E9FBF2 inset; }
+.pc.win .pc-s { color:#067A4E; }
+.pc.lose { border-color:#F1B6BF; }
+.pc.lose .pc-s { color:#B3162A; }
+/* 인라인 실물 예시 */
+.samp { display:grid; grid-template-columns:104px 1fr; gap:14px; align-items:start; margin-top:16px; border:1px dashed #CDD5D0; border-radius:10px; padding:13px 15px; background:#F7FAF8; }
+.samp.two-up { grid-template-columns:104px 104px 1fr; }
+.samp img { width:104px; height:104px; object-fit:cover; border-radius:8px; display:block; }
+.samp .sp-h { font-size:10.5px; font-weight:800; color:#067A4E; letter-spacing:.05em; }
+.samp .sp-t { font-size:13.5px; font-weight:800; margin-top:3px; letter-spacing:-.01em; }
+.samp .sp-x { font-size:12px; color:#5B655E; line-height:1.8; margin-top:6px; }
+.samp .sp-x b { color:#16221C; }
+.samp a.sp-l { display:inline-block; margin-top:7px; font-size:11.5px; font-weight:800; color:#067A4E; }
+@media(max-width:768px){ .posts{grid-template-columns:repeat(2,1fr);} .samp{grid-template-columns:76px 1fr;} .samp.two-up{grid-template-columns:76px 76px;} .samp img{width:76px;height:76px;} }
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="toolbar-title">베지어트 · 월간 미팅 리딩</div>
+  <button class="btn-toolbar" onclick="window.print()">PDF 저장 · 인쇄</button>
+</div>
+
+<div class="container">
+
+  <div class="report-header">
+    <div class="label">VEGGIET MONTHLY</div>
+    <h1>월간 미팅 <em>리딩 뼈대</em></h1>
+    <div class="meta-grid">
+      <div class="meta-item"><div class="mk">메인 안건</div><div class="mv">콘텐츠 기획 업그레이드</div></div>
+      <div class="meta-item"><div class="mk">근거</div><div class="mv">8월 발행 11건 · 8/26 기획회의</div></div>
+      <div class="meta-item"><div class="mk">결정 필요</div><div class="mv">5건</div></div>
+      <div class="meta-item"><div class="mk">작성일</div><div class="mv">2026. 08. 27</div></div>
+    </div>
+  </div>
+
+  <div class="mission-box">
+    <div class="hl-label">이 미팅에서 할 일</div>
+    <div class="lede">콘텐츠를 <em>더 만들자</em>는 회의가 아닙니다. <em>무엇을 안 만들지</em> 정하는 회의입니다.</div>
+    <div class="sub">8월에 편수는 유지했는데 도달·전환이 같이 빠졌습니다. 원인이 물량이 아니라 <strong>기준</strong>이라는 게 이번 달 실측의 결론입니다.<br><br>순서는 이렇습니다 &mdash; <strong>①8월이 말해준 것</strong>(숫자) → <strong>②그래서 뭐가 문제인가</strong>(개선점 5) → <strong>③베지어트만 가질 수 있는 것</strong>(뾰족함 4) → <strong>④그걸 콘텐츠로</strong>(시리즈 재편) → <strong>⑤굿즈 2트랙</strong> → <strong>⑥오늘 결정할 것</strong>.</div>
+  </div>
+
+
+  <!-- 1 -->
+  <div class="s-head">
+    <span class="sh-n">1</span>
+    <span class="sh-t">8월이 <em>말해준 것</em></span>
+    <span class="sh-line"></span>
+    <span class="sh-tag">계정 실측 8/27</span>
+  </div>
+
+  <div class="section">
+    <h2>편수는 유지했는데 <em>둘이 동시에 꺼졌습니다</em></h2>
+    <div class="sec-sub">팔로워 <b>8,930</b> · 게시물 <b>132</b> · 8월 발행 11건(릴스 전용 2건 포함)</div>
+    <table>
+      <thead><tr><th style="width:150px;">엔진</th><th style="width:34%;">7월</th><th>8월</th></tr></thead>
+      <tbody>
+        <tr><td class="item">도달</td><td class="desc">브랜디드필름 <b>143,543</b> / 136,425<br>프로필 방문 4,398 / 5,449</td><td class="desc"><b>대형 소재 없음.</b> 8월 최고가 <b>9,133</b><br>&mdash; 7월의 <b>1/16</b></td></tr>
+        <tr><td class="item">팔로워</td><td class="desc">베지어트톡 3편 &mdash; 광고비 0원에<br>팔로우 <b>+53 (1.33%)</b>, CPF ₩134~257</td><td class="desc">같은 포맷인데 부서 소개로 바뀌며<br>8/24편 조회 <b>517</b></td></tr>
+      </tbody>
+    </table>
+
+    <div class="copy-t">같은 시리즈, 같은 제작비, <span>10일 차이에 18배</span></div>
+    <div class="samp two-up">
+<img src="../content-series/img/DcAyK5WhCkr.jpg" alt="">
+<img src="../content-series/img/DcaqaRusPHD.jpg" alt="">
+      <div><div class="sp-h">베지어트톡 · 8월</div><div class="sp-t">9,133 &nbsp;vs&nbsp; 517</div><div class="sp-x">왼쪽 8/14 <b>「1년에 10번씩 해외에 나가는 이유」</b> &mdash; 8월 최고 조회. 오른쪽 8/24 <b>「뭐가 가장 잘 나가나요」 고객만족팀</b>. 둘 다 팀원이 나오는 같은 릴스인데, 왼쪽은 <b>남들이 안 하는 걸 우리가 한다</b>는 이야기였고 오른쪽은 <b>부서 소개</b>였습니다.</div>
+      <a class="sp-l" href="https://www.instagram.com/p/DcAyK5WhCkr/" target="_blank" rel="noopener">8/14 보기 ↗</a> <a class="sp-l" href="https://www.instagram.com/p/DcaqaRusPHD/" target="_blank" rel="noopener">8/24 보기 ↗</a></div>
+    </div>
+
+    <div class="two" style="margin-top:18px;">
+      <div class="mcard hero"><div class="mc-n">가장 강한 자산</div><div class="mc-t">잘 채우는 사람들</div><div class="mc-d">계정 좋아요 1·2위 &mdash; <b>1,099 / 954</b><br>나머지는 전부 두 자릿수(19~86)</div><div class="mc-x">둘 다 <b>비이벤트</b>입니다. 홀블렌딩은 상위가 전부 이벤트인데 우리 1·2위는 사람 이야기입니다.</div></div>
+      <div class="mcard"><div class="mc-n">경쟁 대비</div><div class="mc-t">물량으로 지고 서사로 이긴다</div><div class="mc-d">게시물 <b>132</b> vs 홀블렌딩 523<br>팔로워 <b>8,930</b> vs 6,747</div><div class="mc-x">비이벤트 인게이지 <b>2.37% vs 0.65%</b> = <b>3.7배</b>. 편수를 늘리는 건 우리가 유리한 판을 버리는 선택입니다.</div></div>
+    </div>
+    <div class="note warn"><strong>🔴 고질적인 것 하나</strong> &mdash; 조회는 나는데 <strong>팔로우가 안 붙습니다.</strong> 8/14편은 조회 9,133에 좋아요 42(0.5%)입니다. 한 편이 재밌어도 <strong>다음 편을 볼 이유</strong>가 없으면 팔로우가 안 눌립니다.</div>
+  </div>
+
+
+  <!-- 2 -->
+  <div class="s-head">
+    <span class="sh-n">2</span>
+    <span class="sh-t">개선점 <em>5개</em></span>
+    <span class="sh-line"></span>
+    <span class="sh-tag">왜 지금 업그레이드인가</span>
+  </div>
+
+  <div class="section">
+    <h2>포맷이 아니라 <em>기준이 없습니다</em></h2>
+    <div class="sec-sub">다섯 개가 따로 있는 문제가 아니라, 위에서부터 순서대로 걸려 있습니다</div>
+    <table>
+      <thead><tr><th style="width:46px;" class="c">#</th><th style="width:170px;">문제</th><th>근거 · 지금 상태</th></tr></thead>
+      <tbody>
+        <tr><td class="c"><span class="num">1</span></td><td class="item">소유한 한 문장이 없다</td><td class="desc">현행 「매일 먹어도 속 편한, 식물성 단백질의 기준」 &mdash; ①라인 6종 중 절반도 못 덮음 ②홀블렌딩 문장(&ldquo;약사가 설계한 <b>속편한</b> 식물성 단백질&rdquo;)의 부분집합 ③검색 결과 <b>0건</b> ④리뷰 3,091건에서 고객이 안 쓰는 말(&ldquo;고소하다&rdquo; 698회 : &ldquo;속 편하다&rdquo; 60회) <span class="stop">&ldquo;속 편한&rdquo;은 표시광고법 위반</span></td></tr>
+        <tr><td class="c"><span class="num">2</span></td><td class="item">화자에 자격이 없다</td><td class="desc">베지어트톡이 대표 → 마케팅팀 → 그로서리 → 고객만족팀 <b>부서 릴레이</b>가 됐습니다. 부서는 유한하고(다 돌면 끝) 시청자는 우리 조직도에 관심이 없습니다. <b>18배 차이가 이 지점에서 났습니다</b></td></tr>
+        <tr><td class="c"><span class="num">3</span></td><td class="item">가장 잘된 걸<br>시리즈로 안 만들었다</td><td class="desc">「잘 채우는 사람들」이 좋아요 1·2위인데 <b>시리즈명·회차 라벨·다음 편 예고가 없습니다.</b> 3탄 진행 여부를 <b>클라이언트가 먼저 물어봤습니다</b> &mdash; 기대가 이미 생겼다는 신호</td></tr>
+        <tr><td class="c"><span class="num">4</span></td><td class="item">제품을 온전히<br>소개하는 자리가 없다</td><td class="desc">랩은 원물만, 모먼트는 무드만, 사람 시리즈는 사람만 다룹니다. <b>SKU 하나를 처음부터 끝까지 설명하는 게시물이 하나도 없습니다</b> &mdash; 신제품이 나오거나 신규 유입이 들어왔을 때 보낼 데가 없습니다</td></tr>
+        <tr><td class="c"><span class="num">5</span></td><td class="item">도달 엔진이 멈춰 있다</td><td class="desc">8월 도달 붕괴의 절반은 브랜디드필름 부재입니다. <span class="tbd">9월 광고예산 3주 연속 미회신</span> 콘텐츠 구조를 고쳐도 예산이 없으면 9월도 8월이 됩니다</td></tr>
+      </tbody>
+    </table>
+    <div class="note"><strong>순서가 있습니다</strong> &mdash; ①이 정해져야 ②의 자격이 정의되고, ②가 서야 ③·④가 같은 말을 합니다. <strong>①을 오늘 정하지 않으면 나머지는 전부 잠정입니다.</strong></div>
+  </div>
+
+
+  <!-- 3 -->
+  <div class="s-head">
+    <span class="sh-n">3</span>
+    <span class="sh-t">베지어트만 <em>가질 수 있는 것</em></span>
+    <span class="sh-line"></span>
+    <span class="sh-tag">뾰족함 4</span>
+  </div>
+
+  <div class="section">
+    <h2>경쟁사가 <em>구조적으로 못 쓰는</em> 것만 남겼습니다</h2>
+    <div class="sec-sub">국내 59 · 해외 48문장 실측에서 비어 있던 자리 &mdash; <b>사용자 호명 0사 · 어려움을 떠맡음 0사</b></div>
+    <div class="map">
+      <div class="mp k1 hero"><div class="mp-n">뾰족함 1</div><div class="mp-t">사람</div><div class="mp-d">티 안 내고 겸손한데<br>뒤에서 제대로 하는 팀</div><div class="mp-f">홀블 = 약사 1인 자격<br>우리 = 팀 서사</div></div>
+      <div class="mp k2"><div class="mp-n">뾰족함 2</div><div class="mp-t">원물</div><div class="mp-d">1년에 10번씩<br>해외 그로서리를 돈다</div><div class="mp-f">8월 최고 조회 9,133<br>= 이미 증명됨</div></div>
+      <div class="mp k3"><div class="mp-n">뾰족함 3</div><div class="mp-t">고객</div><div class="mp-d">앰버서더 3편이<br>계정 최고 인게이지</div><div class="mp-f">♥1,099 · 비이벤트<br>홀블 대응 자산 없음</div></div>
+      <div class="mp k4"><div class="mp-n">뾰족함 4</div><div class="mp-t">태도</div><div class="mp-d">굳이 챙겨 먹는 사람</div><div class="mp-f">자격이 아니라 태도<br>= 복제 불가</div></div>
+    </div>
+    <div class="note"><strong>왜 4번이 결정적인가</strong> &mdash; 홀블렌딩은 <strong>자격</strong>(약사가 설계)으로 싸움을 걸었습니다. 자격에 자격으로 맞서면 집니다 &mdash; 우리 쪽엔 약사가 없습니다. 그런데 <strong>자격은 브랜드의 것이고 「굳이」는 고객의 것</strong>입니다. 싸움터를 옮기면 판이 바뀝니다.</div>
+    <div class="note calm"><strong>타겟도 여기서 이동합니다</strong> &mdash; 지금 시딩은 요가·러닝 중심인데, 식물성 실구매 720만 명 중 <strong>97%가 채식주의자가 아닙니다</strong>(건강 33.5% · 맛 궁금 26.0% · 채식 2.9%). <strong>운동하는 사람은 이미 먹을 게 많은 사람</strong>입니다. 넓히는 게 아니라 <strong>정확해지는</strong> 변경입니다.</div>
+  </div>
+
+
+  <!-- 4 -->
+  <div class="s-head">
+    <span class="sh-n">4</span>
+    <span class="sh-t">그래서 <em>콘텐츠 기획</em></span>
+    <span class="sh-line"></span>
+    <span class="sh-tag">메인 안건</span>
+  </div>
+
+  <div class="section">
+    <h2>제품 셋을 <em>사람으로 갈랐습니다</em></h2>
+    <div class="sec-sub">8/26 기획회의 최대 수확 &mdash; 이 표 하나가 시딩·콘텐츠·하이라이트·광고 타겟을 동시에 결정합니다</div>
+    <table>
+      <thead><tr><th style="width:120px;">제품</th><th style="width:140px;">누가 쓰는가</th><th>소구 대상</th></tr></thead>
+      <tbody>
+        <tr><td class="item">베지어트</td><td class="desc"><b>몸 쓰는 사람</b></td><td class="desc">기존 운동인 유지 &mdash; &ldquo;운동스&rdquo;에서 <b>몸 쓰는 사람</b>으로 확장</td></tr>
+        <tr><td class="item">베지포유</td><td class="desc"><b>머리 쓰는 사람</b></td><td class="desc">학생 · 아나운서 · 직장인 · 기획자. <b>하루 시작 에너지원</b> &mdash; 견과(마카다미아·피칸·호두·대추야자)가 실제로 뇌 에너지원. <b>이 카테고리에서 아무도 안 쓰는 자리</b></td></tr>
+        <tr><td class="item">클렌즈</td><td class="desc"><b>전문가</b></td><td class="desc">약사 · 의사 &mdash; 영양을 너무 잘 아는 사람이 굳이 이것만 챙긴다 <span class="stop">&ldquo;추천&rdquo; 아닌 &ldquo;본인 사용&rdquo;으로만</span></td></tr>
+      </tbody>
+    </table>
+    <div class="note">🟢 <strong>셋이 서로 안 싸웁니다.</strong> 몸 / 머리 / 전문성은 배타적이지 않고 한 사람이 셋 다일 수도 있습니다. 그리고 <strong>프로틴 시장 전체가 &lsquo;몸&rsquo;만 부르고 있습니다.</strong></div>
+  </div>
+
+  <div class="section">
+    <h2>시리즈는 <em>10개로 재편</em>했습니다</h2>
+    <div class="sec-sub">기존 6 유지 · 신규 4 신설 &mdash; 편수를 늘리는 게 아니라 <b>기준을 거는</b> 재편입니다</div>
+    <table>
+      <thead><tr><th style="width:170px;">시리즈</th><th style="width:96px;">상태</th><th>이 시리즈가 하는 일</th></tr></thead>
+      <tbody>
+        <tr><td class="item">베지어트톡</td><td class="desc">기존 · 자격 신설</td><td class="desc">만든 사람이 제품 비하인드를 1인칭으로. <b>부서 릴레이 폐기 &mdash; 원물 에피소드로</b></td></tr>
+        <tr><td class="item">베지어트랩</td><td class="desc">기존 · 2버전</td><td class="desc">원물·공정. 캐러셀(원본) + 릴스 칠판강의(파생). <b>베지포유·클렌즈까지 확장</b></td></tr>
+        <tr><td class="item">잘 채우는 사람들</td><td class="desc">기존 · 시즌제</td><td class="desc">앰버서더 인터뷰. <b>3편 = 1시즌</b>, 시즌마다 동사와 대상군을 함께 바꾼다</td></tr>
+        <tr><td class="item">베지어트 모먼트</td><td class="desc">기존 · 2버전</td><td class="desc">일상 한 장면. 캐러셀(기존) + <b>릴스(신규)</b></td></tr>
+        <tr><td class="item">SNS 이벤트</td><td class="desc">기존</td><td class="desc">댓글을 달아야 참여가 성립하는 구조. <b>8월 유일한 참여 포맷</b>(💬113)</td></tr>
+        <tr><td class="item">Let&rsquo;s Veggiet</td><td class="desc">기존 · 스팟</td><td class="desc">팝업·행사·해외 전시에 <b>함께하고 응원·지원하는</b> 브랜드 문화</td></tr>
+        <tr><td class="item" style="color:#067A4E;">베지어트 제작일지</td><td class="desc"><b>🆕 신규</b></td><td class="desc"><b>개선점 4번의 답.</b> SKU 하나를 왜·어떻게·무엇을 고민했나 → 그래서 이렇게 먹는다 → 이런 말을 듣는다까지 <b>한 편으로 끝내는 정본</b>. 이미지+영상 혼합 캐러셀 7장</td></tr>
+        <tr><td class="item" style="color:#067A4E;">오피스 시트콤</td><td class="desc"><b>🆕 신규</b></td><td class="desc">마케팅 이슈를 <b>준비하는 과정</b>으로 보여주며 결과물을 미리 스포하는 티징. 우리가 하는 일이 곧 소재라 <b>따로 기획할 게 없다</b></td></tr>
+        <tr><td class="item" style="color:#067A4E;">우당탕탕 베지어트</td><td class="desc"><b>🆕 신규</b></td><td class="desc">브랜드 장점을 <b>캐릭터로 돌려 어필</b>하는 팬덤 콘텐츠. 물류 오배송 0.01% · 공정개발 · CS · 시딩</td></tr>
+        <tr><td class="item" style="color:#067A4E;">베지어팅</td><td class="desc"><b>🆕 신규</b></td><td class="desc">「OOO 하는 중」 밈. 웃기고 끝나지 않고 <b>마지막에 한 줄 남긴다</b>. 제작비 최소·양산 가능</td></tr>
+      </tbody>
+    </table>
+    <div class="note"><strong>🟢 팔로우가 안 붙는 문제의 답이 여기 있습니다</strong> &mdash; 시트콤·캐릭터·베지어팅은 전부 <strong>다음 편을 보게 만드는</strong> 구조입니다. 단발 정보 릴스에는 그게 없습니다. <strong>9월에 이 가설을 검증합니다.</strong></div>
+  </div>
+
+
+  <!-- 5 -->
+  <div class="s-head">
+    <span class="sh-n">5</span>
+    <span class="sh-t">굿즈 <em>2트랙</em></span>
+    <span class="sh-line"></span>
+    <span class="sh-tag">대표님 요청 = 2가지</span>
+  </div>
+
+  <div class="section">
+    <h2>두 칸은 <em>전혀 다른 게임</em>입니다</h2>
+    <div class="sec-sub">「정기구독 선물 &#124; 콘텐츠에 비주얼(아이캐칭) 시선강탈 아이템 <b>2가지</b>」 &mdash; 요청을 그대로 두 트랙으로 나눕니다</div>
+    <div class="two">
+      <div class="mcard"><div class="mc-n">트랙 ① 정기구독 선물</div><div class="mc-t">쉐이커</div><div class="mc-d">대표님 지정. <b>5,000개 단가 게임</b></div><div class="mc-x"><b>🔴 마감이 있습니다</b> &mdash; 9/15 발주(해외 OEM 5~8주 역산, 12월 라이브).<br><br><b>🔴 카테고리가 포화입니다</b> &mdash; 1인 평균 6개 보유·4개가 사은품, 소유 91%·<b>미사용 82%</b>. 게다가 [90일 리셋팩]에 <b>이미 보틀을 주고 있고</b> 정기배송에 &ldquo;보틀제외&rdquo; 옵션이 있습니다.<br><br>→ 그래서 <b>&ldquo;또 하나의 쉐이커&rdquo;가 되면 집니다.</b> 참고 사례는 3년 개발한 트라이탄 분리잠금 구조 &mdash; <b>실루엣이나 구조 중 하나는 남달라야</b> 합니다.</div></div>
+      <div class="mcard hero"><div class="mc-n">트랙 ② 콘텐츠 아이캐칭</div><div class="mc-t">3D 프린트 · 매달 다른 것</div><div class="mc-d">굿즈가 아니라 <b>촬영 소품</b>. 1~10개</div><div class="mc-x"><b>🟢 8/24에 &ldquo;5,000개 GWP로는 불성립&rdquo;으로 판정됐던 게 여기서 살아납니다</b>(100개에 3~4일). 대량 증정이 아니라 <b>소량 아이캐칭</b>이면 성립합니다.<br><br><b>구조</b> &mdash; 고객 불편을 접수해 그걸 해결하는 물건을 <b>매달 하나 만들고, 만드는 과정이 콘텐츠</b>가 됩니다(클렌즈 놔두면 물바다 → 받침대).<br><br>→ <b>제작일지·랩과 그대로 붙고</b>, 커뮤니티가 할 일(불편 접수)도 생깁니다.</div></div>
+    </div>
+    <div class="note"><strong>두 칸을 섞지 않습니다</strong> &mdash; ①은 <strong>9/15 발주 마감</strong>에 걸린 단가 게임이고, ②는 <strong>마감이 없는</strong> 콘텐츠 트랙입니다. 같은 표에 놓으면 또 못 고릅니다. <strong>②는 오늘 승인만 나면 9월에 파일럿 1개를 바로 돌릴 수 있습니다.</strong></div>
+  </div>
+
+
+  <!-- 6 -->
+  <div class="s-head">
+    <span class="sh-n">6</span>
+    <span class="sh-t">오늘 <em>결정할 것</em></span>
+    <span class="sh-line"></span>
+    <span class="sh-tag">5건</span>
+  </div>
+
+  <div class="section">
+    <h2>여기서 <em>안 정해지면</em> 9월이 밀립니다</h2>
+    <table>
+      <thead><tr><th style="width:46px;" class="c">#</th><th style="width:180px;">결정</th><th>미결 시 손실</th></tr></thead>
+      <tbody>
+        <tr><td class="c"><span class="num">1</span></td><td class="item">키 메시지 택 1<br><span style="font-weight:400;color:#8E9A92;">A 매일 속 편한 식물성 루틴 / B 오늘을 채우는 식물성 식습관 / C 가볍게 채우는 식물성 밸런스</span></td><td class="desc"><b>나머지 4건이 전부 잠정으로 남습니다.</b> 굿즈 각인·시트콤 클로징·랩 엔딩이 같은 말을 못 씁니다<br><span class="stop">A안은 &ldquo;속 편한&rdquo;이 표시광고법에 걸립니다</span> 지금 문장을 바꾸려는 이유가 바로 그것</td></tr>
+        <tr><td class="c"><span class="num">2</span></td><td class="item">신규 시리즈 4종 승인<br><span style="font-weight:400;color:#8E9A92;">특히 대표님·직원 캐릭터화 수위</span></td><td class="desc">촬영이 시작되지 않습니다. <b>출연은 직원 개인이 결정할 문제</b>라 대표님 승인이 전제입니다</td></tr>
+        <tr><td class="c"><span class="num">3</span></td><td class="item">9월 광고예산</td><td class="desc"><span class="tbd">3주 연속 미회신</span> 도달 엔진(브랜디드 대형편)을 9월에 넣을지 말지가 여기서 갈립니다. <b>콘텐츠를 고쳐도 예산이 없으면 9월도 8월</b></td></tr>
+        <tr><td class="c"><span class="num">4</span></td><td class="item">굿즈 2트랙 승인<br><span style="font-weight:400;color:#8E9A92;">쉐이커 사양 / 3D 파일럿</span></td><td class="desc"><b>9/15 발주 마감</b> &mdash; 못 정하면 12월 라이브 불가. 3D는 마감이 없지만 <b>승인이 나야 9월 파일럿</b>이 돕니다</td></tr>
+        <tr><td class="c"><span class="num">5</span></td><td class="item">릴스 전용 업로드 기준</td><td class="desc">8월 발행 11건 중 <b>3건이 릴스에만 올라갔습니다</b>(8/3 뉴뉴 · 8/5 멧챠 · 8/17 베지어트랩). 피드에 안 걸리면 <b>그리드에서 사라지고 탐색 유입도 줄어듭니다.</b><br>→ <b>어떤 걸 릴스 전용으로 갈지 기준을 정합니다.</b> 기본은 &ldquo;시리즈물은 피드까지, 스팟·이벤트는 릴스만&rdquo;</td></tr>
+      </tbody>
+    </table>
+
+    <div class="copy-t">우리가 못 정하는 것 &mdash; 요청 3건 <span>휴닉에 있는 정보입니다</span></div>
+    <div class="copy">
+      <div class="cl"><div class="ck">요청 1</div><div class="cv"><b>자격 보유 직원 명단</b> &mdash; 「못 먹던 사람」이거나 「어려운 쪽을 떠맡은 사람」. 부서 무관 5명.
+이게 있어야 9~10월 편성이 닫힙니다.</div></div>
+      <div class="cl"><div class="ck">요청 2</div><div class="cv"><b>넛츠밀크 ↔ 서리태 콩물두유 역할 분리</b> &mdash; 용량·용도·가격대.
+분리가 안 되면 9/18 출시 콘텐츠가 자기 제품끼리 싸웁니다.</div></div>
+      <div class="cl"><div class="ck">요청 3</div><div class="cv"><b>팔로워 전용 쿠폰 코드 + UTM</b> · <b>멧챠 이벤트 자사몰 전환 수치</b>(2주 미회신)
+없으면 자사몰 전환을 만들어도 <b>증명이 안 됩니다.</b></div></div>
+    </div>
+
+    <div class="note warn"><strong>규제 &mdash; 챌린지 트래픽이 늘기 전에 처리</strong><br>① &ldquo;No.1&rdquo; 표기 삭제 ② &ldquo;한국인 75% 유당불내증&rdquo; 삭제(원논문 2025-01 철회, 대체 31.9%) ③ 「클렌즈」 제품명 검토 &mdash; 2026.7.23 &lsquo;클렌즈·디톡스&rsquo; 표현 <strong>26개소 115억 적발</strong>, 제품명이라고 면제되지 않습니다 ④ &ldquo;-23kg 감량&rdquo; 카피 교체</div>
+  </div>
+
+  <div class="footer">
+    HIZ × HUENIC · 베지어트 월간 미팅 리딩 · 2026. 08. 27<br>
+    근거 &mdash; 인스타 실측(8/27) · 8월 발행 11건 · 광고지표 시트 · 8/26 콘텐츠 기획회의 · 8/24 팀 아이데이션 · 리뷰 3,091건 · 경쟁 슬로건 국내 59 / 해외 48문장
+  </div>
+
+</div>
+
+</body>
+</html>
