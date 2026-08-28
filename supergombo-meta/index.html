@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>슈퍼곰보 메타 광고 시작 가이드</title>
+<meta name="description" content="슈퍼곰보(슈퍼세이브) 메타 광고 연동 가이드 — HIZ 발신 · 약 15분 소요">
+<meta property="og:title" content="슈퍼곰보 메타 광고 시작 가이드">
+<meta property="og:description" content="계정 연결에 필요한 순서와 자료 · 약 15분">
+<meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root { --accent: #2563eb; }
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif;
+  background: #f4f7f9;
+  color: #1a1b18;
+  line-height: 1.75;
+  font-size: 15px;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+}
+.container { max-width: 760px; margin: 0 auto; padding: 32px 20px 80px; }
+.header {
+  background: #fff;
+  border-radius: 14px;
+  padding: 36px 32px;
+  margin-bottom: 20px;
+  border: 1px solid #e8edf1;
+  border-top: 4px solid var(--accent);
+}
+.header .brand-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--accent);
+  letter-spacing: 0.12em;
+  margin-bottom: 14px;
+  padding: 4px 10px;
+  background: rgba(37, 99, 235, 0.08);
+  border-radius: 4px;
+}
+.header h1 {
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+.header .subtitle {
+  font-size: 14px;
+  color: #636569;
+  font-weight: 500;
+}
+.content {
+  background: #fff;
+  border-radius: 14px;
+  padding: 36px 32px;
+  border: 1px solid #e8edf1;
+}
+.content h2 {
+  font-size: 22px;
+  font-weight: 800;
+  margin: 36px 0 14px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #f0f2f5;
+  letter-spacing: -0.02em;
+}
+.content h2:first-child { margin-top: 0; }
+.content h3 {
+  font-size: 17px;
+  font-weight: 700;
+  margin: 28px 0 10px;
+  color: #1a1b18;
+}
+.content h4 {
+  font-size: 15px;
+  font-weight: 700;
+  margin: 20px 0 8px;
+}
+.content p { margin-bottom: 12px; }
+.content ul, .content ol { margin: 12px 0 16px 24px; }
+.content li { margin-bottom: 8px; }
+.content code {
+  background: #eff6ff;
+  color: #1d4ed8;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-family: 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 0.9em;
+  font-weight: 600;
+  word-break: break-all;
+}
+.content pre {
+  background: #0d0d0d;
+  color: #fff;
+  padding: 18px 22px;
+  border-radius: 10px;
+  margin: 16px 0;
+  overflow-x: auto;
+  font-family: 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 14px;
+  line-height: 1.7;
+}
+.content pre code {
+  background: transparent;
+  color: #fff;
+  padding: 0;
+  font-weight: 400;
+}
+.content blockquote {
+  border-left: 4px solid var(--accent);
+  background: #eff6ff;
+  padding: 14px 18px;
+  margin: 16px 0;
+  border-radius: 0 8px 8px 0;
+  color: #1a1b18;
+  font-size: 14px;
+}
+.content blockquote p:last-child { margin-bottom: 0; }
+.content blockquote strong { color: var(--accent); }
+.content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-size: 14px;
+  border: 1px solid #e8edf1;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.content th {
+  background: #f8fafb;
+  padding: 12px 14px;
+  font-weight: 700;
+  border-bottom: 2px solid #e8edf1;
+  text-align: left;
+  font-size: 13px;
+}
+.content td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #f0f2f5;
+  vertical-align: top;
+}
+.content tr:last-child td { border-bottom: none; }
+.content hr {
+  border: none;
+  border-top: 1px solid #e8edf1;
+  margin: 32px 0;
+}
+.content a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+.content strong { font-weight: 700; }
+.footer {
+  margin-top: 32px;
+  padding: 20px;
+  text-align: center;
+  font-size: 12px;
+  color: #999;
+}
+.footer .brand { font-weight: 700; color: var(--accent); }
+
+@media (max-width: 640px) {
+  .container { padding: 16px 12px 60px; }
+  .header { padding: 24px 20px; border-radius: 10px; }
+  .header h1 { font-size: 22px; }
+  .content { padding: 24px 18px; border-radius: 10px; }
+  .content h2 { font-size: 19px; }
+  .content h3 { font-size: 16px; }
+  .content table { font-size: 13px; }
+  .content th, .content td { padding: 10px 8px; }
+  .content pre { font-size: 12px; padding: 14px; }
+}
+
+</style>
+<style>
+:root { --accent: #17795e; }
+.content blockquote.warn { border-left-color: #dc2626; background: #fef2f2; }
+.content blockquote.warn strong { color: #dc2626; }
+.content code { background: #e9f6f1; color: #0f6349; }
+.header .brand-tag { background: rgba(23, 121, 94, 0.09); }
+.copybox { position: relative; }
+.copybox pre { background: #0d0d0d; white-space: pre-wrap; }
+.copybtn {
+  position: absolute; top: 12px; right: 12px;
+  background: rgba(255,255,255,0.12); color: #fff;
+  border: 1px solid rgba(255,255,255,0.28); border-radius: 6px;
+  padding: 5px 12px; font-size: 12px; font-weight: 700; cursor: pointer;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+.copybtn:hover { background: rgba(255,255,255,0.22); }
+.steplabel {
+  display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: 0.1em;
+  color: #fff; background: var(--accent); padding: 3px 9px; border-radius: 4px;
+  vertical-align: middle; margin-right: 8px;
+}
+.checklist { list-style: none; margin-left: 0 !important; }
+.checklist li { padding-left: 26px; position: relative; }
+.checklist li::before {
+  content: ""; position: absolute; left: 0; top: 6px;
+  width: 15px; height: 15px; border: 2px solid #c9d3d0; border-radius: 4px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="brand-tag">슈퍼곰보 · 슈퍼세이브 · HIZ</div>
+    <h1>슈퍼곰보 메타 광고 시작 가이드</h1>
+    <div class="subtitle">계정 연결과 초기 자료 · 약 15분 소요</div>
+  </div>
+  <div class="content">
+
+<h2>먼저 — 세 가지만 확인하고 시작하세요</h2>
+<blockquote>
+<p><strong>① 계정 소유권은 그대로 슈퍼세이브에 남습니다.</strong><br>
+HIZ는 운영 권한만 받습니다. 계약이 끝나면 클릭 한 번으로 해제하실 수 있습니다.</p>
+<p><strong>② 광고비는 HIZ가 먼저 집행하고 월 단위로 정산해 청구드립니다.</strong><br>
+카드를 등록하시거나 사업자등록번호를 넣으실 일이 없습니다.</p>
+<p><strong>③ 성과는 대표님도 실시간으로 보십니다.</strong><br>
+광고 계정이 슈퍼세이브 소유이기 때문에 광고 관리자에서 그대로 열람되고, 여기에 일간 리포트를 따로 보내드립니다.</p>
+</blockquote>
+
+<hr>
+<h2>한 줄 요약</h2>
+<pre><code>[계정 상태 확인] → [빠진 자산 채우기] → [HIZ 파트너 추가]
+  → [픽셀 소유권 확인] → [자사몰 부운영자 계정] → [자료 2종 회신]
+</code></pre>
+<p>실제로 주고받는 건 두 가지뿐입니다.</p>
+<table>
+<thead><tr><th>방향</th><th>내용</th></tr></thead>
+<tbody>
+<tr><td>HIZ가 드리는 것</td><td>HIZ 비즈니스 ID <strong><code>244896071103516</code></strong> (Step 3에서 입력하시면 됩니다)</td></tr>
+<tr><td>슈퍼세이브가 주시는 것</td><td>자산 4종 공유 (Step 3) + 자료 2종 (Step 6)</td></tr>
+</tbody>
+</table>
+
+<hr>
+<h2>시작 전 준비물</h2>
+<ul>
+<li>노트북·PC — 모바일에서는 비즈니스 설정 화면이 제대로 열리지 않습니다</li>
+<li>페이스북 계정 로그인 — <strong>슈퍼세이브 비즈니스의 관리자(Admin) 권한이 있는 계정</strong></li>
+<li>카페24(supersave.kr) 관리자 로그인 (Step 5에서 사용)</li>
+<li>HIZ 비즈니스 ID: <strong><code>244896071103516</code></strong></li>
+</ul>
+
+<hr>
+<h2><span class="steplabel">STEP 1</span>지금 상태부터 확인 (3분)</h2>
+<blockquote>
+<p>⚠️ <strong>반드시 <code>business.facebook.com</code>으로 들어가셔야 합니다.</strong> 평소 쓰시는 <code>facebook.com</code>의 "광고 센터" 메뉴로는 아래 화면이 나오지 않습니다.</p>
+</blockquote>
+<p><a href="https://business.facebook.com" target="_blank">business.facebook.com 새 탭으로 열기</a> → 로그인 후 좌상단 비즈니스 셀렉터를 눌러 아래 세 가지를 확인해 주세요.</p>
+<ol>
+<li>슈퍼세이브(또는 승만) 이름의 <strong>비즈니스 포트폴리오</strong>가 보이는가</li>
+<li>지금 로그인한 계정이 그 비즈니스의 <strong>관리자(Admin)</strong>인가</li>
+<li>그 안에 <strong>페이지 · 인스타그램 · 광고 계정 · 픽셀</strong>이 들어와 있는가 (좌측 톱니바퀴 ⚙️ → 설정 → 계정)</li>
+</ol>
+<table>
+<thead><tr><th>결과</th><th>다음</th></tr></thead>
+<tbody>
+<tr><td>셋 다 예</td><td><strong>Step 2를 건너뛰고 Step 3부터</strong></td></tr>
+<tr><td>자산 일부가 안 보임</td><td><strong>Step 2</strong>에서 빠진 것만 채운 뒤 Step 3</td></tr>
+<tr><td>비즈니스 포트폴리오 자체가 없음</td><td>여기서 멈추고 <strong>HIZ에 연락</strong> 주세요. 화상으로 같이 만들겠습니다 (30~40분)</td></tr>
+<tr><td>내 계정이 관리자가 아님</td><td>사내에서 관리자 계정을 먼저 찾아주세요 (보통 대표님 또는 계정을 처음 만든 분)</td></tr>
+</tbody>
+</table>
+
+<hr>
+<h2><span class="steplabel">STEP 2</span>빠진 자산 채우기 (해당될 때만)</h2>
+<p>파트너 공유는 <strong>비즈니스 안에 들어와 있는 자산만</strong> 넘길 수 있습니다. 설정 ⚙️ → 계정 메뉴에서 채웁니다.</p>
+<table>
+<thead><tr><th>빠진 것</th><th>하실 일</th><th>소요</th></tr></thead>
+<tbody>
+<tr><td>페이스북 페이지</td><td>계정 → 페이지 → [추가] → 페이지 검색 → 추가</td><td>3분</td></tr>
+<tr><td>인스타그램 (@supergombo)</td><td>인스타 앱에서 <strong>프로페셔널(비즈니스) 계정으로 전환</strong> 먼저 → PC에서 계정 → Instagram 계정 → 추가</td><td>5~8분</td></tr>
+<tr><td>광고 계정</td><td>계정 → 광고 계정 → 새로 만들기</td><td>4분</td></tr>
+<tr><td>픽셀</td><td>데이터 소스 → 데이터 세트 → [추가]</td><td>3분</td></tr>
+</tbody>
+</table>
+<blockquote class="warn">
+<p>🔴 <strong>광고 계정을 새로 만드실 경우, 시간대는 <code>Asia/Seoul</code>·통화는 <code>KRW</code>로 두 번 확인해 주세요.</strong> 만들고 나면 바꿀 수 없고, 잘못 잡히면 계정을 새로 파야 합니다.</p>
+</blockquote>
+<blockquote>
+<p>💡 <strong>페이지가 검색되지 않는다면</strong> 이전 대행사 비즈니스에 묶여 있는 경우입니다. 새로 만들지 마시고 Step 4의 요청 문구를 함께 보내주세요.</p>
+</blockquote>
+
+<hr>
+<h2><span class="steplabel">STEP 3</span>HIZ를 파트너로 추가 (5분, 핵심)</h2>
+<pre><code>business.facebook.com 로그인
+→ 좌측 하단 톱니바퀴 ⚙️ 설정
+→ 사용자 ▼ → 파트너
+→ 우상단 [추가] → "파트너 비즈니스에 자산 관리 권한 부여"
+→ 파트너 비즈니스 ID 입력: 244896071103516
+→ 아래 자산 4종 선택 + 권한 체크 → [공유]
+</code></pre>
+<table>
+<thead><tr><th>자산</th><th>권한</th><th>왜 필요한가</th></tr></thead>
+<tbody>
+<tr><td>광고 계정</td><td><strong>광고 관리</strong></td><td>캠페인 생성·집행·성과 조회. 결제 정보는 보이지 않는 것이 정상입니다</td></tr>
+<tr><td>페이스북 페이지</td><td><strong>콘텐츠, 광고</strong></td><td>페이지 명의로 광고가 나가려면 반드시 필요합니다</td></tr>
+<tr><td>인스타그램 (@supergombo)</td><td><strong>콘텐츠, 광고</strong></td><td>인스타 노출 위치 지정, 기존 게시물 활용</td></tr>
+<tr><td>데이터세트(픽셀)</td><td><strong>관리</strong></td><td>구매 추적과 재방문 고객 광고</td></tr>
+</tbody>
+</table>
+<blockquote class="warn">
+<p>🔴 <strong>네 가지를 함께 부탁드립니다.</strong> 특히 페이지 권한이 빠지는 경우가 가장 흔한데, 이 경우 광고를 만들 때 페이지가 선택 목록에 뜨지 않아 <strong>소재 심사 단계에서 그대로 막힙니다.</strong></p>
+</blockquote>
+<blockquote>
+<p>💡 <strong>전체 관리 권한은 요청드리지 않습니다.</strong> 결제와 계정 설정은 저희가 만지지 않아도 되는 영역이라, 운영에 필요한 만큼만 받습니다.</p>
+</blockquote>
+
+<hr>
+<h2><span class="steplabel">STEP 4</span>픽셀 소유권 확인 — 가장 중요합니다</h2>
+<p>픽셀은 자사몰에 심어두는 추적 코드입니다. 그동안 누가 들어와서 무엇을 보고 무엇을 샀는지가 여기에 쌓입니다. <strong>이전 대행사가 만든 픽셀이라면 그쪽 비즈니스에 들어 있을 수 있습니다.</strong></p>
+<p>설정 ⚙️ → 데이터 소스 → <strong>데이터 세트</strong>에서 확인해 주세요.</p>
+<table>
+<thead><tr><th>결과</th><th>다음</th></tr></thead>
+<tbody>
+<tr><td>목록에 픽셀이 <strong>보인다</strong></td><td>Step 3에서 함께 공유해 주시면 끝입니다</td></tr>
+<tr><td>목록에 <strong>없다</strong></td><td>대행사 소유입니다. 아래 문구를 대행사에 그대로 보내주세요</td></tr>
+</tbody>
+</table>
+<blockquote class="warn">
+<p>🔴 <strong>새 픽셀을 만드는 것은 최후의 수단입니다.</strong> 새로 만들면 그동안 쌓인 구매 학습 데이터와 재방문 고객 모수가 전부 사라져, 성과가 나오기까지 최소 2~3주가 뒤로 밀립니다.<br>
+그리고 요청하실 것은 <strong>"픽셀 소유권 이전"이 아니라 "파트너 공유"</strong>입니다. 공유는 대행사 입장에서 자산을 넘기는 것이 아니라 권한만 함께 여는 것이라, 이전 요청보다 저항이 훨씬 적고 데이터도 그대로 살아남습니다.</p>
+</blockquote>
+<h4>이전 대행사에 보내실 문구</h4>
+<div class="copybox">
+<button class="copybtn" onclick="copyBox(this)">복사</button>
+<pre id="agencyMsg"><code>안녕하세요, 슈퍼세이브입니다.
+
+메타 광고 운영을 이어가면서, 지금까지 쌓인 픽셀 데이터를 그대로 사용하려고 합니다.
+소유권 이전이 아니라, 아래 비즈니스로 파트너 공유만 부탁드립니다.
+
+  · 파트너 비즈니스 ID: 244896071103516
+  · 공유 자산: 데이터세트(픽셀) — 관리 권한
+  · 함께 공유 가능하시면: 페이스북 페이지 / 인스타그램 계정
+
+방법: business.facebook.com → 설정 → 데이터 소스 → 데이터 세트 →
+해당 픽셀 선택 → 파트너 할당 → 위 ID 입력
+
+그동안 감사했습니다.</code></pre>
+</div>
+
+<hr>
+<h2><span class="steplabel">STEP 5</span>자사몰 부운영자 계정 (카페24)</h2>
+<p>픽셀과 전환 추적 코드를 심고, 어느 지점에서 이탈이 나는지 보기 위해 자사몰 접근이 필요합니다. 부운영자 계정 하나만 만들어 주시면 됩니다.</p>
+<ul class="checklist">
+<li><strong>디자인(HTML) 편집 권한</strong> — 픽셀·전환API 코드 삽입에 필요합니다</li>
+<li><strong>상품 / 주문 통계 조회 권한</strong> — 어떤 상품이 어떤 경로로 팔리는지 확인</li>
+<li><strong>앱(마이앱) 조회 권한</strong> — 현재 연동된 마케팅 앱 상태 확인</li>
+<li>(상품 구성을 새로 만들게 될 경우) 상품 등록 권한</li>
+</ul>
+<blockquote>
+<p>💡 <strong>매출·정산 등 민감한 메뉴는 닫아두고 열어주셔도 됩니다.</strong> 위 네 가지만 열려 있으면 작업에 지장이 없습니다.</p>
+</blockquote>
+<blockquote>
+<p>📌 <strong>쇼피파이 리뉴얼 일정도 알려주세요.</strong> 리뉴얼이 예정되어 있다면 픽셀 작업 시점을 맞춰야 데이터가 끊기지 않습니다.</p>
+</blockquote>
+
+<hr>
+<h2><span class="steplabel">STEP 6</span>함께 보내주실 자료 2종</h2>
+<h3>① 기존 광고 데이터</h3>
+<ul>
+<li>최근 6개월 캠페인 성과 — 기간 / 지출 / 구매수 / 매출</li>
+<li>반응이 좋았던 소재 원본</li>
+<li>대행사에서 받으신 리포트</li>
+</ul>
+<p>무엇이 되고 무엇이 안 됐는지를 먼저 보면, 같은 실험을 다시 하느라 쓰는 광고비를 줄일 수 있습니다.</p>
+<h3>② 소재로 쓸 수 있는 기존 영상</h3>
+<ul>
+<li>인플루언서·체험단 영상, 유튜브 출연분 등 <strong>원본 파일 또는 링크</strong></li>
+<li>해당 영상을 <strong>광고 소재로 2차 활용할 수 있는지</strong> (사용 동의 범위)</li>
+</ul>
+<p>이미 반응이 검증된 영상이 새로 만드는 것보다 빠르고 결과도 안정적입니다. 먼저 확보 가능한 범위를 파악해 두려 합니다.</p>
+
+<hr>
+<h2>회신 부탁드릴 결정 2가지</h2>
+<table>
+<thead><tr><th>결정</th><th>참고</th></tr></thead>
+<tbody>
+<tr><td><strong>광고 랜딩 목적지</strong><br>자사몰 / 네이버 스마트스토어</td><td>자사몰이 아니면 구매 데이터 추적과 재방문 광고가 제한됩니다</td></tr>
+<tr><td><strong>월 광고 예산 범위</strong></td><td>정확한 금액이 아니어도 됩니다. 범위만 주시면 그 안에서 플랜을 짭니다</td></tr>
+</tbody>
+</table>
+
+<hr>
+<h2>끝나면 — HIZ에 한 줄만</h2>
+<blockquote>
+<p>"자산 공유했습니다" 한 줄이면 충분합니다. 저희가 수락하고 연결 상태를 확인한 뒤 회신드리겠습니다.<br>
+<strong>픽셀만 결과를 알려주세요</strong> — 목록에 보였는지, 대행사에 요청을 보내셨는지.</p>
+</blockquote>
+
+<hr>
+<h2>막힐 때</h2>
+<table>
+<thead><tr><th>증상</th><th>원인</th><th>조치</th></tr></thead>
+<tbody>
+<tr><td>[파트너] 메뉴가 안 보임</td><td>일반 페이스북 화면이거나 관리자 권한이 아님</td><td><code>business.facebook.com</code>인지 확인 → 관리자 계정으로 재로그인</td></tr>
+<tr><td>공유했는데 HIZ에 안 왔다고 함</td><td>다른 비즈니스 ID로 보냈을 가능성</td><td>ID <code>244896071103516</code> 재확인</td></tr>
+<tr><td>인스타 계정이 목록에 없음</td><td>개인 계정이거나 페이지와 미연결</td><td>프로페셔널 전환 → 페이지 연결 (Step 2)</td></tr>
+<tr><td>페이지가 검색되지 않음</td><td>이전 대행사 비즈니스에 묶여 있음</td><td>Step 4 문구에 페이지도 함께 요청</td></tr>
+<tr><td>"계정 사용 한도" 알림</td><td>신규 계정의 정상 동작</td><td>집행하면서 자동으로 올라갑니다. 조치 불필요</td></tr>
+</tbody>
+</table>
+<p>어느 화면에서든 막히시면 캡처 한 장만 보내주세요. 화상으로 같이 봐 드리겠습니다.</p>
+
+<hr>
+<h2>연결 후 HIZ가 하는 일 (참고)</h2>
+<table>
+<thead><tr><th>단계</th><th>내용</th><th>소요</th></tr></thead>
+<tbody>
+<tr><td>1. 계정·픽셀 세팅</td><td>연결 확인, 픽셀 설치 상태와 이벤트(상품조회·장바구니·결제시작·구매) 발화 점검</td><td>2~3일</td></tr>
+<tr><td>2. 현황 분석</td><td>기존 광고에서 무엇이 반응했는지, 계정에 남은 학습 데이터와 모수 확인</td><td>1단계와 병행</td></tr>
+<tr><td>3. 자사몰 점검</td><td>간편결제 적용 여부, 상세페이지, 랜딩 페이지 선정, 상품 구성 판단</td><td>3~5일</td></tr>
+<tr><td>4. 미디어 플랜</td><td>월 예산 배분·캠페인 구성·소재 방향·목표 지표 제안</td><td>점검 완료 후</td></tr>
+</tbody>
+</table>
+<blockquote>
+<p>💡 <strong>3단계를 광고보다 앞에 둔 이유</strong>: 저희가 다른 브랜드에서 간편결제가 없어 결제 직전 이탈이 크게 난 적이 있습니다. 광고를 켜기 전에 보는 것이 광고비를 아끼는 길입니다.</p>
+</blockquote>
+
+  </div>
+  <div class="footer">
+    <span class="brand">HIZ</span> · 슈퍼곰보 메타 광고 온보딩 가이드
+  </div>
+</div>
+<script>
+function copyBox(btn) {
+  var t = document.getElementById('agencyMsg').innerText;
+  navigator.clipboard.writeText(t).then(function () {
+    btn.textContent = '복사됨';
+    setTimeout(function () { btn.textContent = '복사'; }, 1800);
+  });
+}
+</script>
+</body>
+</html>
