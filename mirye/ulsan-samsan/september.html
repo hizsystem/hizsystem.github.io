@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
 <!-- rev: 2026-08-18 -->
-<title>미례국밥 울산삼산점 9·10월 운영 플랜</title>
+<title>미례국밥 울산삼산점 9·10·11월 운영 플랜</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet">
 
 
@@ -47,33 +47,32 @@ const PLAN = {
       },
 
       /* ── 인플루언서 ──
-         uploads = 업로드 회차. 업로드와 동시에 메타 광고를 1주일 돌립니다.
+         uploads = 업로드 회차. 업로드와 동시에 메타 광고를 붙입니다 (기간은 adStart~adEnd).
          visits  = 그 회차 인플루언서의 방문 예정일(변동 가능). 비워두면 '협의 후 안내'.
          upEnd   = 업로드 주 마감일. 광고를 업로드 주보다 길게 돌릴 때만 씁니다.
                    (생략하면 adEnd 와 같은 값으로 봅니다) */
       influencer: {
         visitWindow: '9월 중 (확정 시 사전 안내)',
-        uploadPrefix: '오픈 주간부터 매주',
+        uploadPrefix: '오픈 주간부터 2주에 걸쳐',
         menu: '시그니처 돼지우동 2개 + 사이드(맛보기 냉제육 or 가마솥순대) 중 택 1',
         need: '촬영 가능한 자리(창가/조명 밝은 곳) ·조리 장면 촬영 협조 ',
         uploads: [
-          { label: '3주차 · 오픈 주간', count: 2, visits: ['9/14', '9/15'], adStart: '9/18', adEnd: '9/24' },
-          { label: '4주차',             count: 1, visits: ['9/22'],         adStart: '9/25', adEnd: '10/1' },
-          { label: '5주차',             count: 1, visits: ['9/24'],         adStart: '10/2', adEnd: '10/8' },
+          /* 광고는 한 편당 2주 — 앞 영상 광고가 다음 영상 업로드 뒤까지 이어져 공백이 없습니다 */
+          { label: '3주차 · 오픈 주간', count: 2, visits: ['9/14', '9/15'], upEnd: '9/24', adStart: '9/18', adEnd: '10/1' },
+          { label: '4주차',             count: 2, visits: ['9/22', '9/23'], upEnd: '10/1', adStart: '9/25', adEnd: '10/8' },
         ],
       },
 
       events: [
         { date: '9/1',  type: 'key', text: '사장님 자료 전달 마감' },
         { date: '9/1',  type: 'np',  text: '플레이스 등록 신청' },
-        { date: '9/2',  end: '9/4', type: 'np', text: '네이버 심사 대기' },
+        { date: '9/2',  type: 'np',  text: '등록 승인 대기' },
         { date: '9/7',  end: '9/8', type: 'np', text: '최적화 세팅' },
         { date: '9/7',  type: 'exp', text: '체험단 모집 시작', soft: true },
         { date: '9/14', type: 'key', text: '🎉 오픈' },
         { date: '9/14', type: 'np',  text: '지도·검색 노출 시작' },
         { date: '9/21', type: 'np',  text: "플레이스 '새로오픈' 활성화" },
         { date: '9/29', type: 'ghost', text: '중간 점검 · 순위 확인' },
-        { date: '10/9', type: 'key', text: '9월 운영보고서 전달' },
       ],
     },
 
@@ -107,10 +106,33 @@ const PLAN = {
 
       events: [
         { date: '10/1',  type: 'exp', text: '체험단 모집 시작', soft: true },
-        { date: '10/1',  type: 'ad',  text: '9월 위닝 영상 2편 광고 시작' },
-        { date: '10/9',  type: 'key', text: '9월 운영보고서 전달' },
+        { date: '10/9',  type: 'ad',  text: '9월 위닝 소재 2편 광고 시작' },
         { date: '10/27', type: 'ghost', text: '중간 점검 · 순위 확인' },
-        { date: '11/4',  type: 'key', text: '10월 운영보고서 전달' },
+      ],
+    },
+
+    /* ══ 셋째 달 ═════════════════════════════════════════════════════════════ */
+    {
+      key: 'm3',
+      month: 11,
+
+      /* B안 — 11월 블로그 체험단 없음 */
+
+      influencer: {
+        visitWindow: '11월 중 (확정 시 사전 안내)',
+        uploadPrefix: '2주 간격으로',
+        menu: '시그니처 돼지우동 2개 + 사이드(맛보기 냉제육 or 가마솥순대) 중 택 1',
+        need: '촬영 가능한 자리(창가/조명 밝은 곳) ·조리 장면 촬영 협조 ',
+        uploads: [
+          /* 10월 마지막 광고(~11/5)를 11/6 광고가 바로 이어받습니다 */
+          { label: '2주차', count: 1, visits: [], upEnd: '11/15', adStart: '11/6',  adEnd: '11/19' },
+          { label: '4주차', count: 1, visits: [], upEnd: '11/29', adStart: '11/20', adEnd: '12/3'  },
+        ],
+      },
+
+      events: [
+        { date: '11/1',  type: 'ad',  text: '9·10월 위닝 소재 3편 광고 시작' },
+        { date: '11/24', type: 'ghost', text: '중간 점검 · 순위 확인' },
       ],
     },
   ],
@@ -123,23 +145,19 @@ const PLAN = {
         item: '네이버플레이스',
         m1: 100, m1note: '등록·최적화',
         m2: 50,  m2note: '관리',
-        m2work: '매주 후기 답글, 가게 소식·사진 갱신, 검색 순위 점검. 9월에 잡아둔 순위가 내려가지 않게 관리합니다.',
-        m2out: '주 1회 점검 (월 4~5회) · 후기 답글 전건',
+        m3: 0,   m3note: '',
       },
       {
         item: '블로그 체험단',
         m1: 40, m1note: '40명',
         m2: 20, m2note: '20명',
-        m2work: '10/11 — 10/28 방문. 9월에 몰아서 쌓은 후기가 한 달만 지나면 오래된 글이 되기 때문에, 매달 새 후기를 얹어 검색에 계속 걸리게 합니다.',
-        m2out: '신규 후기 20건 · 누적 60건',
+        m3: 0,  m3note: '',
       },
       {
         item: '인플루언서 콘텐츠',
-        sub: '평균 조회수 3만 이상',
-        m1: 160, m1note: '4명<br><span style="color:#EA580C;">별도 광고비 포함</span>',
-        m2: 130, m2note: '2명<br><span style="color:#EA580C;">별도 광고비 포함</span>',
-        m2work: '2주 간격으로 신규 영상 1편씩 올리고, 여기에 9월에 반응이 가장 좋았던 영상 2편을 이어서 광고로 돌립니다.',
-        m2out: '신규 영상 2편 + 9월 위닝 영상 2편',
+        m1: 210, m1note: '신규 4편 · <b>광고 4편</b><br><span style="color:#EA580C;">별도 광고비 포함</span>',
+        m2: 130, m2note: '신규 2 + 기존 2 · <b>광고 4편</b><br><span style="color:#EA580C;">별도 광고비 포함</span>',
+        m3: 100, m3note: '신규 2 + 기존 3 · <b>광고 5편</b><br><span style="color:#EA580C;">별도 광고비 포함</span>',
       },
     ],
   },
@@ -193,8 +211,12 @@ body { font-family: 'Noto Sans KR', -apple-system, sans-serif; background: #f4f7
 .month-head .mh-line { flex:1; height:2px; background:#e8edf1; border-radius:2px; }
 .month-head .mh-amt { flex:none; font-size:13px; font-weight:800; color:#EA580C; }
 
-/* 두 달 비교 카드 */
+/* 세 달 비교 카드 */
 .two { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.three { display:grid; grid-template-columns:1fr 1fr 1fr; gap:11px; }
+.three .mcard { padding:16px; }
+.three .mcard .mc-d { font-size:12px; line-height:1.7; }
+.three .mcard .mc-amt { font-size:12px; }
 .mcard { border:1px solid #e8edf1; border-radius:10px; padding:20px; background:#f8fafb; }
 .mcard.hero { background:#FFF7ED; border-color:#FED7AA; }
 .mcard .mc-n { font-size:11px; font-weight:800; color:#EA580C; letter-spacing:.06em; margin-bottom:6px; }
@@ -275,6 +297,7 @@ td.c { text-align:center; font-variant-numeric:tabular-nums; }
 td.amt { text-align:right; font-weight:800; font-variant-numeric:tabular-nums; white-space:nowrap; }
 tr.total-row td { background:#0D0D0D; color:#fff; font-weight:800; font-size:15px; }
 tr.sum-row td { background:#FFF7ED; color:#C2410C; font-weight:800; font-size:14px; border-bottom:1px solid #FED7AA; }
+tr.vat-row td { background:#FFFBF5; color:#9a7a63; font-weight:700; font-size:12.5px; border-bottom:1px solid #FED7AA; }
 
 .chk { list-style:none; padding:0; }
 .chk li { position:relative; padding:9px 0 9px 30px; border-bottom:1px dashed #eef1f4; font-size:13.5px; }
@@ -295,7 +318,7 @@ tr.sum-row td { background:#FFF7ED; color:#C2410C; font-weight:800; font-size:14
   .container { padding: 76px 14px 40px; }
   .meta-grid { grid-template-columns: repeat(2, 1fr); }
   .steps { grid-template-columns: 1fr 1fr; }
-  .two { grid-template-columns: 1fr; }
+  .two, .three { grid-template-columns: 1fr; }
   .section { padding: 24px 18px; }
   .report-header { padding: 28px 20px; }
   .report-header h1 { font-size: 25px; }
@@ -325,6 +348,13 @@ tr.sum-row td { background:#FFF7ED; color:#C2410C; font-weight:800; font-size:14
   .section, .mission-box, .cal-wrap { break-inside: avoid; }
   .month-head { break-after: avoid; }
   .month-head.newpage { break-before: page; }
+  /* 달 구분을 또렷하게 — 머리말을 검은 띠로 */
+  .month-head { background:#0D0D0D; color:#fff; padding:9px 14px; border-radius:8px; margin-bottom:14px; }
+  .month-head .mh-n { background:#EA580C; color:#fff; }
+  .month-head .mh-t { color:#fff; }
+  .month-head .mh-t em { color:#FDBA8C; }
+  .month-head .mh-amt { color:#fff; }
+  .month-head .mh-line { border-color:#4a4a4a; }
   .cal-wrap { overflow: visible; }
   @page { size: A4; margin: 10mm; }
 }
@@ -334,7 +364,7 @@ tr.sum-row td { background:#FFF7ED; color:#C2410C; font-weight:800; font-size:14
 
 <div class="toolbar">
   <div class="toolbar-left">
-    <div class="toolbar-title">미례국밥 울산삼산점 · 9·10월 운영 플랜</div>
+    <div class="toolbar-title">미례국밥 울산삼산점 · 9·10·11월 운영 플랜</div>
   </div>
   <button class="btn-toolbar" onclick="window.print()">PDF 저장 · 인쇄</button>
 </div>
@@ -346,45 +376,51 @@ tr.sum-row td { background:#FFF7ED; color:#C2410C; font-weight:800; font-size:14
   <!-- HEADER -->
   <div class="report-header">
     <div class="label">미례국밥 울산삼산점</div>
-    <h1>9·10월 <em>운영 플랜</em> — 오픈 두 달</h1>
+    <h1>9·10·11월 <em>운영 플랜</em> — 오픈 세 달</h1>
     <div class="meta-grid">
       <div class="meta-item"><div class="mk">매장</div><div class="mv">미례국밥 울산삼산점</div></div>
-      <div class="meta-item"><div class="mk">오픈일</div><div class="mv">2026. 09. 14 (월) <span style="color:#EA580C;font-weight:800;">(가정)</span></div></div>
-      <div class="meta-item"><div class="mk">대상 기간</div><div class="mv">2026. 09. 01 — 10. 31</div></div>
-      <div class="meta-item"><div class="mk">두 달 비용</div><div class="mv"><span data-fill="cost-total">500만원</span> <span style="color:#999;font-weight:500;">부가세 별도</span></div></div>
+      <div class="meta-item"><div class="mk">오픈일</div><div class="mv">2026. 09. 14 (월)</div></div>
+      <div class="meta-item"><div class="mk">대상 기간</div><div class="mv">2026. 09. 01 — 11. 30</div></div>
+      <div class="meta-item"><div class="mk">세 달 비용</div><div class="mv"><span data-fill="cost-total">650만원</span> <span style="color:#999;font-weight:500;font-size:13px;">부가세 포함 <span data-fill="cost-total-vat">715만원</span></span></div></div>
     </div>
   </div>
 
   <!-- MISSION -->
   <div class="mission-box">
-    <div class="hl-label">두 달 동안 우리가 할 일</div>
-    <div class="lede">첫 달은 <em>손님이 우리 가게를 찾을 수 있게</em>, 둘째 달은 <em>그 흐름이 끊기지 않게</em> 만드는 두 달입니다.</div>
-    <div class="sub">가게가 아무리 맛있어도 <strong>처음엔 아무도 모릅니다.</strong> 그래서 <strong>9월</strong>에는 네이버 지도·검색에 가게를 제대로 올리고, 체험단 <span data-fill="m1-review-count">40명</span>과 인플루언서 <span data-fill="m1-inf-count">4명</span>으로 후기와 영상을 한꺼번에 쌓습니다. 문제는 <strong>이걸 한 달만 하고 멈추면 그대로 가라앉는다</strong>는 점입니다. 후기는 금방 오래된 글이 되고, 영상도 한 번 돌고 나면 끝입니다. 그래서 <strong>10월</strong>에는 오픈 첫 달의 화력을 유지합니다&nbsp;— 체험단 <span data-fill="m2-review-count">20명</span>, 인플루언서 <span data-fill="m2-inf-count">2명</span>, 그리고 플레이스 관리. 사장님은 <strong>가게 운영에만 집중</strong>하시면 되고, 아래 일정표에 <strong>언제 누가 오는지</strong> 달별로 다 적어뒀습니다.<br><br><strong style="color:#FDBA8C;">다만 시작 전에 딱 하나, 사장님께 받아야 하는 것이 있습니다.</strong> 네이버 지도 등록은 <strong>신청한다고 바로 되는 게 아니라 네이버 심사를 거쳐야</strong> 하고, 사업자등록증·매장 전화번호가 하나라도 비면 <strong>신청 자체가 반려</strong>됩니다. 그래서 <strong>오픈 2주 전(9/1)까지</strong> 자료를 받아야 오픈 당일에 지도가 살아 있습니다. 무엇을 주셔야 하는지는 <strong>바로 아래 「오픈 전에 주셔야 할 것」</strong>에 전부 적어뒀습니다.</div>
+    <div class="hl-label">세 달 동안 우리가 할 일</div>
+    <div class="lede">첫 달은 <em>손님이 우리 가게를 찾을 수 있게</em>, 둘째·셋째 달은 <em>그 흐름이 끊기지 않게</em> 만드는 세 달입니다.</div>
+    <div class="sub">가게가 아무리 맛있어도 <strong>처음엔 아무도 모릅니다.</strong> <strong>9월</strong>에는 네이버 지도·검색에 가게를 올리고 체험단 <span data-fill="m1-review-count">40명</span>·인플루언서 <span data-fill="m1-inf-count">4명</span>(<strong>이 중 2명은 팔로워 5만 이상</strong>)으로 후기와 영상을 한꺼번에 쌓습니다. 문제는 <strong>한 달만 하고 멈추면 그대로 가라앉는다</strong>는 점입니다. 그래서 <strong>10·11월</strong>에도 후기와 영상을 계속 얹고, <strong>반응이 가장 좋았던 영상(위닝 소재)은 다음 달에도 광고로 계속 돌립니다.</strong><br><br><strong style="color:#FDBA8C;">시작 전에 딱 하나 받아야 할 것이 있습니다.</strong> 네이버 지도 등록은 <strong>심사를 거쳐야</strong> 하고 사업자등록증·매장 전화번호가 하나라도 비면 <strong>신청 자체가 반려</strong>됩니다. <strong>오픈 2주 전(9/1)까지</strong> 자료를 주셔야 오픈 당일에 지도가 살아 있습니다.</div>
   </div>
 
-  <!-- 두 달 비교 -->
+  <!-- 세 달 비교 -->
   <div class="section">
-    <h2>두 달 <em>한눈에</em></h2>
-    <div class="sec-sub">첫 달은 만드는 달, 둘째 달은 유지하는 달 — 하는 일은 같고 규모만 줄어듭니다</div>
-    <div class="two">
+    <h2>세 달 <em>한눈에</em></h2>
+    <div class="sec-sub">첫 달은 만드는 달, 둘째 달은 유지하는 달, 셋째 달은 굳히는 달 — 광고로 도는 영상이 <b>4편 → 4편 → 5편</b>으로 유지·확대됩니다</div>
+    <div class="three">
       <div class="mcard hero">
         <div class="mc-n">첫 달 · 9월</div>
         <div class="mc-t">알리는 달</div>
         <div class="mc-d">지도·검색에 가게를 <b>새로 등록</b>하고, 후기와 영상을 <b>한꺼번에 쌓아</b> 오픈을 알립니다. 한 번만 하면 되는 세팅 작업이 들어가 비용이 더 큽니다.</div>
-        <div class="mc-amt">플레이스 등록·최적화 + 체험단 <span data-fill="m1-review-count">40명</span> + 인플루언서 <span data-fill="m1-inf-count">4명</span></div>
+        <div class="mc-amt">플레이스 등록·최적화 + 체험단 <span data-fill="m1-review-count">40명</span> + 인플루언서 <span data-fill="m1-inf-count">4명</span> <b style="color:#EA580C;">(2명 팔로워 5만+)</b> · <b style="color:#EA580C;">광고 4편</b></div>
       </div>
       <div class="mcard">
         <div class="mc-n">둘째 달 · 10월</div>
         <div class="mc-t">유지하는 달</div>
         <div class="mc-d">9월에 올려놓은 순위와 후기가 <b>내려가지 않게</b> 관리하고, 새 후기·새 영상을 얹습니다. 등록·세팅이 끝났으므로 <b>비용이 내려갑니다.</b></div>
-        <div class="mc-amt">플레이스 관리 + 체험단 <span data-fill="m2-review-count">20명</span> + 인플루언서 <span data-fill="m2-inf-count">2명</span> + 9월 위닝 영상 재집행</div>
+        <div class="mc-amt">플레이스 관리 + 체험단 <span data-fill="m2-review-count">20명</span> + 인플루언서 <span data-fill="m2-inf-count">2명</span> + <b style="color:#EA580C;">9월 팔로워 5만+ 영상 이어서 광고</b> · 광고 4편</div>
+      </div>
+      <div class="mcard">
+        <div class="mc-n">셋째 달 · 11월</div>
+        <div class="mc-t">영상으로 굳히는 달</div>
+        <div class="mc-d">세 달째는 <b>새 블로그 후기를 더 쌓지 않고</b>, 9·10월에 쌓인 <b>후기 60건</b>을 그대로 두고 <b>영상과 광고에 집중</b>합니다. 신규 영상이 2편으로 늘고, 여기에 <b>위닝 소재 3편</b>을 얹어 <b>모두 5편이 광고로 돕니다.</b></div>
+        <div class="mc-amt">인플루언서 <span data-fill="m3-inf-count">2명</span> + <b style="color:#EA580C;">9월 팔로워 5만+ 영상 포함 3편 이어서 광고</b> · 광고 5편 <span style="color:#a5abb2;">(체험단·플레이스 관리 없음)</span></div>
       </div>
     </div>
   </div>
 
 
   <!-- ══════════════ 첫 달 · 9월 ══════════════ -->
-  <div class="month-head">
+  <div class="month-head newpage">
     <span class="mh-n">첫 달</span>
     <span class="mh-t">9월 — <em>오픈</em></span>
     <span class="mh-line"></span>
@@ -397,8 +433,8 @@ tr.sum-row td { background:#FFF7ED; color:#C2410C; font-weight:800; font-size:14
     <div class="sec-sub">오픈 전 준비 → 오픈 → 후기 쌓기 → 첫 달 결과 보고</div>
     <div class="steps">
       <div class="step"><div class="st-n">① 9/1 — 9/13</div><div class="st-t">오픈 전 준비</div><div class="st-d">사장님 자료 수령 → 네이버 지도 등록·심사·세팅 / 체험단 모집</div></div>
-      <div class="step hero"><div class="st-n">② 9/14 (월)</div><div class="st-t">오픈 · 체험단 선정</div><div class="st-d">지도·검색 노출 시작 / 체험단 40명 선정 · 인플루언서 방문 시작</div></div>
-      <div class="step"><div class="st-n">③ 9/15 — 10/2</div><div class="st-t">후기·영상 쌓기</div><div class="st-d">체험단 <span data-fill="m1-review-count">40명</span> + 인플루언서 매주 1인 업로드 + 매주 광고</div></div>
+      <div class="step hero"><div class="st-n">② 9/14 (월)</div><div class="st-t">오픈 · 체험단 선정</div><div class="st-d">지도·검색 노출 시작 / 체험단 <span data-fill="m1-review-count">40명</span> 선정 · 인플루언서 방문 시작</div></div>
+      <div class="step"><div class="st-n">③ 9/15 — 10/2</div><div class="st-t">후기·영상 쌓기</div><div class="st-d">체험단 <span data-fill="m1-review-count">40명</span> + 인플루언서 <span data-fill="m1-inf-count">4명</span> 업로드 + 광고 2주씩 이어서</div></div>
       <div class="step"><div class="st-n">④ 10월 초</div><div class="st-t">첫 달 보고서</div><div class="st-d">얼마나 노출됐고 뭐가 잘 됐는지 정리</div></div>
     </div>
   </div>
@@ -408,15 +444,14 @@ tr.sum-row td { background:#FFF7ED; color:#C2410C; font-weight:800; font-size:14
     <h2>오픈 전에 <em>주셔야 할 것</em></h2>
     <div class="sec-sub">9/1(화)까지 · 이 자료가 모여야 네이버 지도 등록을 시작할 수 있습니다</div>
 
-    <div class="note"><strong>왜 2주 전까지인가요?</strong> 네이버 지도(플레이스)는 신청한다고 바로 올라가지 않습니다. <strong>네이버 담당자가 직접 심사</strong>하는 구조라 영업일 기준 <strong>2~5일</strong>이 걸리고, <strong>주말·공휴일에는 승인이 나지 않습니다.</strong> 게다가 <strong>매장 대표번호가 없으면 신청 자체가 되지 않고</strong>, 서류가 흐리거나 빠지면 반려된 뒤 처음부터 다시 신청해야 합니다.
-      <br><br>오픈 날 지도에 가게가 없으면 <strong>① 손님이 후기를 남길 수 없고, ② QR코드를 만들 수 없고, ③ 손님이 정확한 주소를 찾지 못합니다.</strong> 오픈 첫 주가 검색이 가장 많이 일어나는 때라, 이 일주일을 놓치면 뒤에서 만회하기 어렵습니다. 그래서 <strong>넉넉히 2주를 잡아뒀습니다.</strong></div>
+    <div class="note"><strong>왜 2주 전까지인가요?</strong> 네이버 지도는 담당자가 직접 심사해서 <strong>영업일 2~5일</strong>이 걸리고 <strong>주말·공휴일에는 승인이 나지 않습니다.</strong> 매장 대표번호가 없으면 <strong>신청 접수 자체가 안 됩니다.</strong> 오픈일에 지도가 살아 있으려면 <strong>9/1까지</strong> 주셔야 합니다.</div>
 
     <div class="grp-label" style="font-size:12px;font-weight:800;color:#EA580C;letter-spacing:.04em;margin:24px 0 10px;">A · 이게 없으면 등록 신청 자체가 안 됩니다</div>
     <table>
       <thead><tr><th style="width:170px;">주실 것</th><th>왜 필요한지 · 주의점</th></tr></thead>
       <tbody>
         <tr><td><b>사업자등록증 사본</b></td><td>플레이스 신규 등록의 <b>필수 첨부 서류</b>입니다. 휴대폰으로 찍은 사진도 괜찮지만 <b>글자가 흐리면 반려</b>되니 밝은 곳에서 반듯하게 찍어주세요.</td></tr>
-        <tr><td><b>네이버 계정</b><br><span style="font-size:11.5px;color:#999;">아이디 · 비밀번호</span></td><td>스마트플레이스는 <b>이 계정에 귀속</b>됩니다. 저희가 등록·최적화 세팅을 하고 이후 <b>후기 답글·정보 수정·새로오픈 활성화</b>까지 대신 하려면 계정이 필요합니다. 가게 운영에 쓰실 <b>업체용 계정</b>으로 주시는 걸 권해드립니다(개인 계정과 분리 추천).<br></td></tr>
+        <tr><td><b>네이버 계정</b><br><span style="font-size:11.5px;color:#999;">아이디 · 비밀번호</span></td><td>스마트플레이스는 <b>이 계정에 귀속</b>됩니다. 저희가 등록·최적화 세팅을 하고 이후 <b>정보 수정·새로오픈 활성화</b>까지 대신 하려면 계정이 필요합니다. 가게 운영에 쓰실 <b>업체용 계정</b>으로 주시는 걸 권해드립니다(개인 계정과 분리 추천).<br></td></tr>
         <tr><td><b>매장 주소</b><br><span style="font-size:11.5px;color:#999;">도로명 + 층 / 호수</span></td><td>지도 등록에도, <b>체험단 모집 공고에도</b> 들어갑니다. 주소가 없으면 체험단 모집을 시작할 수 없습니다.</td></tr>
         <tr><td><b>매장 대표 전화번호</b></td><td><b>번호가 없으면 등록 신청 자체가 불가능합니다.</b> 반려되는 게 아니라 아예 접수가 되지 않습니다. 아직 개통 전이시면 <b>개통 예정일/임시번호</b>라도 알려주세요. 그에 맞춰 신청 날짜를 잡겠습니다.</td></tr>
       </tbody>
@@ -469,21 +504,21 @@ tr.sum-row td { background:#FFF7ED; color:#C2410C; font-weight:800; font-size:14
       </table>
     </div>
 
-    <div class="note"><strong>파란색으로 칠해진 <span data-fill="m1-review-range">9/15 — 10/2</span>가 체험단 기간입니다.</strong> 이때 체험단 <span data-fill="m1-review-count">40명</span>이 방문하고 리뷰를 씁니다. 오픈 직후라 가게도 정신없을 때인데, <strong>체험단은 일반 손님처럼 오셔서 드시고 후기를 남기는 분들</strong>이라 명단 확인 말고는 따로 응대하실 필요 없습니다. 인플루언서는 <strong>날짜를 미리 못 박지 않고 <span data-fill="m1-inf-visit">9월 중 (확정 시 사전 안내)</span> 방문</strong>하며, 방문이 확정되면 그때 따로 알려드립니다.</div>
+    <div class="note"><strong>파란색 <span data-fill="m1-review-range">9/15 — 10/2</span>가 체험단 기간</strong>입니다. <span data-fill="m1-review-count">40명</span>이 나눠서 방문하는데, <strong>일반 손님처럼 오셔서 드시고 후기를 남기는 분들</strong>이라 명단 확인 말고는 따로 응대하실 필요 없습니다. 인플루언서 방문은 확정되면 따로 알려드립니다.</div>
   </div>
 
   <!-- 9월 인플루언서 -->
   <div class="section">
-    <h2>인플루언서 <em>운영 방식</em> — <span data-fill="m1-inf-count">4명</span></h2>
-    <div class="sec-sub">평균 조회수 3만 이상 계정 · 방문은 9월 중 협의 · 오픈 주간부터 매주 나눠서 업로드하고, 업로드할 때마다 메타 광고를 1주씩 붙입니다</div>
+    <h2>인플루언서 <em>운영 방식</em> — <span data-fill="m1-inf-count">3명</span></h2>
+    <div class="sec-sub">평균 조회수 3만 이상 계정 · 이 중 2명은 <b>팔로워 5만 이상</b> · 업로드할 때마다 메타 광고를 2주씩 붙여 끊기지 않게 이어갑니다</div>
 
     <table>
-      <thead><tr><th>회차</th><th class="c">방문일 <span style="color:#bbb;font-weight:500;">(변동 가능)</span></th><th class="c">영상 업로드</th><th class="c">인원</th><th class="c">메타 광고 (업로드와 동시 · 1주)</th></tr></thead>
+      <thead><tr><th>회차</th><th class="c">방문일 <span style="color:#bbb;font-weight:500;">(변동 가능)</span></th><th class="c">영상 업로드</th><th class="c">인원</th><th class="c">메타 광고 (업로드와 동시 · 2주)</th></tr></thead>
       <!-- 아래 tbody 는 맨 위 PLAN 으로 자동 생성됩니다. 직접 고치지 마세요. -->
       <tbody id="inf-m1"></tbody>
     </table>
 
-    <div class="note"><strong>영상을 한 번에 몰아서 올리지 않고, <span data-fill="m1-inf-upload">오픈 주간부터 매주 (9/18 — 10/8)</span> 나눠서 올립니다.</strong> 오픈 주간에 <strong>2인 업로드</strong>로 시작하고 이후 <strong>매주 1인씩</strong> 올려, 9월 내내 계속 회자되게 만드는 방식입니다. <strong>업로드하는 그 주에 맞춰 메타 광고를 1주일씩 돌리기 때문에</strong>, 영상이 올라온 타이밍에 노출이 가장 크게 잡힙니다.&nbsp;인플루언서 개인 일정에 맞춰 <span data-fill="m1-inf-visit">9월 중 (확정 시 사전 안내)</span> 방문합니다. <strong>방문이 확정되면 최소 2일 전 공유해드립니다.</strong>&nbsp;<strong>방문한 그 주에 바로 올라가는 것이 아니라, 촬영·편집 시간을 두고 그 주 후반(금요일 전후)에 업로드되며 광고도 그때 함께 시작됩니다.</strong>&nbsp;제공 메뉴는 <strong><span data-fill="m1-inf-menu">시그니처 돼지우동 2개 + 사이드(맛보기 냉제육 or 가마솥순대) 중 택 1</span></strong>이고, 이외 추가 메뉴는 인플루언서가 직접 결제합니다. 별도 출연료는 저희가 이미 지급합니다.</div>
+    <div class="note"><strong>오픈 주간에 2인, 그 다음 주에 2인</strong>을 올려 9월 내내 회자되게 만듭니다. <strong>영상마다 광고를 2주씩</strong> 붙여서 앞 영상 광고가 다음 영상 뒤까지 이어지므로 <strong>9월 내내 광고가 끊기지 않습니다.</strong> 방문은 <span data-fill="m1-inf-visit">9월 중 (확정 시 사전 안내)</span>이고 <strong>확정되면 최소 2일 전 공유</strong>드립니다. 촬영·편집 시차가 있어 <strong>방문한 주 후반(금요일 전후)에 업로드</strong>되며 광고도 그때 시작됩니다.<br><br><strong style="color:#C2410C;">4명 중 2명은 팔로워 5만 이상과 평균 조회수 3만 이상을 <u>둘 다</u> 충족하는 계정입니다.</strong> <strong>두 계정의 팔로워를 합치면 10만 명이 넘고</strong>, 평균 조회수 기준으로 <strong>이 두 편만으로 6만 회 이상</strong>이 나옵니다. <strong>광고를 한 푼도 태우기 전에, 여기서부터 시작합니다.</strong><br><br>오픈 달에는 가게를 아는 사람이 한 명도 없습니다. 그래서 첫 달만큼은 <strong>이미 사람이 모여 있는 계정을 빌리는 것</strong>이 가장 빠릅니다. 조회수만 잘 나오는 계정은 그 영상 하나로 끝나지만, <strong>팔로워가 큰 계정은 그 뒤로도 계속 회자됩니다.</strong> 두 조건을 다 만족해야 해서 섭외 단가가 더 높습니다.<br><br><strong style="color:#C2410C;">나머지 2명은 팔로워 규모는 작지만 저장·공유·댓글 반응이 잘 나오는 계정</strong>입니다. 반응이 좋은 계정은 <strong>알고리즘이 팔로워 밖으로 밀어주기</strong> 때문에, 광고 소재로 썼을 때 <strong>가장 성과가 좋은 영상이 여기서 나오는 경우가 많습니다.</strong><br><br>제공 메뉴는 <strong><span data-fill="m1-inf-menu">시그니처 돼지우동 2개 + 사이드(맛보기 냉제육 or 가마솥순대) 중 택 1</span></strong>이고, 추가 메뉴는 본인 결제입니다. 출연료는 저희가 지급합니다.</div>
   </div>
 
   <!-- 9월 항목별 -->
@@ -495,7 +530,7 @@ tr.sum-row td { background:#FFF7ED; color:#C2410C; font-weight:800; font-size:14
       <div class="tl-item np">
         <div class="tl-d">9/1 — 9/13 · 오픈 전</div>
         <div class="tl-t">네이버플레이스 등록·최적화</div>
-        <div class="tl-x"><strong>네이버 지도와 검색에 가게를 올리는 작업</strong>입니다. <strong>"삼산동 국밥", "울산 돼지국밥"처럼 손님이 실제로 검색하는 단어</strong>에 우리 가게가 뜨도록 설정합니다. 등록은 신청하면 끝이 아니라 <strong>네이버 담당자가 직접 심사</strong>하는 구조라 승인까지 영업일 기준 <strong>2~5일</strong>이 걸리고, <strong>주말에는 승인이 나지 않습니다.</strong> 그래서 <strong>오픈 2주 전(9/1)부터</strong> 시작합니다. 오픈 후 <strong>9/21에는 플레이스 '새로오픈' 기능을 활성화</strong>합니다 — <strong>네이버가 직접 "이 가게 새로 열었어요"라고 홍보해주는 기능</strong>입니다. 지도·검색에서 신규 오픈 매장으로 따로 묶여 노출되기 때문에, 광고비를 쓰지 않고도 한 번 더 눈에 띄는 구간을 만들 수 있습니다.</div>
+        <div class="tl-x"><strong>네이버 지도·검색에 가게를 올리는 작업</strong>입니다. <strong>"삼산동 국밥", "울산 돼지국밥"처럼 손님이 실제로 검색하는 단어</strong>에 뜨도록 설정합니다. <strong>네이버 담당자가 직접 심사</strong>해서 영업일 <strong>2~5일</strong>이 걸리고 주말에는 승인이 나지 않아, <strong>오픈 2주 전(9/1)부터</strong> 시작합니다. 오픈 후 <strong>9/21에 '새로오픈'을 활성화</strong>해 네이버가 신규 매장으로 밀어주는 구간을 씁니다.</div>
       </div>
       <div class="tl-item exp">
         <div class="tl-d"><span data-fill="m1-review-range">9/15 — 10/2</span> · 오픈 직후 집중</div>
@@ -512,18 +547,25 @@ tr.sum-row td { background:#FFF7ED; color:#C2410C; font-weight:800; font-size:14
       </div>
       <div class="tl-item inf">
         <div class="tl-d">방문 <span data-fill="m1-inf-visit">9월 중 (확정 시 사전 안내)</span> · 업로드 <span data-fill="m1-inf-upload">오픈 주간부터 매주 (9/18 — 10/8)</span></div>
-        <div class="tl-t">인플루언서 콘텐츠 <span data-fill="m1-inf-count">4명</span></div>
-        <div class="tl-x"><strong>인스타그램에서 울산 맛집 영상을 올리는 분들</strong>입니다. 평균 조회수 3만 이상인 계정으로만 섭외합니다. 방문은 각자 일정에 맞춰 <strong>9월 중에 나눠서</strong> 하고, <strong>영상 업로드는 오픈 주간에 2인, 이후 매주 1인씩</strong> 진행합니다. 한 주에 몰아 터뜨리고 끝내는 대신 <strong>9월 내내 끊기지 않게</strong> 노출을 이어가는 방식이고, 새로 올라온 영상은 곧바로 광고로 밀어줍니다. 영상을 보고 검색해본 사람은 그때 쌓여 있는 블로그 후기가 받아줍니다.</div>
+        <div class="tl-t">인플루언서 콘텐츠 <span data-fill="m1-inf-count">3명</span></div>
+        <div class="tl-x">인스타그램에서 울산·부산 맛집 영상을 올리는 분들로, <strong>평균 조회수 3만 이상</strong> 계정만 섭외합니다. <strong>이 중 2명은 팔로워 5만 이상까지 동시에 충족하는 계정</strong>이고, 나머지 2명은 <strong>팔로워는 작아도 저장·공유·댓글 반응이 좋은 계정</strong>으로 채웁니다. <strong>오픈 주간 2인, 그 다음 주 2인</strong> 업로드하고 새 영상은 곧바로 <strong>2주씩</strong> 광고로 밀어줍니다.</div>
       </div>
       <div class="tl-item ad">
-        <div class="tl-d"><span data-fill="m1-inf-ad-range">9/18 — 10/8</span> · 매주 1주씩</div>
+        <div class="tl-d"><span data-fill="m1-inf-ad-range">9/18 — 10/8</span> · 한 편당 2주씩</div>
         <div class="tl-t">메타 광고 (인스타그램)</div>
-        <div class="tl-x"><strong>인플루언서 영상이 올라가는 그 주에 맞춰, 그 영상으로 광고를 1주일씩 돌립니다.</strong> 영상이 가장 신선할 때 광고비를 태우는 게 반응이 제일 좋기 때문입니다. 삼산동·울산 시내 주변에 사는 분·직장인에게 집중적으로 노출하고, 영상을 본 사람이 <strong>바로 네이버 지도로 이동</strong>하게 연결합니다.</div>
+        <div class="tl-x">영상이 올라가면 <strong>그 영상으로 광고를 2주씩</strong> 돌립니다. 광고를 누르면 <strong>네이버 지도</strong>로 연결돼서, 영상을 본 사람이 바로 위치와 후기를 보게 됩니다.</div>
+        <div class="provide">
+          <div class="pv-h">광고가 닿는 범위 — 삼산동 중심 반경 3km</div>
+          <div class="pv-b"><strong style="color:#C2410C;">울산 고속·시외버스터미널 · 태화강역 · 현대백화점 울산점 · 롯데백화점 울산점 · 이마트 울산점 · 삼산동·달동 일대</strong>가 이 안에 들어옵니다.
+            <span style="display:block;margin-top:8px;">이 범위에 <strong>살고 계신 분</strong>, <strong>자주 오시는 분</strong>, <strong>이 근처로 출퇴근하는 분</strong>에게만 노출됩니다. 멀리 있는 사람에게 흩뿌리지 않고 <strong>실제로 오실 수 있는 거리</strong>에만 씁니다.</span>
+            <span style="display:block;margin-top:10px;padding-top:10px;border-top:1px dashed #FED7AA;"><b style="color:#C2410C;">노출 가능 대상</b> &nbsp;<b>약 57만 ~ 68만</b> <span style="color:#999;font-size:11.5px;">(2026년 8월 메타 기준 · 인스타그램)</span></span>
+          </div>
+        </div>
       </div>
       <div class="tl-item key">
         <div class="tl-d">10월 초</div>
         <div class="tl-t">9월 운영보고서</div>
-        <div class="tl-x"><strong>10/9(금)에 첫 달 결과를 정리해서 보내드립니다.</strong> 네이버 지도에서 몇 번 노출됐는지, 후기가 몇 개 쌓였는지 등을&nbsp;<strong>숫자로 보여드리고</strong>, 10월에 무엇을 이어갈지 알려드립니다.</div>
+        <div class="tl-x"><strong>10월 초에 첫 달 결과를 정리해서 보내드립니다.</strong> 네이버 지도에서 몇 번 노출됐는지, 후기가 몇 개 쌓였는지 등을&nbsp;<strong>숫자로 보여드리고</strong>, 10월에 무엇을 이어갈지 알려드립니다.</div>
       </div>
     </div>
   </div>
@@ -542,7 +584,7 @@ tr.sum-row td { background:#FFF7ED; color:#C2410C; font-weight:800; font-size:14
     <h2>10월 <em>한눈에</em></h2>
     <div class="sec-sub">9월 결산 → 체험단 모집 → 후기·영상 다시 쌓기 → 둘째 달 결과 보고</div>
     <div class="steps">
-      <div class="step"><div class="st-n">① 10/1 — 10/9</div><div class="st-t">체험단 모집 · 9월 결산</div><div class="st-d">10/1 체험단 모집 시작 / 10/9 첫 달 보고서 전달</div></div>
+      <div class="step"><div class="st-n">① 10월 초</div><div class="st-t">체험단 모집 · 9월 결산</div><div class="st-d">10/1 체험단 모집 시작 / 첫 달 보고서 전달</div></div>
       <div class="step"><div class="st-n">② 10/5 — 10/10</div><div class="st-t">영상 1편 · 체험단 선정</div><div class="st-d">인플루언서 1인 업로드 + 광고 2주 / 10/10 체험단 선정</div></div>
       <div class="step hero"><div class="st-n">③ <span data-fill="m2-review-range">10/11 — 10/28</span></div><div class="st-t">후기·영상 다시 쌓기</div><div class="st-d">체험단 <span data-fill="m2-review-count">20명</span> 방문 + 인플루언서 1인 업로드 + 광고 2주</div></div>
       <div class="step"><div class="st-n">④ 11월 초</div><div class="st-t">둘째 달 보고서</div><div class="st-d">9월과 비교해 얼마나 올라갔는지 정리</div></div>
@@ -576,23 +618,80 @@ tr.sum-row td { background:#FFF7ED; color:#C2410C; font-weight:800; font-size:14
   <!-- 10월 인플루언서 -->
   <div class="section">
     <h2>10월 인플루언서 — <span data-fill="m2-inf-count">2명</span></h2>
-    <div class="sec-sub">9월과 같은 기준으로 섭외합니다 · 방문일은 10월 초에 확정해 따로 안내드립니다 · 여기에 9월 위닝 영상 2편을 광고로 이어 돌립니다</div>
+    <div class="sec-sub">2명 모두 반응률이 높은 계정 · <b>여기에 9월 팔로워 5만 이상 계정의 위닝 소재 2편을 광고로 계속 돌립니다</b></div>
 
     <table>
       <thead><tr><th>회차</th><th class="c">방문일 <span style="color:#bbb;font-weight:500;">(변동 가능)</span></th><th class="c">영상 업로드</th><th class="c">인원</th><th class="c">메타 광고 (업로드와 동시 · 2주)</th></tr></thead>
       <tbody id="inf-m2"></tbody>
     </table>
 
-    <div class="note calm">9월은 "여기 새로 열었다"를 한꺼번에 알려야 해서 인원을 몰았습니다. 10월부터는 이미 알려진 가게라 <strong>새 영상을 꾸준히 얹는 쪽</strong>이 효율이 높습니다. 그래서 <strong>2주에 1편씩, 끊기지 않게</strong> 가는 방식으로 바꿉니다.<br><br><strong>여기에 더해, 9월에 올린 영상 4편 중 반응이 가장 좋았던 2편을 10월에도 계속 광고로 돌립니다.</strong> 이미 성과가 확인된 영상이라 새로 만드는 것보다 효율이 높습니다. 그래서 10월에는 <strong>새 영상 2편 + 9월 위닝 영상 2편, 모두 4편이 광고로 돕니다.</strong>
-      <br><br><strong>광고는 영상 한 편당 2주씩 돌립니다.</strong> 앞 영상의 광고가 <strong>다음 영상이 올라오는 날까지</strong> 계속 돌아가고, 그 자리를 새 영상 광고가 바로 이어받습니다. 그래서 <strong>10월 내내 광고가 한 번도 끊기지 않습니다.</strong> 9월 마지막 영상의 광고가 10/4까지 돌고 10/5부터 새 광고가 바로 이어받기 때문에, <strong>9월과 10월 사이에도 공백이 없습니다.</strong></div>
+    <div class="note calm">9월은 "새로 열었다"를 한꺼번에 알려야 해서 인원을 몰았습니다. 10월부터는 <strong>새 영상을 꾸준히 얹는 쪽</strong>이 효율이 높아 <strong>2주에 1편씩</strong>으로 바꿉니다.<br><br><strong style="color:#C2410C;">중요한 건, 9월에 섭외한 팔로워 5만 이상 계정의 영상이 9월로 끝나지 않는다는 점입니다.</strong> 그중 성과가 확인된 <u>위닝 소재</u> 2편이 <strong>10월 광고로 그대로 이어집니다.</strong> 큰 계정 섭외 비용은 <strong>오픈 달에 한 번만 들이고, 그 영상은 세 달 내내 일합니다.</strong> 그래서 10월에는 <strong>모두 4편이 광고로 돕니다.</strong> 광고는 <strong>한 편당 2주</strong>라 다음 영상이 바로 이어받아 <strong>9월과 10월 사이에도 공백이 없습니다.</strong></div>
   </div>
 
   <!-- (9월 쓰임표 섹션 삭제됨 — 되살리려면 id="spend-m2" tbody 를 가진 표 섹션을 넣으면 PLAN.cost 로 자동 생성됩니다) -->
 
 
+  <!-- ══════════════ 셋째 달 · 11월 ══════════════ -->
+  <div class="month-head newpage">
+    <span class="mh-n">셋째 달</span>
+    <span class="mh-t">11월 — <em>굳히기</em></span>
+    <span class="mh-line"></span>
+    <span class="mh-amt"><span data-fill="cost-m3">130만원</span></span>
+  </div>
+
+  <!-- 11월 한눈에 -->
+  <div class="section">
+    <h2>11월 <em>한눈에</em></h2>
+    <div class="sec-sub">10월 결산 → 영상 2편 · 광고 → 세 달 종합 보고 (보고서는 12월 초)</div>
+    <div class="steps">
+      <div class="step"><div class="st-n">① 11월 초</div><div class="st-t">10월 결산 · 광고 시작</div><div class="st-d">둘째 달 보고서 전달 / 9·10월 위닝 소재 3편 광고 시작</div></div>
+      <div class="step hero"><div class="st-n">② 11/6 — 11/19</div><div class="st-t">영상 1편 · 광고 2주</div><div class="st-d">인플루언서 1인 업로드 + 메타 광고 2주</div></div>
+      <div class="step hero"><div class="st-n">③ 11/20 — 12/3</div><div class="st-t">영상 1편 · 광고 2주</div><div class="st-d">인플루언서 1인 업로드 + 메타 광고 2주 (달을 넘겨 이어짐)</div></div>
+      <div class="step"><div class="st-n">④ 12월 초</div><div class="st-t">세 달 종합 보고서</div><div class="st-d">9월과 비교해 세 달 동안 얼마나 올라갔는지 정리</div></div>
+    </div>
+  </div>
+
+  <!-- 11월 캘린더 -->
+  <div class="section">
+    <h2>11월 <em>일정표</em> — 언제 누가 오나</h2>
+    <div class="sec-sub">11월은 블로그 체험단 없이 인플루언서 영상과 광고로만 운영합니다</div>
+
+    <div class="legend">
+      <span class="lg"><i class="c-np"></i>네이버플레이스</span>
+      <span class="lg"><i class="c-exp"></i>블로그 체험단</span>
+      <span class="lg"><i class="c-inf"></i>인플루언서</span>
+      <span class="lg"><i class="c-ad"></i>광고</span>
+      <span class="lg"><i class="c-key"></i>주요 날짜</span>
+    </div>
+
+    <div class="cal-wrap">
+      <table class="cal">
+        <thead><tr><th class="sun">일</th><th>월</th><th>화</th><th>수</th><th>목</th><th>금</th><th class="sat">토</th></tr></thead>
+        <!-- 아래 tbody 는 맨 위 PLAN 값으로 자동 생성됩니다. 직접 고치지 마세요. -->
+        <tbody id="cal-m3"></tbody>
+      </table>
+    </div>
+
+    <div class="note"><strong>11월에는 블로그 체험단을 진행하지 않습니다.</strong> 9·10월에 <strong>후기 60건</strong>이 이미 쌓여 검색에 걸려 있으므로, 세 달째에는 <strong>새 후기를 더 얹는 대신 영상과 광고에 예산을 몰아</strong> 인플루언서를 <strong>2명</strong>으로 늘리고, 여기에 <strong>9·10월 위닝 소재 3편</strong>을 이어서 돌립니다. 그래서 11월에는 <strong>모두 5편이 광고로 돕니다.</strong></div>
+  </div>
+
+  <!-- 11월 인플루언서 -->
+  <div class="section">
+    <h2>11월 인플루언서 — <span data-fill="m3-inf-count">2명</span></h2>
+    <div class="sec-sub">2명 모두 반응률이 높은 계정 · 2주 간격으로 1편씩 · <b>여기에 9월 팔로워 5만 이상 계정 영상을 포함한 위닝 소재 3편을 계속 돌립니다</b></div>
+
+    <table>
+      <thead><tr><th>회차</th><th class="c">방문일 <span style="color:#bbb;font-weight:500;">(변동 가능)</span></th><th class="c">영상 업로드</th><th class="c">인원</th><th class="c">메타 광고 (업로드와 동시)</th></tr></thead>
+      <tbody id="inf-m3"></tbody>
+    </table>
+
+    <div class="note calm">11월은 <strong>블로그 후기를 더 쌓지 않는 대신 새 영상 2편과 광고에 예산을 몰아줍니다.</strong> 9·10월에 올린 <strong>5편</strong> 위에 2편을 더해 <strong>누적 7편</strong>이 되고, 그중 <u>위닝 소재</u> <strong>3편</strong>을 이어서 광고로 돌려 <strong>11월에는 5편이 동시에 광고로 돕니다.</strong> 세 달 중 광고가 가장 두꺼운 달입니다. <strong style="color:#C2410C;">이 3편에는 9월 팔로워 5만 이상 계정의 영상이 들어갑니다 — 오픈 달에 만든 영상이 세 달째까지 계속 일하는 셈입니다.</strong><br><br><strong>10월 마지막 영상의 광고가 11/5까지 돌고 11/6부터 새 광고가 바로 이어받습니다.</strong> 두 번째 영상의 광고는 <strong>12/3까지</strong> 이어져, 11월이 끝나도 광고가 끊기지 않습니다.</div>
+  </div>
+
+
   <!-- ══════════════ 공통 ══════════════ -->
-  <div class="month-head">
-    <span class="mh-n">두 달 공통</span>
+  <div class="month-head newpage">
+    <span class="mh-n">세 달 공통</span>
     <span class="mh-t">사장님 <em>확인 사항</em></span>
     <span class="mh-line"></span>
   </div>
@@ -605,8 +704,8 @@ tr.sum-row td { background:#FFF7ED; color:#C2410C; font-weight:800; font-size:14
     <ul class="chk">
       <li><span class="when g">9/1까지</span><b>가게 자료 전달</b> — 사업자등록증 사본, 네이버 계정, 매장 주소, 매장 대표번호. 그리고 영업시간·메뉴·사진·주차·결제수단. <b>위 「오픈 전에 주셔야 할 것」에 항목별로 정리해뒀습니다.</b></li>
       <li><span class="when g">오픈 전</span><b>네이버 지도 최종 확인</b> — 저희가 등록한 내용을 보내드리면 <b>전화번호·영업시간·가격이 맞는지만</b> 봐주세요. <b>오픈 전에 고쳐야 오픈일에 반영됩니다</b> — 오픈 후에 고치면 심사를 다시 받습니다.</li>
-      <li><span class="when">9월 · 10월 중</span><b>인플루언서 방문 응대</b> — <b><span data-fill="m1-inf-menu">시그니처 돼지우동 2개 + 사이드(맛보기 냉제육 or 가마솥순대) 중 택 1</span></b>을 내주시고, 촬영에 협조해주세요. <b>방문이 확정되면 미리 알려드립니다.</b></li>
-      <li><span class="when b"><span data-fill="m1-review-range">9/15 — 10/2</span> · <span data-fill="m2-review-range">10/11 — 10/28</span></span><b>체험단 확인</b> — "체험단으로 왔습니다"라고 하면 명단 확인 후 <b><span data-fill="m1-review-menu">시그니처 돼지우동 2개 + 사이드 (맛보기 냉제육 or 가마솥순대) 택 1</span></b> 제공. 9월 <span data-fill="m1-review-count">40명</span>, 10월 <span data-fill="m2-review-count">20명</span>이 기간 내에 나눠서 옵니다.</li>
+      <li><span class="when">9월 · 10월 · 11월 중</span><b>인플루언서 방문 응대</b> — <b><span data-fill="m1-inf-menu">시그니처 돼지우동 2개 + 사이드(맛보기 냉제육 or 가마솥순대) 중 택 1</span></b>을 내주시고, 촬영에 협조해주세요. <b>방문이 확정되면 미리 알려드립니다.</b></li>
+      <li><span class="when b"><span data-fill="m1-review-range">9/15 — 10/2</span> · <span data-fill="m2-review-range">10/11 — 10/28</span></span><b>체험단 확인</b> — "체험단으로 왔습니다"라고 하면 명단 확인 후 <b><span data-fill="m1-review-menu">시그니처 돼지우동 2개 + 사이드 (맛보기 냉제육 or 가마솥순대) 택 1</span></b> 제공. 9월 <span data-fill="m1-review-count">40명</span>, 10월 <span data-fill="m2-review-count">20명</span>이 기간 내에 나눠서 옵니다. <b>11월은 체험단을 진행하지 않습니다.</b></li>
       <li><span class="when">수시</span><b>가게에 변경이 생기면 알려주세요</b> — 영업시간·휴무일·메뉴·가격이 바뀌면 지도 정보도 같이 고쳐야 합니다.</li>
     </ul>
 
@@ -615,11 +714,11 @@ tr.sum-row td { background:#FFF7ED; color:#C2410C; font-weight:800; font-size:14
 
   <!-- 비용 -->
   <div class="section">
-    <h2>두 달 <em>비용</em></h2>
-    <div class="sec-sub">단위는 만원 · 부가세 별도</div>
+    <h2>세 달 <em>비용</em></h2>
+    <div class="sec-sub">단위는 만원 · 항목별 금액은 부가세 별도, 합계는 부가세 포함 금액을 함께 표기했습니다</div>
 
     <table>
-      <thead><tr><th>항목</th><th class="r">첫 달 (9월)</th><th class="r">둘째 달 (10월)</th></tr></thead>
+      <thead><tr><th>항목</th><th class="r">첫 달 (9월)</th><th class="r">둘째 달 (10월)</th><th class="r">셋째 달 (11월)</th></tr></thead>
       <!-- 아래 tbody 는 맨 위 PLAN.cost 로 자동 생성됩니다. 직접 고치지 마세요. -->
       <tbody id="cost-body"></tbody>
     </table>
@@ -629,7 +728,7 @@ tr.sum-row td { background:#FFF7ED; color:#C2410C; font-weight:800; font-size:14
   <!-- 입금 계좌 -->
   <div class="section">
     <h2>입금 <em>계좌</em></h2>
-    <div class="sec-sub">아래 계좌로 입금해주시면 됩니다 · 금액은 부가세 별도입니다</div>
+    <div class="sec-sub">아래 계좌로 입금해주시면 됩니다 · 위 비용표의 <b>부가세 포함 금액</b> 기준입니다</div>
 
     <table>
       <tbody>
@@ -641,8 +740,8 @@ tr.sum-row td { background:#FFF7ED; color:#C2410C; font-weight:800; font-size:14
   </div>
 
   <div class="footer">
-    미례국밥 울산삼산점 · 2026년 9·10월 운영 플랜<br>
-    일정은 현장 상황에 따라 조정될 수 있으며, 변경 시 최소 2일 전에 안내드립니다. 금액은 부가세 별도입니다.
+    미례국밥 울산삼산점 · 2026년 9·10·11월 운영 플랜<br>
+    일정은 현장 상황에 따라 조정될 수 있으며, 변경 시 최소 2일 전에 안내드립니다. 비용표의 항목별 금액은 부가세 별도이며, 합계는 부가세 포함 금액을 함께 표기했습니다.
   </div>
 
 </div>
@@ -722,7 +821,7 @@ tr.sum-row td { background:#FFF7ED; color:#C2410C; font-weight:800; font-size:14
       }
     }
 
-    /* 인플루언서 — 업로드 회차마다 광고를 1주씩 붙임 */
+    /* 인플루언서 — 업로드 회차마다 adStart~adEnd 만큼 광고를 붙임 */
     let infCount = 0, adRange = '', uploadWindow = '';
     if (F && F.uploads.length) {
       infCount = F.uploads.reduce((a, u) => a + u.count, 0);
@@ -816,6 +915,10 @@ tr.sum-row td { background:#FFF7ED; color:#C2410C; font-weight:800; font-size:14
   const note = (t) => t ? ' <span style="font-size:11px;color:#999;font-weight:600;">' + t + '</span>' : '';
   const sum1 = C.rows.reduce((a, r) => a + r.m1, 0);
   const sum2 = C.rows.reduce((a, r) => a + r.m2, 0);
+  const sum3 = C.rows.reduce((a, r) => a + (r.m3 || 0), 0);
+  const tot = sum1 + sum2 + sum3;
+  /* 부가세 10% — 만원 단위, 소수점은 반올림 */
+  const vat = (n) => Math.round(n * 1.1 * 10) / 10;
 
   const costEl = document.getElementById('cost-body');
   if (costEl) {
@@ -823,10 +926,12 @@ tr.sum-row td { background:#FFF7ED; color:#C2410C; font-weight:800; font-size:14
       C.rows.map((r) =>
         '<tr><td class="item">' + r.item + sub(r.sub) + '</td>' +
         '<td class="amt">' + r.m1 + note(r.m1note) + '</td>' +
-        '<td class="amt">' + r.m2 + note(r.m2note) + '</td></tr>'
+        '<td class="amt">' + r.m2 + note(r.m2note) + '</td>' +
+        '<td class="amt">' + (r.m3 ? r.m3 + note(r.m3note) : '<span style="color:#c8ccd0;">—</span>') + '</td></tr>'
       ).join('') +
-      '<tr class="sum-row"><td>월 합계</td><td class="amt">' + sum1 + '</td><td class="amt">' + sum2 + '</td></tr>' +
-      '<tr class="total-row"><td>두 달 합계 (부가세 별도)</td><td class="amt" colspan="2">' + (sum1 + sum2) + '</td></tr>';
+      '<tr class="sum-row"><td>월 합계 <span style="font-weight:600;font-size:11px;color:#c99;">부가세 별도</span></td><td class="amt">' + sum1 + '</td><td class="amt">' + sum2 + '</td><td class="amt">' + sum3 + '</td></tr>' +
+      '<tr class="vat-row"><td>부가세 포함</td><td class="amt">' + vat(sum1) + '</td><td class="amt">' + vat(sum2) + '</td><td class="amt">' + vat(sum3) + '</td></tr>' +
+      '<tr class="total-row"><td>세 달 합계</td><td class="amt" colspan="3">' + tot + ' <span style="font-weight:600;font-size:12px;opacity:.75;">· 부가세 포함 ' + vat(tot) + '</span></td></tr>';
   }
 
   /* ── 10월 쓰임표 ─────────────────────────────────────────────────────────── */
@@ -844,7 +949,9 @@ tr.sum-row td { background:#FFF7ED; color:#C2410C; font-weight:800; font-size:14
 
   fills['cost-m1'] = won(sum1);
   fills['cost-m2'] = won(sum2);
-  fills['cost-total'] = won(sum1 + sum2);
+  fills['cost-m3'] = won(sum3);
+  fills['cost-total'] = won(tot);
+  fills['cost-total-vat'] = won(vat(tot));
 
   /* ── 본문 안 값 채우기 ──────────────────────────────────────────────────── */
   document.querySelectorAll('[data-fill]').forEach((el) => {
