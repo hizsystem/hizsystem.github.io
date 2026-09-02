@@ -84,6 +84,16 @@ td.desc { color: #636569; font-size: 12px; line-height: 1.7; }
 td.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
 th.num { text-align: right; }
 .rank-up { color: #16a34a; font-weight: 800; }
+.shots { margin-top: 18px; }
+.shot { margin-bottom: 18px; border: 1px solid #e8edf1; border-radius: 10px; overflow: hidden; background: #fff; }
+.shot img { display: block; width: 100%; height: auto; }
+.shot .cap { font-size: 12px; color: #636569; padding: 10px 14px; border-top: 1px solid #f0f2f5; background: #f8fafb; line-height: 1.65; }
+.shot .cap b { color: #1a1b18; }
+.shot .cap .q { color: #EA580C; font-weight: 800; }
+.shots-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.shots-2 .shot { margin-bottom: 0; }
+@media (max-width: 768px) { .shots-2 { grid-template-columns: 1fr; } }
+@media print { .shot { break-inside: avoid; } .shots-2 { grid-template-columns: 1fr 1fr; } }
 .rank-down { color: #dc2626; font-weight: 800; }
 .rank-keep { color: #636569; font-weight: 700; }
 
@@ -568,6 +578,31 @@ th.num { text-align: right; }
         <tr><td class="item">#江南レストラン</td><td class="desc"><strong>강남 레스토랑</strong></td><td class="desc">상단 — "한국인으로 만석!! 강남역 맛집"</td></tr>
       </tbody>
     </table>
+    <div class="shots">
+      <div class="shot">
+        <img src="images/jp/01-gangnam-gourmet-top.jpg" alt="인스타그램 #江南グルメ 검색 결과 최상단에 노출된 미례국밥 강남삼성타운직영점 매장 외관">
+        <div class="cap"><span class="q">#江南グルメ (강남 맛집)</span> — <b>검색 결과 최상단 첫 칸에 강남점 매장 외관</b>이 그대로 노출됩니다. 캡션은 "서울 상륙했다고 해서 왔다".</div>
+      </div>
+      <div class="shots-2">
+        <div class="shot">
+          <img src="images/jp/02-gangnam-gourmet-scroll.jpg" alt="#江南グルメ 검색 결과 상단의 미례국밥 돼지우동 영상, 조회수 9.8만">
+          <div class="cap"><span class="q">#江南グルメ (강남 맛집)</span> — 같은 검색어 상단의 <b>돼지우동 클로즈업 · 조회 9.8만</b>.</div>
+        </div>
+        <div class="shot">
+          <img src="images/jp/05-gangnam-restaurant.jpg" alt="#江南レストラン 검색 결과에 노출된 미례국밥 돼지우동 영상">
+          <div class="cap"><span class="q">#江南レストラン (강남 레스토랑)</span> — <b>"한국인으로 만석‼️ 강남역에 있는 엄청 맛있는 집"</b>.</div>
+        </div>
+      </div>
+      <div class="shot" style="margin-top:18px;">
+        <img src="images/jp/03-korea-gourmet-1.jpg" alt="#韓国グルメ 해시태그 결과에 노출된 미례국밥 관련 영상들">
+        <div class="cap"><span class="q">#韓国グルメ (한국 맛집)</span> — 오른쪽에 <b>"강남에서 발견! 엄청 맛있는 국밥우동?!"</b>, 그 왼쪽은 일본 인플루언서 <b>URITRIP</b>의 큐레이션 게시물입니다.</div>
+      </div>
+      <div class="shot">
+        <img src="images/jp/04-korea-gourmet-2.jpg" alt="#韓国グルメ 해시태그 결과 추가 화면">
+        <div class="cap"><span class="q">#韓国グルメ (한국 맛집)</span> — <b>"평일 밤 8시인데 놀랍게도 만석"</b> 등 매장 혼잡도를 보여주는 컷이 함께 잡힙니다.</div>
+      </div>
+    </div>
+
     <div class="info-box">
       이 밖에 <strong>#江南ひとりごはん(강남 혼밥) · #韓国でひとりごはん(한국에서 혼밥) · #韓国一人旅(한국 혼행) · #韓国旅行(한국 여행) · #ソウルグルメ(서울 맛집)</strong> 계열에서도 노출이 확인됩니다.<br><br>
       <strong>돼지우동이 일본어 검색과 잘 맞습니다.</strong> "혼밥(ひとりごはん)"으로 찾는 여행객에게는 <strong>혼자 들어가 한 그릇 먹고 나올 수 있는 집</strong>이 필요한데, 국밥이 정확히 그 자리입니다.
