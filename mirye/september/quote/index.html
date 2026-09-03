@@ -98,6 +98,10 @@ tr.total-row td { background:#0D0D0D; color:#fff; font-weight:800; font-size:15p
 .scard .sc-a span { font-size:13px; font-weight:600; color:#636569; margin-left:2px; }
 .scard .sc-v { font-size:11.5px; color:#EA580C; font-weight:700; margin-top:2px; }
 td.item a { color:#1a1b18; font-weight:800; text-decoration:none; border-bottom:2px solid #FED7AA; }
+.paidbadge { display:inline-block; background:#16a34a; color:#fff; font-size:10px; font-weight:800; padding:2px 9px; border-radius:20px; letter-spacing:0.02em; }
+.paidbox { background:#f0fdf4; border:1px solid #bbf7d0; border-left:4px solid #16a34a; border-radius:10px; padding:16px 20px; margin-bottom:20px; font-size:13px; color:#14532d; line-height:1.8; }
+.paidbox strong { color:#15803d; font-weight:800; }
+tr.paid-row td { background:#f0fdf4; }
 .tablewrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
 @media (max-width: 768px) { .tablewrap table { min-width: 520px; } }
 @media print { .tablewrap { overflow: visible; } .tablewrap table { min-width: 0; } }
@@ -136,12 +140,12 @@ td.item a:hover { color:#EA580C; }
   <div class="sumstrip">
     <div>
       <div class="sl">9월 5개 매장 합계</div>
-      <div class="ss">본사 500 + 센텀 180 + 강남 380 + 울산삼산 300 + 부산시청 200 (만원 · 부가세 별도)</div>
+      <div class="ss">본사 500 + 센텀 180 + 강남 380 + 울산삼산 300 + 부산시청 200 (만원 · 부가세 별도)<br>울산삼산 300 · 부산시청 200은 <strong style="color:#86efac;">정산 완료</strong>된 건으로 이번 달 청구에서 빠집니다</div>
     </div>
     <div class="sumfig">
-      <div class="f"><div class="fk">공급가액</div><div class="fv">15,600,000</div></div>
-      <div class="f"><div class="fk">부가세</div><div class="fv">1,560,000</div></div>
-      <div class="f main"><div class="fk">합계 (VAT 포함)</div><div class="fv">17,160,000</div></div>
+      <div class="f"><div class="fk">9월 운영 총액</div><div class="fv">15,600,000</div></div>
+      <div class="f"><div class="fk">정산 완료</div><div class="fv">− 5,000,000</div></div>
+      <div class="f main"><div class="fk">이번 달 청구 (VAT 포함)</div><div class="fv">11,660,000</div></div>
     </div>
   </div>
 
@@ -171,14 +175,14 @@ td.item a:hover { color:#EA580C; }
         <div class="sc-v">VAT 포함 4,180,000원</div>
       </a>
       <a class="scard" href="ulsan.html">
-        <div class="sc-k">신규 오픈 셋업 (표준 패키지 2호)</div>
+        <div class="sc-k">신규 오픈 셋업 (표준 패키지 2호) <span class="paidbadge">정산 완료</span></div>
         <div class="sc-t">울산삼산점</div>
         <div class="sc-d">미례국밥 울산삼산점</div>
         <div class="sc-a">3,000,000<span>원</span></div>
         <div class="sc-v">VAT 포함 3,300,000원</div>
       </a>
       <a class="scard" href="busan-cityhall.html">
-        <div class="sc-k">오픈 둘째 달 — 지속 운영</div>
+        <div class="sc-k">오픈 둘째 달 — 지속 운영 <span class="paidbadge">정산 완료</span></div>
         <div class="sc-t">부산시청점</div>
         <div class="sc-d">미례국밥 부산시청점</div>
         <div class="sc-a">2,000,000<span>원</span></div>
@@ -197,14 +201,17 @@ td.item a:hover { color:#EA580C; }
 <tr><td class="item"><a href="hq.html">본사</a></td><td class="desc">브랜드 마케팅 전략 기획 + 인스타그램 운영 + 네이버플레이스 운영 (전포본점) + 메타 광고</td><td class="amt">5,000,000</td><td class="amt">500,000</td><td class="amt">5,500,000</td></tr>
 <tr><td class="item"><a href="centum.html">센텀점</a></td><td class="desc">네이버플레이스 운영 + 블로그 체험단 + 인플루언서 콘텐츠 + 메타 광고</td><td class="amt">1,800,000</td><td class="amt">180,000</td><td class="amt">1,980,000</td></tr>
 <tr><td class="item"><a href="gangnam.html">강남점</a></td><td class="desc">네이버플레이스 운영 + 블로그 체험단 + 인플루언서 콘텐츠 + 메타 광고 + 일본 인플루언서</td><td class="amt">3,800,000</td><td class="amt">380,000</td><td class="amt">4,180,000</td></tr>
-<tr><td class="item"><a href="ulsan.html">울산삼산점</a></td><td class="desc">네이버플레이스 등록·최적화 + 블로그 체험단 + 인플루언서 콘텐츠</td><td class="amt">3,000,000</td><td class="amt">300,000</td><td class="amt">3,300,000</td></tr>
-<tr><td class="item"><a href="busan-cityhall.html">부산시청점</a></td><td class="desc">네이버플레이스 운영 + 블로그 체험단 + 인플루언서 콘텐츠 + 메타 광고</td><td class="amt">2,000,000</td><td class="amt">200,000</td><td class="amt">2,200,000</td></tr>
-<tr class="total-row"><td colspan="2">9월 합계</td><td class="amt">15,600,000</td><td class="amt">1,560,000</td><td class="amt">17,160,000</td></tr>
+<tr class="paid-row"><td class="item"><a href="ulsan.html">울산삼산점</a> <span class="paidbadge">정산 완료</span></td><td class="desc">네이버플레이스 등록·세팅 + 운영 + 블로그 체험단 + 인플루언서 콘텐츠</td><td class="amt">3,000,000</td><td class="amt">300,000</td><td class="amt">3,300,000</td></tr>
+<tr class="paid-row"><td class="item"><a href="busan-cityhall.html">부산시청점</a> <span class="paidbadge">정산 완료</span></td><td class="desc">네이버플레이스 운영 + 블로그 체험단 + 인플루언서 콘텐츠 + 메타 광고</td><td class="amt">2,000,000</td><td class="amt">200,000</td><td class="amt">2,200,000</td></tr>
+<tr class="total-row"><td colspan="2">9월 운영 총액</td><td class="amt">15,600,000</td><td class="amt">1,560,000</td><td class="amt">17,160,000</td></tr>
+<tr class="sub"><td colspan="2">정산 완료 (울산삼산 · 부산시청)</td><td class="amt">− 5,000,000</td><td class="amt">− 500,000</td><td class="amt">− 5,500,000</td></tr>
+<tr class="total-row"><td colspan="2">이번 달 청구액</td><td class="amt">10,600,000</td><td class="amt">1,060,000</td><td class="amt">11,660,000</td></tr>
       </tbody>
     </table>
     </div>
-    <div class="note"><p><strong>세금계산서는 각 매장 공급가액 기준으로 발행됩니다.</strong> 매장별로 결재 라인이 다른 경우, 위 표의 매장별 금액이 그대로 각 계산서 금액과 일치합니다.</p>
-    <p><strong>8월 대비 2,220 → 1,560</strong>입니다. 8월에만 쓰기로 했던 강남 성수기 화력 1,000과 부산시청점 오픈 셋업 300이 빠지고, 울산삼산점 오픈 셋업 300이 새로 들어왔습니다.</p>
+    <div class="note"><p>🟢 <strong>울산삼산점 300 · 부산시청점 200은 이미 정산이 완료된 건</strong>입니다. 이번 달 세금계산서는 <strong>본사 500 · 센텀 180 · 강남 380 = 1,060만(부가세 별도)</strong>만 발행됩니다.</p>
+    <p><strong>세금계산서는 각 매장 공급가액 기준으로 발행됩니다.</strong> 매장별로 결재 라인이 다른 경우, 위 표의 매장별 금액이 그대로 각 계산서 금액과 일치합니다.</p>
+    <p><strong>8월 대비 2,240 → 1,560</strong>입니다. 8월에만 쓰기로 했던 강남 성수기 화력 1,000과 부산시청점 오픈 셋업 300이 빠지고, 울산삼산점 오픈 셋업 300이 새로 들어왔습니다.</p>
     <p><strong>2개월 약정 매장이 2곳</strong>입니다 — 부산시청점 500(8월 300 + 9월 200)은 이번 달이 마지막 회차, 울산삼산점 500(9월 300 + 10월 200)은 이번 달이 첫 회차입니다.</p></div>
   </div>
 

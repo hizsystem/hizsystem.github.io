@@ -56,6 +56,9 @@ td.item .rem { display:block; font-size:10.5px; font-weight:700; color:#EA580C; 
 td.desc { color: #636569; font-size: 12px; }
 td.qty { text-align: center; font-variant-numeric: tabular-nums; white-space: nowrap; width: 68px; color:#3a3c40; }
 td.amt { text-align:right; font-weight:700; font-variant-numeric:tabular-nums; white-space:nowrap; width:120px; }
+.paidbadge { display:inline-block; background:#16a34a; color:#fff; font-size:10.5px; font-weight:800; padding:3px 10px; border-radius:20px; letter-spacing:0.02em; margin-left:8px; vertical-align:middle; }
+.paidbox { background:#f0fdf4; border:1px solid #bbf7d0; border-left:4px solid #16a34a; border-radius:10px; padding:16px 20px; margin-bottom:20px; font-size:13px; color:#14532d; line-height:1.8; }
+.paidbox strong { color:#15803d; font-weight:800; }
 tr.sub td { background:#f8fafb; font-weight:800; color:#1a1b18; border-top:1px solid #e8edf1; }
 tr.vat td { font-weight:600; color:#636569; }
 tr.total-row td { background:#0D0D0D; color:#fff; font-weight:800; font-size:15px; }
@@ -127,7 +130,7 @@ tr.total-row td { background:#0D0D0D; color:#fff; font-weight:800; font-size:15p
 
   <div class="sumstrip">
     <div>
-      <div class="sl">부산시청점 9월 운영비</div>
+      <div class="sl">부산시청점 9월 운영비 <span class="paidbadge">정산 완료</span></div>
       <div class="ss">이 견적서는 부산시청점 항목만 담고 있습니다 · 매장별 결재용</div>
     </div>
     <div class="sumfig">
@@ -135,6 +138,10 @@ tr.total-row td { background:#0D0D0D; color:#fff; font-weight:800; font-size:15p
       <div class="f"><div class="fk">부가세</div><div class="fv">200,000</div></div>
       <div class="f main"><div class="fk">합계 (VAT 포함)</div><div class="fv">2,200,000</div></div>
     </div>
+  </div>
+
+  <div class="paidbox">
+    <strong>이 건은 이미 정산이 완료되었습니다.</strong> 부산시청점 2개월 500만(8월 300 + 9월 200)은 기지급 처리된 건으로, <strong>이 견적서로 추가 청구되지 않습니다.</strong> 집행 내역 확인용으로 보시면 됩니다.
   </div>
 
   <div class="section">
@@ -168,7 +175,7 @@ tr.total-row td { background:#0D0D0D; color:#fff; font-weight:800; font-size:15p
     <ul class="terms">
       <li>본 견적서의 금액은 <strong>부가세 별도</strong> 기준이며, 합계 금액은 부가세 10%를 포함한 금액입니다.</li>
       <li>월 단위 운영 계약이며, 매월 운영 플랜과 함께 그 달 견적이 확정됩니다.</li>
-      <li>세금계산서는 <strong>부산시청점 공급가액 2,000,000원 기준</strong>으로 발행됩니다.</li>
+      <li>🟢 <strong>본 건은 정산 완료된 건</strong>으로, 이 견적서로 추가 청구되지 않습니다.</li>
       <li>인플루언서·체험단·메타 광고 항목은 집행 실비와 대행 수수료를 포함한 금액입니다.</li>
     </ul>
     <div class="noprint" style="margin-top:18px;"><a class="doclink" href="../../busan-cityhall/august_v3.html">부산시청점 8·9월 운영 플랜 (점주용)</a>
