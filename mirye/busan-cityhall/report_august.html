@@ -146,11 +146,51 @@ tr.total td { background: #f8fafb; font-weight: 800; border-top: 2px solid #e8ed
   .toolbar { padding: 0 16px; }
   table { display: block; overflow-x: auto; }
 }
+@page { size: A4 portrait; margin: 11mm 10mm; }
 @media print {
   .toolbar, .edit-banner { display: none !important; }
-  .container { padding: 20px; max-width: none; }
-  body { background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-  .section, .highlight-box, .report-header { break-inside: avoid; }
+  html, body { background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { font-size: 10.4px; line-height: 1.55; }
+  .container { padding: 0; max-width: 100%; width: 100%; margin: 0; }
+
+  /* 섹션 자체는 쪼개질 수 있게 둔다 — avoid를 걸면 한 페이지보다 큰 섹션이 통째로 잘린다 */
+  .section, .highlight-box, .report-header { break-inside: auto; page-break-inside: auto; margin-bottom: 9px; }
+  .section { padding: 14px 18px; }
+  .report-header { padding: 22px 24px; }
+  .highlight-box { padding: 18px 22px; }
+
+  /* 제목만 떨어져 나가지 않게 */
+  .ch-header { break-after: avoid; page-break-after: avoid; margin-bottom: 12px; padding-bottom: 9px; }
+  .section h4 { break-after: avoid; page-break-after: avoid; }
+
+  /* 작은 덩어리는 절대 중간에서 자르지 않는다 */
+  .kpi-card, .flow-step, .pin, .mo, .info-box, .next-card,
+  .meta-item, .store-card { break-inside: avoid; page-break-inside: avoid; }
+
+  /* 표: 행 단위로만 넘긴다 · 헤더는 페이지마다 반복 */
+  table { break-inside: auto; page-break-inside: auto; width: 100%; table-layout: fixed; }
+  thead { display: table-header-group; }
+  tr { break-inside: avoid; page-break-inside: avoid; }
+  th, td { padding: 7px 9px; font-size: 10px; word-break: keep-all; overflow-wrap: anywhere; }
+  th { white-space: normal; }
+  td.num, td.ctr { white-space: normal; }
+
+  /* 인쇄 폭에서 모바일 규칙이 먹는 걸 되돌린다 — 표가 잘리고 카드가 세로로 늘어진다 */
+  table { display: table !important; overflow: visible !important; }
+  .meta-grid { grid-template-columns: repeat(4, 1fr) !important; }
+  .kpi-grid { grid-template-columns: repeat(4, 1fr) !important; }
+  .kpi-grid.g3 { grid-template-columns: repeat(3, 1fr) !important; }
+  .flow, .pin-grid, .money, .next-grid { grid-template-columns: repeat(3, 1fr) !important; }
+  .kpi-grid, .kpi-grid.g3, .flow, .pin-grid, .money, .meta-grid, .next-grid { gap: 8px; }
+  .kpi-card { padding: 14px 10px; }
+  .kpi-card .kc-value { font-size: 21px; }
+  .kpi-card .kc-label, .kpi-card .kc-change { font-size: 9.5px; }
+  .flow-step, .pin, .mo { padding: 13px 12px; }
+  .info-box { padding: 10px 14px; font-size: 10px; line-height: 1.62; margin-top: 11px; }
+  .report-header h1 { font-size: 22px; }
+  .highlight-box .hl-text { font-size: 13.5px; line-height: 1.7; }
+  .footer { padding: 14px 0 0; }
+  a { text-decoration: none; color: inherit; }
 }
 </style>
 </head>
