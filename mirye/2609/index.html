@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>미례국밥 × 브랜드라이즈 — 매장별 운영 보고 · 플랜 · 견적</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Noto Sans KR', -apple-system, sans-serif; background: #f4f7f9; color: #1a1b18; line-height: 1.7; font-size: 14px; -webkit-font-smoothing: antialiased; word-break: keep-all; overflow-wrap: break-word; }
+
+.toolbar { position: fixed; top:0; left:0; right:0; z-index:100; background:#0D0D0D; height:56px; display:flex; align-items:center; justify-content:space-between; padding:0 32px; }
+.toolbar-left { display:flex; align-items:center; gap:16px; }
+.toolbar-logo { font-size:13px; font-weight:700; color:#EA580C; letter-spacing:0.05em; }
+.toolbar-sep { width:1px; height:20px; background:rgba(255,255,255,0.15); }
+.toolbar-title { font-size:14px; font-weight:500; color:#fff; }
+
+.container { max-width:960px; margin:0 auto; padding:80px 24px 60px; }
+
+.doc { background:#fff; border-radius:12px; padding:40px; margin-bottom:20px; border:1px solid #e8edf1; }
+.doc .label { font-size:11px; font-weight:700; color:#EA580C; letter-spacing:0.12em; text-transform:uppercase; margin-bottom:12px; }
+.doc h1 { font-size:32px; font-weight:900; line-height:1.3; letter-spacing:-0.02em; }
+.doc h1 em { color:#EA580C; font-style:normal; }
+.doc .subt { font-size:13.5px; color:#636569; margin-top:10px; }
+
+.sumstrip { background:#0D0D0D; border-radius:12px; padding:26px 34px; margin-bottom:20px; display:flex; align-items:center; justify-content:space-between; color:#fff; flex-wrap:wrap; gap:16px; }
+.sumstrip .sl { font-size:14px; font-weight:700; }
+.sumstrip .ss { font-size:11.5px; color:rgba(255,255,255,0.55); margin-top:6px; line-height:1.7; }
+.sumstrip .ss b { color:#86efac; font-weight:800; }
+.sumfig { display:flex; gap:26px; align-items:flex-end; flex-wrap:wrap; }
+.sumfig .f { text-align:right; }
+.sumfig .fk { font-size:10.5px; color:rgba(255,255,255,0.5); font-weight:600; margin-bottom:2px; }
+.sumfig .fv { font-size:17px; font-weight:800; font-variant-numeric:tabular-nums; }
+.sumfig .f.main .fv { font-size:32px; font-weight:900; letter-spacing:-0.02em; color:#FDBA8C; }
+
+.section { background:#fff; border-radius:12px; padding:32px 40px; margin-bottom:20px; border:1px solid #e8edf1; }
+.section h2 { font-size:18px; font-weight:800; margin-bottom:6px; letter-spacing:-0.02em; }
+.section h2 em { color:#EA580C; font-style:normal; }
+.section .sec-sub { font-size:12px; color:#999; margin-bottom:20px; }
+
+.twoline { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+.tl-box { border:1px solid #e8edf1; border-radius:10px; padding:20px 22px; background:#f8fafb; }
+.tl-box .tl-k { font-size:11px; font-weight:800; letter-spacing:0.06em; color:#EA580C; margin-bottom:10px; }
+.tl-box ul { list-style:none; font-size:13px; color:#3a3c40; }
+.tl-box ul li { position:relative; padding-left:14px; margin-bottom:6px; line-height:1.65; }
+.tl-box ul li::before { content:''; position:absolute; left:0; top:9px; width:4px; height:4px; border-radius:50%; background:#FB923C; }
+.tl-box ul li strong { font-weight:800; color:#1a1b18; }
+
+.grid { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; }
+.scard { border:1px solid #e8edf1; border-radius:12px; padding:22px 24px; background:#fff; transition:all 0.15s; }
+.scard:hover { border-color:#FED7AA; box-shadow:0 2px 12px rgba(234,88,12,0.06); }
+.scard .sc-k { font-size:11px; font-weight:700; color:#EA580C; margin-bottom:8px; letter-spacing:0.02em; }
+.scard .sc-t { font-size:19px; font-weight:900; letter-spacing:-0.02em; }
+.scard .sc-d { font-size:12px; color:#999; margin-top:3px; }
+.scard .sc-a { font-size:22px; font-weight:900; margin-top:14px; font-variant-numeric:tabular-nums; letter-spacing:-0.02em; }
+.scard .sc-a span { font-size:13px; font-weight:700; color:#636569; margin-left:2px; }
+.scard .sc-v { font-size:11px; color:#999; margin-top:2px; }
+.btnrow { display:flex; gap:8px; margin-top:16px; flex-wrap:wrap; }
+.btn { flex:1; text-align:center; font-size:12px; font-weight:700; padding:10px 12px; border-radius:8px; text-decoration:none; white-space:nowrap; }
+.btn.primary { background:#EA580C; color:#fff; }
+.btn.primary:hover { background:#c2410c; }
+.btn.ghost { background:#fff; color:#636569; border:1px solid #e8edf1; }
+.btn.ghost:hover { border-color:#EA580C; color:#EA580C; }
+.btn.off { background:#f8fafb; color:#c4c7cc; border:1px solid #f0f2f5; cursor:default; }
+.paidbadge { display:inline-block; background:#16a34a; color:#fff; font-size:10px; font-weight:800; padding:2px 9px; border-radius:20px; margin-left:6px; vertical-align:middle; }
+
+.note { background:#f8fafb; border:1px solid #e8edf1; border-radius:8px; padding:14px 18px; margin-top:18px; font-size:12.5px; color:#3a3c40; }
+.note strong { color:#EA580C; font-weight:700; }
+.linkrow { display:flex; gap:10px; flex-wrap:wrap; }
+.doclink { font-size:12px; font-weight:700; padding:9px 16px; border-radius:8px; text-decoration:none; background:#fff; color:#636569; border:1px solid #e8edf1; }
+.doclink:hover { border-color:#EA580C; color:#EA580C; }
+
+.footer { text-align:center; padding:28px 0 10px; color:#999; font-size:11.5px; }
+.footer .brand { font-size:12px; font-weight:700; color:#EA580C; letter-spacing:0.1em; margin-bottom:6px; }
+
+@media (max-width:768px) { .grid, .twoline { grid-template-columns:1fr; } .section { padding:24px 22px; } .doc { padding:28px 22px; } }
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="toolbar-left">
+    <div class="toolbar-logo">BRANDRISE</div>
+    <div class="toolbar-sep"></div>
+    <div class="toolbar-title">미례국밥 × 브랜드라이즈</div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="doc">
+    <div class="label">2026년 9월 · 이번 달</div>
+    <h1>매장별 <em>운영 보고 · 플랜 · 견적</em></h1>
+    <div class="subt">매장을 누르면 그 매장의 <strong>8월 수행 결과 → 9월 운영 플랜 → 9월 견적</strong>이 한 장에 나옵니다.<br>매장별로 결재 라인이 다르면 각 페이지 상단 <strong>PDF 저장</strong>으로 그 매장 것만 뽑으시면 됩니다.</div>
+  </div>
+
+  <div class="sumstrip">
+    <div>
+      <div class="sl">9월 운영비</div>
+      <div class="ss">본사 500 · 센텀 180 · 강남 380 · 울산삼산 300 · 부산시청 200 (만원 · 부가세 별도)<br>울산삼산 300 · 부산시청 200은 <b>정산 완료</b>된 건으로 이번 달 청구에서 빠집니다</div>
+    </div>
+    <div class="sumfig">
+      <div class="f"><div class="fk">9월 운영 총액</div><div class="fv">15,600,000</div></div>
+      <div class="f"><div class="fk">정산 완료</div><div class="fv">− 5,000,000</div></div>
+      <div class="f main"><div class="fk">이번 달 청구 (VAT 포함)</div><div class="fv">11,660,000</div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>8월 <em>결과</em> · 9월 <em>방향</em></h2>
+    <div class="sec-sub">매장별 상세는 아래 카드에서</div>
+    <div class="twoline">
+      <div class="tl-box">
+        <div class="tl-k">8월 — 약속 7가지 · 초과 3 / 달성 4</div>
+        <ul>
+          <li>4개 매장 <strong>유입 +53%</strong> — 강남 +55% · 전포 +39% · 센텀 +36%</li>
+          <li><strong>#江南グルメ 최상단</strong>에 강남점 노출 · 일본 영상 저장 4,055건(국내의 5배)</li>
+          <li>부산시청점 오픈 3주 만에 <strong>유입 10,490 · "부산시청국밥" 5위</strong></li>
+          <li>인플루언서 <strong>23인 발행</strong> — 센텀 7 · 강남 12 · 시청 4</li>
+        </ul>
+      </div>
+      <div class="tl-box">
+        <div class="tl-k">9월 — 만들어 둔 걸 다시 트는 달</div>
+        <ul>
+          <li>8월에 쌓인 <strong>23편에 광고비만 붙여 재집행</strong> — 제작비 없이 같은 노출을 더 싸게</li>
+          <li>일본 트랙 <strong>영상 6편 발행</strong>(신규 3 + 8월 잔여 3) · <strong>광고 4편 상시 집행</strong> · 랜딩은 구글맵</li>
+          <li><strong>울산삼산점 9/14 오픈</strong> — 부산시청점과 똑같은 세트(표준 패키지 2호)</li>
+          <li>총액 <strong>2,240 → 1,560만</strong></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>매장 <em>선택</em></h2>
+    <div class="sec-sub">5개 매장 · 각 매장의 9월 플랜+견적과 8월 보고서로 들어갑니다</div>
+    <div class="grid">
+
+      <div class="scard">
+        <div class="sc-k">브랜드 + 광고 엔진</div>
+        <div class="sc-t">본사</div>
+        <div class="sc-d">미례국밥 본사 (전포본점 포함)</div>
+        <div class="sc-a">5,000,000<span>원</span></div>
+        <div class="sc-v">VAT 포함 5,500,000원</div>
+        <div class="btnrow">
+          <a class="btn primary" href="hq.html">9월 플랜 + 견적</a>
+          <a class="btn ghost" href="../august/report.html">8월 보고서</a>
+        </div>
+      </div>
+
+      <div class="scard">
+        <div class="sc-k">검증된 위닝 소재로 효율 운영</div>
+        <div class="sc-t">센텀점</div>
+        <div class="sc-d">미례국밥 센텀점</div>
+        <div class="sc-a">1,800,000<span>원</span></div>
+        <div class="sc-v">VAT 포함 1,980,000원</div>
+        <div class="btnrow">
+          <a class="btn primary" href="centum.html">9월 플랜 + 견적</a>
+          <a class="btn ghost" href="../august/report.html">8월 보고서</a>
+        </div>
+      </div>
+
+      <div class="scard">
+        <div class="sc-k">일본 자산 이어가기 + 기본 운영 복귀</div>
+        <div class="sc-t">강남점</div>
+        <div class="sc-d">미례국밥 강남삼성타운직영점</div>
+        <div class="sc-a">3,800,000<span>원</span></div>
+        <div class="sc-v">VAT 포함 4,180,000원</div>
+        <div class="btnrow">
+          <a class="btn primary" href="gangnam.html">9월 플랜 + 견적</a>
+          <a class="btn ghost" href="../august/report.html">8월 보고서</a>
+        </div>
+      </div>
+
+      <div class="scard">
+        <div class="sc-k">신규 오픈 셋업 (표준 패키지 2호)<span class="paidbadge">정산 완료</span></div>
+        <div class="sc-t">울산삼산점</div>
+        <div class="sc-d">미례국밥 울산삼산점 · 9/14 오픈</div>
+        <div class="sc-a">3,000,000<span>원</span></div>
+        <div class="sc-v">VAT 포함 3,300,000원</div>
+        <div class="btnrow">
+          <a class="btn primary" href="ulsan.html">9월 플랜 + 견적</a>
+          <span class="btn off">8월 실적 없음</span>
+        </div>
+      </div>
+
+      <div class="scard">
+        <div class="sc-k">오픈 둘째 달 — 지속 운영<span class="paidbadge">정산 완료</span></div>
+        <div class="sc-t">부산시청점</div>
+        <div class="sc-d">미례국밥 부산시청점</div>
+        <div class="sc-a">2,000,000<span>원</span></div>
+        <div class="sc-v">VAT 포함 2,200,000원</div>
+        <div class="btnrow">
+          <a class="btn primary" href="busan-cityhall.html">9월 플랜 + 견적</a>
+          <a class="btn ghost" href="../august/report.html">8월 보고서</a>
+        </div>
+      </div>
+
+    </div>
+    <div class="note">
+      🟢 <strong>울산삼산점 300 · 부산시청점 200은 이미 정산이 완료된 건</strong>입니다. 이번 달 세금계산서는 <strong>본사 500 · 센텀 180 · 강남 380 = 1,060만(부가세 별도)</strong>만 발행됩니다.
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>전사 <em>보기</em></h2>
+    <div class="sec-sub">매장 구분 없이 전체를 한 번에 볼 때</div>
+    <div class="linkrow">
+      <a class="doclink" href="../august/report.html">8월 운영 보고서 (전사)</a>
+      <a class="doclink" href="../august/ad-report.html">8월 광고 상세 리포트</a>
+    </div>
+  </div>
+
+
+  <div class="section">
+    <h2>지난 달 <em>보기</em></h2>
+    <div class="sec-sub">월별 문서는 그대로 보존됩니다 · 예전에 받으신 링크도 계속 열립니다</div>
+    <div class="linkrow">
+      <span class="doclink" style="background:#FFF7ED;border-color:#FED7AA;color:#9a3412;">2026년 9월 — 현재 보고 계신 문서</span>
+      <a class="doclink" href="../august/report.html">2026년 8월 운영 보고서</a>
+      <a class="doclink" href="../july/plan-v2.html">2026년 7월 운영 플랜</a>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="brand">BRANDRISE</div>
+    미례국밥 × 브랜드라이즈 · 2026년 9월<br>
+    모든 금액은 부가세 별도 기준이며, 합계는 부가세를 포함한 금액입니다.
+  </div>
+
+</div>
+</body>
+</html>
