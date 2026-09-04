@@ -24,6 +24,9 @@ body { font-family: 'Noto Sans KR', -apple-system, sans-serif; background: #f4f7
 .doc h1 em { color:#EA580C; font-style:normal; }
 .doc .subt { font-size:13.5px; color:#636569; margin-top:10px; }
 
+.meta-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-top:26px; padding-top:22px; border-top:1px solid #e8edf1; }
+.meta-item .mk { font-size:11px; color:#999; letter-spacing:0.04em; margin-bottom:4px; }
+.meta-item .mv { font-size:13px; font-weight:600; }
 .sumstrip { background:#0D0D0D; border-radius:12px; padding:26px 34px; margin-bottom:20px; display:flex; align-items:center; justify-content:space-between; color:#fff; flex-wrap:wrap; gap:16px; }
 .sumstrip .sl { font-size:14px; font-weight:700; }
 .sumstrip .ss { font-size:11.5px; color:rgba(255,255,255,0.55); margin-top:6px; line-height:1.7; }
@@ -67,7 +70,7 @@ body { font-family: 'Noto Sans KR', -apple-system, sans-serif; background: #f4f7
 .footer { text-align:center; padding:28px 0 10px; color:#999; font-size:11.5px; }
 .footer .brand { font-size:12px; font-weight:700; color:#EA580C; letter-spacing:0.1em; margin-bottom:6px; }
 
-@media (max-width:768px) { .grid { grid-template-columns:1fr; } .section { padding:24px 22px; } .doc { padding:28px 22px; } }
+@media (max-width:768px) { .grid { grid-template-columns:1fr; } .meta-grid { grid-template-columns:repeat(2,1fr); } .section { padding:24px 22px; } .doc { padding:28px 22px; } }
 </style>
 </head>
 <body>
@@ -83,9 +86,15 @@ body { font-family: 'Noto Sans KR', -apple-system, sans-serif; background: #f4f7
 <div class="container">
 
   <div class="doc">
-    <div class="label">2026년 9월 · 이번 달</div>
-    <h1>매장별 <em>운영 보고 · 플랜 · 견적</em></h1>
+    <div class="label">미례국밥 &times; 브랜드라이즈</div>
+    <h1>2026년 9월 <em>운영 플랜 + 견적</em></h1>
     <div class="subt">매장을 누르면 그 매장의 <strong>8월 수행 결과 → 9월 운영 플랜 → 9월 견적</strong>이 한 장에 나옵니다.<br>매장별로 결재 라인이 다르면 각 페이지 상단 <strong>PDF 저장</strong>으로 그 매장 것만 뽑으시면 됩니다.</div>
+    <div class="meta-grid">
+      <div class="meta-item"><div class="mk">수신</div><div class="mv">(주)위드런 · 미례국밥</div></div>
+      <div class="meta-item"><div class="mk">대상 기간</div><div class="mv">2026. 09. 01 — 09. 30</div></div>
+      <div class="meta-item"><div class="mk">작성</div><div class="mv">브랜드라이즈 by HIZ</div></div>
+      <div class="meta-item"><div class="mk">지난 달</div><div class="mv"><a href="../2026-08/" style="color:#EA580C;font-weight:700;text-decoration:none;">8월 운영 보고서 →</a></div></div>
+    </div>
   </div>
 
   <div class="sumstrip">
