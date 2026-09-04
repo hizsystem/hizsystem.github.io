@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>미례국밥 부산시청점 8월 운영 보고서 — 브랜드라이즈</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Noto Sans KR', -apple-system, sans-serif; background: #f4f7f9; color: #1a1b18; line-height: 1.7; font-size: 14px; word-break: keep-all; overflow-wrap: break-word; }
+
+.toolbar { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: #0D0D0D; height: 56px; display: flex; align-items: center; justify-content: space-between; padding: 0 32px; }
+.toolbar-left { display: flex; align-items: center; gap: 16px; }
+.toolbar-logo { font-size: 13px; font-weight: 700; color: #EA580C; letter-spacing: 0.05em; }
+.toolbar-sep { width: 1px; height: 20px; background: rgba(255,255,255,0.15); }
+.toolbar-title { font-size: 14px; font-weight: 500; color: #fff; }
+.toolbar-actions { display: flex; gap: 8px; }
+.btn-toolbar { padding: 7px 16px; border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; background: transparent; color: #fff; font-size: 12px; font-weight: 500; cursor: pointer; transition: all 0.2s; text-decoration: none; display: inline-block; }
+.btn-toolbar:hover { background: rgba(255,255,255,0.1); }
+.btn-toolbar.active { background: #EA580C; color: #fff; border-color: #EA580C; }
+
+.edit-banner { display: none; position: fixed; top: 56px; left: 0; right: 0; z-index: 99; background: #FFF7ED; border-bottom: 2px solid #EA580C; padding: 8px 32px; font-size: 12px; color: #EA580C; font-weight: 600; text-align: center; }
+body.editing .edit-banner { display: block; }
+body.editing .container { padding-top: 110px; }
+body.editing [contenteditable="true"] { outline: 2px dashed rgba(234,88,12,0.3); outline-offset: 2px; border-radius: 4px; }
+body.editing [contenteditable="true"]:focus { outline-color: #EA580C; background: #FFF7ED; }
+
+.container { max-width: 940px; margin: 0 auto; padding: 80px 24px 60px; transition: padding-top 0.2s; }
+
+.report-header { background: #fff; border-radius: 12px; padding: 40px; margin-bottom: 20px; border: 1px solid #e8edf1; }
+.report-header .label { font-size: 11px; font-weight: 700; color: #EA580C; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 14px; }
+.report-header h1 { font-size: 26px; font-weight: 900; line-height: 1.35; letter-spacing: -0.02em; }
+.report-header h1 em { color: #EA580C; font-style: normal; }
+.meta-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 28px; padding-top: 24px; border-top: 1px solid #e8edf1; }
+.meta-item .mk { font-size: 11px; color: #999; letter-spacing: 0.04em; margin-bottom: 4px; }
+.meta-item .mv { font-size: 13px; font-weight: 600; }
+
+.section { background: #fff; border-radius: 12px; padding: 32px 40px; margin-bottom: 20px; border: 1px solid #e8edf1; }
+
+.highlight-box { background: #0D0D0D; border-radius: 12px; padding: 28px 36px; margin-bottom: 20px; color: #fff; }
+.highlight-box .hl-label { font-size: 11px; font-weight: 700; color: #EA580C; letter-spacing: 0.08em; margin-bottom: 10px; }
+.highlight-box .hl-text { font-size: 16px; font-weight: 600; line-height: 1.8; }
+.highlight-box .hl-text em { color: #EA580C; font-style: normal; }
+
+.ch-header { display: flex; align-items: center; gap: 12px; margin-bottom: 22px; padding-bottom: 14px; border-bottom: 1px solid #e8edf1; }
+.ch-icon { width: 30px; height: 30px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 800; color: #fff; flex-shrink: 0; }
+.ch-icon.c1 { background: #0D0D0D; }
+.ch-icon.c2 { background: #EA580C; }
+.ch-icon.c3 { background: #16a34a; }
+.ch-icon.c4 { background: linear-gradient(135deg, #f09433, #dc2743, #bc1888); }
+.ch-icon.c5 { background: #2563eb; }
+.ch-icon.c6 { background: #0D0D0D; }
+.ch-icon.c7 { background: #94a3b8; }
+.ch-header h3 { font-size: 15px; font-weight: 700; }
+.ch-header .ch-badge { font-size: 11px; color: #999; font-weight: 500; }
+
+.kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.kpi-grid.g3 { grid-template-columns: repeat(3, 1fr); }
+.kpi-card { background: #f8fafb; border-radius: 10px; padding: 22px 18px; text-align: center; border: 1px solid #e8edf1; }
+.kpi-card .kc-label { font-size: 11px; color: #999; font-weight: 500; margin-bottom: 8px; }
+.kpi-card .kc-value { font-size: 26px; font-weight: 900; color: #1a1b18; letter-spacing: -0.02em; }
+.kpi-card .kc-unit { font-size: 13px; font-weight: 500; color: #999; }
+.kpi-card .kc-change { font-size: 11px; margin-top: 5px; font-weight: 600; line-height: 1.4; }
+.kpi-card .kc-change.up { color: #16a34a; }
+.kpi-card .kc-change.down { color: #dc2626; }
+.kpi-card .kc-change.neutral { color: #999; }
+.kpi-card.dark { background: #0D0D0D; border-color: #0D0D0D; }
+.kpi-card.dark .kc-label { color: #EA580C; }
+.kpi-card.dark .kc-value { color: #fff; }
+.kpi-card.dark .kc-value em { color: #EA580C; font-style: normal; }
+.kpi-card.dark .kc-change { color: rgba(255,255,255,0.45); }
+
+.status { display: inline-block; padding: 3px 11px; border-radius: 12px; font-size: 10px; font-weight: 800; letter-spacing: 0.04em; white-space: nowrap; }
+.status.done { background: #dcfce7; color: #16a34a; }
+.status.over { background: #0D0D0D; color: #EA580C; }
+.status.partial { background: #fef3c7; color: #b45309; }
+.status.miss { background: #fee2e2; color: #dc2626; }
+
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th { background: #f8fafb; padding: 10px 14px; font-weight: 600; border-bottom: 2px solid #e8edf1; color: #999; font-size: 11px; text-align: left; white-space: nowrap; }
+td { padding: 12px 14px; border-bottom: 1px solid #f0f2f5; vertical-align: top; }
+td.item { font-weight: 700; color: #1a1b18; }
+td.desc { color: #636569; font-size: 12px; line-height: 1.7; }
+td.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+th.num { text-align: right; }
+td.ctr { text-align: center; }
+th.ctr { text-align: center; }
+tr.total td { background: #f8fafb; font-weight: 800; border-top: 2px solid #e8edf1; border-bottom: none; }
+.rank-up { color: #16a34a; font-weight: 800; }
+.rank-keep { color: #636569; font-weight: 700; }
+.rank-none { color: #cbd5e1; font-weight: 700; }
+.win { background: #FFF7ED !important; }
+.badge-win { display:inline-block; background:#EA580C; color:#fff; font-size:9.5px; font-weight:800; padding:2px 7px; border-radius:10px; margin-left:6px; vertical-align:middle; letter-spacing:.03em; }
+
+.info-box { background: #FFF7ED; border-left: 4px solid #EA580C; border-radius: 0 8px 8px 0; padding: 14px 20px; margin-top: 18px; font-size: 12px; color: #636569; line-height: 1.85; }
+.info-box strong { color: #1a1b18; }
+.info-box.dark { background: #0D0D0D; border-left-color: #EA580C; color: rgba(255,255,255,0.78); }
+.info-box.dark strong { color: #fff; }
+.info-box.warn { background: #fffbeb; border-left-color: #f59e0b; }
+.info-box.plain { background: #f8fafb; border-left-color: #cbd5e1; }
+
+.flow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 18px; }
+.flow-step { background: #f8fafb; border: 1px solid #e8edf1; border-radius: 10px; padding: 16px 14px; text-align: center; }
+.flow-step.hero { background: #0D0D0D; border-color: #0D0D0D; }
+.flow-step .fs-when { font-size: 10px; font-weight: 800; color: #EA580C; letter-spacing: 0.06em; margin-bottom: 6px; }
+.flow-step .fs-val { font-size: 22px; font-weight: 900; letter-spacing: -0.02em; }
+.flow-step.hero .fs-val { color: #fff; }
+.flow-step .fs-note { font-size: 11px; color: #999; margin-top: 4px; }
+.flow-step.hero .fs-note { color: rgba(255,255,255,0.5); }
+
+.pin-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 4px; }
+.pin { border: 1px solid #e8edf1; border-radius: 10px; padding: 18px 16px; background: #f8fafb; }
+.pin.main { background: #FFF7ED; border-color: #FED7AA; }
+.pin .p-name { font-size: 14px; font-weight: 800; margin-bottom: 4px; }
+.pin .p-name span { color: #EA580C; }
+.pin .p-r { font-size: 22px; font-weight: 900; letter-spacing: -0.02em; }
+.pin .p-r em { font-size: 12px; font-weight: 600; color: #999; font-style: normal; margin-left: 2px; }
+.pin .p-d { font-size: 11.5px; color: #636569; margin-top: 7px; line-height: 1.65; }
+
+.money { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.mo { border: 1px solid #e8edf1; border-radius: 10px; padding: 20px 18px; background: #f8fafb; }
+.mo .mo-amt { font-size: 24px; font-weight: 900; letter-spacing: -0.02em; }
+.mo .mo-amt em { font-size: 13px; font-weight: 600; color: #999; font-style: normal; }
+.mo .mo-name { font-size: 12px; font-weight: 700; color: #EA580C; margin-bottom: 6px; }
+.mo .mo-d { font-size: 11.5px; color: #636569; margin-top: 8px; line-height: 1.7; border-top: 1px dashed #dbe2e8; padding-top: 8px; }
+.mo .mo-d strong { color: #1a1b18; }
+
+.next-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 4px; }
+.next-card { padding: 20px 18px; border-radius: 10px; border: 1px solid #e8edf1; background: #f8fafb; }
+.next-card.hero { background: #FFF7ED; border-color: #EA580C; }
+.next-card .nc-label { font-size: 10px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #EA580C; margin-bottom: 9px; }
+.next-card .nc-title { font-size: 14px; font-weight: 800; margin-bottom: 7px; }
+.next-card .nc-desc { font-size: 12px; color: #636569; line-height: 1.7; }
+.next-card .nc-desc strong { color: #1a1b18; }
+
+.footer { text-align: center; padding: 40px 0; color: #999; font-size: 12px; line-height: 2; }
+.footer .brand { font-size: 15px; font-weight: 800; color: #1a1b18; margin-bottom: 4px; }
+
+@media (max-width: 768px) {
+  .container { padding: 70px 16px 40px; }
+  .meta-grid { grid-template-columns: repeat(2, 1fr); }
+  .kpi-grid, .kpi-grid.g3 { grid-template-columns: repeat(2, 1fr); }
+  .next-grid, .flow, .pin-grid, .money { grid-template-columns: 1fr; }
+  .section { padding: 24px 20px; }
+  .toolbar { padding: 0 16px; }
+  table { display: block; overflow-x: auto; }
+}
+@media print {
+  .toolbar, .edit-banner { display: none !important; }
+  .container { padding: 20px; max-width: none; }
+  body { background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .section, .highlight-box, .report-header { break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="toolbar-left">
+    <div class="toolbar-logo">BRANDRISE</div>
+    <div class="toolbar-sep"></div>
+    <div class="toolbar-title">미례국밥 부산시청점 8월 운영 보고서</div>
+  </div>
+  <div class="toolbar-actions">
+    <button class="btn-toolbar" id="editToggle" onclick="toggleEdit()">편집</button>
+    <button class="btn-toolbar" onclick="window.print()">PDF 저장</button>
+  </div>
+</div>
+
+<div class="edit-banner">편집 모드 — 텍스트와 숫자를 클릭해서 수정하세요.</div>
+
+<div class="container">
+
+  <div class="report-header">
+    <div class="label" contenteditable="false">미례국밥 부산시청점 X 브랜드라이즈</div>
+    <h1 contenteditable="false">부산시청점 8월 <em>운영 보고서</em></h1>
+    <div class="meta-grid">
+      <div class="meta-item"><div class="mk">매장</div><div class="mv" contenteditable="false">미례국밥 부산시청점</div></div>
+      <div class="meta-item"><div class="mk">기간</div><div class="mv" contenteditable="false">2026. 08. 01 — 08. 31 (8/10 오픈)</div></div>
+      <div class="meta-item"><div class="mk">8월 비용</div><div class="mv" contenteditable="false">300만원 (부가세 별도)</div></div>
+      <div class="meta-item"><div class="mk">작성</div><div class="mv" contenteditable="false">2026. 09. 04 · 히즈</div></div>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <div class="hl-label">한 줄 요약</div>
+    <div class="hl-text" contenteditable="false">
+      8월 운영 플랜에서 약속드린 <em>인플루언서 4명 · 체험단 40명 · 플레이스 등록</em>을 모두 진행했습니다.
+      그 결과 오픈 3주 만에 네이버 플레이스 방문이 <em>주 1,874 → 4,839(2.6배)</em>, 3주 합계 <em>10,490</em>이 됐고
+      후기가 <em>369건</em> 쌓였습니다. <em>"부산시청국밥" 검색 순위는 17위 → 5위</em>입니다.
+      광고비는 <em>부산시청 반경 2km 안</em>에 집중해서 썼습니다.
+    </div>
+  </div>
+
+  <!-- 1 -->
+  <div class="section">
+    <div class="ch-header">
+      <div class="ch-icon c1">1</div>
+      <div>
+        <h3>8월 한눈에 보기</h3>
+        <div class="ch-badge">오픈일 8/10 · 데이터 기준 8/10 — 8/30 (3주)</div>
+      </div>
+    </div>
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kc-label">플레이스 방문 (3주 합계)</div>
+        <div class="kc-value" contenteditable="false">10,490</div>
+        <div class="kc-change up" contenteditable="false">주 1,874 → 4,839 (2.6배)</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kc-label">후기 등록 (3주 합계)</div>
+        <div class="kc-value" contenteditable="false">369<span class="kc-unit">건</span></div>
+        <div class="kc-change neutral" contenteditable="false">네이버 플레이스 리뷰</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kc-label">광고로 들어온 클릭</div>
+        <div class="kc-value" contenteditable="false">4,234</div>
+        <div class="kc-change up" contenteditable="false">클릭당 76원 · 도달 64,003명</div>
+      </div>
+      <div class="kpi-card dark">
+        <div class="kc-label">"부산시청국밥" 순위</div>
+        <div class="kc-value" contenteditable="false"><em>5</em><span class="kc-unit">위</span></div>
+        <div class="kc-change" contenteditable="false">2주 전 17위 · 월 650회 검색</div>
+      </div>
+    </div>
+    <div class="info-box" contenteditable="false">
+      <strong>세 가지가 동시에 일어났습니다.</strong> ① 8/10 오픈과 함께 네이버 지도·검색에 가게가 걸리기 시작했고,
+      ② 8/16부터 인플루언서 영상이 올라가면서 인스타그램에서 넘어오는 사람이 붙었고,
+      ③ 8/19부터 체험단 후기가 쌓이면서 <strong>검색해서 들어온 사람이 머무는 이유</strong>가 생겼습니다.
+      셋 중 하나만 했으면 이 숫자는 안 나왔습니다.
+    </div>
+  </div>
+
+  <!-- 2 -->
+  <div class="section">
+    <div class="ch-header">
+      <div class="ch-icon c2">2</div>
+      <div>
+        <h3>8월 계획 × 결과</h3>
+        <div class="ch-badge">8월 운영 플랜에서 약속드린 것 대비</div>
+      </div>
+    </div>
+    <table>
+      <thead>
+        <tr><th style="width:22%">영역</th><th style="width:38%">8월 약속</th><th style="width:40%">결과</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="item">네이버플레이스 등록</td>
+          <td class="desc" contenteditable="false">8/3 등록 신청 → 8/5—8/6 최적화 → 8/10 노출 시작</td>
+          <td class="desc" contenteditable="false"><span class="status done">완료</span> 오픈 당일부터 지도·검색 노출. 첫 주에 벌써 <strong>지도 유입 1,110</strong>.</td>
+        </tr>
+        <tr>
+          <td class="item">플레이스 '새로오픈'</td>
+          <td class="desc" contenteditable="false">8/17 '새로오픈' 기능 활성화 (광고비 없이 신규 매장으로 별도 노출)</td>
+          <td class="desc" contenteditable="false"><span class="status done">완료</span> 활성화 이후 주간 유입 <strong>1,874 → 3,777</strong>.</td>
+        </tr>
+        <tr>
+          <td class="item">블로그 체험단</td>
+          <td class="desc" contenteditable="false">40명 모집 · 8/11—8/28 방문 및 후기 작성</td>
+          <td class="desc" contenteditable="false"><span class="status partial">40명 중 35건 발행</span> 모집은 40명 완료. 실제 방문·작성은 <strong>8/19—9/4</strong>로 밀렸고, <strong>5명이 미발행</strong>입니다.</td>
+        </tr>
+        <tr>
+          <td class="item">인플루언서 콘텐츠</td>
+          <td class="desc" contenteditable="false">4명 · 오픈 주간 2인 업로드 후 매주 1인씩 (8/10—8/30)</td>
+          <td class="desc" contenteditable="false"><span class="status done">4명 전원 완료</span> 방문은 <strong>오픈 당일 8/10부터</strong> 시작. 다만 첫 업로드가 <strong>8/16</strong>이라 오픈 주간 2인은 못 맞췄고, 대신 <strong>8/16·8/20·8/21·8/24</strong>로 4주가 아닌 9일 안에 4편이 몰렸습니다.</td>
+        </tr>
+        <tr>
+          <td class="item">메타 광고</td>
+          <td class="desc" contenteditable="false">업로드하는 주에 맞춰 영상 1편당 1주씩 집행</td>
+          <td class="desc" contenteditable="false"><span class="status over">1주 → 2주로 늘림</span> 지도 유입은 광고에 <strong>1주 늦게</strong> 반응한다는 게 다른 지점에서 확인돼, 1주가 아니라 <strong>영상당 2주씩</strong> 돌렸습니다. 총 <strong>4세트 · 32.3만원</strong>.</td>
+        </tr>
+        <tr>
+          <td class="item">8월 운영보고서</td>
+          <td class="desc" contenteditable="false">9/4(금) 전달</td>
+          <td class="desc" contenteditable="false"><span class="status done">본 문서</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="info-box warn" contenteditable="false">
+      <strong>못 지킨 것 두 가지를 먼저 말씀드립니다.</strong>
+      ① <strong>체험단 5명이 후기를 안 올렸습니다.</strong> 발행 마감을 넘긴 인원으로, 9월 체험단에서 그만큼 더 채워 넣겠습니다.
+      ② <strong>인플루언서 첫 업로드가 오픈 주간을 넘겼습니다.</strong> 오픈 당일 방문은 했지만 편집·업로드가 8/16이었습니다.
+      9월은 방문일과 업로드일을 <strong>미리 확정해서 계약</strong>하는 방식으로 바꿉니다.
+    </div>
+  </div>
+
+  <!-- 3 -->
+  <div class="section">
+    <div class="ch-header">
+      <div class="ch-icon c4">3</div>
+      <div>
+        <h3>인플루언서 4명 — 언제 오고, 언제 올렸나</h3>
+        <div class="ch-badge">전원 릴스 · 제공 메뉴 돼지우동 2 + 사이드 택1</div>
+      </div>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th style="width:26%">계정</th>
+          <th class="num">팔로워</th>
+          <th>방문일</th>
+          <th>업로드일</th>
+          <th>연결 광고 기간</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="win">
+          <td class="item" contenteditable="false">곳곳이 <span style="font-weight:400;color:#999;">@9_busan._5</span><span class="badge-win">반응 1위</span></td>
+          <td class="num" contenteditable="false">5,056</td>
+          <td contenteditable="false">8/12 (수) 16:30</td>
+          <td class="item" contenteditable="false">8/16</td>
+          <td contenteditable="false">8/17 — 8/30</td>
+        </tr>
+        <tr>
+          <td class="item" contenteditable="false">요이 <span style="font-weight:400;color:#999;">@yoe.zip__</span></td>
+          <td class="num" contenteditable="false">2,454</td>
+          <td contenteditable="false">8/16 (일) 18:00</td>
+          <td class="item" contenteditable="false">8/20</td>
+          <td contenteditable="false">8/21 — 8/27</td>
+        </tr>
+        <tr>
+          <td class="item" contenteditable="false">먹찌 <span style="font-weight:400;color:#999;">@busan.mukzzi</span></td>
+          <td class="num" contenteditable="false">2,481</td>
+          <td contenteditable="false">8/10 (월) 15:00 · 오픈 당일</td>
+          <td class="item" contenteditable="false">8/21</td>
+          <td contenteditable="false">8/23 — 8/29</td>
+        </tr>
+        <tr>
+          <td class="item" contenteditable="false">돼롱이 <span style="font-weight:400;color:#999;">@gnolgip2</span></td>
+          <td class="num" contenteditable="false">3,032</td>
+          <td contenteditable="false">8/12 (수) 18:10</td>
+          <td class="item" contenteditable="false">8/24</td>
+          <td contenteditable="false">8/29 — 9/12 <span style="color:#EA580C;font-weight:700;">(진행 중)</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="info-box" contenteditable="false">
+      <strong>영상을 한 주에 몰지 않은 이유</strong>는, 한 번에 터뜨리면 그 주만 반짝하고 끝나기 때문입니다.
+      8/16 · 8/20 · 8/21 · 8/24로 나눠 올리고 각 영상에 광고를 이어 붙여서, <strong>8월 후반 내내 노출이 끊기지 않게</strong> 만들었습니다.
+      실제로 주간 유입이 1,874 → 3,777 → 4,839로 <strong>한 번도 안 꺾이고</strong> 올라간 게 그 결과입니다.
+      마지막 영상(돼롱이)의 광고는 <strong>9/12까지 계속 돌아갑니다</strong> — 8월과 9월 사이에 광고 공백이 생기지 않게 하기 위해서입니다.
+    </div>
+  </div>
+
+  <!-- 4 -->
+  <div class="section">
+    <div class="ch-header">
+      <div class="ch-icon c5">4</div>
+      <div>
+        <h3>블로그 체험단 40명 — 후기 35건</h3>
+        <div class="ch-badge">모집 40명 · 방문 및 발행 8/19 — 9/4</div>
+      </div>
+    </div>
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kc-label">모집</div>
+        <div class="kc-value" contenteditable="false">40<span class="kc-unit">명</span></div>
+        <div class="kc-change neutral" contenteditable="false">약속대로 전원 모집 완료</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kc-label">후기 발행</div>
+        <div class="kc-value" contenteditable="false">35<span class="kc-unit">건</span></div>
+        <div class="kc-change up" contenteditable="false">발행률 87.5%</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kc-label">8월 안에 올라간 후기</div>
+        <div class="kc-value" contenteditable="false">25<span class="kc-unit">건</span></div>
+        <div class="kc-change neutral" contenteditable="false">나머지 10건은 9/1—9/4</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kc-label">미발행</div>
+        <div class="kc-value" contenteditable="false">5<span class="kc-unit">명</span></div>
+        <div class="kc-change down" contenteditable="false">9월 모집에서 보충합니다</div>
+      </div>
+    </div>
+    <div class="info-box plain" contenteditable="false">
+      <strong>체험단은 "검색했을 때 읽을 게 있는 가게"를 만드는 작업입니다.</strong>
+      새로 연 가게는 후기가 하나도 없어서, 지도에서 찾아도 손님이 들어올지 말지 망설입니다.
+      8월에 35건이 깔리면서 <strong>"부산시청국밥"으로 검색했을 때 읽을 후기가 있는 상태</strong>가 됐고,
+      같은 기간 플레이스 후기도 369건 쌓였습니다.
+      다만 <strong>블로그 후기는 한 달이 지나면 오래된 글로 밀립니다.</strong> 9월에 20명을 더 넣는 이유가 이것입니다.
+    </div>
+  </div>
+
+  <!-- 5 -->
+  <div class="section">
+    <div class="ch-header">
+      <div class="ch-icon c3">5</div>
+      <div>
+        <h3>메타 광고 — 어디에, 어떻게 썼나</h3>
+        <div class="ch-badge">8월 집행 32.3만원 · 인스타그램 → 네이버 지도 연결</div>
+      </div>
+    </div>
+
+    <p style="font-size:13.5px;color:#636569;margin-bottom:16px;">
+      광고는 부산 전체에 뿌리지 않았습니다. <strong style="color:#1a1b18;">실제로 걸어오거나 차로 5분 안에 올 수 있는 사람</strong>에게만 나가도록
+      아래 세 곳을 중심으로 반경을 잘라서 집행했습니다.
+    </p>
+
+    <div class="pin-grid">
+      <div class="pin main">
+        <div class="p-name" contenteditable="false"><span>●</span> 부산시청</div>
+        <div class="p-r" contenteditable="false">2<em>km</em></div>
+        <div class="p-d" contenteditable="false">매장 바로 앞. 시청·법조타운 <strong>직장인 점심 상권</strong>이 여기 다 들어옵니다.</div>
+      </div>
+      <div class="pin">
+        <div class="p-name" contenteditable="false"><span>●</span> 동래역</div>
+        <div class="p-r" contenteditable="false">2<em>km</em></div>
+        <div class="p-d" contenteditable="false">지하철 한 정거장대 생활권. 저녁·주말에 넘어올 수 있는 거리입니다.</div>
+      </div>
+      <div class="pin">
+        <div class="p-name" contenteditable="false"><span>●</span> 안락동</div>
+        <div class="p-r" contenteditable="false">1<em>km</em></div>
+        <div class="p-d" contenteditable="false">인근 주거 밀집지. 반경을 <strong>1km로 더 좁혀</strong> 낭비를 줄였습니다.</div>
+      </div>
+    </div>
+
+    <div class="info-box" contenteditable="false">
+      <strong>왜 좁게 잡았나.</strong> 광고는 좁게 잡을수록 "이 광고가 나랑 상관있다"고 느끼는 사람 비율이 올라가서
+      <strong>클릭 한 번당 단가가 내려갑니다.</strong> 실제로 미례국밥 전체 계정에서 위치를 좁힌 광고가
+      안 좁힌 광고보다 <strong>클릭당 32% 쌌습니다.</strong>
+      그리고 이 광고들은 인스타 프로필이 아니라 <strong>네이버 지도(플레이스)로 바로 보냅니다</strong> —
+      영상을 본 사람이 그 자리에서 위치·영업시간·후기를 보고 길찾기를 누를 수 있게 하기 위해서입니다.
+    </div>
+
+    <h4 style="font-size:13px;font-weight:800;margin:26px 0 12px;">영상별 광고 성과</h4>
+    <table>
+      <thead>
+        <tr>
+          <th style="width:20%">영상</th>
+          <th>기간</th>
+          <th class="num">집행</th>
+          <th class="num">클릭</th>
+          <th class="num">도달</th>
+          <th class="ctr">클릭률</th>
+          <th class="num">클릭당</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="win">
+          <td class="item" contenteditable="false">곳곳이<span class="badge-win">위닝</span></td>
+          <td contenteditable="false">8/17—8/30</td>
+          <td class="num" contenteditable="false">99,907원</td>
+          <td class="num" contenteditable="false">1,521</td>
+          <td class="num" contenteditable="false">19,313</td>
+          <td class="ctr" contenteditable="false"><strong style="color:#16a34a;">6.3%</strong></td>
+          <td class="num" contenteditable="false"><strong>64원</strong></td>
+        </tr>
+        <tr>
+          <td class="item" contenteditable="false">요이</td>
+          <td contenteditable="false">8/21—8/27</td>
+          <td class="num" contenteditable="false">99,946원</td>
+          <td class="num" contenteditable="false">1,349</td>
+          <td class="num" contenteditable="false">24,254</td>
+          <td class="ctr" contenteditable="false">4.9%</td>
+          <td class="num" contenteditable="false">70원</td>
+        </tr>
+        <tr>
+          <td class="item" contenteditable="false">먹찌</td>
+          <td contenteditable="false">8/23—8/29</td>
+          <td class="num" contenteditable="false">99,932원</td>
+          <td class="num" contenteditable="false">1,099</td>
+          <td class="num" contenteditable="false">15,256</td>
+          <td class="ctr" contenteditable="false">5.8%</td>
+          <td class="num" contenteditable="false">87원</td>
+        </tr>
+        <tr>
+          <td class="item" contenteditable="false">돼롱이</td>
+          <td contenteditable="false">8/29—8/31<br><span style="font-size:11px;color:#999;">(9/12까지 계속)</span></td>
+          <td class="num" contenteditable="false">23,562원</td>
+          <td class="num" contenteditable="false">265</td>
+          <td class="num" contenteditable="false">5,180</td>
+          <td class="ctr" contenteditable="false">4.7%</td>
+          <td class="num" contenteditable="false">89원</td>
+        </tr>
+        <tr class="total">
+          <td contenteditable="false">8월 합계</td>
+          <td contenteditable="false">8/17—8/31</td>
+          <td class="num" contenteditable="false">323,347원</td>
+          <td class="num" contenteditable="false">4,234</td>
+          <td class="num" contenteditable="false">64,003</td>
+          <td class="ctr" contenteditable="false">5.3%</td>
+          <td class="num" contenteditable="false">76원</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="kpi-grid g3" style="margin-top:18px;">
+      <div class="kpi-card dark">
+        <div class="kc-label">클릭률</div>
+        <div class="kc-value" contenteditable="false"><em>5.3</em><span class="kc-unit">%</span></div>
+        <div class="kc-change" contenteditable="false">음식점 업계 평균 1.67%의 3.2배</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kc-label">가게 정보까지 도착</div>
+        <div class="kc-value" contenteditable="false">3,661<span class="kc-unit">명</span></div>
+        <div class="kc-change up" contenteditable="false">도착률 86.5% · 도착당 88원</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kc-label">노출 빈도</div>
+        <div class="kc-value" contenteditable="false">1.24<span class="kc-unit">회</span></div>
+        <div class="kc-change neutral" contenteditable="false">한 사람이 평균 1.24번 봄 · 아직 여유</div>
+      </div>
+    </div>
+
+    <div class="info-box plain" contenteditable="false">
+      <strong>이 표에서 봐주실 두 가지.</strong><br>
+      ① <strong>광고를 누른 사람 10명 중 8~9명이 실제로 가게 정보까지 갔습니다(86.5%).</strong> 누르고 바로 나가버린 게 아니라는 뜻입니다.<br>
+      ② <strong>같은 돈을 써도 영상에 따라 결과가 다릅니다.</strong> 곳곳이 영상은 클릭 하나에 64원, 돼롱이 영상은 89원입니다.
+      <strong>9월에는 이 곳곳이 영상을 계속 돌립니다</strong> — 새 영상을 만드는 것보다 이미 반응이 확인된 영상을 다시 트는 게 쌉니다.
+    </div>
+
+    <div class="info-box warn" contenteditable="false">
+      <strong>한 가지 아쉬웠던 점 — 광고가 젊은 층에 몰렸습니다.</strong>
+      광고를 누른 사람을 나이별로 보면 <strong>25~44세가 80%</strong>였고, <strong>45세 이상은 6%</strong>였습니다.
+      인스타그램만 쓰면 나이가 있는 동네 손님에게는 구조적으로 잘 닿지 않습니다.
+      그래서 <strong>9월에는 두 가지를 바꿉니다</strong> —
+      ① <strong>페이스북 노출을 켜고</strong>(인스타보다 40~60대 이용자가 많습니다),
+      ② <strong>노출 연령을 25~60세로 넓힙니다</strong>(8월은 18~65세였는데 실제로는 젊은 쪽으로만 나갔습니다).
+      같은 광고비로 <strong>시청 주변에서 실제로 점심을 드시는 연령대</strong>에 닿게 하는 것이 9월 조정의 목적입니다.
+    </div>
+  </div>
+
+  <!-- 6 -->
+  <div class="section">
+    <div class="ch-header">
+      <div class="ch-icon c6">6</div>
+      <div>
+        <h3>네이버 검색 순위 — 2주 만에 어디까지 올라왔나</h3>
+        <div class="ch-badge">8/17—8/23 → 8/24—8/30 · 네이버 플레이스 검색 기준</div>
+      </div>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th style="width:32%">키워드</th>
+          <th class="num">월 검색량</th>
+          <th class="ctr">2주 전</th>
+          <th class="ctr">현재</th>
+          <th style="width:34%">의미</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="win">
+          <td class="item" contenteditable="false">부산시청국밥</td>
+          <td class="num" contenteditable="false">650</td>
+          <td class="ctr" contenteditable="false">17위</td>
+          <td class="ctr" contenteditable="false"><span class="rank-up">5위</span></td>
+          <td class="desc" contenteditable="false">첫 화면에 들어왔습니다. <strong>가장 중요한 키워드</strong>입니다.</td>
+        </tr>
+        <tr>
+          <td class="item" contenteditable="false">부산시청역맛집</td>
+          <td class="num" contenteditable="false">1,450</td>
+          <td class="ctr" contenteditable="false">78위</td>
+          <td class="ctr" contenteditable="false"><span class="rank-up">16위</span></td>
+          <td class="desc" contenteditable="false">검색량이 가장 큰 키워드. <strong>2주 만에 62계단</strong> 올랐습니다.</td>
+        </tr>
+        <tr>
+          <td class="item" contenteditable="false">연제구 돼지국밥</td>
+          <td class="num" contenteditable="false">70</td>
+          <td class="ctr" contenteditable="false">17위</td>
+          <td class="ctr" contenteditable="false"><span class="rank-up">13위</span></td>
+          <td class="desc" contenteditable="false">지역+메뉴 조합. 천천히 오르는 중입니다.</td>
+        </tr>
+        <tr>
+          <td class="item" contenteditable="false">부산시청점심</td>
+          <td class="num" contenteditable="false">750</td>
+          <td class="ctr" contenteditable="false">55위</td>
+          <td class="ctr" contenteditable="false"><span class="rank-keep">49위</span></td>
+          <td class="desc" contenteditable="false">직장인 점심 키워드. <strong>아직 못 올렸습니다 — 9월 과제</strong>입니다.</td>
+        </tr>
+        <tr>
+          <td class="item" contenteditable="false">돼지국밥</td>
+          <td class="num" contenteditable="false">66,650</td>
+          <td class="ctr" contenteditable="false"><span class="rank-none">—</span></td>
+          <td class="ctr" contenteditable="false"><span class="rank-none">—</span></td>
+          <td class="desc" contenteditable="false">부산 전체가 경쟁하는 키워드라 오픈 한 달로는 안 잡힙니다.</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="info-box" contenteditable="false">
+      <strong>순위가 왜 중요한가.</strong> 광고는 돈을 넣는 동안만 나가지만, <strong>검색 순위는 한 번 올라가면 남습니다.</strong>
+      광고 → 사람들이 검색 → 플레이스 방문·후기 누적 → 네이버가 "인기 있는 가게"로 판단 → 순위 상승,
+      이 순서로 도는데 <strong>순위가 오르는 데 1~2주가 걸립니다.</strong>
+      8월 광고가 8/17에 시작해 8/24 주에 순위가 뛴 것이 정확히 그 시차입니다.
+      <strong>9월에 광고를 끊지 않는 이유</strong>가 이 사이클을 유지하기 위해서입니다.
+    </div>
+  </div>
+
+  <!-- 7 -->
+  <div class="section">
+    <div class="ch-header">
+      <div class="ch-icon c1">7</div>
+      <div>
+        <h3>3주 동안 유입이 어떻게 늘었나</h3>
+        <div class="ch-badge">네이버 플레이스 주간 방문 수</div>
+      </div>
+    </div>
+    <div class="flow">
+      <div class="flow-step">
+        <div class="fs-when">8/10 — 8/16 · 오픈 주</div>
+        <div class="fs-val" contenteditable="false">1,874</div>
+        <div class="fs-note" contenteditable="false">지도 1,110 · 검색 743 · 후기 134건<br>플레이스 노출만으로 시작</div>
+      </div>
+      <div class="flow-step">
+        <div class="fs-when">8/17 — 8/23 · 광고 시작</div>
+        <div class="fs-val" contenteditable="false">3,777</div>
+        <div class="fs-note" contenteditable="false">지도 1,194 · 검색 779 · 후기 148건<br>영상·광고 유입이 얹히며 2배</div>
+      </div>
+      <div class="flow-step hero">
+        <div class="fs-when">8/24 — 8/30 · 4편 전부 가동</div>
+        <div class="fs-val" contenteditable="false">4,839</div>
+        <div class="fs-note" contenteditable="false">지도 1,297 · 검색 649 · 후기 87건<br>3주 합계 10,490</div>
+      </div>
+    </div>
+    <div class="info-box plain" contenteditable="false">
+      <strong>숫자를 갈라서 보면 이렇습니다.</strong> 네이버 지도·검색으로 직접 들어온 사람은 3주 내내 <strong>주 1,850~1,950명으로 거의 일정</strong>합니다.
+      늘어난 부분(3주차 +1,800 · 4주차 +2,900)은 <strong>영상과 광고를 보고 넘어온 사람</strong>입니다.
+      즉 <strong>지도·검색은 기본 체력이고, 광고·영상이 그 위에 얹은 몫</strong>이 이번 달 성장분입니다.
+      광고를 끊으면 얹힌 몫부터 빠지고, 그 다음에 순위가 천천히 내려옵니다.
+    </div>
+  </div>
+
+  <!-- 8 -->
+  <div class="section">
+    <div class="ch-header">
+      <div class="ch-icon c2">8</div>
+      <div>
+        <h3>300만원이 어디에 쓰였나</h3>
+        <div class="ch-badge">8월 운영 플랜 비용표 기준 · 부가세 별도</div>
+      </div>
+    </div>
+    <div class="money">
+      <div class="mo">
+        <div class="mo-name">네이버플레이스</div>
+        <div class="mo-amt" contenteditable="false">100<em>만원</em></div>
+        <div class="mo-d" contenteditable="false">등록 신청 · 사진/메뉴/영업정보 세팅 · <strong>검색 키워드 최적화</strong> · 8/17 '새로오픈' 활성화.<br>→ 남은 것: <strong>"부산시청국밥" 5위</strong>, 지도 유입 3,601</div>
+      </div>
+      <div class="mo">
+        <div class="mo-name">블로그 체험단</div>
+        <div class="mo-amt" contenteditable="false">40<em>만원</em></div>
+        <div class="mo-d" contenteditable="false">40명 모집 · 명단 관리 · 발행 확인.<br>→ 남은 것: <strong>블로그 후기 35건</strong> (검색에 계속 걸림)</div>
+      </div>
+      <div class="mo">
+        <div class="mo-name">인플루언서 + 광고</div>
+        <div class="mo-amt" contenteditable="false">160<em>만원</em></div>
+        <div class="mo-d" contenteditable="false">4명 섭외·출연료·콘텐츠 검수 + <strong>메타 광고 집행 32.3만원 포함</strong>.<br>→ 남은 것: <strong>릴스 4편</strong> (9월에 재사용), 광고 클릭 4,234</div>
+      </div>
+    </div>
+    <div class="info-box" contenteditable="false">
+      <strong>8월에 쓴 돈 중 9월에도 계속 일하는 것</strong>이 세 가지 있습니다.
+      ① <strong>검색 순위</strong> — 광고를 줄여도 바로 안 내려갑니다.
+      ② <strong>블로그 후기 35건 · 플레이스 후기 369건</strong> — 계속 검색에 노출됩니다.
+      ③ <strong>릴스 4편</strong> — 9월에 반응 좋았던 영상을 다시 광고로 돌립니다. 새로 찍는 비용이 안 듭니다.
+    </div>
+  </div>
+
+  <!-- 9 -->
+  <div class="section">
+    <div class="ch-header">
+      <div class="ch-icon c7">9</div>
+      <div>
+        <h3>9월에 하는 것</h3>
+        <div class="ch-badge">9월 비용 200만원 · 부가세 별도 · 상세는 9월 운영 플랜</div>
+      </div>
+    </div>
+
+    <p style="font-size:13.5px;color:#636569;margin-bottom:18px;">
+      8월이 <strong style="color:#1a1b18;">"여기 새로 열었다"를 알리는 달</strong>이었다면,
+      9월은 <strong style="color:#1a1b18;">올려놓은 순위와 후기가 내려가지 않게 지키는 달</strong>입니다. 규모는 줄고 방식은 같습니다.
+    </p>
+
+    <table>
+      <thead>
+        <tr>
+          <th style="width:14%">날짜</th>
+          <th style="width:24%">무엇</th>
+          <th>내용</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="item" contenteditable="false">9/1 —</td>
+          <td class="item" contenteditable="false">체험단 모집 시작</td>
+          <td class="desc" contenteditable="false">20명 모집. <strong>8월 미발행 5명 몫도 여기서 채웁니다.</strong></td>
+        </tr>
+        <tr>
+          <td class="item" contenteditable="false">9/1 — 9/12</td>
+          <td class="item" contenteditable="false">광고 (진행 중)</td>
+          <td class="desc" contenteditable="false"><strong>돼롱이 영상</strong> 계속 집행. 8월과 9월 사이 광고 공백을 없애기 위한 구간입니다.</td>
+        </tr>
+        <tr class="win">
+          <td class="item" contenteditable="false">9/3 (목)</td>
+          <td class="item" contenteditable="false">인플루언서 ① 방문</td>
+          <td class="desc" contenteditable="false"><strong>지오 @jio__busan</strong> (팔로워 4,526) · 오후 7:30 · 동반 방문 예정<br><span style="color:#EA580C;font-weight:700;">→ 업로드 9/8 예정</span></td>
+        </tr>
+        <tr>
+          <td class="item" contenteditable="false">9/7 — 9/20</td>
+          <td class="item" contenteditable="false">광고 (2주)</td>
+          <td class="desc" contenteditable="false">지오 영상 + <strong>8월 위닝 영상(곳곳이)</strong>. 위치는 8월과 동일하게 <strong>부산시청 2km 중심</strong>, 여기에 <strong>페이스북 노출을 켜고 연령을 25~60세로</strong> 조정해서 집행합니다.</td>
+        </tr>
+        <tr>
+          <td class="item" contenteditable="false">9/10</td>
+          <td class="item" contenteditable="false">체험단 선정·발표</td>
+          <td class="desc" contenteditable="false">20명 확정 후 방문일 안내.</td>
+        </tr>
+        <tr>
+          <td class="item" contenteditable="false">9/11 — 9/28</td>
+          <td class="item" contenteditable="false">체험단 방문</td>
+          <td class="desc" contenteditable="false"><strong>20명</strong>이 나눠서 방문. 제공 내역·시간은 8월과 동일(오후 2:00—7:30).</td>
+        </tr>
+        <tr>
+          <td class="item" contenteditable="false">9월 중</td>
+          <td class="item" contenteditable="false">인플루언서 ② 방문</td>
+          <td class="desc" contenteditable="false"><strong>부산뭐하노 @busan.mohano</strong> (팔로워 6,174)<br><span style="color:#EA580C;font-weight:700;">→ 업로드 9/22 예정 · 방문일 확정 시 최소 2일 전 안내</span></td>
+        </tr>
+        <tr>
+          <td class="item" contenteditable="false">9/21 — 10/4</td>
+          <td class="item" contenteditable="false">광고 (2주)</td>
+          <td class="desc" contenteditable="false">부산뭐하노 영상으로 이어받아 집행. 같은 조건(<strong>페이스북 포함 · 25~60세</strong>)으로 이어갑니다. <strong>9월 내내 광고가 한 번도 끊기지 않습니다.</strong></td>
+        </tr>
+        <tr>
+          <td class="item" contenteditable="false">10/2</td>
+          <td class="item" contenteditable="false">9월 운영보고서</td>
+          <td class="desc" contenteditable="false">8월과 비교해서 얼마나 올라갔는지 정리해 전달드립니다.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="next-grid" style="margin-top:24px;">
+      <div class="next-card hero">
+        <div class="nc-label">9월 1순위</div>
+        <div class="nc-title">"부산시청점심" 올리기</div>
+        <div class="nc-desc" contenteditable="false">월 <strong>750회</strong> 검색인데 아직 <strong>49위</strong>입니다. 시청·법조타운 직장인이 실제로 치는 말이라, 여기가 올라가면 <strong>점심 손님</strong>이 붙습니다. 플레이스 소개·메뉴 문구를 점심 쪽으로 손봅니다.</div>
+      </div>
+      <div class="next-card">
+        <div class="nc-label">조정</div>
+        <div class="nc-title">잘 된 영상을, 더 넓은 나이대에</div>
+        <div class="nc-desc" contenteditable="false">8월 위닝 영상 <strong>곳곳이(클릭당 64원)</strong>를 9월에도 계속 돌리되, <strong>페이스북 노출을 켜고 연령을 25~60세로</strong> 넓힙니다. 8월엔 45세 이상 도달이 6%뿐이었습니다.</div>
+      </div>
+      <div class="next-card">
+        <div class="nc-label">보완</div>
+        <div class="nc-title">업로드일 사전 확정</div>
+        <div class="nc-desc" contenteditable="false">8월에 첫 업로드가 오픈 주간을 넘겼습니다. 9월은 <strong>방문일과 업로드일을 계약 단계에서 못 박아</strong> 같은 일이 없게 합니다.</div>
+      </div>
+    </div>
+
+    <div class="info-box dark" contenteditable="false">
+      <strong>사장님이 9월에 해주실 것은 8월과 같습니다.</strong>
+      ① 인플루언서 방문 시 <strong>돼지우동 2개 + 사이드 택 1</strong> 제공 및 촬영 협조 (방문 확정 시 최소 2일 전 안내드립니다)
+      ② 체험단이 "체험단으로 왔습니다" 하면 <strong>명단 확인 후 동일 구성 제공</strong>
+      ③ 영업시간·메뉴·가격이 바뀌면 알려주세요 — 지도 정보도 같이 고쳐야 합니다.<br>
+      연락 창구 — <strong>히즈 우성민 팀장 010-4048-0276</strong>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="brand">BRANDRISE</div>
+    본 보고서는 미례국밥 부산시청점 사장님 전달 목적으로 작성되었습니다.<br>
+    데이터 기준일: 2026. 09. 04 · 대상 기간 2026. 08. 10 — 08. 30 (오픈 3주)<br>
+    <span style="font-size:11px;">출처 — 네이버 플레이스 통계 · 네이버 검색 순위 트래킹 · Meta 광고 관리자 · 미례국밥 운영 마스터시트</span>
+  </div>
+
+</div>
+
+<script>
+function toggleEdit() {
+  const body = document.body;
+  const btn = document.getElementById('editToggle');
+  body.classList.toggle('editing');
+  const isEditing = body.classList.contains('editing');
+  btn.textContent = isEditing ? '편집 완료' : '편집';
+  btn.classList.toggle('active', isEditing);
+  document.querySelectorAll('[contenteditable]').forEach(el => {
+    el.contentEditable = isEditing ? 'true' : 'false';
+  });
+}
+</script>
+</body>
+</html>
