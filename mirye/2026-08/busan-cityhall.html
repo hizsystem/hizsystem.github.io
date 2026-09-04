@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>미례국밥 부산시청점 — 2026년 8월 운영 보고서</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Noto Sans KR', -apple-system, sans-serif; background: #f4f7f9; color: #1a1b18; line-height: 1.7; font-size: 14px; word-break: keep-all; overflow-wrap: break-word; }
+
+.toolbar { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: #0D0D0D; height: 56px; display: flex; align-items: center; justify-content: space-between; padding: 0 32px; }
+.toolbar-left { display: flex; align-items: center; gap: 16px; }
+.toolbar-logo { font-size: 13px; font-weight: 700; color: #EA580C; letter-spacing: 0.05em; }
+.toolbar-sep { width: 1px; height: 20px; background: rgba(255,255,255,0.15); }
+.toolbar-title { font-size: 14px; font-weight: 500; color: #fff; }
+.toolbar-actions { display: flex; gap: 8px; }
+.btn-toolbar { padding: 7px 16px; border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; background: transparent; color: #fff; font-size: 12px; font-weight: 500; cursor: pointer; transition: all 0.2s; text-decoration: none; display: inline-block; }
+.btn-toolbar:hover { background: rgba(255,255,255,0.1); }
+.btn-toolbar.active { background: #EA580C; color: #fff; border-color: #EA580C; }
+
+.edit-banner { display: none; position: fixed; top: 56px; left: 0; right: 0; z-index: 99; background: #FFF7ED; border-bottom: 2px solid #EA580C; padding: 8px 32px; font-size: 12px; color: #EA580C; font-weight: 600; text-align: center; }
+body.editing .edit-banner { display: block; }
+body.editing .container { padding-top: 110px; }
+body.editing [contenteditable="true"] { outline: 2px dashed rgba(234,88,12,0.3); outline-offset: 2px; border-radius: 4px; }
+body.editing [contenteditable="true"]:focus { outline-color: #EA580C; background: #FFF7ED; }
+
+.container { max-width: 940px; margin: 0 auto; padding: 80px 24px 60px; transition: padding-top 0.2s; }
+
+.report-header { background: #fff; border-radius: 12px; padding: 40px; margin-bottom: 20px; border: 1px solid #e8edf1; }
+.report-header .label { font-size: 11px; font-weight: 700; color: #EA580C; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 14px; }
+.report-header h1 { font-size: 26px; font-weight: 900; line-height: 1.35; letter-spacing: -0.02em; margin-bottom: 0; }
+.report-header h1 em { color: #EA580C; font-style: normal; }
+.meta-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 28px; padding-top: 24px; border-top: 1px solid #e8edf1; }
+.meta-item .mk { font-size: 11px; color: #999; letter-spacing: 0.04em; margin-bottom: 4px; }
+.meta-item .mv { font-size: 13px; font-weight: 600; }
+
+.section { background: #fff; border-radius: 12px; padding: 32px 40px; margin-bottom: 20px; border: 1px solid #e8edf1; }
+
+.highlight-box { background: #0D0D0D; border-radius: 12px; padding: 28px 36px; margin-bottom: 20px; color: #fff; }
+.highlight-box .hl-label { font-size: 11px; font-weight: 700; color: #EA580C; letter-spacing: 0.08em; margin-bottom: 10px; }
+.highlight-box .hl-text { font-size: 16px; font-weight: 600; line-height: 1.8; }
+.highlight-box .hl-text em { color: #EA580C; font-style: normal; }
+
+.ch-header { display: flex; align-items: center; gap: 12px; margin-bottom: 22px; padding-bottom: 14px; border-bottom: 1px solid #e8edf1; }
+.ch-icon { width: 30px; height: 30px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 800; color: #fff; flex-shrink: 0; }
+.ch-icon.c1 { background: #0D0D0D; }
+.ch-icon.c2 { background: #EA580C; }
+.ch-icon.c3 { background: #16a34a; }
+.ch-icon.c4 { background: linear-gradient(135deg, #f09433, #dc2743, #bc1888); }
+.ch-icon.c5 { background: #0D0D0D; }
+.ch-icon.c6 { background: #2563eb; }
+.ch-icon.c7 { background: #94a3b8; }
+.ch-header h3 { font-size: 15px; font-weight: 700; }
+.ch-header .ch-badge { font-size: 11px; color: #999; font-weight: 500; }
+
+.kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.kpi-card { background: #f8fafb; border-radius: 10px; padding: 22px 18px; text-align: center; border: 1px solid #e8edf1; }
+.kpi-card .kc-label { font-size: 11px; color: #999; font-weight: 500; margin-bottom: 8px; }
+.kpi-card .kc-value { font-size: 26px; font-weight: 900; color: #1a1b18; letter-spacing: -0.02em; }
+.kpi-card .kc-unit { font-size: 13px; font-weight: 500; color: #999; }
+.kpi-card .kc-change { font-size: 11px; margin-top: 5px; font-weight: 600; line-height: 1.4; }
+.kpi-card .kc-change.up { color: #16a34a; }
+.kpi-card .kc-change.down { color: #dc2626; }
+.kpi-card .kc-change.neutral { color: #999; }
+.kpi-card.dark { background: #0D0D0D; border-color: #0D0D0D; }
+.kpi-card.dark .kc-label { color: #EA580C; }
+.kpi-card.dark .kc-value { color: #fff; }
+.kpi-card.dark .kc-value em { color: #EA580C; font-style: normal; }
+.kpi-card.dark .kc-change { color: rgba(255,255,255,0.45); }
+
+.status { display: inline-block; padding: 3px 11px; border-radius: 12px; font-size: 10px; font-weight: 800; letter-spacing: 0.04em; white-space: nowrap; }
+.status.done { background: #dcfce7; color: #16a34a; }
+.status.over { background: #0D0D0D; color: #EA580C; }
+.status.partial { background: #fef3c7; color: #b45309; }
+.status.miss { background: #fee2e2; color: #dc2626; }
+
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th { background: #f8fafb; padding: 10px 16px; font-weight: 600; border-bottom: 2px solid #e8edf1; color: #999; font-size: 11px; text-align: left; white-space: nowrap; }
+td { padding: 13px 16px; border-bottom: 1px solid #f0f2f5; vertical-align: top; }
+td.item { font-weight: 700; color: #1a1b18; width: 30%; }
+td.desc { color: #636569; font-size: 12px; line-height: 1.7; }
+td.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+th.num { text-align: right; }
+.rank-up { color: #16a34a; font-weight: 800; }
+.shots { margin-top: 18px; }
+.shot { margin-bottom: 18px; border: 1px solid #e8edf1; border-radius: 10px; overflow: hidden; background: #fff; }
+.shot img { display: block; width: 100%; height: auto; }
+.shot .cap { font-size: 12px; color: #636569; padding: 10px 14px; border-top: 1px solid #f0f2f5; background: #f8fafb; line-height: 1.65; }
+.shot .cap b { color: #1a1b18; }
+.shot .cap .q { color: #EA580C; font-weight: 800; }
+.shots-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.shots-2 .shot { margin-bottom: 0; }
+@media (max-width: 768px) { .shots-2 { grid-template-columns: 1fr; } }
+@media print { .shot { break-inside: avoid; } .shots-2 { grid-template-columns: 1fr 1fr; } }
+.rank-down { color: #dc2626; font-weight: 800; }
+.rank-keep { color: #636569; font-weight: 700; }
+
+.store-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.store-card { border-radius: 12px; padding: 24px; border: 1px solid #e8edf1; }
+.store-card.up { background: linear-gradient(180deg, #f0fdf4 0%, #fff 60%); border-color: #bbf7d0; }
+.store-card.down { background: linear-gradient(180deg, #fef2f2 0%, #fff 60%); border-color: #fecaca; }
+.store-card.flat { background: #f8fafb; }
+.store-card .sc-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+.store-card .sc-name { font-size: 15px; font-weight: 800; }
+.store-card .sc-tag { font-size: 10px; font-weight: 800; padding: 3px 10px; border-radius: 12px; }
+.store-card .sc-tag.up { background: #16a34a; color: #fff; }
+.store-card .sc-tag.down { background: #dc2626; color: #fff; }
+.store-card .sc-tag.flat { background: #94a3b8; color: #fff; }
+.store-card .sc-main { display: flex; align-items: baseline; gap: 8px; margin-bottom: 4px; flex-wrap: wrap; }
+.store-card .sc-main .scm-val { font-size: 30px; font-weight: 900; letter-spacing: -0.02em; }
+.store-card .sc-main .scm-arrow { font-size: 13px; color: #999; font-weight: 600; }
+.store-card .sc-main .scm-chg { font-size: 13px; font-weight: 800; }
+.store-card .sc-main .scm-chg.up { color: #16a34a; }
+.store-card .sc-main .scm-chg.down { color: #dc2626; }
+.store-card .sc-sub { font-size: 11px; color: #999; margin-bottom: 16px; }
+.store-card .sc-list { font-size: 12px; color: #636569; line-height: 1.85; border-top: 1px dashed #e2e8f0; padding-top: 14px; }
+.store-card .sc-list strong { color: #1a1b18; }
+.store-card .sc-list .k { display: inline-block; min-width: 108px; color: #94a3b8; }
+
+.info-box { background: #FFF7ED; border-left: 4px solid #EA580C; border-radius: 0 8px 8px 0; padding: 14px 20px; margin-top: 18px; font-size: 12px; color: #636569; line-height: 1.85; }
+.info-box strong { color: #1a1b18; }
+.info-box.dark { background: #0D0D0D; border-left-color: #EA580C; color: rgba(255,255,255,0.78); }
+.info-box.dark strong { color: #fff; }
+.info-box.warn { background: #fffbeb; border-left-color: #f59e0b; }
+
+.flow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 18px; }
+.flow-step { background: #f8fafb; border: 1px solid #e8edf1; border-radius: 10px; padding: 16px 14px; text-align: center; }
+.flow-step.hero { background: #0D0D0D; border-color: #0D0D0D; }
+.flow-step .fs-when { font-size: 10px; font-weight: 800; color: #EA580C; letter-spacing: 0.06em; margin-bottom: 6px; }
+.flow-step .fs-val { font-size: 22px; font-weight: 900; letter-spacing: -0.02em; }
+.flow-step.hero .fs-val { color: #fff; }
+.flow-step .fs-note { font-size: 11px; color: #999; margin-top: 4px; }
+.flow-step.hero .fs-note { color: rgba(255,255,255,0.5); }
+
+.next-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 4px; }
+.next-card { padding: 20px 18px; border-radius: 10px; border: 1px solid #e8edf1; background: #f8fafb; }
+.next-card.hero { background: #FFF7ED; border-color: #EA580C; }
+.next-card .nc-label { font-size: 10px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #EA580C; margin-bottom: 9px; }
+.next-card .nc-title { font-size: 14px; font-weight: 800; margin-bottom: 7px; }
+.next-card .nc-desc { font-size: 12px; color: #636569; line-height: 1.7; }
+.next-card .nc-desc strong { color: #1a1b18; }
+
+.footer { text-align: center; padding: 40px 0; color: #999; font-size: 12px; line-height: 2; }
+.footer .brand { font-size: 15px; font-weight: 800; color: #1a1b18; margin-bottom: 4px; }
+
+@media (max-width: 768px) {
+  .container { padding: 70px 16px 40px; }
+  .meta-grid { grid-template-columns: repeat(2, 1fr); }
+  .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+  .store-grid { grid-template-columns: 1fr; }
+  .next-grid { grid-template-columns: 1fr; }
+  .flow { grid-template-columns: 1fr; }
+  .section { padding: 24px 20px; }
+  .toolbar { padding: 0 16px; }
+  table { display: block; overflow-x: auto; }
+}
+@media print {
+  .toolbar, .edit-banner { display: none !important; }
+  .container { padding: 20px; }
+  body { background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+
+
+.storenav { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:18px; }
+.storenav a { font-size:12px; font-weight:700; padding:7px 15px; border-radius:20px; text-decoration:none; background:#fff; color:#636569; border:1px solid #e8edf1; }
+.storenav a.on { background:#EA580C; color:#fff; border-color:#EA580C; }
+.storenav a:hover { border-color:#EA580C; color:#EA580C; }
+.storenav a.on:hover { color:#fff; }
+.blockhead { display:flex; align-items:center; gap:12px; margin-bottom:4px; }
+.blockhead .bn { width:26px; height:26px; border-radius:50%; background:#EA580C; color:#fff; font-size:13px; font-weight:900; display:flex; align-items:center; justify-content:center; flex:0 0 26px; }
+.blockhead .bt { font-size:18px; font-weight:800; letter-spacing:-0.02em; }
+.blockhead .bt em { color:#EA580C; font-style:normal; }
+.blocksub { font-size:12px; color:#999; margin:0 0 18px 38px; }
+td.chk { text-align:center; white-space:nowrap; width:120px; }
+.pill { display:inline-block; font-size:12px; font-weight:900; padding:4px 12px; border-radius:20px; }
+.pill.ok { background:#dcfce7; color:#15803d; }
+.pill.part { background:#fef3c7; color:#a16207; }
+.subnote { display:block; font-size:11px; color:#999; font-weight:500; margin-top:3px; }
+td.aitem { font-weight:700; color:#1a1b18; width:220px; }
+td.aitem .rem { display:block; font-size:10.5px; font-weight:700; color:#EA580C; margin-top:3px; }
+td.adesc { color:#636569; font-size:12px; }
+.nextbox { background:#0D0D0D; border-radius:12px; padding:26px 34px; color:#fff; margin-bottom:20px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+.nextbox .nt { font-size:15px; font-weight:800; }
+.nextbox .ns { font-size:12px; color:rgba(255,255,255,0.6); margin-top:6px; line-height:1.7; }
+.nextbtn { background:#EA580C; color:#fff; font-size:13px; font-weight:800; padding:12px 22px; border-radius:8px; text-decoration:none; white-space:nowrap; }
+.nextbtn:hover { background:#c2410c; }
+@media (max-width:768px){ .blockhead, .blocksub { margin-left:0; } .blocksub { margin-left:0; } }
+@media print { .storenav, .noprint { display:none !important; } }
+
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="toolbar-left">
+    <div class="toolbar-logo">BRANDRISE</div>
+    <div class="toolbar-sep"></div>
+    <div class="toolbar-title">미례국밥 부산시청점 · 2026년 8월 운영 보고서</div>
+  </div>
+  <div class="toolbar-actions">
+    <a class="btn-toolbar" href="index.html">← 매장 목록</a>
+    <button class="btn-toolbar" onclick="window.print()">PDF 저장</button>
+  </div>
+</div>
+
+<div class="container">
+
+<div class="storenav noprint">
+<a href="hq.html">본사</a>
+<a href="centum.html">센텀점</a>
+<a href="gangnam.html">강남점</a>
+<a href="busan-cityhall.html" class="on">부산시청점</a>
+</div>
+
+  <div class="report-header">
+    <div class="label">미례국밥 × 브랜드라이즈</div>
+    <h1>부산시청점 — 2026년 8월 <em>운영 보고서</em></h1>
+    <div class="meta-grid">
+      <div class="meta-item"><div class="mk">매장</div><div class="mv">미례국밥 부산시청점</div></div>
+      <div class="meta-item"><div class="mk">대상 기간</div><div class="mv">2026. 08. 01 — 08. 31</div></div>
+      <div class="meta-item"><div class="mk">작성</div><div class="mv">브랜드라이즈 by HIZ</div></div>
+      <div class="meta-item"><div class="mk">다음 달</div><div class="mv">9월 운영 플랜 + 견적</div></div>
+    </div>
+  </div>
+
+<div class="section">
+  <div class="blockhead"><div class="bn">1</div><div class="bt">8월에 <em>하기로 한 것</em> · 실제로 한 것</div></div>
+  <div class="blocksub">약속 대비 실행 여부부터 · 성과는 그 아래</div>
+  <table>
+    <thead><tr><th>8월에 하기로 한 것</th><th>실제로 한 것</th><th style="text-align:center;">완료</th></tr></thead>
+    <tbody>
+      <tr><td class="aitem">네이버플레이스 신규 등록·최적화</td><td class="adesc">등록 완료 · "부산시청국밥" 17위 → 5위<span class="subnote">오픈 전 정보·사진·메뉴·키워드 세팅 완료</span></td><td class="chk"><span class="pill ok">완료</span></td></tr>
+      <tr><td class="aitem">블로그 체험단 <strong>40인</strong></td><td class="adesc">40인 모집 완료 · 35건 발행<span class="subnote">8/19~9/4 회차 · 잔여 5인은 9월 모집분에 합산</span></td><td class="chk"><span class="pill part">35 / 40</span></td></tr>
+      <tr><td class="aitem">인플루언서 <strong>4인</strong></td><td class="adesc">4인 전원 발행 완료<span class="subnote">곳곳이 · 요이 · 먹찌 · 돼롱이</span></td><td class="chk"><span class="pill ok">4 / 4</span></td></tr>
+      <tr><td class="aitem">메타 광고</td><td class="adesc">8월 집행 32.3만 · 도착률 86.5% · 도착당 88원<span class="subnote">광고를 누른 사람 10명 중 8~9명이 가게 정보까지 도착</span></td><td class="chk"><span class="pill ok">완료</span></td></tr>
+    </tbody>
+  </table>
+</div>
+  <div class="section">
+  <div class="blockhead"><div class="bn">2</div><div class="bt">8월 <em>성과</em></div></div>
+  <div class="blocksub">오픈 3주 실측 · 표준 오픈 패키지 1호</div>
+<div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kc-label">플레이스 유입 (3주)</div>
+        <div class="kc-value">10,490</div>
+        <div class="kc-change up">주 1,874 → 4,839</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kc-label">리뷰 등록</div>
+        <div class="kc-value">369<span class="kc-unit">건</span></div>
+        <div class="kc-change up">체험단 40인 모집 완료</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kc-label">인플루언서</div>
+        <div class="kc-value">4<span class="kc-unit">인</span></div>
+        <div class="kc-change up">전원 발행 완료</div>
+      </div>
+      <div class="kpi-card dark">
+        <div class="kc-label">"부산시청국밥"</div>
+        <div class="kc-value"><em>5</em><span class="kc-unit">위</span></div>
+        <div class="kc-change">2주 만에 17위 → 5위</div>
+      </div>
+    </div>
+    <table>
+      <thead>
+        <tr><th>키워드</th><th class="num">월 검색량</th><th class="num">3주차</th><th class="num">4주차</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="item">부산시청국밥</td><td class="num">650</td><td class="num">17위</td><td class="num rank-up">5위</td></tr>
+        <tr><td class="item">부산시청역맛집</td><td class="num">1,450</td><td class="num">78위</td><td class="num rank-up">16위</td></tr>
+        <tr><td class="item">연제구 돼지국밥</td><td class="num">70</td><td class="num">17위</td><td class="num rank-up">13위</td></tr>
+        <tr><td class="item">부산시청점심</td><td class="num">750</td><td class="num">55위</td><td class="num rank-up">49위</td></tr>
+      </tbody>
+    </table>
+    <div class="info-box">
+      매장마다 새로 기획하지 않고 <strong>정해진 세트를 그대로 적용</strong>한 첫 사례입니다. 이 결과를 근거로 <strong>9월 울산삼산점을 같은 방식</strong>으로 엽니다.
+    </div>
+  </div>
+
+  <!-- 7 -->
+
+  <div class="nextbox">
+    <div>
+      <div class="nt">9월에는 이렇게 갑니다</div>
+      <div class="ns">300 → 200. 오픈 둘째 달, 내려가지 않게 지키는 달 · 신규 인플루언서 2인</div>
+    </div>
+    <a class="nextbtn" href="../2026-09/busan-cityhall.html">9월 운영 플랜 + 견적 →</a>
+  </div>
+
+  <div class="footer">
+    <div class="brand">BRANDRISE</div>
+    미례국밥 부산시청점 × 브랜드라이즈 · 2026년 8월 운영 보고서<br>
+    광고 지표는 Meta Marketing API 실측, 유입·순위는 [위드런x히즈] 2026 미례국밥 Master Sheet 기준입니다.
+  </div>
+
+</div>
+</body>
+</html>

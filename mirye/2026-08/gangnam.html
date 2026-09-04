@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>미례국밥 강남점 — 2026년 8월 운영 보고서</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Noto Sans KR', -apple-system, sans-serif; background: #f4f7f9; color: #1a1b18; line-height: 1.7; font-size: 14px; word-break: keep-all; overflow-wrap: break-word; }
+
+.toolbar { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: #0D0D0D; height: 56px; display: flex; align-items: center; justify-content: space-between; padding: 0 32px; }
+.toolbar-left { display: flex; align-items: center; gap: 16px; }
+.toolbar-logo { font-size: 13px; font-weight: 700; color: #EA580C; letter-spacing: 0.05em; }
+.toolbar-sep { width: 1px; height: 20px; background: rgba(255,255,255,0.15); }
+.toolbar-title { font-size: 14px; font-weight: 500; color: #fff; }
+.toolbar-actions { display: flex; gap: 8px; }
+.btn-toolbar { padding: 7px 16px; border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; background: transparent; color: #fff; font-size: 12px; font-weight: 500; cursor: pointer; transition: all 0.2s; text-decoration: none; display: inline-block; }
+.btn-toolbar:hover { background: rgba(255,255,255,0.1); }
+.btn-toolbar.active { background: #EA580C; color: #fff; border-color: #EA580C; }
+
+.edit-banner { display: none; position: fixed; top: 56px; left: 0; right: 0; z-index: 99; background: #FFF7ED; border-bottom: 2px solid #EA580C; padding: 8px 32px; font-size: 12px; color: #EA580C; font-weight: 600; text-align: center; }
+body.editing .edit-banner { display: block; }
+body.editing .container { padding-top: 110px; }
+body.editing [contenteditable="true"] { outline: 2px dashed rgba(234,88,12,0.3); outline-offset: 2px; border-radius: 4px; }
+body.editing [contenteditable="true"]:focus { outline-color: #EA580C; background: #FFF7ED; }
+
+.container { max-width: 940px; margin: 0 auto; padding: 80px 24px 60px; transition: padding-top 0.2s; }
+
+.report-header { background: #fff; border-radius: 12px; padding: 40px; margin-bottom: 20px; border: 1px solid #e8edf1; }
+.report-header .label { font-size: 11px; font-weight: 700; color: #EA580C; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 14px; }
+.report-header h1 { font-size: 26px; font-weight: 900; line-height: 1.35; letter-spacing: -0.02em; margin-bottom: 0; }
+.report-header h1 em { color: #EA580C; font-style: normal; }
+.meta-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 28px; padding-top: 24px; border-top: 1px solid #e8edf1; }
+.meta-item .mk { font-size: 11px; color: #999; letter-spacing: 0.04em; margin-bottom: 4px; }
+.meta-item .mv { font-size: 13px; font-weight: 600; }
+
+.section { background: #fff; border-radius: 12px; padding: 32px 40px; margin-bottom: 20px; border: 1px solid #e8edf1; }
+
+.highlight-box { background: #0D0D0D; border-radius: 12px; padding: 28px 36px; margin-bottom: 20px; color: #fff; }
+.highlight-box .hl-label { font-size: 11px; font-weight: 700; color: #EA580C; letter-spacing: 0.08em; margin-bottom: 10px; }
+.highlight-box .hl-text { font-size: 16px; font-weight: 600; line-height: 1.8; }
+.highlight-box .hl-text em { color: #EA580C; font-style: normal; }
+
+.ch-header { display: flex; align-items: center; gap: 12px; margin-bottom: 22px; padding-bottom: 14px; border-bottom: 1px solid #e8edf1; }
+.ch-icon { width: 30px; height: 30px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 800; color: #fff; flex-shrink: 0; }
+.ch-icon.c1 { background: #0D0D0D; }
+.ch-icon.c2 { background: #EA580C; }
+.ch-icon.c3 { background: #16a34a; }
+.ch-icon.c4 { background: linear-gradient(135deg, #f09433, #dc2743, #bc1888); }
+.ch-icon.c5 { background: #0D0D0D; }
+.ch-icon.c6 { background: #2563eb; }
+.ch-icon.c7 { background: #94a3b8; }
+.ch-header h3 { font-size: 15px; font-weight: 700; }
+.ch-header .ch-badge { font-size: 11px; color: #999; font-weight: 500; }
+
+.kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.kpi-card { background: #f8fafb; border-radius: 10px; padding: 22px 18px; text-align: center; border: 1px solid #e8edf1; }
+.kpi-card .kc-label { font-size: 11px; color: #999; font-weight: 500; margin-bottom: 8px; }
+.kpi-card .kc-value { font-size: 26px; font-weight: 900; color: #1a1b18; letter-spacing: -0.02em; }
+.kpi-card .kc-unit { font-size: 13px; font-weight: 500; color: #999; }
+.kpi-card .kc-change { font-size: 11px; margin-top: 5px; font-weight: 600; line-height: 1.4; }
+.kpi-card .kc-change.up { color: #16a34a; }
+.kpi-card .kc-change.down { color: #dc2626; }
+.kpi-card .kc-change.neutral { color: #999; }
+.kpi-card.dark { background: #0D0D0D; border-color: #0D0D0D; }
+.kpi-card.dark .kc-label { color: #EA580C; }
+.kpi-card.dark .kc-value { color: #fff; }
+.kpi-card.dark .kc-value em { color: #EA580C; font-style: normal; }
+.kpi-card.dark .kc-change { color: rgba(255,255,255,0.45); }
+
+.status { display: inline-block; padding: 3px 11px; border-radius: 12px; font-size: 10px; font-weight: 800; letter-spacing: 0.04em; white-space: nowrap; }
+.status.done { background: #dcfce7; color: #16a34a; }
+.status.over { background: #0D0D0D; color: #EA580C; }
+.status.partial { background: #fef3c7; color: #b45309; }
+.status.miss { background: #fee2e2; color: #dc2626; }
+
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th { background: #f8fafb; padding: 10px 16px; font-weight: 600; border-bottom: 2px solid #e8edf1; color: #999; font-size: 11px; text-align: left; white-space: nowrap; }
+td { padding: 13px 16px; border-bottom: 1px solid #f0f2f5; vertical-align: top; }
+td.item { font-weight: 700; color: #1a1b18; width: 30%; }
+td.desc { color: #636569; font-size: 12px; line-height: 1.7; }
+td.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+th.num { text-align: right; }
+.rank-up { color: #16a34a; font-weight: 800; }
+.shots { margin-top: 18px; }
+.shot { margin-bottom: 18px; border: 1px solid #e8edf1; border-radius: 10px; overflow: hidden; background: #fff; }
+.shot img { display: block; width: 100%; height: auto; }
+.shot .cap { font-size: 12px; color: #636569; padding: 10px 14px; border-top: 1px solid #f0f2f5; background: #f8fafb; line-height: 1.65; }
+.shot .cap b { color: #1a1b18; }
+.shot .cap .q { color: #EA580C; font-weight: 800; }
+.shots-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.shots-2 .shot { margin-bottom: 0; }
+@media (max-width: 768px) { .shots-2 { grid-template-columns: 1fr; } }
+@media print { .shot { break-inside: avoid; } .shots-2 { grid-template-columns: 1fr 1fr; } }
+.rank-down { color: #dc2626; font-weight: 800; }
+.rank-keep { color: #636569; font-weight: 700; }
+
+.store-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.store-card { border-radius: 12px; padding: 24px; border: 1px solid #e8edf1; }
+.store-card.up { background: linear-gradient(180deg, #f0fdf4 0%, #fff 60%); border-color: #bbf7d0; }
+.store-card.down { background: linear-gradient(180deg, #fef2f2 0%, #fff 60%); border-color: #fecaca; }
+.store-card.flat { background: #f8fafb; }
+.store-card .sc-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+.store-card .sc-name { font-size: 15px; font-weight: 800; }
+.store-card .sc-tag { font-size: 10px; font-weight: 800; padding: 3px 10px; border-radius: 12px; }
+.store-card .sc-tag.up { background: #16a34a; color: #fff; }
+.store-card .sc-tag.down { background: #dc2626; color: #fff; }
+.store-card .sc-tag.flat { background: #94a3b8; color: #fff; }
+.store-card .sc-main { display: flex; align-items: baseline; gap: 8px; margin-bottom: 4px; flex-wrap: wrap; }
+.store-card .sc-main .scm-val { font-size: 30px; font-weight: 900; letter-spacing: -0.02em; }
+.store-card .sc-main .scm-arrow { font-size: 13px; color: #999; font-weight: 600; }
+.store-card .sc-main .scm-chg { font-size: 13px; font-weight: 800; }
+.store-card .sc-main .scm-chg.up { color: #16a34a; }
+.store-card .sc-main .scm-chg.down { color: #dc2626; }
+.store-card .sc-sub { font-size: 11px; color: #999; margin-bottom: 16px; }
+.store-card .sc-list { font-size: 12px; color: #636569; line-height: 1.85; border-top: 1px dashed #e2e8f0; padding-top: 14px; }
+.store-card .sc-list strong { color: #1a1b18; }
+.store-card .sc-list .k { display: inline-block; min-width: 108px; color: #94a3b8; }
+
+.info-box { background: #FFF7ED; border-left: 4px solid #EA580C; border-radius: 0 8px 8px 0; padding: 14px 20px; margin-top: 18px; font-size: 12px; color: #636569; line-height: 1.85; }
+.info-box strong { color: #1a1b18; }
+.info-box.dark { background: #0D0D0D; border-left-color: #EA580C; color: rgba(255,255,255,0.78); }
+.info-box.dark strong { color: #fff; }
+.info-box.warn { background: #fffbeb; border-left-color: #f59e0b; }
+
+.flow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 18px; }
+.flow-step { background: #f8fafb; border: 1px solid #e8edf1; border-radius: 10px; padding: 16px 14px; text-align: center; }
+.flow-step.hero { background: #0D0D0D; border-color: #0D0D0D; }
+.flow-step .fs-when { font-size: 10px; font-weight: 800; color: #EA580C; letter-spacing: 0.06em; margin-bottom: 6px; }
+.flow-step .fs-val { font-size: 22px; font-weight: 900; letter-spacing: -0.02em; }
+.flow-step.hero .fs-val { color: #fff; }
+.flow-step .fs-note { font-size: 11px; color: #999; margin-top: 4px; }
+.flow-step.hero .fs-note { color: rgba(255,255,255,0.5); }
+
+.next-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 4px; }
+.next-card { padding: 20px 18px; border-radius: 10px; border: 1px solid #e8edf1; background: #f8fafb; }
+.next-card.hero { background: #FFF7ED; border-color: #EA580C; }
+.next-card .nc-label { font-size: 10px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #EA580C; margin-bottom: 9px; }
+.next-card .nc-title { font-size: 14px; font-weight: 800; margin-bottom: 7px; }
+.next-card .nc-desc { font-size: 12px; color: #636569; line-height: 1.7; }
+.next-card .nc-desc strong { color: #1a1b18; }
+
+.footer { text-align: center; padding: 40px 0; color: #999; font-size: 12px; line-height: 2; }
+.footer .brand { font-size: 15px; font-weight: 800; color: #1a1b18; margin-bottom: 4px; }
+
+@media (max-width: 768px) {
+  .container { padding: 70px 16px 40px; }
+  .meta-grid { grid-template-columns: repeat(2, 1fr); }
+  .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+  .store-grid { grid-template-columns: 1fr; }
+  .next-grid { grid-template-columns: 1fr; }
+  .flow { grid-template-columns: 1fr; }
+  .section { padding: 24px 20px; }
+  .toolbar { padding: 0 16px; }
+  table { display: block; overflow-x: auto; }
+}
+@media print {
+  .toolbar, .edit-banner { display: none !important; }
+  .container { padding: 20px; }
+  body { background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+
+
+.storenav { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:18px; }
+.storenav a { font-size:12px; font-weight:700; padding:7px 15px; border-radius:20px; text-decoration:none; background:#fff; color:#636569; border:1px solid #e8edf1; }
+.storenav a.on { background:#EA580C; color:#fff; border-color:#EA580C; }
+.storenav a:hover { border-color:#EA580C; color:#EA580C; }
+.storenav a.on:hover { color:#fff; }
+.blockhead { display:flex; align-items:center; gap:12px; margin-bottom:4px; }
+.blockhead .bn { width:26px; height:26px; border-radius:50%; background:#EA580C; color:#fff; font-size:13px; font-weight:900; display:flex; align-items:center; justify-content:center; flex:0 0 26px; }
+.blockhead .bt { font-size:18px; font-weight:800; letter-spacing:-0.02em; }
+.blockhead .bt em { color:#EA580C; font-style:normal; }
+.blocksub { font-size:12px; color:#999; margin:0 0 18px 38px; }
+td.chk { text-align:center; white-space:nowrap; width:120px; }
+.pill { display:inline-block; font-size:12px; font-weight:900; padding:4px 12px; border-radius:20px; }
+.pill.ok { background:#dcfce7; color:#15803d; }
+.pill.part { background:#fef3c7; color:#a16207; }
+.subnote { display:block; font-size:11px; color:#999; font-weight:500; margin-top:3px; }
+td.aitem { font-weight:700; color:#1a1b18; width:220px; }
+td.aitem .rem { display:block; font-size:10.5px; font-weight:700; color:#EA580C; margin-top:3px; }
+td.adesc { color:#636569; font-size:12px; }
+.nextbox { background:#0D0D0D; border-radius:12px; padding:26px 34px; color:#fff; margin-bottom:20px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+.nextbox .nt { font-size:15px; font-weight:800; }
+.nextbox .ns { font-size:12px; color:rgba(255,255,255,0.6); margin-top:6px; line-height:1.7; }
+.nextbtn { background:#EA580C; color:#fff; font-size:13px; font-weight:800; padding:12px 22px; border-radius:8px; text-decoration:none; white-space:nowrap; }
+.nextbtn:hover { background:#c2410c; }
+@media (max-width:768px){ .blockhead, .blocksub { margin-left:0; } .blocksub { margin-left:0; } }
+@media print { .storenav, .noprint { display:none !important; } }
+
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="toolbar-left">
+    <div class="toolbar-logo">BRANDRISE</div>
+    <div class="toolbar-sep"></div>
+    <div class="toolbar-title">미례국밥 강남점 · 2026년 8월 운영 보고서</div>
+  </div>
+  <div class="toolbar-actions">
+    <a class="btn-toolbar" href="index.html">← 매장 목록</a>
+    <button class="btn-toolbar" onclick="window.print()">PDF 저장</button>
+  </div>
+</div>
+
+<div class="container">
+
+<div class="storenav noprint">
+<a href="hq.html">본사</a>
+<a href="centum.html">센텀점</a>
+<a href="gangnam.html" class="on">강남점</a>
+<a href="busan-cityhall.html">부산시청점</a>
+</div>
+
+  <div class="report-header">
+    <div class="label">미례국밥 × 브랜드라이즈</div>
+    <h1>강남점 — 2026년 8월 <em>운영 보고서</em></h1>
+    <div class="meta-grid">
+      <div class="meta-item"><div class="mk">매장</div><div class="mv">미례국밥 강남삼성타운직영점</div></div>
+      <div class="meta-item"><div class="mk">대상 기간</div><div class="mv">2026. 08. 01 — 08. 31</div></div>
+      <div class="meta-item"><div class="mk">작성</div><div class="mv">브랜드라이즈 by HIZ</div></div>
+      <div class="meta-item"><div class="mk">다음 달</div><div class="mv">9월 운영 플랜 + 견적</div></div>
+    </div>
+  </div>
+
+<div class="section">
+  <div class="blockhead"><div class="bn">1</div><div class="bt">8월에 <em>하기로 한 것</em> · 실제로 한 것</div></div>
+  <div class="blocksub">약속 대비 실행 여부부터 · 성과는 그 아래</div>
+  <table>
+    <thead><tr><th>8월에 하기로 한 것</th><th>실제로 한 것</th><th style="text-align:center;">완료</th></tr></thead>
+    <tbody>
+      <tr><td class="aitem">네이버플레이스 운영<span class="rem">댓글 응대 포함</span></td><td class="adesc">리뷰 640건 응대 · "강남역 맛집" 38위 → 5위<span class="subnote">4개 매장 중 리뷰가 가장 많습니다 (센텀 390 · 시청 369 · 전포 204)</span></td><td class="chk"><span class="pill ok">완료</span></td></tr>
+      <tr><td class="aitem">블로그 체험단 <strong>20인</strong></td><td class="adesc">19건 발행 완료<span class="subnote">8/15~8/29 회차 · 잔여 1인은 9월 모집분에 합산</span></td><td class="chk"><span class="pill part">19 / 20</span></td></tr>
+      <tr><td class="aitem">일본 인플루언서 <strong>8인</strong></td><td class="adesc">5편 발행 완료 · 조회 137,583 · 저장 4,055건<span class="subnote"><strong>잔여 3인은 9월에 발행됩니다 — 추가 비용 없습니다</strong></span></td><td class="chk"><span class="pill part">5 / 8</span></td></tr>
+      <tr><td class="aitem">마이크로 인플루언서 + 돋보기</td><td class="adesc">국내 인플루언서 발행 + 돋보기 10개 계정 동시 발행<span class="subnote">8/26 돋보기 총 노출 166,241 (예상 10~20만 상단)</span></td><td class="chk"><span class="pill ok">완료</span></td></tr>
+    </tbody>
+  </table>
+</div>
+  <div class="section">
+  <div class="blockhead"><div class="bn">2</div><div class="bt">8월 <em>성과</em></div></div>
+  <div class="blocksub">유입 · 키워드 순위 · 국내 인플루언서 반응</div>
+<div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kc-label">월 방문 유입</div>
+        <div class="kc-value">38,163</div>
+        <div class="kc-change up">7월 24,647 → +55%</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kc-label">네이버지도</div>
+        <div class="kc-value">25,196</div>
+        <div class="kc-change up">7월 19,781 → +27%</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kc-label">리뷰 등록 (월)</div>
+        <div class="kc-value">640<span class="kc-unit">건</span></div>
+        <div class="kc-change neutral">체험단 40인 → 20인 축소 반영</div>
+      </div>
+      <div class="kpi-card dark">
+        <div class="kc-label">"강남역 맛집"</div>
+        <div class="kc-value"><em>5</em><span class="kc-unit">위</span></div>
+        <div class="kc-change">7월 38위 → 5위</div>
+      </div>
+    </div>
+    <table>
+      <thead>
+        <tr><th>키워드</th><th class="num">월 검색량</th><th class="num">7월말</th><th class="num">8월말</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="item">강남역 맛집</td><td class="num">96,200</td><td class="num">38위</td><td class="num rank-up">5위</td></tr>
+        <tr><td class="item">강남역 한식</td><td class="num">2,590</td><td class="num">14위</td><td class="num rank-up">3위</td></tr>
+        <tr><td class="item">강남역 한식 맛집</td><td class="num">1,320</td><td class="num">14위</td><td class="num rank-up">3위</td></tr>
+        <tr><td class="item">강남역 국밥</td><td class="num">1,430</td><td class="num">2위</td><td class="num rank-up">1위</td></tr>
+        <tr><td class="item">강남삼성타운맛집</td><td class="num">50</td><td class="num">13위</td><td class="num rank-up">1위</td></tr>
+        <tr><td class="item">강남역 돼지국밥</td><td class="num">130</td><td class="num">1위</td><td class="num">1위</td></tr>
+        <tr><td class="item">돼지국밥 (전국)</td><td class="num">66,650</td><td class="num">114위</td><td class="num rank-up">104위</td></tr>
+      </tbody>
+    </table>
+    <table>
+      <thead><tr><th>강남 국내 인플루언서 (8월)</th><th class="num">팔로워</th><th class="num">조회수</th><th class="num">좋아요</th><th class="num">저장</th><th class="num">공유</th></tr></thead>
+      <tbody>
+        <tr><td class="item">맛집감</td><td class="num">2만</td><td class="num">18,031</td><td class="num">115</td><td class="num">56</td><td class="num">107</td></tr>
+        <tr><td class="item">세로본능</td><td class="num">1,174</td><td class="num">11,349</td><td class="num">173</td><td class="num rank-up">100</td><td class="num rank-up">350</td></tr>
+        <tr><td class="item">취향백서</td><td class="num">5,257</td><td class="num">4,924</td><td class="num">50</td><td class="num">47</td><td class="num">31</td></tr>
+        <tr><td class="item">슬립디쉬</td><td class="num">3.7만</td><td class="desc" colspan="4">8/26 발행 · 집계 수집 중</td></tr>
+      </tbody>
+    </table>
+    <div class="info-box">
+      <strong>팔로워가 작아도 잘 터집니다.</strong> 세로본능은 팔로워 1,174명인데 <strong>조회 11,349 · 공유 350</strong>이 나왔습니다. 팔로워 수보다 <strong>영상이 얼마나 퍼지느냐</strong>가 중요하다는 뜻이라, 9월 섭외도 팔로워 규모보다 반응률을 기준으로 잡겠습니다.
+    </div>
+    <div class="info-box">
+      7월까지는 <strong>"돼지국밥"을 찾는 사람</strong>에게만 떴습니다. 8월부터는 <strong>그냥 강남에서 밥 먹을 곳을 찾는 사람</strong>에게도 뜹니다. 유입 +55%가 여기서 나왔습니다.
+    </div>
+  </div>
+
+  <!-- 5 -->
+  <div class="section">
+  <div class="blockhead"><div class="bn">3</div><div class="bt">일본 <em>트랙</em></div></div>
+  <div class="blocksub">8월 1순위 목표 · 일본어 검색어 상위 노출 확인</div>
+<div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kc-label">일본 영상 조회수</div>
+        <div class="kc-value">137,583</div>
+        <div class="kc-change up">업로드 5편 합계</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kc-label">저장</div>
+        <div class="kc-value">4,055<span class="kc-unit">건</span></div>
+        <div class="kc-change up">국내 인플루언서 203건의 20배</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kc-label">저장률</div>
+        <div class="kc-value">2.95<span class="kc-unit">%</span></div>
+        <div class="kc-change up">국내 0.59% → 5배</div>
+      </div>
+      <div class="kpi-card dark">
+        <div class="kc-label">일본어 검색 노출</div>
+        <div class="kc-value"><em>상위</em></div>
+        <div class="kc-change">#江南グルメ 최상단 · 주요 검색어 다수</div>
+      </div>
+    </div>
+
+    <div class="info-box dark">
+      <strong>일본인이 실제로 쓰는 주요 검색어에서, 미례국밥 콘텐츠가 상위에 노출되고 있습니다.</strong><br><br>
+      8월 1순위 목표였던 <strong>"일본어로 검색했을 때 우리가 뜨는가"</strong>에 답이 나왔습니다. 특히 <strong>#江南グルメ(강남 맛집)</strong>에서는 <strong>강남점 매장 외관이 최상단 첫 칸</strong>에 걸려 있습니다.
+    </div>
+
+    <table>
+      <thead>
+        <tr><th>상위 노출 확인된 일본어 검색어</th><th>뜻</th><th>노출 형태</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="item">#江南グルメ</td><td class="desc"><strong>강남 맛집</strong></td><td class="desc"><strong>최상단 첫 칸 — 강남점 매장 외관</strong></td></tr>
+        <tr><td class="item">#韓国グルメ</td><td class="desc"><strong>한국 맛집</strong></td><td class="desc">상단 — "강남에서 발견! 엄청 맛있는 국밥우동?!"</td></tr>
+        <tr><td class="item">#江南レストラン</td><td class="desc"><strong>강남 레스토랑</strong></td><td class="desc">상단 — "한국인으로 만석!! 강남역 맛집"</td></tr>
+      </tbody>
+    </table>
+    <div class="shots">
+      <div class="shot">
+        <img src="images/jp/01-gangnam-gourmet-top.jpg" alt="인스타그램 #江南グルメ 검색 결과 최상단에 노출된 미례국밥 강남삼성타운직영점 매장 외관">
+        <div class="cap"><span class="q">#江南グルメ (강남 맛집)</span> — <b>검색 결과 최상단 첫 칸에 강남점 매장 외관</b>이 그대로 노출됩니다. 캡션은 "서울 상륙했다고 해서 왔다".</div>
+      </div>
+      <div class="shots-2">
+        <div class="shot">
+          <img src="images/jp/02-gangnam-gourmet-scroll.jpg" alt="#江南グルメ 검색 결과 상단의 미례국밥 돼지우동 영상, 조회수 9.8만">
+          <div class="cap"><span class="q">#江南グルメ (강남 맛집)</span> — 같은 검색어 상단의 <b>돼지우동 클로즈업 · 조회 9.8만</b>.</div>
+        </div>
+        <div class="shot">
+          <img src="images/jp/05-gangnam-restaurant.jpg" alt="#江南レストラン 검색 결과에 노출된 미례국밥 돼지우동 영상">
+          <div class="cap"><span class="q">#江南レストラン (강남 레스토랑)</span> — <b>"한국인으로 만석‼️ 강남역에 있는 엄청 맛있는 집"</b>.</div>
+        </div>
+      </div>
+      <div class="shot" style="margin-top:18px;">
+        <img src="images/jp/03-korea-gourmet-1.jpg" alt="#韓国グルメ 해시태그 결과에 노출된 미례국밥 관련 영상들">
+        <div class="cap"><span class="q">#韓国グルメ (한국 맛집)</span> — 오른쪽에 <b>"강남에서 발견! 엄청 맛있는 국밥우동?!"</b>, 그 왼쪽은 일본 인플루언서 <b>URITRIP</b>의 큐레이션 게시물입니다.</div>
+      </div>
+      <div class="shot">
+        <img src="images/jp/04-korea-gourmet-2.jpg" alt="#韓国グルメ 해시태그 결과 추가 화면">
+        <div class="cap"><span class="q">#韓国グルメ (한국 맛집)</span> — <b>"평일 밤 8시인데 놀랍게도 만석"</b> 등 매장 혼잡도를 보여주는 컷이 함께 잡힙니다.</div>
+      </div>
+    </div>
+
+    <div class="info-box">
+      이 밖에 <strong>#江南ひとりごはん(강남 혼밥) · #韓国でひとりごはん(한국에서 혼밥) · #韓国一人旅(한국 혼행) · #韓国旅行(한국 여행) · #ソウルグルメ(서울 맛집)</strong> 계열에서도 노출이 확인됩니다.<br><br>
+      <strong>돼지우동이 일본어 검색과 잘 맞습니다.</strong> "혼밥(ひとりごはん)"으로 찾는 여행객에게는 <strong>혼자 들어가 한 그릇 먹고 나올 수 있는 집</strong>이 필요한데, 국밥이 정확히 그 자리입니다.
+    </div>
+
+    <table>
+      <thead>
+        <tr><th>일본 인플루언서</th><th class="num">팔로워</th><th class="num">조회수</th><th class="num">좋아요</th><th class="num">저장</th><th class="num">공유</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="item">URITRIP</td><td class="num">2.7만</td><td class="num rank-up">84,573</td><td class="num">1,800</td><td class="num rank-up">3,300</td><td class="num">350</td></tr>
+        <tr><td class="item">touta_momo</td><td class="num">4,987</td><td class="num">20,857</td><td class="num">151</td><td class="num">72</td><td class="num">3</td></tr>
+        <tr><td class="item">Eri</td><td class="num">9,255</td><td class="num">15,297</td><td class="num">142</td><td class="num">213</td><td class="num">21</td></tr>
+        <tr><td class="item">jennie</td><td class="num">1만</td><td class="num">12,174</td><td class="num">157</td><td class="num">383</td><td class="num">9</td></tr>
+        <tr><td class="item">Moa</td><td class="num">8,107</td><td class="num">4,682</td><td class="num">48</td><td class="num">87</td><td class="num">19</td></tr>
+        <tr class="total-row"><td>합계 (5편)</td><td class="num">—</td><td class="num">137,583</td><td class="num">2,298</td><td class="num">4,055</td><td class="num">402</td></tr>
+      </tbody>
+    </table>
+    <div class="info-box">
+      <strong>저장이 압도적입니다.</strong> 일본 영상은 본 사람 100명 중 <strong>3명이 저장</strong>했습니다(국내 인플루언서는 0.6명). 여행객은 <strong>"한국 가면 여기 가야지"</strong> 하고 담아두기 때문입니다. 돋보기 콘텐츠에서 확인한 것과 같습니다 — <strong>좋아요는 스쳐 간 사람, 저장은 갈 마음이 있는 사람</strong>입니다.<br><br>
+      URITRIP 한 편은 <strong>팔로워(2.7만)의 3.1배인 8.5만 조회</strong>가 나왔습니다. 팔로워 밖으로 퍼졌다는 뜻이고, 이게 검색에 잡히는 이유입니다.
+    </div>
+
+    <div class="info-box dark">
+      <strong>8월에는 광고를 1편만 집행했습니다 — 의도한 순서입니다.</strong><br><br>
+      일본 인플루언서는 방한 일정에 맞춰 섭외하다 보니 <strong>발행이 8월 하순에 몰렸습니다.</strong> 그래서 광고부터 붙이지 않고, <strong>광고 없이 영상 자체가 얼마나 퍼지는지(오가닉)를 먼저 확인</strong>했습니다. 광고를 처음부터 태우면 그 성과가 <strong>영상이 좋아서인지 광고비 때문인지 구분되지 않기 때문</strong>입니다.<br><br>
+      결과는 위 숫자입니다 — <strong>광고 없이 조회 137,583 · 저장 4,055건</strong>, URITRIP 한 편은 팔로워의 3.1배까지 퍼졌습니다. <strong>영상 자체의 힘이 확인됐으니, 이제 광고를 붙일 차례</strong>입니다.<br><br>
+      그래서 <strong>9월 일본 트랙 200만</strong>은 신규 3인을 붙이고, 검증된 소재에 <strong>광고를 제대로 태우는 데</strong> 씁니다.
+    </div>
+  </div>
+
+  <!-- 9 -->
+  <div class="section">
+  <div class="blockhead"><div class="bn">4</div><div class="bt">돋보기 <em>콘텐츠</em></div></div>
+  <div class="blocksub">8/26 · 10개 계정 동시 발행</div>
+<div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kc-label">총 노출</div>
+        <div class="kc-value">166,241</div>
+        <div class="kc-change up">예상 10만~20만 → 상단 도달</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kc-label">건당 평균 노출</div>
+        <div class="kc-value">16,624</div>
+        <div class="kc-change up">10건 전부 예상 범위(1~2만) 안</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kc-label">반응 합계</div>
+        <div class="kc-value">892</div>
+        <div class="kc-change neutral">좋아요 791 · 공유 40 · 리포스트 32 · 저장 25</div>
+      </div>
+      <div class="kpi-card dark">
+        <div class="kc-label">게재 계정</div>
+        <div class="kc-value"><em>10</em><span class="kc-unit">곳</span></div>
+        <div class="kc-change">팔로워 3.7만~11.9만 · 합 80.2만</div>
+      </div>
+    </div>
+    <table>
+      <thead>
+        <tr><th>콘텐츠 컨셉</th><th class="num">건수</th><th class="num">노출</th><th class="num">좋아요</th><th class="num">저장+리포스트</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="item">ㄹㅇ 부산사람만 안다는 찐국밥</td><td class="num">5</td><td class="num">82,826</td><td class="num">355</td><td class="num rank-up">47</td></tr>
+        <tr><td class="item">의외로 어울리는 음식 조합 ㄷㄷ</td><td class="num">5</td><td class="num">83,415</td><td class="num">436</td><td class="num" style="color:#dc2626;font-weight:800;">10</td></tr>
+      </tbody>
+    </table>
+    <div class="info-box">
+      <strong>노출은 두 컨셉이 같은데, 저장·리포스트가 4.7배 차이 납니다.</strong> "음식 조합"은 좋아요가 더 많지만 거기서 끝납니다. <strong>"부산사람만 아는 집"</strong> 쪽이 <strong>나중에 가보려고 저장하고, 친구에게 퍼 나르는 반응</strong>을 만들었습니다.<br><br>
+      좋아요는 스쳐 지나간 사람이고 <strong>저장·리포스트는 갈 마음이 있는 사람</strong>입니다. 다음에 돋보기를 돌릴 땐 <strong>"현지인만 아는 집" 계열</strong>로 잡겠습니다.
+    </div>
+  </div>
+
+  <!-- 10 -->
+
+  <div class="nextbox">
+    <div>
+      <div class="nt">9월에는 이렇게 갑니다</div>
+      <div class="ns">1,080 → 380. 성수기 예산 종료 · 일본 트랙 200만으로 한 달 더 (9월 6편 발행)</div>
+    </div>
+    <a class="nextbtn" href="../2026-09/gangnam.html">9월 운영 플랜 + 견적 →</a>
+  </div>
+
+  <div class="footer">
+    <div class="brand">BRANDRISE</div>
+    미례국밥 강남점 × 브랜드라이즈 · 2026년 8월 운영 보고서<br>
+    광고 지표는 Meta Marketing API 실측, 유입·순위는 [위드런x히즈] 2026 미례국밥 Master Sheet 기준입니다.
+  </div>
+
+</div>
+</body>
+</html>
