@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>코너룸 성수 네이버플레이스 1차 진단 — 브랜드라이즈</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Noto Sans KR', -apple-system, sans-serif; background: #f4f7f9; color: #1a1b18; line-height: 1.7; font-size: 14px; word-break: keep-all; overflow-wrap: break-word; }
+
+.toolbar { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: #0D0D0D; height: 56px; display: flex; align-items: center; justify-content: space-between; padding: 0 32px; }
+.toolbar-left { display: flex; align-items: center; gap: 16px; }
+.toolbar-logo { font-size: 13px; font-weight: 700; color: #EA580C; letter-spacing: 0.05em; }
+.toolbar-sep { width: 1px; height: 20px; background: rgba(255,255,255,0.15); }
+.toolbar-title { font-size: 14px; font-weight: 500; color: #fff; }
+.toolbar-actions { display: flex; gap: 8px; }
+.btn-toolbar { padding: 7px 16px; border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; background: transparent; color: #fff; font-size: 12px; font-weight: 500; cursor: pointer; transition: all 0.2s; text-decoration: none; display: inline-block; }
+.btn-toolbar:hover { background: rgba(255,255,255,0.1); }
+.btn-toolbar.active { background: #EA580C; color: #fff; border-color: #EA580C; }
+
+.edit-banner { display: none; position: fixed; top: 56px; left: 0; right: 0; z-index: 99; background: #FFF7ED; border-bottom: 2px solid #EA580C; padding: 8px 32px; font-size: 12px; color: #EA580C; font-weight: 600; text-align: center; }
+body.editing .edit-banner { display: block; }
+body.editing .container { padding-top: 110px; }
+body.editing [contenteditable="true"] { outline: 2px dashed rgba(234,88,12,0.3); outline-offset: 2px; border-radius: 4px; }
+body.editing [contenteditable="true"]:focus { outline-color: #EA580C; background: #FFF7ED; }
+
+.container { max-width: 940px; margin: 0 auto; padding: 80px 24px 60px; transition: padding-top 0.2s; }
+
+.report-header { background: #fff; border-radius: 12px; padding: 40px; margin-bottom: 20px; border: 1px solid #e8edf1; }
+.report-header .label { font-size: 11px; font-weight: 700; color: #EA580C; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 14px; }
+.report-header h1 { font-size: 26px; font-weight: 900; line-height: 1.35; letter-spacing: -0.02em; margin-bottom: 0; }
+.report-header h1 em { color: #EA580C; font-style: normal; }
+.meta-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 28px; padding-top: 24px; border-top: 1px solid #e8edf1; }
+.meta-item .mk { font-size: 11px; color: #999; letter-spacing: 0.04em; margin-bottom: 4px; }
+.meta-item .mv { font-size: 13px; font-weight: 600; }
+
+.section { background: #fff; border-radius: 12px; padding: 32px 40px; margin-bottom: 20px; border: 1px solid #e8edf1; }
+
+.highlight-box { background: #0D0D0D; border-radius: 12px; padding: 28px 36px; margin-bottom: 20px; color: #fff; }
+.highlight-box .hl-label { font-size: 11px; font-weight: 700; color: #EA580C; letter-spacing: 0.08em; margin-bottom: 10px; }
+.highlight-box .hl-text { font-size: 16px; font-weight: 600; line-height: 1.8; }
+.highlight-box .hl-text em { color: #EA580C; font-style: normal; }
+
+.ch-header { display: flex; align-items: center; gap: 12px; margin-bottom: 22px; padding-bottom: 14px; border-bottom: 1px solid #e8edf1; }
+.ch-icon { width: 30px; height: 30px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 800; color: #fff; flex-shrink: 0; }
+.ch-icon.c1 { background: #0D0D0D; }
+.ch-icon.c2 { background: #EA580C; }
+.ch-icon.c3 { background: #16a34a; }
+.ch-icon.c4 { background: linear-gradient(135deg, #f09433, #dc2743, #bc1888); }
+.ch-icon.c5 { background: #0D0D0D; }
+.ch-icon.c6 { background: #2563eb; }
+.ch-icon.c7 { background: #94a3b8; }
+.ch-header h3 { font-size: 15px; font-weight: 700; }
+.ch-header .ch-badge { font-size: 11px; color: #999; font-weight: 500; }
+
+.kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.kpi-card { background: #f8fafb; border-radius: 10px; padding: 22px 18px; text-align: center; border: 1px solid #e8edf1; }
+.kpi-card .kc-label { font-size: 11px; color: #999; font-weight: 500; margin-bottom: 8px; }
+.kpi-card .kc-value { font-size: 26px; font-weight: 900; color: #1a1b18; letter-spacing: -0.02em; }
+.kpi-card .kc-unit { font-size: 13px; font-weight: 500; color: #999; }
+.kpi-card .kc-change { font-size: 11px; margin-top: 5px; font-weight: 600; line-height: 1.4; }
+.kpi-card .kc-change.up { color: #16a34a; }
+.kpi-card .kc-change.down { color: #dc2626; }
+.kpi-card .kc-change.neutral { color: #999; }
+.kpi-card.dark { background: #0D0D0D; border-color: #0D0D0D; }
+.kpi-card.dark .kc-label { color: #EA580C; }
+.kpi-card.dark .kc-value { color: #fff; }
+.kpi-card.dark .kc-value em { color: #EA580C; font-style: normal; }
+.kpi-card.dark .kc-change { color: rgba(255,255,255,0.45); }
+
+.status { display: inline-block; padding: 3px 11px; border-radius: 12px; font-size: 10px; font-weight: 800; letter-spacing: 0.04em; white-space: nowrap; }
+.status.done { background: #dcfce7; color: #16a34a; }
+.status.over { background: #0D0D0D; color: #EA580C; }
+.status.partial { background: #fef3c7; color: #b45309; }
+.status.miss { background: #fee2e2; color: #dc2626; }
+
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th { background: #f8fafb; padding: 10px 16px; font-weight: 600; border-bottom: 2px solid #e8edf1; color: #999; font-size: 11px; text-align: left; white-space: nowrap; }
+td { padding: 13px 16px; border-bottom: 1px solid #f0f2f5; vertical-align: top; }
+td.item { font-weight: 700; color: #1a1b18; width: 30%; }
+td.desc { color: #636569; font-size: 12px; line-height: 1.7; }
+td.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+th.num { text-align: right; }
+.rank-up { color: #16a34a; font-weight: 800; }
+.shots { margin-top: 18px; }
+.shot { margin-bottom: 18px; border: 1px solid #e8edf1; border-radius: 10px; overflow: hidden; background: #fff; }
+.shot img { display: block; width: 100%; height: auto; }
+.shot .cap { font-size: 12px; color: #636569; padding: 10px 14px; border-top: 1px solid #f0f2f5; background: #f8fafb; line-height: 1.65; }
+.shot .cap b { color: #1a1b18; }
+.shot .cap .q { color: #EA580C; font-weight: 800; }
+.shots-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.shots-2 .shot { margin-bottom: 0; }
+@media (max-width: 768px) { .shots-2 { grid-template-columns: 1fr; } }
+@media print { .shot { break-inside: avoid; } .shots-2 { grid-template-columns: 1fr 1fr; } }
+.rank-down { color: #dc2626; font-weight: 800; }
+.rank-keep { color: #636569; font-weight: 700; }
+
+.store-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.store-card { border-radius: 12px; padding: 24px; border: 1px solid #e8edf1; }
+.store-card.up { background: linear-gradient(180deg, #f0fdf4 0%, #fff 60%); border-color: #bbf7d0; }
+.store-card.down { background: linear-gradient(180deg, #fef2f2 0%, #fff 60%); border-color: #fecaca; }
+.store-card.flat { background: #f8fafb; }
+.store-card .sc-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+.store-card .sc-name { font-size: 15px; font-weight: 800; }
+.store-card .sc-tag { font-size: 10px; font-weight: 800; padding: 3px 10px; border-radius: 12px; }
+.store-card .sc-tag.up { background: #16a34a; color: #fff; }
+.store-card .sc-tag.down { background: #dc2626; color: #fff; }
+.store-card .sc-tag.flat { background: #94a3b8; color: #fff; }
+.store-card .sc-main { display: flex; align-items: baseline; gap: 8px; margin-bottom: 4px; flex-wrap: wrap; }
+.store-card .sc-main .scm-val { font-size: 30px; font-weight: 900; letter-spacing: -0.02em; }
+.store-card .sc-main .scm-arrow { font-size: 13px; color: #999; font-weight: 600; }
+.store-card .sc-main .scm-chg { font-size: 13px; font-weight: 800; }
+.store-card .sc-main .scm-chg.up { color: #16a34a; }
+.store-card .sc-main .scm-chg.down { color: #dc2626; }
+.store-card .sc-sub { font-size: 11px; color: #999; margin-bottom: 16px; }
+.store-card .sc-list { font-size: 12px; color: #636569; line-height: 1.85; border-top: 1px dashed #e2e8f0; padding-top: 14px; }
+.store-card .sc-list strong { color: #1a1b18; }
+.store-card .sc-list .k { display: inline-block; min-width: 108px; color: #94a3b8; }
+
+.info-box { background: #FFF7ED; border-left: 4px solid #EA580C; border-radius: 0 8px 8px 0; padding: 14px 20px; margin-top: 18px; font-size: 12px; color: #636569; line-height: 1.85; }
+.info-box strong { color: #1a1b18; }
+.info-box.dark { background: #0D0D0D; border-left-color: #EA580C; color: rgba(255,255,255,0.78); }
+.info-box.dark strong { color: #fff; }
+.info-box.warn { background: #fffbeb; border-left-color: #f59e0b; }
+
+.flow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 18px; }
+.flow-step { background: #f8fafb; border: 1px solid #e8edf1; border-radius: 10px; padding: 16px 14px; text-align: center; }
+.flow-step.hero { background: #0D0D0D; border-color: #0D0D0D; }
+.flow-step .fs-when { font-size: 10px; font-weight: 800; color: #EA580C; letter-spacing: 0.06em; margin-bottom: 6px; }
+.flow-step .fs-val { font-size: 22px; font-weight: 900; letter-spacing: -0.02em; }
+.flow-step.hero .fs-val { color: #fff; }
+.flow-step .fs-note { font-size: 11px; color: #999; margin-top: 4px; }
+.flow-step.hero .fs-note { color: rgba(255,255,255,0.5); }
+
+.next-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 4px; }
+.next-card { padding: 20px 18px; border-radius: 10px; border: 1px solid #e8edf1; background: #f8fafb; }
+.next-card.hero { background: #FFF7ED; border-color: #EA580C; }
+.next-card .nc-label { font-size: 10px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #EA580C; margin-bottom: 9px; }
+.next-card .nc-title { font-size: 14px; font-weight: 800; margin-bottom: 7px; }
+.next-card .nc-desc { font-size: 12px; color: #636569; line-height: 1.7; }
+.next-card .nc-desc strong { color: #1a1b18; }
+
+.footer { text-align: center; padding: 40px 0; color: #999; font-size: 12px; line-height: 2; }
+.footer .brand { font-size: 15px; font-weight: 800; color: #1a1b18; margin-bottom: 4px; }
+
+@media (max-width: 768px) {
+  .container { padding: 70px 16px 40px; }
+  .meta-grid { grid-template-columns: repeat(2, 1fr); }
+  .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+  .store-grid { grid-template-columns: 1fr; }
+  .next-grid { grid-template-columns: 1fr; }
+  .flow { grid-template-columns: 1fr; }
+  .section { padding: 24px 20px; }
+  .toolbar { padding: 0 16px; }
+  table { display: block; overflow-x: auto; }
+}
+@media print {
+  .toolbar, .edit-banner { display: none !important; }
+  .container { padding: 20px; }
+  body { background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+
+.next-grid.two { grid-template-columns: 1fr 1fr; }
+.lead { font-size: 13px; color: #636569; line-height: 1.85; margin-bottom: 4px; }
+.lead strong { color: #1a1b18; }
+td .sub { font-size: 11px; color: #999; font-weight: 500; }
+td.item[rowspan] { background: #f8fafb; vertical-align: middle; width: 16%; }
+@media (max-width: 768px) { .next-grid.two { grid-template-columns: 1fr; } table { font-size: 12px; } table.wide tbody { display: table; min-width: 620px; } table:not(.wide) { display: table; table-layout: fixed; } table:not(.wide) td, table:not(.wide) th { white-space: normal; padding: 10px 6px; } table:not(.wide) td.item { width: 34%; } td, th { padding: 10px 10px; } }
+</style>
+</head>
+<body>
+<div class="toolbar">
+  <div class="toolbar-left">
+    <div class="toolbar-logo">BRANDRISE</div>
+    <div class="toolbar-sep"></div>
+    <div class="toolbar-title">코너룸 성수 네이버플레이스 1차 진단</div>
+  </div>
+  <div class="toolbar-actions">
+    <button class="btn-toolbar" onclick="window.print()">PDF 저장</button>
+  </div>
+</div>
+<div class="container">
+
+  <div class="report-header">
+    <div class="label">코너룸 성수 X 브랜드라이즈</div>
+    <h1>손님은 이미 좋아합니다.<br><em>검색에서 안 보일 뿐입니다.</em></h1>
+    <div class="meta-grid">
+      <div class="meta-item"><div class="mk">대상</div><div class="mv">코너룸 성수 (상원길 64, 2층)</div></div>
+      <div class="meta-item"><div class="mk">진단 방식</div><div class="mv">검색어 28개 실측 + 순위 추적 도구</div></div>
+      <div class="meta-item"><div class="mk">작성</div><div class="mv">우성민 LEAD</div></div>
+      <div class="meta-item"><div class="mk">진단일</div><div class="mv">2026. 09. 17</div></div>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <div class="hl-label">한 줄 요약</div>
+    <div class="hl-text">
+      평점 <em>4.8</em>, 저장 <em>9.2만 건 이상</em>. 성수에서도 드문 기본기입니다. 그런데 손님이 많이 찾는 <em>"성수 파스타"(월 3,240건)·"성수브런치"(월 3,790건)는 23위</em>, "성수양식"(월 2,220건)은 17위로 첫 화면 문턱에서 막혀 있고, <em>최근 2주 사이 더 밀렸습니다.</em> 성수 · 뚝섬 · 서울숲의 평일 점심 · 모임 검색어에는 네이버가 코너룸을 <em>아예 연결하지 않고 있습니다.</em> 두 문제는 원인이 달라 처방도 둘입니다 — <em>연결은 세팅으로, 문턱은 외부 유입으로.</em>
+    </div>
+  </div>
+
+  <!-- 1 -->
+  <div class="section">
+    <div class="ch-header">
+      <div class="ch-icon c1">1</div>
+      <div><h3>한눈에 보기</h3><div class="ch-badge">기본기는 상위권, 검색 노출은 하락 중</div></div>
+    </div>
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kc-label">네이버 평점</div>
+        <div class="kc-value">4.8</div>
+        <div class="kc-change neutral">방문자 리뷰 1,297 · 블로그 1,214</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kc-label">저장 수</div>
+        <div class="kc-value">9.2<span class="kc-unit">만+</span></div>
+        <div class="kc-change up">"성수 파스타" 첫 화면 세디치(4.1만)의 2배</div>
+      </div>
+      <div class="kpi-card dark">
+        <div class="kc-label">"성수 파스타" (월 3,240건)</div>
+        <div class="kc-value"><em>23</em><span class="kc-unit">위</span></div>
+        <div class="kc-change">2주 전 17위</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kc-label">점심·모임·와인 검색어</div>
+        <div class="kc-value">0<span class="kc-unit"> / 13</span></div>
+        <div class="kc-change down">첫 화면 노출 없음</div>
+      </div>
+    </div>
+    <div class="info-box">
+      저장 수는 손님이 "다음에 가야지" 하고 담아둔 숫자입니다. 코너룸은 이 숫자가 <strong>"성수 파스타" 첫 화면 10곳 중 5곳보다 많습니다.</strong> 손님의 마음은 이미 얻었는데, 처음 찾는 손님에게 보이는 자리를 못 잡고 있습니다.
+    </div>
+  </div>
+
+  <!-- 2 -->
+  <div class="section">
+    <div class="ch-header">
+      <div class="ch-icon c3">2</div>
+      <div><h3>이미 잘하고 계신 것</h3><div class="ch-badge">다시 만들 필요 없는 자산</div></div>
+    </div>
+    <table>
+      <tr><th>항목</th><th>현재 상태</th></tr>
+      <tr><td class="item">리뷰</td><td class="desc">방문자 리뷰 1,297 (사진 리뷰 929) · 블로그·카페 1,214 · "음식이 맛있어요" <strong>1,110표</strong></td></tr>
+      <tr><td class="item">손님이 말하는 메뉴</td><td class="desc">리뷰 언급 1위 <strong>라자냐 243회</strong> · 파스타 212 · 스테이크 211 · 와인 151</td></tr>
+      <tr><td class="item">플레이스 기능</td><td class="desc">AI 브리핑 · 쿠폰 3종 · 네이버 예약 + 캐치테이블 · 소식 · 인스타그램 연결 모두 켜져 있음</td></tr>
+      <tr><td class="item">메뉴 정보</td><td class="desc">메뉴 22개 전부 설명 등록 · 첫 줄이 <strong>생면 라자냐 롤</strong></td></tr>
+      <tr><td class="item">공간</td><td class="desc">8~36인 단체석 · 20인 이상 대관 · 코스 65,000 · 와인 포함 2인 세트 — 모임 수요를 받을 준비가 되어 있음</td></tr>
+    </table>
+    <div class="info-box">
+      리뷰를 억지로 늘리는 방식은 쓰지 않습니다. 이미 쌓인 자산을 <strong>검색어와 이어 붙이고</strong>, 그 위에 <strong>새 손님이 찾아오는 흐름</strong>을 더하는 것이 순서입니다.
+    </div>
+  </div>
+
+  <!-- 3 -->
+  <div class="section">
+    <div class="ch-header">
+      <div class="ch-icon c2">3</div>
+      <div><h3>검색어 28개 실측 결과</h3><div class="ch-badge">네이버 플레이스 · 성수역 위치 기준 · 광고 제외 첫 화면 10곳</div></div>
+    </div>
+    <table class="wide">
+      <tr><th>손님 상황</th><th>검색어</th><th class="num">경쟁 매장</th><th class="num">코너룸</th><th>참고</th></tr>
+      <tr><td class="item" rowspan="3">대표 메뉴</td><td>성수 라자냐</td><td class="num">95곳</td><td class="num rank-keep">5위</td><td class="desc">1위 매장 리뷰 6,287건</td></tr>
+      <tr><td>라자냐 맛집</td><td class="num">1,946곳</td><td class="num rank-keep">8위</td><td class="desc">매장 근처에서 검색하면 1위, 멀어지면 사라짐</td></tr>
+      <tr><td>성수 와규</td><td class="num">26곳</td><td class="num rank-up">1위</td><td class="desc">2위가 뇨끼룸 — 두 매장이 같은 자리를 나눠 가짐</td></tr>
+      <tr><td class="item" rowspan="3">평일 점심</td><td>성수 점심</td><td class="num">1,221곳</td><td class="num rank-down">밖</td><td class="desc">첫 화면에 리뷰 459건 매장</td></tr>
+      <tr><td>뚝섬역 점심</td><td class="num">505곳</td><td class="num rank-down">밖</td><td class="desc">매장이 뚝섬역 도보 3분인데 안 보임</td></tr>
+      <tr><td>서울숲 점심</td><td class="num">514곳</td><td class="num rank-down">밖</td><td class="desc">첫 화면에 <strong>리뷰 17건</strong> 매장</td></tr>
+      <tr><td class="item" rowspan="7">모임 · 데이트 · 연말</td><td>성수 청첩장모임</td><td class="num">92곳</td><td class="num rank-down">밖</td><td class="desc">대표키워드로 넣어뒀는데 안 보임 · 첫 화면에 리뷰 198건 매장</td></tr>
+      <tr><td>성수 모임</td><td class="num">404곳</td><td class="num rank-down">밖</td><td class="desc">—</td></tr>
+      <tr><td>성수 단체모임</td><td class="num">151곳</td><td class="num rank-down">밖</td><td class="desc">20인 대관이 되는데 안 보임</td></tr>
+      <tr><td>성수 대관</td><td class="num">270곳</td><td class="num rank-down">밖</td><td class="desc">—</td></tr>
+      <tr><td>성수 생일</td><td class="num">111곳</td><td class="num rank-down">밖</td><td class="desc">생일 혜택이 있는데 안 보임</td></tr>
+      <tr><td>성수 코스요리</td><td class="num">240곳</td><td class="num rank-down">밖</td><td class="desc">코스 65,000원이 있는데 안 보임</td></tr>
+      <tr><td>성수 데이트</td><td class="num">2,623곳</td><td class="num rank-down">밖</td><td class="desc">—</td></tr>
+      <tr><td class="item" rowspan="3">와인</td><td>성수 와인</td><td class="num">632곳</td><td class="num rank-down">밖</td><td class="desc">리뷰에 와인 이야기가 151번 나오는데 안 보임</td></tr>
+      <tr><td>성수 와인바</td><td class="num">291곳</td><td class="num rank-down">밖</td><td class="desc">첫 화면에 <strong>리뷰 48건</strong> 매장</td></tr>
+      <tr><td>서울숲 와인바</td><td class="num">107곳</td><td class="num rank-down">밖</td><td class="desc">—</td></tr>
+      <tr><td class="item" rowspan="12">지역 대표 검색어</td><td>성수 맛집</td><td class="num">8,921곳</td><td class="num rank-down">밖</td><td class="desc">—</td></tr>
+      <tr><td>성수 파스타</td><td class="num">649곳</td><td class="num rank-down">밖</td><td class="desc">1위 매장 리뷰 13,105건 — 정면 승부는 오래 걸림</td></tr>
+      <tr><td>성수 양식</td><td class="num">834곳</td><td class="num rank-down">밖</td><td class="desc">—</td></tr>
+      <tr><td>성수 레스토랑</td><td class="num">1,245곳</td><td class="num rank-down">밖</td><td class="desc">첫 화면에 리뷰 168건 매장</td></tr>
+      <tr><td>성수 스테이크</td><td class="num">502곳</td><td class="num rank-down">밖</td><td class="desc">—</td></tr>
+      <tr><td>성수 브런치</td><td class="num">353곳</td><td class="num rank-down">밖</td><td class="desc">—</td></tr>
+      <tr><td>성수 뇨끼</td><td class="num">133곳</td><td class="num rank-down">밖</td><td class="desc">뇨끼룸 7위</td></tr>
+      <tr><td>뚝섬역 맛집</td><td class="num">2,946곳</td><td class="num rank-down">밖</td><td class="desc">—</td></tr>
+      <tr><td>뚝섬역 파스타</td><td class="num">224곳</td><td class="num rank-keep">7위</td><td class="desc">가장 가까운 역인데 7위</td></tr>
+      <tr><td>서울숲 맛집</td><td class="num">3,380곳</td><td class="num rank-down">밖</td><td class="desc">—</td></tr>
+      <tr><td>서울숲 파스타</td><td class="num">252곳</td><td class="num rank-down">밖</td><td class="desc">—</td></tr>
+      <tr><td>서울숲 뇨끼</td><td class="num">62곳</td><td class="num rank-down">밖</td><td class="desc">뇨끼룸 1위</td></tr>
+    </table>
+    <div class="info-box warn">
+      <strong>읽는 법</strong> — "밖"은 광고를 뺀 첫 화면 10곳 안에 없다는 뜻입니다. 순위는 검색하는 위치와 시간에 따라 조금씩 달라집니다. 검색량이 큰 검색어의 정확한 순위와 2주 흐름은 4번에 정리했습니다.
+    </div>
+  </div>
+
+
+  <!-- 4 -->
+  <div class="section">
+    <div class="ch-header">
+      <div class="ch-icon c6">4</div>
+      <div><h3>검색량 큰 검색어 — 최근 2주 순위</h3><div class="ch-badge">순위 추적 도구 · 9/2 → 9/17</div></div>
+    </div>
+    <table class="wide">
+      <tr><th>검색어</th><th class="num">월 검색량</th><th class="num">9/2</th><th class="num">최근 (9/16~17)</th><th>흐름</th></tr>
+      <tr><td class="item">뚝섬역맛집</td><td class="num">7,530</td><td class="num">53위</td><td class="num rank-down">72위</td><td class="desc">가장 가까운 역, 가장 큰 검색어에서 밀림</td></tr>
+      <tr><td class="item">성수브런치</td><td class="num">3,790</td><td class="num">17위</td><td class="num rank-down">23위</td><td class="desc">하락</td></tr>
+      <tr><td class="item">성수 데이트</td><td class="num">3,500</td><td class="num">31위</td><td class="num rank-keep">29위</td><td class="desc">정체</td></tr>
+      <tr><td class="item">성수 파스타</td><td class="num">3,240</td><td class="num">17위</td><td class="num rank-down">23위</td><td class="desc">하락</td></tr>
+      <tr><td class="item">성수양식</td><td class="num">2,220</td><td class="num">12위</td><td class="num rank-down">17위</td><td class="desc">하락 · 첫 화면에 가장 가까운 큰 검색어</td></tr>
+      <tr><td class="item">성수파스타맛집</td><td class="num">1,510</td><td class="num">17위</td><td class="num rank-down">20위</td><td class="desc">하락</td></tr>
+      <tr><td class="item">성수동브런치</td><td class="num">1,260</td><td class="num">17위</td><td class="num rank-down">24위</td><td class="desc">하락</td></tr>
+      <tr><td class="item">서울숲 브런치</td><td class="num">1,100</td><td class="num">19위</td><td class="num rank-down">순위 이탈</td><td class="desc">9/5부터 순위권 밖</td></tr>
+      <tr><td class="item">뚝섬역 파스타</td><td class="num">350</td><td class="num">6위</td><td class="num rank-keep">6위</td><td class="desc">유지</td></tr>
+      <tr><td class="item">성수 라자냐</td><td class="num">130</td><td class="num">—</td><td class="num rank-keep">5위</td><td class="desc">대표 메뉴 검색어 — 검색량은 작음</td></tr>
+    </table>
+    <div class="info-box warn">
+      <strong>가만히 있어도 밀리고 있습니다.</strong> 2주 사이 큰 검색어 대부분이 내려갔고, 가장 큰 "뚝섬역맛집"은 19계단 밀렸습니다. 성수는 새 매장이 계속 들어오고 기존 상위 매장도 리뷰를 쌓는 상권이라, 멈춰 있으면 순위가 뒤로 갑니다.<br>
+      "성수 라자냐"는 코너룸을 상징하는 검색어지만 한 달 검색이 130건이라, 1위를 해도 늘어나는 손님은 많지 않습니다. 새 손님이 실제로 들어오는 문은 <strong>성수양식 · 성수 파스타 · 성수브런치</strong>입니다.
+    </div>
+  </div>
+
+  <!-- 5 -->
+  <div class="section">
+    <div class="ch-header">
+      <div class="ch-icon c1">5</div>
+      <div><h3>왜 안 보이는가 — 원인이 다른 문제 두 개</h3><div class="ch-badge">연결이 안 된 검색어 / 문턱에서 막힌 검색어</div></div>
+    </div>
+
+    <p class="lead"><strong>문제 A · 연결이 안 된 검색어</strong> — 평일 점심 · 모임 · 청첩장모임. 네이버가 코너룸과 연결해 둔 검색어 64개를 확인했는데, <strong>성수 · 뚝섬 · 서울숲의 "점심" · "모임" · "청첩장모임" 검색어가 하나도 없습니다.</strong> 연결된 점심 · 모임 검색어는 왕십리 · 장한평 쪽뿐이고, 대표키워드에 청첩장모임을 넣어두셨는데도 성수에서는 이어지지 않았습니다. 이건 리뷰나 광고가 아니라 <strong>매장 정보 세팅</strong>으로 고치는 문제입니다.</p>
+    <div class="next-grid two" style="margin-top:14px">
+      <div class="next-card hero">
+        <div class="nc-label">원인 ①</div>
+        <div class="nc-title">대표키워드 5개가 뇨끼룸과 똑같습니다</div>
+        <div class="nc-desc">두 매장 모두 <strong>파스타 · 브런치 · 스테이크 · 청첩장모임 · 청모</strong>입니다. 지역명도, 매장만의 특징도 없습니다. 그래서 "성수 와규"는 1·2위를 두 매장이 나눠 갖습니다. "청첩장모임"과 "청모"는 같은 말이라 한 칸이 낭비되고 있습니다.</div>
+      </div>
+      <div class="next-card hero">
+        <div class="nc-label">원인 ②</div>
+        <div class="nc-title">소개글이 매장의 강점을 말하지 않습니다</div>
+        <div class="nc-desc">손님 리뷰 언급 1위가 라자냐(243회)인데, 소개글 1,618자의 첫 문단은 <strong>브런치</strong>입니다. 20인 대관 · 코스 · 와인 세트 · 평일 점심 같은, 비는 시간을 채울 정보는 소개글 뒤쪽에 묻혀 있거나 없습니다.</div>
+      </div>
+      <div class="next-card">
+        <div class="nc-label">원인 ③</div>
+        <div class="nc-title">검색어 40여 개를 나열해 두었습니다</div>
+        <div class="nc-desc">소개글과 주차 안내 끝에 "성수동맛집, 성수파스타…" 식으로 검색어가 길게 붙어 있습니다. 나열한 검색어는 효과가 거의 없고, 그중 <strong>"성수역 3번 · 4번 출구"</strong>처럼 매장(뚝섬역 도보 3분)과 거리가 있는 검색어도 섞여 있습니다.</div>
+      </div>
+      <div class="next-card">
+        <div class="nc-label">원인 ④</div>
+        <div class="nc-title">소식이 거의 올라오지 않습니다</div>
+        <div class="nc-desc">소식은 최근 9개월간 <strong>3건</strong>(12/18 · 5/21 · 9/1)입니다. 연말 모임 · 대관 예약은 10~11월에 잡히는데, 지금은 그 검색어에서 코너룸이 보이지 않습니다.</div>
+      </div>
+    </div>
+
+    <p class="lead" style="margin-top:26px"><strong>문제 B · 문턱에서 막힌 큰 검색어</strong> — 성수양식 · 성수 파스타 · 성수브런치(성수와인 · 성수 와인바도 같은 경우). 이 검색어들은 이미 코너룸과 연결되어 있습니다. 순위 추적 도구로 보면 <strong>검색어와의 관련도는 기준선을 넘는데, 인기도 지표는 네 검색어 모두 같은 값(0.50)에서 멈춰 있습니다.</strong> 첫 화면 매장들은 최근 방문 · 리뷰 · 저장 · 외부에서 들어오는 손님이 계속 쌓이는 곳들이고, 코너룸은 그 흐름이 약해진 상태로 봅니다(추정).</p>
+    <table class="wide" style="margin-top:12px">
+      <tr><th>검색어</th><th class="num">월 검색량</th><th class="num">순위</th><th class="num">관련도 (N1)</th><th class="num">인기도 (N2)</th></tr>
+      <tr><td class="item">성수 파스타</td><td class="num">3,240</td><td class="num rank-down">23위</td><td class="num">0.558</td><td class="num rank-down">0.501</td></tr>
+      <tr><td class="item">성수브런치</td><td class="num">3,790</td><td class="num rank-down">23위</td><td class="num">0.552</td><td class="num rank-down">0.501</td></tr>
+      <tr><td class="item">성수양식</td><td class="num">2,220</td><td class="num rank-down">17위</td><td class="num">0.521</td><td class="num rank-down">0.501</td></tr>
+      <tr><td class="item">성수 라자냐</td><td class="num">130</td><td class="num rank-keep">5위</td><td class="num">0.543</td><td class="num rank-down">0.501</td></tr>
+    </table>
+    <div class="info-box dark">
+      문제 A는 <strong>세팅</strong>으로 풉니다 — 돈이 들지 않고, 바로 시작할 수 있습니다.<br>
+      문제 B는 세팅만으로 안 풀립니다. <strong>코너룸을 검색하고, 저장하고, 찾아오는 사람의 흐름</strong>을 밖에서 만들어 넣어야 합니다. 인플루언서와 메타 광고가 필요한 이유가 여기에 있습니다.
+    </div>
+  </div>
+
+  <!-- 6 -->
+  <div class="section">
+    <div class="ch-header">
+      <div class="ch-icon c2">6</div>
+      <div><h3>처방 — 3개월, 하나의 흐름으로</h3><div class="ch-badge">네이버플레이스 · 인플루언서 · 메타 광고</div></div>
+    </div>
+    <p class="lead">지금까지 블로그 · 인스타 · 체험단을 각각 해 오셨다면, 이번에는 <strong>하나의 흐름</strong>으로 묶습니다. 플레이스 세팅으로 끊긴 검색어를 먼저 연결하고(문제 A), 인플루언서 영상이 코너룸을 알리고 → 그 영상을 광고로 성수 근처 사람들에게 다시 보여주고 → 그 사람들이 네이버에서 코너룸을 검색 · 저장 · 방문하는 흐름을 만들어 큰 검색어의 문턱을 넘습니다(문제 B). 셋 중 하나만 빠져도 돈이 샙니다.</p>
+    <div class="flow">
+      <div class="flow-step"><div class="fs-when">알리기</div><div class="fs-val">인플루언서</div><div class="fs-note">월 4인 · 검색어 지정</div></div>
+      <div class="flow-step"><div class="fs-when">다시 보여주기</div><div class="fs-val">메타 광고</div><div class="fs-note">성수·뚝섬·서울숲 반경</div></div>
+      <div class="flow-step hero"><div class="fs-when">찾게 하기</div><div class="fs-val">네이버플레이스</div><div class="fs-note">연결 복구 · 문턱 돌파</div></div>
+    </div>
+    <table class="wide" style="margin-top:20px">
+      <tr><th>기간</th><th>네이버플레이스</th><th>인플루언서</th><th>메타 광고</th></tr>
+      <tr><td class="item">10월<br><span class="sub">세팅 · 테스트</span></td><td class="desc">대표키워드 · 소개글 · 대표사진 · 메뉴 순서 재정비 (점심 · 모임 검색어 연결) / 뇨끼룸과 검색어 겹침 정리 / 순위 추적 시작</td><td class="desc">4인 · "성수 파스타" · "성수양식" · "뚝섬역 점심" 등 검색어를 지정해 발행</td><td class="desc">라자냐 · 코스와 와인 · 평일 점심 3가지 소재로 반응 비교</td></tr>
+      <tr><td class="item">11월<br><span class="sub">연말 예약</span></td><td class="desc">연말 모임 · 대관 · 청첩장모임 소식 발행 / 체험단 검색어를 모임 쪽으로</td><td class="desc">4인 · 모임 · 와인 저녁 장면 중심</td><td class="desc">반응 좋은 소재에 예산 집중 · 연말 모임 예약 유도</td></tr>
+      <tr><td class="item">12월<br><span class="sub">수확 · 검증</span></td><td class="desc">연말 성수기 노출 유지 / 3개월 순위 · 유입 결과 정리</td><td class="desc">4인 · 쌓인 영상 12편을 광고 소재로 재활용</td><td class="desc">잘 된 광고만 이어서 운영 · 3개월 효율 보고</td></tr>
+    </table>
+  </div>
+
+  <!-- 7 -->
+  <div class="section">
+    <div class="ch-header">
+      <div class="ch-icon c5">7</div>
+      <div><h3>같은 방식으로 먼저 증명한 곳 — 미례국밥</h3><div class="ch-badge">부산 국밥 브랜드 · 3개월로 시작</div></div>
+    </div>
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kc-label">대표키워드 교체한 첫 달</div>
+        <div class="kc-value">+34.9<span class="kc-unit">%</span></div>
+        <div class="kc-change up">플레이스 유입 · "전포동 국밥" 1위</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kc-label">"센텀역 맛집"</div>
+        <div class="kc-value">16→4<span class="kc-unit">위</span></div>
+        <div class="kc-change up">리뷰·콘텐츠를 검색어에 맞춘 한 달</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kc-label">"강남역 맛집" (월 9.6만 검색)</div>
+        <div class="kc-value">38→5<span class="kc-unit">위</span></div>
+        <div class="kc-change up">서울 강남점 · 7월 → 8월</div>
+      </div>
+      <div class="kpi-card dark">
+        <div class="kc-label">메타 광고 클릭률</div>
+        <div class="kc-value"><em>6.15</em><span class="kc-unit">%</span></div>
+        <div class="kc-change">업계 평균 1.67% · 누른 10명 중 9명이 매장 정보 도착</div>
+      </div>
+    </div>
+    <div class="info-box dark">
+      미례국밥도 처음에는 <strong>부산 매장 두 곳, 3개월</strong>로 시작했습니다. 부산에서 "우리 검색어에서 이긴다"를 확인하며 3개월째에 서울 강남점을 열었고, 지금은 같은 방식을 매장 5곳에 똑같이 적용하고 있습니다. 8월에는 4개 매장 유입 합계가 한 달 만에 <strong>+53%</strong> 올랐습니다. 미팅에서 나온 "3호점 전에 먼저 증명하는 시간"이 바로 이 3개월입니다.
+    </div>
+  </div>
+
+
+  <!-- 8 -->
+  <div class="section">
+    <div class="ch-header">
+      <div class="ch-icon c3">8</div>
+      <div><h3>3개월 목표</h3><div class="ch-badge">10월 착수 · 12월 연말 시즌에 확인</div></div>
+    </div>
+    <table>
+      <tr><th>지표</th><th class="num">지금 (9/17)</th><th class="num">3개월 목표</th><th>확인 방법</th></tr>
+      <tr><td class="item">"성수양식" (월 2,220건)</td><td class="num">17위</td><td class="num rank-up">첫 화면 (10위 안)</td><td class="desc">주 1회 순위 추적</td></tr>
+      <tr><td class="item">"성수 파스타" · "성수브런치" (월 7,030건)</td><td class="num">23위</td><td class="num rank-up">15위 안</td><td class="desc">주 1회 순위 추적 · 인기도 지표 0.50 돌파</td></tr>
+      <tr><td class="item">점심 · 모임 · 와인 검색어 (13개)</td><td class="num">첫 화면 0개</td><td class="num rank-up">5개</td><td class="desc">같은 13개 재측정</td></tr>
+      <tr><td class="item">"성수 라자냐" (대표 메뉴)</td><td class="num">5위</td><td class="num rank-up">1위</td><td class="desc">주 1회 순위 추적</td></tr>
+      <tr><td class="item">플레이스 유입 (월)</td><td class="num">통계 수령 후 기준</td><td class="num rank-up">+30%</td><td class="desc">스마트플레이스 통계</td></tr>
+      <tr><td class="item">인플루언서 영상</td><td class="num">—</td><td class="num rank-up">12편 · 조회 10만+</td><td class="desc">조회 · 저장 · 공유 성과표</td></tr>
+      <tr><td class="item">평일 점심 홀 손님</td><td class="num">대표님 공유 기준</td><td class="num rank-up">하루 +12명</td><td class="desc">POS 매출 (대표님 공유)</td></tr>
+    </table>
+    <div class="info-box">
+      <strong>투자 회수선</strong> — 원재료비를 30%로 잡으면, 월 투자금을 돌려받는 데 필요한 추가 홀 매출은 약 <strong>월 720만 원</strong>입니다. 평일 22일로 나누면 하루 약 33만 원, 점심 손님 <strong>하루 12명 안팎</strong>(1인 약 2.8만 원 기준)입니다. 비어 있는 평일 점심 시간만 채워도 닿는 숫자입니다.<br>
+      네이버 순위는 네이버가 정하는 영역이라 약속드리지 않습니다. 대신 순위에 영향을 주는 정보 · 검색어 · 유입을 매주 숫자로 보여드립니다.
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="brand">BRANDRISE</div>
+    데이터 기준일: 2026. 09. 17 · 네이버 모바일 플레이스 검색(성수역 위치 기준, 광고 제외) · 순위 추적 도구(순위 · 검색량 · N1/N2, 9/2~9/17) · 네이버 플레이스 매장 정보<br>
+    미례국밥 수치 출처: 미례국밥 월간 운영 보고서(2026년 4·5·8월) · 작성: 우성민 LEAD
+  </div>
+</div>
+
+</body>
+</html>
